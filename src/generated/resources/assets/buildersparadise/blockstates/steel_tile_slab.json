@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/steel_tile_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/steel_tiles"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/steel_tile_slab_top"
+    }
+  }
+}

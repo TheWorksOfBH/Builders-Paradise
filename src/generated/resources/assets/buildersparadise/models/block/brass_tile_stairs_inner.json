@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "buildersparadise:block/brass_tiles",
+    "side": "buildersparadise:block/brass_tiles",
+    "top": "buildersparadise:block/brass_tiles"
+  }
+}

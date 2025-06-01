@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "buildersparadise:block/nuke_bottom",
+    "front": "buildersparadise:block/nuke_front",
+    "side": "buildersparadise:block/nuke_side",
+    "top": "buildersparadise:block/nuke_top"
+  }
+}
