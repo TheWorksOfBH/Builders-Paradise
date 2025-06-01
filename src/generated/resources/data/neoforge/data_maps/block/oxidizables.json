@@ -1,0 +1,148 @@
+{
+  "values": {
+    "buildersparadise:barely_heavy_weighted_pressure_plate": {
+      "next_oxidation_stage": "buildersparadise:slightly_corroded_barely_heavy_weighted_pressure_plate"
+    },
+    "buildersparadise:exposed_medium_weighted_pressure_plate": {
+      "next_oxidation_stage": "buildersparadise:weathered_medium_weighted_pressure_plate"
+    },
+    "buildersparadise:iron_tile_slab": {
+      "next_oxidation_stage": "buildersparadise:mildly_rusted_iron_tile_slab"
+    },
+    "buildersparadise:iron_tile_stairs": {
+      "next_oxidation_stage": "buildersparadise:mildly_rusted_iron_tile_stairs"
+    },
+    "buildersparadise:iron_tiles": {
+      "next_oxidation_stage": "buildersparadise:mildly_rusted_iron_tiles"
+    },
+    "buildersparadise:medium_weighted_pressure_plate": {
+      "next_oxidation_stage": "buildersparadise:exposed_medium_weighted_pressure_plate"
+    },
+    "buildersparadise:mildly_rusted_heavy_weighted_pressure_plate": {
+      "next_oxidation_stage": "buildersparadise:moderately_rusted_heavy_weighted_pressure_plate"
+    },
+    "buildersparadise:mildly_rusted_iron_bars": {
+      "next_oxidation_stage": "buildersparadise:moderately_rusted_iron_bars"
+    },
+    "buildersparadise:mildly_rusted_iron_block": {
+      "next_oxidation_stage": "buildersparadise:moderately_rusted_iron_block"
+    },
+    "buildersparadise:mildly_rusted_iron_door": {
+      "next_oxidation_stage": "buildersparadise:moderately_rusted_iron_door"
+    },
+    "buildersparadise:mildly_rusted_iron_tile_slab": {
+      "next_oxidation_stage": "buildersparadise:moderately_rusted_iron_tile_slab"
+    },
+    "buildersparadise:mildly_rusted_iron_tile_stairs": {
+      "next_oxidation_stage": "buildersparadise:moderately_rusted_iron_tile_stairs"
+    },
+    "buildersparadise:mildly_rusted_iron_tiles": {
+      "next_oxidation_stage": "buildersparadise:moderately_rusted_iron_tiles"
+    },
+    "buildersparadise:mildly_rusted_iron_trapdoor": {
+      "next_oxidation_stage": "buildersparadise:moderately_rusted_iron_trapdoor"
+    },
+    "buildersparadise:moderately_rusted_heavy_weighted_pressure_plate": {
+      "next_oxidation_stage": "buildersparadise:extremely_rusted_heavy_weighted_pressure_plate"
+    },
+    "buildersparadise:moderately_rusted_iron_bars": {
+      "next_oxidation_stage": "buildersparadise:extremely_rusted_iron_bars"
+    },
+    "buildersparadise:moderately_rusted_iron_block": {
+      "next_oxidation_stage": "buildersparadise:extremely_rusted_iron_block"
+    },
+    "buildersparadise:moderately_rusted_iron_door": {
+      "next_oxidation_stage": "buildersparadise:extremely_rusted_iron_door"
+    },
+    "buildersparadise:moderately_rusted_iron_tile_slab": {
+      "next_oxidation_stage": "buildersparadise:extremely_rusted_iron_tile_slab"
+    },
+    "buildersparadise:moderately_rusted_iron_tile_stairs": {
+      "next_oxidation_stage": "buildersparadise:extremely_rusted_iron_tile_stairs"
+    },
+    "buildersparadise:moderately_rusted_iron_tiles": {
+      "next_oxidation_stage": "buildersparadise:extremely_rusted_iron_tiles"
+    },
+    "buildersparadise:moderately_rusted_iron_trapdoor": {
+      "next_oxidation_stage": "buildersparadise:extremely_rusted_iron_trapdoor"
+    },
+    "buildersparadise:slightly_corroded_barely_heavy_weighted_pressure_plate": {
+      "next_oxidation_stage": "buildersparadise:somewhat_corroded_barely_heavy_weighted_pressure_plate"
+    },
+    "buildersparadise:slightly_corroded_zinc_block": {
+      "next_oxidation_stage": "buildersparadise:somewhat_corroded_zinc_block"
+    },
+    "buildersparadise:slightly_corroded_zinc_door": {
+      "next_oxidation_stage": "buildersparadise:somewhat_corroded_zinc_door"
+    },
+    "buildersparadise:slightly_corroded_zinc_tile_slab": {
+      "next_oxidation_stage": "buildersparadise:somewhat_corroded_zinc_tile_slab"
+    },
+    "buildersparadise:slightly_corroded_zinc_tile_stairs": {
+      "next_oxidation_stage": "buildersparadise:somewhat_corroded_zinc_tile_stairs"
+    },
+    "buildersparadise:slightly_corroded_zinc_tiles": {
+      "next_oxidation_stage": "buildersparadise:somewhat_corroded_zinc_tiles"
+    },
+    "buildersparadise:slightly_corroded_zinc_trapdoor": {
+      "next_oxidation_stage": "buildersparadise:somewhat_corroded_zinc_trapdoor"
+    },
+    "buildersparadise:somewhat_corroded_barely_heavy_weighted_pressure_plate": {
+      "next_oxidation_stage": "buildersparadise:really_corroded_barely_heavy_weighted_pressure_plate"
+    },
+    "buildersparadise:somewhat_corroded_zinc_block": {
+      "next_oxidation_stage": "buildersparadise:really_corroded_zinc_block"
+    },
+    "buildersparadise:somewhat_corroded_zinc_door": {
+      "next_oxidation_stage": "buildersparadise:really_corroded_zinc_door"
+    },
+    "buildersparadise:somewhat_corroded_zinc_tile_slab": {
+      "next_oxidation_stage": "buildersparadise:really_corroded_zinc_tile_slab"
+    },
+    "buildersparadise:somewhat_corroded_zinc_tile_stairs": {
+      "next_oxidation_stage": "buildersparadise:really_corroded_zinc_tile_stairs"
+    },
+    "buildersparadise:somewhat_corroded_zinc_tiles": {
+      "next_oxidation_stage": "buildersparadise:really_corroded_zinc_tiles"
+    },
+    "buildersparadise:somewhat_corroded_zinc_trapdoor": {
+      "next_oxidation_stage": "buildersparadise:really_corroded_zinc_trapdoor"
+    },
+    "buildersparadise:weathered_medium_weighted_pressure_plate": {
+      "next_oxidation_stage": "buildersparadise:oxidized_medium_weighted_pressure_plate"
+    },
+    "buildersparadise:zinc_block": {
+      "next_oxidation_stage": "buildersparadise:slightly_corroded_zinc_block"
+    },
+    "buildersparadise:zinc_door": {
+      "next_oxidation_stage": "buildersparadise:slightly_corroded_zinc_door"
+    },
+    "buildersparadise:zinc_tile_slab": {
+      "next_oxidation_stage": "buildersparadise:slightly_corroded_zinc_tile_slab"
+    },
+    "buildersparadise:zinc_tile_stairs": {
+      "next_oxidation_stage": "buildersparadise:slightly_corroded_zinc_tile_stairs"
+    },
+    "buildersparadise:zinc_tiles": {
+      "next_oxidation_stage": "buildersparadise:slightly_corroded_zinc_tiles"
+    },
+    "buildersparadise:zinc_trapdoor": {
+      "next_oxidation_stage": "buildersparadise:slightly_corroded_zinc_trapdoor"
+    },
+    "minecraft:heavy_weighted_pressure_plate": {
+      "next_oxidation_stage": "buildersparadise:mildly_rusted_heavy_weighted_pressure_plate"
+    },
+    "minecraft:iron_bars": {
+      "next_oxidation_stage": "buildersparadise:mildly_rusted_iron_bars"
+    },
+    "minecraft:iron_block": {
+      "next_oxidation_stage": "buildersparadise:mildly_rusted_iron_block"
+    },
+    "minecraft:iron_door": {
+      "next_oxidation_stage": "buildersparadise:mildly_rusted_iron_door"
+    },
+    "minecraft:iron_trapdoor": {
+      "next_oxidation_stage": "buildersparadise:mildly_rusted_iron_trapdoor"
+    }
+  }
+}

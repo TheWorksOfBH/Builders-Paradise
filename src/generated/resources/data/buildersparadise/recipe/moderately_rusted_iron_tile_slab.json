@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "buildersparadise:moderately_rusted_iron_tiles"
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "buildersparadise:moderately_rusted_iron_tile_slab"
+  }
+}

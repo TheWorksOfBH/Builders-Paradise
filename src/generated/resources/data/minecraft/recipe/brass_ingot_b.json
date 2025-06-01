@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "buildersparadise:brass_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "buildersparadise:brass_ingot"
+  }
+}

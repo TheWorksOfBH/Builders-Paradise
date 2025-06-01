@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/slightly_corroded_zinc_tile_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/slightly_corroded_zinc_tiles"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/slightly_corroded_zinc_tile_slab_top"
+    }
+  }
+}

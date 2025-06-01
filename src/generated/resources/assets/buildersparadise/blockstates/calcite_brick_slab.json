@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/calcite_brick_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/calcite_bricks"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/calcite_brick_slab_top"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/platinum_tile_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/platinum_tiles"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/platinum_tile_slab_top"
+    }
+  }
+}

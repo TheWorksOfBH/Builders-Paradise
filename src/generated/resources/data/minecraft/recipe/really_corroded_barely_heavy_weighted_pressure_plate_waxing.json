@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "buildersparadise:really_corroded_barely_heavy_weighted_pressure_plate",
+    "minecraft:honeycomb"
+  ],
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:waxed_really_corroded_barely_heavy_weighted_pressure_plate"
+  }
+}

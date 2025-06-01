@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:iron_tiles",
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:iron_tile_stairs"
+  }
+}

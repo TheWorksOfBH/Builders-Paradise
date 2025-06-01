@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/lead_tile_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/lead_tiles"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/lead_tile_slab_top"
+    }
+  }
+}

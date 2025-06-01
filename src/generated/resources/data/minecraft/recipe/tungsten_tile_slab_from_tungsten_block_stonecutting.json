@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:tungsten_block",
+  "result": {
+    "count": 8,
+    "id": "buildersparadise:tungsten_tile_slab"
+  }
+}

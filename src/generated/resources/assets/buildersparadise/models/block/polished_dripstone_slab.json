@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "buildersparadise:block/polished_dripstone",
+    "side": "buildersparadise:block/polished_dripstone",
+    "top": "buildersparadise:block/polished_dripstone"
+  }
+}

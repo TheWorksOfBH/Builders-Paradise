@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "bronze_ingot",
+  "ingredients": [
+    "minecraft:copper_ingot",
+    "minecraft:copper_ingot",
+    "minecraft:copper_ingot",
+    "minecraft:copper_ingot",
+    "buildersparadise:tin_ingot",
+    "buildersparadise:tin_ingot",
+    "buildersparadise:tin_ingot",
+    "buildersparadise:tin_ingot"
+  ],
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:bronze_ingot"
+  }
+}

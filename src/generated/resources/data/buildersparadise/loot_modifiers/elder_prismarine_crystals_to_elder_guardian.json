@@ -1,0 +1,16 @@
+{
+  "type": "buildersparadise:add_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:entities/elder_guardian"
+    },
+    {
+      "chance": 0.33333334,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "buildersparadise:elder_prismarine_crystals",
+  "maximum": 1,
+  "minimum": 0
+}

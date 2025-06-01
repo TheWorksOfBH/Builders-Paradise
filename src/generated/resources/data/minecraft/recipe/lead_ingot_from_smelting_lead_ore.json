@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "lead_ingot",
+  "ingredient": "buildersparadise:lead_ore",
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:lead_ingot"
+  }
+}

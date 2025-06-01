@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:elder_prismarine",
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:elder_prismarine_wall"
+  }
+}

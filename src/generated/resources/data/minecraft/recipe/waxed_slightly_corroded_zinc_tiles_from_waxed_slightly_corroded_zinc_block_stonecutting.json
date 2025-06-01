@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:waxed_slightly_corroded_zinc_block",
+  "result": {
+    "count": 4,
+    "id": "buildersparadise:waxed_slightly_corroded_zinc_tiles"
+  }
+}

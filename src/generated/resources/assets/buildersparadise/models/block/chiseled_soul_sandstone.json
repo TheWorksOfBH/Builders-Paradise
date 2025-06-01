@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "buildersparadise:block/soul_sandstone_top",
+    "side": "buildersparadise:block/chiseled_soul_sandstone"
+  }
+}

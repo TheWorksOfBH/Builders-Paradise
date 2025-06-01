@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "C": "buildersparadise:elder_prismarine_crystals",
+    "S": "buildersparadise:elder_prismarine_shard"
+  },
+  "pattern": [
+    "SCS",
+    "CCC",
+    "SCS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:sea_lantern"
+  }
+}

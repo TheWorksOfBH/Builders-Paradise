@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:soul_sandstone",
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:cut_soul_sandstone_wall"
+  }
+}

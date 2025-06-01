@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/netherite_tile_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/netherite_tiles"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/netherite_tile_slab_top"
+    }
+  }
+}

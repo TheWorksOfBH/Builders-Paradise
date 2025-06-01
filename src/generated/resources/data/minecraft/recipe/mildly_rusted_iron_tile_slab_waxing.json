@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "buildersparadise:mildly_rusted_iron_tile_slab",
+    "minecraft:honeycomb"
+  ],
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:waxed_mildly_rusted_iron_tile_slab"
+  }
+}

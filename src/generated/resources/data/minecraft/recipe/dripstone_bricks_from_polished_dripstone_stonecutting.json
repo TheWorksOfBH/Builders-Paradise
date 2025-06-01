@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:polished_dripstone",
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:dripstone_bricks"
+  }
+}

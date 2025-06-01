@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:waxed_mildly_rusted_iron_block",
+  "result": {
+    "count": 8,
+    "id": "buildersparadise:waxed_mildly_rusted_iron_tile_slab"
+  }
+}

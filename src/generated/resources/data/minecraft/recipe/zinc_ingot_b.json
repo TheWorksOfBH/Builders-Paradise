@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "buildersparadise:zinc_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "buildersparadise:zinc_ingot"
+  }
+}

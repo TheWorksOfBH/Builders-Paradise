@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "tungsten_ingot",
+  "ingredient": "buildersparadise:deepslate_tungsten_ore",
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:tungsten_ingot"
+  }
+}

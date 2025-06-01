@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "buildersparadise:block/really_corroded_zinc_tiles",
+    "side": "buildersparadise:block/really_corroded_zinc_tiles",
+    "top": "buildersparadise:block/really_corroded_zinc_tiles"
+  }
+}

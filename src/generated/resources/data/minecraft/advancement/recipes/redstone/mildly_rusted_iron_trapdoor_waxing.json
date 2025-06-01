@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mildly_rusted_iron_trapdoor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "buildersparadise:mildly_rusted_iron_trapdoor"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:mildly_rusted_iron_trapdoor_waxing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mildly_rusted_iron_trapdoor"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:mildly_rusted_iron_trapdoor_waxing"
+    ]
+  }
+}

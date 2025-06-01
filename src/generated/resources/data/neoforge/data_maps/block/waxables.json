@@ -1,0 +1,196 @@
+{
+  "values": {
+    "buildersparadise:barely_heavy_weighted_pressure_plate": {
+      "waxed": "buildersparadise:waxed_barely_heavy_weighted_pressure_plate"
+    },
+    "buildersparadise:exposed_medium_weighted_pressure_plate": {
+      "waxed": "buildersparadise:waxed_exposed_medium_weighted_pressure_plate"
+    },
+    "buildersparadise:extremely_rusted_heavy_weighted_pressure_plate": {
+      "waxed": "buildersparadise:waxed_extremely_rusted_heavy_weighted_pressure_plate"
+    },
+    "buildersparadise:extremely_rusted_iron_bars": {
+      "waxed": "buildersparadise:waxed_extremely_rusted_iron_bars"
+    },
+    "buildersparadise:extremely_rusted_iron_block": {
+      "waxed": "buildersparadise:waxed_extremely_rusted_iron_block"
+    },
+    "buildersparadise:extremely_rusted_iron_door": {
+      "waxed": "buildersparadise:waxed_extremely_rusted_iron_door"
+    },
+    "buildersparadise:extremely_rusted_iron_tile_slab": {
+      "waxed": "buildersparadise:waxed_extremely_rusted_iron_tile_slab"
+    },
+    "buildersparadise:extremely_rusted_iron_tile_stairs": {
+      "waxed": "buildersparadise:waxed_extremely_rusted_iron_tile_stairs"
+    },
+    "buildersparadise:extremely_rusted_iron_tiles": {
+      "waxed": "buildersparadise:waxed_extremely_rusted_iron_tiles"
+    },
+    "buildersparadise:extremely_rusted_iron_trapdoor": {
+      "waxed": "buildersparadise:waxed_extremely_rusted_iron_trapdoor"
+    },
+    "buildersparadise:iron_tile_slab": {
+      "waxed": "buildersparadise:waxed_iron_tile_slab"
+    },
+    "buildersparadise:iron_tile_stairs": {
+      "waxed": "buildersparadise:waxed_iron_tile_stairs"
+    },
+    "buildersparadise:iron_tiles": {
+      "waxed": "buildersparadise:waxed_iron_tiles"
+    },
+    "buildersparadise:medium_weighted_pressure_plate": {
+      "waxed": "buildersparadise:waxed_medium_weighted_pressure_plate"
+    },
+    "buildersparadise:mildly_rusted_heavy_weighted_pressure_plate": {
+      "waxed": "buildersparadise:waxed_mildly_rusted_heavy_weighted_pressure_plate"
+    },
+    "buildersparadise:mildly_rusted_iron_bars": {
+      "waxed": "buildersparadise:waxed_mildly_rusted_iron_bars"
+    },
+    "buildersparadise:mildly_rusted_iron_block": {
+      "waxed": "buildersparadise:waxed_mildly_rusted_iron_block"
+    },
+    "buildersparadise:mildly_rusted_iron_door": {
+      "waxed": "buildersparadise:waxed_mildly_rusted_iron_door"
+    },
+    "buildersparadise:mildly_rusted_iron_tile_slab": {
+      "waxed": "buildersparadise:waxed_mildly_rusted_iron_tile_slab"
+    },
+    "buildersparadise:mildly_rusted_iron_tile_stairs": {
+      "waxed": "buildersparadise:waxed_mildly_rusted_iron_tile_stairs"
+    },
+    "buildersparadise:mildly_rusted_iron_tiles": {
+      "waxed": "buildersparadise:waxed_mildly_rusted_iron_tiles"
+    },
+    "buildersparadise:mildly_rusted_iron_trapdoor": {
+      "waxed": "buildersparadise:waxed_mildly_rusted_iron_trapdoor"
+    },
+    "buildersparadise:moderately_rusted_heavy_weighted_pressure_plate": {
+      "waxed": "buildersparadise:waxed_moderately_rusted_heavy_weighted_pressure_plate"
+    },
+    "buildersparadise:moderately_rusted_iron_bars": {
+      "waxed": "buildersparadise:waxed_moderately_rusted_iron_bars"
+    },
+    "buildersparadise:moderately_rusted_iron_block": {
+      "waxed": "buildersparadise:waxed_moderately_rusted_iron_block"
+    },
+    "buildersparadise:moderately_rusted_iron_door": {
+      "waxed": "buildersparadise:waxed_moderately_rusted_iron_door"
+    },
+    "buildersparadise:moderately_rusted_iron_tile_slab": {
+      "waxed": "buildersparadise:waxed_moderately_rusted_iron_tile_slab"
+    },
+    "buildersparadise:moderately_rusted_iron_tile_stairs": {
+      "waxed": "buildersparadise:waxed_moderately_rusted_iron_tile_stairs"
+    },
+    "buildersparadise:moderately_rusted_iron_tiles": {
+      "waxed": "buildersparadise:waxed_moderately_rusted_iron_tiles"
+    },
+    "buildersparadise:moderately_rusted_iron_trapdoor": {
+      "waxed": "buildersparadise:waxed_moderately_rusted_iron_trapdoor"
+    },
+    "buildersparadise:oxidized_medium_weighted_pressure_plate": {
+      "waxed": "buildersparadise:waxed_oxidized_medium_weighted_pressure_plate"
+    },
+    "buildersparadise:really_corroded_barely_heavy_weighted_pressure_plate": {
+      "waxed": "buildersparadise:waxed_really_corroded_barely_heavy_weighted_pressure_plate"
+    },
+    "buildersparadise:really_corroded_zinc_block": {
+      "waxed": "buildersparadise:waxed_really_corroded_zinc_block"
+    },
+    "buildersparadise:really_corroded_zinc_door": {
+      "waxed": "buildersparadise:waxed_really_corroded_zinc_door"
+    },
+    "buildersparadise:really_corroded_zinc_tile_slab": {
+      "waxed": "buildersparadise:waxed_really_corroded_zinc_tile_slab"
+    },
+    "buildersparadise:really_corroded_zinc_tile_stairs": {
+      "waxed": "buildersparadise:waxed_really_corroded_zinc_tile_stairs"
+    },
+    "buildersparadise:really_corroded_zinc_tiles": {
+      "waxed": "buildersparadise:waxed_really_corroded_zinc_tiles"
+    },
+    "buildersparadise:really_corroded_zinc_trapdoor": {
+      "waxed": "buildersparadise:waxed_really_corroded_zinc_trapdoor"
+    },
+    "buildersparadise:slightly_corroded_barely_heavy_weighted_pressure_plate": {
+      "waxed": "buildersparadise:waxed_slightly_corroded_barely_heavy_weighted_pressure_plate"
+    },
+    "buildersparadise:slightly_corroded_zinc_block": {
+      "waxed": "buildersparadise:waxed_slightly_corroded_zinc_block"
+    },
+    "buildersparadise:slightly_corroded_zinc_door": {
+      "waxed": "buildersparadise:waxed_slightly_corroded_zinc_door"
+    },
+    "buildersparadise:slightly_corroded_zinc_tile_slab": {
+      "waxed": "buildersparadise:waxed_slightly_corroded_zinc_tile_slab"
+    },
+    "buildersparadise:slightly_corroded_zinc_tile_stairs": {
+      "waxed": "buildersparadise:waxed_slightly_corroded_zinc_tile_stairs"
+    },
+    "buildersparadise:slightly_corroded_zinc_tiles": {
+      "waxed": "buildersparadise:waxed_slightly_corroded_zinc_tiles"
+    },
+    "buildersparadise:slightly_corroded_zinc_trapdoor": {
+      "waxed": "buildersparadise:waxed_slightly_corroded_zinc_trapdoor"
+    },
+    "buildersparadise:somewhat_corroded_barely_heavy_weighted_pressure_plate": {
+      "waxed": "buildersparadise:waxed_somewhat_corroded_barely_heavy_weighted_pressure_plate"
+    },
+    "buildersparadise:somewhat_corroded_zinc_block": {
+      "waxed": "buildersparadise:waxed_somewhat_corroded_zinc_block"
+    },
+    "buildersparadise:somewhat_corroded_zinc_door": {
+      "waxed": "buildersparadise:waxed_somewhat_corroded_zinc_door"
+    },
+    "buildersparadise:somewhat_corroded_zinc_tile_slab": {
+      "waxed": "buildersparadise:waxed_somewhat_corroded_zinc_tile_slab"
+    },
+    "buildersparadise:somewhat_corroded_zinc_tile_stairs": {
+      "waxed": "buildersparadise:waxed_somewhat_corroded_zinc_tile_stairs"
+    },
+    "buildersparadise:somewhat_corroded_zinc_tiles": {
+      "waxed": "buildersparadise:waxed_somewhat_corroded_zinc_tiles"
+    },
+    "buildersparadise:somewhat_corroded_zinc_trapdoor": {
+      "waxed": "buildersparadise:waxed_somewhat_corroded_zinc_trapdoor"
+    },
+    "buildersparadise:weathered_medium_weighted_pressure_plate": {
+      "waxed": "buildersparadise:waxed_weathered_medium_weighted_pressure_plate"
+    },
+    "buildersparadise:zinc_block": {
+      "waxed": "buildersparadise:waxed_zinc_block"
+    },
+    "buildersparadise:zinc_door": {
+      "waxed": "buildersparadise:waxed_zinc_door"
+    },
+    "buildersparadise:zinc_tile_slab": {
+      "waxed": "buildersparadise:waxed_zinc_tile_slab"
+    },
+    "buildersparadise:zinc_tile_stairs": {
+      "waxed": "buildersparadise:waxed_zinc_tile_stairs"
+    },
+    "buildersparadise:zinc_tiles": {
+      "waxed": "buildersparadise:waxed_zinc_tiles"
+    },
+    "buildersparadise:zinc_trapdoor": {
+      "waxed": "buildersparadise:waxed_zinc_trapdoor"
+    },
+    "minecraft:heavy_weighted_pressure_plate": {
+      "waxed": "buildersparadise:waxed_heavy_weighted_pressure_plate"
+    },
+    "minecraft:iron_bars": {
+      "waxed": "buildersparadise:waxed_iron_bars"
+    },
+    "minecraft:iron_block": {
+      "waxed": "buildersparadise:waxed_iron_block"
+    },
+    "minecraft:iron_door": {
+      "waxed": "buildersparadise:waxed_iron_door"
+    },
+    "minecraft:iron_trapdoor": {
+      "waxed": "buildersparadise:waxed_iron_trapdoor"
+    }
+  }
+}

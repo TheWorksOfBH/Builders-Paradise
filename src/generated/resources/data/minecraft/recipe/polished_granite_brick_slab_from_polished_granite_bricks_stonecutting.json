@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:polished_granite_bricks",
+  "result": {
+    "count": 2,
+    "id": "buildersparadise:polished_granite_brick_slab"
+  }
+}
