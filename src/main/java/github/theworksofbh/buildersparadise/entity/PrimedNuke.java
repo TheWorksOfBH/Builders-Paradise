@@ -25,6 +25,8 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.portal.TeleportTransition;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class PrimedNuke extends PrimedTnt {
@@ -33,6 +35,8 @@ public class PrimedNuke extends PrimedTnt {
     private float explosionPower;
     private LivingEntity owner;
     private boolean usedPortal;
+    final List<BlockPos> sources = new ArrayList<>();
+
 
     private static final ExplosionDamageCalculator USED_PORTAL_DAMAGE_CALCULATOR = new ExplosionDamageCalculator() {
         public boolean shouldBlockExplode(Explosion p_353087_, BlockGetter p_353096_, BlockPos p_353092_, BlockState p_353086_, float p_353094_) {
@@ -53,14 +57,22 @@ public class PrimedNuke extends PrimedTnt {
     }
 
     public PrimedNuke(Level level, double x, double y, double z, @Nullable LivingEntity owner) {
-        super(level, x, y, z, owner);
+        this(ModEntities.NUKE.get(), level);
+        this.setPos(x, y, z);
+        double d0 = level.random.nextDouble() * (double)((float)Math.PI * 2F);
+        this.setDeltaMovement(-Math.sin(d0) * 0.02, (double)0.2F, -Math.cos(d0) * 0.02);
+        this.setFuse(80);
+        this.xo = x;
+        this.yo = y;
+        this.zo = z;
+        this.owner = owner;
     }
 
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         super.defineSynchedData(builder);
         builder.define(DATA_FUSE_ID, 80);
-        builder.define(DATA_BLOCK_STATE_ID, ModBlocks.NUKE.get().defaultBlockState());
+        builder.define(DATA_BLOCK_STATE_ID, ModBlocks.NUKE.get().withPropertiesOf(this.level().getBlockState(BlockPos.containing(this.getX(), this.getY(), this.getZ()))));
     }
 
     @Override
@@ -137,7 +149,22 @@ public class PrimedNuke extends PrimedTnt {
                 true,
                 Level.ExplosionInteraction.TNT
         );
+
+        for (int x = -15; x < 16; ++x) {
+            for (int y = 4; y < 16; ++y) {
+                for (int z = -15; z < 16; ++z) {
+                    if (level().getBlockState(new BlockPos((int) this.getX() + x, (int) this.getY() - y, (int) this.getZ() + z)).isAir()) {
+                        level().setBlockAndUpdate(new BlockPos((int) this.getX() + x, (int) this.getY() - y, (int) this.getZ() + z), ModBlocks.NUCLEAR_WASTE.get().defaultBlockState());
+                    }
+
+                    if (level().getBlockState(new BlockPos((int) this.getX() + x, (int) this.getY() - y, (int) this.getZ() + z)).is(Blocks.FIRE)) {
+                        level().setBlockAndUpdate(new BlockPos((int) this.getX() + x, (int) this.getY() - y, (int) this.getZ() + z), ModBlocks.NUCLEAR_WASTE.get().defaultBlockState());
+                    }
+                }
+            }
+        }
     }
+
 
     public boolean isUsedPortal() {
         return usedPortal;
