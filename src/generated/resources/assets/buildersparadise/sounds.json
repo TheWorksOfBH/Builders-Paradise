@@ -1,0 +1,8 @@
+{
+  "block.note_block.trombone": {
+    "sounds": [
+      "buildersparadise:note/trombone"
+    ],
+    "subtitle": "subtitles.block.note_block.note"
+  }
+}

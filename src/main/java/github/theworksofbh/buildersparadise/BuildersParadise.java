@@ -10,6 +10,7 @@ import github.theworksofbh.buildersparadise.fluids.ModFluidTypes;
 import github.theworksofbh.buildersparadise.fluids.ModFluids;
 import github.theworksofbh.buildersparadise.items.ModItems;
 import github.theworksofbh.buildersparadise.loot.ModLootModifiers;
+import github.theworksofbh.buildersparadise.sounds.ModSoundEvents;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -22,6 +23,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.event.level.NoteBlockEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
 
@@ -44,6 +46,7 @@ public class BuildersParadise
 
         ModFluids.register(modEventBus);
         ModFluidTypes.register(modEventBus);
+        ModSoundEvents.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
 
@@ -51,6 +54,7 @@ public class BuildersParadise
         modEventBus.addListener(ModDataGenerators::gatherData);
         modEventBus.addListener(this::addFluidTypes);
         modEventBus.addListener(this::addEntityRenderers);
+        NeoForge.EVENT_BUS.addListener(this::addNoteBlockInstruments);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -63,6 +67,11 @@ public class BuildersParadise
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         CreativeInvConfig.addModItemsToVanillaTabs(event);
+    }
+
+    @SubscribeEvent
+    private void addNoteBlockInstruments(NoteBlockEvent.Play event) {
+        NoteBlockConfig.brassBlockNoteBlock(event);
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

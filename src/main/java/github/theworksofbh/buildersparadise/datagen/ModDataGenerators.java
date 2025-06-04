@@ -27,6 +27,7 @@ public class ModDataGenerators {
         event.createProvider(ModLanguageProvider::new);
         event.createProvider(ModUKLanguageProvider::new);
 
+        event.createProvider(ModSoundDefinitionsProvider::new);
 
         event.createProvider(ModDataMapProvider::new);
 
