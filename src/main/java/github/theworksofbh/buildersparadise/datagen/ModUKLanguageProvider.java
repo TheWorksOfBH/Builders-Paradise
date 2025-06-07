@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 
 public class ModUKLanguageProvider extends LanguageProvider {
     public ModUKLanguageProvider(PackOutput output) {
-        super(output, BuildersParadise.MODID, "en_uk");
+        super(output, BuildersParadise.MODID, "en_gb");
     }
 
     protected Iterable<Block> getKnownBlocks() {
