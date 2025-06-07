@@ -64,7 +64,7 @@ public class ModRecipesProvider extends RecipeProvider {
                 .pattern("SSS")
                 .unlockedBy("has_elder_prismarine_shard", this.has(ModItems.ELDER_PRISMARINE_SHARD.get()))
                 .save(this.output);
-        shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.SEA_LANTERN)
+        shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ELDER_SEA_LANTERN.get())
                 .define('S', ModItems.ELDER_PRISMARINE_SHARD.get())
                 .define('C', ModItems.ELDER_PRISMARINE_CRYSTALS.get())
                 .pattern("SCS")

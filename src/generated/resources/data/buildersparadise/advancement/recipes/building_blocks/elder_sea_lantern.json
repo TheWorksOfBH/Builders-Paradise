@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:sea_lantern"
+        "recipe": "buildersparadise:elder_sea_lantern"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:sea_lantern"
+      "buildersparadise:elder_sea_lantern"
     ]
   }
 }
