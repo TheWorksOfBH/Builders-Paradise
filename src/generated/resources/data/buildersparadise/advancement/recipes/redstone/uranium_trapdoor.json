@@ -3,15 +3,15 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "buildersparadise:brass_ingot"
+        "recipe": "buildersparadise:uranium_trapdoor"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_zinc_ingot": {
+    "has_uranium_ingot": {
       "conditions": {
         "items": [
           {
-            "items": "buildersparadise:zinc_ingot"
+            "items": "buildersparadise:uranium_ingot"
           }
         ]
       },
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_zinc_ingot"
+      "has_uranium_ingot"
     ]
   ],
   "rewards": {
     "recipes": [
-      "buildersparadise:brass_ingot"
+      "buildersparadise:uranium_trapdoor"
     ]
   }
 }

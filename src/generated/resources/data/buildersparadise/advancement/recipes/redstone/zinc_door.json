@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "buildersparadise:brass_ingot"
+        "recipe": "buildersparadise:zinc_door"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "buildersparadise:brass_ingot"
+      "buildersparadise:zinc_door"
     ]
   }
 }

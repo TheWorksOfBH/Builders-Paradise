@@ -45,11 +45,11 @@ public class ModRecipesProvider extends RecipeProvider {
         generateForEnabledBlockFamilies(FeatureFlagSet.of(FeatureFlags.VANILLA));
         stoneCuttingRecipes();
         waxedBlocks();
-        doorBuilder(ModItems.GOLD_DOOR.get(), Ingredient.of(Items.GOLD_INGOT));
-        trapdoorBuilder(ModItems.GOLD_TRAPDOOR.get(), Ingredient.of(Items.GOLD_INGOT));
+        doorBuilder(ModItems.GOLD_DOOR.get(), Ingredient.of(Items.GOLD_INGOT)).unlockedBy(getHasName(Items.GOLD_INGOT), this.has(Items.GOLD_INGOT)).save(this.output);
+        trapdoorBuilder(ModItems.GOLD_TRAPDOOR.get(), Ingredient.of(Items.GOLD_INGOT)).unlockedBy(getHasName(Items.GOLD_INGOT), this.has(Items.GOLD_INGOT)).save(this.output);
         pressurePlate(ModItems.MEDIUM_WEIGHTED_PRESSURE_PLATE.get(), Items.COPPER_INGOT);
-        doorBuilder(ModItems.NETHERITE_DOOR.get(), Ingredient.of(Items.NETHERITE_INGOT));
-        trapdoorBuilder(ModItems.NETHERITE_DOOR.get(), Ingredient.of(Items.NETHERITE_INGOT));
+        doorBuilder(ModItems.NETHERITE_DOOR.get(), Ingredient.of(Items.NETHERITE_INGOT)).unlockedBy(getHasName(Items.NETHERITE_INGOT), this.has(Items.NETHERITE_INGOT)).save(this.output);
+        trapdoorBuilder(ModItems.NETHERITE_TRAPDOOR.get(), Ingredient.of(Items.NETHERITE_INGOT)).unlockedBy(getHasName(Items.NETHERITE_INGOT), this.has(Items.NETHERITE_INGOT)).save(this.output);
         pressurePlate(ModItems.PLAYER_ONLY_PRESSURE_PLATE.get(), Items.NETHERITE_INGOT);
         nineBlockStorageRecipes(RecipeCategory.MISC, Items.CHARCOAL, RecipeCategory.BUILDING_BLOCKS, ModItems.CHARCOAL_BLOCK.get());
         twoByTwoPacker(RecipeCategory.BUILDING_BLOCKS, ModItems.SOUL_SANDSTONE.get(), Items.SOUL_SAND);
@@ -89,8 +89,8 @@ public class ModRecipesProvider extends RecipeProvider {
                 ModItems.ZINC_BLOCK.get(),
                 "zinc_block",
                 null);
-        doorBuilder(ModItems.ZINC_DOOR.get(), Ingredient.of(ModItems.ZINC_INGOT.get()));
-        trapdoorBuilder(ModItems.ZINC_TRAPDOOR.get(), Ingredient.of(ModItems.ZINC_INGOT.get()));
+        doorBuilder(ModItems.ZINC_DOOR.get(), Ingredient.of(ModItems.ZINC_INGOT.get())).unlockedBy(getHasName(ModItems.ZINC_INGOT), this.has(ModItems.ZINC_INGOT.get())).save(this.output);
+        trapdoorBuilder(ModItems.ZINC_TRAPDOOR.get(), Ingredient.of(ModItems.ZINC_INGOT.get())).unlockedBy(getHasName(ModItems.ZINC_INGOT), this.has(ModItems.ZINC_INGOT.get())).save(this.output);
         pressurePlate(ModItems.BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModItems.ZINC_INGOT.get());
 
         oreSmelting(SILVER_SMELTABLES, RecipeCategory.MISC, ModItems.SILVER_INGOT.get(), 1.0F, 200, "silver_ingot");
@@ -108,8 +108,8 @@ public class ModRecipesProvider extends RecipeProvider {
                 ModItems.SILVER_BLOCK.get(),
                 "silver_block",
                 null);
-        doorBuilder(ModItems.SILVER_DOOR.get(), Ingredient.of(ModItems.SILVER_INGOT.get()));
-        trapdoorBuilder(ModItems.SILVER_TRAPDOOR.get(), Ingredient.of(ModItems.SILVER_INGOT.get()));
+        doorBuilder(ModItems.SILVER_DOOR.get(), Ingredient.of(ModItems.SILVER_INGOT.get())).unlockedBy(getHasName(ModItems.SILVER_INGOT), this.has(ModItems.SILVER_INGOT.get())).save(this.output);
+        trapdoorBuilder(ModItems.SILVER_TRAPDOOR.get(), Ingredient.of(ModItems.SILVER_INGOT.get())).unlockedBy(getHasName(ModItems.SILVER_INGOT), this.has(ModItems.SILVER_INGOT.get())).save(this.output);
         pressurePlate(ModItems.NOTICEABLY_LIGHT_WEIGHTED_PRESSURE_PLATE.get(), ModItems.SILVER_INGOT.get());
 
         oreSmelting(TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT.get(), 1.0F, 200, "tin_ingot");
@@ -127,8 +127,8 @@ public class ModRecipesProvider extends RecipeProvider {
                 ModItems.TIN_BLOCK.get(),
                 "tin_block",
                 null);
-        doorBuilder(ModItems.TIN_DOOR.get(), Ingredient.of(ModItems.TIN_INGOT.get()));
-        trapdoorBuilder(ModItems.TIN_TRAPDOOR.get(), Ingredient.of(ModItems.TIN_INGOT.get()));
+        doorBuilder(ModItems.TIN_DOOR.get(), Ingredient.of(ModItems.TIN_INGOT.get())).unlockedBy(getHasName(ModItems.TIN_INGOT), this.has(ModItems.TIN_INGOT.get())).save(this.output);
+        trapdoorBuilder(ModItems.TIN_TRAPDOOR.get(), Ingredient.of(ModItems.TIN_INGOT.get())).unlockedBy(getHasName(ModItems.TIN_INGOT), this.has(ModItems.TIN_INGOT.get())).save(this.output);
         pressurePlate(ModItems.BARELY_LIGHT_WEIGHTED_PRESSURE_PLATE.get(), ModItems.TIN_INGOT.get());
 
         oreSmelting(TUNGSTEN_SMELTABLES, RecipeCategory.MISC, ModItems.TUNGSTEN_INGOT.get(), 1.0F, 200, "tungsten_ingot");
@@ -146,8 +146,8 @@ public class ModRecipesProvider extends RecipeProvider {
                 ModItems.TUNGSTEN_BLOCK.get(),
                 "tungsten_block",
                 null);
-        doorBuilder(ModItems.TUNGSTEN_DOOR.get(), Ingredient.of(ModItems.TUNGSTEN_INGOT.get()));
-        trapdoorBuilder(ModItems.TUNGSTEN_TRAPDOOR.get(), Ingredient.of(ModItems.TUNGSTEN_INGOT.get()));
+        doorBuilder(ModItems.TUNGSTEN_DOOR.get(), Ingredient.of(ModItems.TUNGSTEN_INGOT.get())).unlockedBy(getHasName(ModItems.TUNGSTEN_INGOT), this.has(ModItems.TUNGSTEN_INGOT.get())).save(this.output);
+        trapdoorBuilder(ModItems.TUNGSTEN_TRAPDOOR.get(), Ingredient.of(ModItems.TUNGSTEN_INGOT.get())).unlockedBy(getHasName(ModItems.TUNGSTEN_INGOT), this.has(ModItems.TUNGSTEN_INGOT.get())).save(this.output);
         pressurePlate(ModItems.EXTRAORDINARILY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModItems.TUNGSTEN_INGOT.get());
 
         oreSmelting(PLATINUM_SMELTABLES, RecipeCategory.MISC, ModItems.PLATINUM_INGOT.get(), 1.0F, 200, "platinum_ingot");
@@ -165,8 +165,8 @@ public class ModRecipesProvider extends RecipeProvider {
                 ModItems.PLATINUM_BLOCK.get(),
                 "platinum_block",
                 null);
-        doorBuilder(ModItems.PLATINUM_DOOR.get(), Ingredient.of(ModItems.PLATINUM_INGOT.get()));
-        trapdoorBuilder(ModItems.PLATINUM_TRAPDOOR.get(), Ingredient.of(ModItems.PLATINUM_INGOT.get()));
+        doorBuilder(ModItems.PLATINUM_DOOR.get(), Ingredient.of(ModItems.PLATINUM_INGOT.get())).unlockedBy(getHasName(ModItems.PLATINUM_INGOT), this.has(ModItems.PLATINUM_INGOT.get())).save(this.output);
+        trapdoorBuilder(ModItems.PLATINUM_TRAPDOOR.get(), Ingredient.of(ModItems.PLATINUM_INGOT.get())).unlockedBy(getHasName(ModItems.PLATINUM_INGOT), this.has(ModItems.PLATINUM_INGOT.get())).save(this.output);
         pressurePlate(ModItems.EXTRAORDINARILY_LIGHT_WEIGHTED_PRESSURE_PLATE.get(), ModItems.PLATINUM_INGOT.get());
 
         oreSmelting(LEAD_SMELTABLES, RecipeCategory.MISC, ModItems.LEAD_INGOT.get(), 1.0F, 200, "lead_ingot");
@@ -184,8 +184,8 @@ public class ModRecipesProvider extends RecipeProvider {
                 ModItems.LEAD_BLOCK.get(),
                 "lead_block",
                 null);
-        doorBuilder(ModItems.LEAD_DOOR.get(), Ingredient.of(ModItems.LEAD_INGOT.get()));
-        trapdoorBuilder(ModItems.LEAD_TRAPDOOR.get(), Ingredient.of(ModItems.LEAD_INGOT.get()));
+        doorBuilder(ModItems.LEAD_DOOR.get(), Ingredient.of(ModItems.LEAD_INGOT.get())).unlockedBy(getHasName(ModItems.LEAD_INGOT), this.has(ModItems.LEAD_INGOT.get())).save(this.output);
+        trapdoorBuilder(ModItems.LEAD_TRAPDOOR.get(), Ingredient.of(ModItems.LEAD_INGOT.get())).unlockedBy(getHasName(ModItems.LEAD_INGOT), this.has(ModItems.LEAD_INGOT.get())).save(this.output);
         pressurePlate(ModItems.NOTICEABLY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModItems.LEAD_INGOT.get());
 
 
@@ -204,8 +204,8 @@ public class ModRecipesProvider extends RecipeProvider {
                 ModItems.URANIUM_BLOCK.get(),
                 "uranium_block",
                 null);
-        doorBuilder(ModItems.URANIUM_DOOR.get(), Ingredient.of(ModItems.URANIUM_INGOT.get()));
-        trapdoorBuilder(ModItems.URANIUM_TRAPDOOR.get(), Ingredient.of(ModItems.URANIUM_INGOT.get()));
+        doorBuilder(ModItems.URANIUM_DOOR.get(), Ingredient.of(ModItems.URANIUM_INGOT.get())).unlockedBy(getHasName(ModItems.URANIUM_INGOT), this.has(ModItems.URANIUM_INGOT.get())).save(this.output);
+        trapdoorBuilder(ModItems.URANIUM_TRAPDOOR.get(), Ingredient.of(ModItems.URANIUM_INGOT.get())).unlockedBy(getHasName(ModItems.URANIUM_INGOT), this.has(ModItems.URANIUM_INGOT.get())).save(this.output);
         pressurePlate(ModItems.NEGLIGIBLE_WEIGHTED_PRESSURE_PLATE.get(), ModItems.URANIUM_INGOT.get());
 
         smeltingResultFromBase(ModItems.URANIUM_NUGGET.get(), Items.REDSTONE);
@@ -229,15 +229,15 @@ public class ModRecipesProvider extends RecipeProvider {
                 ModItems.BRONZE_BLOCK.get(),
                 "bronze_block",
                 null);
-        doorBuilder(ModItems.BRONZE_DOOR.get(), Ingredient.of(ModItems.BRONZE_INGOT.get()));
-        trapdoorBuilder(ModItems.BRONZE_TRAPDOOR.get(), Ingredient.of(ModItems.BRONZE_INGOT.get()));
+        doorBuilder(ModItems.BRONZE_DOOR.get(), Ingredient.of(ModItems.BRONZE_INGOT.get())).unlockedBy(getHasName(ModItems.BRONZE_INGOT), this.has(ModItems.BRONZE_INGOT.get())).save(this.output);
+        trapdoorBuilder(ModItems.BRONZE_TRAPDOOR.get(), Ingredient.of(ModItems.BRONZE_INGOT.get())).unlockedBy(getHasName(ModItems.BRONZE_INGOT), this.has(ModItems.BRONZE_INGOT.get())).save(this.output);
         pressurePlate(ModItems.PASSIVE_MOB_ONLY_PRESSURE_PLATE.get(), ModItems.BRONZE_INGOT.get());
 
         shapeless(RecipeCategory.MISC, ModItems.BRASS_INGOT.get())
                 .requires(Items.COPPER_INGOT, 4)
                 .requires(ModItems.ZINC_INGOT, 4)
                 .group("brass_ingot")
-                .unlockedBy("has_tin_ingot", this.has(ModItems.TIN_INGOT))
+                .unlockedBy("has_zinc_ingot", this.has(ModItems.ZINC_INGOT))
                 .save(this.output);
         eightyOneBlockStorageRecipes(
                 RecipeCategory.MISC,
@@ -252,8 +252,8 @@ public class ModRecipesProvider extends RecipeProvider {
                 ModItems.BRASS_BLOCK.get(),
                 "brass_block",
                 null);
-        doorBuilder(ModItems.BRASS_DOOR.get(), Ingredient.of(ModItems.BRASS_INGOT.get()));
-        trapdoorBuilder(ModItems.BRASS_TRAPDOOR.get(), Ingredient.of(ModItems.BRASS_INGOT.get()));
+        doorBuilder(ModItems.BRASS_DOOR.get(), Ingredient.of(ModItems.BRASS_INGOT.get())).unlockedBy(getHasName(ModItems.BRASS_INGOT), this.has(ModItems.BRASS_INGOT.get())).save(this.output);
+        trapdoorBuilder(ModItems.BRASS_TRAPDOOR.get(), Ingredient.of(ModItems.BRASS_INGOT.get())).unlockedBy(getHasName(ModItems.BRASS_INGOT), this.has(ModItems.BRASS_INGOT.get())).save(this.output);
         pressurePlate(ModItems.HOSTILE_MOB_ONLY_PRESSURE_PLATE.get(), ModItems.BRASS_INGOT.get());
 
         shapeless(RecipeCategory.MISC, ModItems.STEEL_INGOT.get())
@@ -275,8 +275,8 @@ public class ModRecipesProvider extends RecipeProvider {
                 ModItems.STEEL_BLOCK.get(),
                 "steel_block",
                 null);
-        doorBuilder(ModItems.STEEL_DOOR.get(), Ingredient.of(ModItems.STEEL_INGOT.get()));
-        trapdoorBuilder(ModItems.STEEL_TRAPDOOR.get(), Ingredient.of(ModItems.STEEL_INGOT.get()));
+        doorBuilder(ModItems.STEEL_DOOR.get(), Ingredient.of(ModItems.STEEL_INGOT.get())).unlockedBy(getHasName(ModItems.STEEL_INGOT), this.has(ModItems.STEEL_INGOT.get())).save(this.output);
+        trapdoorBuilder(ModItems.STEEL_TRAPDOOR.get(), Ingredient.of(ModItems.STEEL_INGOT.get())).unlockedBy(getHasName(ModItems.STEEL_INGOT), this.has(ModItems.STEEL_INGOT.get())).save(this.output);
         pressurePlate(ModItems.VILLAGER_ONLY_PRESSURE_PLATE.get(), ModItems.STEEL_INGOT.get());
         shapeless(RecipeCategory.TOOLS, Items.FLINT_AND_STEEL)
                 .requires(ModItems.STEEL_INGOT).requires(Items.FLINT)
