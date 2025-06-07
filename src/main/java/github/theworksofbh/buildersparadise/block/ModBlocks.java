@@ -443,7 +443,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CUT_BRONZE = registerBlockVariant("cut_bronze", () -> BRONZE_BLOCK.get());
     public static final DeferredBlock<SlabBlock> CUT_BRONZE_SLAB = registerSlabBlock("cut_bronze_slab", () -> CUT_BRONZE.get());
     public static final DeferredBlock<StairBlock> CUT_BRONZE_STAIRS = registerStairBlock("cut_bronze_stairs", () -> CUT_BRONZE.get());
-    public static final DeferredBlock<DoorBlock> BRONZE_DOOR = registerDoorBlock("bronze_door", ModBlockSetTypes.BRONZE, () -> GOLD_DOOR.get());
+    public static final DeferredBlock<DoorBlock> BRONZE_DOOR = registerDoorBlock("bronze_door", ModBlockSetTypes.BRONZE, () -> Blocks.COPPER_DOOR);
     public static final DeferredBlock<TrapDoorBlock> BRONZE_TRAPDOOR = registerTrapdoorBlock("bronze_trapdoor", ModBlockSetTypes.BRONZE, () -> Blocks.COPPER_TRAPDOOR);
     public static final DeferredBlock<AnimalOnlyPressurePlateBlock> PASSIVE_MOB_ONLY_PRESSURE_PLATE = registerAnimalPressurePlate("passive_mob_only_pressure_plate",  ModBlockSetTypes.BRONZE, () -> BRONZE_BLOCK.get());
 
@@ -451,7 +451,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> BRASS_TILES = registerBlockVariant("brass_tiles", () -> BRASS_BLOCK.get());
     public static final DeferredBlock<SlabBlock> BRASS_TILE_SLAB = registerSlabBlock("brass_tile_slab", () -> BRASS_TILES.get());
     public static final DeferredBlock<StairBlock> BRASS_TILE_STAIRS = registerStairBlock("brass_tile_stairs", () -> BRASS_TILES.get());
-    public static final DeferredBlock<DoorBlock> BRASS_DOOR = registerDoorBlock("brass_door", ModBlockSetTypes.BRASS, () -> GOLD_DOOR.get());
+    public static final DeferredBlock<DoorBlock> BRASS_DOOR = registerDoorBlock("brass_door", ModBlockSetTypes.BRASS, () -> Blocks.COPPER_DOOR);
     public static final DeferredBlock<TrapDoorBlock> BRASS_TRAPDOOR = registerTrapdoorBlock("brass_trapdoor", ModBlockSetTypes.BRASS, () -> Blocks.COPPER_TRAPDOOR);
     public static final DeferredBlock<MonsterOnlyPressurePlateBlock> HOSTILE_MOB_ONLY_PRESSURE_PLATE = registerMonsterPressurePlate("hostile_mob_only_pressure_plate",  ModBlockSetTypes.BRASS, () -> BRASS_BLOCK.get());
 
@@ -459,8 +459,8 @@ public class ModBlocks {
     public static final DeferredBlock<Block> STEEL_TILES = registerBlockVariant("steel_tiles", () -> STEEL_BLOCK.get());
     public static final DeferredBlock<SlabBlock> STEEL_TILE_SLAB = registerSlabBlock("steel_tile_slab", () -> STEEL_TILES.get());
     public static final DeferredBlock<StairBlock> STEEL_TILE_STAIRS = registerStairBlock("steel_tile_stairs", () -> STEEL_TILES.get());
-    public static final DeferredBlock<DoorBlock> STEEL_DOOR = registerDoorBlock("steel_door", ModBlockSetTypes.STEEL, () -> GOLD_DOOR.get());
-    public static final DeferredBlock<TrapDoorBlock> STEEL_TRAPDOOR = registerTrapdoorBlock("steel_trapdoor", ModBlockSetTypes.STEEL, () -> Blocks.COPPER_TRAPDOOR);
+    public static final DeferredBlock<DoorBlock> STEEL_DOOR = registerDoorBlock("steel_door", ModBlockSetTypes.STEEL, () -> Blocks.IRON_DOOR);
+    public static final DeferredBlock<TrapDoorBlock> STEEL_TRAPDOOR = registerTrapdoorBlock("steel_trapdoor", ModBlockSetTypes.STEEL, () -> Blocks.IRON_TRAPDOOR);
     public static final DeferredBlock<NPCOnlyPressurePlateBlock> VILLAGER_ONLY_PRESSURE_PLATE = registerNPCPressurePlate("villager_only_pressure_plate",  ModBlockSetTypes.STEEL, () -> STEEL_BLOCK.get());
 
     public static final DeferredBlock<ModLiquidBlock> NUCLEAR_WASTE = registerLiquid("nuclear_waste", () -> ModFluids.NUCLEAR_WASTE.get());
