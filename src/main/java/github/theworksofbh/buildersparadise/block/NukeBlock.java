@@ -9,6 +9,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.flag.FeatureFlagSet;
@@ -17,6 +18,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Explosion;
+import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
@@ -49,17 +51,22 @@ public class NukeBlock extends TntBlock {
     }
 
     @Deprecated
-    private static void explode(Level level, BlockPos pos, @Nullable LivingEntity entity) {
-        if (!level.isClientSide) {
-            PrimedNuke primedNuke = new PrimedNuke(level, (double)pos.getX() + (double)0.5F, (double)pos.getY(), (double)pos.getZ() + (double)0.5F, entity);
-            level.addFreshEntity(primedNuke);
-            level.playSound((Player)null, primedNuke.getX(), primedNuke.getY(), primedNuke.getZ(), SoundEvents.TNT_PRIMED, SoundSource.BLOCKS, 1.0F, 1.0F);
-            level.gameEvent(entity, GameEvent.PRIME_FUSE, pos);
+    private static boolean prime(Level level, BlockPos pos, @Nullable LivingEntity entity) {
+        if (level instanceof ServerLevel serverlevel) {
+            if (serverlevel.getGameRules().getBoolean(GameRules.RULE_TNT_EXPLODES)) {
+                PrimedNuke primedNuke = new PrimedNuke(level, (double)pos.getX() + (double)0.5F, (double)pos.getY(), (double)pos.getZ() + (double)0.5F, entity);
+                level.addFreshEntity(primedNuke);
+                level.playSound((Entity)null, primedNuke.getX(), primedNuke.getY(), primedNuke.getZ(), SoundEvents.TNT_PRIMED, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.gameEvent(entity, GameEvent.PRIME_FUSE, pos);
+                return true;
+            }
         }
+
+        return false;
     }
 
-    public static void explode(Level level, BlockPos pos) {
-        explode(level, pos, (LivingEntity)null);
+    public static boolean prime(Level level, BlockPos pos) {
+        return prime(level, pos, (LivingEntity)null);
     }
 
     @Override
@@ -103,7 +110,7 @@ public class NukeBlock extends TntBlock {
         return (BlockState)this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
-    public void onCaughtFire(BlockState state, Level world, BlockPos pos, @Nullable Direction face, @Nullable LivingEntity igniter) {
-        explode(world, pos, igniter);
+    public boolean onCaughtFire(BlockState state, Level world, BlockPos pos, @Nullable Direction face, @Nullable LivingEntity igniter) {
+        return prime(world, pos, igniter);
     }
 }

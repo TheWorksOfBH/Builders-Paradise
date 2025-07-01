@@ -1,4 +1,4 @@
-// 1.21.4	2025-06-07T21:44:26.9024412	Tags for minecraft:block mod id buildersparadise
+// 1.21.5	2025-07-01T11:12:23.3942172	Tags for minecraft:block mod id buildersparadise
 f16ed72498bdbab54caa112e77610122057765c4 data/buildersparadise/tags/block/lead_ores.json
 61c3176031c8baf4621bcf242fea17b67a74aae0 data/buildersparadise/tags/block/platinum_ores.json
 5fb7c95573b73e6b2d4df88e29bfe6442611a97c data/buildersparadise/tags/block/silver_ores.json
@@ -6,14 +6,14 @@ f16ed72498bdbab54caa112e77610122057765c4 data/buildersparadise/tags/block/lead_o
 649eeb0c1359ceec863ba926e35e876ea593d98f data/buildersparadise/tags/block/tungsten_ores.json
 42e8c3078cea443b95a2b08a5fa17d596a9916f7 data/buildersparadise/tags/block/uranium_ores.json
 327e60528375c6fd91c600b9b0a98c91361122c0 data/buildersparadise/tags/block/zinc_ores.json
-569a4dee13e6dd144ed769044437763e70cf83ad data/minecraft/tags/block/doors.json
-f61932609a98df863451cdb64380a898e57b21b3 data/minecraft/tags/block/mineable/pickaxe.json
+5e8334baa25c9e71cc0bcc8a30599bc7b10f054d data/minecraft/tags/block/doors.json
+f29cab647972b7a894326f9baec5f2f208ec1830 data/minecraft/tags/block/mineable/pickaxe.json
 24e16fa4d9c15808ebd8949ad8277daec7419fd7 data/minecraft/tags/block/needs_diamond_tool.json
 32eae72348e609ce4eb2a5cc8859f859bea45943 data/minecraft/tags/block/needs_iron_tool.json
 137d53bf4a0c58a657d0a4f88009fdcdc0e292e7 data/minecraft/tags/block/needs_stone_tool.json
-2f74fd549b95e6784c2f7376f95255fbec98a83c data/minecraft/tags/block/pressure_plates.json
-4c46207d0a335a5f7399ab614170f2cfe2fe37bc data/minecraft/tags/block/slabs.json
-4e8525ba65f97150adc813bbc8459f0b33f9aed3 data/minecraft/tags/block/stairs.json
-7d46316d5bcec3e456c336a3d72dcdd612e6e662 data/minecraft/tags/block/trapdoors.json
-b4f87cf31f7534b6c857cc74d4d8b240e808f671 data/minecraft/tags/block/walls.json
+22dca2ccf9bcdf9d1d9517f4bf06707f7dfbccba data/minecraft/tags/block/pressure_plates.json
+93508bd07476c70b4ac28ecf628c6bd116b0b761 data/minecraft/tags/block/slabs.json
+5a8f0e38306e6fab4a693eb1db584919a5a016c4 data/minecraft/tags/block/stairs.json
+5a29d5f11e1ddf5bda5c52c3cdb112074f7bd01a data/minecraft/tags/block/trapdoors.json
+af829483d05304c2ddcdaeb82f816b3babbcc601 data/minecraft/tags/block/walls.json
 7043735c7d47eb75c1a3cdecd0462ccd47d554b2 data/neoforge/tags/block/needs_netherite_tool.json

@@ -4,7 +4,10 @@ import github.theworksofbh.buildersparadise.block.ModBlockFamilies;
 import github.theworksofbh.buildersparadise.block.ModBlocks;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelOutput;
-import net.minecraft.client.data.models.blockstates.*;
+import net.minecraft.client.data.models.MultiVariant;
+import net.minecraft.client.data.models.blockstates.BlockModelDefinitionGenerator;
+import net.minecraft.client.data.models.blockstates.MultiPartGenerator;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.model.*;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.resources.ResourceLocation;
@@ -20,7 +23,7 @@ import java.util.function.Consumer;
 public class ModBlockModelGenerator extends BlockModelGenerators {
 
 
-    public ModBlockModelGenerator(Consumer<BlockStateGenerator> blockStateOutput, ItemModelOutput itemModelOutput, BiConsumer<ResourceLocation, ModelInstance> modelOutput) {
+    public ModBlockModelGenerator(Consumer<BlockModelDefinitionGenerator> blockStateOutput, ItemModelOutput itemModelOutput, BiConsumer<ResourceLocation, ModelInstance> modelOutput) {
         super(blockStateOutput, itemModelOutput, modelOutput);
     }
 
@@ -51,7 +54,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
             mapping.put(TextureSlot.TOP, TextureMapping.getBlockTexture(ModBlocks.SOUL_SANDSTONE.get(), "_top"));
             mapping.put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(ModBlocks.SOUL_SANDSTONE.get(), "_top"));
         } else {
-            TexturedModel texturedModel = texturedModels.getOrDefault(fullBlock, TexturedModel.CUBE.get(fullBlock));
+            TexturedModel texturedModel = BlockModelGenerators.TEXTURED_MODELS.getOrDefault(fullBlock, TexturedModel.CUBE.get(fullBlock));
             mapping = texturedModel.getMapping().put(TextureSlot.WALL, TextureMapping.getBlockTexture(fullBlock));
         }
         if (fullBlock == Blocks.BASALT || fullBlock == Blocks.POLISHED_BASALT || fullBlock == Blocks.QUARTZ_BLOCK) {
@@ -65,13 +68,13 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         } else if (fullBlock == Blocks.SMOOTH_QUARTZ) {
             mapping.put(TextureSlot.WALL, TextureMapping.getBlockTexture(Blocks.QUARTZ_BLOCK, "_bottom"));
         } else {
-            mapping.put(TextureSlot.WALL, TextureMapping.getBlockTexture(fullBlock));
+            mapping.put(TextureSlot.WALL, TextureMapping.getBlockTexture(fullBlock, ""));
         }
         var provider = new BlockFamilyProvider(mapping);
         try {
             Field field = BlockFamilyProvider.class.getDeclaredField("fullBlock");
             field.setAccessible(true);
-            field.set(provider, ModelLocationUtils.getModelLocation(fullBlock));
+            field.set(provider, plainModel(ModelLocationUtils.getModelLocation(fullBlock)));
         } catch (NoSuchFieldException | IllegalAccessException e) {
             throw new RuntimeException(e);
         }
@@ -79,24 +82,24 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
     }
 
     public void copyWeightedPressurePlateModel(Block pressurePlateBlock, Block sourceBlock) {
-        ResourceLocation resourceLocation = ModelTemplates.PRESSURE_PLATE_UP.getDefaultModelLocation(pressurePlateBlock);
-        ResourceLocation resourceLocation1 = ModelTemplates.PRESSURE_PLATE_DOWN.getDefaultModelLocation(pressurePlateBlock);
+        MultiVariant resourceLocation = plainVariant(ModelTemplates.PRESSURE_PLATE_UP.getDefaultModelLocation(pressurePlateBlock));
+        MultiVariant resourceLocation1 = plainVariant(ModelTemplates.PRESSURE_PLATE_DOWN.getDefaultModelLocation(pressurePlateBlock));
         itemModelOutput.copy(pressurePlateBlock.asItem(), sourceBlock.asItem());
-        this.blockStateOutput.accept(MultiVariantGenerator.multiVariant(sourceBlock).with(createEmptyOrFullDispatch(BlockStateProperties.POWER, 1, resourceLocation1, resourceLocation)));
+        this.blockStateOutput.accept(MultiVariantGenerator.dispatch(sourceBlock).with(createEmptyOrFullDispatch(BlockStateProperties.POWER, 1, resourceLocation1, resourceLocation)));
     }
 
     public void copySlabModel(Block slabBlock, Block sourceBlock) {
-        ResourceLocation resourceLocation = ModelTemplates.SLAB_BOTTOM.getDefaultModelLocation(slabBlock);
-        ResourceLocation resourceLocation1 = ModelTemplates.SLAB_TOP.getDefaultModelLocation(slabBlock);
-        ResourceLocation resourceLocation2 = ModelTemplates.CUBE.getDefaultModelLocation(slabBlock);
+        MultiVariant resourceLocation = plainVariant(ModelTemplates.SLAB_BOTTOM.getDefaultModelLocation(slabBlock));
+        MultiVariant resourceLocation1 = plainVariant(ModelTemplates.SLAB_TOP.getDefaultModelLocation(slabBlock));
+        MultiVariant resourceLocation2 = plainVariant(ModelTemplates.CUBE.getDefaultModelLocation(slabBlock));
         itemModelOutput.copy(slabBlock.asItem(), sourceBlock.asItem());
         this.blockStateOutput.accept(createSlab(sourceBlock, resourceLocation, resourceLocation1, resourceLocation2));
     }
 
     public void copyStairModel(Block stairBlock, Block sourceBlock) {
-        ResourceLocation resourceLocation = ModelTemplates.STAIRS_STRAIGHT.getDefaultModelLocation(stairBlock);
-        ResourceLocation resourceLocation1 = ModelTemplates.STAIRS_INNER.getDefaultModelLocation(stairBlock);
-        ResourceLocation resourceLocation2 = ModelTemplates.STAIRS_OUTER.getDefaultModelLocation(stairBlock);
+        MultiVariant resourceLocation = plainVariant(ModelTemplates.STAIRS_STRAIGHT.getDefaultModelLocation(stairBlock));
+        MultiVariant resourceLocation1 = plainVariant(ModelTemplates.STAIRS_INNER.getDefaultModelLocation(stairBlock));
+        MultiVariant resourceLocation2 = plainVariant(ModelTemplates.STAIRS_OUTER.getDefaultModelLocation(stairBlock));
         itemModelOutput.copy(stairBlock.asItem(), sourceBlock.asItem());
         this.blockStateOutput.accept(createStairs(sourceBlock, resourceLocation1, resourceLocation, resourceLocation2));
     }
@@ -106,7 +109,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.blockStateOutput.accept(
                 createSimpleBlock(
                         ModBlocks.WAXED_IRON_BLOCK.get(),
-                        ResourceLocation.parse("minecraft:block/iron_block")
+                        plainVariant(ResourceLocation.parse("minecraft:block/iron_block"))
                 )
         );
     }
@@ -116,14 +119,14 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.blockStateOutput.accept(
                 createDoor(
                         ModBlocks.WAXED_IRON_DOOR.get(),
-                        ResourceLocation.parse("minecraft:block/iron_door_bottom_left"),
-                        ResourceLocation.parse("minecraft:block/iron_door_bottom_left_open"),
-                        ResourceLocation.parse("minecraft:block/iron_door_bottom_right"),
-                        ResourceLocation.parse("minecraft:block/iron_door_bottom_right_open"),
-                        ResourceLocation.parse("minecraft:block/iron_door_top_left"),
-                        ResourceLocation.parse("minecraft:block/iron_door_top_left_open"),
-                        ResourceLocation.parse("minecraft:block/iron_door_top_right"),
-                        ResourceLocation.parse("minecraft:block/iron_door_top_right_open")
+                        plainVariant(ResourceLocation.parse("minecraft:block/iron_door_bottom_left")),
+                        plainVariant(ResourceLocation.parse("minecraft:block/iron_door_bottom_left_open")),
+                        plainVariant(ResourceLocation.parse("minecraft:block/iron_door_bottom_right")),
+                        plainVariant(ResourceLocation.parse("minecraft:block/iron_door_bottom_right_open")),
+                        plainVariant(ResourceLocation.parse("minecraft:block/iron_door_top_left")),
+                        plainVariant(ResourceLocation.parse("minecraft:block/iron_door_top_left_open")),
+                        plainVariant(ResourceLocation.parse("minecraft:block/iron_door_top_right")),
+                        plainVariant(ResourceLocation.parse("minecraft:block/iron_door_top_right_open"))
                 )
         );
     }
@@ -133,9 +136,9 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.blockStateOutput.accept(
                 createTrapdoor(
                         ModBlocks.WAXED_IRON_TRAPDOOR.get(),
-                        ResourceLocation.parse("minecraft:block/iron_trapdoor_top"),
-                        ResourceLocation.parse("minecraft:block/iron_trapdoor_bottom"),
-                        ResourceLocation.parse("minecraft:block/iron_trapdoor_open")
+                        plainVariant(ResourceLocation.parse("minecraft:block/iron_trapdoor_top")),
+                        plainVariant(ResourceLocation.parse("minecraft:block/iron_trapdoor_bottom")),
+                        plainVariant(ResourceLocation.parse("minecraft:block/iron_trapdoor_open"))
                 )
         );
     }
@@ -143,483 +146,151 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
     public void createWaxedIronPressurePlate() {
         this.registerSimpleItemModel(ModBlocks.WAXED_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ResourceLocation.parse("minecraft:block/heavy_weighted_pressure_plate"));
         this.blockStateOutput.accept(
-                MultiVariantGenerator.multiVariant(ModBlocks.WAXED_HEAVY_WEIGHTED_PRESSURE_PLATE.get())
+                MultiVariantGenerator.dispatch(ModBlocks.WAXED_HEAVY_WEIGHTED_PRESSURE_PLATE.get())
                         .with(createEmptyOrFullDispatch(BlockStateProperties.POWER,
                                 1,
-                                ResourceLocation.parse("minecraft:block/heavy_weighted_pressure_plate_down"),
-                                ResourceLocation.parse("minecraft:block/heavy_weighted_pressure_plate")
+                                plainVariant(ResourceLocation.parse("minecraft:block/heavy_weighted_pressure_plate_down")),
+                                plainVariant(ResourceLocation.parse("minecraft:block/heavy_weighted_pressure_plate"))
                         )
                 )
         );
     }
 
-    public ResourceLocation createBars(Block block, String suffix) {
+    public MultiVariant createBars(Block block, String suffix) {
         ResourceLocation parent = ModelLocationUtils.getModelLocation(Blocks.IRON_BARS, suffix);
         TextureSlot barsSlot = TextureSlot.create("bars");
         ModelTemplate modelTemplate = new ModelTemplate(Optional.of(parent), Optional.of(suffix), TextureSlot.PARTICLE, barsSlot, TextureSlot.EDGE);
-        return TexturedModel.createDefault(b -> new TextureMapping()
+        return plainVariant(TexturedModel.createDefault(b -> new TextureMapping()
                         .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(block))
                         .put(barsSlot, TextureMapping.getBlockTexture(block))
                         .put(TextureSlot.EDGE, TextureMapping.getBlockTexture(block)), modelTemplate)
-                .create(block, modelOutput);}
+                .create(block, modelOutput));
+    }
 
     public void createBarsBlock(Block block) {
-        ResourceLocation resourcelocation = createBars(block, "_post_ends");
-        ResourceLocation resourcelocation1 = createBars(block, "_post");
-        ResourceLocation resourcelocation2 = createBars(block, "_cap");
-        ResourceLocation resourcelocation3 = createBars(block, "_cap_alt");
-        ResourceLocation resourcelocation4 = createBars(block, "_side");
-        ResourceLocation resourcelocation5 = createBars(block, "_side_alt");
+        MultiVariant resourcelocation = createBars(block, "_post_ends");
+        MultiVariant resourcelocation1 = createBars(block, "_post");
+        MultiVariant resourcelocation2 = createBars(block, "_cap");
+        MultiVariant resourcelocation3 = createBars(block, "_cap_alt");
+        MultiVariant resourcelocation4 = createBars(block, "_side");
+        MultiVariant resourcelocation5 = createBars(block, "_side_alt");
         this.blockStateOutput.accept(
                 MultiPartGenerator.multiPart(block)
-                        .with(
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation
-                                )
-                        ).with(
-                                Condition.condition()
-                                        .term(
-                                                BlockStateProperties.NORTH,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.EAST,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.SOUTH,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.WEST,
-                                                false
-                                        ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation1
-                                )
-                        ).with(
-                                Condition.condition()
-                                        .term(
-                                                BlockStateProperties.NORTH,
-                                                true
-                                        ).term(
-                                                BlockStateProperties.EAST,
-                                                false)
-                                        .term(
-                                                BlockStateProperties.SOUTH,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.WEST,
-                                                false
-                                        ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation2
-                                )
-                        ).with(
-                                Condition.condition()
-                                        .term(
-                                                BlockStateProperties.NORTH,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.EAST,
-                                                true
-                                        ).term(
-                                                BlockStateProperties.SOUTH,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.WEST,
-                                                false
-                                        ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation2
-                                ).with(
-                                        VariantProperties.Y_ROT,
-                                        VariantProperties.Rotation.R90
-                                )
-                        ).with(
-                                Condition.condition()
-                                        .term(
-                                                BlockStateProperties.NORTH,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.EAST,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.SOUTH,
-                                                true
-                                        ).term(
-                                                BlockStateProperties.WEST,
-                                                false
-                                        ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation3
-                                )
-                        ).with(
-                                Condition.condition().term(
-                                        BlockStateProperties.NORTH,
-                                        false
-                                ).term(
-                                        BlockStateProperties.EAST,
-                                        false
-                                ).term(
-                                        BlockStateProperties.SOUTH,
-                                        false
-                                ).term(
-                                        BlockStateProperties.WEST,
-                                        true
-                                ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation3
-                                ).with(
-                                        VariantProperties.Y_ROT,
-                                        VariantProperties.Rotation.R90
-                                )
-                        ).with(
-                                Condition.condition().term(
-                                        BlockStateProperties.NORTH,
-                                        true
-                                ), Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation4
-                                )
-                        ).with(
-                                Condition.condition().term(
-                                        BlockStateProperties.EAST,
-                                        true
-                                ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation4
-                                ).with(
-                                        VariantProperties.Y_ROT, VariantProperties.Rotation.R90
-                                )
-                        ).with(
-                                Condition.condition().term(
-                                        BlockStateProperties.SOUTH,
-                                        true
-                                ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation5
-                                )
-                        ).with(
-                                Condition.condition().term(
-                                        BlockStateProperties.WEST,
-                                        true
-                                ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation5
-                                ).with(
-                                        VariantProperties.Y_ROT,
-                                        VariantProperties.Rotation.R90
-                                )
-                        )
+                        .with(resourcelocation)
+                        .with(condition().term(BlockStateProperties.NORTH, false)
+                                .term(BlockStateProperties.EAST, false)
+                                .term(BlockStateProperties.SOUTH, false)
+                                .term(BlockStateProperties.WEST, false), resourcelocation1)
+                        .with(condition().term(BlockStateProperties.NORTH, true)
+                                .term(BlockStateProperties.EAST, false)
+                                .term(BlockStateProperties.SOUTH, false)
+                                .term(BlockStateProperties.WEST, false), resourcelocation2)
+                        .with(condition().term(BlockStateProperties.NORTH, false)
+                                .term(BlockStateProperties.EAST, true)
+                                .term(BlockStateProperties.SOUTH, false)
+                                .term(BlockStateProperties.WEST, false), resourcelocation2.with(Y_ROT_90))
+                        .with(condition().term(BlockStateProperties.NORTH, false)
+                                .term(BlockStateProperties.EAST, false)
+                                .term(BlockStateProperties.SOUTH, true)
+                                .term(BlockStateProperties.WEST, false), resourcelocation3)
+                        .with(condition().term(BlockStateProperties.NORTH, false)
+                                .term(BlockStateProperties.EAST, false)
+                                .term(BlockStateProperties.SOUTH, false)
+                                .term(BlockStateProperties.WEST, true), resourcelocation3.with(Y_ROT_90))
+                        .with(condition().term(BlockStateProperties.NORTH, true), resourcelocation4)
+                        .with(condition().term(BlockStateProperties.EAST, true), resourcelocation4.with(Y_ROT_90))
+                        .with(condition().term(BlockStateProperties.SOUTH, true), resourcelocation5)
+                        .with(condition().term(BlockStateProperties.WEST, true), resourcelocation5.with(Y_ROT_90))
         );
         this.registerSimpleFlatItemModel(block);
     }
 
     public void copyBarsModel(Block sourceBlock, Block targetBlock) {
-        ResourceLocation resourcelocation = ModelLocationUtils.getModelLocation(sourceBlock, "_post_ends");
-        ResourceLocation resourcelocation1 = ModelLocationUtils.getModelLocation(sourceBlock, "_post");
-        ResourceLocation resourcelocation2 = ModelLocationUtils.getModelLocation(sourceBlock, "_cap");
-        ResourceLocation resourcelocation3 = ModelLocationUtils.getModelLocation(sourceBlock, "_cap_alt");
-        ResourceLocation resourcelocation4 = ModelLocationUtils.getModelLocation(sourceBlock, "_side");
-        ResourceLocation resourcelocation5 = ModelLocationUtils.getModelLocation(sourceBlock, "_side_alt");
+        MultiVariant resourcelocation = plainVariant(ModelLocationUtils.getModelLocation(sourceBlock, "_post_ends"));
+        MultiVariant resourcelocation1 = plainVariant(ModelLocationUtils.getModelLocation(sourceBlock, "_post"));
+        MultiVariant resourcelocation2 = plainVariant(ModelLocationUtils.getModelLocation(sourceBlock, "_cap"));
+        MultiVariant resourcelocation3 = plainVariant(ModelLocationUtils.getModelLocation(sourceBlock, "_cap_alt"));
+        MultiVariant resourcelocation4 = plainVariant(ModelLocationUtils.getModelLocation(sourceBlock, "_side"));
+        MultiVariant resourcelocation5 = plainVariant(ModelLocationUtils.getModelLocation(sourceBlock, "_side_alt"));
         this.blockStateOutput.accept(
                 MultiPartGenerator.multiPart(targetBlock)
-                        .with(
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation
-                                )
-                        ).with(
-                                Condition.condition()
-                                        .term(
-                                                BlockStateProperties.NORTH,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.EAST,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.SOUTH,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.WEST,
-                                                false
-                                        ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation1
-                                )
-                        ).with(
-                                Condition.condition()
-                                        .term(
-                                                BlockStateProperties.NORTH,
-                                                true
-                                        ).term(
-                                                BlockStateProperties.EAST,
-                                                false)
-                                        .term(
-                                                BlockStateProperties.SOUTH,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.WEST,
-                                                false
-                                        ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation2
-                                )
-                        ).with(
-                                Condition.condition()
-                                        .term(
-                                                BlockStateProperties.NORTH,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.EAST,
-                                                true
-                                        ).term(
-                                                BlockStateProperties.SOUTH,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.WEST,
-                                                false
-                                        ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation2
-                                ).with(
-                                        VariantProperties.Y_ROT,
-                                        VariantProperties.Rotation.R90
-                                )
-                        ).with(
-                                Condition.condition()
-                                        .term(
-                                                BlockStateProperties.NORTH,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.EAST,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.SOUTH,
-                                                true
-                                        ).term(
-                                                BlockStateProperties.WEST,
-                                                false
-                                        ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation3
-                                )
-                        ).with(
-                                Condition.condition().term(
-                                        BlockStateProperties.NORTH,
-                                        false
-                                ).term(
-                                        BlockStateProperties.EAST,
-                                        false
-                                ).term(
-                                        BlockStateProperties.SOUTH,
-                                        false
-                                ).term(
-                                        BlockStateProperties.WEST,
-                                        true
-                                ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation3
-                                ).with(
-                                        VariantProperties.Y_ROT,
-                                        VariantProperties.Rotation.R90
-                                )
-                        ).with(
-                                Condition.condition().term(
-                                        BlockStateProperties.NORTH,
-                                        true
-                                ), Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation4
-                                )
-                        ).with(
-                                Condition.condition().term(
-                                        BlockStateProperties.EAST,
-                                        true
-                                ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation4
-                                ).with(
-                                        VariantProperties.Y_ROT, VariantProperties.Rotation.R90
-                                )
-                        ).with(
-                                Condition.condition().term(
-                                        BlockStateProperties.SOUTH,
-                                        true
-                                ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation5
-                                )
-                        ).with(
-                                Condition.condition().term(
-                                        BlockStateProperties.WEST,
-                                        true
-                                ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation5
-                                ).with(
-                                        VariantProperties.Y_ROT,
-                                        VariantProperties.Rotation.R90
-                                )
-                        )
+                        .with(resourcelocation)
+                        .with(condition().term(BlockStateProperties.NORTH, false)
+                                .term(BlockStateProperties.EAST, false)
+                                .term(BlockStateProperties.SOUTH, false)
+                                .term(BlockStateProperties.WEST, false), resourcelocation1)
+                        .with(condition().term(BlockStateProperties.NORTH, true)
+                                .term(BlockStateProperties.EAST, false)
+                                .term(BlockStateProperties.SOUTH, false)
+                                .term(BlockStateProperties.WEST, false), resourcelocation2)
+                        .with(condition().term(BlockStateProperties.NORTH, false)
+                                .term(BlockStateProperties.EAST, true)
+                                .term(BlockStateProperties.SOUTH, false)
+                                .term(BlockStateProperties.WEST, false), resourcelocation2.with(Y_ROT_90))
+                        .with(condition().term(BlockStateProperties.NORTH, false)
+                                .term(BlockStateProperties.EAST, false)
+                                .term(BlockStateProperties.SOUTH, true)
+                                .term(BlockStateProperties.WEST, false), resourcelocation3)
+                        .with(condition().term(BlockStateProperties.NORTH, false)
+                                .term(BlockStateProperties.EAST, false)
+                                .term(BlockStateProperties.SOUTH, false)
+                                .term(BlockStateProperties.WEST, true), resourcelocation3.with(Y_ROT_90))
+                        .with(condition().term(BlockStateProperties.NORTH, true), resourcelocation4)
+                        .with(condition().term(BlockStateProperties.EAST, true), resourcelocation4.with(Y_ROT_90))
+                        .with(condition().term(BlockStateProperties.SOUTH, true), resourcelocation5)
+                        .with(condition().term(BlockStateProperties.WEST, true), resourcelocation5.with(Y_ROT_90))
         );
         this.itemModelOutput.copy(sourceBlock.asItem(), targetBlock.asItem());
     }
 
     public void createWaxedIronBars() {
-        ResourceLocation resourcelocation = ResourceLocation.parse("minecraft:block/iron_bars_post_ends");
-        ResourceLocation resourcelocation1 = ResourceLocation.parse("minecraft:block/iron_bars_post");
-        ResourceLocation resourcelocation2 = ResourceLocation.parse("minecraft:block/iron_bars_cap");
-        ResourceLocation resourcelocation3 = ResourceLocation.parse("minecraft:block/iron_bars_cap_alt");
-        ResourceLocation resourcelocation4 = ResourceLocation.parse("minecraft:block/iron_bars_side");
-        ResourceLocation resourcelocation5 = ResourceLocation.parse("minecraft:block/iron_bars_side_alt");
+        MultiVariant resourcelocation = plainVariant(ResourceLocation.parse("minecraft:block/iron_bars_post_ends"));
+        MultiVariant resourcelocation1 = plainVariant(ResourceLocation.parse("minecraft:block/iron_bars_post"));
+        MultiVariant resourcelocation2 = plainVariant(ResourceLocation.parse("minecraft:block/iron_bars_cap"));
+        MultiVariant resourcelocation3 = plainVariant(ResourceLocation.parse("minecraft:block/iron_bars_cap_alt"));
+        MultiVariant resourcelocation4 = plainVariant(ResourceLocation.parse("minecraft:block/iron_bars_side"));
+        MultiVariant resourcelocation5 = plainVariant(ResourceLocation.parse("minecraft:block/iron_bars_side_alt"));
         this.blockStateOutput.accept(
                 MultiPartGenerator.multiPart(ModBlocks.WAXED_IRON_BARS.get())
-                        .with(
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation
-                                )
-                        ).with(
-                                Condition.condition()
-                                        .term(
-                                                BlockStateProperties.NORTH,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.EAST,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.SOUTH,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.WEST,
-                                                false
-                                        ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation1
-                                )
-                        ).with(
-                                Condition.condition()
-                                        .term(
-                                                BlockStateProperties.NORTH,
-                                                true
-                                        ).term(
-                                                BlockStateProperties.EAST,
-                                                false)
-                                        .term(
-                                                BlockStateProperties.SOUTH,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.WEST,
-                                                false
-                                        ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation2
-                                )
-                        ).with(
-                                Condition.condition()
-                                        .term(
-                                                BlockStateProperties.NORTH,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.EAST,
-                                                true
-                                        ).term(
-                                                BlockStateProperties.SOUTH,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.WEST,
-                                                false
-                                        ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation2
-                                ).with(
-                                        VariantProperties.Y_ROT,
-                                        VariantProperties.Rotation.R90
-                                )
-                        ).with(
-                                Condition.condition()
-                                        .term(
-                                                BlockStateProperties.NORTH,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.EAST,
-                                                false
-                                        ).term(
-                                                BlockStateProperties.SOUTH,
-                                                true
-                                        ).term(
-                                                BlockStateProperties.WEST,
-                                                false
-                                        ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation3
-                                )
-                        ).with(
-                                Condition.condition().term(
-                                        BlockStateProperties.NORTH,
-                                        false
-                                ).term(
-                                        BlockStateProperties.EAST,
-                                        false
-                                ).term(
-                                        BlockStateProperties.SOUTH,
-                                        false
-                                ).term(
-                                        BlockStateProperties.WEST,
-                                        true
-                                ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation3
-                                ).with(
-                                        VariantProperties.Y_ROT,
-                                        VariantProperties.Rotation.R90
-                                )
-                        ).with(
-                                Condition.condition().term(
-                                        BlockStateProperties.NORTH,
-                                        true
-                                ), Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation4
-                                )
-                        ).with(
-                                Condition.condition().term(
-                                        BlockStateProperties.EAST,
-                                        true
-                                ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation4
-                                ).with(
-                                        VariantProperties.Y_ROT, VariantProperties.Rotation.R90
-                                )
-                        ).with(
-                                Condition.condition().term(
-                                        BlockStateProperties.SOUTH,
-                                        true
-                                ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation5
-                                )
-                        ).with(
-                                Condition.condition().term(
-                                        BlockStateProperties.WEST,
-                                        true
-                                ),
-                                Variant.variant().with(
-                                        VariantProperties.MODEL, resourcelocation5
-                                ).with(
-                                        VariantProperties.Y_ROT,
-                                        VariantProperties.Rotation.R90
-                                )
-                        )
+                        .with(resourcelocation)
+                        .with(condition().term(BlockStateProperties.NORTH, false)
+                                .term(BlockStateProperties.EAST, false)
+                                .term(BlockStateProperties.SOUTH, false)
+                                .term(BlockStateProperties.WEST, false), resourcelocation1)
+                        .with(condition().term(BlockStateProperties.NORTH, true)
+                                .term(BlockStateProperties.EAST, false)
+                                .term(BlockStateProperties.SOUTH, false)
+                                .term(BlockStateProperties.WEST, false), resourcelocation2)
+                        .with(condition().term(BlockStateProperties.NORTH, false)
+                                .term(BlockStateProperties.EAST, true)
+                                .term(BlockStateProperties.SOUTH, false)
+                                .term(BlockStateProperties.WEST, false), resourcelocation2.with(Y_ROT_90))
+                        .with(condition().term(BlockStateProperties.NORTH, false)
+                                .term(BlockStateProperties.EAST, false)
+                                .term(BlockStateProperties.SOUTH, true)
+                                .term(BlockStateProperties.WEST, false), resourcelocation3)
+                        .with(condition().term(BlockStateProperties.NORTH, false)
+                                .term(BlockStateProperties.EAST, false)
+                                .term(BlockStateProperties.SOUTH, false)
+                                .term(BlockStateProperties.WEST, true), resourcelocation3.with(Y_ROT_90))
+                        .with(condition().term(BlockStateProperties.NORTH, true), resourcelocation4)
+                        .with(condition().term(BlockStateProperties.EAST, true), resourcelocation4.with(Y_ROT_90))
+                        .with(condition().term(BlockStateProperties.SOUTH, true), resourcelocation5)
+                        .with(condition().term(BlockStateProperties.WEST, true), resourcelocation5.with(Y_ROT_90))
         );
         this.registerSimpleItemModel(ModBlocks.WAXED_IRON_BARS.get(), ResourceLocation.parse("minecraft:item/iron_bars"));
     }
 
     public void createCustomPressurePlate(Block pressurePlate, Block baseBlock) {
         TextureMapping textureMapping = TextureMapping.defaultTexture(baseBlock);
-        ResourceLocation resourcelocation = ModelTemplates.PRESSURE_PLATE_UP.create(pressurePlate, textureMapping, this.modelOutput);
-        ResourceLocation resourcelocation1 = ModelTemplates.PRESSURE_PLATE_DOWN.create(pressurePlate, textureMapping, this.modelOutput);
+        MultiVariant resourcelocation = plainVariant(ModelTemplates.PRESSURE_PLATE_UP.create(pressurePlate, textureMapping, this.modelOutput));
+        MultiVariant resourcelocation1 = plainVariant(ModelTemplates.PRESSURE_PLATE_DOWN.create(pressurePlate, textureMapping, this.modelOutput));
         this.blockStateOutput.accept(createPressurePlate(pressurePlate, resourcelocation, resourcelocation1));
     }
 
     public void createNuke(Block nukeBlock, TexturedModel.Provider modelProvider) {
-        ResourceLocation resourcelocation = modelProvider.create(nukeBlock, this.modelOutput);
-        this.blockStateOutput.accept(MultiVariantGenerator.multiVariant(nukeBlock, Variant.variant().with(VariantProperties.MODEL, resourcelocation)).with(createHorizontalFacingDispatch()));
+        MultiVariant resourcelocation = plainVariant(modelProvider.create(nukeBlock, this.modelOutput));
+        this.blockStateOutput.accept(MultiVariantGenerator.dispatch(nukeBlock, resourcelocation).with(BlockModelGenerators.ROTATION_HORIZONTAL_FACING));
     }
 
     @Override
