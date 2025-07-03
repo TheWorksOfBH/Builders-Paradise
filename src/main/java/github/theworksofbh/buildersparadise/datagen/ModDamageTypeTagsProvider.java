@@ -1,10 +1,10 @@
 package github.theworksofbh.buildersparadise.datagen;
 
 import github.theworksofbh.buildersparadise.BuildersParadise;
+import github.theworksofbh.buildersparadise.damage.ModDamageTypes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.DamageTypeTagsProvider;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.DamageTypeTags;
 
 import java.util.concurrent.CompletableFuture;
@@ -18,6 +18,6 @@ public class ModDamageTypeTagsProvider extends DamageTypeTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        tag(DamageTypeTags.NO_KNOCKBACK).addOptional(ResourceLocation.fromNamespaceAndPath(BuildersParadise.MODID, "radiation"));
+        tag(DamageTypeTags.NO_KNOCKBACK).addOptional(ModDamageTypes.RADIATION);
     }
 }

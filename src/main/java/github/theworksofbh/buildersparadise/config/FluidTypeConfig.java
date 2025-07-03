@@ -1,11 +1,10 @@
 package github.theworksofbh.buildersparadise.config;
 
-import com.mojang.blaze3d.shaders.FogShape;
 import github.theworksofbh.buildersparadise.fluids.ModFluidTypes;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.client.renderer.FogParameters;
-import net.minecraft.client.renderer.FogRenderer;
+import net.minecraft.client.renderer.fog.FogData;
+import net.minecraft.client.renderer.fog.environment.FogEnvironment;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
@@ -42,8 +41,11 @@ public class FluidTypeConfig {
             }
 
             @Override
-            public FogParameters modifyFogRender(Camera camera, FogRenderer.FogMode mode, float renderDistance, float partialTick, FogParameters fogParameters) {
-                return new FogParameters(0.1F, 1.0F, FogShape.SPHERE, 0.0F, 1.0F, 0.0F, 1.0F);
+            public void modifyFogRender(Camera camera, @Nullable FogEnvironment environment, float renderDistance, float partialTick, FogData fogData) {
+                fogData.environmentalStart = 0.1F;
+                fogData.environmentalEnd = 1.0F;
+                fogData.renderDistanceStart = 0.0F;
+                fogData.renderDistanceEnd = renderDistance;
             }
         }, ModFluidTypes.NUCLEAR_WASTE_TYPE.get());
     }

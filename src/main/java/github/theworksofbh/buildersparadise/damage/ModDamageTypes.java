@@ -11,7 +11,6 @@ import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.damagesource.DeathMessageType;
 
 public class ModDamageTypes {
-
     public static ResourceKey<DamageType> registerKey(String name) {
         return ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(BuildersParadise.MODID, name));
     }

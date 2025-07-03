@@ -20,7 +20,8 @@ public class ModDataGenerators {
         generator.addProvider(true, new LootTableProvider(packOutput, Collections.emptySet(),
                 List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
 
-        event.createBlockAndItemTags(ModBlockTagsProvider::new, ModItemTagsProvider::new);
+        event.createProvider(ModBlockTagsProvider::new);
+        event.createProvider(ModItemTagsProvider::new);
 
         event.createProvider(ModModelProvider::new);
 

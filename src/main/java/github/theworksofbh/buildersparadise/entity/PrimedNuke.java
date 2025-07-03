@@ -3,19 +3,11 @@ package github.theworksofbh.buildersparadise.entity;
 import github.theworksofbh.buildersparadise.block.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.NbtOps;
-import net.minecraft.nbt.NbtUtils;
-import net.minecraft.nbt.Tag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.resources.RegistryOps;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MoverType;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Explosion;
@@ -25,6 +17,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.portal.TeleportTransition;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -35,7 +29,7 @@ public class PrimedNuke extends PrimedTnt {
     private static final EntityDataAccessor<Integer> DATA_FUSE_ID = SynchedEntityData.defineId(PrimedNuke.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<BlockState> DATA_BLOCK_STATE_ID = SynchedEntityData.defineId(PrimedNuke.class, EntityDataSerializers.BLOCK_STATE);
     private float explosionPower;
-    private LivingEntity owner;
+    private EntityReference<LivingEntity> owner;
     private boolean usedPortal;
     final List<BlockPos> sources = new ArrayList<>();
     private static final BlockState DEFAULT_BLOCK_STATE = ModBlocks.NUKE.get().defaultBlockState();
@@ -69,7 +63,7 @@ public class PrimedNuke extends PrimedTnt {
         this.xo = x;
         this.yo = y;
         this.zo = z;
-        this.owner = owner;
+        this.owner = owner != null ? new EntityReference(owner) : null;
     }
 
     @Override
@@ -80,29 +74,30 @@ public class PrimedNuke extends PrimedTnt {
     }
 
     @Override
-    protected void addAdditionalSaveData(CompoundTag compound) {
-        super.addAdditionalSaveData(compound);
-        compound.putShort("fuse", (short)this.getFuse());
-        compound.put("block_state", NbtUtils.writeBlockState(this.getBlockState()));
-        if (this.explosionPower != 12.0F) {
-            compound.putFloat("explosion_power", this.explosionPower);
+    protected void addAdditionalSaveData(ValueOutput p_421712_) {
+        super.addAdditionalSaveData(p_421712_);
+        p_421712_.putShort("fuse", (short)this.getFuse());
+        p_421712_.store("block_state", BlockState.CODEC, this.getBlockState());
+        if (this.explosionPower != 4.0F) {
+            p_421712_.putFloat("explosion_power", this.explosionPower);
         }
 
+        EntityReference.store(this.owner, p_421712_, "owner");
     }
 
     @Override
-    protected void readAdditionalSaveData(CompoundTag compound) {
-        super.addAdditionalSaveData(compound);
-        RegistryOps<Tag> registryops = this.registryAccess().createSerializationContext(NbtOps.INSTANCE);
-        this.setFuse(compound.getShortOr("fuse", (short)80));
-        this.setBlockState((BlockState)compound.read("block_state", BlockState.CODEC, registryops).orElse(DEFAULT_BLOCK_STATE));
-        this.explosionPower = Mth.clamp(compound.getFloatOr("explosion_power", 12.0F), 0.0F, 128.0F);
+    protected void readAdditionalSaveData(ValueInput p_422034_) {
+        super.readAdditionalSaveData(p_422034_);
+        this.setFuse(p_422034_.getShortOr("fuse", (short)80));
+        this.setBlockState((BlockState)p_422034_.read("block_state", BlockState.CODEC).orElse(DEFAULT_BLOCK_STATE));
+        this.explosionPower = Mth.clamp(p_422034_.getFloatOr("explosion_power", 4.0F), 0.0F, 128.0F);
+        this.owner = EntityReference.read(p_422034_, "owner");
 
     }
 
     @Override
     public @Nullable LivingEntity getOwner() {
-        return owner;
+        return (LivingEntity)EntityReference.get(this.owner, this.level(), LivingEntity.class);
     }
 
     @Override
@@ -172,10 +167,6 @@ public class PrimedNuke extends PrimedTnt {
 
     public void setExplosionPower(float explosionPower) {
         this.explosionPower = explosionPower;
-    }
-
-    public void setOwner(LivingEntity owner) {
-        this.owner = owner;
     }
 
     public void setUsedPortal(boolean usedPortal) {
