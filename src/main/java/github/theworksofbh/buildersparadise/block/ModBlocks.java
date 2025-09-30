@@ -489,7 +489,7 @@ public class ModBlocks {
                 registryName, () -> new ModLiquidBlock(
                         fluid.get(),
                         BlockBehaviour.Properties.ofFullCopy(Blocks.LAVA)
-                                .noCollission()
+                                .noCollision()
                                 .noLootTable()
                                 .liquid()
                                 .pushReaction(PushReaction.DESTROY)

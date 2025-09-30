@@ -295,7 +295,7 @@ public class ModItems {
     public static final DeferredItem<Item> ELDER_PRISMARINE_SHARD = registerCustomItem("elder_prismarine_shard");
     public static final DeferredItem<Item> ELDER_PRISMARINE_CRYSTALS = registerCustomItem("elder_prismarine_crystals");
 
-    public static final DeferredItem<Item> COPPER_NUGGET = registerCustomItem("copper_nugget");
+//    public static final DeferredItem<Item> COPPER_NUGGET = registerCustomItem("copper_nugget"); Got added to vanilla, ripbozo
     public static final DeferredItem<Item> NETHERITE_NUGGET = registerCustomItem("netherite_nugget");
 
     public static final DeferredItem<BlockItem> ZINC_ORE = registerBlockItem("zinc_ore", () -> ModBlocks.ZINC_ORE.get());

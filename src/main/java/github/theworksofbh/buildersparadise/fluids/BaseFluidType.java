@@ -1,6 +1,8 @@
 package github.theworksofbh.buildersparadise.fluids;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
+import net.neoforged.neoforge.common.SoundAction;
 import net.neoforged.neoforge.fluids.FluidType;
 import org.joml.Vector4f;
 
@@ -40,5 +42,9 @@ public class BaseFluidType extends FluidType {
 
     public ResourceLocation getOverlayTexture() {
         return overlayTexture;
+    }
+
+    public @Nullable SoundEvent getSound(SoundAction action) {
+        return (SoundEvent)this.sounds.get(action);
     }
 }

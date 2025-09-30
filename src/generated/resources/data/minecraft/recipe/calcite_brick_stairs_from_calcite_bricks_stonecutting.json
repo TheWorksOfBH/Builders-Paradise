@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:calcite_bricks",
-  "result": {
-    "count": 1,
-    "id": "buildersparadise:calcite_brick_stairs"
-  }
-}

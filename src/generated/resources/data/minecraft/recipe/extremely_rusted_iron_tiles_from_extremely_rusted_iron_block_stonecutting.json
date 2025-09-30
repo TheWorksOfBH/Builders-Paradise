@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:extremely_rusted_iron_block",
-  "result": {
-    "count": 4,
-    "id": "buildersparadise:extremely_rusted_iron_tiles"
-  }
-}

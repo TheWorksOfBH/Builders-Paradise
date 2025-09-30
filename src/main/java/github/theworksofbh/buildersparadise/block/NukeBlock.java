@@ -78,7 +78,7 @@ public class NukeBlock extends TntBlock {
             p_316520_.setBlock(p_316601_, Blocks.AIR.defaultBlockState(), 11);
             Item item = p_316149_.getItem();
             if (p_316149_.is(Items.FLINT_AND_STEEL)) {
-                p_316149_.hurtAndBreak(1, p_316770_, LivingEntity.getSlotForHand(p_316393_));
+                p_316149_.hurtAndBreak(1, p_316770_, p_316393_.asEquipmentSlot());
             } else {
                 p_316149_.consume(1, p_316770_);
             }

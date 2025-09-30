@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "buildersparadise:block/iron_tiles",
-    "side": "buildersparadise:block/iron_tiles",
-    "top": "buildersparadise:block/iron_tiles"
-  }
-}

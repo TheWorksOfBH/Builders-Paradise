@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:gold_tiles",
-  "result": {
-    "count": 1,
-    "id": "buildersparadise:gold_tile_stairs"
-  }
-}

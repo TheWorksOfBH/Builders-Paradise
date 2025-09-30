@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "buildersparadise:block/cut_tin",
-    "side": "buildersparadise:block/cut_tin",
-    "top": "buildersparadise:block/cut_tin"
-  }
-}

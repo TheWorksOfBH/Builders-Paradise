@@ -63,7 +63,7 @@ public class PrimedNuke extends PrimedTnt {
         this.xo = x;
         this.yo = y;
         this.zo = z;
-        this.owner = owner != null ? new EntityReference(owner) : null;
+        this.owner = EntityReference.of(owner);
     }
 
     @Override
@@ -188,15 +188,16 @@ public class PrimedNuke extends PrimedTnt {
         this.setFuse(i);
         if (i <= 0) {
             this.discard();
-            if (!this.level().isClientSide) {
+            if (!this.level().isClientSide()) {
                 this.explode();
             }
         } else {
             this.updateInWaterStateAndDoFluidPushing();
-            if (this.level().isClientSide) {
+            if (this.level().isClientSide()) {
                 this.level().addParticle(ParticleTypes.SMOKE, this.getX(), this.getY() + (double)0.5F, this.getZ(), (double)0.0F, (double)0.0F, (double)0.0F);
             }
         }
+
     }
 
     @Override
