@@ -11,6 +11,7 @@ import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -494,6 +495,46 @@ public class ModItems {
 
     public static final DeferredItem<BucketItem> NUCLEAR_WASTE_BUCKET = registerBucketItem("nuclear_waste_bucket", () -> ModFluids.NUCLEAR_WASTE.get());
     public static final DeferredItem<BlockItem> NUKE = registerBlockItem("nuke", () -> ModBlocks.NUKE.get());
+
+    public static final DeferredItem<BlockItem> OAK_CRAFTING_TABLE = registerBlockItem("oak_crafting_table", () -> Blocks.CRAFTING_TABLE);
+    public static final DeferredItem<BlockItem> SPRUCE_CRAFTING_TABLE = registerBlockItem("spruce_crafting_table", () -> ModBlocks.SPRUCE_CRAFTING_TABLE.get());
+    public static final DeferredItem<BlockItem> BIRCH_CRAFTING_TABLE = registerBlockItem("birch_crafting_table", () -> ModBlocks.BIRCH_CRAFTING_TABLE.get());
+    public static final DeferredItem<BlockItem> JUNGLE_CRAFTING_TABLE = registerBlockItem("jungle_crafting_table", () -> ModBlocks.JUNGLE_CRAFTING_TABLE.get());
+    public static final DeferredItem<BlockItem> ACACIA_CRAFTING_TABLE = registerBlockItem("acacia_crafting_table", () -> ModBlocks.ACACIA_CRAFTING_TABLE.get());
+    public static final DeferredItem<BlockItem> DARK_OAK_CRAFTING_TABLE = registerBlockItem("dark_oak_crafting_table", () -> ModBlocks.DARK_OAK_CRAFTING_TABLE.get());
+    public static final DeferredItem<BlockItem> CRIMSON_CRAFTING_TABLE = registerBlockItem("crimson_crafting_table", () -> ModBlocks.CRIMSON_CRAFTING_TABLE.get());
+    public static final DeferredItem<BlockItem> WARPED_CRAFTING_TABLE = registerBlockItem("warped_crafting_table", () -> ModBlocks.WARPED_CRAFTING_TABLE.get());
+    public static final DeferredItem<BlockItem> MANGROVE_CRAFTING_TABLE = registerBlockItem("mangrove_crafting_table", () -> ModBlocks.MANGROVE_CRAFTING_TABLE.get());
+    public static final DeferredItem<BlockItem> CHERRY_CRAFTING_TABLE = registerBlockItem("cherry_crafting_table", () -> ModBlocks.CHERRY_CRAFTING_TABLE.get());
+    public static final DeferredItem<BlockItem> BAMBOO_CRAFTING_TABLE = registerBlockItem("bamboo_crafting_table", () -> ModBlocks.BAMBOO_CRAFTING_TABLE.get());
+    public static final DeferredItem<BlockItem> PALE_OAK_CRAFTING_TABLE = registerBlockItem("pale_oak_crafting_table", () -> ModBlocks.PALE_OAK_CRAFTING_TABLE.get());
+
+    public static final DeferredItem<BlockItem> OAK_CARTOGRAPHY_TABLE = registerBlockItem("oak_cartography_table", () -> ModBlocks.OAK_CARTOGRAPHY_TABLE.get());
+    public static final DeferredItem<BlockItem> SPRUCE_CARTOGRAPHY_TABLE = registerBlockItem("spruce_cartography_table", () -> ModBlocks.SPRUCE_CARTOGRAPHY_TABLE.get());
+    public static final DeferredItem<BlockItem> BIRCH_CARTOGRAPHY_TABLE = registerBlockItem("birch_cartography_table", () -> ModBlocks.BIRCH_CARTOGRAPHY_TABLE.get());
+    public static final DeferredItem<BlockItem> JUNGLE_CARTOGRAPHY_TABLE = registerBlockItem("jungle_cartography_table", () -> ModBlocks.JUNGLE_CARTOGRAPHY_TABLE.get());
+    public static final DeferredItem<BlockItem> ACACIA_CARTOGRAPHY_TABLE = registerBlockItem("acacia_cartography_table", () -> ModBlocks.ACACIA_CARTOGRAPHY_TABLE.get());
+    public static final DeferredItem<BlockItem> DARK_OAK_CARTOGRAPHY_TABLE = registerBlockItem("dark_oak_cartography_table", () -> Blocks.CARTOGRAPHY_TABLE);
+    public static final DeferredItem<BlockItem> CRIMSON_CARTOGRAPHY_TABLE = registerBlockItem("crimson_cartography_table", () -> ModBlocks.CRIMSON_CARTOGRAPHY_TABLE.get());
+    public static final DeferredItem<BlockItem> WARPED_CARTOGRAPHY_TABLE = registerBlockItem("warped_cartography_table", () -> ModBlocks.WARPED_CARTOGRAPHY_TABLE.get());
+    public static final DeferredItem<BlockItem> MANGROVE_CARTOGRAPHY_TABLE = registerBlockItem("mangrove_cartography_table", () -> ModBlocks.MANGROVE_CARTOGRAPHY_TABLE.get());
+    public static final DeferredItem<BlockItem> CHERRY_CARTOGRAPHY_TABLE = registerBlockItem("cherry_cartography_table", () -> ModBlocks.CHERRY_CARTOGRAPHY_TABLE.get());
+    public static final DeferredItem<BlockItem> BAMBOO_CARTOGRAPHY_TABLE = registerBlockItem("bamboo_cartography_table", () -> ModBlocks.BAMBOO_CARTOGRAPHY_TABLE.get());
+    public static final DeferredItem<BlockItem> PALE_OAK_CARTOGRAPHY_TABLE = registerBlockItem("pale_oak_cartography_table", () -> ModBlocks.PALE_OAK_CARTOGRAPHY_TABLE.get());
+
+    public static final DeferredItem<BlockItem> OAK_FLETCHING_TABLE = registerBlockItem("oak_fletching_table", () -> ModBlocks.OAK_FLETCHING_TABLE.get());
+    public static final DeferredItem<BlockItem> SPRUCE_FLETCHING_TABLE = registerBlockItem("spruce_fletching_table", () -> ModBlocks.SPRUCE_FLETCHING_TABLE.get());
+    public static final DeferredItem<BlockItem> BIRCH_FLETCHING_TABLE = registerBlockItem("birch_fletching_table", () -> ModBlocks.BIRCH_FLETCHING_TABLE.get());
+    public static final DeferredItem<BlockItem> JUNGLE_FLETCHING_TABLE = registerBlockItem("jungle_fletching_table", () -> ModBlocks.JUNGLE_FLETCHING_TABLE.get());
+    public static final DeferredItem<BlockItem> ACACIA_FLETCHING_TABLE = registerBlockItem("acacia_fletching_table", () -> ModBlocks.ACACIA_FLETCHING_TABLE.get());
+    public static final DeferredItem<BlockItem> DARK_OAK_FLETCHING_TABLE = registerBlockItem("dark_oak_fletching_table", () -> ModBlocks.DARK_OAK_FLETCHING_TABLE.get());
+    public static final DeferredItem<BlockItem> CRIMSON_FLETCHING_TABLE = registerBlockItem("crimson_fletching_table", () -> ModBlocks.CRIMSON_FLETCHING_TABLE.get());
+    public static final DeferredItem<BlockItem> WARPED_FLETCHING_TABLE = registerBlockItem("warped_fletching_table", () -> ModBlocks.WARPED_FLETCHING_TABLE.get());
+    public static final DeferredItem<BlockItem> MANGROVE_FLETCHING_TABLE = registerBlockItem("mangrove_fletching_table", () -> ModBlocks.MANGROVE_FLETCHING_TABLE.get());
+    public static final DeferredItem<BlockItem> CHERRY_FLETCHING_TABLE = registerBlockItem("cherry_fletching_table", () -> ModBlocks.CHERRY_FLETCHING_TABLE.get());
+    public static final DeferredItem<BlockItem> BAMBOO_FLETCHING_TABLE = registerBlockItem("bamboo_fletching_table", () -> ModBlocks.BAMBOO_FLETCHING_TABLE.get());
+    public static final DeferredItem<BlockItem> PALE_OAK_FLETCHING_TABLE = registerBlockItem("pale_oak_fletching_table", () -> ModBlocks.PALE_OAK_FLETCHING_TABLE.get());
+
 
     private static DeferredItem<Item> registerCustomItem(String registryName) {
         if (registryName == "netherite_nugget") {

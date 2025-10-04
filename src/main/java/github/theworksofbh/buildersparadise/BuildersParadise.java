@@ -8,9 +8,12 @@ import github.theworksofbh.buildersparadise.effect.ModEffects;
 import github.theworksofbh.buildersparadise.entity.ModEntities;
 import github.theworksofbh.buildersparadise.fluids.ModFluidTypes;
 import github.theworksofbh.buildersparadise.fluids.ModFluids;
+import github.theworksofbh.buildersparadise.gui.ModMenuTypes;
 import github.theworksofbh.buildersparadise.items.ModItems;
 import github.theworksofbh.buildersparadise.loot.ModLootModifiers;
+import github.theworksofbh.buildersparadise.recipes.ModRecipes;
 import github.theworksofbh.buildersparadise.sounds.ModSoundEvents;
+import github.theworksofbh.buildersparadise.stats.ModStats;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -20,8 +23,10 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.common.world.poi.ExtendPoiTypesEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.level.NoteBlockEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
@@ -48,12 +53,18 @@ public class BuildersParadise
         ModFluidTypes.register(modEventBus);
         ModSoundEvents.register(modEventBus);
 
+        ModStats.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
+
         NeoForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::addCreative);
         modEventBus.addListener(ModDataGenerators::gatherData);
         modEventBus.addListener(this::addFluidTypes);
         modEventBus.addListener(this::addEntityRenderers);
+        modEventBus.addListener(this::addGuiScreens);
+        modEventBus.addListener(this::addPOIBlocks);
         NeoForge.EVENT_BUS.addListener(this::addNoteBlockInstruments);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -74,11 +85,19 @@ public class BuildersParadise
         NoteBlockConfig.brassBlockNoteBlock(event);
     }
 
+    private void addPOIBlocks(ExtendPoiTypesEvent event) {
+        POIConfig.addModBlocksToVanillaPOIs(event);
+    }
+
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)
     {
 
+    }
+
+    private void addGuiScreens(RegisterMenuScreensEvent event) {
+        MenuScreenConfig.registerCustomScreens(event);
     }
 
     private void addFluidTypes(RegisterClientExtensionsEvent event) {

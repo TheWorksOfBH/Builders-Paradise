@@ -11,24 +11,18 @@ import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DoorBlock;
-import net.minecraft.world.level.block.DropExperienceBlock;
-import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 public class ModBlockLootTableProvider extends BlockLootSubProvider {
     protected ModBlockLootTableProvider(HolderLookup.Provider registries){
@@ -37,19 +31,24 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        List<DeferredBlock<?>> handMadeBlocks = List.of(
-                ModBlocks.NUCLEAR_WASTE
+        Set<Block> vanillaBlocksThatNeedNewLootTables = Set.of(
+                Blocks.CRAFTING_TABLE,
+                Blocks.CARTOGRAPHY_TABLE,
+                Blocks.FLETCHING_TABLE
         );
-        Collection<DeferredHolder<Block, ? extends Block>> BLOCKS = ModBlocks.BLOCKS.getEntries();
-        Set<DeferredHolder<Block, ? extends Block>> COPY = new HashSet<>(BLOCKS);
 
-        for (DeferredBlock<?> block : handMadeBlocks) {
-            COPY.remove(block);
-        }
+        Set<Block> handMadeBlocks = Set.of(
+                ModBlocks.NUCLEAR_WASTE.get()
+        );
 
-        return COPY.stream()
-                .map(DeferredHolder::value)
-                .collect(Collectors.toList());
+        return Stream.concat(
+                vanillaBlocksThatNeedNewLootTables.stream(),
+                ModBlocks.BLOCKS.getEntries().stream().map(
+                        Supplier::get
+                )
+        ).filter(
+                (Predicate.not(handMadeBlocks::contains))
+        ).toList();
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block block, Item item, float min, float max) {
@@ -80,6 +79,12 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                     } else if (block == ModBlocks.URANIUM_ORE.get() || block == ModBlocks.DEEPSLATE_URANIUM_ORE.get()) {
                         this.add(block, createMultipleOreDrops(block, ModItems.RAW_URANIUM.get(), 2.0F, 4.0F));
                     }
+                } else if (block == Blocks.CRAFTING_TABLE) {
+                    this.dropOther(block, ModItems.OAK_CRAFTING_TABLE.get());
+                } else if (block == Blocks.CARTOGRAPHY_TABLE) {
+                    this.dropOther(block, ModItems.DARK_OAK_CARTOGRAPHY_TABLE.get());
+                } else if (block == Blocks.FLETCHING_TABLE) {
+                    this.dropOther(block, ModItems.BIRCH_FLETCHING_TABLE.get());
                 } else {
                     this.dropSelf(block);
                 }

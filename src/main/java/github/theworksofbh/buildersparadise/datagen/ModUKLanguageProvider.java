@@ -8,15 +8,13 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.data.LanguageProvider;
-import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 public class ModUKLanguageProvider extends LanguageProvider {
     public ModUKLanguageProvider(PackOutput output) {
@@ -24,51 +22,60 @@ public class ModUKLanguageProvider extends LanguageProvider {
     }
 
     protected Iterable<Block> getKnownBlocks() {
-        List<DeferredBlock<?>> handMadeBlocks = List.of(
+        Set<Block> vanillaBlocksThatNeedNewTranslations = Set.of(
+                Blocks.CRAFTING_TABLE,
+                Blocks.CARTOGRAPHY_TABLE,
+                Blocks.FLETCHING_TABLE
+        );
+
+        Set<Block> handMadeBlocks = Set.of(
 
         );
-        Collection<DeferredHolder<Block, ? extends Block>> BLOCKS = ModBlocks.BLOCKS.getEntries();
-        Set<DeferredHolder<Block, ? extends Block>> COPY = new HashSet<>(BLOCKS);
 
-        for (DeferredBlock<?> block : handMadeBlocks) {
-            COPY.remove(block);
-        }
-
-        return COPY.stream()
-                .map(DeferredHolder::value)
-                .collect(Collectors.toList());
+        return Stream.concat(
+                vanillaBlocksThatNeedNewTranslations.stream(),
+                ModBlocks.BLOCKS.getEntries().stream().map(
+                        Supplier::get
+                )
+        ).filter(
+                (Predicate.not(handMadeBlocks::contains))
+        ).toList();
     }
 
     protected Iterable<Item> getKnownItems() {
-        List<DeferredBlock<?>> handMadeItems = List.of(
+        Set<Item> vanillaItemsThatNeedNewTranslations = Set.of(
+        );
+
+        Set<Item> handMadeItems = Set.of(
 
         );
-        Collection<DeferredHolder<Item, ? extends Item>> ITEMS = ModItems.ITEMS.getEntries();
-        Set<DeferredHolder<Item, ? extends Item>> COPY = new HashSet<>(ITEMS);
 
-        for (DeferredBlock<?> item : handMadeItems) {
-            COPY.remove(item);
-        }
-
-        return COPY.stream()
-                .map(DeferredHolder::value)
-                .collect(Collectors.toList());
+        return Stream.concat(
+                vanillaItemsThatNeedNewTranslations.stream(),
+                ModItems.ITEMS.getEntries().stream().map(
+                        Supplier::get
+                )
+        ).filter(
+                (Predicate.not(handMadeItems::contains))
+        ).toList();
     }
 
     protected Iterable<MobEffect> getKnownEffects() {
-        List<DeferredBlock<?>> handMadeEffects = List.of(
+        Set<MobEffect> vanillaEffectsThatNeedNewTranslations = Set.of(
+        );
+
+        Set<MobEffect> handMadeEffects = Set.of(
 
         );
-        Collection<DeferredHolder<MobEffect, ? extends MobEffect>> MOB_EFFECTS = ModEffects.MOB_EFFECTS.getEntries();
-        Set<DeferredHolder<MobEffect, ? extends MobEffect>> COPY = new HashSet<>(MOB_EFFECTS);
 
-        for (DeferredBlock<?> effect : handMadeEffects) {
-            COPY.remove(effect);
-        }
-
-        return COPY.stream()
-                .map(DeferredHolder::value)
-                .collect(Collectors.toList());
+        return Stream.concat(
+                vanillaEffectsThatNeedNewTranslations.stream(),
+                ModEffects.MOB_EFFECTS.getEntries().stream().map(
+                        Supplier::get
+                )
+        ).filter(
+                (Predicate.not(handMadeEffects::contains))
+        ).toList();
     }
 
     public static String formatString(String input) {
@@ -81,8 +88,10 @@ public class ModUKLanguageProvider extends LanguageProvider {
             reformatted = replaced.replace("item.buildersparadise.", "");
         } else if (replaced.contains("block")) {
             reformatted = replaced.replace("block.buildersparadise.", "");
-        }  else if (replaced.contains("effect")) {
+        } else if (replaced.contains("effect")) {
             reformatted = replaced.replace("effect.buildersparadise.", "");
+        } else if (replaced.contains("stat")) {
+            reformatted = replaced.replace("stat.buildersparadise.", "");
         }
 
         if (reformatted.contains("iron block")) {
@@ -153,7 +162,7 @@ public class ModUKLanguageProvider extends LanguageProvider {
 
         for (String word : words) {
             if (!word.isEmpty()) {
-                if (word.equals("of")){
+                if (word.equals("of")) {
                     result.append(word).append(" ");
                 } else {
                     result.append(Character.toUpperCase(word.charAt(0)))
@@ -184,6 +193,7 @@ public class ModUKLanguageProvider extends LanguageProvider {
         );
         this.add("death.attack.radiation", "%1$s received an unhealthy dose of nuclear radiation");
         this.add("death.attack.radiation.player", "%1$s received an unhealthy dose of nuclear radiation while trying to escape %2$s");
-
+        this.add("stat.buildersparadise.interact_with_fletching_table", "Interactions with Fletching Table");
+        this.add("container.fletching", "Fletching");
     }
 }

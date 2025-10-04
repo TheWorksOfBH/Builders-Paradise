@@ -5,6 +5,8 @@ import github.theworksofbh.buildersparadise.BuildersParadise;
 import github.theworksofbh.buildersparadise.block.ModBlockFamilies;
 import github.theworksofbh.buildersparadise.block.ModBlocks;
 import github.theworksofbh.buildersparadise.items.ModItems;
+import github.theworksofbh.buildersparadise.recipes.FletchingRecipeBuilder;
+import net.minecraft.advancements.critereon.PlayerTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.BlockFamily;
@@ -14,6 +16,7 @@ import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
@@ -21,6 +24,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
+import net.neoforged.neoforge.common.conditions.NeoForgeConditions;
 
 import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
@@ -292,6 +296,72 @@ public class ModRecipesProvider extends RecipeProvider {
                 .pattern("X#X")
                 .unlockedBy("has_uranium_ingot", this.has(ModItems.URANIUM_INGOT.get())).save(this.output);
 
+        this.createCraftingTable(ModItems.OAK_CRAFTING_TABLE, Items.OAK_PLANKS);
+        this.createCraftingTable(ModItems.SPRUCE_CRAFTING_TABLE, Items.SPRUCE_PLANKS);
+        this.createCraftingTable(ModItems.BIRCH_CRAFTING_TABLE, Items.BIRCH_PLANKS);
+        this.createCraftingTable(ModItems.JUNGLE_CRAFTING_TABLE, Items.JUNGLE_PLANKS);
+        this.createCraftingTable(ModItems.ACACIA_CRAFTING_TABLE, Items.ACACIA_PLANKS);
+        this.createCraftingTable(ModItems.DARK_OAK_CRAFTING_TABLE, Items.DARK_OAK_PLANKS);
+        this.createCraftingTable(ModItems.CRIMSON_CRAFTING_TABLE, Items.CRIMSON_PLANKS);
+        this.createCraftingTable(ModItems.WARPED_CRAFTING_TABLE, Items.WARPED_PLANKS);
+        this.createCraftingTable(ModItems.MANGROVE_CRAFTING_TABLE, Items.MANGROVE_PLANKS);
+        this.createCraftingTable(ModItems.CHERRY_CRAFTING_TABLE, Items.CHERRY_PLANKS);
+        this.createCraftingTable(ModItems.BAMBOO_CRAFTING_TABLE, Items.BAMBOO_PLANKS);
+        this.createCraftingTable(ModItems.PALE_OAK_CRAFTING_TABLE, Items.PALE_OAK_PLANKS);
+
+        this.shaped(RecipeCategory.DECORATIONS, Items.CRAFTING_TABLE)
+                .define('#', ItemTags.PLANKS)
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy("unlock_right_away", PlayerTrigger.TriggerInstance.tick())
+                .showNotification(false)
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.createCartographyTable(ModItems.OAK_CARTOGRAPHY_TABLE, Items.OAK_PLANKS);
+        this.createCartographyTable(ModItems.SPRUCE_CARTOGRAPHY_TABLE, Items.SPRUCE_PLANKS);
+        this.createCartographyTable(ModItems.BIRCH_CARTOGRAPHY_TABLE, Items.BIRCH_PLANKS);
+        this.createCartographyTable(ModItems.JUNGLE_CARTOGRAPHY_TABLE, Items.JUNGLE_PLANKS);
+        this.createCartographyTable(ModItems.ACACIA_CARTOGRAPHY_TABLE, Items.ACACIA_PLANKS);
+        this.createCartographyTable(ModItems.DARK_OAK_CARTOGRAPHY_TABLE, Items.DARK_OAK_PLANKS);
+        this.createCartographyTable(ModItems.CRIMSON_CARTOGRAPHY_TABLE, Items.CRIMSON_PLANKS);
+        this.createCartographyTable(ModItems.WARPED_CARTOGRAPHY_TABLE, Items.WARPED_PLANKS);
+        this.createCartographyTable(ModItems.MANGROVE_CARTOGRAPHY_TABLE, Items.MANGROVE_PLANKS);
+        this.createCartographyTable(ModItems.CHERRY_CARTOGRAPHY_TABLE, Items.CHERRY_PLANKS);
+        this.createCartographyTable(ModItems.BAMBOO_CARTOGRAPHY_TABLE, Items.BAMBOO_PLANKS);
+        this.createCartographyTable(ModItems.PALE_OAK_CARTOGRAPHY_TABLE, Items.PALE_OAK_PLANKS);
+
+        this.shaped(RecipeCategory.DECORATIONS, Items.CARTOGRAPHY_TABLE)
+                .define('#', ItemTags.PLANKS)
+                .define('@', Items.PAPER)
+                .pattern("@@")
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy("has_paper", this.has(Items.PAPER))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.createFletchingTable(ModItems.OAK_FLETCHING_TABLE, Items.OAK_PLANKS);
+        this.createFletchingTable(ModItems.SPRUCE_FLETCHING_TABLE, Items.SPRUCE_PLANKS);
+        this.createFletchingTable(ModItems.BIRCH_FLETCHING_TABLE, Items.BIRCH_PLANKS);
+        this.createFletchingTable(ModItems.JUNGLE_FLETCHING_TABLE, Items.JUNGLE_PLANKS);
+        this.createFletchingTable(ModItems.ACACIA_FLETCHING_TABLE, Items.ACACIA_PLANKS);
+        this.createFletchingTable(ModItems.DARK_OAK_FLETCHING_TABLE, Items.DARK_OAK_PLANKS);
+        this.createFletchingTable(ModItems.CRIMSON_FLETCHING_TABLE, Items.CRIMSON_PLANKS);
+        this.createFletchingTable(ModItems.WARPED_FLETCHING_TABLE, Items.WARPED_PLANKS);
+        this.createFletchingTable(ModItems.MANGROVE_FLETCHING_TABLE, Items.MANGROVE_PLANKS);
+        this.createFletchingTable(ModItems.CHERRY_FLETCHING_TABLE, Items.CHERRY_PLANKS);
+        this.createFletchingTable(ModItems.BAMBOO_FLETCHING_TABLE, Items.BAMBOO_PLANKS);
+        this.createFletchingTable(ModItems.PALE_OAK_FLETCHING_TABLE, Items.PALE_OAK_PLANKS);
+
+        this.shaped(RecipeCategory.DECORATIONS, Blocks.FLETCHING_TABLE)
+                .define('#', ItemTags.PLANKS)
+                .define('@', Items.FLINT)
+                .pattern("@@")
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy("has_flint", this.has(Items.FLINT))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.fletching(Items.SPECTRAL_ARROW, Items.ARROW, Items.GLOWSTONE_DUST);
     }
 
     @Override
@@ -308,6 +378,10 @@ public class ModRecipesProvider extends RecipeProvider {
                 .requires(Items.HONEYCOMB)
                 .unlockedBy("has_" + baseBlockId, has(baseBlock))
                 .save(output, baseBlockId + "_waxing");
+    }
+
+    protected FletchingRecipeBuilder fletching(ItemLike result, Item arrow, Item ingredient) {
+        return FletchingRecipeBuilder.fletching(Ingredient.of(arrow), Ingredient.of(ingredient), result);
     }
 
     protected void createWaxedBlock(Item waxedBlock, Item baseBlock, String baseBlockId) {
@@ -328,6 +402,38 @@ public class ModRecipesProvider extends RecipeProvider {
 
         this.shapeless(ingotCategory, ingot, 9).requires(block).group(ingotGroup).unlockedBy(getHasName(block), this.has(block)).save(this.output, ResourceKey.create(Registries.RECIPE, ResourceLocation.parse(ingotName + "_b")));
         this.shaped(blockCategory, block).define('#', ingot).pattern("###").pattern("###").pattern("###").group(blockGroup).unlockedBy(getHasName(ingot), this.has(block)).save(this.output, ResourceKey.create(Registries.RECIPE, ResourceLocation.parse(blockName)));
+    }
+
+    protected void createCraftingTable(ItemLike craftingTable, ItemLike planks){
+        this.shaped(RecipeCategory.DECORATIONS, craftingTable)
+                .define('#', planks)
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy("unlock_right_away", PlayerTrigger.TriggerInstance.tick())
+                .showNotification(false)
+                .save(this.output);
+    }
+
+    protected void createCartographyTable(ItemLike cartograhyTable, ItemLike planks){
+        this.shaped(RecipeCategory.DECORATIONS, cartograhyTable)
+                .define('#', planks)
+                .define('@', Items.PAPER)
+                .pattern("@@")
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy("has_paper", this.has(Items.PAPER))
+                .save(this.output);
+    }
+
+    protected void createFletchingTable(ItemLike fletchingTable, ItemLike planks) {
+        this.shaped(RecipeCategory.DECORATIONS, fletchingTable)
+                .define('#', planks)
+                .define('@', Items.FLINT)
+                .pattern("@@")
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy("has_flint", this.has(Items.FLINT))
+                .save(this.output);
     }
 
     private void waxedBlocks() {

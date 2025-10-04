@@ -466,6 +466,237 @@ public class ModBlocks {
     public static final DeferredBlock<ModLiquidBlock> NUCLEAR_WASTE = registerLiquid("nuclear_waste", () -> ModFluids.NUCLEAR_WASTE.get());
     public static final DeferredBlock<NukeBlock> NUKE = registerNuke("nuke");
 
+    public static final DeferredBlock<CraftingTableBlock> SPRUCE_CRAFTING_TABLE = registerCraftingTable("spruce_crafting_table");
+    public static final DeferredBlock<CraftingTableBlock> BIRCH_CRAFTING_TABLE = registerCraftingTable("birch_crafting_table");
+    public static final DeferredBlock<CraftingTableBlock> JUNGLE_CRAFTING_TABLE = registerCraftingTable("jungle_crafting_table");
+    public static final DeferredBlock<CraftingTableBlock> ACACIA_CRAFTING_TABLE = registerCraftingTable("acacia_crafting_table");
+    public static final DeferredBlock<CraftingTableBlock> DARK_OAK_CRAFTING_TABLE = registerCraftingTable("dark_oak_crafting_table");
+    public static final DeferredBlock<CraftingTableBlock> CRIMSON_CRAFTING_TABLE = registerCraftingTable("crimson_crafting_table");
+    public static final DeferredBlock<CraftingTableBlock> WARPED_CRAFTING_TABLE = registerCraftingTable("warped_crafting_table");
+    public static final DeferredBlock<CraftingTableBlock> MANGROVE_CRAFTING_TABLE = registerCraftingTable("mangrove_crafting_table");
+    public static final DeferredBlock<CraftingTableBlock> CHERRY_CRAFTING_TABLE = registerCraftingTable("cherry_crafting_table");
+    public static final DeferredBlock<CraftingTableBlock> BAMBOO_CRAFTING_TABLE = registerCraftingTable("bamboo_crafting_table");
+    public static final DeferredBlock<CraftingTableBlock> PALE_OAK_CRAFTING_TABLE = registerCraftingTable("pale_oak_crafting_table");
+
+    public static final DeferredBlock<CartographyTableBlock> OAK_CARTOGRAPHY_TABLE = registerCartographyTable("oak_cartography_table");
+    public static final DeferredBlock<CartographyTableBlock> SPRUCE_CARTOGRAPHY_TABLE = registerCartographyTable("spruce_cartography_table");
+    public static final DeferredBlock<CartographyTableBlock> BIRCH_CARTOGRAPHY_TABLE = registerCartographyTable("birch_cartography_table");
+    public static final DeferredBlock<CartographyTableBlock> JUNGLE_CARTOGRAPHY_TABLE = registerCartographyTable("jungle_cartography_table");
+    public static final DeferredBlock<CartographyTableBlock> ACACIA_CARTOGRAPHY_TABLE = registerCartographyTable("acacia_cartography_table");
+    public static final DeferredBlock<CartographyTableBlock> CRIMSON_CARTOGRAPHY_TABLE = registerCartographyTable("crimson_cartography_table");
+    public static final DeferredBlock<CartographyTableBlock> WARPED_CARTOGRAPHY_TABLE = registerCartographyTable("warped_cartography_table");
+    public static final DeferredBlock<CartographyTableBlock> MANGROVE_CARTOGRAPHY_TABLE = registerCartographyTable("mangrove_cartography_table");
+    public static final DeferredBlock<CartographyTableBlock> CHERRY_CARTOGRAPHY_TABLE = registerCartographyTable("cherry_cartography_table");
+    public static final DeferredBlock<CartographyTableBlock> BAMBOO_CARTOGRAPHY_TABLE = registerCartographyTable("bamboo_cartography_table");
+    public static final DeferredBlock<CartographyTableBlock> PALE_OAK_CARTOGRAPHY_TABLE = registerCartographyTable("pale_oak_cartography_table");
+
+    public static final DeferredBlock<FletchingTableBlock> OAK_FLETCHING_TABLE = registerFletchingTable("oak_fletching_table");
+    public static final DeferredBlock<FletchingTableBlock> SPRUCE_FLETCHING_TABLE = registerFletchingTable("spruce_fletching_table");
+    public static final DeferredBlock<FletchingTableBlock> BIRCH_FLETCHING_TABLE = registerFletchingTable("birch_fletching_table");
+    public static final DeferredBlock<FletchingTableBlock> JUNGLE_FLETCHING_TABLE = registerFletchingTable("jungle_fletching_table");
+    public static final DeferredBlock<FletchingTableBlock> ACACIA_FLETCHING_TABLE = registerFletchingTable("acacia_fletching_table");
+    public static final DeferredBlock<FletchingTableBlock> DARK_OAK_FLETCHING_TABLE = registerFletchingTable("dark_oak_fletching_table");
+    public static final DeferredBlock<FletchingTableBlock> CRIMSON_FLETCHING_TABLE = registerFletchingTable("crimson_fletching_table");
+    public static final DeferredBlock<FletchingTableBlock> WARPED_FLETCHING_TABLE = registerFletchingTable("warped_fletching_table");
+    public static final DeferredBlock<FletchingTableBlock> MANGROVE_FLETCHING_TABLE = registerFletchingTable("mangrove_fletching_table");
+    public static final DeferredBlock<FletchingTableBlock> CHERRY_FLETCHING_TABLE = registerFletchingTable("cherry_fletching_table");
+    public static final DeferredBlock<FletchingTableBlock> BAMBOO_FLETCHING_TABLE = registerFletchingTable("bamboo_fletching_table");
+    public static final DeferredBlock<FletchingTableBlock> PALE_OAK_FLETCHING_TABLE = registerFletchingTable("pale_oak_fletching_table");
+
+    public static DeferredBlock<CraftingTableBlock> registerCraftingTable(String registryName) {
+        if (registryName == "crimson_crafting_table" || registryName == "warped_crafting_table") {
+            return BLOCKS.register(
+                    registryName, () -> new CraftingTableBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE).sound(SoundType.NETHER_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "cherry_crafting_table") {
+            return BLOCKS.register(
+                    registryName, () -> new CraftingTableBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE).sound(SoundType.CHERRY_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "bamboo_crafting_table") {
+            return BLOCKS.register(
+                    registryName, () -> new CraftingTableBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE).sound(SoundType.BAMBOO_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new CraftingTableBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        }
+
+    }
+
+    public static DeferredBlock<CartographyTableBlock> registerCartographyTable(String registryName) {
+        if (registryName == "crimson_cartography_table" || registryName == "warped_cartography_table") {
+            return BLOCKS.register(
+                    registryName, () -> new CartographyTableBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.CARTOGRAPHY_TABLE).sound(SoundType.NETHER_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "cherry_cartography_table") {
+            return BLOCKS.register(
+                    registryName, () -> new CartographyTableBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.CARTOGRAPHY_TABLE).sound(SoundType.CHERRY_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "bamboo_cartography_table") {
+            return BLOCKS.register(
+                    registryName, () -> new CartographyTableBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.CARTOGRAPHY_TABLE).sound(SoundType.BAMBOO_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new CartographyTableBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.CARTOGRAPHY_TABLE)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        }
+
+    }
+
+    public static DeferredBlock<FletchingTableBlock> registerFletchingTable(String registryName) {
+        if (registryName == "crimson_fletching_table" || registryName == "warped_fletching_table") {
+            return BLOCKS.register(
+                    registryName, () -> new FletchingTableBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.FLETCHING_TABLE).sound(SoundType.NETHER_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "cherry_fletching_table") {
+            return BLOCKS.register(
+                    registryName, () -> new FletchingTableBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.FLETCHING_TABLE).sound(SoundType.CHERRY_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "bamboo_fletching_table") {
+            return BLOCKS.register(
+                    registryName, () -> new FletchingTableBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.FLETCHING_TABLE).sound(SoundType.BAMBOO_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new FletchingTableBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.FLETCHING_TABLE)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        }
+
+    }
 
     public static DeferredBlock<NukeBlock> registerNuke(String registryName) {
         return BLOCKS.register(

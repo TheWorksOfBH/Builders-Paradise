@@ -461,6 +461,50 @@ public class CreativeInvConfig {
             tabData.insertAfter(ModItems.URANIUM_ORE.get().getDefaultInstance(), ModItems.DEEPSLATE_URANIUM_ORE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
 
+        } else if (tabData.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+            tabData.remove(Items.CRAFTING_TABLE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.MAGMA_BLOCK.getDefaultInstance(), ModItems.OAK_CRAFTING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.OAK_CRAFTING_TABLE.get().getDefaultInstance(), ModItems.SPRUCE_CRAFTING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.SPRUCE_CRAFTING_TABLE.get().getDefaultInstance(), ModItems.BIRCH_CRAFTING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BIRCH_CRAFTING_TABLE.get().getDefaultInstance(), ModItems.JUNGLE_CRAFTING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.JUNGLE_CRAFTING_TABLE.get().getDefaultInstance(), ModItems.ACACIA_CRAFTING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.ACACIA_CRAFTING_TABLE.get().getDefaultInstance(), ModItems.DARK_OAK_CRAFTING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.DARK_OAK_CRAFTING_TABLE.get().getDefaultInstance(), ModItems.MANGROVE_CRAFTING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.MANGROVE_CRAFTING_TABLE.get().getDefaultInstance(), ModItems.CHERRY_CRAFTING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CHERRY_CRAFTING_TABLE.get().getDefaultInstance(), ModItems.PALE_OAK_CRAFTING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.PALE_OAK_CRAFTING_TABLE.get().getDefaultInstance(), ModItems.BAMBOO_CRAFTING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BAMBOO_CRAFTING_TABLE.get().getDefaultInstance(), ModItems.CRIMSON_CRAFTING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CRIMSON_CRAFTING_TABLE.get().getDefaultInstance(), ModItems.WARPED_CRAFTING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.remove(Items.CARTOGRAPHY_TABLE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STONECUTTER.getDefaultInstance(), ModItems.OAK_CARTOGRAPHY_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.OAK_CARTOGRAPHY_TABLE.get().getDefaultInstance(), ModItems.SPRUCE_CARTOGRAPHY_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.SPRUCE_CARTOGRAPHY_TABLE.get().getDefaultInstance(), ModItems.BIRCH_CARTOGRAPHY_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BIRCH_CARTOGRAPHY_TABLE.get().getDefaultInstance(), ModItems.JUNGLE_CARTOGRAPHY_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.JUNGLE_CARTOGRAPHY_TABLE.get().getDefaultInstance(), ModItems.ACACIA_CARTOGRAPHY_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.ACACIA_CARTOGRAPHY_TABLE.get().getDefaultInstance(), ModItems.DARK_OAK_CARTOGRAPHY_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.DARK_OAK_CARTOGRAPHY_TABLE.get().getDefaultInstance(), ModItems.MANGROVE_CARTOGRAPHY_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.MANGROVE_CARTOGRAPHY_TABLE.get().getDefaultInstance(), ModItems.CHERRY_CARTOGRAPHY_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CHERRY_CARTOGRAPHY_TABLE.get().getDefaultInstance(), ModItems.PALE_OAK_CARTOGRAPHY_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.PALE_OAK_CARTOGRAPHY_TABLE.get().getDefaultInstance(), ModItems.BAMBOO_CARTOGRAPHY_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BAMBOO_CARTOGRAPHY_TABLE.get().getDefaultInstance(), ModItems.CRIMSON_CARTOGRAPHY_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CRIMSON_CARTOGRAPHY_TABLE.get().getDefaultInstance(), ModItems.WARPED_CARTOGRAPHY_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.remove(Items.FLETCHING_TABLE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WARPED_CARTOGRAPHY_TABLE.get().getDefaultInstance(), ModItems.OAK_FLETCHING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.OAK_FLETCHING_TABLE.get().getDefaultInstance(), ModItems.SPRUCE_FLETCHING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.SPRUCE_FLETCHING_TABLE.get().getDefaultInstance(), ModItems.BIRCH_FLETCHING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BIRCH_FLETCHING_TABLE.get().getDefaultInstance(), ModItems.JUNGLE_FLETCHING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.JUNGLE_FLETCHING_TABLE.get().getDefaultInstance(), ModItems.ACACIA_FLETCHING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.ACACIA_FLETCHING_TABLE.get().getDefaultInstance(), ModItems.DARK_OAK_FLETCHING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.DARK_OAK_FLETCHING_TABLE.get().getDefaultInstance(), ModItems.MANGROVE_FLETCHING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.MANGROVE_FLETCHING_TABLE.get().getDefaultInstance(), ModItems.CHERRY_FLETCHING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CHERRY_FLETCHING_TABLE.get().getDefaultInstance(), ModItems.PALE_OAK_FLETCHING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.PALE_OAK_FLETCHING_TABLE.get().getDefaultInstance(), ModItems.BAMBOO_FLETCHING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BAMBOO_FLETCHING_TABLE.get().getDefaultInstance(), ModItems.CRIMSON_FLETCHING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CRIMSON_FLETCHING_TABLE.get().getDefaultInstance(), ModItems.WARPED_FLETCHING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+
         } else if (tabData.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             tabData.insertAfter(Items.PRISMARINE_CRYSTALS.getDefaultInstance(), ModItems.ELDER_PRISMARINE_SHARD.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.ELDER_PRISMARINE_SHARD.get().getDefaultInstance(), ModItems.ELDER_PRISMARINE_CRYSTALS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);

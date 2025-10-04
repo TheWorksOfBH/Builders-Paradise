@@ -51,4 +51,5 @@ public abstract class BlocksMixins {
     private static BlockBehaviour.Properties modifyIronBarsProperties(BlockBehaviour.Properties properties) {
         return properties.randomTicks();
     }
+
 }

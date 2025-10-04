@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import java.lang.reflect.Field;
 import java.util.Optional;
 import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
 import java.util.function.Consumer;
 
 public class ModBlockModelGenerator extends BlockModelGenerators {
@@ -79,6 +80,11 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
             throw new RuntimeException(e);
         }
         return provider;
+    }
+
+    public void createCustomCartographyTable(Block block, Block woodType) {
+        TextureMapping texturemapping = (new TextureMapping()).put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(block, "_side3")).put(TextureSlot.DOWN, TextureMapping.getBlockTexture(woodType)).put(TextureSlot.UP, TextureMapping.getBlockTexture(block, "_top")).put(TextureSlot.NORTH, TextureMapping.getBlockTexture(block, "_side3")).put(TextureSlot.EAST, TextureMapping.getBlockTexture(block, "_side3")).put(TextureSlot.SOUTH, TextureMapping.getBlockTexture(block, "_side1")).put(TextureSlot.WEST, TextureMapping.getBlockTexture(block, "_side2"));
+        this.blockStateOutput.accept(createSimpleBlock(block, plainVariant(ModelTemplates.CUBE.create(block, texturemapping, this.modelOutput))));
     }
 
     public void copyWeightedPressurePlateModel(Block pressurePlateBlock, Block sourceBlock) {
@@ -291,6 +297,17 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
     public void createNuke(Block nukeBlock, TexturedModel.Provider modelProvider) {
         MultiVariant resourcelocation = plainVariant(modelProvider.create(nukeBlock, this.modelOutput));
         this.blockStateOutput.accept(MultiVariantGenerator.dispatch(nukeBlock, resourcelocation).with(BlockModelGenerators.ROTATION_HORIZONTAL_FACING));
+    }
+
+    @Override
+    public void createCraftingTableLike(Block craftingTableBlock, Block craftingTableMaterialBlock, BiFunction<Block, Block, TextureMapping> textureMappingGetter) {
+        if (craftingTableBlock == ModBlocks.BIRCH_FLETCHING_TABLE.get()) {
+            TextureMapping texturemapping = (TextureMapping)textureMappingGetter.apply(Blocks.FLETCHING_TABLE, craftingTableMaterialBlock);
+            this.blockStateOutput.accept(createSimpleBlock(craftingTableBlock, plainVariant(ModelTemplates.CUBE.create(craftingTableBlock, texturemapping, this.modelOutput))));
+        } else {
+            TextureMapping texturemapping = (TextureMapping)textureMappingGetter.apply(craftingTableBlock, craftingTableMaterialBlock);
+            this.blockStateOutput.accept(createSimpleBlock(craftingTableBlock, plainVariant(ModelTemplates.CUBE.create(craftingTableBlock, texturemapping, this.modelOutput))));
+        }
     }
 
     @Override
@@ -567,6 +584,43 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
 
         this.createNonTemplateModelBlock(ModBlocks.NUCLEAR_WASTE.get());
         this.createNuke(ModBlocks.NUKE.get(), TexturedModel.ORIENTABLE);
+
+        this.createCraftingTableLike(ModBlocks.SPRUCE_CRAFTING_TABLE.get(), Blocks.SPRUCE_PLANKS, TextureMapping::craftingTable);
+        this.createCraftingTableLike(ModBlocks.BIRCH_CRAFTING_TABLE.get(), Blocks.BIRCH_PLANKS, TextureMapping::craftingTable);
+        this.createCraftingTableLike(ModBlocks.JUNGLE_CRAFTING_TABLE.get(), Blocks.JUNGLE_PLANKS, TextureMapping::craftingTable);
+        this.createCraftingTableLike(ModBlocks.ACACIA_CRAFTING_TABLE.get(), Blocks.ACACIA_PLANKS, TextureMapping::craftingTable);
+        this.createCraftingTableLike(ModBlocks.DARK_OAK_CRAFTING_TABLE.get(), Blocks.DARK_OAK_PLANKS, TextureMapping::craftingTable);
+        this.createCraftingTableLike(ModBlocks.CRIMSON_CRAFTING_TABLE.get(), Blocks.CRIMSON_PLANKS, TextureMapping::craftingTable);
+        this.createCraftingTableLike(ModBlocks.WARPED_CRAFTING_TABLE.get(), Blocks.WARPED_PLANKS, TextureMapping::craftingTable);
+        this.createCraftingTableLike(ModBlocks.MANGROVE_CRAFTING_TABLE.get(), Blocks.MANGROVE_PLANKS, TextureMapping::craftingTable);
+        this.createCraftingTableLike(ModBlocks.CHERRY_CRAFTING_TABLE.get(), Blocks.CHERRY_PLANKS, TextureMapping::craftingTable);
+        this.createCraftingTableLike(ModBlocks.BAMBOO_CRAFTING_TABLE.get(), Blocks.BAMBOO_PLANKS, TextureMapping::craftingTable);
+        this.createCraftingTableLike(ModBlocks.PALE_OAK_CRAFTING_TABLE.get(), Blocks.PALE_OAK_PLANKS, TextureMapping::craftingTable);
+
+        this.createCustomCartographyTable(ModBlocks.OAK_CARTOGRAPHY_TABLE.get(), Blocks.OAK_PLANKS);
+        this.createCustomCartographyTable(ModBlocks.SPRUCE_CARTOGRAPHY_TABLE.get(), Blocks.SPRUCE_PLANKS);
+        this.createCustomCartographyTable(ModBlocks.BIRCH_CARTOGRAPHY_TABLE.get(), Blocks.BIRCH_PLANKS);
+        this.createCustomCartographyTable(ModBlocks.JUNGLE_CARTOGRAPHY_TABLE.get(), Blocks.JUNGLE_PLANKS);
+        this.createCustomCartographyTable(ModBlocks.ACACIA_CARTOGRAPHY_TABLE.get(), Blocks.ACACIA_PLANKS);
+        this.createCustomCartographyTable(ModBlocks.CRIMSON_CARTOGRAPHY_TABLE.get(), Blocks.CRIMSON_PLANKS);
+        this.createCustomCartographyTable(ModBlocks.WARPED_CARTOGRAPHY_TABLE.get(), Blocks.WARPED_PLANKS);
+        this.createCustomCartographyTable(ModBlocks.MANGROVE_CARTOGRAPHY_TABLE.get(), Blocks.MANGROVE_PLANKS);
+        this.createCustomCartographyTable(ModBlocks.CHERRY_CARTOGRAPHY_TABLE.get(), Blocks.CHERRY_PLANKS);
+        this.createCustomCartographyTable(ModBlocks.BAMBOO_CARTOGRAPHY_TABLE.get(), Blocks.BAMBOO_PLANKS);
+        this.createCustomCartographyTable(ModBlocks.PALE_OAK_CARTOGRAPHY_TABLE.get(), Blocks.PALE_OAK_PLANKS);
+
+        this.createCraftingTableLike(ModBlocks.OAK_FLETCHING_TABLE.get(), Blocks.OAK_PLANKS, TextureMapping::fletchingTable);
+        this.createCraftingTableLike(ModBlocks.SPRUCE_FLETCHING_TABLE.get(), Blocks.SPRUCE_PLANKS, TextureMapping::fletchingTable);
+        this.createCraftingTableLike(ModBlocks.BIRCH_FLETCHING_TABLE.get(), Blocks.BIRCH_PLANKS, TextureMapping::fletchingTable);
+        this.createCraftingTableLike(ModBlocks.JUNGLE_FLETCHING_TABLE.get(), Blocks.JUNGLE_PLANKS, TextureMapping::fletchingTable);
+        this.createCraftingTableLike(ModBlocks.ACACIA_FLETCHING_TABLE.get(), Blocks.ACACIA_PLANKS, TextureMapping::fletchingTable);
+        this.createCraftingTableLike(ModBlocks.DARK_OAK_FLETCHING_TABLE.get(), Blocks.DARK_OAK_PLANKS, TextureMapping::fletchingTable);
+        this.createCraftingTableLike(ModBlocks.CRIMSON_FLETCHING_TABLE.get(), Blocks.CRIMSON_PLANKS, TextureMapping::fletchingTable);
+        this.createCraftingTableLike(ModBlocks.WARPED_FLETCHING_TABLE.get(), Blocks.WARPED_PLANKS, TextureMapping::fletchingTable);
+        this.createCraftingTableLike(ModBlocks.MANGROVE_FLETCHING_TABLE.get(), Blocks.MANGROVE_PLANKS, TextureMapping::fletchingTable);
+        this.createCraftingTableLike(ModBlocks.CHERRY_FLETCHING_TABLE.get(), Blocks.CHERRY_PLANKS, TextureMapping::fletchingTable);
+        this.createCraftingTableLike(ModBlocks.BAMBOO_FLETCHING_TABLE.get(), Blocks.BAMBOO_PLANKS, TextureMapping::fletchingTable);
+        this.createCraftingTableLike(ModBlocks.PALE_OAK_FLETCHING_TABLE.get(), Blocks.PALE_OAK_PLANKS, TextureMapping::fletchingTable);
 
         ModBlockFamilies.getAllFamilies()
                 .filter(BlockFamily::shouldGenerateModel)

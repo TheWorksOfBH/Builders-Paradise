@@ -9,15 +9,12 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
-import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
-import java.util.stream.Collectors;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 public class ModBlockTagsProvider extends BlockTagsProvider {
     public ModBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
@@ -25,19 +22,23 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
     }
 
     protected Iterable<Block> getKnownBlocks() {
-        List<DeferredBlock<?>> handMadeBlocks = List.of(
+        Set<Block> vanillaBlocksThatNeedNewTags = Set.of(
+                Blocks.CRAFTING_TABLE,
+                Blocks.CARTOGRAPHY_TABLE
+        );
+
+        Set<Block> handMadeBlocks = Set.of(
 
         );
-        Collection<DeferredHolder<Block, ? extends Block>> BLOCKS = ModBlocks.BLOCKS.getEntries();
-        Set<DeferredHolder<Block, ? extends Block>> COPY = new HashSet<>(BLOCKS);
 
-        for (DeferredBlock<?> block : handMadeBlocks) {
-            COPY.remove(block);
-        }
-
-        return COPY.stream()
-                .map(DeferredHolder::value)
-                .collect(Collectors.toList());
+        return Stream.concat(
+                vanillaBlocksThatNeedNewTags.stream(),
+                ModBlocks.BLOCKS.getEntries().stream().map(
+                        Supplier::get
+                )
+        ).filter(
+                (Predicate.not(handMadeBlocks::contains))
+        ).toList();
     }
 
     @Override
@@ -64,6 +65,12 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                     }
                     else if (block instanceof WeatheringCopperPressurePlateBlock | block instanceof WeightedPressurePlateBlock | block instanceof ModPressurePlateBlock) {
                         tag(BlockTags.PRESSURE_PLATES).add(block);
+                    } else if (block instanceof CraftingTableBlock) {
+                        tag(ModBlockTags.CRAFTING_TABLES).add(block);
+                    } else if (block instanceof CartographyTableBlock) {
+                        tag(ModBlockTags.CARTOGRAPHY_TABLES).add(block);
+                    } else if (block instanceof FletchingTableBlock) {
+                        tag(ModBlockTags.FLETCHING_TABLES).add(block);
                     }
                 }
         );

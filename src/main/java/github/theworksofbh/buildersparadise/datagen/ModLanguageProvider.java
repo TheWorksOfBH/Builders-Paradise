@@ -9,14 +9,11 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.LanguageProvider;
-import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 public class ModLanguageProvider extends LanguageProvider {
     public ModLanguageProvider(PackOutput output) {
@@ -24,51 +21,58 @@ public class ModLanguageProvider extends LanguageProvider {
     }
 
     protected Iterable<Block> getKnownBlocks() {
-        List<DeferredBlock<?>> handMadeBlocks = List.of(
+        Set<Block> vanillaBlocksThatNeedNewTranslations = Set.of(
 
         );
-        Collection<DeferredHolder<Block, ? extends Block>> BLOCKS = ModBlocks.BLOCKS.getEntries();
-        Set<DeferredHolder<Block, ? extends Block>> COPY = new HashSet<>(BLOCKS);
 
-        for (DeferredBlock<?> block : handMadeBlocks) {
-            COPY.remove(block);
-        }
+        Set<Block> handMadeBlocks = Set.of(
 
-        return COPY.stream()
-                .map(DeferredHolder::value)
-                .collect(Collectors.toList());
+        );
+
+        return Stream.concat(
+                vanillaBlocksThatNeedNewTranslations.stream(),
+                ModBlocks.BLOCKS.getEntries().stream().map(
+                        Supplier::get
+                )
+        ).filter(
+                (Predicate.not(handMadeBlocks::contains))
+        ).toList();
     }
 
     protected Iterable<Item> getKnownItems() {
-        List<DeferredBlock<?>> handMadeItems = List.of(
+        Set<Item> vanillaItemsThatNeedNewTranslations = Set.of(
+        );
+
+        Set<Item> handMadeItems = Set.of(
 
         );
-        Collection<DeferredHolder<Item, ? extends Item>> ITEMS = ModItems.ITEMS.getEntries();
-        Set<DeferredHolder<Item, ? extends Item>> COPY = new HashSet<>(ITEMS);
 
-        for (DeferredBlock<?> item : handMadeItems) {
-            COPY.remove(item);
-        }
-
-        return COPY.stream()
-                .map(DeferredHolder::value)
-                .collect(Collectors.toList());
+        return Stream.concat(
+                vanillaItemsThatNeedNewTranslations.stream(),
+                ModItems.ITEMS.getEntries().stream().map(
+                        Supplier::get
+                )
+        ).filter(
+                (Predicate.not(handMadeItems::contains))
+        ).toList();
     }
 
     protected Iterable<MobEffect> getKnownEffects() {
-        List<DeferredBlock<?>> handMadeEffects = List.of(
+        Set<MobEffect> vanillaEffectsThatNeedNewTranslations = Set.of(
+        );
+
+        Set<MobEffect> handMadeEffects = Set.of(
 
         );
-        Collection<DeferredHolder<MobEffect, ? extends MobEffect>> MOB_EFFECTS = ModEffects.MOB_EFFECTS.getEntries();
-        Set<DeferredHolder<MobEffect, ? extends MobEffect>> COPY = new HashSet<>(MOB_EFFECTS);
 
-        for (DeferredBlock<?> effect : handMadeEffects) {
-            COPY.remove(effect);
-        }
-
-        return COPY.stream()
-                .map(DeferredHolder::value)
-                .collect(Collectors.toList());
+        return Stream.concat(
+                vanillaEffectsThatNeedNewTranslations.stream(),
+                ModEffects.MOB_EFFECTS.getEntries().stream().map(
+                        Supplier::get
+                )
+        ).filter(
+                (Predicate.not(handMadeEffects::contains))
+        ).toList();
     }
 
     public static String formatString(String input) {
@@ -177,6 +181,7 @@ public class ModLanguageProvider extends LanguageProvider {
         );
         this.add("death.attack.radiation", "%1$s received an unhealthy dose of nuclear radiation");
         this.add("death.attack.radiation.player", "%1$s received an unhealthy dose of nuclear radiation while trying to escape %2$s");
-
+        this.add("stat.buildersparadise.interact_with_fletching_table", "Interactions with Fletching Table");
+        this.add("container.fletching", "Fletching");
     }
 }

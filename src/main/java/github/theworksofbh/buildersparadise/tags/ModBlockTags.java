@@ -15,6 +15,10 @@ public final class ModBlockTags {
     public static final TagKey<Block> PLATINUM_ORES = create("platinum_ores");
     public static final TagKey<Block> LEAD_ORES = create("lead_ores");
     public static final TagKey<Block> URANIUM_ORES = create("uranium_ores");
+    public static final TagKey<Block> CRAFTING_TABLES = create("crafting_tables");
+    public static final TagKey<Block> CARTOGRAPHY_TABLES = create("cartography_tables");
+    public static final TagKey<Block> FLETCHING_TABLES = create("fletching_tables");
+
 
 
     private ModBlockTags() {
