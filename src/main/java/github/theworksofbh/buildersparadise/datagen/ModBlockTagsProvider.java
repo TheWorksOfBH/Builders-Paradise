@@ -24,7 +24,18 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
     protected Iterable<Block> getKnownBlocks() {
         Set<Block> vanillaBlocksThatNeedNewTags = Set.of(
                 Blocks.CRAFTING_TABLE,
-                Blocks.CARTOGRAPHY_TABLE
+                Blocks.CARTOGRAPHY_TABLE,
+                Blocks.SMITHING_TABLE,
+                Blocks.GRINDSTONE,
+                Blocks.LOOM,
+                Blocks.FURNACE,
+                Blocks.SMOKER,
+                Blocks.BLAST_FURNACE,
+                Blocks.CAMPFIRE,
+                Blocks.SOUL_CAMPFIRE,
+                Blocks.BEEHIVE,
+                Blocks.BOOKSHELF,
+                Blocks.CHISELED_BOOKSHELF
         );
 
         Set<Block> handMadeBlocks = Set.of(
@@ -71,6 +82,27 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                         tag(ModBlockTags.CARTOGRAPHY_TABLES).add(block);
                     } else if (block instanceof FletchingTableBlock) {
                         tag(ModBlockTags.FLETCHING_TABLES).add(block);
+                    } else if (block instanceof SmithingTableBlock) {
+                        tag(ModBlockTags.SMITHING_TABLES).add(block);
+                    } else if (block instanceof GrindstoneBlock) {
+                        tag(ModBlockTags.GRINDSTONES).add(block);
+                    } else if (block instanceof LoomBlock) {
+                        tag(ModBlockTags.LOOMS).add(block);
+                    } else if (block instanceof FurnaceBlock) {
+                        tag(ModBlockTags.FURNACES).add(block);
+                    } else if (block instanceof SmokerBlock) {
+                        tag(ModBlockTags.SMOKERS).add(block);
+                    } else if (block instanceof BlastFurnaceBlock) {
+                        tag(ModBlockTags.BLAST_FURNACES).add(block);
+                    } else if (block instanceof CampfireBlock) {
+                        tag(BlockTags.CAMPFIRES).add(block);
+                    } else if (block instanceof BeehiveBlock) {
+                        tag(ModBlockTags.BEEHIVES).add(block);
+                    } else if (block.getDescriptionId().contains("bookshelf") && !block.getDescriptionId().contains("chiselled")) {
+                        tag(BlockTags.ENCHANTMENT_POWER_PROVIDER).add(block);
+                        tag(ModBlockTags.BOOKSHELVES).add(block);
+                    } else if (block instanceof ChiseledBookShelfBlock) {
+                        tag(ModBlockTags.CHISELED_BOOKSHELVES).add(block);
                     }
                 }
         );

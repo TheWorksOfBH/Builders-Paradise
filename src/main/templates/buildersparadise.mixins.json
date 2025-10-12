@@ -6,7 +6,10 @@
     "BlockBehaviourMixins",
     "BlocksMixins",
     "CraftingMenuMixins",
-    "CartographyTableMenuMixins"
+    "CartographyTableMenuMixins",
+    "GrindstoneMenuMixins",
+    "LoomMenuMixins",
+    "SmithingMenuMixins"
   ],
   "client": [
 

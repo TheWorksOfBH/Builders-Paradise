@@ -3,20 +3,28 @@ package github.theworksofbh.buildersparadise.datagen;
 import github.theworksofbh.buildersparadise.block.ModBlocks;
 import github.theworksofbh.buildersparadise.block.ModDoorBlock;
 import github.theworksofbh.buildersparadise.block.ModSlabBlock;
+import github.theworksofbh.buildersparadise.block.ModStairBlock;
 import github.theworksofbh.buildersparadise.items.ModItems;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.properties.SlabType;
+import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.Set;
@@ -34,7 +42,20 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         Set<Block> vanillaBlocksThatNeedNewLootTables = Set.of(
                 Blocks.CRAFTING_TABLE,
                 Blocks.CARTOGRAPHY_TABLE,
-                Blocks.FLETCHING_TABLE
+                Blocks.FLETCHING_TABLE,
+                Blocks.STONE_SLAB,
+                Blocks.STONE_STAIRS,
+                Blocks.SMITHING_TABLE,
+                Blocks.GRINDSTONE,
+                Blocks.LOOM,
+                Blocks.FURNACE,
+                Blocks.SMOKER,
+                Blocks.BLAST_FURNACE,
+                Blocks.CAMPFIRE,
+                Blocks.SOUL_CAMPFIRE,
+                Blocks.BEEHIVE,
+                Blocks.BOOKSHELF,
+                Blocks.CHISELED_BOOKSHELF
         );
 
         Set<Block> handMadeBlocks = Set.of(
@@ -60,7 +81,65 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         getKnownBlocks().forEach(
             block -> {
                 if (block instanceof SlabBlock || block instanceof ModSlabBlock){
-                    this.add(block, createSlabItemTable(block));
+                    if (block == Blocks.STONE_SLAB) {
+                        this.add(block, LootTable.lootTable()
+                            .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .add(LootItem.lootTableItem(Blocks.COBBLESTONE_SLAB)
+                                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))
+                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                            .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                .hasProperty(SlabBlock.TYPE, SlabType.DOUBLE))))
+                                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))
+                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                            .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                .hasProperty(SlabBlock.TYPE, SlabType.BOTTOM))))
+                                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))
+                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                            .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                .hasProperty(SlabBlock.TYPE, SlabType.TOP))))
+                                )
+                            )
+                        );
+                    } else if (block == ModBlocks.DEEPSLATE_SLAB.get()) {
+                        this.add(block, LootTable.lootTable()
+                            .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .add(LootItem.lootTableItem(Blocks.COBBLED_DEEPSLATE_SLAB)
+                                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))
+                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                            .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                .hasProperty(SlabBlock.TYPE, SlabType.DOUBLE))))
+                                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))
+                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                            .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                .hasProperty(SlabBlock.TYPE, SlabType.BOTTOM))))
+                                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))
+                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                            .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                .hasProperty(SlabBlock.TYPE, SlabType.TOP))))
+                                )
+                            )
+                        );
+                    } else {
+                        this.add(block, createSlabItemTable(block));
+                    }
+                } else if (block instanceof StairBlock || block instanceof ModStairBlock) {
+                    if (block == Blocks.STONE_STAIRS) {
+                        this.dropOther(block, Items.COBBLESTONE_STAIRS);
+                    } else if (block == ModBlocks.DEEPSLATE_STAIRS.get()) {
+                        this.dropOther(block, Items.COBBLED_DEEPSLATE_STAIRS);
+                    } else {
+                        this.dropSelf(block);
+                    }
+                } else if (block instanceof WallBlock) {
+                    if (block == ModBlocks.STONE_WALL.get()) {
+                        this.dropOther(block, Items.COBBLESTONE_WALL);
+                    } else if (block == ModBlocks.DEEPSLATE_WALL.get()) {
+                        this.dropOther(block, Items.COBBLED_DEEPSLATE_WALL);
+                    } else {
+                        this.dropSelf(block);
+                    }
                 } else if (block instanceof DoorBlock || block instanceof ModDoorBlock) {
                     this.add(block, createDoorTable(block));
                 } else if (block instanceof DropExperienceBlock) {
@@ -85,6 +164,49 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                     this.dropOther(block, ModItems.DARK_OAK_CARTOGRAPHY_TABLE.get());
                 } else if (block == Blocks.FLETCHING_TABLE) {
                     this.dropOther(block, ModItems.BIRCH_FLETCHING_TABLE.get());
+                } else if (block == Blocks.SMITHING_TABLE) {
+                    this.dropOther(block, ModItems.MANGROVE_SMITHING_TABLE.get());
+                } else if (block == Blocks.GRINDSTONE) {
+                    this.dropOther(block, ModItems.DARK_OAK_GRINDSTONE.get());
+                } else if (block == Blocks.LOOM) {
+                    this.dropOther(block, ModItems.OAK_LOOM.get());
+                } else if (block == Blocks.FURNACE) {
+                    this.dropOther(block, ModItems.STONE_FURNACE.get());
+                } else if (block == Blocks.SMOKER) {
+                    this.dropOther(block, ModItems.OAK_STONE_SMOKER.get());
+                } else if (block == Blocks.BLAST_FURNACE) {
+                    this.dropOther(block, ModItems.STONE_BLAST_FURNACE.get());
+                } else if (block == Blocks.CAMPFIRE) {
+                    this.dropOther(block, ModItems.OAK_CAMPFIRE.get());
+                } else if (block == Blocks.SOUL_CAMPFIRE) {
+                    this.dropOther(block, ModItems.OAK_SOUL_CAMPFIRE.get());
+                } else if (block == Blocks.BEEHIVE) {
+                    this.dropOther(block, ModItems.OAK_BEEHIVE.get());
+                } else if (block.getName().contains(Component.nullToEmpty("bookshelf")) && !block.getName().contains(Component.nullToEmpty("chiselled"))) {
+                    if (block == Blocks.BOOKSHELF) {
+                        this.add(block, LootTable.lootTable()
+                                .withPool(
+                                        LootPool.lootPool()
+                                                .setRolls(ConstantValue.exactly(1))
+                                                .add(
+                                                        LootItem.lootTableItem(ModItems.OAK_BOOKSHELF.get())
+                                                                .when(this.hasSilkTouch())
+                                                                .otherwise(
+                                                                        LootItem.lootTableItem(Items.BOOK)
+                                                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3.0F)))
+                                                                )
+                                                )
+                                )
+                        );
+                    } else {
+                        this.add(block, createSingleItemTableWithSilkTouch(block, Items.BOOK, ConstantValue.exactly(3.0F)));
+                    }
+                } else if (block instanceof ChiseledBookShelfBlock) {
+                    if (block == Blocks.CHISELED_BOOKSHELF) {
+                        this.add(block, createSilkTouchOnlyTable(ModItems.OAK_CHISELED_BOOKSHELF.get()));
+                    } else {
+                        this.dropWhenSilkTouch(block);
+                    }
                 } else {
                     this.dropSelf(block);
                 }

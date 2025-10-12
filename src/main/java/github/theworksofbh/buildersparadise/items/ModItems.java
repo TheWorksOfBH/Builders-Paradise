@@ -535,6 +535,156 @@ public class ModItems {
     public static final DeferredItem<BlockItem> BAMBOO_FLETCHING_TABLE = registerBlockItem("bamboo_fletching_table", () -> ModBlocks.BAMBOO_FLETCHING_TABLE.get());
     public static final DeferredItem<BlockItem> PALE_OAK_FLETCHING_TABLE = registerBlockItem("pale_oak_fletching_table", () -> ModBlocks.PALE_OAK_FLETCHING_TABLE.get());
 
+    public static final DeferredItem<BlockItem> OAK_SMITHING_TABLE = registerBlockItem("oak_smithing_table", () -> ModBlocks.OAK_SMITHING_TABLE.get());
+    public static final DeferredItem<BlockItem> SPRUCE_SMITHING_TABLE = registerBlockItem("spruce_smithing_table", () -> ModBlocks.SPRUCE_SMITHING_TABLE.get());
+    public static final DeferredItem<BlockItem> BIRCH_SMITHING_TABLE = registerBlockItem("birch_smithing_table", () -> ModBlocks.BIRCH_SMITHING_TABLE.get());
+    public static final DeferredItem<BlockItem> JUNGLE_SMITHING_TABLE = registerBlockItem("jungle_smithing_table", () -> ModBlocks.JUNGLE_SMITHING_TABLE.get());
+    public static final DeferredItem<BlockItem> ACACIA_SMITHING_TABLE = registerBlockItem("acacia_smithing_table", () -> ModBlocks.ACACIA_SMITHING_TABLE.get());
+    public static final DeferredItem<BlockItem> DARK_OAK_SMITHING_TABLE = registerBlockItem("dark_oak_smithing_table", () -> ModBlocks.DARK_OAK_SMITHING_TABLE.get());
+    public static final DeferredItem<BlockItem> CRIMSON_SMITHING_TABLE = registerBlockItem("crimson_smithing_table", () -> ModBlocks.CRIMSON_SMITHING_TABLE.get());
+    public static final DeferredItem<BlockItem> WARPED_SMITHING_TABLE = registerBlockItem("warped_smithing_table", () -> ModBlocks.WARPED_SMITHING_TABLE.get());
+    public static final DeferredItem<BlockItem> MANGROVE_SMITHING_TABLE = registerBlockItem("mangrove_smithing_table", () -> Blocks.SMITHING_TABLE);
+    public static final DeferredItem<BlockItem> CHERRY_SMITHING_TABLE = registerBlockItem("cherry_smithing_table", () -> ModBlocks.CHERRY_SMITHING_TABLE.get());
+    public static final DeferredItem<BlockItem> BAMBOO_SMITHING_TABLE = registerBlockItem("bamboo_smithing_table", () -> ModBlocks.BAMBOO_SMITHING_TABLE.get());
+    public static final DeferredItem<BlockItem> PALE_OAK_SMITHING_TABLE = registerBlockItem("pale_oak_smithing_table", () -> ModBlocks.PALE_OAK_SMITHING_TABLE.get());
+
+    public static final DeferredItem<BlockItem> OAK_GRINDSTONE = registerBlockItem("oak_grindstone", () -> ModBlocks.OAK_GRINDSTONE.get());
+    public static final DeferredItem<BlockItem> SPRUCE_GRINDSTONE = registerBlockItem("spruce_grindstone", () -> ModBlocks.SPRUCE_GRINDSTONE.get());
+    public static final DeferredItem<BlockItem> BIRCH_GRINDSTONE = registerBlockItem("birch_grindstone", () -> ModBlocks.BIRCH_GRINDSTONE.get());
+    public static final DeferredItem<BlockItem> JUNGLE_GRINDSTONE = registerBlockItem("jungle_grindstone", () -> ModBlocks.JUNGLE_GRINDSTONE.get());
+    public static final DeferredItem<BlockItem> ACACIA_GRINDSTONE = registerBlockItem("acacia_grindstone", () -> ModBlocks.ACACIA_GRINDSTONE.get());
+    public static final DeferredItem<BlockItem> DARK_OAK_GRINDSTONE = registerBlockItem("dark_oak_grindstone", () -> Blocks.GRINDSTONE);
+    public static final DeferredItem<BlockItem> CRIMSON_GRINDSTONE = registerBlockItem("crimson_grindstone", () -> ModBlocks.CRIMSON_GRINDSTONE.get());
+    public static final DeferredItem<BlockItem> WARPED_GRINDSTONE = registerBlockItem("warped_grindstone", () -> ModBlocks.WARPED_GRINDSTONE.get());
+    public static final DeferredItem<BlockItem> MANGROVE_GRINDSTONE = registerBlockItem("mangrove_grindstone", () -> ModBlocks.MANGROVE_GRINDSTONE.get());
+    public static final DeferredItem<BlockItem> CHERRY_GRINDSTONE = registerBlockItem("cherry_grindstone", () -> ModBlocks.CHERRY_GRINDSTONE.get());
+    public static final DeferredItem<BlockItem> BAMBOO_GRINDSTONE = registerBlockItem("bamboo_grindstone", () -> ModBlocks.BAMBOO_GRINDSTONE.get());
+    public static final DeferredItem<BlockItem> PALE_OAK_GRINDSTONE = registerBlockItem("pale_oak_grindstone", () -> ModBlocks.PALE_OAK_GRINDSTONE.get());
+
+    public static final DeferredItem<BlockItem> OAK_LOOM = registerBlockItem("oak_loom", () -> Blocks.LOOM);
+    public static final DeferredItem<BlockItem> SPRUCE_LOOM = registerBlockItem("spruce_loom", () -> ModBlocks.SPRUCE_LOOM.get());
+    public static final DeferredItem<BlockItem> BIRCH_LOOM = registerBlockItem("birch_loom", () -> ModBlocks.BIRCH_LOOM.get());
+    public static final DeferredItem<BlockItem> JUNGLE_LOOM = registerBlockItem("jungle_loom", () -> ModBlocks.JUNGLE_LOOM.get());
+    public static final DeferredItem<BlockItem> ACACIA_LOOM = registerBlockItem("acacia_loom", () -> ModBlocks.ACACIA_LOOM.get());
+    public static final DeferredItem<BlockItem> DARK_OAK_LOOM = registerBlockItem("dark_oak_loom", () -> ModBlocks.DARK_OAK_LOOM.get());
+    public static final DeferredItem<BlockItem> CRIMSON_LOOM = registerBlockItem("crimson_loom", () -> ModBlocks.CRIMSON_LOOM.get());
+    public static final DeferredItem<BlockItem> WARPED_LOOM = registerBlockItem("warped_loom", () -> ModBlocks.WARPED_LOOM.get());
+    public static final DeferredItem<BlockItem> MANGROVE_LOOM = registerBlockItem("mangrove_loom", () -> ModBlocks.MANGROVE_LOOM.get());
+    public static final DeferredItem<BlockItem> CHERRY_LOOM = registerBlockItem("cherry_loom", () -> ModBlocks.CHERRY_LOOM.get());
+    public static final DeferredItem<BlockItem> BAMBOO_LOOM = registerBlockItem("bamboo_loom", () -> ModBlocks.BAMBOO_LOOM.get());
+    public static final DeferredItem<BlockItem> PALE_OAK_LOOM = registerBlockItem("pale_oak_loom", () -> ModBlocks.PALE_OAK_LOOM.get());
+
+    public static final DeferredItem<BlockItem> STONE_FURNACE = registerBlockItem("stone_furnace", () -> Blocks.FURNACE);
+    public static final DeferredItem<BlockItem> BLACKSTONE_FURNACE = registerBlockItem("blackstone_furnace", () -> ModBlocks.BLACKSTONE_FURNACE.get());
+    public static final DeferredItem<BlockItem> DEEPSLATE_FURNACE = registerBlockItem("deepslate_furnace", () -> ModBlocks.DEEPSLATE_FURNACE.get());
+
+    public static final DeferredItem<BlockItem> OAK_STONE_SMOKER = registerBlockItem("oak_stone_smoker", () -> Blocks.SMOKER);
+    public static final DeferredItem<BlockItem> SPRUCE_STONE_SMOKER = registerBlockItem("spruce_stone_smoker", () -> ModBlocks.SPRUCE_STONE_SMOKER.get());
+    public static final DeferredItem<BlockItem> BIRCH_STONE_SMOKER = registerBlockItem("birch_stone_smoker", () -> ModBlocks.BIRCH_STONE_SMOKER.get());
+    public static final DeferredItem<BlockItem> JUNGLE_STONE_SMOKER = registerBlockItem("jungle_stone_smoker", () -> ModBlocks.JUNGLE_STONE_SMOKER.get());
+    public static final DeferredItem<BlockItem> ACACIA_STONE_SMOKER = registerBlockItem("acacia_stone_smoker", () -> ModBlocks.ACACIA_STONE_SMOKER.get());
+    public static final DeferredItem<BlockItem> DARK_OAK_STONE_SMOKER = registerBlockItem("dark_oak_stone_smoker", () -> ModBlocks.DARK_OAK_STONE_SMOKER.get());
+    public static final DeferredItem<BlockItem> CRIMSON_STONE_SMOKER = registerBlockItem("crimson_stone_smoker", () -> ModBlocks.CRIMSON_STONE_SMOKER.get());
+    public static final DeferredItem<BlockItem> WARPED_STONE_SMOKER = registerBlockItem("warped_stone_smoker", () -> ModBlocks.WARPED_STONE_SMOKER.get());
+    public static final DeferredItem<BlockItem> MANGROVE_STONE_SMOKER = registerBlockItem("mangrove_stone_smoker", () -> ModBlocks.MANGROVE_STONE_SMOKER.get());
+    public static final DeferredItem<BlockItem> CHERRY_STONE_SMOKER = registerBlockItem("cherry_stone_smoker", () -> ModBlocks.CHERRY_STONE_SMOKER.get());
+    public static final DeferredItem<BlockItem> BAMBOO_STONE_SMOKER = registerBlockItem("bamboo_stone_smoker", () -> ModBlocks.BAMBOO_STONE_SMOKER.get());
+    public static final DeferredItem<BlockItem> PALE_OAK_STONE_SMOKER = registerBlockItem("pale_oak_stone_smoker", () -> ModBlocks.PALE_OAK_STONE_SMOKER.get());
+
+    public static final DeferredItem<BlockItem> OAK_BLACKSTONE_SMOKER = registerBlockItem("oak_blackstone_smoker", () -> ModBlocks.OAK_BLACKSTONE_SMOKER.get());
+    public static final DeferredItem<BlockItem> SPRUCE_BLACKSTONE_SMOKER = registerBlockItem("spruce_blackstone_smoker", () -> ModBlocks.SPRUCE_BLACKSTONE_SMOKER.get());
+    public static final DeferredItem<BlockItem> BIRCH_BLACKSTONE_SMOKER = registerBlockItem("birch_blackstone_smoker", () -> ModBlocks.BIRCH_BLACKSTONE_SMOKER.get());
+    public static final DeferredItem<BlockItem> JUNGLE_BLACKSTONE_SMOKER = registerBlockItem("jungle_blackstone_smoker", () -> ModBlocks.JUNGLE_BLACKSTONE_SMOKER.get());
+    public static final DeferredItem<BlockItem> ACACIA_BLACKSTONE_SMOKER = registerBlockItem("acacia_blackstone_smoker", () -> ModBlocks.ACACIA_BLACKSTONE_SMOKER.get());
+    public static final DeferredItem<BlockItem> DARK_OAK_BLACKSTONE_SMOKER = registerBlockItem("dark_oak_blackstone_smoker", () -> ModBlocks.DARK_OAK_BLACKSTONE_SMOKER.get());
+    public static final DeferredItem<BlockItem> CRIMSON_BLACKSTONE_SMOKER = registerBlockItem("crimson_blackstone_smoker", () -> ModBlocks.CRIMSON_BLACKSTONE_SMOKER.get());
+    public static final DeferredItem<BlockItem> WARPED_BLACKSTONE_SMOKER = registerBlockItem("warped_blackstone_smoker", () -> ModBlocks.WARPED_BLACKSTONE_SMOKER.get());
+    public static final DeferredItem<BlockItem> MANGROVE_BLACKSTONE_SMOKER = registerBlockItem("mangrove_blackstone_smoker", () -> ModBlocks.MANGROVE_BLACKSTONE_SMOKER.get());
+    public static final DeferredItem<BlockItem> CHERRY_BLACKSTONE_SMOKER = registerBlockItem("cherry_blackstone_smoker", () -> ModBlocks.CHERRY_BLACKSTONE_SMOKER.get());
+    public static final DeferredItem<BlockItem> BAMBOO_BLACKSTONE_SMOKER = registerBlockItem("bamboo_blackstone_smoker", () -> ModBlocks.BAMBOO_BLACKSTONE_SMOKER.get());
+    public static final DeferredItem<BlockItem> PALE_OAK_BLACKSTONE_SMOKER = registerBlockItem("pale_oak_blackstone_smoker", () -> ModBlocks.PALE_OAK_BLACKSTONE_SMOKER.get());
+
+    public static final DeferredItem<BlockItem> OAK_DEEPSLATE_SMOKER = registerBlockItem("oak_deepslate_smoker", () -> ModBlocks.OAK_DEEPSLATE_SMOKER.get());
+    public static final DeferredItem<BlockItem> SPRUCE_DEEPSLATE_SMOKER = registerBlockItem("spruce_deepslate_smoker", () -> ModBlocks.SPRUCE_DEEPSLATE_SMOKER.get());
+    public static final DeferredItem<BlockItem> BIRCH_DEEPSLATE_SMOKER = registerBlockItem("birch_deepslate_smoker", () -> ModBlocks.BIRCH_DEEPSLATE_SMOKER.get());
+    public static final DeferredItem<BlockItem> JUNGLE_DEEPSLATE_SMOKER = registerBlockItem("jungle_deepslate_smoker", () -> ModBlocks.JUNGLE_DEEPSLATE_SMOKER.get());
+    public static final DeferredItem<BlockItem> ACACIA_DEEPSLATE_SMOKER = registerBlockItem("acacia_deepslate_smoker", () -> ModBlocks.ACACIA_DEEPSLATE_SMOKER.get());
+    public static final DeferredItem<BlockItem> DARK_OAK_DEEPSLATE_SMOKER = registerBlockItem("dark_oak_deepslate_smoker", () -> ModBlocks.DARK_OAK_DEEPSLATE_SMOKER.get());
+    public static final DeferredItem<BlockItem> CRIMSON_DEEPSLATE_SMOKER = registerBlockItem("crimson_deepslate_smoker", () -> ModBlocks.CRIMSON_DEEPSLATE_SMOKER.get());
+    public static final DeferredItem<BlockItem> WARPED_DEEPSLATE_SMOKER = registerBlockItem("warped_deepslate_smoker", () -> ModBlocks.WARPED_DEEPSLATE_SMOKER.get());
+    public static final DeferredItem<BlockItem> MANGROVE_DEEPSLATE_SMOKER = registerBlockItem("mangrove_deepslate_smoker", () -> ModBlocks.MANGROVE_DEEPSLATE_SMOKER.get());
+    public static final DeferredItem<BlockItem> CHERRY_DEEPSLATE_SMOKER = registerBlockItem("cherry_deepslate_smoker", () -> ModBlocks.CHERRY_DEEPSLATE_SMOKER.get());
+    public static final DeferredItem<BlockItem> BAMBOO_DEEPSLATE_SMOKER = registerBlockItem("bamboo_deepslate_smoker", () -> ModBlocks.BAMBOO_DEEPSLATE_SMOKER.get());
+    public static final DeferredItem<BlockItem> PALE_OAK_DEEPSLATE_SMOKER = registerBlockItem("pale_oak_deepslate_smoker", () -> ModBlocks.PALE_OAK_DEEPSLATE_SMOKER.get());
+
+    public static final DeferredItem<BlockItem> STONE_BLAST_FURNACE = registerBlockItem("stone_blast_furnace", () -> Blocks.BLAST_FURNACE);
+    public static final DeferredItem<BlockItem> BLACKSTONE_BLAST_FURNACE = registerBlockItem("blackstone_blast_furnace", () -> ModBlocks.BLACKSTONE_BLAST_FURNACE.get());
+    public static final DeferredItem<BlockItem> DEEPSLATE_BLAST_FURNACE = registerBlockItem("deepslate_blast_furnace", () -> ModBlocks.DEEPSLATE_BLAST_FURNACE.get());
+
+    public static final DeferredItem<BlockItem> OAK_CAMPFIRE = registerBlockItem("oak_campfire", () -> Blocks.CAMPFIRE);
+    public static final DeferredItem<BlockItem> SPRUCE_CAMPFIRE = registerBlockItem("spruce_campfire", () -> ModBlocks.SPRUCE_CAMPFIRE.get());
+    public static final DeferredItem<BlockItem> BIRCH_CAMPFIRE = registerBlockItem("birch_campfire", () -> ModBlocks.BIRCH_CAMPFIRE.get());
+    public static final DeferredItem<BlockItem> JUNGLE_CAMPFIRE = registerBlockItem("jungle_campfire", () -> ModBlocks.JUNGLE_CAMPFIRE.get());
+    public static final DeferredItem<BlockItem> ACACIA_CAMPFIRE = registerBlockItem("acacia_campfire", () -> ModBlocks.ACACIA_CAMPFIRE.get());
+    public static final DeferredItem<BlockItem> DARK_OAK_CAMPFIRE = registerBlockItem("dark_oak_campfire", () -> ModBlocks.DARK_OAK_CAMPFIRE.get());
+    public static final DeferredItem<BlockItem> CRIMSON_CAMPFIRE = registerBlockItem("crimson_campfire", () -> ModBlocks.CRIMSON_CAMPFIRE.get());
+    public static final DeferredItem<BlockItem> WARPED_CAMPFIRE = registerBlockItem("warped_campfire", () -> ModBlocks.WARPED_CAMPFIRE.get());
+    public static final DeferredItem<BlockItem> MANGROVE_CAMPFIRE = registerBlockItem("mangrove_campfire", () -> ModBlocks.MANGROVE_CAMPFIRE.get());
+    public static final DeferredItem<BlockItem> CHERRY_CAMPFIRE = registerBlockItem("cherry_campfire", () -> ModBlocks.CHERRY_CAMPFIRE.get());
+    public static final DeferredItem<BlockItem> BAMBOO_CAMPFIRE = registerBlockItem("bamboo_campfire", () -> ModBlocks.BAMBOO_CAMPFIRE.get());
+    public static final DeferredItem<BlockItem> PALE_OAK_CAMPFIRE = registerBlockItem("pale_oak_campfire", () -> ModBlocks.PALE_OAK_CAMPFIRE.get());
+
+    public static final DeferredItem<BlockItem> OAK_SOUL_CAMPFIRE = registerBlockItem("oak_soul_campfire", () -> Blocks.SOUL_CAMPFIRE);
+    public static final DeferredItem<BlockItem> SPRUCE_SOUL_CAMPFIRE = registerBlockItem("spruce_soul_campfire", () -> ModBlocks.SPRUCE_SOUL_CAMPFIRE.get());
+    public static final DeferredItem<BlockItem> BIRCH_SOUL_CAMPFIRE = registerBlockItem("birch_soul_campfire", () -> ModBlocks.BIRCH_SOUL_CAMPFIRE.get());
+    public static final DeferredItem<BlockItem> JUNGLE_SOUL_CAMPFIRE = registerBlockItem("jungle_soul_campfire", () -> ModBlocks.JUNGLE_SOUL_CAMPFIRE.get());
+    public static final DeferredItem<BlockItem> ACACIA_SOUL_CAMPFIRE = registerBlockItem("acacia_soul_campfire", () -> ModBlocks.ACACIA_SOUL_CAMPFIRE.get());
+    public static final DeferredItem<BlockItem> DARK_OAK_SOUL_CAMPFIRE = registerBlockItem("dark_oak_soul_campfire", () -> ModBlocks.DARK_OAK_SOUL_CAMPFIRE.get());
+    public static final DeferredItem<BlockItem> CRIMSON_SOUL_CAMPFIRE = registerBlockItem("crimson_soul_campfire", () -> ModBlocks.CRIMSON_SOUL_CAMPFIRE.get());
+    public static final DeferredItem<BlockItem> WARPED_SOUL_CAMPFIRE = registerBlockItem("warped_soul_campfire", () -> ModBlocks.WARPED_SOUL_CAMPFIRE.get());
+    public static final DeferredItem<BlockItem> MANGROVE_SOUL_CAMPFIRE = registerBlockItem("mangrove_soul_campfire", () -> ModBlocks.MANGROVE_SOUL_CAMPFIRE.get());
+    public static final DeferredItem<BlockItem> CHERRY_SOUL_CAMPFIRE = registerBlockItem("cherry_soul_campfire", () -> ModBlocks.CHERRY_SOUL_CAMPFIRE.get());
+    public static final DeferredItem<BlockItem> BAMBOO_SOUL_CAMPFIRE = registerBlockItem("bamboo_soul_campfire", () -> ModBlocks.BAMBOO_SOUL_CAMPFIRE.get());
+    public static final DeferredItem<BlockItem> PALE_OAK_SOUL_CAMPFIRE = registerBlockItem("pale_oak_soul_campfire", () -> ModBlocks.PALE_OAK_SOUL_CAMPFIRE.get());
+
+    public static final DeferredItem<BlockItem> OAK_BEEHIVE = registerBlockItem("oak_beehive", () -> Blocks.BEEHIVE);
+    public static final DeferredItem<BlockItem> SPRUCE_BEEHIVE = registerBlockItem("spruce_beehive", () -> ModBlocks.SPRUCE_BEEHIVE.get());
+    public static final DeferredItem<BlockItem> BIRCH_BEEHIVE = registerBlockItem("birch_beehive", () -> ModBlocks.BIRCH_BEEHIVE.get());
+    public static final DeferredItem<BlockItem> JUNGLE_BEEHIVE = registerBlockItem("jungle_beehive", () -> ModBlocks.JUNGLE_BEEHIVE.get());
+    public static final DeferredItem<BlockItem> ACACIA_BEEHIVE = registerBlockItem("acacia_beehive", () -> ModBlocks.ACACIA_BEEHIVE.get());
+    public static final DeferredItem<BlockItem> DARK_OAK_BEEHIVE = registerBlockItem("dark_oak_beehive", () -> ModBlocks.DARK_OAK_BEEHIVE.get());
+    public static final DeferredItem<BlockItem> CRIMSON_BEEHIVE = registerBlockItem("crimson_beehive", () -> ModBlocks.CRIMSON_BEEHIVE.get());
+    public static final DeferredItem<BlockItem> WARPED_BEEHIVE = registerBlockItem("warped_beehive", () -> ModBlocks.WARPED_BEEHIVE.get());
+    public static final DeferredItem<BlockItem> MANGROVE_BEEHIVE = registerBlockItem("mangrove_beehive", () -> ModBlocks.MANGROVE_BEEHIVE.get());
+    public static final DeferredItem<BlockItem> CHERRY_BEEHIVE = registerBlockItem("cherry_beehive", () -> ModBlocks.CHERRY_BEEHIVE.get());
+    public static final DeferredItem<BlockItem> BAMBOO_BEEHIVE = registerBlockItem("bamboo_beehive", () -> ModBlocks.BAMBOO_BEEHIVE.get());
+    public static final DeferredItem<BlockItem> PALE_OAK_BEEHIVE = registerBlockItem("pale_oak_beehive", () -> ModBlocks.PALE_OAK_BEEHIVE.get());
+
+    public static final DeferredItem<BlockItem> OAK_BOOKSHELF = registerBlockItem("oak_bookshelf", () -> Blocks.BOOKSHELF);
+    public static final DeferredItem<BlockItem> SPRUCE_BOOKSHELF = registerBlockItem("spruce_bookshelf", () -> ModBlocks.SPRUCE_BOOKSHELF.get());
+    public static final DeferredItem<BlockItem> BIRCH_BOOKSHELF = registerBlockItem("birch_bookshelf", () -> ModBlocks.BIRCH_BOOKSHELF.get());
+    public static final DeferredItem<BlockItem> JUNGLE_BOOKSHELF = registerBlockItem("jungle_bookshelf", () -> ModBlocks.JUNGLE_BOOKSHELF.get());
+    public static final DeferredItem<BlockItem> ACACIA_BOOKSHELF = registerBlockItem("acacia_bookshelf", () -> ModBlocks.ACACIA_BOOKSHELF.get());
+    public static final DeferredItem<BlockItem> DARK_OAK_BOOKSHELF = registerBlockItem("dark_oak_bookshelf", () -> ModBlocks.DARK_OAK_BOOKSHELF.get());
+    public static final DeferredItem<BlockItem> CRIMSON_BOOKSHELF = registerBlockItem("crimson_bookshelf", () -> ModBlocks.CRIMSON_BOOKSHELF.get());
+    public static final DeferredItem<BlockItem> WARPED_BOOKSHELF = registerBlockItem("warped_bookshelf", () -> ModBlocks.WARPED_BOOKSHELF.get());
+    public static final DeferredItem<BlockItem> MANGROVE_BOOKSHELF = registerBlockItem("mangrove_bookshelf", () -> ModBlocks.MANGROVE_BOOKSHELF.get());
+    public static final DeferredItem<BlockItem> CHERRY_BOOKSHELF = registerBlockItem("cherry_bookshelf", () -> ModBlocks.CHERRY_BOOKSHELF.get());
+    public static final DeferredItem<BlockItem> BAMBOO_BOOKSHELF = registerBlockItem("bamboo_bookshelf", () -> ModBlocks.BAMBOO_BOOKSHELF.get());
+    public static final DeferredItem<BlockItem> PALE_OAK_BOOKSHELF = registerBlockItem("pale_oak_bookshelf", () -> ModBlocks.PALE_OAK_BOOKSHELF.get());
+
+    public static final DeferredItem<BlockItem> OAK_CHISELED_BOOKSHELF = registerBlockItem("oak_chiseled_bookshelf", () -> Blocks.CHISELED_BOOKSHELF);
+    public static final DeferredItem<BlockItem> SPRUCE_CHISELED_BOOKSHELF = registerBlockItem("spruce_chiseled_bookshelf", () -> ModBlocks.SPRUCE_CHISELED_BOOKSHELF.get());
+    public static final DeferredItem<BlockItem> BIRCH_CHISELED_BOOKSHELF = registerBlockItem("birch_chiseled_bookshelf", () -> ModBlocks.BIRCH_CHISELED_BOOKSHELF.get());
+    public static final DeferredItem<BlockItem> JUNGLE_CHISELED_BOOKSHELF = registerBlockItem("jungle_chiseled_bookshelf", () -> ModBlocks.JUNGLE_CHISELED_BOOKSHELF.get());
+    public static final DeferredItem<BlockItem> ACACIA_CHISELED_BOOKSHELF = registerBlockItem("acacia_chiseled_bookshelf", () -> ModBlocks.ACACIA_CHISELED_BOOKSHELF.get());
+    public static final DeferredItem<BlockItem> DARK_OAK_CHISELED_BOOKSHELF = registerBlockItem("dark_oak_chiseled_bookshelf", () -> ModBlocks.DARK_OAK_CHISELED_BOOKSHELF.get());
+    public static final DeferredItem<BlockItem> CRIMSON_CHISELED_BOOKSHELF = registerBlockItem("crimson_chiseled_bookshelf", () -> ModBlocks.CRIMSON_CHISELED_BOOKSHELF.get());
+    public static final DeferredItem<BlockItem> WARPED_CHISELED_BOOKSHELF = registerBlockItem("warped_chiseled_bookshelf", () -> ModBlocks.WARPED_CHISELED_BOOKSHELF.get());
+    public static final DeferredItem<BlockItem> MANGROVE_CHISELED_BOOKSHELF = registerBlockItem("mangrove_chiseled_bookshelf", () -> ModBlocks.MANGROVE_CHISELED_BOOKSHELF.get());
+    public static final DeferredItem<BlockItem> CHERRY_CHISELED_BOOKSHELF = registerBlockItem("cherry_chiseled_bookshelf", () -> ModBlocks.CHERRY_CHISELED_BOOKSHELF.get());
+    public static final DeferredItem<BlockItem> BAMBOO_CHISELED_BOOKSHELF = registerBlockItem("bamboo_chiseled_bookshelf", () -> ModBlocks.BAMBOO_CHISELED_BOOKSHELF.get());
+    public static final DeferredItem<BlockItem> PALE_OAK_CHISELED_BOOKSHELF = registerBlockItem("pale_oak_chiseled_bookshelf", () -> ModBlocks.PALE_OAK_CHISELED_BOOKSHELF.get());
 
     private static DeferredItem<Item> registerCustomItem(String registryName) {
         if (registryName == "netherite_nugget") {

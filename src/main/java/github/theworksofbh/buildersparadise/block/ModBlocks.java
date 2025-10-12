@@ -503,6 +503,146 @@ public class ModBlocks {
     public static final DeferredBlock<FletchingTableBlock> BAMBOO_FLETCHING_TABLE = registerFletchingTable("bamboo_fletching_table");
     public static final DeferredBlock<FletchingTableBlock> PALE_OAK_FLETCHING_TABLE = registerFletchingTable("pale_oak_fletching_table");
 
+    public static final DeferredBlock<SmithingTableBlock> OAK_SMITHING_TABLE = registerSmithingTable("oak_smithing_table");
+    public static final DeferredBlock<SmithingTableBlock> SPRUCE_SMITHING_TABLE = registerSmithingTable("spruce_smithing_table");
+    public static final DeferredBlock<SmithingTableBlock> BIRCH_SMITHING_TABLE = registerSmithingTable("birch_smithing_table");
+    public static final DeferredBlock<SmithingTableBlock> JUNGLE_SMITHING_TABLE = registerSmithingTable("jungle_smithing_table");
+    public static final DeferredBlock<SmithingTableBlock> ACACIA_SMITHING_TABLE = registerSmithingTable("acacia_smithing_table");
+    public static final DeferredBlock<SmithingTableBlock> DARK_OAK_SMITHING_TABLE = registerSmithingTable("dark_oak_smithing_table");
+    public static final DeferredBlock<SmithingTableBlock> CRIMSON_SMITHING_TABLE = registerSmithingTable("crimson_smithing_table");
+    public static final DeferredBlock<SmithingTableBlock> WARPED_SMITHING_TABLE = registerSmithingTable("warped_smithing_table");
+    public static final DeferredBlock<SmithingTableBlock> CHERRY_SMITHING_TABLE = registerSmithingTable("cherry_smithing_table");
+    public static final DeferredBlock<SmithingTableBlock> BAMBOO_SMITHING_TABLE = registerSmithingTable("bamboo_smithing_table");
+    public static final DeferredBlock<SmithingTableBlock> PALE_OAK_SMITHING_TABLE = registerSmithingTable("pale_oak_smithing_table");
+
+    public static final DeferredBlock<GrindstoneBlock> OAK_GRINDSTONE = registerGrindstone("oak_grindstone");
+    public static final DeferredBlock<GrindstoneBlock> SPRUCE_GRINDSTONE = registerGrindstone("spruce_grindstone");
+    public static final DeferredBlock<GrindstoneBlock> BIRCH_GRINDSTONE = registerGrindstone("birch_grindstone");
+    public static final DeferredBlock<GrindstoneBlock> JUNGLE_GRINDSTONE = registerGrindstone("jungle_grindstone");
+    public static final DeferredBlock<GrindstoneBlock> ACACIA_GRINDSTONE = registerGrindstone("acacia_grindstone");
+    public static final DeferredBlock<GrindstoneBlock> CRIMSON_GRINDSTONE = registerGrindstone("crimson_grindstone");
+    public static final DeferredBlock<GrindstoneBlock> WARPED_GRINDSTONE = registerGrindstone("warped_grindstone");
+    public static final DeferredBlock<GrindstoneBlock> MANGROVE_GRINDSTONE = registerGrindstone("mangrove_grindstone");
+    public static final DeferredBlock<GrindstoneBlock> CHERRY_GRINDSTONE = registerGrindstone("cherry_grindstone");
+    public static final DeferredBlock<GrindstoneBlock> BAMBOO_GRINDSTONE = registerGrindstone("bamboo_grindstone");
+    public static final DeferredBlock<GrindstoneBlock> PALE_OAK_GRINDSTONE = registerGrindstone("pale_oak_grindstone");
+
+    public static final DeferredBlock<LoomBlock> SPRUCE_LOOM = registerLoom("spruce_loom");
+    public static final DeferredBlock<LoomBlock> BIRCH_LOOM = registerLoom("birch_loom");
+    public static final DeferredBlock<LoomBlock> JUNGLE_LOOM = registerLoom("jungle_loom");
+    public static final DeferredBlock<LoomBlock> ACACIA_LOOM = registerLoom("acacia_loom");
+    public static final DeferredBlock<LoomBlock> DARK_OAK_LOOM = registerLoom("dark_oak_loom");
+    public static final DeferredBlock<LoomBlock> CRIMSON_LOOM = registerLoom("crimson_loom");
+    public static final DeferredBlock<LoomBlock> WARPED_LOOM = registerLoom("warped_loom");
+    public static final DeferredBlock<LoomBlock> MANGROVE_LOOM = registerLoom("mangrove_loom");
+    public static final DeferredBlock<LoomBlock> CHERRY_LOOM = registerLoom("cherry_loom");
+    public static final DeferredBlock<LoomBlock> BAMBOO_LOOM = registerLoom("bamboo_loom");
+    public static final DeferredBlock<LoomBlock> PALE_OAK_LOOM = registerLoom("pale_oak_loom");
+
+    public static final DeferredBlock<FurnaceBlock> BLACKSTONE_FURNACE = registerFurnace("blackstone_furnace");
+    public static final DeferredBlock<FurnaceBlock> DEEPSLATE_FURNACE = registerFurnace("deepslate_furnace");
+
+    public static final DeferredBlock<SmokerBlock> SPRUCE_STONE_SMOKER = registerSmoker("spruce_stone_smoker");
+    public static final DeferredBlock<SmokerBlock> BIRCH_STONE_SMOKER = registerSmoker("birch_stone_smoker");
+    public static final DeferredBlock<SmokerBlock> JUNGLE_STONE_SMOKER = registerSmoker("jungle_stone_smoker");
+    public static final DeferredBlock<SmokerBlock> ACACIA_STONE_SMOKER = registerSmoker("acacia_stone_smoker");
+    public static final DeferredBlock<SmokerBlock> DARK_OAK_STONE_SMOKER = registerSmoker("dark_oak_stone_smoker");
+    public static final DeferredBlock<SmokerBlock> CRIMSON_STONE_SMOKER = registerSmoker("crimson_stone_smoker");
+    public static final DeferredBlock<SmokerBlock> WARPED_STONE_SMOKER = registerSmoker("warped_stone_smoker");
+    public static final DeferredBlock<SmokerBlock> MANGROVE_STONE_SMOKER = registerSmoker("mangrove_stone_smoker");
+    public static final DeferredBlock<SmokerBlock> CHERRY_STONE_SMOKER = registerSmoker("cherry_stone_smoker");
+    public static final DeferredBlock<SmokerBlock> BAMBOO_STONE_SMOKER = registerSmoker("bamboo_stone_smoker");
+    public static final DeferredBlock<SmokerBlock> PALE_OAK_STONE_SMOKER = registerSmoker("pale_oak_stone_smoker");
+
+    public static final DeferredBlock<SmokerBlock> OAK_BLACKSTONE_SMOKER = registerSmoker("oak_blackstone_smoker");
+    public static final DeferredBlock<SmokerBlock> SPRUCE_BLACKSTONE_SMOKER = registerSmoker("spruce_blackstone_smoker");
+    public static final DeferredBlock<SmokerBlock> BIRCH_BLACKSTONE_SMOKER = registerSmoker("birch_blackstone_smoker");
+    public static final DeferredBlock<SmokerBlock> JUNGLE_BLACKSTONE_SMOKER = registerSmoker("jungle_blackstone_smoker");
+    public static final DeferredBlock<SmokerBlock> ACACIA_BLACKSTONE_SMOKER = registerSmoker("acacia_blackstone_smoker");
+    public static final DeferredBlock<SmokerBlock> DARK_OAK_BLACKSTONE_SMOKER = registerSmoker("dark_oak_blackstone_smoker");
+    public static final DeferredBlock<SmokerBlock> CRIMSON_BLACKSTONE_SMOKER = registerSmoker("crimson_blackstone_smoker");
+    public static final DeferredBlock<SmokerBlock> WARPED_BLACKSTONE_SMOKER = registerSmoker("warped_blackstone_smoker");
+    public static final DeferredBlock<SmokerBlock> MANGROVE_BLACKSTONE_SMOKER = registerSmoker("mangrove_blackstone_smoker");
+    public static final DeferredBlock<SmokerBlock> CHERRY_BLACKSTONE_SMOKER = registerSmoker("cherry_blackstone_smoker");
+    public static final DeferredBlock<SmokerBlock> BAMBOO_BLACKSTONE_SMOKER = registerSmoker("bamboo_blackstone_smoker");
+    public static final DeferredBlock<SmokerBlock> PALE_OAK_BLACKSTONE_SMOKER = registerSmoker("pale_oak_blackstone_smoker");
+
+    public static final DeferredBlock<SmokerBlock> OAK_DEEPSLATE_SMOKER = registerSmoker("oak_deepslate_smoker");
+    public static final DeferredBlock<SmokerBlock> SPRUCE_DEEPSLATE_SMOKER = registerSmoker("spruce_deepslate_smoker");
+    public static final DeferredBlock<SmokerBlock> BIRCH_DEEPSLATE_SMOKER = registerSmoker("birch_deepslate_smoker");
+    public static final DeferredBlock<SmokerBlock> JUNGLE_DEEPSLATE_SMOKER = registerSmoker("jungle_deepslate_smoker");
+    public static final DeferredBlock<SmokerBlock> ACACIA_DEEPSLATE_SMOKER = registerSmoker("acacia_deepslate_smoker");
+    public static final DeferredBlock<SmokerBlock> DARK_OAK_DEEPSLATE_SMOKER = registerSmoker("dark_oak_deepslate_smoker");
+    public static final DeferredBlock<SmokerBlock> CRIMSON_DEEPSLATE_SMOKER = registerSmoker("crimson_deepslate_smoker");
+    public static final DeferredBlock<SmokerBlock> WARPED_DEEPSLATE_SMOKER = registerSmoker("warped_deepslate_smoker");
+    public static final DeferredBlock<SmokerBlock> MANGROVE_DEEPSLATE_SMOKER = registerSmoker("mangrove_deepslate_smoker");
+    public static final DeferredBlock<SmokerBlock> CHERRY_DEEPSLATE_SMOKER = registerSmoker("cherry_deepslate_smoker");
+    public static final DeferredBlock<SmokerBlock> BAMBOO_DEEPSLATE_SMOKER = registerSmoker("bamboo_deepslate_smoker");
+    public static final DeferredBlock<SmokerBlock> PALE_OAK_DEEPSLATE_SMOKER = registerSmoker("pale_oak_deepslate_smoker");
+
+    public static final DeferredBlock<BlastFurnaceBlock> BLACKSTONE_BLAST_FURNACE = registerBlastFurnace("blackstone_blast_furnace");
+    public static final DeferredBlock<BlastFurnaceBlock> DEEPSLATE_BLAST_FURNACE = registerBlastFurnace("deepslate_blast_furnace");
+
+    public static final DeferredBlock<CampfireBlock> SPRUCE_CAMPFIRE = registerCampfire("spruce_campfire");
+    public static final DeferredBlock<CampfireBlock> BIRCH_CAMPFIRE = registerCampfire("birch_campfire");
+    public static final DeferredBlock<CampfireBlock> JUNGLE_CAMPFIRE = registerCampfire("jungle_campfire");
+    public static final DeferredBlock<CampfireBlock> ACACIA_CAMPFIRE = registerCampfire("acacia_campfire");
+    public static final DeferredBlock<CampfireBlock> DARK_OAK_CAMPFIRE = registerCampfire("dark_oak_campfire");
+    public static final DeferredBlock<CampfireBlock> CRIMSON_CAMPFIRE = registerCampfire("crimson_campfire");
+    public static final DeferredBlock<CampfireBlock> WARPED_CAMPFIRE = registerCampfire("warped_campfire");
+    public static final DeferredBlock<CampfireBlock> MANGROVE_CAMPFIRE = registerCampfire("mangrove_campfire");
+    public static final DeferredBlock<CampfireBlock> CHERRY_CAMPFIRE = registerCampfire("cherry_campfire");
+    public static final DeferredBlock<CampfireBlock> BAMBOO_CAMPFIRE = registerCampfire("bamboo_campfire");
+    public static final DeferredBlock<CampfireBlock> PALE_OAK_CAMPFIRE = registerCampfire("pale_oak_campfire");
+
+    public static final DeferredBlock<CampfireBlock> SPRUCE_SOUL_CAMPFIRE = registerSoulCampfire("spruce_soul_campfire");
+    public static final DeferredBlock<CampfireBlock> BIRCH_SOUL_CAMPFIRE = registerSoulCampfire("birch_soul_campfire");
+    public static final DeferredBlock<CampfireBlock> JUNGLE_SOUL_CAMPFIRE = registerSoulCampfire("jungle_soul_campfire");
+    public static final DeferredBlock<CampfireBlock> ACACIA_SOUL_CAMPFIRE = registerSoulCampfire("acacia_soul_campfire");
+    public static final DeferredBlock<CampfireBlock> DARK_OAK_SOUL_CAMPFIRE = registerSoulCampfire("dark_oak_soul_campfire");
+    public static final DeferredBlock<CampfireBlock> CRIMSON_SOUL_CAMPFIRE = registerSoulCampfire("crimson_soul_campfire");
+    public static final DeferredBlock<CampfireBlock> WARPED_SOUL_CAMPFIRE = registerSoulCampfire("warped_soul_campfire");
+    public static final DeferredBlock<CampfireBlock> MANGROVE_SOUL_CAMPFIRE = registerSoulCampfire("mangrove_soul_campfire");
+    public static final DeferredBlock<CampfireBlock> CHERRY_SOUL_CAMPFIRE = registerSoulCampfire("cherry_soul_campfire");
+    public static final DeferredBlock<CampfireBlock> BAMBOO_SOUL_CAMPFIRE = registerSoulCampfire("bamboo_soul_campfire");
+    public static final DeferredBlock<CampfireBlock> PALE_OAK_SOUL_CAMPFIRE = registerSoulCampfire("pale_oak_soul_campfire");
+
+    public static final DeferredBlock<BeehiveBlock> SPRUCE_BEEHIVE = registerBeehive("spruce_beehive");
+    public static final DeferredBlock<BeehiveBlock> BIRCH_BEEHIVE = registerBeehive("birch_beehive");
+    public static final DeferredBlock<BeehiveBlock> JUNGLE_BEEHIVE = registerBeehive("jungle_beehive");
+    public static final DeferredBlock<BeehiveBlock> ACACIA_BEEHIVE = registerBeehive("acacia_beehive");
+    public static final DeferredBlock<BeehiveBlock> DARK_OAK_BEEHIVE = registerBeehive("dark_oak_beehive");
+    public static final DeferredBlock<BeehiveBlock> CRIMSON_BEEHIVE = registerBeehive("crimson_beehive");
+    public static final DeferredBlock<BeehiveBlock> WARPED_BEEHIVE = registerBeehive("warped_beehive");
+    public static final DeferredBlock<BeehiveBlock> MANGROVE_BEEHIVE = registerBeehive("mangrove_beehive");
+    public static final DeferredBlock<BeehiveBlock> CHERRY_BEEHIVE = registerBeehive("cherry_beehive");
+    public static final DeferredBlock<BeehiveBlock> BAMBOO_BEEHIVE = registerBeehive("bamboo_beehive");
+    public static final DeferredBlock<BeehiveBlock> PALE_OAK_BEEHIVE = registerBeehive("pale_oak_beehive");
+
+    public static final DeferredBlock<Block> SPRUCE_BOOKSHELF = registerBookshelf("spruce_bookshelf");
+    public static final DeferredBlock<Block> BIRCH_BOOKSHELF = registerBookshelf("birch_bookshelf");
+    public static final DeferredBlock<Block> JUNGLE_BOOKSHELF = registerBookshelf("jungle_bookshelf");
+    public static final DeferredBlock<Block> ACACIA_BOOKSHELF = registerBookshelf("acacia_bookshelf");
+    public static final DeferredBlock<Block> DARK_OAK_BOOKSHELF = registerBookshelf("dark_oak_bookshelf");
+    public static final DeferredBlock<Block> CRIMSON_BOOKSHELF = registerBookshelf("crimson_bookshelf");
+    public static final DeferredBlock<Block> WARPED_BOOKSHELF = registerBookshelf("warped_bookshelf");
+    public static final DeferredBlock<Block> MANGROVE_BOOKSHELF = registerBookshelf("mangrove_bookshelf");
+    public static final DeferredBlock<Block> CHERRY_BOOKSHELF = registerBookshelf("cherry_bookshelf");
+    public static final DeferredBlock<Block> BAMBOO_BOOKSHELF = registerBookshelf("bamboo_bookshelf");
+    public static final DeferredBlock<Block> PALE_OAK_BOOKSHELF = registerBookshelf("pale_oak_bookshelf");
+
+    public static final DeferredBlock<ChiseledBookShelfBlock> SPRUCE_CHISELED_BOOKSHELF = registerChiseledBookshelf("spruce_chiseled_bookshelf");
+    public static final DeferredBlock<ChiseledBookShelfBlock> BIRCH_CHISELED_BOOKSHELF = registerChiseledBookshelf("birch_chiseled_bookshelf");
+    public static final DeferredBlock<ChiseledBookShelfBlock> JUNGLE_CHISELED_BOOKSHELF = registerChiseledBookshelf("jungle_chiseled_bookshelf");
+    public static final DeferredBlock<ChiseledBookShelfBlock> ACACIA_CHISELED_BOOKSHELF = registerChiseledBookshelf("acacia_chiseled_bookshelf");
+    public static final DeferredBlock<ChiseledBookShelfBlock> DARK_OAK_CHISELED_BOOKSHELF = registerChiseledBookshelf("dark_oak_chiseled_bookshelf");
+    public static final DeferredBlock<ChiseledBookShelfBlock> CRIMSON_CHISELED_BOOKSHELF = registerChiseledBookshelf("crimson_chiseled_bookshelf");
+    public static final DeferredBlock<ChiseledBookShelfBlock> WARPED_CHISELED_BOOKSHELF = registerChiseledBookshelf("warped_chiseled_bookshelf");
+    public static final DeferredBlock<ChiseledBookShelfBlock> MANGROVE_CHISELED_BOOKSHELF = registerChiseledBookshelf("mangrove_chiseled_bookshelf");
+    public static final DeferredBlock<ChiseledBookShelfBlock> CHERRY_CHISELED_BOOKSHELF = registerChiseledBookshelf("cherry_chiseled_bookshelf");
+    public static final DeferredBlock<ChiseledBookShelfBlock> BAMBOO_CHISELED_BOOKSHELF = registerChiseledBookshelf("bamboo_chiseled_bookshelf");
+    public static final DeferredBlock<ChiseledBookShelfBlock> PALE_OAK_CHISELED_BOOKSHELF = registerChiseledBookshelf("pale_oak_chiseled_bookshelf");
+
     public static DeferredBlock<CraftingTableBlock> registerCraftingTable(String registryName) {
         if (registryName == "crimson_crafting_table" || registryName == "warped_crafting_table") {
             return BLOCKS.register(
@@ -698,6 +838,484 @@ public class ModBlocks {
 
     }
 
+    public static DeferredBlock<BeehiveBlock> registerBeehive(String registryName) {
+        if (registryName == "crimson_beehive" || registryName == "warped_beehive") {
+            return BLOCKS.register(
+                    registryName, () -> new BeehiveBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.BEEHIVE).sound(SoundType.NETHER_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "cherry_beehive") {
+            return BLOCKS.register(
+                    registryName, () -> new BeehiveBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.BEEHIVE).sound(SoundType.CHERRY_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "bamboo_beehive") {
+            return BLOCKS.register(
+                    registryName, () -> new BeehiveBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.BEEHIVE).sound(SoundType.BAMBOO_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new BeehiveBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.BEEHIVE)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        }
+
+    }
+
+    public static DeferredBlock<SmithingTableBlock> registerSmithingTable(String registryName) {
+        if (registryName == "crimson_smithing_table" || registryName == "warped_smithing_table") {
+            return BLOCKS.register(
+                    registryName, () -> new SmithingTableBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.SMITHING_TABLE).sound(SoundType.NETHER_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "cherry_smithing_table") {
+            return BLOCKS.register(
+                    registryName, () -> new SmithingTableBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.SMITHING_TABLE).sound(SoundType.CHERRY_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "bamboo_smithing_table") {
+            return BLOCKS.register(
+                    registryName, () -> new SmithingTableBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.SMITHING_TABLE).sound(SoundType.BAMBOO_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new SmithingTableBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.SMITHING_TABLE)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        }
+
+    }
+
+    public static DeferredBlock<Block> registerBookshelf(String registryName) {
+        if (registryName == "crimson_bookshelf" || registryName == "warped_bookshelf") {
+            return BLOCKS.register(
+                    registryName, () -> new Block(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.BOOKSHELF).sound(SoundType.NETHER_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "cherry_bookshelf") {
+            return BLOCKS.register(
+                    registryName, () -> new Block(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.BOOKSHELF).sound(SoundType.CHERRY_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "bamboo_bookshelf") {
+            return BLOCKS.register(
+                    registryName, () -> new Block(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.BOOKSHELF).sound(SoundType.BAMBOO_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new Block(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.BOOKSHELF)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        }
+
+    }
+
+    public static DeferredBlock<CampfireBlock> registerCampfire(String registryName) {
+        if (registryName == "crimson_campfire" || registryName == "warped_campfire") {
+            return BLOCKS.register(
+                    registryName, () -> new CampfireBlock(
+                            true,
+                            1,
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.CAMPFIRE).sound(SoundType.NETHER_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "cherry_campfire") {
+            return BLOCKS.register(
+                    registryName, () -> new CampfireBlock(
+                            true,
+                            1,
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.CAMPFIRE).sound(SoundType.CHERRY_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "bamboo_campfire") {
+            return BLOCKS.register(
+                    registryName, () -> new CampfireBlock(
+                            true,
+                            1,
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.CAMPFIRE).sound(SoundType.BAMBOO_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new CampfireBlock(
+                            true,
+                            1,
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.CAMPFIRE)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        }
+
+    }
+
+    public static DeferredBlock<CampfireBlock> registerSoulCampfire(String registryName) {
+        if (registryName == "crimson_soul_campfire" || registryName == "warped_soul_campfire") {
+            return BLOCKS.register(
+                    registryName, () -> new CampfireBlock(
+                            false,
+                            2,
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.SOUL_CAMPFIRE).sound(SoundType.NETHER_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "cherry_soul_campfire") {
+            return BLOCKS.register(
+                    registryName, () -> new CampfireBlock(
+                            false,
+                            2,
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.SOUL_CAMPFIRE).sound(SoundType.CHERRY_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "bamboo_soul_campfire") {
+            return BLOCKS.register(
+                    registryName, () -> new CampfireBlock(
+                            false,
+                            2,
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.SOUL_CAMPFIRE).sound(SoundType.BAMBOO_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new CampfireBlock(
+                            false,
+                            2,
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.SOUL_CAMPFIRE)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        }
+
+    }
+
+    public static DeferredBlock<GrindstoneBlock> registerGrindstone(String registryName) {
+        return BLOCKS.register(
+                registryName, () -> new GrindstoneBlock(
+                        BlockBehaviour.Properties.ofFullCopy(Blocks.GRINDSTONE)
+                                .setId(
+                                        ResourceKey.create(
+                                                Registries.BLOCK,
+                                                ResourceLocation.fromNamespaceAndPath(
+                                                        BuildersParadise.MODID,
+                                                        registryName
+                                                )
+                                        )
+                                )
+                )
+        );
+    }
+
+    public static DeferredBlock<ChiseledBookShelfBlock> registerChiseledBookshelf(String registryName) {
+        return BLOCKS.register(
+                registryName, () -> new ChiseledBookShelfBlock(
+                        BlockBehaviour.Properties.ofFullCopy(Blocks.CHISELED_BOOKSHELF)
+                                .setId(
+                                        ResourceKey.create(
+                                                Registries.BLOCK,
+                                                ResourceLocation.fromNamespaceAndPath(
+                                                        BuildersParadise.MODID,
+                                                        registryName
+                                                )
+                                        )
+                                )
+                )
+        );
+    }
+
+    public static DeferredBlock<FurnaceBlock> registerFurnace(String registryName) {
+        if (registryName == "deepslate_furnace") {
+            return BLOCKS.register(
+                    registryName, () -> new FurnaceBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.FURNACE).sound(SoundType.DEEPSLATE)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new FurnaceBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.FURNACE)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        }
+    }
+
+    public static DeferredBlock<SmokerBlock> registerSmoker(String registryName) {
+        if (registryName.contains("deepslate")) {
+            return BLOCKS.register(
+                    registryName, () -> new SmokerBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.SMOKER).sound(SoundType.DEEPSLATE)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new SmokerBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.SMOKER)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        }
+    }
+
+    public static DeferredBlock<BlastFurnaceBlock> registerBlastFurnace(String registryName) {
+        if (registryName == "deepslate_blast_furnace") {
+            return BLOCKS.register(
+                    registryName, () -> new BlastFurnaceBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.BLAST_FURNACE).sound(SoundType.DEEPSLATE)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new BlastFurnaceBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.BLAST_FURNACE)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        }
+    }
+
+
     public static DeferredBlock<NukeBlock> registerNuke(String registryName) {
         return BLOCKS.register(
                 registryName, () -> new NukeBlock(
@@ -713,6 +1331,71 @@ public class ModBlocks {
                                 )
                 )
         );
+    }
+
+    public static DeferredBlock<LoomBlock> registerLoom(String registryName) {
+        if (registryName == "crimson_loom" || registryName == "warped_loom") {
+            return BLOCKS.register(
+                    registryName, () -> new LoomBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.LOOM).sound(SoundType.NETHER_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "cherry_loom") {
+            return BLOCKS.register(
+                    registryName, () -> new LoomBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.LOOM).sound(SoundType.CHERRY_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "bamboo_loom") {
+            return BLOCKS.register(
+                    registryName, () -> new LoomBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.LOOM).sound(SoundType.BAMBOO_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new LoomBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.LOOM)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        }
+
     }
 
     public static DeferredBlock<ModLiquidBlock> registerLiquid(String registryName, Supplier<FlowingFluid> fluid) {

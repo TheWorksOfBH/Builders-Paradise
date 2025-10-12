@@ -46,7 +46,7 @@ public class ModDataMapProvider extends DataMapProvider {
 
     @Override
     protected void gather(HolderLookup.Provider provider) {
-        addToFurnaceFuels(ModItems.CHARCOAL_BLOCK.get(), 1022400);
+        addToFurnaceFuels(ModItems.CHARCOAL_BLOCK.get(), 16000);
         addToFurnaceFuels(ModItems.URANIUM_INGOT.get(), 7200);
         addToFurnaceFuels(ModItems.URANIUM_NUGGET.get(), 800);
         addToFurnaceFuels(ModItems.URANIUM_BLOCK.get(), 64800);

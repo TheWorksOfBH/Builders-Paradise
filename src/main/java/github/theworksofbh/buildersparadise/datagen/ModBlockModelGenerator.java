@@ -2,20 +2,29 @@ package github.theworksofbh.buildersparadise.datagen;
 
 import github.theworksofbh.buildersparadise.block.ModBlockFamilies;
 import github.theworksofbh.buildersparadise.block.ModBlocks;
+import github.theworksofbh.buildersparadise.items.ModItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelOutput;
 import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.blockstates.BlockModelDefinitionGenerator;
 import net.minecraft.client.data.models.blockstates.MultiPartGenerator;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.*;
+import net.minecraft.client.renderer.block.model.multipart.Condition;
+import net.minecraft.core.Direction;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.BeehiveBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 import java.lang.reflect.Field;
+import java.util.Arrays;
+import java.util.Map;
 import java.util.Optional;
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
@@ -308,6 +317,243 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
             TextureMapping texturemapping = (TextureMapping)textureMappingGetter.apply(craftingTableBlock, craftingTableMaterialBlock);
             this.blockStateOutput.accept(createSimpleBlock(craftingTableBlock, plainVariant(ModelTemplates.CUBE.create(craftingTableBlock, texturemapping, this.modelOutput))));
         }
+    }
+
+    public void createCustomSmithingTable(Block block) {
+        TextureMapping texturemapping = (new TextureMapping()).put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(block, "_front")).put(TextureSlot.DOWN, TextureMapping.getBlockTexture(block, "_bottom")).put(TextureSlot.UP, TextureMapping.getBlockTexture(Blocks.SMITHING_TABLE, "_top")).put(TextureSlot.NORTH, TextureMapping.getBlockTexture(block, "_front")).put(TextureSlot.SOUTH, TextureMapping.getBlockTexture(block, "_front")).put(TextureSlot.EAST, TextureMapping.getBlockTexture(block, "_side")).put(TextureSlot.WEST, TextureMapping.getBlockTexture(block, "_side"));
+        this.blockStateOutput.accept(createSimpleBlock(block, plainVariant(ModelTemplates.CUBE.create(block, texturemapping, this.modelOutput))));
+    }
+
+
+    public void createGrindstoneTextureMapping(Block block, Block woodType) {
+        ResourceLocation parent = ModelLocationUtils.getModelLocation(Blocks.GRINDSTONE);
+        TextureSlot pivotSlot = TextureSlot.create("pivot");
+        TextureSlot roundelSlot = TextureSlot.create("round");
+        TextureSlot legSlot = TextureSlot.create("leg");
+        ModelTemplate modelTemplate = new ModelTemplate(Optional.of(parent), Optional.empty(), pivotSlot, roundelSlot, TextureSlot.SIDE, TextureSlot.PARTICLE, legSlot);
+        plainVariant(TexturedModel.createDefault(b -> new TextureMapping()
+                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(Blocks.GRINDSTONE, "_side"))
+                        .put(pivotSlot, TextureMapping.getBlockTexture(block, "_pivot"))
+                        .put(roundelSlot, TextureMapping.getBlockTexture(Blocks.GRINDSTONE, "_round"))
+                        .put(legSlot, TextureMapping.getBlockTexture(woodType))
+                        .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(Blocks.GRINDSTONE, "_side")), modelTemplate)
+                .create(block, modelOutput));
+    }
+
+    public void createCustomGrindstone(Block grindstoneBlock, Block woodType) {
+        createGrindstoneTextureMapping(grindstoneBlock, woodType);
+        this.blockStateOutput.accept(
+                MultiVariantGenerator.dispatch(
+                                grindstoneBlock, plainVariant(ModelLocationUtils.getModelLocation(grindstoneBlock)
+                        )
+                ).with(
+                        PropertyDispatch.modify(
+                                BlockStateProperties.ATTACH_FACE,
+                                BlockStateProperties.HORIZONTAL_FACING
+                        ).select(
+                                AttachFace.FLOOR,
+                                Direction.NORTH,
+                                NOP
+                        ).select(
+                                AttachFace.FLOOR,
+                                Direction.EAST,
+                                Y_ROT_90
+                        ).select(
+                                AttachFace.FLOOR,
+                                Direction.SOUTH,
+                                Y_ROT_180
+                        ).select(
+                                AttachFace.FLOOR,
+                                Direction.WEST,
+                                Y_ROT_270
+                        ).select(
+                                AttachFace.WALL,
+                                Direction.NORTH,
+                                X_ROT_90
+                        ).select(
+                                AttachFace.WALL,
+                                Direction.EAST,
+                                X_ROT_90.then(Y_ROT_90)
+                        ).select(
+                                AttachFace.WALL,
+                                Direction.SOUTH,
+                                X_ROT_90.then(Y_ROT_180)
+                        ).select(
+                                AttachFace.WALL,
+                                Direction.WEST,
+                                X_ROT_90.then(Y_ROT_270)
+                        ).select(AttachFace.CEILING,
+                                Direction.SOUTH,
+                                X_ROT_180
+                        ).select(
+                                AttachFace.CEILING,
+                                Direction.WEST,
+                                X_ROT_180.then(Y_ROT_90)
+                        ).select(
+                                AttachFace.CEILING,
+                                Direction.NORTH,
+                                X_ROT_180.then(Y_ROT_180)
+                        ).select(
+                                AttachFace.CEILING,
+                                Direction.EAST,
+                                X_ROT_180.then(Y_ROT_270)
+                        )
+                )
+        );
+    }
+    @Override
+    public void createCampfires(Block... campfireBlocks) {
+        ResourceLocation unlitVariant = ModelLocationUtils.getModelLocation(Blocks.CAMPFIRE, "_off");
+
+        TextureSlot logSlot = TextureSlot.create("log");
+
+        ModelTemplate modelTemplate = new ModelTemplate(Optional.of(unlitVariant), Optional.of(""), TextureSlot.PARTICLE, logSlot);
+
+        MultiVariant multiVariant = plainVariant(TexturedModel.createDefault(b -> new TextureMapping()
+                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(Arrays.stream(campfireBlocks).findFirst().get(), "_log"))
+                        .put(logSlot, TextureMapping.getBlockTexture(Arrays.stream(campfireBlocks).findFirst().get(), "_log")), modelTemplate)
+                .createWithSuffix(Arrays.stream(campfireBlocks).findFirst().get(), "_off", modelOutput));
+
+        for(Block block : campfireBlocks) {
+            ResourceLocation id = BuiltInRegistries.BLOCK.getKey(block);
+            String name = id.getPath();
+            boolean isSoul = name.contains("soul");
+
+            ResourceLocation litVariant = ModelLocationUtils.getModelLocation(Blocks.CAMPFIRE);
+
+            ModelTemplate modelTemplate1 = new ModelTemplate(Optional.of(litVariant), Optional.of(""), TextureSlot.LIT_LOG, TextureSlot.PARTICLE, logSlot, TextureSlot.FIRE);
+
+            MultiVariant multivariant1;
+
+            if (!isSoul){
+                MultiVariant multiVariant2 = plainVariant(
+                        modelTemplate1.create(
+                                block,
+                                new TextureMapping().put(
+                                        TextureSlot.LIT_LOG,
+                                        TextureMapping.getBlockTexture(block, "_log_lit")
+                                ).put(
+                                        TextureSlot.PARTICLE,
+                                        TextureMapping.getBlockTexture(Arrays.stream(campfireBlocks).findFirst().get(), "_log")
+                                ).put(
+                                        logSlot,
+                                        TextureMapping.getBlockTexture(Arrays.stream(campfireBlocks).findFirst().get(), "_log")
+                                ).put(
+                                        TextureSlot.FIRE,
+                                        TextureMapping.getBlockTexture(Blocks.CAMPFIRE, "_fire")
+                                ),
+                                this.modelOutput
+                        )
+                );
+
+                multivariant1 = multiVariant2;
+            } else {
+                MultiVariant multiVariant2 = plainVariant(
+                        modelTemplate1.create(
+                                block,
+                                new TextureMapping().put(
+                                        TextureSlot.LIT_LOG,
+                                        TextureMapping.getBlockTexture(block, "_log_lit")
+                                ).put(
+                                        TextureSlot.PARTICLE,
+                                        TextureMapping.getBlockTexture(Arrays.stream(campfireBlocks).findFirst().get(), "_log")
+                                ).put(
+                                        logSlot,
+                                        TextureMapping.getBlockTexture(Arrays.stream(campfireBlocks).findFirst().get(), "_log")
+                                ).put(
+                                        TextureSlot.FIRE,
+                                        TextureMapping.getBlockTexture(Blocks.SOUL_CAMPFIRE, "_fire")
+                                ),
+                                this.modelOutput
+                        )
+                );
+
+                multivariant1 = multiVariant2;
+            }
+
+            this.registerSimpleFlatItemModel(block.asItem());
+            this.blockStateOutput.accept(MultiVariantGenerator.dispatch(block).with(PropertyDispatch.initial(BlockStateProperties.LIT).select(false, multiVariant).select(true, multivariant1)).with(ROTATION_HORIZONTAL_FACING_ALT));
+        }
+
+    }
+
+    public void createCustomBookshelf(Block bookshelfBlock, Block woodType) {
+        TextureMapping texturemapping = TextureMapping.column(TextureMapping.getBlockTexture(bookshelfBlock), TextureMapping.getBlockTexture(woodType));
+        MultiVariant multivariant = plainVariant(ModelTemplates.CUBE_COLUMN.create(bookshelfBlock, texturemapping, this.modelOutput));
+        this.blockStateOutput.accept(createSimpleBlock(bookshelfBlock, multivariant));
+    }
+
+    public void createChiseledBookshelfTextureMapping(Block chiseledBookshelf) {
+        ResourceLocation topTexture = TextureMapping.getBlockTexture(chiseledBookshelf, "_top");
+        ResourceLocation sideTexture = TextureMapping.getBlockTexture(chiseledBookshelf, "_side");
+        ResourceLocation emptyFrontTexture = TextureMapping.getBlockTexture(chiseledBookshelf, "_empty");
+        ResourceLocation occupiedFrontTexture = TextureMapping.getBlockTexture(chiseledBookshelf, "_occupied");
+
+        ResourceLocation parent = ModelLocationUtils.getModelLocation(Blocks.CHISELED_BOOKSHELF);
+        ModelTemplate modelTemplate = new ModelTemplate(Optional.of(parent), Optional.empty(), TextureSlot.TOP, TextureSlot.SIDE, TextureSlot.PARTICLE);
+
+        for (int i = 0; i < 6; i++) {
+            TextureMapping emptyMapping = new TextureMapping()
+                    .put(TextureSlot.TEXTURE, emptyFrontTexture);
+            mapeBookshelfModel(chiseledBookshelf, i, false, emptyMapping);
+            TextureMapping occupiedMapping = new TextureMapping()
+                    .put(TextureSlot.TEXTURE, occupiedFrontTexture);
+            mapeBookshelfModel(chiseledBookshelf, i, true, occupiedMapping);
+        }
+
+        plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
+                                .put(TextureSlot.TOP, topTexture)
+                                .put(TextureSlot.SIDE, sideTexture)
+                                .put(TextureSlot.PARTICLE, topTexture),
+                        modelTemplate)
+                .create(chiseledBookshelf, this.modelOutput));
+        plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
+                                .put(TextureSlot.TOP, topTexture)
+                                .put(TextureSlot.SIDE, sideTexture)
+                                .put(TextureSlot.PARTICLE, topTexture)
+                                .put(TextureSlot.FRONT, emptyFrontTexture),
+                        ModelTemplates.CUBE_ORIENTABLE)
+                .createWithSuffix(chiseledBookshelf, "_inventory", this.modelOutput));
+    }
+
+    private void mapeBookshelfModel(Block block, int slotIndex, boolean occupied, TextureMapping mapping){
+        ModelTemplate template = switch (slotIndex) {
+            case 0 -> ModelTemplates.CHISELED_BOOKSHELF_SLOT_TOP_LEFT;
+            case 1 -> ModelTemplates.CHISELED_BOOKSHELF_SLOT_TOP_MID;
+            case 2 -> ModelTemplates.CHISELED_BOOKSHELF_SLOT_TOP_RIGHT;
+            case 3 -> ModelTemplates.CHISELED_BOOKSHELF_SLOT_BOTTOM_LEFT;
+            case 4 -> ModelTemplates.CHISELED_BOOKSHELF_SLOT_BOTTOM_MID;
+            case 5 -> ModelTemplates.CHISELED_BOOKSHELF_SLOT_BOTTOM_RIGHT;
+            default -> throw new IllegalArgumentException("Invalid chiseled bookshelf slot index: " + slotIndex);
+        };
+        String suffix = (occupied ? "_occupied_slot_" : "_empty_slot_")
+                + switch (slotIndex) {
+            case 0 -> "top_left";
+            case 1 -> "top_mid";
+            case 2 -> "top_right";
+            case 3 -> "bottom_left";
+            case 4 -> "bottom_mid";
+            case 5 -> "bottom_right";
+            default -> "error";
+        };
+        template.createWithSuffix(block, suffix, mapping, this.modelOutput);
+    }
+
+    public void createCustomChiseledBookshelf(Block chiseledBookshelf) {
+        createChiseledBookshelfTextureMapping(chiseledBookshelf);
+
+        MultiVariant multivariant = plainVariant(ModelLocationUtils.getModelLocation(chiseledBookshelf));
+        MultiPartGenerator multipartgenerator = MultiPartGenerator.multiPart(chiseledBookshelf);
+
+        forEachHorizontalDirection((direction, mutator) -> {
+            Condition condition = condition().term(BlockStateProperties.HORIZONTAL_FACING, direction).build();
+            multipartgenerator.with(condition, multivariant.with(mutator).with(UV_LOCK));
+            this.addSlotStateAndRotationVariants(multipartgenerator, condition, mutator);
+        });
+
+        this.blockStateOutput.accept(multipartgenerator);
+        this.registerSimpleItemModel(chiseledBookshelf, ModelLocationUtils.getModelLocation(chiseledBookshelf, "_inventory"));
+        CHISELED_BOOKSHELF_SLOT_MODEL_CACHE.clear();
     }
 
     @Override
@@ -621,6 +867,139 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createCraftingTableLike(ModBlocks.CHERRY_FLETCHING_TABLE.get(), Blocks.CHERRY_PLANKS, TextureMapping::fletchingTable);
         this.createCraftingTableLike(ModBlocks.BAMBOO_FLETCHING_TABLE.get(), Blocks.BAMBOO_PLANKS, TextureMapping::fletchingTable);
         this.createCraftingTableLike(ModBlocks.PALE_OAK_FLETCHING_TABLE.get(), Blocks.PALE_OAK_PLANKS, TextureMapping::fletchingTable);
+
+        this.createCustomSmithingTable(ModBlocks.OAK_SMITHING_TABLE.get());
+        this.createCustomSmithingTable(ModBlocks.SPRUCE_SMITHING_TABLE.get());
+        this.createCustomSmithingTable(ModBlocks.BIRCH_SMITHING_TABLE.get());
+        this.createCustomSmithingTable(ModBlocks.JUNGLE_SMITHING_TABLE.get());
+        this.createCustomSmithingTable(ModBlocks.ACACIA_SMITHING_TABLE.get());
+        this.createCustomSmithingTable(ModBlocks.DARK_OAK_SMITHING_TABLE.get());
+        this.createCustomSmithingTable(ModBlocks.CRIMSON_SMITHING_TABLE.get());
+        this.createCustomSmithingTable(ModBlocks.WARPED_SMITHING_TABLE.get());
+        this.createCustomSmithingTable(ModBlocks.CHERRY_SMITHING_TABLE.get());
+        this.createCustomSmithingTable(ModBlocks.BAMBOO_SMITHING_TABLE.get());
+        this.createCustomSmithingTable(ModBlocks.PALE_OAK_SMITHING_TABLE.get());
+
+        this.createCustomGrindstone(ModBlocks.OAK_GRINDSTONE.get(), Blocks.OAK_LOG);
+        this.createCustomGrindstone(ModBlocks.SPRUCE_GRINDSTONE.get(), Blocks.SPRUCE_LOG);
+        this.createCustomGrindstone(ModBlocks.BIRCH_GRINDSTONE.get(), Blocks.BIRCH_LOG);
+        this.createCustomGrindstone(ModBlocks.JUNGLE_GRINDSTONE.get(), Blocks.JUNGLE_LOG);
+        this.createCustomGrindstone(ModBlocks.ACACIA_GRINDSTONE.get(), Blocks.ACACIA_LOG);
+        this.createCustomGrindstone(ModBlocks.CRIMSON_GRINDSTONE.get(), Blocks.CRIMSON_STEM);
+        this.createCustomGrindstone(ModBlocks.WARPED_GRINDSTONE.get(), Blocks.WARPED_STEM);
+        this.createCustomGrindstone(ModBlocks.MANGROVE_GRINDSTONE.get(), Blocks.MANGROVE_LOG);
+        this.createCustomGrindstone(ModBlocks.CHERRY_GRINDSTONE.get(), Blocks.CHERRY_LOG);
+        this.createCustomGrindstone(ModBlocks.BAMBOO_GRINDSTONE.get(), Blocks.BAMBOO_BLOCK);
+        this.createCustomGrindstone(ModBlocks.PALE_OAK_GRINDSTONE.get(), Blocks.PALE_OAK_LOG);
+
+        this.createHorizontallyRotatedBlock(ModBlocks.SPRUCE_LOOM.get(), TexturedModel.ORIENTABLE);
+        this.createHorizontallyRotatedBlock(ModBlocks.BIRCH_LOOM.get(), TexturedModel.ORIENTABLE);
+        this.createHorizontallyRotatedBlock(ModBlocks.JUNGLE_LOOM.get(), TexturedModel.ORIENTABLE);
+        this.createHorizontallyRotatedBlock(ModBlocks.ACACIA_LOOM.get(), TexturedModel.ORIENTABLE);
+        this.createHorizontallyRotatedBlock(ModBlocks.DARK_OAK_LOOM.get(), TexturedModel.ORIENTABLE);
+        this.createHorizontallyRotatedBlock(ModBlocks.CRIMSON_LOOM.get(), TexturedModel.ORIENTABLE);
+        this.createHorizontallyRotatedBlock(ModBlocks.WARPED_LOOM.get(), TexturedModel.ORIENTABLE);
+        this.createHorizontallyRotatedBlock(ModBlocks.MANGROVE_LOOM.get(), TexturedModel.ORIENTABLE);
+        this.createHorizontallyRotatedBlock(ModBlocks.CHERRY_LOOM.get(), TexturedModel.ORIENTABLE);
+        this.createHorizontallyRotatedBlock(ModBlocks.BAMBOO_LOOM.get(), TexturedModel.ORIENTABLE);
+        this.createHorizontallyRotatedBlock(ModBlocks.PALE_OAK_LOOM.get(), TexturedModel.ORIENTABLE);
+
+        this.createFurnace(ModBlocks.BLACKSTONE_FURNACE.get(), TexturedModel.ORIENTABLE_ONLY_TOP);
+        this.createFurnace(ModBlocks.DEEPSLATE_FURNACE.get(), TexturedModel.ORIENTABLE_ONLY_TOP);
+
+        this.createFurnace(ModBlocks.SPRUCE_STONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.BIRCH_STONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.JUNGLE_STONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.ACACIA_STONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.DARK_OAK_STONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.CRIMSON_STONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.WARPED_STONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.MANGROVE_STONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.CHERRY_STONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.BAMBOO_STONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.PALE_OAK_STONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+
+        this.createFurnace(ModBlocks.OAK_BLACKSTONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.SPRUCE_BLACKSTONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.BIRCH_BLACKSTONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.JUNGLE_BLACKSTONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.ACACIA_BLACKSTONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.DARK_OAK_BLACKSTONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.CRIMSON_BLACKSTONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.WARPED_BLACKSTONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.MANGROVE_BLACKSTONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.CHERRY_BLACKSTONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.BAMBOO_BLACKSTONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.PALE_OAK_BLACKSTONE_SMOKER.get(), TexturedModel.ORIENTABLE);
+
+        this.createFurnace(ModBlocks.OAK_DEEPSLATE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.SPRUCE_DEEPSLATE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.BIRCH_DEEPSLATE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.JUNGLE_DEEPSLATE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.ACACIA_DEEPSLATE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.DARK_OAK_DEEPSLATE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.CRIMSON_DEEPSLATE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.WARPED_DEEPSLATE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.MANGROVE_DEEPSLATE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.CHERRY_DEEPSLATE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.BAMBOO_DEEPSLATE_SMOKER.get(), TexturedModel.ORIENTABLE);
+        this.createFurnace(ModBlocks.PALE_OAK_DEEPSLATE_SMOKER.get(), TexturedModel.ORIENTABLE);
+
+        this.createFurnace(ModBlocks.BLACKSTONE_BLAST_FURNACE.get(), TexturedModel.ORIENTABLE_ONLY_TOP);
+        this.createFurnace(ModBlocks.DEEPSLATE_BLAST_FURNACE.get(), TexturedModel.ORIENTABLE_ONLY_TOP);
+
+        this.createCampfires(ModBlocks.SPRUCE_CAMPFIRE.get(), ModBlocks.SPRUCE_SOUL_CAMPFIRE.get());
+        this.createCampfires(ModBlocks.BIRCH_CAMPFIRE.get(), ModBlocks.BIRCH_SOUL_CAMPFIRE.get());
+        this.createCampfires(ModBlocks.JUNGLE_CAMPFIRE.get(), ModBlocks.JUNGLE_SOUL_CAMPFIRE.get());
+        this.createCampfires(ModBlocks.ACACIA_CAMPFIRE.get(), ModBlocks.ACACIA_SOUL_CAMPFIRE.get());
+        this.createCampfires(ModBlocks.DARK_OAK_CAMPFIRE.get(), ModBlocks.DARK_OAK_SOUL_CAMPFIRE.get());
+        this.createCampfires(ModBlocks.CRIMSON_CAMPFIRE.get(), ModBlocks.CRIMSON_SOUL_CAMPFIRE.get());
+        this.createCampfires(ModBlocks.WARPED_CAMPFIRE.get(), ModBlocks.WARPED_SOUL_CAMPFIRE.get());
+        this.createCampfires(ModBlocks.MANGROVE_CAMPFIRE.get(), ModBlocks.MANGROVE_SOUL_CAMPFIRE.get());
+        this.createCampfires(ModBlocks.CHERRY_CAMPFIRE.get(), ModBlocks.CHERRY_SOUL_CAMPFIRE.get());
+        this.createCampfires(ModBlocks.BAMBOO_CAMPFIRE.get(), ModBlocks.BAMBOO_SOUL_CAMPFIRE.get());
+        this.createCampfires(ModBlocks.PALE_OAK_CAMPFIRE.get(), ModBlocks.PALE_OAK_SOUL_CAMPFIRE.get());
+
+        this.registerSimpleItemModel(ModItems.OAK_CAMPFIRE.get(), ResourceLocation.parse("minecraft:item/campfire"));
+        this.registerSimpleItemModel(ModItems.OAK_SOUL_CAMPFIRE.get(), ResourceLocation.parse("minecraft:item/soul_campfire"));
+
+        this.createBeeNest(ModBlocks.SPRUCE_BEEHIVE.get(), TextureMapping::orientableCubeSameEnds);
+        this.createBeeNest(ModBlocks.BIRCH_BEEHIVE.get(), TextureMapping::orientableCubeSameEnds);
+        this.createBeeNest(ModBlocks.JUNGLE_BEEHIVE.get(), TextureMapping::orientableCubeSameEnds);
+        this.createBeeNest(ModBlocks.ACACIA_BEEHIVE.get(), TextureMapping::orientableCubeSameEnds);
+        this.createBeeNest(ModBlocks.DARK_OAK_BEEHIVE.get(), TextureMapping::orientableCubeSameEnds);
+        this.createBeeNest(ModBlocks.CRIMSON_BEEHIVE.get(), TextureMapping::orientableCubeSameEnds);
+        this.createBeeNest(ModBlocks.WARPED_BEEHIVE.get(), TextureMapping::orientableCubeSameEnds);
+        this.createBeeNest(ModBlocks.MANGROVE_BEEHIVE.get(), TextureMapping::orientableCubeSameEnds);
+        this.createBeeNest(ModBlocks.CHERRY_BEEHIVE.get(), TextureMapping::orientableCubeSameEnds);
+        this.createBeeNest(ModBlocks.BAMBOO_BEEHIVE.get(), TextureMapping::orientableCubeSameEnds);
+        this.createBeeNest(ModBlocks.PALE_OAK_BEEHIVE.get(), TextureMapping::orientableCubeSameEnds);
+
+        this.itemModelOutput.accept(ModItems.OAK_BEEHIVE.get(), ItemModelUtils.selectBlockItemProperty(BeehiveBlock.HONEY_LEVEL, ItemModelUtils.plainModel(ResourceLocation.withDefaultNamespace("block/beehive_empty")), Map.of(5, ItemModelUtils.plainModel(ResourceLocation.withDefaultNamespace("block/beehive_honey")))));
+
+        this.createCustomBookshelf(ModBlocks.SPRUCE_BOOKSHELF.get(), Blocks.SPRUCE_PLANKS);
+        this.createCustomBookshelf(ModBlocks.BIRCH_BOOKSHELF.get(), Blocks.BIRCH_PLANKS);
+        this.createCustomBookshelf(ModBlocks.JUNGLE_BOOKSHELF.get(), Blocks.JUNGLE_PLANKS);
+        this.createCustomBookshelf(ModBlocks.ACACIA_BOOKSHELF.get(), Blocks.ACACIA_PLANKS);
+        this.createCustomBookshelf(ModBlocks.DARK_OAK_BOOKSHELF.get(), Blocks.DARK_OAK_PLANKS);
+        this.createCustomBookshelf(ModBlocks.CRIMSON_BOOKSHELF.get(), Blocks.CRIMSON_PLANKS);
+        this.createCustomBookshelf(ModBlocks.WARPED_BOOKSHELF.get(), Blocks.WARPED_PLANKS);
+        this.createCustomBookshelf(ModBlocks.MANGROVE_BOOKSHELF.get(), Blocks.MANGROVE_PLANKS);
+        this.createCustomBookshelf(ModBlocks.CHERRY_BOOKSHELF.get(), Blocks.CHERRY_PLANKS);
+        this.createCustomBookshelf(ModBlocks.BAMBOO_BOOKSHELF.get(), Blocks.BAMBOO_PLANKS);
+        this.createCustomBookshelf(ModBlocks.PALE_OAK_BOOKSHELF.get(), Blocks.PALE_OAK_PLANKS);
+
+        this.createCustomChiseledBookshelf(ModBlocks.SPRUCE_CHISELED_BOOKSHELF.get());
+        this.createCustomChiseledBookshelf(ModBlocks.BIRCH_CHISELED_BOOKSHELF.get());
+        this.createCustomChiseledBookshelf(ModBlocks.JUNGLE_CHISELED_BOOKSHELF.get());
+        this.createCustomChiseledBookshelf(ModBlocks.ACACIA_CHISELED_BOOKSHELF.get());
+        this.createCustomChiseledBookshelf(ModBlocks.DARK_OAK_CHISELED_BOOKSHELF.get());
+        this.createCustomChiseledBookshelf(ModBlocks.CRIMSON_CHISELED_BOOKSHELF.get());
+        this.createCustomChiseledBookshelf(ModBlocks.WARPED_CHISELED_BOOKSHELF.get());
+        this.createCustomChiseledBookshelf(ModBlocks.MANGROVE_CHISELED_BOOKSHELF.get());
+        this.createCustomChiseledBookshelf(ModBlocks.CHERRY_CHISELED_BOOKSHELF.get());
+        this.createCustomChiseledBookshelf(ModBlocks.BAMBOO_CHISELED_BOOKSHELF.get());
+        this.createCustomChiseledBookshelf(ModBlocks.PALE_OAK_CHISELED_BOOKSHELF.get());
 
         ModBlockFamilies.getAllFamilies()
                 .filter(BlockFamily::shouldGenerateModel)

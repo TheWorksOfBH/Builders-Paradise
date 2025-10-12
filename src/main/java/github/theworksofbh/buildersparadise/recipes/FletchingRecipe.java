@@ -3,9 +3,12 @@ package github.theworksofbh.buildersparadise.recipes;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
@@ -18,7 +21,14 @@ public record FletchingRecipe(Ingredient arrow, Ingredient ingredient, ItemStack
 
     @Override
     public ItemStack assemble(FletchingRecipeInput fletchingRecipeInput, HolderLookup.Provider provider) {
-        return output.copy();
+        ItemStack itemStack = fletchingRecipeInput.getItem(1);
+        if (itemStack.is(Items.LINGERING_POTION)) {
+            ItemStack itemStack1 = new ItemStack(Items.TIPPED_ARROW, fletchingRecipeInput.getItem(0).getCount());
+            itemStack1.set(DataComponents.POTION_CONTENTS, (PotionContents) itemStack.get(DataComponents.POTION_CONTENTS));
+            return itemStack1;
+        } else {
+            return output.copy();
+        }
     }
 
     @Override
@@ -33,7 +43,7 @@ public record FletchingRecipe(Ingredient arrow, Ingredient ingredient, ItemStack
 
     @Override
     public PlacementInfo placementInfo() {
-        return null;
+        return PlacementInfo.NOT_PLACEABLE;
     }
 
     @Override

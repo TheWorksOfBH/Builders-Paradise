@@ -11,17 +11,17 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.TippedArrowRecipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.conditions.NeoForgeConditions;
@@ -39,7 +39,6 @@ public class ModRecipesProvider extends RecipeProvider {
     public static final ImmutableList<ItemLike> LEAD_SMELTABLES = ImmutableList.of(ModItems.LEAD_ORE.get(), ModItems.DEEPSLATE_LEAD_ORE.get(), ModItems.RAW_LEAD.get());
     public static final ImmutableList<ItemLike> URANIUM_SMELTABLES = ImmutableList.of(ModItems.URANIUM_ORE.get(), ModItems.DEEPSLATE_URANIUM_ORE.get(), ModItems.RAW_URANIUM.get());
 
-
     protected ModRecipesProvider(HolderLookup.Provider registries, RecipeOutput output) {
         super(registries, output);
     }
@@ -55,7 +54,7 @@ public class ModRecipesProvider extends RecipeProvider {
         doorBuilder(ModItems.NETHERITE_DOOR.get(), Ingredient.of(Items.NETHERITE_INGOT)).unlockedBy(getHasName(Items.NETHERITE_INGOT), this.has(Items.NETHERITE_INGOT)).save(this.output);
         trapdoorBuilder(ModItems.NETHERITE_TRAPDOOR.get(), Ingredient.of(Items.NETHERITE_INGOT)).unlockedBy(getHasName(Items.NETHERITE_INGOT), this.has(Items.NETHERITE_INGOT)).save(this.output);
         pressurePlate(ModItems.PLAYER_ONLY_PRESSURE_PLATE.get(), Items.NETHERITE_INGOT);
-        nineBlockStorageRecipes(RecipeCategory.MISC, Items.CHARCOAL, RecipeCategory.BUILDING_BLOCKS, ModItems.CHARCOAL_BLOCK.get());
+        nineBlockStorageRecipes(RecipeCategory.MISC, Items.CHARCOAL, RecipeCategory.BUILDING_BLOCKS, ModItems.CHARCOAL_BLOCK.get(), getSimpleRecipeName(ModItems.CHARCOAL_BLOCK.get()), null, getSimpleRecipeName(Items.CHARCOAL) + "_b", null);
         twoByTwoPacker(RecipeCategory.BUILDING_BLOCKS, ModItems.SOUL_SANDSTONE.get(), Items.SOUL_SAND);
         smeltingResultFromBase(ModItems.SMOOTH_SOUL_SANDSTONE.get(), ModItems.SOUL_SANDSTONE);
         twoByTwoPacker(RecipeCategory.BUILDING_BLOCKS, ModItems.ELDER_PRISMARINE.get(), ModItems.ELDER_PRISMARINE_SHARD.get());
@@ -362,6 +361,267 @@ public class ModRecipesProvider extends RecipeProvider {
                 .save(this.output.withConditions(NeoForgeConditions.never()));
 
         this.fletching(Items.SPECTRAL_ARROW, Items.ARROW, Items.GLOWSTONE_DUST);
+        this.fletching(Items.TIPPED_ARROW, Items.ARROW, Items.LINGERING_POTION);
+
+        this.shaped(RecipeCategory.COMBAT, Items.SPECTRAL_ARROW, 2)
+                .define('#', Items.GLOWSTONE_DUST)
+                .define('X', Items.ARROW)
+                .pattern(" # ")
+                .pattern("#X#")
+                .pattern(" # ")
+                .unlockedBy("has_glowstone_dust", this.has(Items.GLOWSTONE_DUST))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        SpecialRecipeBuilder.special(TippedArrowRecipe::new)
+                .save(this.output.withConditions(NeoForgeConditions.never()), "tipped_arrow");
+
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(Items.COBBLESTONE_SLAB), RecipeCategory.BUILDING_BLOCKS, Items.STONE_SLAB, 0.1F, 200).unlockedBy("has_cobblestone_slab", this.has(Items.COBBLESTONE_SLAB)).save(this.output, "stone_slab_smelting");
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(Items.COBBLESTONE_STAIRS), RecipeCategory.BUILDING_BLOCKS, Items.STONE_STAIRS, 0.1F, 200).unlockedBy("has_cobblestone_stairs", this.has(Items.COBBLESTONE_STAIRS)).save(this.output, "stone_stairs_smelting");
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(Items.COBBLESTONE_WALL), RecipeCategory.BUILDING_BLOCKS, ModItems.STONE_WALL.get(), 0.1F, 200).unlockedBy("has_cobblestone_wall", this.has(Items.COBBLESTONE_WALL)).save(this.output, "stone_wall_smelting");
+
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(Items.COBBLED_DEEPSLATE_SLAB), RecipeCategory.BUILDING_BLOCKS, ModItems.DEEPSLATE_SLAB.get(), 0.1F, 200).unlockedBy("has_cobbled_deepslate_slab", this.has(Items.COBBLED_DEEPSLATE_SLAB)).save(this.output, "deepslate_slab_smelting");
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(Items.COBBLED_DEEPSLATE_STAIRS), RecipeCategory.BUILDING_BLOCKS, ModItems.DEEPSLATE_STAIRS.get(), 0.1F, 200).unlockedBy("has_cobbled_deepslate_stairs", this.has(Items.COBBLED_DEEPSLATE_STAIRS)).save(this.output, "deepslate_stairs_smelting");
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(Items.COBBLED_DEEPSLATE_WALL), RecipeCategory.BUILDING_BLOCKS, ModItems.DEEPSLATE_WALL.get(), 0.1F, 200).unlockedBy("has_cobbled_deepslate_wall", this.has(Items.COBBLED_DEEPSLATE_WALL)).save(this.output, "deepslate_wall_smelting");
+
+        this.createSmithingTable(ModItems.OAK_SMITHING_TABLE, Items.OAK_PLANKS);
+        this.createSmithingTable(ModItems.SPRUCE_SMITHING_TABLE, Items.SPRUCE_PLANKS);
+        this.createSmithingTable(ModItems.BIRCH_SMITHING_TABLE, Items.BIRCH_PLANKS);
+        this.createSmithingTable(ModItems.JUNGLE_SMITHING_TABLE, Items.JUNGLE_PLANKS);
+        this.createSmithingTable(ModItems.ACACIA_SMITHING_TABLE, Items.ACACIA_PLANKS);
+        this.createSmithingTable(ModItems.DARK_OAK_SMITHING_TABLE, Items.DARK_OAK_PLANKS);
+        this.createSmithingTable(ModItems.CRIMSON_SMITHING_TABLE, Items.CRIMSON_PLANKS);
+        this.createSmithingTable(ModItems.WARPED_SMITHING_TABLE, Items.WARPED_PLANKS);
+        this.createSmithingTable(ModItems.MANGROVE_SMITHING_TABLE, Items.MANGROVE_PLANKS);
+        this.createSmithingTable(ModItems.CHERRY_SMITHING_TABLE, Items.CHERRY_PLANKS);
+        this.createSmithingTable(ModItems.BAMBOO_SMITHING_TABLE, Items.BAMBOO_PLANKS);
+        this.createSmithingTable(ModItems.PALE_OAK_SMITHING_TABLE, Items.PALE_OAK_PLANKS);
+
+        this.shaped(RecipeCategory.DECORATIONS, Items.SMITHING_TABLE)
+                .define('#', ItemTags.PLANKS)
+                .define('@', Items.IRON_INGOT)
+                .pattern("@@")
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy("has_iron_ingot", this.has(Items.IRON_INGOT))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.createGrindstone(ModItems.OAK_GRINDSTONE, Items.OAK_PLANKS);
+        this.createGrindstone(ModItems.SPRUCE_GRINDSTONE, Items.SPRUCE_PLANKS);
+        this.createGrindstone(ModItems.BIRCH_GRINDSTONE, Items.BIRCH_PLANKS);
+        this.createGrindstone(ModItems.JUNGLE_GRINDSTONE, Items.JUNGLE_PLANKS);
+        this.createGrindstone(ModItems.ACACIA_GRINDSTONE, Items.ACACIA_PLANKS);
+        this.createGrindstone(ModItems.DARK_OAK_GRINDSTONE, Items.DARK_OAK_PLANKS);
+        this.createGrindstone(ModItems.CRIMSON_GRINDSTONE, Items.CRIMSON_PLANKS);
+        this.createGrindstone(ModItems.WARPED_GRINDSTONE, Items.WARPED_PLANKS);
+        this.createGrindstone(ModItems.MANGROVE_GRINDSTONE, Items.MANGROVE_PLANKS);
+        this.createGrindstone(ModItems.CHERRY_GRINDSTONE, Items.CHERRY_PLANKS);
+        this.createGrindstone(ModItems.BAMBOO_GRINDSTONE, Items.BAMBOO_PLANKS);
+        this.createGrindstone(ModItems.PALE_OAK_GRINDSTONE, Items.PALE_OAK_PLANKS);
+
+        this.shaped(RecipeCategory.DECORATIONS, Items.GRINDSTONE)
+                .define('I', Items.STICK)
+                .define('-', Items.STONE_SLAB)
+                .define('#', ItemTags.PLANKS)
+                .pattern("I-I")
+                .pattern("# #")
+                .unlockedBy("has_stone_slab", this.has(Blocks.STONE_SLAB))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.createLoom(ModItems.OAK_LOOM, Items.OAK_PLANKS);
+        this.createLoom(ModItems.SPRUCE_LOOM, Items.SPRUCE_PLANKS);
+        this.createLoom(ModItems.BIRCH_LOOM, Items.BIRCH_PLANKS);
+        this.createLoom(ModItems.JUNGLE_LOOM, Items.JUNGLE_PLANKS);
+        this.createLoom(ModItems.ACACIA_LOOM, Items.ACACIA_PLANKS);
+        this.createLoom(ModItems.DARK_OAK_LOOM, Items.DARK_OAK_PLANKS);
+        this.createLoom(ModItems.CRIMSON_LOOM, Items.CRIMSON_PLANKS);
+        this.createLoom(ModItems.WARPED_LOOM, Items.WARPED_PLANKS);
+        this.createLoom(ModItems.MANGROVE_LOOM, Items.MANGROVE_PLANKS);
+        this.createLoom(ModItems.CHERRY_LOOM, Items.CHERRY_PLANKS);
+        this.createLoom(ModItems.BAMBOO_LOOM, Items.BAMBOO_PLANKS);
+        this.createLoom(ModItems.PALE_OAK_LOOM, Items.PALE_OAK_PLANKS);
+
+        this.shaped(RecipeCategory.DECORATIONS, Items.LOOM)
+                .define('#', ItemTags.PLANKS)
+                .define('@', Items.STRING)
+                .pattern("@@")
+                .pattern("##")
+                .unlockedBy("has_string", this.has(Items.STRING))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.createFurnace(ModItems.STONE_FURNACE.get(), Items.COBBLESTONE, "cobblestone");
+        this.createFurnace(ModItems.BLACKSTONE_FURNACE.get(), Items.BLACKSTONE, "blackstone");
+        this.createFurnace(ModItems.DEEPSLATE_FURNACE.get(), Items.COBBLED_DEEPSLATE, "cobbled_deepslate");
+
+        this.shaped(RecipeCategory.DECORATIONS, Items.FURNACE)
+                .define('#', ItemTags.STONE_CRAFTING_MATERIALS)
+                .pattern("###")
+                .pattern("# #")
+                .pattern("###")
+                .unlockedBy("has_cobblestone", this.has(ItemTags.STONE_CRAFTING_MATERIALS))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.createSmoker(ModItems.OAK_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), Items.OAK_LOG, "stone_furnace");
+        this.createSmoker(ModItems.SPRUCE_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), Items.SPRUCE_LOG, "stone_furnace");
+        this.createSmoker(ModItems.BIRCH_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), Items.BIRCH_LOG, "stone_furnace");
+        this.createSmoker(ModItems.JUNGLE_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), Items.JUNGLE_LOG, "stone_furnace");
+        this.createSmoker(ModItems.ACACIA_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), Items.ACACIA_LOG, "stone_furnace");
+        this.createSmoker(ModItems.DARK_OAK_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), Items.DARK_OAK_LOG, "stone_furnace");
+        this.createSmoker(ModItems.CRIMSON_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), Items.CRIMSON_STEM, "stone_furnace");
+        this.createSmoker(ModItems.WARPED_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), Items.WARPED_STEM, "stone_furnace");
+        this.createSmoker(ModItems.MANGROVE_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), Items.MANGROVE_LOG, "stone_furnace");
+        this.createSmoker(ModItems.CHERRY_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), Items.CHERRY_LOG, "stone_furnace");
+        this.createSmoker(ModItems.BAMBOO_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), Items.BAMBOO_BLOCK, "stone_furnace");
+        this.createSmoker(ModItems.PALE_OAK_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), Items.PALE_OAK_LOG, "stone_furnace");
+
+        this.createSmoker(ModItems.OAK_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), Items.OAK_LOG, "blackstone_furnace");
+        this.createSmoker(ModItems.SPRUCE_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), Items.SPRUCE_LOG, "blackstone_furnace");
+        this.createSmoker(ModItems.BIRCH_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), Items.BIRCH_LOG, "blackstone_furnace");
+        this.createSmoker(ModItems.JUNGLE_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), Items.JUNGLE_LOG, "blackstone_furnace");
+        this.createSmoker(ModItems.ACACIA_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), Items.ACACIA_LOG, "blackstone_furnace");
+        this.createSmoker(ModItems.DARK_OAK_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), Items.DARK_OAK_LOG, "blackstone_furnace");
+        this.createSmoker(ModItems.CRIMSON_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), Items.CRIMSON_STEM, "blackstone_furnace");
+        this.createSmoker(ModItems.WARPED_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), Items.WARPED_STEM, "blackstone_furnace");
+        this.createSmoker(ModItems.MANGROVE_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), Items.MANGROVE_LOG, "blackstone_furnace");
+        this.createSmoker(ModItems.CHERRY_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), Items.CHERRY_LOG, "blackstone_furnace");
+        this.createSmoker(ModItems.BAMBOO_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), Items.BAMBOO_BLOCK, "blackstone_furnace");
+        this.createSmoker(ModItems.PALE_OAK_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), Items.PALE_OAK_LOG, "blackstone_furnace");
+
+        this.createSmoker(ModItems.OAK_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), Items.OAK_LOG, "deepslate_furnace");
+        this.createSmoker(ModItems.SPRUCE_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), Items.SPRUCE_LOG, "deepslate_furnace");
+        this.createSmoker(ModItems.BIRCH_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), Items.BIRCH_LOG, "deepslate_furnace");
+        this.createSmoker(ModItems.JUNGLE_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), Items.JUNGLE_LOG, "deepslate_furnace");
+        this.createSmoker(ModItems.ACACIA_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), Items.ACACIA_LOG, "deepslate_furnace");
+        this.createSmoker(ModItems.DARK_OAK_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), Items.DARK_OAK_LOG, "deepslate_furnace");
+        this.createSmoker(ModItems.CRIMSON_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), Items.CRIMSON_STEM, "deepslate_furnace");
+        this.createSmoker(ModItems.WARPED_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), Items.WARPED_STEM, "deepslate_furnace");
+        this.createSmoker(ModItems.MANGROVE_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), Items.MANGROVE_LOG, "deepslate_furnace");
+        this.createSmoker(ModItems.CHERRY_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), Items.CHERRY_LOG, "deepslate_furnace");
+        this.createSmoker(ModItems.BAMBOO_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), Items.BAMBOO_BLOCK, "deepslate_furnace");
+        this.createSmoker(ModItems.PALE_OAK_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), Items.PALE_OAK_LOG, "deepslate_furnace");
+
+        this.shaped(RecipeCategory.DECORATIONS, Items.SMOKER)
+                .define('#', ItemTags.LOGS)
+                .define('X', Items.FURNACE)
+                .pattern(" # ")
+                .pattern("#X#")
+                .pattern(" # ")
+                .unlockedBy("has_furnace", this.has(Items.FURNACE))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.createBlastFurnace(ModItems.STONE_BLAST_FURNACE.get(), ModItems.STONE_FURNACE.get(), Items.SMOOTH_STONE, "smooth_stone");
+        this.createBlastFurnace(ModItems.BLACKSTONE_BLAST_FURNACE.get(), ModItems.BLACKSTONE_FURNACE.get(), Items.POLISHED_BLACKSTONE, "polished_blackstone");
+        this.createBlastFurnace(ModItems.DEEPSLATE_BLAST_FURNACE.get(), ModItems.DEEPSLATE_FURNACE.get(), Items.POLISHED_DEEPSLATE, "polished_deepslate");
+
+        this.shaped(RecipeCategory.DECORATIONS, Items.BLAST_FURNACE)
+                .define('#', Items.SMOOTH_STONE)
+                .define('X', Items.FURNACE)
+                .define('I', Items.IRON_INGOT)
+                .pattern("III")
+                .pattern("IXI")
+                .pattern("###")
+                .unlockedBy("has_smooth_stone", this.has(Items.SMOOTH_STONE))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.createCampfires(ModItems.OAK_CAMPFIRE.get(), ModItems.OAK_SOUL_CAMPFIRE.get(), ItemTags.OAK_LOGS);
+        this.createCampfires(ModItems.SPRUCE_CAMPFIRE.get(), ModItems.SPRUCE_SOUL_CAMPFIRE.get(), ItemTags.SPRUCE_LOGS);
+        this.createCampfires(ModItems.BIRCH_CAMPFIRE.get(), ModItems.BIRCH_SOUL_CAMPFIRE.get(), ItemTags.BIRCH_LOGS);
+        this.createCampfires(ModItems.JUNGLE_CAMPFIRE.get(), ModItems.JUNGLE_SOUL_CAMPFIRE.get(), ItemTags.JUNGLE_LOGS);
+        this.createCampfires(ModItems.ACACIA_CAMPFIRE.get(), ModItems.ACACIA_SOUL_CAMPFIRE.get(), ItemTags.ACACIA_LOGS);
+        this.createCampfires(ModItems.DARK_OAK_CAMPFIRE.get(), ModItems.DARK_OAK_SOUL_CAMPFIRE.get(), ItemTags.DARK_OAK_LOGS);
+        this.createCampfires(ModItems.CRIMSON_CAMPFIRE.get(), ModItems.CRIMSON_SOUL_CAMPFIRE.get(), ItemTags.CRIMSON_STEMS);
+        this.createCampfires(ModItems.WARPED_CAMPFIRE.get(), ModItems.WARPED_SOUL_CAMPFIRE.get(), ItemTags.WARPED_STEMS);
+        this.createCampfires(ModItems.MANGROVE_CAMPFIRE.get(), ModItems.MANGROVE_SOUL_CAMPFIRE.get(), ItemTags.MANGROVE_LOGS);
+        this.createCampfires(ModItems.CHERRY_CAMPFIRE.get(), ModItems.CHERRY_SOUL_CAMPFIRE.get(), ItemTags.CHERRY_LOGS);
+        this.createCampfires(ModItems.BAMBOO_CAMPFIRE.get(), ModItems.BAMBOO_SOUL_CAMPFIRE.get(), ItemTags.BAMBOO_BLOCKS);
+        this.createCampfires(ModItems.PALE_OAK_CAMPFIRE.get(), ModItems.PALE_OAK_SOUL_CAMPFIRE.get(), ItemTags.PALE_OAK_LOGS);
+
+        this.shaped(RecipeCategory.DECORATIONS, Items.CAMPFIRE)
+                .define('L', ItemTags.LOGS)
+                .define('S', Items.STICK)
+                .define('C', ItemTags.COALS)
+                .pattern(" S ")
+                .pattern("SCS")
+                .pattern("LLL")
+                .unlockedBy("has_stick", this.has(Items.STICK))
+                .unlockedBy("has_coal", this.has(ItemTags.COALS))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.shaped(RecipeCategory.DECORATIONS, Items.SOUL_CAMPFIRE)
+                .define('L', ItemTags.LOGS)
+                .define('S', Items.STICK)
+                .define('#', ItemTags.SOUL_FIRE_BASE_BLOCKS)
+                .pattern(" S ")
+                .pattern("S#S")
+                .pattern("LLL")
+                .unlockedBy("has_soul_sand", this.has(ItemTags.SOUL_FIRE_BASE_BLOCKS))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.createBeehive(ModItems.OAK_BEEHIVE.get(), Items.OAK_PLANKS);
+        this.createBeehive(ModItems.SPRUCE_BEEHIVE.get(), Items.SPRUCE_PLANKS);
+        this.createBeehive(ModItems.BIRCH_BEEHIVE.get(), Items.BIRCH_PLANKS);
+        this.createBeehive(ModItems.JUNGLE_BEEHIVE.get(), Items.JUNGLE_PLANKS);
+        this.createBeehive(ModItems.ACACIA_BEEHIVE.get(), Items.ACACIA_PLANKS);
+        this.createBeehive(ModItems.DARK_OAK_BEEHIVE.get(), Items.DARK_OAK_PLANKS);
+        this.createBeehive(ModItems.CRIMSON_BEEHIVE.get(), Items.CRIMSON_PLANKS);
+        this.createBeehive(ModItems.WARPED_BEEHIVE.get(), Items.WARPED_PLANKS);
+        this.createBeehive(ModItems.MANGROVE_BEEHIVE.get(), Items.MANGROVE_PLANKS);
+        this.createBeehive(ModItems.CHERRY_BEEHIVE.get(), Items.CHERRY_PLANKS);
+        this.createBeehive(ModItems.BAMBOO_BEEHIVE.get(), Items.BAMBOO_PLANKS);
+        this.createBeehive(ModItems.PALE_OAK_BEEHIVE.get(), Items.PALE_OAK_PLANKS);
+
+        this.shaped(RecipeCategory.DECORATIONS, Items.BEEHIVE)
+                .define('P', ItemTags.PLANKS)
+                .define('H', Items.HONEYCOMB)
+                .pattern("PPP")
+                .pattern("HHH")
+                .pattern("PPP")
+                .unlockedBy("has_honeycomb", this.has(Items.HONEYCOMB))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.createBookshelf(ModItems.OAK_BOOKSHELF.get(), Items.OAK_PLANKS);
+        this.createBookshelf(ModItems.SPRUCE_BOOKSHELF.get(), Items.SPRUCE_PLANKS);
+        this.createBookshelf(ModItems.BIRCH_BOOKSHELF.get(), Items.BIRCH_PLANKS);
+        this.createBookshelf(ModItems.JUNGLE_BOOKSHELF.get(), Items.JUNGLE_PLANKS);
+        this.createBookshelf(ModItems.ACACIA_BOOKSHELF.get(), Items.ACACIA_PLANKS);
+        this.createBookshelf(ModItems.DARK_OAK_BOOKSHELF.get(), Items.DARK_OAK_PLANKS);
+        this.createBookshelf(ModItems.CRIMSON_BOOKSHELF.get(), Items.CRIMSON_PLANKS);
+        this.createBookshelf(ModItems.WARPED_BOOKSHELF.get(), Items.WARPED_PLANKS);
+        this.createBookshelf(ModItems.MANGROVE_BOOKSHELF.get(), Items.MANGROVE_PLANKS);
+        this.createBookshelf(ModItems.CHERRY_BOOKSHELF.get(), Items.CHERRY_PLANKS);
+        this.createBookshelf(ModItems.BAMBOO_BOOKSHELF.get(), Items.BAMBOO_PLANKS);
+        this.createBookshelf(ModItems.PALE_OAK_BOOKSHELF.get(), Items.PALE_OAK_PLANKS);
+
+        this.shaped(RecipeCategory.BUILDING_BLOCKS, Items.BOOKSHELF)
+                .define('#', ItemTags.PLANKS)
+                .define('X', Items.BOOK)
+                .pattern("###")
+                .pattern("XXX")
+                .pattern("###")
+                .unlockedBy("has_book", this.has(Items.BOOK))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.createChiseledBookshelf(ModItems.OAK_CHISELED_BOOKSHELF.get(), Items.OAK_PLANKS, Items.OAK_SLAB);
+        this.createChiseledBookshelf(ModItems.SPRUCE_CHISELED_BOOKSHELF.get(), Items.SPRUCE_PLANKS, Items.SPRUCE_SLAB);
+        this.createChiseledBookshelf(ModItems.BIRCH_CHISELED_BOOKSHELF.get(), Items.BIRCH_PLANKS, Items.BIRCH_SLAB);
+        this.createChiseledBookshelf(ModItems.JUNGLE_CHISELED_BOOKSHELF.get(), Items.JUNGLE_PLANKS, Items.JUNGLE_SLAB);
+        this.createChiseledBookshelf(ModItems.ACACIA_CHISELED_BOOKSHELF.get(), Items.ACACIA_PLANKS, Items.ACACIA_SLAB);
+        this.createChiseledBookshelf(ModItems.DARK_OAK_CHISELED_BOOKSHELF.get(), Items.DARK_OAK_PLANKS, Items.DARK_OAK_SLAB);
+        this.createChiseledBookshelf(ModItems.CRIMSON_CHISELED_BOOKSHELF.get(), Items.CRIMSON_PLANKS, Items.CRIMSON_SLAB);
+        this.createChiseledBookshelf(ModItems.WARPED_CHISELED_BOOKSHELF.get(), Items.WARPED_PLANKS, Items.WARPED_SLAB);
+        this.createChiseledBookshelf(ModItems.MANGROVE_CHISELED_BOOKSHELF.get(), Items.MANGROVE_PLANKS, Items.MANGROVE_SLAB);
+        this.createChiseledBookshelf(ModItems.CHERRY_CHISELED_BOOKSHELF.get(), Items.CHERRY_PLANKS, Items.CHERRY_SLAB);
+        this.createChiseledBookshelf(ModItems.BAMBOO_CHISELED_BOOKSHELF.get(), Items.BAMBOO_PLANKS, Items.BAMBOO_SLAB);
+        this.createChiseledBookshelf(ModItems.PALE_OAK_CHISELED_BOOKSHELF.get(), Items.PALE_OAK_PLANKS, Items.PALE_OAK_SLAB);
+
+        this.shaped(RecipeCategory.BUILDING_BLOCKS, Items.CHISELED_BOOKSHELF)
+                .define('#', ItemTags.PLANKS)
+                .define('X', ItemTags.WOODEN_SLABS)
+                .pattern("###")
+                .pattern("XXX")
+                .pattern("###")
+                .unlockedBy("has_book", this.has(Items.BOOK))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
     }
 
     @Override
@@ -380,8 +640,97 @@ public class ModRecipesProvider extends RecipeProvider {
                 .save(output, baseBlockId + "_waxing");
     }
 
-    protected FletchingRecipeBuilder fletching(ItemLike result, Item arrow, Item ingredient) {
-        return FletchingRecipeBuilder.fletching(Ingredient.of(arrow), Ingredient.of(ingredient), result);
+    protected void createChiseledBookshelf(ItemLike chiseledBookshelf, ItemLike woodPlanks, ItemLike woodSlabs) {
+        this.shaped(RecipeCategory.BUILDING_BLOCKS, chiseledBookshelf)
+                .define('#', woodPlanks)
+                .define('X', woodSlabs)
+                .pattern("###")
+                .pattern("XXX")
+                .pattern("###")
+                .unlockedBy("has_book", this.has(Items.BOOK))
+                .save(this.output);
+    }
+
+    protected void createBookshelf(ItemLike bookshelf, ItemLike woodType) {
+        this.shaped(RecipeCategory.BUILDING_BLOCKS, bookshelf)
+                .define('#', woodType)
+                .define('X', Items.BOOK)
+                .pattern("###")
+                .pattern("XXX")
+                .pattern("###")
+                .unlockedBy("has_book", this.has(Items.BOOK))
+                .save(this.output);
+
+    }
+
+    protected void createBeehive(ItemLike beehive, ItemLike woodType) {
+        this.shaped(RecipeCategory.DECORATIONS, beehive)
+                .define('P', woodType)
+                .define('H', Items.HONEYCOMB)
+                .pattern("PPP")
+                .pattern("HHH")
+                .pattern("PPP")
+                .unlockedBy("has_honeycomb", this.has(Items.HONEYCOMB))
+                .save(this.output);
+    }
+
+    protected void createCampfires(ItemLike campfire, ItemLike soulCampfire, TagKey logType){
+        this.shaped(RecipeCategory.DECORATIONS, campfire)
+                .define('L', logType)
+                .define('S', Items.STICK)
+                .define('C', ItemTags.COALS)
+                .pattern(" S ")
+                .pattern("SCS")
+                .pattern("LLL")
+                .unlockedBy("has_stick", this.has(Items.STICK))
+                .unlockedBy("has_coal", this.has(ItemTags.COALS))
+                .save(this.output);
+        this.shaped(RecipeCategory.DECORATIONS, soulCampfire)
+                .define('L', logType)
+                .define('S', Items.STICK)
+                .define('#', ItemTags.SOUL_FIRE_BASE_BLOCKS)
+                .pattern(" S ")
+                .pattern("S#S")
+                .pattern("LLL")
+                .unlockedBy("has_soul_sand", this.has(ItemTags.SOUL_FIRE_BASE_BLOCKS))
+                .save(this.output);
+    }
+
+    protected void createFurnace(ItemLike furnace, ItemLike stoneType, String baseBlockId) {
+        this.shaped(RecipeCategory.DECORATIONS, furnace)
+                .define('#', stoneType)
+                .pattern("###")
+                .pattern("# #")
+                .pattern("###")
+                .unlockedBy("has_" + baseBlockId, this.has(stoneType))
+                .save(this.output);
+    }
+
+    protected void createSmoker(ItemLike smoker, ItemLike furnace, ItemLike woodType, String baseBlockId) {
+        this.shaped(RecipeCategory.DECORATIONS, smoker)
+                .define('#', woodType)
+                .define('X', furnace)
+                .pattern(" # ")
+                .pattern("#X#")
+                .pattern(" # ")
+                .unlockedBy("has_" + baseBlockId, this.has(furnace))
+                .save(this.output);
+    }
+
+    protected void createBlastFurnace(ItemLike blastFurnace, ItemLike furnace, ItemLike polishedStoneType, String baseBlockId) {
+        this.shaped(RecipeCategory.DECORATIONS, blastFurnace)
+                .define('#', polishedStoneType)
+                .define('X', furnace)
+                .define('I', Items.IRON_INGOT)
+                .pattern("III")
+                .pattern("IXI")
+                .pattern("###")
+                .unlockedBy("has_" + baseBlockId, this.has(polishedStoneType))
+                .save(this.output);
+    }
+
+    protected void fletching(ItemLike result, Item arrow, Item ingredient) {
+        FletchingRecipeBuilder.fletching(Ingredient.of(arrow), Ingredient.of(ingredient), result).unlockedBy(getHasName(arrow), this.has(arrow)).save(this.output, getItemName(result) + "_fletching");
     }
 
     protected void createWaxedBlock(Item waxedBlock, Item baseBlock, String baseBlockId) {
@@ -414,6 +763,17 @@ public class ModRecipesProvider extends RecipeProvider {
                 .save(this.output);
     }
 
+    protected void createGrindstone(ItemLike grindstone, ItemLike planks) {
+        this.shaped(RecipeCategory.DECORATIONS, grindstone)
+                .define('I', Items.STICK)
+                .define('-', Items.STONE_SLAB)
+                .define('#', planks)
+                .pattern("I-I")
+                .pattern("# #")
+                .unlockedBy("has_stone_slab", this.has(Blocks.STONE_SLAB))
+                .save(this.output);
+    }
+
     protected void createCartographyTable(ItemLike cartograhyTable, ItemLike planks){
         this.shaped(RecipeCategory.DECORATIONS, cartograhyTable)
                 .define('#', planks)
@@ -433,6 +793,27 @@ public class ModRecipesProvider extends RecipeProvider {
                 .pattern("##")
                 .pattern("##")
                 .unlockedBy("has_flint", this.has(Items.FLINT))
+                .save(this.output);
+    }
+
+    protected void createSmithingTable(ItemLike smithingTable, ItemLike planks) {
+        this.shaped(RecipeCategory.DECORATIONS, smithingTable)
+                .define('#', planks)
+                .define('@', Items.IRON_INGOT)
+                .pattern("@@")
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy("has_iron_ingot", this.has(Items.IRON_INGOT))
+                .save(this.output);
+    }
+
+    protected void createLoom(ItemLike loom, ItemLike planks) {
+        this.shaped(RecipeCategory.DECORATIONS, loom)
+                .define('#', planks)
+                .define('@', Items.STRING)
+                .pattern("@@")
+                .pattern("##")
+                .unlockedBy("has_string", this.has(Items.STRING))
                 .save(this.output);
     }
 

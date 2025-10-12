@@ -27,6 +27,7 @@ import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.world.poi.ExtendPoiTypesEvent;
+import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.level.NoteBlockEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
@@ -65,6 +66,7 @@ public class BuildersParadise
         modEventBus.addListener(this::addEntityRenderers);
         modEventBus.addListener(this::addGuiScreens);
         modEventBus.addListener(this::addPOIBlocks);
+        modEventBus.addListener(this::addBlockEntities);
         NeoForge.EVENT_BUS.addListener(this::addNoteBlockInstruments);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -94,6 +96,10 @@ public class BuildersParadise
     public void onServerStarting(ServerStartingEvent event)
     {
 
+    }
+
+    private void addBlockEntities(BlockEntityTypeAddBlocksEvent event){
+        BlockEntityConfig.addModdedBlocksToVanillaBlockEntities(event);
     }
 
     private void addGuiScreens(RegisterMenuScreensEvent event) {
