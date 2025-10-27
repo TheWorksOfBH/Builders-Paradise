@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/brewing_stand",
+  "textures": {
+    "base": "buildersparadise:block/deepslate_brewing_stand_base",
+    "stand": "minecraft:block/brewing_stand"
+  }
+}

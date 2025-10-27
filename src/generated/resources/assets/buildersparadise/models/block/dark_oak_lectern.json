@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/lectern",
+  "textures": {
+    "base": "buildersparadise:block/dark_oak_lectern_base",
+    "bottom": "minecraft:block/dark_oak_planks",
+    "front": "buildersparadise:block/dark_oak_lectern_front",
+    "particle": "buildersparadise:block/dark_oak_lectern_sides",
+    "sides": "buildersparadise:block/dark_oak_lectern_sides",
+    "top": "buildersparadise:block/dark_oak_lectern_top"
+  }
+}

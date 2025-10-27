@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/uranium_tile_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/uranium_tiles"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/uranium_tile_slab_top"
+    }
+  }
+}

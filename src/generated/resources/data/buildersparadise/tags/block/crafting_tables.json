@@ -1,0 +1,28 @@
+{
+  "values": [
+    "minecraft:smithing_table",
+    "minecraft:crafting_table",
+    "buildersparadise:spruce_crafting_table",
+    "buildersparadise:birch_crafting_table",
+    "buildersparadise:jungle_crafting_table",
+    "buildersparadise:acacia_crafting_table",
+    "buildersparadise:dark_oak_crafting_table",
+    "buildersparadise:crimson_crafting_table",
+    "buildersparadise:warped_crafting_table",
+    "buildersparadise:mangrove_crafting_table",
+    "buildersparadise:cherry_crafting_table",
+    "buildersparadise:bamboo_crafting_table",
+    "buildersparadise:pale_oak_crafting_table",
+    "buildersparadise:oak_smithing_table",
+    "buildersparadise:spruce_smithing_table",
+    "buildersparadise:birch_smithing_table",
+    "buildersparadise:jungle_smithing_table",
+    "buildersparadise:acacia_smithing_table",
+    "buildersparadise:dark_oak_smithing_table",
+    "buildersparadise:crimson_smithing_table",
+    "buildersparadise:warped_smithing_table",
+    "buildersparadise:cherry_smithing_table",
+    "buildersparadise:bamboo_smithing_table",
+    "buildersparadise:pale_oak_smithing_table"
+  ]
+}

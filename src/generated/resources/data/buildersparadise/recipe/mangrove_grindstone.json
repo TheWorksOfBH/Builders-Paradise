@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:mangrove_planks",
+    "-": "minecraft:stone_slab",
+    "I": "minecraft:stick"
+  },
+  "pattern": [
+    "I-I",
+    "# #"
+  ],
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:mangrove_grindstone"
+  }
+}

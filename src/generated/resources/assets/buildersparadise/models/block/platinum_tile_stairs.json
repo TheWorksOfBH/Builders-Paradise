@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "buildersparadise:block/platinum_tiles",
+    "side": "buildersparadise:block/platinum_tiles",
+    "top": "buildersparadise:block/platinum_tiles"
+  }
+}

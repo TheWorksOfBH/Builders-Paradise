@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "B": "buildersparadise:dark_oak_bookshelf",
+    "S": "minecraft:dark_oak_slab"
+  },
+  "pattern": [
+    "SSS",
+    " B ",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:dark_oak_lectern"
+  }
+}

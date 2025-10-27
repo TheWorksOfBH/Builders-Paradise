@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:steel_block",
+  "result": {
+    "count": 8,
+    "id": "buildersparadise:steel_tile_slab"
+  }
+}

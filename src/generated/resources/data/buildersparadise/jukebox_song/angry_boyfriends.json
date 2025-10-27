@@ -1,0 +1,8 @@
+{
+  "comparator_output": 8,
+  "description": {
+    "translate": "jukebox_song.buildersparadise.angry_boyfriends"
+  },
+  "length_in_seconds": 70.0,
+  "sound_event": "buildersparadise:music_disc.angry_boyfriends"
+}

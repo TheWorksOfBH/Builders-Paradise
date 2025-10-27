@@ -1,0 +1,48 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:never"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_block.minecraft.mangrove_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:mangrove_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_block.minecraft.mangrove_slab": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:mangrove_slab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "buildersparadise:mangrove_barrel"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_block.minecraft.mangrove_planks",
+      "has_block.minecraft.mangrove_slab"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "buildersparadise:mangrove_barrel"
+    ]
+  }
+}

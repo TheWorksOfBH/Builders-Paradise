@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/lectern",
+  "textures": {
+    "base": "buildersparadise:block/mangrove_lectern_base",
+    "bottom": "minecraft:block/mangrove_planks",
+    "front": "buildersparadise:block/mangrove_lectern_front",
+    "particle": "buildersparadise:block/mangrove_lectern_sides",
+    "sides": "buildersparadise:block/mangrove_lectern_sides",
+    "top": "buildersparadise:block/mangrove_lectern_top"
+  }
+}

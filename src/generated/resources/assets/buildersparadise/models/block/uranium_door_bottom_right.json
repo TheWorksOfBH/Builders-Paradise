@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "textures": {
+    "bottom": "buildersparadise:block/uranium_door_bottom",
+    "top": "buildersparadise:block/uranium_door_top"
+  }
+}

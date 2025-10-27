@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "buildersparadise:block/dark_oak_loom_bottom",
+    "front": "buildersparadise:block/dark_oak_loom_front",
+    "side": "buildersparadise:block/dark_oak_loom_side",
+    "top": "buildersparadise:block/dark_oak_loom_top"
+  }
+}

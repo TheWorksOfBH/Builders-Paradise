@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:slightly_corroded_zinc_tiles",
+  "result": {
+    "count": 2,
+    "id": "buildersparadise:slightly_corroded_zinc_tile_slab"
+  }
+}

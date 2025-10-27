@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:basalt_bricks",
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:basalt_brick_stairs"
+  }
+}

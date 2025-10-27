@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/campfire_off",
+  "textures": {
+    "log": "buildersparadise:block/acacia_campfire_log",
+    "particle": "buildersparadise:block/acacia_campfire_log"
+  }
+}

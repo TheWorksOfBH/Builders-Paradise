@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:uranium_block",
+  "result": {
+    "count": 8,
+    "id": "buildersparadise:uranium_tile_slab"
+  }
+}

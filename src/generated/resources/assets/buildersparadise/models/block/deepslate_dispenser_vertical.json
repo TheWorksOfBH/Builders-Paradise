@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/orientable_vertical",
+  "textures": {
+    "front": "buildersparadise:block/deepslate_dispenser_front_vertical",
+    "side": "buildersparadise:block/deepslate_furnace_top"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "buildersparadise:block/mangrove_lectern",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "buildersparadise:block/mangrove_lectern"
+    },
+    "facing=south": {
+      "model": "buildersparadise:block/mangrove_lectern",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "buildersparadise:block/mangrove_lectern",
+      "y": 270
+    }
+  }
+}

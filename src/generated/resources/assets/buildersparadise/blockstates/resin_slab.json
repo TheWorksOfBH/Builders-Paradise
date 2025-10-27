@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/resin_slab"
+    },
+    "type=double": {
+      "model": "minecraft:block/resin_block"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/resin_slab_top"
+    }
+  }
+}

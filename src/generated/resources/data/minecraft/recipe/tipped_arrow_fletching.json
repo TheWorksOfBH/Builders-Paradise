@@ -1,0 +1,9 @@
+{
+  "type": "buildersparadise:fletching",
+  "arrow": "minecraft:arrow",
+  "ingredient": "minecraft:lingering_potion",
+  "output": {
+    "count": 1,
+    "id": "minecraft:tipped_arrow"
+  }
+}

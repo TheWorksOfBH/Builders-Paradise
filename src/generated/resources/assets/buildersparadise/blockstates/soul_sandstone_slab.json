@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/soul_sandstone_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/soul_sandstone"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/soul_sandstone_slab_top"
+    }
+  }
+}

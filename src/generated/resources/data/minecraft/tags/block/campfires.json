@@ -1,0 +1,28 @@
+{
+  "values": [
+    "minecraft:soul_campfire",
+    "minecraft:campfire",
+    "buildersparadise:spruce_campfire",
+    "buildersparadise:birch_campfire",
+    "buildersparadise:jungle_campfire",
+    "buildersparadise:acacia_campfire",
+    "buildersparadise:dark_oak_campfire",
+    "buildersparadise:crimson_campfire",
+    "buildersparadise:warped_campfire",
+    "buildersparadise:mangrove_campfire",
+    "buildersparadise:cherry_campfire",
+    "buildersparadise:bamboo_campfire",
+    "buildersparadise:pale_oak_campfire",
+    "buildersparadise:spruce_soul_campfire",
+    "buildersparadise:birch_soul_campfire",
+    "buildersparadise:jungle_soul_campfire",
+    "buildersparadise:acacia_soul_campfire",
+    "buildersparadise:dark_oak_soul_campfire",
+    "buildersparadise:crimson_soul_campfire",
+    "buildersparadise:warped_soul_campfire",
+    "buildersparadise:mangrove_soul_campfire",
+    "buildersparadise:cherry_soul_campfire",
+    "buildersparadise:bamboo_soul_campfire",
+    "buildersparadise:pale_oak_soul_campfire"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "zinc_ingot",
+  "ingredient": "buildersparadise:deepslate_zinc_ore",
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:zinc_ingot"
+  }
+}

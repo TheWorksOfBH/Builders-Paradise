@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:waxed_extremely_rusted_iron_tiles",
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:waxed_extremely_rusted_iron_tile_stairs"
+  }
+}

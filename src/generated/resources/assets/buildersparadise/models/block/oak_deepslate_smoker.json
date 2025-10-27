@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "buildersparadise:block/oak_deepslate_smoker_bottom",
+    "front": "buildersparadise:block/oak_deepslate_smoker_front",
+    "side": "buildersparadise:block/oak_deepslate_smoker_side",
+    "top": "buildersparadise:block/oak_deepslate_smoker_top"
+  }
+}

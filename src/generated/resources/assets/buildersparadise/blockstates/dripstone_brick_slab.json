@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/dripstone_brick_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/dripstone_bricks"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/dripstone_brick_slab_top"
+    }
+  }
+}

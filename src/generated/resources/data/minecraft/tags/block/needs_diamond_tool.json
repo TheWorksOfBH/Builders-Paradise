@@ -1,0 +1,10 @@
+{
+  "values": [
+    "buildersparadise:netherite_tiles",
+    "buildersparadise:netherite_tile_slab",
+    "buildersparadise:netherite_tile_stairs",
+    "buildersparadise:netherite_door",
+    "buildersparadise:netherite_trapdoor",
+    "buildersparadise:player_only_pressure_plate"
+  ]
+}

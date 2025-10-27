@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "buildersparadise:block/mildly_rusted_iron_tiles",
+    "side": "buildersparadise:block/mildly_rusted_iron_tiles",
+    "top": "buildersparadise:block/mildly_rusted_iron_tiles"
+  }
+}

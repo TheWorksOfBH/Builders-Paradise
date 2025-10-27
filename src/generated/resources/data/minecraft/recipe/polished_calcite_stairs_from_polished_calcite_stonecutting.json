@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:polished_calcite",
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:polished_calcite_stairs"
+  }
+}

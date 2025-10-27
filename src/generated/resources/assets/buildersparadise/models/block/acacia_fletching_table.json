@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "minecraft:block/acacia_planks",
+    "east": "buildersparadise:block/acacia_fletching_table_side",
+    "north": "buildersparadise:block/acacia_fletching_table_front",
+    "particle": "buildersparadise:block/acacia_fletching_table_front",
+    "south": "buildersparadise:block/acacia_fletching_table_front",
+    "up": "buildersparadise:block/acacia_fletching_table_top",
+    "west": "buildersparadise:block/acacia_fletching_table_side"
+  }
+}

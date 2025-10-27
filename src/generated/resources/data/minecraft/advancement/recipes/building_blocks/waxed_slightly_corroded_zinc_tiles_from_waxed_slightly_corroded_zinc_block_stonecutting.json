@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:waxed_slightly_corroded_zinc_tiles_from_waxed_slightly_corroded_zinc_block_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_waxed_slightly_corroded_zinc_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "buildersparadise:waxed_slightly_corroded_zinc_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_waxed_slightly_corroded_zinc_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:waxed_slightly_corroded_zinc_tiles_from_waxed_slightly_corroded_zinc_block_stonecutting"
+    ]
+  }
+}

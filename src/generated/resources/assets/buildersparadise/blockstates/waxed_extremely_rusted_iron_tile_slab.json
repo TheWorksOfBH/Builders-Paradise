@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/extremely_rusted_iron_tile_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/extremely_rusted_iron_tile_slab"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/extremely_rusted_iron_tile_slab_top"
+    }
+  }
+}

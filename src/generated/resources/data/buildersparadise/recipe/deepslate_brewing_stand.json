@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:cobbled_deepslate",
+    "B": "minecraft:blaze_rod"
+  },
+  "pattern": [
+    " B ",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:deepslate_brewing_stand"
+  }
+}

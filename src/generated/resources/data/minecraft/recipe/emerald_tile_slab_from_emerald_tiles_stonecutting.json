@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:emerald_tiles",
+  "result": {
+    "count": 2,
+    "id": "buildersparadise:emerald_tile_slab"
+  }
+}

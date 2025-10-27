@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:polished_deepslate",
+    "I": "minecraft:iron_ingot",
+    "X": "buildersparadise:deepslate_furnace"
+  },
+  "pattern": [
+    "III",
+    "IXI",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:deepslate_blast_furnace"
+  }
+}

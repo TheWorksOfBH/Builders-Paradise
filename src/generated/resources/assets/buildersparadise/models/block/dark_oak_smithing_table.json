@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "buildersparadise:block/dark_oak_smithing_table_bottom",
+    "east": "buildersparadise:block/dark_oak_smithing_table_side",
+    "north": "buildersparadise:block/dark_oak_smithing_table_front",
+    "particle": "buildersparadise:block/dark_oak_smithing_table_front",
+    "south": "buildersparadise:block/dark_oak_smithing_table_front",
+    "up": "minecraft:block/smithing_table_top",
+    "west": "buildersparadise:block/dark_oak_smithing_table_side"
+  }
+}

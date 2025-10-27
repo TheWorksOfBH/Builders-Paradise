@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_really_corroded_zinc_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "buildersparadise:really_corroded_zinc_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "buildersparadise:really_corroded_zinc_tiles"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_really_corroded_zinc_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "buildersparadise:really_corroded_zinc_tiles"
+    ]
+  }
+}

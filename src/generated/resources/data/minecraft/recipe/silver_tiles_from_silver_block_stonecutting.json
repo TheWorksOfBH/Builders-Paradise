@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:silver_block",
+  "result": {
+    "count": 4,
+    "id": "buildersparadise:silver_tiles"
+  }
+}

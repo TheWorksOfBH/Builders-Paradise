@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "buildersparadise:block/dark_elder_prismarine",
+    "side": "buildersparadise:block/dark_elder_prismarine",
+    "top": "buildersparadise:block/dark_elder_prismarine"
+  }
+}

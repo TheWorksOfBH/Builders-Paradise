@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "buildersparadise:block/passive_mob_only_pressure_plate"
+  }
+}

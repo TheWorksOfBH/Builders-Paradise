@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/smooth_soul_sandstone_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/smooth_soul_sandstone"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/smooth_soul_sandstone_slab_top"
+    }
+  }
+}

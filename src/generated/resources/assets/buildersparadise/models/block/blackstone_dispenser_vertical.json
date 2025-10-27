@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/orientable_vertical",
+  "textures": {
+    "front": "buildersparadise:block/blackstone_dispenser_front_vertical",
+    "side": "buildersparadise:block/blackstone_furnace_top"
+  }
+}

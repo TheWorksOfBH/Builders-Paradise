@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left",
+  "textures": {
+    "bottom": "buildersparadise:block/mildly_rusted_iron_door_bottom",
+    "top": "buildersparadise:block/mildly_rusted_iron_door_top"
+  }
+}

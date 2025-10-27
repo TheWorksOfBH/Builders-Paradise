@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "buildersparadise:block/nuke",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "buildersparadise:block/nuke"
+    },
+    "facing=south": {
+      "model": "buildersparadise:block/nuke",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "buildersparadise:block/nuke",
+      "y": 270
+    }
+  }
+}
