@@ -27,7 +27,12 @@ public final class ModBlockTags {
     public static final TagKey<Block> BEEHIVES = create("beehives");
     public static final TagKey<Block> BOOKSHELVES = create("bookshelves");
     public static final TagKey<Block> CHISELED_BOOKSHELVES = create("chiseled_bookshelves");
-
+    public static final TagKey<Block> LECTERNS = create("lecterns");
+    public static final TagKey<Block> BREWING_STANDS = create("brewing_stands");
+    public static final TagKey<Block> BARRELS = create("barrels");
+    public static final TagKey<Block> DISPENSERS = create("dispensers");
+    public static final TagKey<Block> DROPPERS = create("droppers");
+    public static final TagKey<Block> OBSERVERS = create("observers");
 
 
     private ModBlockTags() {

@@ -48,5 +48,11 @@ public class ModItemModelGenerator extends ItemModelGenerators {
         this.generateFlatItem(ModItems.STEEL_INGOT.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(ModItems.STEEL_NUGGET.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(ModItems.NUCLEAR_WASTE_BUCKET.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.MUSIC_DISC_CIRCUITRIC_MAGNET.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.MUSIC_DISC_ANGRY_BOYFRIENDS.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.CRIMSON_BOAT.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.WARPED_BOAT.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.CRIMSON_CHEST_BOAT.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.WARPED_CHEST_BOAT.get(), ModelTemplates.FLAT_ITEM);
     }
 }

@@ -2,14 +2,15 @@ package github.theworksofbh.buildersparadise.items;
 
 import github.theworksofbh.buildersparadise.BuildersParadise;
 import github.theworksofbh.buildersparadise.block.ModBlocks;
+import github.theworksofbh.buildersparadise.entity.ModEntities;
 import github.theworksofbh.buildersparadise.fluids.ModFluids;
+import github.theworksofbh.buildersparadise.sounds.ModJukeboxSongs;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.BucketItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.vehicle.AbstractBoat;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.FlowingFluid;
@@ -686,6 +687,56 @@ public class ModItems {
     public static final DeferredItem<BlockItem> BAMBOO_CHISELED_BOOKSHELF = registerBlockItem("bamboo_chiseled_bookshelf", () -> ModBlocks.BAMBOO_CHISELED_BOOKSHELF.get());
     public static final DeferredItem<BlockItem> PALE_OAK_CHISELED_BOOKSHELF = registerBlockItem("pale_oak_chiseled_bookshelf", () -> ModBlocks.PALE_OAK_CHISELED_BOOKSHELF.get());
 
+    public static final DeferredItem<BlockItem> OAK_LECTERN = registerBlockItem("oak_lectern", () -> Blocks.LECTERN);
+    public static final DeferredItem<BlockItem> SPRUCE_LECTERN = registerBlockItem("spruce_lectern", () -> ModBlocks.SPRUCE_LECTERN.get());
+    public static final DeferredItem<BlockItem> BIRCH_LECTERN = registerBlockItem("birch_lectern", () -> ModBlocks.BIRCH_LECTERN.get());
+    public static final DeferredItem<BlockItem> JUNGLE_LECTERN = registerBlockItem("jungle_lectern", () -> ModBlocks.JUNGLE_LECTERN.get());
+    public static final DeferredItem<BlockItem> ACACIA_LECTERN = registerBlockItem("acacia_lectern", () -> ModBlocks.ACACIA_LECTERN.get());
+    public static final DeferredItem<BlockItem> DARK_OAK_LECTERN = registerBlockItem("dark_oak_lectern", () -> ModBlocks.DARK_OAK_LECTERN.get());
+    public static final DeferredItem<BlockItem> CRIMSON_LECTERN = registerBlockItem("crimson_lectern", () -> ModBlocks.CRIMSON_LECTERN.get());
+    public static final DeferredItem<BlockItem> WARPED_LECTERN = registerBlockItem("warped_lectern", () -> ModBlocks.WARPED_LECTERN.get());
+    public static final DeferredItem<BlockItem> MANGROVE_LECTERN = registerBlockItem("mangrove_lectern", () -> ModBlocks.MANGROVE_LECTERN.get());
+    public static final DeferredItem<BlockItem> CHERRY_LECTERN = registerBlockItem("cherry_lectern", () -> ModBlocks.CHERRY_LECTERN.get());
+    public static final DeferredItem<BlockItem> BAMBOO_LECTERN = registerBlockItem("bamboo_lectern", () -> ModBlocks.BAMBOO_LECTERN.get());
+    public static final DeferredItem<BlockItem> PALE_OAK_LECTERN = registerBlockItem("pale_oak_lectern", () -> ModBlocks.PALE_OAK_LECTERN.get());
+
+    public static final DeferredItem<BlockItem> STONE_BREWING_STAND = registerBlockItem("stone_brewing_stand", () -> Blocks.BREWING_STAND);
+    public static final DeferredItem<BlockItem> BLACKSTONE_BREWING_STAND = registerBlockItem("blackstone_brewing_stand", () -> ModBlocks.BLACKSTONE_BREWING_STAND.get());
+    public static final DeferredItem<BlockItem> DEEPSLATE_BREWING_STAND = registerBlockItem("deepslate_brewing_stand", () -> ModBlocks.DEEPSLATE_BREWING_STAND.get());
+
+    public static final DeferredItem<BlockItem> OAK_BARREL = registerBlockItem("oak_barrel", () -> ModBlocks.OAK_BARREL.get());
+    public static final DeferredItem<BlockItem> SPRUCE_BARREL = registerBlockItem("spruce_barrel", () -> Blocks.BARREL);
+    public static final DeferredItem<BlockItem> BIRCH_BARREL = registerBlockItem("birch_barrel", () -> ModBlocks.BIRCH_BARREL.get());
+    public static final DeferredItem<BlockItem> JUNGLE_BARREL = registerBlockItem("jungle_barrel", () -> ModBlocks.JUNGLE_BARREL.get());
+    public static final DeferredItem<BlockItem> ACACIA_BARREL = registerBlockItem("acacia_barrel", () -> ModBlocks.ACACIA_BARREL.get());
+    public static final DeferredItem<BlockItem> DARK_OAK_BARREL = registerBlockItem("dark_oak_barrel", () -> ModBlocks.DARK_OAK_BARREL.get());
+    public static final DeferredItem<BlockItem> CRIMSON_BARREL = registerBlockItem("crimson_barrel", () -> ModBlocks.CRIMSON_BARREL.get());
+    public static final DeferredItem<BlockItem> WARPED_BARREL = registerBlockItem("warped_barrel", () -> ModBlocks.WARPED_BARREL.get());
+    public static final DeferredItem<BlockItem> MANGROVE_BARREL = registerBlockItem("mangrove_barrel", () -> ModBlocks.MANGROVE_BARREL.get());
+    public static final DeferredItem<BlockItem> CHERRY_BARREL = registerBlockItem("cherry_barrel", () -> ModBlocks.CHERRY_BARREL.get());
+    public static final DeferredItem<BlockItem> BAMBOO_BARREL = registerBlockItem("bamboo_barrel", () -> ModBlocks.BAMBOO_BARREL.get());
+    public static final DeferredItem<BlockItem> PALE_OAK_BARREL = registerBlockItem("pale_oak_barrel", () -> ModBlocks.PALE_OAK_BARREL.get());
+
+    public static final DeferredItem<BlockItem> STONE_DISPENSER = registerBlockItem("stone_dispenser", () -> Blocks.DISPENSER);
+    public static final DeferredItem<BlockItem> BLACKSTONE_DISPENSER = registerBlockItem("blackstone_dispenser", () -> ModBlocks.BLACKSTONE_DISPENSER.get());
+    public static final DeferredItem<BlockItem> DEEPSLATE_DISPENSER = registerBlockItem("deepslate_dispenser", () -> ModBlocks.DEEPSLATE_DISPENSER.get());
+
+    public static final DeferredItem<BlockItem> STONE_DROPPER = registerBlockItem("stone_dropper", () -> Blocks.DROPPER);
+    public static final DeferredItem<BlockItem> BLACKSTONE_DROPPER = registerBlockItem("blackstone_dropper", () -> ModBlocks.BLACKSTONE_DROPPER.get());
+    public static final DeferredItem<BlockItem> DEEPSLATE_DROPPER = registerBlockItem("deepslate_dropper", () -> ModBlocks.DEEPSLATE_DROPPER.get());
+
+    public static final DeferredItem<BlockItem> STONE_OBSERVER = registerBlockItem("stone_observer", () -> Blocks.OBSERVER);
+    public static final DeferredItem<BlockItem> BLACKSTONE_OBSERVER = registerBlockItem("blackstone_observer", () -> ModBlocks.BLACKSTONE_OBSERVER.get());
+    public static final DeferredItem<BlockItem> DEEPSLATE_OBSERVER = registerBlockItem("deepslate_observer", () -> ModBlocks.DEEPSLATE_OBSERVER.get());
+
+    public static final DeferredItem<Item> MUSIC_DISC_CIRCUITRIC_MAGNET = registerMusicDisc("music_disc_circuitric_magnet", ModJukeboxSongs.CIRCUITRIC_MAGNET);
+    public static final DeferredItem<Item> MUSIC_DISC_ANGRY_BOYFRIENDS = registerMusicDisc("music_disc_angry_boyfriends", ModJukeboxSongs.ANGRY_BOYFRIENDS);
+
+    public static final DeferredItem<BoatItem> CRIMSON_BOAT = registerBoatItem("crimson_boat", ModEntities.CRIMSON_BOAT.get());
+    public static final DeferredItem<BoatItem> WARPED_BOAT = registerBoatItem("warped_boat", ModEntities.WARPED_BOAT.get());
+    public static final DeferredItem<BoatItem> CRIMSON_CHEST_BOAT = registerBoatItem("crimson_chest_boat", ModEntities.CRIMSON_CHEST_BOAT.get());
+    public static final DeferredItem<BoatItem> WARPED_CHEST_BOAT = registerBoatItem("warped_chest_boat", ModEntities.WARPED_CHEST_BOAT.get());
+
     private static DeferredItem<Item> registerCustomItem(String registryName) {
         if (registryName == "netherite_nugget") {
             return ITEMS.register(
@@ -767,6 +818,35 @@ public class ModItems {
                         )
                 )
         );
+    }
+
+    private static DeferredItem<Item> registerMusicDisc(String registryName, ResourceKey<JukeboxSong> jukeboxSong){
+        return ITEMS.register(registryName, () -> new Item(
+                new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON).jukeboxPlayable(jukeboxSong).setId(
+                        ResourceKey.create(
+                                Registries.ITEM,
+                                ResourceLocation.fromNamespaceAndPath(
+                                        BuildersParadise.MODID,
+                                        registryName
+                                )
+                        )
+                )
+        ));
+    }
+
+    private static DeferredItem<BoatItem> registerBoatItem(String registryName, EntityType<? extends AbstractBoat> entityType) {
+        return ITEMS.register(registryName, () -> new BoatItem(
+                entityType,
+                new Item.Properties().stacksTo(1).setId(
+                        ResourceKey.create(
+                                Registries.ITEM,
+                                ResourceLocation.fromNamespaceAndPath(
+                                        BuildersParadise.MODID,
+                                        registryName
+                                )
+                        )
+                )
+        ));
     }
 
     public static void register(IEventBus eventBus){

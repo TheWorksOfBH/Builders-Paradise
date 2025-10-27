@@ -622,6 +622,108 @@ public class ModRecipesProvider extends RecipeProvider {
                 .unlockedBy("has_book", this.has(Items.BOOK))
                 .save(this.output.withConditions(NeoForgeConditions.never()));
 
+        this.createLectern(ModItems.OAK_LECTERN.get(), ModItems.OAK_BOOKSHELF.get(), Items.OAK_SLAB);
+        this.createLectern(ModItems.SPRUCE_LECTERN.get(), ModItems.SPRUCE_BOOKSHELF.get(), Items.SPRUCE_SLAB);
+        this.createLectern(ModItems.BIRCH_LECTERN.get(), ModItems.BIRCH_BOOKSHELF.get(), Items.BIRCH_SLAB);
+        this.createLectern(ModItems.JUNGLE_LECTERN.get(), ModItems.JUNGLE_BOOKSHELF.get(), Items.JUNGLE_SLAB);
+        this.createLectern(ModItems.ACACIA_LECTERN.get(), ModItems.ACACIA_BOOKSHELF.get(), Items.ACACIA_SLAB);
+        this.createLectern(ModItems.DARK_OAK_LECTERN.get(), ModItems.DARK_OAK_BOOKSHELF.get(), Items.DARK_OAK_SLAB);
+        this.createLectern(ModItems.CRIMSON_LECTERN.get(), ModItems.CRIMSON_BOOKSHELF.get(), Items.CRIMSON_SLAB);
+        this.createLectern(ModItems.WARPED_LECTERN.get(), ModItems.WARPED_BOOKSHELF.get(), Items.WARPED_SLAB);
+        this.createLectern(ModItems.MANGROVE_LECTERN.get(), ModItems.MANGROVE_BOOKSHELF.get(), Items.MANGROVE_SLAB);
+        this.createLectern(ModItems.CHERRY_LECTERN.get(), ModItems.CHERRY_BOOKSHELF.get(), Items.CHERRY_SLAB);
+        this.createLectern(ModItems.BAMBOO_LECTERN.get(), ModItems.BAMBOO_BOOKSHELF.get(), Items.BAMBOO_SLAB);
+        this.createLectern(ModItems.PALE_OAK_LECTERN.get(), ModItems.PALE_OAK_BOOKSHELF.get(), Items.PALE_OAK_SLAB);
+
+        this.shaped(RecipeCategory.REDSTONE, Items.LECTERN)
+                .define('S', ItemTags.WOODEN_SLABS)
+                .define('B', Items.BOOKSHELF)
+                .pattern("SSS")
+                .pattern(" B ")
+                .pattern(" S ")
+                .unlockedBy("has_book", this.has(Items.BOOK))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.createBrewingStand(ModItems.STONE_BREWING_STAND.get(), Items.COBBLESTONE);
+        this.createBrewingStand(ModItems.BLACKSTONE_BREWING_STAND.get(), Items.BLACKSTONE);
+        this.createBrewingStand(ModItems.DEEPSLATE_BREWING_STAND.get(), Items.COBBLED_DEEPSLATE);
+
+        this.shaped(RecipeCategory.BREWING, Items.BREWING_STAND)
+                .define('B', Items.BLAZE_ROD)
+                .define('#', ItemTags.STONE_CRAFTING_MATERIALS)
+                .pattern(" B ")
+                .pattern("###")
+                .unlockedBy("has_blaze_rod", this.has(Items.BLAZE_ROD))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.createBarrel(ModItems.OAK_BARREL.get(), Items.OAK_PLANKS, Items.OAK_SLAB);
+        this.createBarrel(ModItems.SPRUCE_BARREL.get(), Items.SPRUCE_PLANKS, Items.SPRUCE_SLAB);
+        this.createBarrel(ModItems.BIRCH_BARREL.get(), Items.BIRCH_PLANKS, Items.BIRCH_SLAB);
+        this.createBarrel(ModItems.JUNGLE_BARREL.get(), Items.JUNGLE_PLANKS, Items.JUNGLE_SLAB);
+        this.createBarrel(ModItems.ACACIA_BARREL.get(), Items.ACACIA_PLANKS, Items.ACACIA_SLAB);
+        this.createBarrel(ModItems.DARK_OAK_BARREL.get(), Items.DARK_OAK_PLANKS, Items.DARK_OAK_SLAB);
+        this.createBarrel(ModItems.CRIMSON_BARREL.get(), Items.CRIMSON_PLANKS, Items.CRIMSON_SLAB);
+        this.createBarrel(ModItems.WARPED_BARREL.get(), Items.WARPED_PLANKS, Items.WARPED_SLAB);
+        this.createBarrel(ModItems.MANGROVE_BARREL.get(), Items.MANGROVE_PLANKS, Items.MANGROVE_SLAB);
+        this.createBarrel(ModItems.CHERRY_BARREL.get(), Items.CHERRY_PLANKS, Items.CHERRY_SLAB);
+        this.createBarrel(ModItems.BAMBOO_BARREL.get(), Items.BAMBOO_PLANKS, Items.BAMBOO_SLAB);
+        this.createBarrel(ModItems.PALE_OAK_BARREL.get(), Items.PALE_OAK_PLANKS, Items.PALE_OAK_SLAB);
+
+        this.shaped(RecipeCategory.DECORATIONS, Items.BARREL, 1)
+                .define('P', ItemTags.PLANKS)
+                .define('S', ItemTags.WOODEN_SLABS)
+                .pattern("PSP")
+                .pattern("P P")
+                .pattern("PSP")
+                .unlockedBy("has_planks", this.has(ItemTags.PLANKS))
+                .unlockedBy("has_wood_slab", this.has(ItemTags.WOODEN_SLABS))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.createDispensersDroppers(ModItems.STONE_DISPENSER.get(), ModItems.STONE_DROPPER.get(), Items.COBBLESTONE);
+        this.createDispensersDroppers(ModItems.BLACKSTONE_DISPENSER.get(), ModItems.BLACKSTONE_DROPPER.get(), Items.BLACKSTONE);
+        this.createDispensersDroppers(ModItems.DEEPSLATE_DISPENSER.get(), ModItems.DEEPSLATE_DROPPER.get(), Items.COBBLED_DEEPSLATE);
+
+        this.shaped(RecipeCategory.REDSTONE, Items.DISPENSER)
+                .define('R', Items.REDSTONE)
+                .define('#', Items.COBBLESTONE)
+                .define('X', Items.BOW)
+                .pattern("###")
+                .pattern("#X#")
+                .pattern("#R#")
+                .unlockedBy("has_bow", this.has(Items.BOW))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.shaped(RecipeCategory.REDSTONE, Items.DROPPER)
+                .define('R', Items.REDSTONE)
+                .define('#', Items.COBBLESTONE)
+                .pattern("###")
+                .pattern("# #")
+                .pattern("#R#")
+                .unlockedBy("has_redstone", this.has(Items.REDSTONE))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.shapeless(RecipeCategory.MISC, Items.IRON_INGOT, 9).requires(ModItems.WAXED_IRON_BLOCK.get()).group(null).unlockedBy(getHasName(ModItems.WAXED_IRON_BLOCK.get()), this.has(ModItems.WAXED_IRON_BLOCK.get())).save(this.output, ResourceKey.create(Registries.RECIPE, ResourceLocation.parse("iron_ingot_from_waxed")));
+        this.shapeless(RecipeCategory.MISC, ModItems.ZINC_INGOT.get(), 9).requires(ModItems.WAXED_ZINC_BLOCK.get()).group(null).unlockedBy(getHasName(ModItems.WAXED_ZINC_BLOCK.get()), this.has(ModItems.WAXED_ZINC_BLOCK.get())).save(this.output, ResourceKey.create(Registries.RECIPE, ResourceLocation.parse("zinc_ingot_from_waxed")));
+
+        this.createObserver(ModItems.STONE_OBSERVER, Items.COBBLESTONE);
+        this.createObserver(ModItems.BLACKSTONE_OBSERVER, Items.BLACKSTONE);
+        this.createObserver(ModItems.DEEPSLATE_OBSERVER, Items.COBBLED_DEEPSLATE);
+
+        this.shaped(RecipeCategory.REDSTONE, Items.OBSERVER)
+                .define('Q', Items.QUARTZ)
+                .define('R', Items.REDSTONE)
+                .define('#', Items.COBBLESTONE)
+                .pattern("###")
+                .pattern("RRQ")
+                .pattern("###")
+                .unlockedBy("has_quartz", this.has(Items.QUARTZ))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.woodenBoat(ModItems.CRIMSON_BOAT.get(), Items.CRIMSON_PLANKS);
+        this.chestBoat(ModItems.CRIMSON_CHEST_BOAT.get(), ModItems.CRIMSON_BOAT.get());
+
+        this.woodenBoat(ModItems.WARPED_BOAT.get(), Items.WARPED_PLANKS);
+        this.chestBoat(ModItems.WARPED_CHEST_BOAT.get(), ModItems.WARPED_BOAT.get());
     }
 
     @Override
@@ -640,6 +742,49 @@ public class ModRecipesProvider extends RecipeProvider {
                 .save(output, baseBlockId + "_waxing");
     }
 
+    protected void createBrewingStand(ItemLike brewingStand, ItemLike stoneType){
+        this.shaped(RecipeCategory.BREWING, brewingStand)
+                .define('B', Items.BLAZE_ROD)
+                .define('#', stoneType)
+                .pattern(" B ")
+                .pattern("###")
+                .unlockedBy("has_blaze_rod", this.has(Items.BLAZE_ROD))
+                .save(this.output);
+    }
+
+    protected void createObserver(ItemLike observer, ItemLike stoneType) {
+        this.shaped(RecipeCategory.REDSTONE, observer)
+                .define('Q', Items.QUARTZ)
+                .define('R', Items.REDSTONE)
+                .define('#', stoneType)
+                .pattern("###")
+                .pattern("RRQ")
+                .pattern("###")
+                .unlockedBy("has_quartz", this.has(Items.QUARTZ))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+    }
+
+    protected void createDispensersDroppers(ItemLike dispenser, ItemLike dropper, ItemLike stoneIngredient) {
+        this.shaped(RecipeCategory.REDSTONE, dispenser)
+                .define('R', Items.REDSTONE)
+                .define('#', stoneIngredient)
+                .define('X', Items.BOW)
+                .pattern("###")
+                .pattern("#X#")
+                .pattern("#R#")
+                .unlockedBy("has_bow", this.has(Items.BOW))
+                .save(this.output);
+
+        this.shaped(RecipeCategory.REDSTONE, dropper)
+                .define('R', Items.REDSTONE)
+                .define('#', stoneIngredient)
+                .pattern("###")
+                .pattern("# #")
+                .pattern("#R#")
+                .unlockedBy("has_redstone", this.has(Items.REDSTONE))
+                .save(this.output);
+    }
+
     protected void createChiseledBookshelf(ItemLike chiseledBookshelf, ItemLike woodPlanks, ItemLike woodSlabs) {
         this.shaped(RecipeCategory.BUILDING_BLOCKS, chiseledBookshelf)
                 .define('#', woodPlanks)
@@ -649,6 +794,18 @@ public class ModRecipesProvider extends RecipeProvider {
                 .pattern("###")
                 .unlockedBy("has_book", this.has(Items.BOOK))
                 .save(this.output);
+    }
+
+    protected void createBarrel(ItemLike barrel, ItemLike woodPlanks, ItemLike woodSlabs) {
+        this.shaped(RecipeCategory.DECORATIONS, barrel, 1)
+                .define('P', woodPlanks)
+                .define('S', woodSlabs)
+                .pattern("PSP")
+                .pattern("P P")
+                .pattern("PSP")
+                .unlockedBy("has_" + woodPlanks.asItem().getDescriptionId(), this.has(woodPlanks))
+                .unlockedBy("has_" + woodSlabs.asItem().getDescriptionId(), this.has(woodSlabs))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
     }
 
     protected void createBookshelf(ItemLike bookshelf, ItemLike woodType) {
@@ -661,6 +818,17 @@ public class ModRecipesProvider extends RecipeProvider {
                 .unlockedBy("has_book", this.has(Items.BOOK))
                 .save(this.output);
 
+    }
+
+    protected void createLectern(ItemLike lectern, ItemLike bookshelf, ItemLike slab) {
+        this.shaped(RecipeCategory.REDSTONE, lectern)
+                .define('S', slab)
+                .define('B', bookshelf)
+                .pattern("SSS")
+                .pattern(" B ")
+                .pattern(" S ")
+                .unlockedBy("has_book", this.has(Items.BOOK))
+                .save(this.output);
     }
 
     protected void createBeehive(ItemLike beehive, ItemLike woodType) {

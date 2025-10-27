@@ -7,6 +7,7 @@ import github.theworksofbh.buildersparadise.block.ModStairBlock;
 import github.theworksofbh.buildersparadise.items.ModItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.network.chat.Component;
@@ -22,7 +23,9 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.CopyComponentsFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
@@ -55,7 +58,13 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 Blocks.SOUL_CAMPFIRE,
                 Blocks.BEEHIVE,
                 Blocks.BOOKSHELF,
-                Blocks.CHISELED_BOOKSHELF
+                Blocks.CHISELED_BOOKSHELF,
+                Blocks.LECTERN,
+                Blocks.BREWING_STAND,
+                Blocks.BARREL,
+                Blocks.DISPENSER,
+                Blocks.DROPPER,
+                Blocks.OBSERVER
         );
 
         Set<Block> handMadeBlocks = Set.of(
@@ -170,12 +179,48 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                     this.dropOther(block, ModItems.DARK_OAK_GRINDSTONE.get());
                 } else if (block == Blocks.LOOM) {
                     this.dropOther(block, ModItems.OAK_LOOM.get());
-                } else if (block == Blocks.FURNACE) {
-                    this.dropOther(block, ModItems.STONE_FURNACE.get());
-                } else if (block == Blocks.SMOKER) {
-                    this.dropOther(block, ModItems.OAK_STONE_SMOKER.get());
-                } else if (block == Blocks.BLAST_FURNACE) {
-                    this.dropOther(block, ModItems.STONE_BLAST_FURNACE.get());
+                } else if (block instanceof FurnaceBlock) {
+                    if (block == Blocks.FURNACE) {
+                        this.add(block, LootTable.lootTable().withPool(
+                                (LootPool.Builder)this.applyExplosionCondition(
+                                        block,
+                                        LootPool.lootPool().setRolls(
+                                                ConstantValue.exactly(1.0F)
+                                        ).add(LootItem.lootTableItem(ModItems.STONE_FURNACE.get())
+                                                .apply(
+                                                        CopyComponentsFunction.copyComponentsFromBlockEntity(LootContextParams.BLOCK_ENTITY)
+                                                                .include(DataComponents.CUSTOM_NAME))))));
+                    } else {
+                        this.add(block, createNameableBlockEntityTable(block));
+                    }
+                } else if (block instanceof SmokerBlock) {
+                    if (block == Blocks.SMOKER) {
+                        this.add(block, LootTable.lootTable().withPool(
+                                (LootPool.Builder)this.applyExplosionCondition(
+                                        block,
+                                        LootPool.lootPool().setRolls(
+                                                ConstantValue.exactly(1.0F)
+                                        ).add(LootItem.lootTableItem(ModItems.OAK_STONE_SMOKER.get())
+                                                .apply(
+                                                        CopyComponentsFunction.copyComponentsFromBlockEntity(LootContextParams.BLOCK_ENTITY)
+                                                                .include(DataComponents.CUSTOM_NAME))))));
+                    } else {
+                        this.add(block, createNameableBlockEntityTable(block));
+                    }
+                } else if (block instanceof BlastFurnaceBlock) {
+                    if (block == Blocks.BLAST_FURNACE) {
+                        this.add(block, LootTable.lootTable().withPool(
+                                (LootPool.Builder)this.applyExplosionCondition(
+                                        block,
+                                        LootPool.lootPool().setRolls(
+                                                ConstantValue.exactly(1.0F)
+                                        ).add(LootItem.lootTableItem(ModItems.STONE_BLAST_FURNACE.get())
+                                                .apply(
+                                                        CopyComponentsFunction.copyComponentsFromBlockEntity(LootContextParams.BLOCK_ENTITY)
+                                                                .include(DataComponents.CUSTOM_NAME))))));
+                    } else {
+                        this.add(block, createNameableBlockEntityTable(block));
+                    }
                 } else if (block == Blocks.CAMPFIRE) {
                     this.dropOther(block, ModItems.OAK_CAMPFIRE.get());
                 } else if (block == Blocks.SOUL_CAMPFIRE) {
@@ -207,6 +252,66 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                     } else {
                         this.dropWhenSilkTouch(block);
                     }
+                } else if (block == Blocks.LECTERN) {
+                    this.dropOther(block, ModItems.OAK_LECTERN.get());
+                } else if (block instanceof BrewingStandBlock) {
+                    if (block == Blocks.BREWING_STAND) {
+                        this.add(block, LootTable.lootTable().withPool(
+                                (LootPool.Builder)this.applyExplosionCondition(
+                                        block,
+                                        LootPool.lootPool().setRolls(
+                                                ConstantValue.exactly(1.0F)
+                                        ).add(LootItem.lootTableItem(ModItems.STONE_BREWING_STAND.get())
+                                                .apply(
+                                                        CopyComponentsFunction.copyComponentsFromBlockEntity(LootContextParams.BLOCK_ENTITY)
+                                                                .include(DataComponents.CUSTOM_NAME))))));
+                    } else {
+                        this.add(block, createNameableBlockEntityTable(block));
+                    }
+                } else if (block instanceof BarrelBlock) {
+                    if (block == Blocks.BARREL) {
+                        this.add(block, LootTable.lootTable().withPool(
+                                (LootPool.Builder)this.applyExplosionCondition(
+                                        block,
+                                        LootPool.lootPool().setRolls(
+                                                ConstantValue.exactly(1.0F)
+                                        ).add(LootItem.lootTableItem(ModItems.SPRUCE_BARREL.get())
+                                                .apply(
+                                                        CopyComponentsFunction.copyComponentsFromBlockEntity(LootContextParams.BLOCK_ENTITY)
+                                                                .include(DataComponents.CUSTOM_NAME))))));
+                    } else {
+                        this.add(block, createNameableBlockEntityTable(block));
+                    }
+                } else if (block instanceof DispenserBlock) {
+                    if (block == Blocks.DISPENSER) {
+                        this.add(block, LootTable.lootTable().withPool(
+                                (LootPool.Builder)this.applyExplosionCondition(
+                                        block,
+                                        LootPool.lootPool().setRolls(
+                                                ConstantValue.exactly(1.0F)
+                                        ).add(LootItem.lootTableItem(ModItems.STONE_DISPENSER.get())
+                                                .apply(
+                                                        CopyComponentsFunction.copyComponentsFromBlockEntity(LootContextParams.BLOCK_ENTITY)
+                                                                .include(DataComponents.CUSTOM_NAME))))));
+                    } else {
+                        this.add(block, createNameableBlockEntityTable(block));
+                    }
+                } else if (block instanceof DropperBlock) {
+                    if (block == Blocks.DROPPER) {
+                        this.add(block, LootTable.lootTable().withPool(
+                                (LootPool.Builder)this.applyExplosionCondition(
+                                        block,
+                                        LootPool.lootPool().setRolls(
+                                                ConstantValue.exactly(1.0F)
+                                        ).add(LootItem.lootTableItem(ModItems.STONE_DROPPER.get())
+                                                .apply(
+                                                        CopyComponentsFunction.copyComponentsFromBlockEntity(LootContextParams.BLOCK_ENTITY)
+                                                                .include(DataComponents.CUSTOM_NAME))))));
+                    } else {
+                        this.add(block, createNameableBlockEntityTable(block));
+                    }
+                } else if (block == Blocks.OBSERVER) {
+                    this.dropOther(block, ModItems.STONE_OBSERVER.get());
                 } else {
                     this.dropSelf(block);
                 }

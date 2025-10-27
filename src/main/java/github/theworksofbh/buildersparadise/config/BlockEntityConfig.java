@@ -83,5 +83,49 @@ public class BlockEntityConfig {
         event.modify(BlockEntityType.BEEHIVE, ModBlocks.BAMBOO_BEEHIVE.get());
         event.modify(BlockEntityType.BEEHIVE, ModBlocks.PALE_OAK_BEEHIVE.get());
 
+        event.modify(BlockEntityType.CHISELED_BOOKSHELF, ModBlocks.SPRUCE_CHISELED_BOOKSHELF.get());
+        event.modify(BlockEntityType.CHISELED_BOOKSHELF, ModBlocks.BIRCH_CHISELED_BOOKSHELF.get());
+        event.modify(BlockEntityType.CHISELED_BOOKSHELF, ModBlocks.JUNGLE_CHISELED_BOOKSHELF.get());
+        event.modify(BlockEntityType.CHISELED_BOOKSHELF, ModBlocks.ACACIA_CHISELED_BOOKSHELF.get());
+        event.modify(BlockEntityType.CHISELED_BOOKSHELF, ModBlocks.DARK_OAK_CHISELED_BOOKSHELF.get());
+        event.modify(BlockEntityType.CHISELED_BOOKSHELF, ModBlocks.CRIMSON_CHISELED_BOOKSHELF.get());
+        event.modify(BlockEntityType.CHISELED_BOOKSHELF, ModBlocks.WARPED_CHISELED_BOOKSHELF.get());
+        event.modify(BlockEntityType.CHISELED_BOOKSHELF, ModBlocks.MANGROVE_CHISELED_BOOKSHELF.get());
+        event.modify(BlockEntityType.CHISELED_BOOKSHELF, ModBlocks.CHERRY_CHISELED_BOOKSHELF.get());
+        event.modify(BlockEntityType.CHISELED_BOOKSHELF, ModBlocks.BAMBOO_CHISELED_BOOKSHELF.get());
+        event.modify(BlockEntityType.CHISELED_BOOKSHELF, ModBlocks.PALE_OAK_CHISELED_BOOKSHELF.get());
+
+        event.modify(BlockEntityType.LECTERN, ModBlocks.SPRUCE_LECTERN.get());
+        event.modify(BlockEntityType.LECTERN, ModBlocks.BIRCH_LECTERN.get());
+        event.modify(BlockEntityType.LECTERN, ModBlocks.JUNGLE_LECTERN.get());
+        event.modify(BlockEntityType.LECTERN, ModBlocks.ACACIA_LECTERN.get());
+        event.modify(BlockEntityType.LECTERN, ModBlocks.DARK_OAK_LECTERN.get());
+        event.modify(BlockEntityType.LECTERN, ModBlocks.CRIMSON_LECTERN.get());
+        event.modify(BlockEntityType.LECTERN, ModBlocks.WARPED_LECTERN.get());
+        event.modify(BlockEntityType.LECTERN, ModBlocks.MANGROVE_LECTERN.get());
+        event.modify(BlockEntityType.LECTERN, ModBlocks.CHERRY_LECTERN.get());
+        event.modify(BlockEntityType.LECTERN, ModBlocks.BAMBOO_LECTERN.get());
+        event.modify(BlockEntityType.LECTERN, ModBlocks.PALE_OAK_LECTERN.get());
+
+        event.modify(BlockEntityType.BREWING_STAND, ModBlocks.BLACKSTONE_BREWING_STAND.get());
+        event.modify(BlockEntityType.BREWING_STAND, ModBlocks.DEEPSLATE_BREWING_STAND.get());
+
+        event.modify(BlockEntityType.BARREL, ModBlocks.OAK_BARREL.get());
+        event.modify(BlockEntityType.BARREL, ModBlocks.BIRCH_BARREL.get());
+        event.modify(BlockEntityType.BARREL, ModBlocks.JUNGLE_BARREL.get());
+        event.modify(BlockEntityType.BARREL, ModBlocks.ACACIA_BARREL.get());
+        event.modify(BlockEntityType.BARREL, ModBlocks.DARK_OAK_BARREL.get());
+        event.modify(BlockEntityType.BARREL, ModBlocks.CRIMSON_BARREL.get());
+        event.modify(BlockEntityType.BARREL, ModBlocks.WARPED_BARREL.get());
+        event.modify(BlockEntityType.BARREL, ModBlocks.MANGROVE_BARREL.get());
+        event.modify(BlockEntityType.BARREL, ModBlocks.CHERRY_BARREL.get());
+        event.modify(BlockEntityType.BARREL, ModBlocks.BAMBOO_BARREL.get());
+        event.modify(BlockEntityType.BARREL, ModBlocks.PALE_OAK_BARREL.get());
+
+        event.modify(BlockEntityType.DISPENSER, ModBlocks.BLACKSTONE_DISPENSER.get());
+        event.modify(BlockEntityType.DISPENSER, ModBlocks.DEEPSLATE_DISPENSER.get());
+
+        event.modify(BlockEntityType.DROPPER, ModBlocks.BLACKSTONE_DROPPER.get());
+        event.modify(BlockEntityType.DROPPER, ModBlocks.DEEPSLATE_DROPPER.get());
     }
 }

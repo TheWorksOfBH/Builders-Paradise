@@ -3,9 +3,11 @@ package github.theworksofbh.buildersparadise.datagen;
 import github.theworksofbh.buildersparadise.BuildersParadise;
 import github.theworksofbh.buildersparadise.block.ModBlocks;
 import github.theworksofbh.buildersparadise.effect.ModEffects;
+import github.theworksofbh.buildersparadise.entity.ModEntities;
 import github.theworksofbh.buildersparadise.items.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.LanguageProvider;
@@ -75,6 +77,24 @@ public class ModLanguageProvider extends LanguageProvider {
         ).toList();
     }
 
+    protected Iterable<EntityType<?>> getKnownEntities() {
+        Set<EntityType<?>> vanillaEntitiesThatNeedNewTranslations = Set.of(
+        );
+
+        Set<EntityType<?>> handMadeEntities = Set.of(
+
+        );
+
+        return Stream.concat(
+                vanillaEntitiesThatNeedNewTranslations.stream(),
+                ModEntities.ENTITIES.getEntries().stream().map(
+                        Supplier::get
+                )
+        ).filter(
+                (Predicate.not(handMadeEntities::contains))
+        ).toList();
+    }
+
     public static String formatString(String input) {
         String replaced = input.replace('_', ' ');
         String reformatted = "";
@@ -140,6 +160,8 @@ public class ModLanguageProvider extends LanguageProvider {
             readjusted = reformatted.replace("brass block", "block of brass");
         } else if (reformatted.contains("steel block")) {
             readjusted = reformatted.replace("steel block", "block of steel");
+        } else if (reformatted.contains("music disc")) {
+            readjusted = "music disc";
         } else {
             readjusted = reformatted;
         }
@@ -179,9 +201,17 @@ public class ModLanguageProvider extends LanguageProvider {
                     this.add(effect, formatString(effect.getDescriptionId()));
                 }
         );
+        getKnownEntities().forEach(
+                entityType -> {
+                    this.add(entityType, formatString(entityType.getDescriptionId()));
+                }
+        );
         this.add("death.attack.radiation", "%1$s received an unhealthy dose of nuclear radiation");
         this.add("death.attack.radiation.player", "%1$s received an unhealthy dose of nuclear radiation while trying to escape %2$s");
         this.add("stat.buildersparadise.interact_with_fletching_table", "Interactions with Fletching Table");
         this.add("container.fletching", "Fletching");
+        this.add("jukebox_song.buildersparadise.circuitric_magnet", "The Works of BH - Circuitric Magnet");
+        this.add("jukebox_song.buildersparadise.angry_boyfriends", "The Works of BH - Angry Boyfriends");
+
     }
 }

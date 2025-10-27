@@ -95,5 +95,8 @@ public class RenderTypeConfig {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.BAMBOO_SOUL_CAMPFIRE.get(), ChunkSectionLayer.CUTOUT);
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.PALE_OAK_SOUL_CAMPFIRE.get(), ChunkSectionLayer.CUTOUT);
 
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLACKSTONE_BREWING_STAND.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.DEEPSLATE_BREWING_STAND.get(), ChunkSectionLayer.CUTOUT);
+
     }
 }

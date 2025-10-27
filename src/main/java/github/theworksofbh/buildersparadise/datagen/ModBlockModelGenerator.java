@@ -1,5 +1,6 @@
 package github.theworksofbh.buildersparadise.datagen;
 
+import com.mojang.datafixers.util.Pair;
 import github.theworksofbh.buildersparadise.block.ModBlockFamilies;
 import github.theworksofbh.buildersparadise.block.ModBlocks;
 import github.theworksofbh.buildersparadise.items.ModItems;
@@ -11,6 +12,8 @@ import net.minecraft.client.data.models.blockstates.MultiPartGenerator;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.*;
+import net.minecraft.client.renderer.block.model.VariantMutator;
+import net.minecraft.client.renderer.block.model.multipart.CombinedCondition;
 import net.minecraft.client.renderer.block.model.multipart.Condition;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -19,11 +22,14 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.BeehiveBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ChiseledBookShelfBlock;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.BiConsumer;
@@ -218,6 +224,13 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
                         .with(condition().term(BlockStateProperties.WEST, true), resourcelocation5.with(Y_ROT_90))
         );
         this.registerSimpleFlatItemModel(block);
+    }
+
+    public void createCustomBarrel(Block barrel) {
+        ResourceLocation resourcelocation = TextureMapping.getBlockTexture(barrel, "_top_open");
+        MultiVariant multivariant = plainVariant(TexturedModel.CUBE_TOP_BOTTOM.create(barrel, this.modelOutput));
+        MultiVariant multivariant1 = plainVariant(TexturedModel.CUBE_TOP_BOTTOM.get(barrel).updateTextures((p_386917_) -> p_386917_.put(TextureSlot.TOP, resourcelocation)).createWithSuffix(barrel, "_open", this.modelOutput));
+        this.blockStateOutput.accept(MultiVariantGenerator.dispatch(barrel).with(PropertyDispatch.initial(BlockStateProperties.OPEN).select(false, multivariant).select(true, multivariant1)).with(ROTATIONS_COLUMN_WITH_FACING));
     }
 
     public void copyBarsModel(Block sourceBlock, Block targetBlock) {
@@ -495,10 +508,10 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         for (int i = 0; i < 6; i++) {
             TextureMapping emptyMapping = new TextureMapping()
                     .put(TextureSlot.TEXTURE, emptyFrontTexture);
-            mapeBookshelfModel(chiseledBookshelf, i, false, emptyMapping);
+            makeBookshelfModel(chiseledBookshelf, i, false, emptyMapping);
             TextureMapping occupiedMapping = new TextureMapping()
                     .put(TextureSlot.TEXTURE, occupiedFrontTexture);
-            mapeBookshelfModel(chiseledBookshelf, i, true, occupiedMapping);
+            makeBookshelfModel(chiseledBookshelf, i, true, occupiedMapping);
         }
 
         plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
@@ -516,7 +529,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
                 .createWithSuffix(chiseledBookshelf, "_inventory", this.modelOutput));
     }
 
-    private void mapeBookshelfModel(Block block, int slotIndex, boolean occupied, TextureMapping mapping){
+    private void makeBookshelfModel(Block block, int slotIndex, boolean occupied, TextureMapping mapping){
         ModelTemplate template = switch (slotIndex) {
             case 0 -> ModelTemplates.CHISELED_BOOKSHELF_SLOT_TOP_LEFT;
             case 1 -> ModelTemplates.CHISELED_BOOKSHELF_SLOT_TOP_MID;
@@ -548,12 +561,133 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         forEachHorizontalDirection((direction, mutator) -> {
             Condition condition = condition().term(BlockStateProperties.HORIZONTAL_FACING, direction).build();
             multipartgenerator.with(condition, multivariant.with(mutator).with(UV_LOCK));
-            this.addSlotStateAndRotationVariants(multipartgenerator, condition, mutator);
+            this.addSlotStateAndRotationVariantsToCustomBookshelf(multipartgenerator, condition, mutator, chiseledBookshelf);
         });
 
         this.blockStateOutput.accept(multipartgenerator);
         this.registerSimpleItemModel(chiseledBookshelf, ModelLocationUtils.getModelLocation(chiseledBookshelf, "_inventory"));
         CHISELED_BOOKSHELF_SLOT_MODEL_CACHE.clear();
+    }
+
+    public void addSlotStateAndRotationVariantsToCustomBookshelf(MultiPartGenerator generator, Condition condition, VariantMutator rotation, Block block) {
+        List.of(Pair.of(ChiseledBookShelfBlock.SLOT_0_OCCUPIED, ModelTemplates.CHISELED_BOOKSHELF_SLOT_TOP_LEFT), Pair.of(ChiseledBookShelfBlock.SLOT_1_OCCUPIED, ModelTemplates.CHISELED_BOOKSHELF_SLOT_TOP_MID), Pair.of(ChiseledBookShelfBlock.SLOT_2_OCCUPIED, ModelTemplates.CHISELED_BOOKSHELF_SLOT_TOP_RIGHT), Pair.of(ChiseledBookShelfBlock.SLOT_3_OCCUPIED, ModelTemplates.CHISELED_BOOKSHELF_SLOT_BOTTOM_LEFT), Pair.of(ChiseledBookShelfBlock.SLOT_4_OCCUPIED, ModelTemplates.CHISELED_BOOKSHELF_SLOT_BOTTOM_MID), Pair.of(ChiseledBookShelfBlock.SLOT_5_OCCUPIED, ModelTemplates.CHISELED_BOOKSHELF_SLOT_BOTTOM_RIGHT)).forEach((p_403863_) -> {
+            BooleanProperty booleanproperty = (BooleanProperty)p_403863_.getFirst();
+            ModelTemplate modeltemplate = (ModelTemplate)p_403863_.getSecond();
+            this.addBookSlotModelToCustomBookShelf(generator, condition, rotation, booleanproperty, modeltemplate, true, block);
+            this.addBookSlotModelToCustomBookShelf(generator, condition, rotation, booleanproperty, modeltemplate, false, block);
+        });
+    }
+
+    public void addBookSlotModelToCustomBookShelf(MultiPartGenerator generator, Condition conditon, VariantMutator rotation, BooleanProperty hasBookProperty, ModelTemplate template, boolean hasBook, Block block) {
+        String s = hasBook ? "_occupied" : "_empty";
+        TextureMapping texturemapping = (new TextureMapping()).put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(block, s));
+        BookSlotModelCacheKey blockmodelgenerators$bookslotmodelcachekey = new BookSlotModelCacheKey(template, s);
+        MultiVariant multivariant = plainVariant((ResourceLocation)CHISELED_BOOKSHELF_SLOT_MODEL_CACHE.computeIfAbsent(blockmodelgenerators$bookslotmodelcachekey, (p_387964_) -> template.createWithSuffix(block, s, texturemapping, this.modelOutput)));
+        generator.with(new CombinedCondition(CombinedCondition.Operation.AND, List.of(conditon, condition().term(hasBookProperty, hasBook).build())), multivariant.with(rotation));
+    }
+
+    public void createLecternTextureMapping(Block block, Block woodType) {
+        ResourceLocation parent = ModelLocationUtils.getModelLocation(Blocks.LECTERN);
+        TextureSlot baseSlot = TextureSlot.create("base");
+        TextureSlot sidesSlot = TextureSlot.create("sides");
+        ModelTemplate modelTemplate = new ModelTemplate(Optional.of(parent), Optional.empty(), TextureSlot.PARTICLE, TextureSlot.BOTTOM, baseSlot, TextureSlot.FRONT, sidesSlot, TextureSlot.TOP);
+        plainVariant(TexturedModel.createDefault(b -> new TextureMapping()
+                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(block, "_sides"))
+                        .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(woodType))
+                        .put(baseSlot, TextureMapping.getBlockTexture(block, "_base"))
+                        .put(TextureSlot.FRONT, TextureMapping.getBlockTexture(block, "_front"))
+                        .put(sidesSlot, TextureMapping.getBlockTexture(block, "_sides"))
+                        .put(TextureSlot.TOP, TextureMapping.getBlockTexture(block, "_top")), modelTemplate)
+                .create(block, modelOutput));
+    }
+
+    public void createLectern(Block block, Block bottomTexture){
+        createLecternTextureMapping(block, bottomTexture);
+        this.blockStateOutput.accept(
+                MultiVariantGenerator.dispatch(
+                        block, plainVariant(ModelLocationUtils.getModelLocation(block)
+                        )
+                ).with(
+                        PropertyDispatch.modify(
+                                 BlockStateProperties.HORIZONTAL_FACING
+                        ).select(
+                                Direction.NORTH,
+                                NOP
+                        ).select(
+                                Direction.EAST,
+                                Y_ROT_90
+                        ).select(
+                                Direction.SOUTH,
+                                Y_ROT_180
+                        ).select(
+                                Direction.WEST,
+                                Y_ROT_270
+                        )
+                )
+        );
+    }
+
+    public void createBrewingStandTextureMapping(Block block) {
+        ResourceLocation parent = ModelLocationUtils.getModelLocation(Blocks.BREWING_STAND);
+        TextureSlot baseSlot = TextureSlot.create("base");
+        TextureSlot standSlot = TextureSlot.create("stand");
+        ModelTemplate modelTemplate = new ModelTemplate(Optional.of(parent), Optional.empty(), baseSlot, standSlot);
+        plainVariant(TexturedModel.createDefault(b -> new TextureMapping()
+                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(Blocks.BREWING_STAND))
+                        .put(baseSlot, TextureMapping.getBlockTexture(block, "_base"))
+                        .put(standSlot, TextureMapping.getBlockTexture(Blocks.BREWING_STAND)), modelTemplate)
+                .create(block, modelOutput));
+    }
+
+    public void createCustomBrewingStand(Block brewingStandBlock) {
+        createBrewingStandTextureMapping(brewingStandBlock);
+        this.registerSimpleFlatItemModel(brewingStandBlock.asItem());
+        this.blockStateOutput.accept(
+                MultiPartGenerator.multiPart(brewingStandBlock)
+                        .with(plainVariant(TextureMapping.getBlockTexture(brewingStandBlock)))
+                        .with(condition().term(BlockStateProperties.HAS_BOTTLE_0, true),
+                                plainVariant(TextureMapping.getBlockTexture(Blocks.BREWING_STAND, "_bottle0")))
+                        .with(condition().term(BlockStateProperties.HAS_BOTTLE_1, true),
+                                plainVariant(TextureMapping.getBlockTexture(Blocks.BREWING_STAND, "_bottle1")))
+                        .with(condition().term(BlockStateProperties.HAS_BOTTLE_2, true),
+                                plainVariant(TextureMapping.getBlockTexture(Blocks.BREWING_STAND, "_bottle2")))
+                        .with(condition().term(BlockStateProperties.HAS_BOTTLE_0, false),
+                                plainVariant(TextureMapping.getBlockTexture(Blocks.BREWING_STAND, "_empty0")))
+                        .with(condition().term(BlockStateProperties.HAS_BOTTLE_1, false),
+                                plainVariant(TextureMapping.getBlockTexture(Blocks.BREWING_STAND, "_empty1")))
+                        .with(condition().term(BlockStateProperties.HAS_BOTTLE_2, false),
+                                plainVariant(TextureMapping.getBlockTexture(Blocks.BREWING_STAND, "_empty2"))));
+    }
+
+    public void createCustomDispenserBlock(Block dispenserBlock, Block furnaceBlock) {
+        TextureMapping texturemapping = (new TextureMapping()).put(TextureSlot.TOP, TextureMapping.getBlockTexture(furnaceBlock, "_top")).put(TextureSlot.SIDE, TextureMapping.getBlockTexture(furnaceBlock, "_side")).put(TextureSlot.FRONT, TextureMapping.getBlockTexture(dispenserBlock, "_front"));
+        TextureMapping texturemapping1 = (new TextureMapping()).put(TextureSlot.SIDE, TextureMapping.getBlockTexture(furnaceBlock, "_top")).put(TextureSlot.FRONT, TextureMapping.getBlockTexture(dispenserBlock, "_front_vertical"));
+        MultiVariant multivariant = plainVariant(ModelTemplates.CUBE_ORIENTABLE.create(dispenserBlock, texturemapping, this.modelOutput));
+        MultiVariant multivariant1 = plainVariant(ModelTemplates.CUBE_ORIENTABLE_VERTICAL.create(dispenserBlock, texturemapping1, this.modelOutput));
+        this.blockStateOutput.accept(MultiVariantGenerator.dispatch(dispenserBlock).with(PropertyDispatch.initial(BlockStateProperties.FACING).select(Direction.DOWN, multivariant1.with(X_ROT_180)).select(Direction.UP, multivariant1).select(Direction.NORTH, multivariant).select(Direction.EAST, multivariant.with(Y_ROT_90)).select(Direction.SOUTH, multivariant.with(Y_ROT_180)).select(Direction.WEST, multivariant.with(Y_ROT_270))));
+    }
+
+    public void createCustomObserver(Block observerBlock) {
+        ResourceLocation parent = ModelLocationUtils.getModelLocation(Blocks.OBSERVER);
+
+        ModelTemplate modelTemplate = new ModelTemplate(Optional.of(parent), Optional.empty(), TextureSlot.TOP, TextureSlot.BOTTOM, TextureSlot.FRONT, TextureSlot.SIDE, TextureSlot.PARTICLE);
+
+
+        MultiVariant multivariant = plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
+                .put(TextureSlot.TOP, TextureMapping.getBlockTexture(block, "_top"))
+                .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(block, "_back"))
+                .put(TextureSlot.FRONT, TextureMapping.getBlockTexture(block, "_front"))
+                .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(block, "_side"))
+                .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(block, "_front")), modelTemplate)
+                .create(observerBlock, modelOutput));
+        MultiVariant multivariant1 = plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
+                        .put(TextureSlot.TOP, TextureMapping.getBlockTexture(block, "_top"))
+                        .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(block, "_back_on"))
+                        .put(TextureSlot.FRONT, TextureMapping.getBlockTexture(block, "_front"))
+                        .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(block, "_side"))
+                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(block, "_front")), modelTemplate)
+                .createWithSuffix(observerBlock, "_on", modelOutput));
+        this.blockStateOutput.accept(MultiVariantGenerator.dispatch(observerBlock).with(createBooleanModelDispatch(BlockStateProperties.POWERED, multivariant1, multivariant)).with(ROTATION_FACING));
     }
 
     @Override
@@ -1000,6 +1134,46 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createCustomChiseledBookshelf(ModBlocks.CHERRY_CHISELED_BOOKSHELF.get());
         this.createCustomChiseledBookshelf(ModBlocks.BAMBOO_CHISELED_BOOKSHELF.get());
         this.createCustomChiseledBookshelf(ModBlocks.PALE_OAK_CHISELED_BOOKSHELF.get());
+
+        this.registerSimpleItemModel(ModItems.OAK_CHISELED_BOOKSHELF.get(), ResourceLocation.parse("minecraft:block/chiseled_bookshelf_inventory"));
+
+        this.createLectern(ModBlocks.SPRUCE_LECTERN.get(), Blocks.SPRUCE_PLANKS);
+        this.createLectern(ModBlocks.BIRCH_LECTERN.get(), Blocks.BIRCH_PLANKS);
+        this.createLectern(ModBlocks.JUNGLE_LECTERN.get(), Blocks.JUNGLE_PLANKS);
+        this.createLectern(ModBlocks.ACACIA_LECTERN.get(), Blocks.ACACIA_PLANKS);
+        this.createLectern(ModBlocks.DARK_OAK_LECTERN.get(), Blocks.DARK_OAK_PLANKS);
+        this.createLectern(ModBlocks.CRIMSON_LECTERN.get(), Blocks.CRIMSON_PLANKS);
+        this.createLectern(ModBlocks.WARPED_LECTERN.get(), Blocks.WARPED_PLANKS);
+        this.createLectern(ModBlocks.MANGROVE_LECTERN.get(), Blocks.MANGROVE_PLANKS);
+        this.createLectern(ModBlocks.CHERRY_LECTERN.get(), Blocks.CHERRY_PLANKS);
+        this.createLectern(ModBlocks.BAMBOO_LECTERN.get(), Blocks.BAMBOO_PLANKS);
+        this.createLectern(ModBlocks.PALE_OAK_LECTERN.get(), Blocks.PALE_OAK_PLANKS);
+
+        this.createCustomBrewingStand(ModBlocks.BLACKSTONE_BREWING_STAND.get());
+        this.createCustomBrewingStand(ModBlocks.DEEPSLATE_BREWING_STAND.get());
+
+        this.registerSimpleItemModel(ModItems.STONE_BREWING_STAND.get(), ResourceLocation.parse("minecraft:item/brewing_stand"));
+
+        this.createCustomBarrel(ModBlocks.OAK_BARREL.get());
+        this.createCustomBarrel(ModBlocks.BIRCH_BARREL.get());
+        this.createCustomBarrel(ModBlocks.JUNGLE_BARREL.get());
+        this.createCustomBarrel(ModBlocks.ACACIA_BARREL.get());
+        this.createCustomBarrel(ModBlocks.DARK_OAK_BARREL.get());
+        this.createCustomBarrel(ModBlocks.CRIMSON_BARREL.get());
+        this.createCustomBarrel(ModBlocks.WARPED_BARREL.get());
+        this.createCustomBarrel(ModBlocks.MANGROVE_BARREL.get());
+        this.createCustomBarrel(ModBlocks.CHERRY_BARREL.get());
+        this.createCustomBarrel(ModBlocks.BAMBOO_BARREL.get());
+        this.createCustomBarrel(ModBlocks.PALE_OAK_BARREL.get());
+
+        this.createCustomDispenserBlock(ModBlocks.BLACKSTONE_DISPENSER.get(), ModBlocks.BLACKSTONE_FURNACE.get());
+        this.createCustomDispenserBlock(ModBlocks.DEEPSLATE_DISPENSER.get(), ModBlocks.DEEPSLATE_FURNACE.get());
+
+        this.createCustomDispenserBlock(ModBlocks.BLACKSTONE_DROPPER.get(), ModBlocks.BLACKSTONE_FURNACE.get());
+        this.createCustomDispenserBlock(ModBlocks.DEEPSLATE_DROPPER.get(), ModBlocks.DEEPSLATE_FURNACE.get());
+
+        this.createCustomObserver(ModBlocks.BLACKSTONE_OBSERVER.get());
+        this.createCustomObserver(ModBlocks.DEEPSLATE_OBSERVER.get());
 
         ModBlockFamilies.getAllFamilies()
                 .filter(BlockFamily::shouldGenerateModel)

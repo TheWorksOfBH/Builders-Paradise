@@ -35,7 +35,12 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 Blocks.SOUL_CAMPFIRE,
                 Blocks.BEEHIVE,
                 Blocks.BOOKSHELF,
-                Blocks.CHISELED_BOOKSHELF
+                Blocks.CHISELED_BOOKSHELF,
+                Blocks.BREWING_STAND,
+                Blocks.BARREL,
+                Blocks.DISPENSER,
+                Blocks.DROPPER,
+                Blocks.OBSERVER
         );
 
         Set<Block> handMadeBlocks = Set.of(
@@ -103,6 +108,18 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                         tag(ModBlockTags.BOOKSHELVES).add(block);
                     } else if (block instanceof ChiseledBookShelfBlock) {
                         tag(ModBlockTags.CHISELED_BOOKSHELVES).add(block);
+                    } else if (block instanceof LecternBlock) {
+                        tag(ModBlockTags.LECTERNS).add(block);
+                    } else if (block instanceof BrewingStandBlock) {
+                        tag(ModBlockTags.BREWING_STANDS).add(block);
+                    } else if (block instanceof BarrelBlock) {
+                        tag(ModBlockTags.BARRELS).add(block);
+                    } else if (block instanceof DispenserBlock) {
+                        tag(ModBlockTags.DISPENSERS).add(block);
+                    } else if (block instanceof DropperBlock) {
+                        tag(ModBlockTags.DROPPERS).add(block);
+                    } else if (block instanceof ObserverBlock) {
+                        tag(ModBlockTags.OBSERVERS).add(block);
                     }
                 }
         );

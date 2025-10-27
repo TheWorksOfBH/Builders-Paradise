@@ -430,7 +430,30 @@ public class CreativeInvConfig {
             tabData.insertAfter(Items.TNT.getDefaultInstance(), ModItems.NUKE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.remove(Items.FURNACE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.CHISELED_BOOKSHELF.getDefaultInstance(), ModItems.STONE_FURNACE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(Items.CHISELED_BOOKSHELF.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.BARREL.getDefaultInstance(), ModItems.OAK_CHISELED_BOOKSHELF.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.OAK_CHISELED_BOOKSHELF.get().getDefaultInstance(), ModItems.STONE_FURNACE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.remove(Items.LECTERN.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STRING.getDefaultInstance(), ModItems.OAK_LECTERN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.remove(Items.BARREL.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.CHEST.getDefaultInstance(), ModItems.OAK_BARREL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.remove(Items.DISPENSER.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(Items.DROPPER.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.HONEY_BLOCK.getDefaultInstance(), ModItems.STONE_DISPENSER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.STONE_DISPENSER.get().getDefaultInstance(), ModItems.BLACKSTONE_DISPENSER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BLACKSTONE_DISPENSER.get().getDefaultInstance(), ModItems.DEEPSLATE_DISPENSER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.DEEPSLATE_DISPENSER.get().getDefaultInstance(), ModItems.STONE_DROPPER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.STONE_DROPPER.get().getDefaultInstance(), ModItems.BLACKSTONE_DROPPER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BLACKSTONE_DROPPER.get().getDefaultInstance(), ModItems.DEEPSLATE_DROPPER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.remove(Items.OBSERVER.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.DECORATED_POT.getDefaultInstance(), ModItems.STONE_OBSERVER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.STONE_OBSERVER.get().getDefaultInstance(), ModItems.BLACKSTONE_OBSERVER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BLACKSTONE_OBSERVER.get().getDefaultInstance(), ModItems.DEEPSLATE_OBSERVER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
 
         } else if (tabData.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             tabData.insertAfter(Items.PRISMARINE.getDefaultInstance(), ModItems.ELDER_PRISMARINE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -466,7 +489,7 @@ public class CreativeInvConfig {
 
 
         } else if (tabData.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
-                        tabData.remove(Items.CRAFTING_TABLE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(Items.CRAFTING_TABLE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(Items.MAGMA_BLOCK.getDefaultInstance(), ModItems.OAK_CRAFTING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.OAK_CRAFTING_TABLE.get().getDefaultInstance(), ModItems.SPRUCE_CRAFTING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.SPRUCE_CRAFTING_TABLE.get().getDefaultInstance(), ModItems.BIRCH_CRAFTING_TABLE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -639,8 +662,21 @@ public class CreativeInvConfig {
             tabData.insertAfter(ModItems.BAMBOO_BEEHIVE.get().getDefaultInstance(), ModItems.CRIMSON_BEEHIVE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.CRIMSON_BEEHIVE.get().getDefaultInstance(), ModItems.WARPED_BEEHIVE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
+            tabData.remove(Items.CHISELED_BOOKSHELF.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.remove(Items.BOOKSHELF.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertBefore(Items.CHISELED_BOOKSHELF.getDefaultInstance(), ModItems.WARPED_BOOKSHELF.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertBefore(Items.OAK_SHELF.getDefaultInstance(), ModItems.WARPED_CHISELED_BOOKSHELF.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertBefore(ModItems.WARPED_CHISELED_BOOKSHELF.get().getDefaultInstance(), ModItems.CRIMSON_CHISELED_BOOKSHELF.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertBefore(ModItems.CRIMSON_CHISELED_BOOKSHELF.get().getDefaultInstance(), ModItems.BAMBOO_CHISELED_BOOKSHELF.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertBefore(ModItems.BAMBOO_CHISELED_BOOKSHELF.get().getDefaultInstance(), ModItems.PALE_OAK_CHISELED_BOOKSHELF.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertBefore(ModItems.PALE_OAK_CHISELED_BOOKSHELF.get().getDefaultInstance(), ModItems.CHERRY_CHISELED_BOOKSHELF.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertBefore(ModItems.CHERRY_CHISELED_BOOKSHELF.get().getDefaultInstance(), ModItems.MANGROVE_CHISELED_BOOKSHELF.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertBefore(ModItems.MANGROVE_CHISELED_BOOKSHELF.get().getDefaultInstance(), ModItems.DARK_OAK_CHISELED_BOOKSHELF.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertBefore(ModItems.DARK_OAK_CHISELED_BOOKSHELF.get().getDefaultInstance(), ModItems.ACACIA_CHISELED_BOOKSHELF.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertBefore(ModItems.ACACIA_CHISELED_BOOKSHELF.get().getDefaultInstance(), ModItems.JUNGLE_CHISELED_BOOKSHELF.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertBefore(ModItems.JUNGLE_CHISELED_BOOKSHELF.get().getDefaultInstance(), ModItems.BIRCH_CHISELED_BOOKSHELF.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertBefore(ModItems.BIRCH_CHISELED_BOOKSHELF.get().getDefaultInstance(), ModItems.SPRUCE_CHISELED_BOOKSHELF.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertBefore(ModItems.SPRUCE_CHISELED_BOOKSHELF.get().getDefaultInstance(), ModItems.OAK_CHISELED_BOOKSHELF.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertBefore(ModItems.OAK_CHISELED_BOOKSHELF.get().getDefaultInstance(), ModItems.WARPED_BOOKSHELF.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertBefore(ModItems.WARPED_BOOKSHELF.get().getDefaultInstance(), ModItems.CRIMSON_BOOKSHELF.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertBefore(ModItems.CRIMSON_BOOKSHELF.get().getDefaultInstance(), ModItems.BAMBOO_BOOKSHELF.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertBefore(ModItems.BAMBOO_BOOKSHELF.get().getDefaultInstance(), ModItems.PALE_OAK_BOOKSHELF.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -652,6 +688,40 @@ public class CreativeInvConfig {
             tabData.insertBefore(ModItems.JUNGLE_BOOKSHELF.get().getDefaultInstance(), ModItems.BIRCH_BOOKSHELF.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertBefore(ModItems.BIRCH_BOOKSHELF.get().getDefaultInstance(), ModItems.SPRUCE_BOOKSHELF.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertBefore(ModItems.SPRUCE_BOOKSHELF.get().getDefaultInstance(), ModItems.OAK_BOOKSHELF.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.remove(Items.LECTERN.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.WARPED_SHELF.getDefaultInstance(), ModItems.OAK_LECTERN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.OAK_LECTERN.get().getDefaultInstance(), ModItems.SPRUCE_LECTERN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.SPRUCE_LECTERN.get().getDefaultInstance(), ModItems.BIRCH_LECTERN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BIRCH_LECTERN.get().getDefaultInstance(), ModItems.JUNGLE_LECTERN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.JUNGLE_LECTERN.get().getDefaultInstance(), ModItems.ACACIA_LECTERN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.ACACIA_LECTERN.get().getDefaultInstance(), ModItems.DARK_OAK_LECTERN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.DARK_OAK_LECTERN.get().getDefaultInstance(), ModItems.MANGROVE_LECTERN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.MANGROVE_LECTERN.get().getDefaultInstance(), ModItems.CHERRY_LECTERN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CHERRY_LECTERN.get().getDefaultInstance(), ModItems.PALE_OAK_LECTERN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.PALE_OAK_LECTERN.get().getDefaultInstance(), ModItems.BAMBOO_LECTERN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BAMBOO_LECTERN.get().getDefaultInstance(), ModItems.CRIMSON_LECTERN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CRIMSON_LECTERN.get().getDefaultInstance(), ModItems.WARPED_LECTERN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.remove(Items.BREWING_STAND.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.END_CRYSTAL.getDefaultInstance(), ModItems.STONE_BREWING_STAND.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.STONE_BREWING_STAND.get().getDefaultInstance(), ModItems.BLACKSTONE_BREWING_STAND.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BLACKSTONE_BREWING_STAND.get().getDefaultInstance(), ModItems.DEEPSLATE_BREWING_STAND.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.remove(Items.BARREL.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.WAXED_OXIDIZED_COPPER_CHEST.getDefaultInstance(), ModItems.OAK_BARREL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.OAK_BARREL.get().getDefaultInstance(), ModItems.SPRUCE_BARREL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.SPRUCE_BARREL.get().getDefaultInstance(), ModItems.BIRCH_BARREL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BIRCH_BARREL.get().getDefaultInstance(), ModItems.JUNGLE_BARREL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.JUNGLE_BARREL.get().getDefaultInstance(), ModItems.ACACIA_BARREL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.ACACIA_BARREL.get().getDefaultInstance(), ModItems.DARK_OAK_BARREL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.DARK_OAK_BARREL.get().getDefaultInstance(), ModItems.MANGROVE_BARREL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.MANGROVE_BARREL.get().getDefaultInstance(), ModItems.CHERRY_BARREL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CHERRY_BARREL.get().getDefaultInstance(), ModItems.PALE_OAK_BARREL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.PALE_OAK_BARREL.get().getDefaultInstance(), ModItems.BAMBOO_BARREL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BAMBOO_BARREL.get().getDefaultInstance(), ModItems.CRIMSON_BARREL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CRIMSON_BARREL.get().getDefaultInstance(), ModItems.WARPED_BARREL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
 
         } else if (tabData.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             tabData.insertAfter(Items.PRISMARINE_CRYSTALS.getDefaultInstance(), ModItems.ELDER_PRISMARINE_SHARD.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -695,6 +765,8 @@ public class CreativeInvConfig {
             tabData.insertAfter(ModItems.BRASS_NUGGET.get().getDefaultInstance(), ModItems.STEEL_NUGGET.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         } else if (tabData.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             tabData.insertAfter(Items.LAVA_BUCKET.getDefaultInstance(), ModItems.NUCLEAR_WASTE_BUCKET.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.MUSIC_DISC_CIRCUITRIC_MAGNET.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.MUSIC_DISC_ANGRY_BOYFRIENDS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         } else if (tabData.getTabKey() == CreativeModeTabs.COMBAT) {
             tabData.insertAfter(Items.TNT.getDefaultInstance(), ModItems.NUKE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }

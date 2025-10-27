@@ -130,6 +130,12 @@ public class POIConfig {
             ModBlocks.DEEPSLATE_BLAST_FURNACE.get()
     ).stream().flatMap((block) -> block.getStateDefinition().getPossibleStates().stream()).collect(ImmutableSet.toImmutableSet());
 
+    private static final Set<BlockState> BREWING_STANDS = ImmutableList.of(
+            ModBlocks.BLACKSTONE_BREWING_STAND.get(),
+            ModBlocks.BLACKSTONE_BREWING_STAND.get(),
+            ModBlocks.DEEPSLATE_BREWING_STAND.get()
+    ).stream().flatMap((block) -> block.getStateDefinition().getPossibleStates().stream()).collect(ImmutableSet.toImmutableSet());
+
     private static final Set<BlockState> BEEHIVES = ImmutableList.of(
             ModBlocks.SPRUCE_BEEHIVE.get(),
             ModBlocks.SPRUCE_BEEHIVE.get(),
@@ -145,6 +151,36 @@ public class POIConfig {
             ModBlocks.PALE_OAK_BEEHIVE.get()
     ).stream().flatMap((block) -> block.getStateDefinition().getPossibleStates().stream()).collect(ImmutableSet.toImmutableSet());
 
+    private static final Set<BlockState> LECTERNS = ImmutableList.of(
+            ModBlocks.SPRUCE_LECTERN.get(),
+            ModBlocks.SPRUCE_LECTERN.get(),
+            ModBlocks.BIRCH_LECTERN.get(),
+            ModBlocks.JUNGLE_LECTERN.get(),
+            ModBlocks.ACACIA_LECTERN.get(),
+            ModBlocks.DARK_OAK_LECTERN.get(),
+            ModBlocks.CRIMSON_LECTERN.get(),
+            ModBlocks.WARPED_LECTERN.get(),
+            ModBlocks.MANGROVE_LECTERN.get(),
+            ModBlocks.CHERRY_LECTERN.get(),
+            ModBlocks.BAMBOO_LECTERN.get(),
+            ModBlocks.PALE_OAK_LECTERN.get()
+    ).stream().flatMap((block) -> block.getStateDefinition().getPossibleStates().stream()).collect(ImmutableSet.toImmutableSet());
+
+    private static final Set<BlockState> BARRELS = ImmutableList.of(
+            ModBlocks.OAK_BARREL.get(),
+            ModBlocks.OAK_BARREL.get(),
+            ModBlocks.BIRCH_BARREL.get(),
+            ModBlocks.JUNGLE_BARREL.get(),
+            ModBlocks.ACACIA_BARREL.get(),
+            ModBlocks.DARK_OAK_BARREL.get(),
+            ModBlocks.CRIMSON_BARREL.get(),
+            ModBlocks.WARPED_BARREL.get(),
+            ModBlocks.MANGROVE_BARREL.get(),
+            ModBlocks.CHERRY_BARREL.get(),
+            ModBlocks.BAMBOO_BARREL.get(),
+            ModBlocks.PALE_OAK_BARREL.get()
+    ).stream().flatMap((block) -> block.getStateDefinition().getPossibleStates().stream()).collect(ImmutableSet.toImmutableSet());
+
 
     public static void addModBlocksToVanillaPOIs(ExtendPoiTypesEvent event) {
         event.addStatesToPoi(PoiTypes.CARTOGRAPHER, CARTOGRAPHY_TABLES);
@@ -155,6 +191,10 @@ public class POIConfig {
         event.addStatesToPoi(PoiTypes.BUTCHER, SMOKERS);
         event.addStatesToPoi(PoiTypes.ARMORER, BLAST_FURNACES);
         event.addStatesToPoi(PoiTypes.BEEHIVE, BEEHIVES);
+        event.addStatesToPoi(PoiTypes.LIBRARIAN, LECTERNS);
+        event.addStatesToPoi(PoiTypes.CLERIC, BREWING_STANDS);
+        event.addStatesToPoi(PoiTypes.FISHERMAN, BARRELS);
+
     }
 
 }

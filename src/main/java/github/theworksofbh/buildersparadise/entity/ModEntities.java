@@ -1,6 +1,7 @@
 package github.theworksofbh.buildersparadise.entity;
 
 import github.theworksofbh.buildersparadise.BuildersParadise;
+import github.theworksofbh.buildersparadise.items.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -18,6 +19,10 @@ public class ModEntities {
     public static final DeferredRegister.Entities ENTITIES = DeferredRegister.createEntities(BuildersParadise.MODID);
 
     public static final Supplier<EntityType<PrimedNuke>> NUKE = register("nuke", PrimedNuke::new, MobCategory.MISC, 0.98F, 0.98F);
+    public static final Supplier<EntityType<FireproofBoat>> CRIMSON_BOAT = register("crimson_boat", (fireproofBoat, level) -> new FireproofBoat(fireproofBoat, level, () -> ModItems.CRIMSON_BOAT.get()), MobCategory.MISC, 1.375F, 0.5625F);
+    public static final Supplier<EntityType<FireproofBoat>> WARPED_BOAT = register("warped_boat", (fireproofBoat, level) -> new FireproofBoat(fireproofBoat, level, () -> ModItems.WARPED_BOAT.get()), MobCategory.MISC, 1.375F, 0.5625F);
+    public static final Supplier<EntityType<FireproofChestBoat>> CRIMSON_CHEST_BOAT = register("crimson_chest_boat", (fireproofChestBoat, level) -> new FireproofChestBoat(fireproofChestBoat, level, () -> ModItems.CRIMSON_CHEST_BOAT.get()), MobCategory.MISC, 1.375F, 0.5625F);
+    public static final Supplier<EntityType<FireproofChestBoat>> WARPED_CHEST_BOAT = register("warped_chest_boat", (fireproofChestBoat, level) -> new FireproofChestBoat(fireproofChestBoat, level, () -> ModItems.WARPED_CHEST_BOAT.get()), MobCategory.MISC, 1.375F, 0.5625F);
 
     public static <T extends Entity> Supplier<EntityType<T>> register(String registryName, EntityFactory<T> entityFactory, MobCategory mobCategory, float width, float height) {
         return ENTITIES.register(
@@ -28,7 +33,7 @@ public class ModEntities {
                 ).sized(
                         width,
                         height
-                ).build(
+                ).noLootTable().build(
                         ResourceKey.create(
                                 Registries.ENTITY_TYPE,
                                 ResourceLocation.fromNamespaceAndPath(
@@ -39,6 +44,7 @@ public class ModEntities {
                 )
         );
     }
+
 
     public static void register(IEventBus eventBus){
         ENTITIES.register(eventBus);

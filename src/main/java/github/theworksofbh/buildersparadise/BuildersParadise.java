@@ -44,11 +44,11 @@ public class BuildersParadise
         modEventBus.addListener(this::commonSetup);
 
         ModBlocks.register(modEventBus);
+        ModEntities.register(modEventBus);
         ModItems.register(modEventBus);
         CreativeInvConfig.register(modEventBus);
         ModLootModifiers.register(modEventBus);
         ModEffects.register(modEventBus);
-        ModEntities.register(modEventBus);
 
         ModFluids.register(modEventBus);
         ModFluidTypes.register(modEventBus);

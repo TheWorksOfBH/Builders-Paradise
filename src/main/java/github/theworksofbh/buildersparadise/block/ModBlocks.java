@@ -643,6 +643,42 @@ public class ModBlocks {
     public static final DeferredBlock<ChiseledBookShelfBlock> BAMBOO_CHISELED_BOOKSHELF = registerChiseledBookshelf("bamboo_chiseled_bookshelf");
     public static final DeferredBlock<ChiseledBookShelfBlock> PALE_OAK_CHISELED_BOOKSHELF = registerChiseledBookshelf("pale_oak_chiseled_bookshelf");
 
+    public static final DeferredBlock<LecternBlock> SPRUCE_LECTERN = registerLectern("spruce_lectern");
+    public static final DeferredBlock<LecternBlock> BIRCH_LECTERN = registerLectern("birch_lectern");
+    public static final DeferredBlock<LecternBlock> JUNGLE_LECTERN = registerLectern("jungle_lectern");
+    public static final DeferredBlock<LecternBlock> ACACIA_LECTERN = registerLectern("acacia_lectern");
+    public static final DeferredBlock<LecternBlock> DARK_OAK_LECTERN = registerLectern("dark_oak_lectern");
+    public static final DeferredBlock<LecternBlock> CRIMSON_LECTERN = registerLectern("crimson_lectern");
+    public static final DeferredBlock<LecternBlock> WARPED_LECTERN = registerLectern("warped_lectern");
+    public static final DeferredBlock<LecternBlock> MANGROVE_LECTERN = registerLectern("mangrove_lectern");
+    public static final DeferredBlock<LecternBlock> CHERRY_LECTERN = registerLectern("cherry_lectern");
+    public static final DeferredBlock<LecternBlock> BAMBOO_LECTERN = registerLectern("bamboo_lectern");
+    public static final DeferredBlock<LecternBlock> PALE_OAK_LECTERN = registerLectern("pale_oak_lectern");
+
+    public static final DeferredBlock<BrewingStandBlock> BLACKSTONE_BREWING_STAND = registerBrewingStand("blackstone_brewing_stand");
+    public static final DeferredBlock<BrewingStandBlock> DEEPSLATE_BREWING_STAND = registerBrewingStand("deepslate_brewing_stand");
+
+    public static final DeferredBlock<BarrelBlock> OAK_BARREL = registerBarrel("oak_barrel");
+    public static final DeferredBlock<BarrelBlock> BIRCH_BARREL = registerBarrel("birch_barrel");
+    public static final DeferredBlock<BarrelBlock> JUNGLE_BARREL = registerBarrel("jungle_barrel");
+    public static final DeferredBlock<BarrelBlock> ACACIA_BARREL = registerBarrel("acacia_barrel");
+    public static final DeferredBlock<BarrelBlock> DARK_OAK_BARREL = registerBarrel("dark_oak_barrel");
+    public static final DeferredBlock<BarrelBlock> CRIMSON_BARREL = registerBarrel("crimson_barrel");
+    public static final DeferredBlock<BarrelBlock> WARPED_BARREL = registerBarrel("warped_barrel");
+    public static final DeferredBlock<BarrelBlock> MANGROVE_BARREL = registerBarrel("mangrove_barrel");
+    public static final DeferredBlock<BarrelBlock> CHERRY_BARREL = registerBarrel("cherry_barrel");
+    public static final DeferredBlock<BarrelBlock> BAMBOO_BARREL = registerBarrel("bamboo_barrel");
+    public static final DeferredBlock<BarrelBlock> PALE_OAK_BARREL = registerBarrel("pale_oak_barrel");
+
+    public static final DeferredBlock<DispenserBlock> BLACKSTONE_DISPENSER = registerDispenser("blackstone_dispenser");
+    public static final DeferredBlock<DispenserBlock> DEEPSLATE_DISPENSER = registerDispenser("deepslate_dispenser");
+
+    public static final DeferredBlock<DropperBlock> BLACKSTONE_DROPPER = registerDropper("blackstone_dropper");
+    public static final DeferredBlock<DropperBlock> DEEPSLATE_DROPPER = registerDropper("deepslate_dropper");
+
+    public static final DeferredBlock<ObserverBlock> BLACKSTONE_OBSERVER = registerObserver("blackstone_observer");
+    public static final DeferredBlock<ObserverBlock> DEEPSLATE_OBSERVER = registerObserver("deepslate_observer");
+
     public static DeferredBlock<CraftingTableBlock> registerCraftingTable(String registryName) {
         if (registryName == "crimson_crafting_table" || registryName == "warped_crafting_table") {
             return BLOCKS.register(
@@ -888,6 +924,136 @@ public class ModBlocks {
             return BLOCKS.register(
                     registryName, () -> new BeehiveBlock(
                             BlockBehaviour.Properties.ofFullCopy(Blocks.BEEHIVE)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        }
+
+    }
+
+    public static DeferredBlock<BarrelBlock> registerBarrel(String registryName) {
+        if (registryName == "crimson_barrel" || registryName == "warped_barrel") {
+            return BLOCKS.register(
+                    registryName, () -> new BarrelBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL).sound(SoundType.NETHER_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "cherry_barrel") {
+            return BLOCKS.register(
+                    registryName, () -> new BarrelBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL).sound(SoundType.CHERRY_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "bamboo_barrel") {
+            return BLOCKS.register(
+                    registryName, () -> new BarrelBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL).sound(SoundType.BAMBOO_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new BarrelBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.BARREL)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        }
+
+    }
+
+    public static DeferredBlock<LecternBlock> registerLectern(String registryName) {
+        if (registryName == "crimson_lectern" || registryName == "warped_lectern") {
+            return BLOCKS.register(
+                    registryName, () -> new LecternBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.LECTERN).sound(SoundType.NETHER_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "cherry_lectern") {
+            return BLOCKS.register(
+                    registryName, () -> new LecternBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.LECTERN).sound(SoundType.CHERRY_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "bamboo_lectern") {
+            return BLOCKS.register(
+                    registryName, () -> new LecternBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.LECTERN).sound(SoundType.BAMBOO_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new LecternBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.LECTERN)
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
@@ -1233,6 +1399,142 @@ public class ModBlocks {
             return BLOCKS.register(
                     registryName, () -> new FurnaceBlock(
                             BlockBehaviour.Properties.ofFullCopy(Blocks.FURNACE)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        }
+    }
+
+    public static DeferredBlock<DispenserBlock> registerDispenser(String registryName) {
+        if (registryName == "deepslate_dispenser") {
+            return BLOCKS.register(
+                    registryName, () -> new DispenserBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.DISPENSER).sound(SoundType.DEEPSLATE)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new DispenserBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.DISPENSER)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        }
+    }
+
+    public static DeferredBlock<ObserverBlock> registerObserver(String registryName) {
+        if (registryName == "deepslate_observer") {
+            return BLOCKS.register(
+                    registryName, () -> new ObserverBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.OBSERVER).sound(SoundType.DEEPSLATE)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new ObserverBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.OBSERVER)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        }
+    }
+
+    public static DeferredBlock<DropperBlock> registerDropper(String registryName) {
+        if (registryName == "deepslate_dropper") {
+            return BLOCKS.register(
+                    registryName, () -> new DropperBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.DROPPER).sound(SoundType.DEEPSLATE)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new DropperBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.DROPPER)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        }
+    }
+
+    public static DeferredBlock<BrewingStandBlock> registerBrewingStand(String registryName) {
+        if (registryName == "deepslate_brewing_stand") {
+            return BLOCKS.register(
+                    registryName, () -> new BrewingStandBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.BREWING_STAND).sound(SoundType.DEEPSLATE)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new BrewingStandBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.BREWING_STAND)
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,

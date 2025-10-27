@@ -12,6 +12,8 @@ public class ModSoundEvents {
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(BuiltInRegistries.SOUND_EVENT, BuildersParadise.MODID);
 
     public static final DeferredHolder<SoundEvent, SoundEvent> NOTE_BLOCK_TROMBONE = registerSoundEvent("block.note_block.trombone");
+    public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_DISC_CIRCUITRIC_MAGNET = registerSoundEvent("music_disc.circuitric_magnet");
+    public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_DISC_ANGRY_BOYFRIENDS = registerSoundEvent("music_disc.angry_boyfriends");
 
     private static DeferredHolder<SoundEvent, SoundEvent> registerSoundEvent(String registryName) {
         ResourceLocation resourceLocation = ResourceLocation.fromNamespaceAndPath(BuildersParadise.MODID, registryName);
