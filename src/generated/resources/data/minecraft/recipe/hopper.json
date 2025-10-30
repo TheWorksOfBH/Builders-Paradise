@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "C": [
+      "buildersparadise:oak_chest",
+      "buildersparadise:spruce_chest",
+      "buildersparadise:birch_chest",
+      "buildersparadise:jungle_chest",
+      "buildersparadise:acacia_chest",
+      "buildersparadise:dark_oak_chest",
+      "buildersparadise:crimson_chest",
+      "buildersparadise:warped_chest",
+      "buildersparadise:mangrove_chest",
+      "buildersparadise:cherry_chest",
+      "buildersparadise:bamboo_chest",
+      "buildersparadise:pale_oak_chest"
+    ],
+    "I": "minecraft:iron_ingot"
+  },
+  "pattern": [
+    "I I",
+    "ICI",
+    " I "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:hopper"
+  }
+}

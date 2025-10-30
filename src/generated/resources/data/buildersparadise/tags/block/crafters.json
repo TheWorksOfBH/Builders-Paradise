@@ -1,0 +1,16 @@
+{
+  "values": [
+    "minecraft:crafter",
+    "buildersparadise:spruce_crafter",
+    "buildersparadise:birch_crafter",
+    "buildersparadise:jungle_crafter",
+    "buildersparadise:acacia_crafter",
+    "buildersparadise:dark_oak_crafter",
+    "buildersparadise:crimson_crafter",
+    "buildersparadise:warped_crafter",
+    "buildersparadise:mangrove_crafter",
+    "buildersparadise:cherry_crafter",
+    "buildersparadise:bamboo_crafter",
+    "buildersparadise:pale_oak_crafter"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/crafter",
+  "textures": {
+    "bottom": "minecraft:block/crafter_bottom",
+    "east": "buildersparadise:block/spruce_crafter_east",
+    "north": "buildersparadise:block/spruce_crafter_north",
+    "particle": "buildersparadise:block/spruce_crafter_north",
+    "south": "buildersparadise:block/spruce_crafter_south",
+    "top": "minecraft:block/crafter_top",
+    "west": "buildersparadise:block/spruce_crafter_west"
+  }
+}

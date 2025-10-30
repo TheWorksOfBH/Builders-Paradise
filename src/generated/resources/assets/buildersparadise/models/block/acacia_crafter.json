@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/crafter",
+  "textures": {
+    "bottom": "minecraft:block/crafter_bottom",
+    "east": "buildersparadise:block/acacia_crafter_east",
+    "north": "buildersparadise:block/acacia_crafter_north",
+    "particle": "buildersparadise:block/acacia_crafter_north",
+    "south": "buildersparadise:block/acacia_crafter_south",
+    "top": "minecraft:block/crafter_top",
+    "west": "buildersparadise:block/acacia_crafter_west"
+  }
+}
