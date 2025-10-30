@@ -70,7 +70,6 @@ public class ModChestSpecialRenderers extends ChestSpecialRenderer {
         this.model.root().getExtentsForGui(posestack, output);
     }
 
-    @OnlyIn(Dist.CLIENT)
     public static record Unbaked(ResourceLocation texture, float openness) implements SpecialModelRenderer.Unbaked {
         public static final MapCodec<ModChestSpecialRenderers.Unbaked> MAP_CODEC = RecordCodecBuilder.mapCodec((p_388545_) -> p_388545_.group(ResourceLocation.CODEC.fieldOf("texture").forGetter(ModChestSpecialRenderers.Unbaked::texture), Codec.FLOAT.optionalFieldOf("openness", 0.0F).forGetter(ModChestSpecialRenderers.Unbaked::openness)).apply(p_388545_, ModChestSpecialRenderers.Unbaked::new));
 
