@@ -10,6 +10,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityType.Builder;
 import net.minecraft.world.entity.EntityType.EntityFactory;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.vehicle.MinecartFurnace;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -23,6 +24,8 @@ public class ModEntities {
     public static final Supplier<EntityType<FireproofBoat>> WARPED_BOAT = register("warped_boat", (fireproofBoat, level) -> new FireproofBoat(fireproofBoat, level, () -> ModItems.WARPED_BOAT.get()), MobCategory.MISC, 1.375F, 0.5625F);
     public static final Supplier<EntityType<FireproofChestBoat>> CRIMSON_CHEST_BOAT = register("crimson_chest_boat", (fireproofChestBoat, level) -> new FireproofChestBoat(fireproofChestBoat, level, () -> ModItems.CRIMSON_CHEST_BOAT.get()), MobCategory.MISC, 1.375F, 0.5625F);
     public static final Supplier<EntityType<FireproofChestBoat>> WARPED_CHEST_BOAT = register("warped_chest_boat", (fireproofChestBoat, level) -> new FireproofChestBoat(fireproofChestBoat, level, () -> ModItems.WARPED_CHEST_BOAT.get()), MobCategory.MISC, 1.375F, 0.5625F);
+    public static final Supplier<EntityType<MinecartFurnace>> BLACKSTONE_FURNACE_MINECART = register("blackstone_furnace_minecart", BlackstoneMinecartFurnace::new, MobCategory.MISC, 0.98F, 0.7F);
+    public static final Supplier<EntityType<MinecartFurnace>> DEEPSLATE_FURNACE_MINECART = register("deepslate_furnace_minecart", DeepslateMinecartFurnace::new, MobCategory.MISC, 0.98F, 0.7F);
 
     public static <T extends Entity> Supplier<EntityType<T>> register(String registryName, EntityFactory<T> entityFactory, MobCategory mobCategory, float width, float height) {
         return ENTITIES.register(

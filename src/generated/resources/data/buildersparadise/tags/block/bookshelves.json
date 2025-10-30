@@ -1,7 +1,7 @@
 {
   "values": [
-    "minecraft:chiseled_bookshelf",
     "minecraft:bookshelf",
+    "minecraft:chiseled_bookshelf",
     "buildersparadise:spruce_bookshelf",
     "buildersparadise:birch_bookshelf",
     "buildersparadise:jungle_bookshelf",

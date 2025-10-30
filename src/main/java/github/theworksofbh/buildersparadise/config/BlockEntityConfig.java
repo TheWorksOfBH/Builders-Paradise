@@ -127,5 +127,41 @@ public class BlockEntityConfig {
 
         event.modify(BlockEntityType.DROPPER, ModBlocks.BLACKSTONE_DROPPER.get());
         event.modify(BlockEntityType.DROPPER, ModBlocks.DEEPSLATE_DROPPER.get());
+
+        event.modify(BlockEntityType.CRAFTER, ModBlocks.SPRUCE_CRAFTER.get());
+        event.modify(BlockEntityType.CRAFTER, ModBlocks.BIRCH_CRAFTER.get());
+        event.modify(BlockEntityType.CRAFTER, ModBlocks.JUNGLE_CRAFTER.get());
+        event.modify(BlockEntityType.CRAFTER, ModBlocks.ACACIA_CRAFTER.get());
+        event.modify(BlockEntityType.CRAFTER, ModBlocks.DARK_OAK_CRAFTER.get());
+        event.modify(BlockEntityType.CRAFTER, ModBlocks.CRIMSON_CRAFTER.get());
+        event.modify(BlockEntityType.CRAFTER, ModBlocks.WARPED_CRAFTER.get());
+        event.modify(BlockEntityType.CRAFTER, ModBlocks.MANGROVE_CRAFTER.get());
+        event.modify(BlockEntityType.CRAFTER, ModBlocks.CHERRY_CRAFTER.get());
+        event.modify(BlockEntityType.CRAFTER, ModBlocks.BAMBOO_CRAFTER.get());
+        event.modify(BlockEntityType.CRAFTER, ModBlocks.PALE_OAK_CRAFTER.get());
+
+        event.modify(BlockEntityType.CHEST, ModBlocks.SPRUCE_CHEST.get());
+        event.modify(BlockEntityType.CHEST, ModBlocks.BIRCH_CHEST.get());
+        event.modify(BlockEntityType.CHEST, ModBlocks.JUNGLE_CHEST.get());
+        event.modify(BlockEntityType.CHEST, ModBlocks.ACACIA_CHEST.get());
+        event.modify(BlockEntityType.CHEST, ModBlocks.DARK_OAK_CHEST.get());
+        event.modify(BlockEntityType.CHEST, ModBlocks.CRIMSON_CHEST.get());
+        event.modify(BlockEntityType.CHEST, ModBlocks.WARPED_CHEST.get());
+        event.modify(BlockEntityType.CHEST, ModBlocks.MANGROVE_CHEST.get());
+        event.modify(BlockEntityType.CHEST, ModBlocks.CHERRY_CHEST.get());
+        event.modify(BlockEntityType.CHEST, ModBlocks.BAMBOO_CHEST.get());
+        event.modify(BlockEntityType.CHEST, ModBlocks.PALE_OAK_CHEST.get());
+
+        event.modify(BlockEntityType.TRAPPED_CHEST, ModBlocks.SPRUCE_TRAPPED_CHEST.get());
+        event.modify(BlockEntityType.TRAPPED_CHEST, ModBlocks.BIRCH_TRAPPED_CHEST.get());
+        event.modify(BlockEntityType.TRAPPED_CHEST, ModBlocks.JUNGLE_TRAPPED_CHEST.get());
+        event.modify(BlockEntityType.TRAPPED_CHEST, ModBlocks.ACACIA_TRAPPED_CHEST.get());
+        event.modify(BlockEntityType.TRAPPED_CHEST, ModBlocks.DARK_OAK_TRAPPED_CHEST.get());
+        event.modify(BlockEntityType.TRAPPED_CHEST, ModBlocks.CRIMSON_TRAPPED_CHEST.get());
+        event.modify(BlockEntityType.TRAPPED_CHEST, ModBlocks.WARPED_TRAPPED_CHEST.get());
+        event.modify(BlockEntityType.TRAPPED_CHEST, ModBlocks.MANGROVE_TRAPPED_CHEST.get());
+        event.modify(BlockEntityType.TRAPPED_CHEST, ModBlocks.CHERRY_TRAPPED_CHEST.get());
+        event.modify(BlockEntityType.TRAPPED_CHEST, ModBlocks.BAMBOO_TRAPPED_CHEST.get());
+        event.modify(BlockEntityType.TRAPPED_CHEST, ModBlocks.PALE_OAK_TRAPPED_CHEST.get());
     }
 }

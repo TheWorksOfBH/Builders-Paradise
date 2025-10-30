@@ -4,6 +4,7 @@ import github.theworksofbh.buildersparadise.entity.ModEntities;
 import github.theworksofbh.buildersparadise.model_layers.ModModelLayers;
 import net.minecraft.client.renderer.entity.BoatRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.MinecartRenderer;
 import net.minecraft.client.renderer.entity.TntRenderer;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 
@@ -15,6 +16,9 @@ public class EntityRendererConfig {
             EntityRenderers.register(ModEntities.WARPED_BOAT.get(), (context) -> new BoatRenderer(context, ModModelLayers.WARPED_BOAT));
             EntityRenderers.register(ModEntities.CRIMSON_CHEST_BOAT.get(), (context) -> new BoatRenderer(context, ModModelLayers.CRIMSON_CHEST_BOAT));
             EntityRenderers.register(ModEntities.WARPED_CHEST_BOAT.get(), (context) -> new BoatRenderer(context, ModModelLayers.WARPED_CHEST_BOAT));
+            EntityRenderers.register(ModEntities.BLACKSTONE_FURNACE_MINECART.get(), (context) -> new MinecartRenderer(context, ModModelLayers.BLACKSTONE_FURNACE_MINECART));
+            EntityRenderers.register(ModEntities.DEEPSLATE_FURNACE_MINECART.get(), (context) -> new MinecartRenderer(context, ModModelLayers.DEEPSLATE_FURNACE_MINECART));
+
         });
     }
 }

@@ -64,7 +64,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 Blocks.BARREL,
                 Blocks.DISPENSER,
                 Blocks.DROPPER,
-                Blocks.OBSERVER
+                Blocks.OBSERVER,
+                Blocks.CRAFTER,
+                Blocks.CHEST,
+                Blocks.TRAPPED_CHEST
         );
 
         Set<Block> handMadeBlocks = Set.of(
@@ -312,6 +315,36 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                     }
                 } else if (block == Blocks.OBSERVER) {
                     this.dropOther(block, ModItems.STONE_OBSERVER.get());
+                } else if (block == Blocks.CRAFTER) {
+                    this.dropOther(block, ModItems.OAK_CRAFTER.get());
+                } else if (block instanceof ChestBlock) {
+                    if (block == Blocks.CHEST) {
+                        this.add(block, LootTable.lootTable().withPool(
+                                (LootPool.Builder)this.applyExplosionCondition(
+                                        block,
+                                        LootPool.lootPool().setRolls(
+                                                ConstantValue.exactly(1.0F)
+                                        ).add(LootItem.lootTableItem(ModItems.OAK_CHEST.get())
+                                                .apply(
+                                                        CopyComponentsFunction.copyComponentsFromBlockEntity(LootContextParams.BLOCK_ENTITY)
+                                                                .include(DataComponents.CUSTOM_NAME))))));
+                    } else {
+                        this.add(block, createNameableBlockEntityTable(block));
+                    }
+                } else if (block instanceof TrappedChestBlock) {
+                    if (block == Blocks.TRAPPED_CHEST) {
+                        this.add(block, LootTable.lootTable().withPool(
+                                (LootPool.Builder)this.applyExplosionCondition(
+                                        block,
+                                        LootPool.lootPool().setRolls(
+                                                ConstantValue.exactly(1.0F)
+                                        ).add(LootItem.lootTableItem(ModItems.OAK_TRAPPED_CHEST.get())
+                                                .apply(
+                                                        CopyComponentsFunction.copyComponentsFromBlockEntity(LootContextParams.BLOCK_ENTITY)
+                                                                .include(DataComponents.CUSTOM_NAME))))));
+                    } else {
+                        this.add(block, createNameableBlockEntityTable(block));
+                    }
                 } else {
                     this.dropSelf(block);
                 }

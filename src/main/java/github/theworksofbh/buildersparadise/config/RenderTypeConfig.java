@@ -3,6 +3,7 @@ package github.theworksofbh.buildersparadise.config;
 import github.theworksofbh.buildersparadise.block.ModBlocks;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
+import net.minecraft.world.level.material.Fluids;
 
 public class RenderTypeConfig {
     public static void addModRenderTypes() {
@@ -97,6 +98,8 @@ public class RenderTypeConfig {
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLACKSTONE_BREWING_STAND.get(), ChunkSectionLayer.CUTOUT);
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.DEEPSLATE_BREWING_STAND.get(), ChunkSectionLayer.CUTOUT);
+
+        ItemBlockRenderTypes.setRenderLayer(Fluids.LAVA, ChunkSectionLayer.TRANSLUCENT);
 
     }
 }

@@ -23,12 +23,15 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.client.event.RenderBlockScreenEffectEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.world.poi.ExtendPoiTypesEvent;
 import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.level.NoteBlockEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
@@ -67,7 +70,10 @@ public class BuildersParadise
         modEventBus.addListener(this::addGuiScreens);
         modEventBus.addListener(this::addPOIBlocks);
         modEventBus.addListener(this::addBlockEntities);
+        modEventBus.addListener(this::addEntityLayerRenderers);
+        NeoForge.EVENT_BUS.addListener(this::addEntityDamages);
         NeoForge.EVENT_BUS.addListener(this::addNoteBlockInstruments);
+        NeoForge.EVENT_BUS.addListener(this::omitFireOverlayInBoats);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -112,6 +118,18 @@ public class BuildersParadise
 
     private void addEntityRenderers(FMLClientSetupEvent event) {
         EntityRendererConfig.addEntityRenderers(event);
+    }
+
+    private void addEntityLayerRenderers(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        EntityLayersConfig.registerEntityLayers(event);
+    }
+
+    private void addEntityDamages(LivingIncomingDamageEvent event) {
+        FireproofBoatConfig.onEntityDamage(event);
+    }
+
+    private void omitFireOverlayInBoats(RenderBlockScreenEffectEvent event) {
+        FireproofBoatConfig.onRenderOverlay(event);
     }
 
     @EventBusSubscriber(modid = MODID, value = Dist.CLIENT)

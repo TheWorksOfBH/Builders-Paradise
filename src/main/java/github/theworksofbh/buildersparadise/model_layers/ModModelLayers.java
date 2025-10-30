@@ -9,6 +9,8 @@ public class ModModelLayers {
     public static final ModelLayerLocation WARPED_BOAT = register("boat/warped");
     public static final ModelLayerLocation CRIMSON_CHEST_BOAT = register("chest_boat/crimson");
     public static final ModelLayerLocation WARPED_CHEST_BOAT = register("chest_boat/warped");
+    public static final ModelLayerLocation BLACKSTONE_FURNACE_MINECART = register("blackstone_furnace_minecart");
+    public static final ModelLayerLocation DEEPSLATE_FURNACE_MINECART = register("deepslate_furnace_minecart");
 
     private static ModelLayerLocation register(String name) {
         return register(name, "main");

@@ -6,6 +6,9 @@ import github.theworksofbh.buildersparadise.block.ModBlockFamilies;
 import github.theworksofbh.buildersparadise.block.ModBlocks;
 import github.theworksofbh.buildersparadise.items.ModItems;
 import github.theworksofbh.buildersparadise.recipes.FletchingRecipeBuilder;
+import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.advancements.critereon.MinMaxBounds;
 import net.minecraft.advancements.critereon.PlayerTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -27,6 +30,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.conditions.NeoForgeConditions;
 
 import javax.annotation.Nullable;
+import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipesProvider extends RecipeProvider {
@@ -724,6 +729,95 @@ public class ModRecipesProvider extends RecipeProvider {
 
         this.woodenBoat(ModItems.WARPED_BOAT.get(), Items.WARPED_PLANKS);
         this.chestBoat(ModItems.WARPED_CHEST_BOAT.get(), ModItems.WARPED_BOAT.get());
+
+        this.createCrafter(ModItems.OAK_CRAFTER.get(), ModItems.OAK_CRAFTING_TABLE.get());
+        this.createCrafter(ModItems.SPRUCE_CRAFTER.get(), ModItems.SPRUCE_CRAFTING_TABLE.get());
+        this.createCrafter(ModItems.BIRCH_CRAFTER.get(), ModItems.BIRCH_CRAFTING_TABLE.get());
+        this.createCrafter(ModItems.JUNGLE_CRAFTER.get(), ModItems.JUNGLE_CRAFTING_TABLE.get());
+        this.createCrafter(ModItems.ACACIA_CRAFTER.get(), ModItems.ACACIA_CRAFTING_TABLE.get());
+        this.createCrafter(ModItems.DARK_OAK_CRAFTER.get(), ModItems.DARK_OAK_CRAFTING_TABLE.get());
+        this.createCrafter(ModItems.CRIMSON_CRAFTER.get(), ModItems.CRIMSON_CRAFTING_TABLE.get());
+        this.createCrafter(ModItems.WARPED_CRAFTER.get(), ModItems.WARPED_CRAFTING_TABLE.get());
+        this.createCrafter(ModItems.MANGROVE_CRAFTER.get(), ModItems.MANGROVE_CRAFTING_TABLE.get());
+        this.createCrafter(ModItems.CHERRY_CRAFTER.get(), ModItems.CHERRY_CRAFTING_TABLE.get());
+        this.createCrafter(ModItems.BAMBOO_CRAFTER.get(), ModItems.BAMBOO_CRAFTING_TABLE.get());
+        this.createCrafter(ModItems.PALE_OAK_CRAFTER.get(), ModItems.PALE_OAK_CRAFTING_TABLE.get());
+
+        this.shaped(RecipeCategory.REDSTONE, Items.CRAFTER)
+                .define('#', Items.IRON_INGOT)
+                .define('C', Items.CRAFTING_TABLE)
+                .define('R', Items.REDSTONE)
+                .define('D', Items.DROPPER)
+                .pattern("###")
+                .pattern("#C#")
+                .pattern("RDR")
+                .unlockedBy("has_dropper", this.has(Items.DROPPER))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.createMinecart(ModItems.STONE_FURNACE_MINECART.get(), ModItems.STONE_FURNACE.get());
+        this.createMinecart(ModItems.BLACKSTONE_FURNACE_MINECART.get(), ModItems.BLACKSTONE_FURNACE.get());
+        this.createMinecart(ModItems.DEEPSLATE_FURNACE_MINECART.get(), ModItems.DEEPSLATE_FURNACE.get());
+
+        this.shapeless(RecipeCategory.TRANSPORTATION, Items.FURNACE_MINECART)
+                .requires(Items.FURNACE)
+                .requires(Items.MINECART)
+                .unlockedBy("has_minecart", this.has(Items.MINECART))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.createChests(ModItems.OAK_CHEST.get(), ModItems.OAK_TRAPPED_CHEST.get(), Items.OAK_PLANKS);
+        this.createChests(ModItems.SPRUCE_CHEST.get(), ModItems.SPRUCE_TRAPPED_CHEST.get(), Items.SPRUCE_PLANKS);
+        this.createChests(ModItems.BIRCH_CHEST.get(), ModItems.BIRCH_TRAPPED_CHEST.get(), Items.BIRCH_PLANKS);
+        this.createChests(ModItems.JUNGLE_CHEST.get(), ModItems.JUNGLE_TRAPPED_CHEST.get(), Items.JUNGLE_PLANKS);
+        this.createChests(ModItems.ACACIA_CHEST.get(), ModItems.ACACIA_TRAPPED_CHEST.get(), Items.ACACIA_PLANKS);
+        this.createChests(ModItems.DARK_OAK_CHEST.get(), ModItems.DARK_OAK_TRAPPED_CHEST.get(), Items.DARK_OAK_PLANKS);
+        this.createChests(ModItems.CRIMSON_CHEST.get(), ModItems.CRIMSON_TRAPPED_CHEST.get(), Items.CRIMSON_PLANKS);
+        this.createChests(ModItems.WARPED_CHEST.get(), ModItems.WARPED_TRAPPED_CHEST.get(), Items.WARPED_PLANKS);
+        this.createChests(ModItems.MANGROVE_CHEST.get(), ModItems.MANGROVE_TRAPPED_CHEST.get(), Items.MANGROVE_PLANKS);
+        this.createChests(ModItems.CHERRY_CHEST.get(), ModItems.CHERRY_TRAPPED_CHEST.get(), Items.CHERRY_PLANKS);
+        this.createChests(ModItems.BAMBOO_CHEST.get(), ModItems.BAMBOO_TRAPPED_CHEST.get(), Items.BAMBOO_PLANKS);
+        this.createChests(ModItems.PALE_OAK_CHEST.get(), ModItems.PALE_OAK_TRAPPED_CHEST.get(), Items.PALE_OAK_PLANKS);
+
+        this.shaped(RecipeCategory.DECORATIONS, Items.CHEST)
+                .define('#', ItemTags.PLANKS)
+                .pattern("###")
+                .pattern("# #")
+                .pattern("###")
+                .unlockedBy("has_lots_of_items", CriteriaTriggers.INVENTORY_CHANGED.createCriterion(new InventoryChangeTrigger.TriggerInstance(Optional.empty(), new InventoryChangeTrigger.TriggerInstance.Slots(MinMaxBounds.Ints.atLeast(10), MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY), List.of())))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.shapeless(RecipeCategory.REDSTONE, Items.TRAPPED_CHEST)
+                .requires(Items.CHEST)
+                .requires(Items.TRIPWIRE_HOOK)
+                .unlockedBy("has_tripwire_hook", this.has(Items.TRIPWIRE_HOOK))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.shaped(RecipeCategory.DECORATIONS, Items.SHULKER_BOX)
+                .define('#', Ingredient.of(new Item[]{ModItems.OAK_CHEST.get(), ModItems.SPRUCE_CHEST.get(), ModItems.BIRCH_CHEST.get(), ModItems.JUNGLE_CHEST.get(), ModItems.ACACIA_CHEST.get(), ModItems.DARK_OAK_CHEST.get(), ModItems.CRIMSON_CHEST.get(), ModItems.WARPED_CHEST.get(), ModItems.MANGROVE_CHEST.get(), ModItems.CHERRY_CHEST.get(), ModItems.BAMBOO_CHEST.get(), ModItems.PALE_OAK_CHEST.get()}))
+                .define('-', Items.SHULKER_SHELL)
+                .pattern("-")
+                .pattern("#")
+                .pattern("-")
+                .unlockedBy("has_shulker_shell", this.has(Items.SHULKER_SHELL))
+                .save(this.output);
+
+        this.shaped(RecipeCategory.REDSTONE, Items.HOPPER)
+                .define('C', Ingredient.of(new Item[]{ModItems.OAK_CHEST.get(), ModItems.SPRUCE_CHEST.get(), ModItems.BIRCH_CHEST.get(), ModItems.JUNGLE_CHEST.get(), ModItems.ACACIA_CHEST.get(), ModItems.DARK_OAK_CHEST.get(), ModItems.CRIMSON_CHEST.get(), ModItems.WARPED_CHEST.get(), ModItems.MANGROVE_CHEST.get(), ModItems.CHERRY_CHEST.get(), ModItems.BAMBOO_CHEST.get(), ModItems.PALE_OAK_CHEST.get()}))
+                .define('I', Items.IRON_INGOT)
+                .pattern("I I")
+                .pattern("ICI")
+                .pattern(" I ")
+                .unlockedBy("has_iron_ingot", this.has(Items.IRON_INGOT))
+                .save(this.output);
+
+        this.shaped(RecipeCategory.DECORATIONS, Items.COPPER_CHEST)
+                .define('#', Items.COPPER_INGOT)
+                .define('X', Ingredient.of(new Item[]{ModItems.OAK_CHEST.get(), ModItems.SPRUCE_CHEST.get(), ModItems.BIRCH_CHEST.get(), ModItems.JUNGLE_CHEST.get(), ModItems.ACACIA_CHEST.get(), ModItems.DARK_OAK_CHEST.get(), ModItems.CRIMSON_CHEST.get(), ModItems.WARPED_CHEST.get(), ModItems.MANGROVE_CHEST.get(), ModItems.CHERRY_CHEST.get(), ModItems.BAMBOO_CHEST.get(), ModItems.PALE_OAK_CHEST.get()}))
+                .pattern("###")
+                .pattern("#X#")
+                .pattern("###")
+                .unlockedBy("has_copper_chest", this.has(Items.COPPER_CHEST))
+                .save(this.output);
+
     }
 
     @Override
@@ -732,6 +826,15 @@ public class ModRecipesProvider extends RecipeProvider {
                 .filter(
                         BlockFamily::shouldGenerateRecipe
                 ).forEach((p_359455_) -> this.generateRecipes(p_359455_, enabledFeatures));
+    }
+
+    protected void createMinecart(ItemLike minecart, ItemLike itemInsideMinecart) {
+        this.shapeless(RecipeCategory.TRANSPORTATION, minecart)
+                .requires(itemInsideMinecart)
+                .requires(Items.MINECART)
+                .unlockedBy("has_minecart", this.has(Items.MINECART))
+                .save(this.output);
+
     }
 
     protected void createWaxedRecipe(RecipeCategory recipeCategory, Item waxedBlock, Item baseBlock, String baseBlockId) {
@@ -752,6 +855,37 @@ public class ModRecipesProvider extends RecipeProvider {
                 .save(this.output);
     }
 
+    protected void createChests(ItemLike chest, ItemLike trappedChest, ItemLike planks) {
+        this.shaped(RecipeCategory.DECORATIONS, chest)
+                .define('#', planks)
+                .pattern("###")
+                .pattern("# #")
+                .pattern("###")
+                .unlockedBy("has_lots_of_items", CriteriaTriggers.INVENTORY_CHANGED.createCriterion(new InventoryChangeTrigger.TriggerInstance(Optional.empty(), new InventoryChangeTrigger.TriggerInstance.Slots(MinMaxBounds.Ints.atLeast(10), MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY), List.of())))
+                .save(this.output);
+
+        this.shapeless(RecipeCategory.REDSTONE, trappedChest)
+                .requires(chest)
+                .requires(Items.TRIPWIRE_HOOK)
+                .unlockedBy("has_tripwire_hook", this.has(Items.TRIPWIRE_HOOK))
+                .save(this.output);
+    }
+
+    protected void createCrafter(ItemLike crafter, ItemLike craftingTable) {
+        this.shaped(RecipeCategory.REDSTONE, crafter)
+                .define('#', Items.IRON_INGOT)
+                .define('C', craftingTable)
+                .define('R', Items.REDSTONE)
+                .define('D', Ingredient.of(new Item[]{ModItems.STONE_DROPPER.get(), ModItems.BLACKSTONE_DROPPER.get(), ModItems.DEEPSLATE_DROPPER.get()}))
+                .pattern("###")
+                .pattern("#C#")
+                .pattern("RDR")
+                .unlockedBy("has_stone_dropper", this.has(ModItems.STONE_DROPPER.get()))
+                .unlockedBy("has_blackstone_dropper", this.has(ModItems.BLACKSTONE_DROPPER.get()))
+                .unlockedBy("has_deepslate_dropper", this.has(ModItems.DEEPSLATE_DROPPER.get()))
+                .save(this.output);
+    }
+
     protected void createObserver(ItemLike observer, ItemLike stoneType) {
         this.shaped(RecipeCategory.REDSTONE, observer)
                 .define('Q', Items.QUARTZ)
@@ -761,7 +895,7 @@ public class ModRecipesProvider extends RecipeProvider {
                 .pattern("RRQ")
                 .pattern("###")
                 .unlockedBy("has_quartz", this.has(Items.QUARTZ))
-                .save(this.output.withConditions(NeoForgeConditions.never()));
+                .save(this.output);
     }
 
     protected void createDispensersDroppers(ItemLike dispenser, ItemLike dropper, ItemLike stoneIngredient) {

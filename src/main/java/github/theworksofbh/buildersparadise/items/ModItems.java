@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.AbstractBoat;
+import net.minecraft.world.entity.vehicle.AbstractMinecart;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -732,10 +733,53 @@ public class ModItems {
     public static final DeferredItem<Item> MUSIC_DISC_CIRCUITRIC_MAGNET = registerMusicDisc("music_disc_circuitric_magnet", ModJukeboxSongs.CIRCUITRIC_MAGNET);
     public static final DeferredItem<Item> MUSIC_DISC_ANGRY_BOYFRIENDS = registerMusicDisc("music_disc_angry_boyfriends", ModJukeboxSongs.ANGRY_BOYFRIENDS);
 
-    public static final DeferredItem<BoatItem> CRIMSON_BOAT = registerBoatItem("crimson_boat", ModEntities.CRIMSON_BOAT.get());
-    public static final DeferredItem<BoatItem> WARPED_BOAT = registerBoatItem("warped_boat", ModEntities.WARPED_BOAT.get());
-    public static final DeferredItem<BoatItem> CRIMSON_CHEST_BOAT = registerBoatItem("crimson_chest_boat", ModEntities.CRIMSON_CHEST_BOAT.get());
-    public static final DeferredItem<BoatItem> WARPED_CHEST_BOAT = registerBoatItem("warped_chest_boat", ModEntities.WARPED_CHEST_BOAT.get());
+    public static final DeferredItem<BoatItem> CRIMSON_BOAT = registerBoatItem("crimson_boat", () -> ModEntities.CRIMSON_BOAT.get());
+    public static final DeferredItem<BoatItem> WARPED_BOAT = registerBoatItem("warped_boat", () -> ModEntities.WARPED_BOAT.get());
+    public static final DeferredItem<BoatItem> CRIMSON_CHEST_BOAT = registerBoatItem("crimson_chest_boat", () -> ModEntities.CRIMSON_CHEST_BOAT.get());
+    public static final DeferredItem<BoatItem> WARPED_CHEST_BOAT = registerBoatItem("warped_chest_boat", () -> ModEntities.WARPED_CHEST_BOAT.get());
+
+    public static final DeferredItem<BlockItem> OAK_CRAFTER = registerBlockItem("oak_crafter", () -> Blocks.CRAFTER);
+    public static final DeferredItem<BlockItem> SPRUCE_CRAFTER = registerBlockItem("spruce_crafter", () -> ModBlocks.SPRUCE_CRAFTER.get());
+    public static final DeferredItem<BlockItem> BIRCH_CRAFTER = registerBlockItem("birch_crafter", () -> ModBlocks.BIRCH_CRAFTER.get());
+    public static final DeferredItem<BlockItem> JUNGLE_CRAFTER = registerBlockItem("jungle_crafter", () -> ModBlocks.JUNGLE_CRAFTER.get());
+    public static final DeferredItem<BlockItem> ACACIA_CRAFTER = registerBlockItem("acacia_crafter", () -> ModBlocks.ACACIA_CRAFTER.get());
+    public static final DeferredItem<BlockItem> DARK_OAK_CRAFTER = registerBlockItem("dark_oak_crafter", () -> ModBlocks.DARK_OAK_CRAFTER.get());
+    public static final DeferredItem<BlockItem> CRIMSON_CRAFTER = registerBlockItem("crimson_crafter", () -> ModBlocks.CRIMSON_CRAFTER.get());
+    public static final DeferredItem<BlockItem> WARPED_CRAFTER = registerBlockItem("warped_crafter", () -> ModBlocks.WARPED_CRAFTER.get());
+    public static final DeferredItem<BlockItem> MANGROVE_CRAFTER = registerBlockItem("mangrove_crafter", () -> ModBlocks.MANGROVE_CRAFTER.get());
+    public static final DeferredItem<BlockItem> CHERRY_CRAFTER = registerBlockItem("cherry_crafter", () -> ModBlocks.CHERRY_CRAFTER.get());
+    public static final DeferredItem<BlockItem> BAMBOO_CRAFTER = registerBlockItem("bamboo_crafter", () -> ModBlocks.BAMBOO_CRAFTER.get());
+    public static final DeferredItem<BlockItem> PALE_OAK_CRAFTER = registerBlockItem("pale_oak_crafter", () -> ModBlocks.PALE_OAK_CRAFTER.get());
+
+    public static final DeferredItem<MinecartItem> STONE_FURNACE_MINECART = registerMinecartItem("stone_furnace_minecart", () -> EntityType.FURNACE_MINECART);
+    public static final DeferredItem<MinecartItem> BLACKSTONE_FURNACE_MINECART = registerMinecartItem("blackstone_furnace_minecart", () -> ModEntities.BLACKSTONE_FURNACE_MINECART.get());
+    public static final DeferredItem<MinecartItem> DEEPSLATE_FURNACE_MINECART = registerMinecartItem("deepslate_furnace_minecart", () -> ModEntities.DEEPSLATE_FURNACE_MINECART.get());
+
+    public static final DeferredItem<BlockItem> OAK_CHEST = registerBlockItem("oak_chest", () -> Blocks.CHEST);
+    public static final DeferredItem<BlockItem> SPRUCE_CHEST = registerBlockItem("spruce_chest", () -> ModBlocks.SPRUCE_CHEST.get());
+    public static final DeferredItem<BlockItem> BIRCH_CHEST = registerBlockItem("birch_chest", () -> ModBlocks.BIRCH_CHEST.get());
+    public static final DeferredItem<BlockItem> JUNGLE_CHEST = registerBlockItem("jungle_chest", () -> ModBlocks.JUNGLE_CHEST.get());
+    public static final DeferredItem<BlockItem> ACACIA_CHEST = registerBlockItem("acacia_chest", () -> ModBlocks.ACACIA_CHEST.get());
+    public static final DeferredItem<BlockItem> DARK_OAK_CHEST = registerBlockItem("dark_oak_chest", () -> ModBlocks.DARK_OAK_CHEST.get());
+    public static final DeferredItem<BlockItem> CRIMSON_CHEST = registerBlockItem("crimson_chest", () -> ModBlocks.CRIMSON_CHEST.get());
+    public static final DeferredItem<BlockItem> WARPED_CHEST = registerBlockItem("warped_chest", () -> ModBlocks.WARPED_CHEST.get());
+    public static final DeferredItem<BlockItem> MANGROVE_CHEST = registerBlockItem("mangrove_chest", () -> ModBlocks.MANGROVE_CHEST.get());
+    public static final DeferredItem<BlockItem> CHERRY_CHEST = registerBlockItem("cherry_chest", () -> ModBlocks.CHERRY_CHEST.get());
+    public static final DeferredItem<BlockItem> BAMBOO_CHEST = registerBlockItem("bamboo_chest", () -> ModBlocks.BAMBOO_CHEST.get());
+    public static final DeferredItem<BlockItem> PALE_OAK_CHEST = registerBlockItem("pale_oak_chest", () -> ModBlocks.PALE_OAK_CHEST.get());
+
+    public static final DeferredItem<BlockItem> OAK_TRAPPED_CHEST = registerBlockItem("oak_trapped_chest", () -> Blocks.TRAPPED_CHEST);
+    public static final DeferredItem<BlockItem> SPRUCE_TRAPPED_CHEST = registerBlockItem("spruce_trapped_chest", () -> ModBlocks.SPRUCE_TRAPPED_CHEST.get());
+    public static final DeferredItem<BlockItem> BIRCH_TRAPPED_CHEST = registerBlockItem("birch_trapped_chest", () -> ModBlocks.BIRCH_TRAPPED_CHEST.get());
+    public static final DeferredItem<BlockItem> JUNGLE_TRAPPED_CHEST = registerBlockItem("jungle_trapped_chest", () -> ModBlocks.JUNGLE_TRAPPED_CHEST.get());
+    public static final DeferredItem<BlockItem> ACACIA_TRAPPED_CHEST = registerBlockItem("acacia_trapped_chest", () -> ModBlocks.ACACIA_TRAPPED_CHEST.get());
+    public static final DeferredItem<BlockItem> DARK_OAK_TRAPPED_CHEST = registerBlockItem("dark_oak_trapped_chest", () -> ModBlocks.DARK_OAK_TRAPPED_CHEST.get());
+    public static final DeferredItem<BlockItem> CRIMSON_TRAPPED_CHEST = registerBlockItem("crimson_trapped_chest", () -> ModBlocks.CRIMSON_TRAPPED_CHEST.get());
+    public static final DeferredItem<BlockItem> WARPED_TRAPPED_CHEST = registerBlockItem("warped_trapped_chest", () -> ModBlocks.WARPED_TRAPPED_CHEST.get());
+    public static final DeferredItem<BlockItem> MANGROVE_TRAPPED_CHEST = registerBlockItem("mangrove_trapped_chest", () -> ModBlocks.MANGROVE_TRAPPED_CHEST.get());
+    public static final DeferredItem<BlockItem> CHERRY_TRAPPED_CHEST = registerBlockItem("cherry_trapped_chest", () -> ModBlocks.CHERRY_TRAPPED_CHEST.get());
+    public static final DeferredItem<BlockItem> BAMBOO_TRAPPED_CHEST = registerBlockItem("bamboo_trapped_chest", () -> ModBlocks.BAMBOO_TRAPPED_CHEST.get());
+    public static final DeferredItem<BlockItem> PALE_OAK_TRAPPED_CHEST = registerBlockItem("pale_oak_trapped_chest", () -> ModBlocks.PALE_OAK_TRAPPED_CHEST.get());
 
     private static DeferredItem<Item> registerCustomItem(String registryName) {
         if (registryName == "netherite_nugget") {
@@ -834,9 +878,24 @@ public class ModItems {
         ));
     }
 
-    private static DeferredItem<BoatItem> registerBoatItem(String registryName, EntityType<? extends AbstractBoat> entityType) {
+    private static DeferredItem<BoatItem> registerBoatItem(String registryName, Supplier<? extends EntityType<? extends AbstractBoat>> entityType) {
         return ITEMS.register(registryName, () -> new BoatItem(
-                entityType,
+                entityType.get(),
+                new Item.Properties().stacksTo(1).setId(
+                        ResourceKey.create(
+                                Registries.ITEM,
+                                ResourceLocation.fromNamespaceAndPath(
+                                        BuildersParadise.MODID,
+                                        registryName
+                                )
+                        )
+                )
+        ));
+    }
+
+    private static DeferredItem<MinecartItem> registerMinecartItem(String registryName, Supplier<? extends EntityType<? extends AbstractMinecart>> entityType) {
+        return ITEMS.register(registryName, () -> new MinecartItem(
+                entityType.get(),
                 new Item.Properties().stacksTo(1).setId(
                         ResourceKey.create(
                                 Registries.ITEM,

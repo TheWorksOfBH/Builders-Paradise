@@ -5,10 +5,12 @@
   "mixins": [
     "BlockBehaviourMixins",
     "BlocksMixins",
+    "ChestRendererMixins",
     "CraftingMenuMixins",
     "CartographyTableMenuMixins",
     "GrindstoneMenuMixins",
     "LoomMenuMixins",
+    "MinecartFurnaceMixins",
     "SmithingMenuMixins"
   ],
   "client": [

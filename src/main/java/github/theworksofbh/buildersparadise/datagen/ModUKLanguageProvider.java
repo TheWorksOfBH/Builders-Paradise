@@ -112,6 +112,8 @@ public class ModUKLanguageProvider extends LanguageProvider {
             reformatted = replaced.replace("effect.buildersparadise.", "");
         } else if (replaced.contains("stat")) {
             reformatted = replaced.replace("stat.buildersparadise.", "");
+        } else if (replaced.contains("entity")) {
+            reformatted = replaced.replace("entity.buildersparadise.", "");
         }
 
         if (reformatted.contains("iron block")) {
@@ -168,6 +170,10 @@ public class ModUKLanguageProvider extends LanguageProvider {
             readjusted = reformatted.replace("steel block", "block of steel");
         } else if (reformatted.contains("music disc")) {
             readjusted = "music disc";
+        } else if (reformatted.contains("chest boat")) {
+            readjusted = reformatted.replace("chest boat", "boat with chest");
+        } else if (reformatted.contains("minecart")) {
+            readjusted = "minecart with " + reformatted.replace(" minecart", "");
         } else {
             readjusted = reformatted;
         }
@@ -184,7 +190,7 @@ public class ModUKLanguageProvider extends LanguageProvider {
 
         for (String word : words) {
             if (!word.isEmpty()) {
-                if (word.equals("of")) {
+                if (word.equals("of") || word.equals("with")){
                     result.append(word).append(" ");
                 } else {
                     result.append(Character.toUpperCase(word.charAt(0)))

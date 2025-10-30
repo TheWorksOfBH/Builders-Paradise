@@ -3,6 +3,7 @@ package github.theworksofbh.buildersparadise.datagen;
 import com.mojang.datafixers.util.Pair;
 import github.theworksofbh.buildersparadise.block.ModBlockFamilies;
 import github.theworksofbh.buildersparadise.block.ModBlocks;
+import github.theworksofbh.buildersparadise.renderers.ModChestSpecialRenderers;
 import github.theworksofbh.buildersparadise.items.ModItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelOutput;
@@ -15,14 +16,12 @@ import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.renderer.block.model.VariantMutator;
 import net.minecraft.client.renderer.block.model.multipart.CombinedCondition;
 import net.minecraft.client.renderer.block.model.multipart.Condition;
+import net.minecraft.client.renderer.special.ChestSpecialRenderer;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.BeehiveBlock;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.ChiseledBookShelfBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
@@ -95,6 +94,52 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
             throw new RuntimeException(e);
         }
         return provider;
+    }
+
+    public void createCustomChests() {
+        this.createChest(ModBlocks.SPRUCE_CHEST.get(), Blocks.SPRUCE_PLANKS, ModChestSpecialRenderers.SPRUCE_CHEST_TEXTURE, true);
+        this.createChest(ModBlocks.BIRCH_CHEST.get(), Blocks.BIRCH_PLANKS, ModChestSpecialRenderers.BIRCH_CHEST_TEXTURE, true);
+        this.createChest(ModBlocks.JUNGLE_CHEST.get(), Blocks.JUNGLE_PLANKS, ModChestSpecialRenderers.JUNGLE_CHEST_TEXTURE, true);
+        this.createChest(ModBlocks.ACACIA_CHEST.get(), Blocks.ACACIA_PLANKS, ModChestSpecialRenderers.ACACIA_CHEST_TEXTURE, true);
+        this.createChest(ModBlocks.DARK_OAK_CHEST.get(), Blocks.DARK_OAK_PLANKS, ModChestSpecialRenderers.DARK_OAK_CHEST_TEXTURE, true);
+        this.createChest(ModBlocks.CRIMSON_CHEST.get(), Blocks.CRIMSON_PLANKS, ModChestSpecialRenderers.CRIMSON_CHEST_TEXTURE, true);
+        this.createChest(ModBlocks.WARPED_CHEST.get(), Blocks.WARPED_PLANKS, ModChestSpecialRenderers.WARPED_CHEST_TEXTURE, true);
+        this.createChest(ModBlocks.MANGROVE_CHEST.get(), Blocks.MANGROVE_PLANKS, ModChestSpecialRenderers.MANGROVE_CHEST_TEXTURE, true);
+        this.createChest(ModBlocks.CHERRY_CHEST.get(), Blocks.CHERRY_PLANKS, ModChestSpecialRenderers.CHERRY_CHEST_TEXTURE, true);
+        this.createChest(ModBlocks.BAMBOO_CHEST.get(), Blocks.BAMBOO_PLANKS, ModChestSpecialRenderers.BAMBOO_CHEST_TEXTURE, true);
+        this.createChest(ModBlocks.PALE_OAK_CHEST.get(), Blocks.PALE_OAK_PLANKS, ModChestSpecialRenderers.PALE_OAK_CHEST_TEXTURE, true);
+        this.itemModelOutput.accept(ModItems.OAK_CHEST.get(),
+                ItemModelUtils.isXmas(
+                        ItemModelUtils.specialModel(
+                                ResourceLocation.parse("minecraft:item/chest"),
+                                new ChestSpecialRenderer.Unbaked(ChestSpecialRenderer.GIFT_CHEST_TEXTURE)),
+                        ItemModelUtils.specialModel(
+                                ResourceLocation.parse("minecraft:item/chest"),
+                                new ChestSpecialRenderer.Unbaked(ChestSpecialRenderer.NORMAL_CHEST_TEXTURE))
+                )
+        );
+
+        this.createChest(ModBlocks.SPRUCE_TRAPPED_CHEST.get(), Blocks.SPRUCE_PLANKS, ModChestSpecialRenderers.SPRUCE_TRAPPED_CHEST_TEXTURE, true);
+        this.createChest(ModBlocks.BIRCH_TRAPPED_CHEST.get(), Blocks.BIRCH_PLANKS, ModChestSpecialRenderers.BIRCH_TRAPPED_CHEST_TEXTURE, true);
+        this.createChest(ModBlocks.JUNGLE_TRAPPED_CHEST.get(), Blocks.JUNGLE_PLANKS, ModChestSpecialRenderers.JUNGLE_TRAPPED_CHEST_TEXTURE, true);
+        this.createChest(ModBlocks.ACACIA_TRAPPED_CHEST.get(), Blocks.ACACIA_PLANKS, ModChestSpecialRenderers.ACACIA_TRAPPED_CHEST_TEXTURE, true);
+        this.createChest(ModBlocks.DARK_OAK_TRAPPED_CHEST.get(), Blocks.DARK_OAK_PLANKS, ModChestSpecialRenderers.DARK_OAK_TRAPPED_CHEST_TEXTURE, true);
+        this.createChest(ModBlocks.CRIMSON_TRAPPED_CHEST.get(), Blocks.CRIMSON_PLANKS, ModChestSpecialRenderers.CRIMSON_TRAPPED_CHEST_TEXTURE, true);
+        this.createChest(ModBlocks.WARPED_TRAPPED_CHEST.get(), Blocks.WARPED_PLANKS, ModChestSpecialRenderers.WARPED_TRAPPED_CHEST_TEXTURE, true);
+        this.createChest(ModBlocks.MANGROVE_TRAPPED_CHEST.get(), Blocks.MANGROVE_PLANKS, ModChestSpecialRenderers.MANGROVE_TRAPPED_CHEST_TEXTURE, true);
+        this.createChest(ModBlocks.CHERRY_TRAPPED_CHEST.get(), Blocks.CHERRY_PLANKS, ModChestSpecialRenderers.CHERRY_TRAPPED_CHEST_TEXTURE, true);
+        this.createChest(ModBlocks.BAMBOO_TRAPPED_CHEST.get(), Blocks.BAMBOO_PLANKS, ModChestSpecialRenderers.BAMBOO_TRAPPED_CHEST_TEXTURE, true);
+        this.createChest(ModBlocks.PALE_OAK_TRAPPED_CHEST.get(), Blocks.PALE_OAK_PLANKS, ModChestSpecialRenderers.PALE_OAK_TRAPPED_CHEST_TEXTURE, true);
+        this.itemModelOutput.accept(ModItems.OAK_TRAPPED_CHEST.get(),
+                ItemModelUtils.isXmas(
+                        ItemModelUtils.specialModel(
+                                ResourceLocation.parse("minecraft:item/trapped_chest"),
+                                new ChestSpecialRenderer.Unbaked(ChestSpecialRenderer.GIFT_CHEST_TEXTURE)),
+                        ItemModelUtils.specialModel(
+                                ResourceLocation.parse("minecraft:item/trapped_chest"),
+                                new ChestSpecialRenderer.Unbaked(ChestSpecialRenderer.NORMAL_CHEST_TEXTURE))
+                )
+        );
     }
 
     public void createCustomCartographyTable(Block block, Block woodType) {
@@ -690,6 +735,50 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.blockStateOutput.accept(MultiVariantGenerator.dispatch(observerBlock).with(createBooleanModelDispatch(BlockStateProperties.POWERED, multivariant1, multivariant)).with(ROTATION_FACING));
     }
 
+    public void createCustomCrafterBlock(Block crafterBlock) {
+        ResourceLocation parent = ModelLocationUtils.getModelLocation(Blocks.CRAFTER);
+
+        ModelTemplate modelTemplate = new ModelTemplate(Optional.of(parent), Optional.empty(), TextureSlot.BOTTOM, TextureSlot.TOP, TextureSlot.NORTH, TextureSlot.SOUTH, TextureSlot.WEST, TextureSlot.EAST, TextureSlot.PARTICLE);
+
+        MultiVariant multivariant = plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
+                .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(Blocks.CRAFTER, "_bottom"))
+                .put(TextureSlot.TOP, TextureMapping.getBlockTexture(Blocks.CRAFTER, "_top"))
+                .put(TextureSlot.NORTH, TextureMapping.getBlockTexture(crafterBlock, "_north"))
+                .put(TextureSlot.SOUTH, TextureMapping.getBlockTexture(crafterBlock, "_south"))
+                .put(TextureSlot.EAST, TextureMapping.getBlockTexture(crafterBlock, "_east"))
+                .put(TextureSlot.WEST, TextureMapping.getBlockTexture(crafterBlock, "_west"))
+                .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(crafterBlock, "_north")), modelTemplate)
+                .create(crafterBlock, modelOutput));
+        MultiVariant multivariant1 = plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
+                        .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(Blocks.CRAFTER, "_bottom"))
+                        .put(TextureSlot.TOP, TextureMapping.getBlockTexture(Blocks.CRAFTER, "_top_triggered"))
+                        .put(TextureSlot.NORTH, TextureMapping.getBlockTexture(crafterBlock, "_north"))
+                        .put(TextureSlot.SOUTH, TextureMapping.getBlockTexture(crafterBlock, "_south_triggered"))
+                        .put(TextureSlot.EAST, TextureMapping.getBlockTexture(crafterBlock, "_east_triggered"))
+                        .put(TextureSlot.WEST, TextureMapping.getBlockTexture(crafterBlock, "_west_triggered"))
+                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(crafterBlock, "_north")), modelTemplate)
+                .createWithSuffix(crafterBlock, "_triggered", modelOutput));
+        MultiVariant multivariant2 = plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
+                        .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(Blocks.CRAFTER, "_bottom"))
+                        .put(TextureSlot.TOP, TextureMapping.getBlockTexture(Blocks.CRAFTER, "_top_crafting"))
+                        .put(TextureSlot.NORTH, TextureMapping.getBlockTexture(crafterBlock, "_north_crafting"))
+                        .put(TextureSlot.SOUTH, TextureMapping.getBlockTexture(crafterBlock, "_south_triggered"))
+                        .put(TextureSlot.EAST, TextureMapping.getBlockTexture(crafterBlock, "_east_crafting"))
+                        .put(TextureSlot.WEST, TextureMapping.getBlockTexture(crafterBlock, "_west_crafting"))
+                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(crafterBlock, "_north_crafting")), modelTemplate)
+                .createWithSuffix(crafterBlock, "_crafting", modelOutput));
+        MultiVariant multivariant3 = plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
+                        .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(Blocks.CRAFTER, "_bottom"))
+                        .put(TextureSlot.TOP, TextureMapping.getBlockTexture(Blocks.CRAFTER, "_top_crafting"))
+                        .put(TextureSlot.NORTH, TextureMapping.getBlockTexture(crafterBlock, "_north_crafting"))
+                        .put(TextureSlot.SOUTH, TextureMapping.getBlockTexture(crafterBlock, "_south_triggered"))
+                        .put(TextureSlot.EAST, TextureMapping.getBlockTexture(crafterBlock, "_east_crafting"))
+                        .put(TextureSlot.WEST, TextureMapping.getBlockTexture(crafterBlock, "_west_crafting"))
+                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(crafterBlock, "_north_crafting")), modelTemplate)
+                .createWithSuffix(crafterBlock, "_crafting_triggered", modelOutput));
+        this.blockStateOutput.accept(MultiVariantGenerator.dispatch(crafterBlock).with(PropertyDispatch.initial(BlockStateProperties.TRIGGERED, CrafterBlock.CRAFTING).select(false, false, multivariant).select(true, true, multivariant3).select(true, false, multivariant1).select(false, true, multivariant2)).with(PropertyDispatch.modify(BlockStateProperties.ORIENTATION).generate(BlockModelGenerators::applyRotation)));
+    }
+
     @Override
     public void run() {
         this.createTrivialCube(ModBlocks.POLISHED_CALCITE.get());
@@ -1174,6 +1263,20 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
 
         this.createCustomObserver(ModBlocks.BLACKSTONE_OBSERVER.get());
         this.createCustomObserver(ModBlocks.DEEPSLATE_OBSERVER.get());
+
+        this.createCustomCrafterBlock(ModBlocks.SPRUCE_CRAFTER.get());
+        this.createCustomCrafterBlock(ModBlocks.BIRCH_CRAFTER.get());
+        this.createCustomCrafterBlock(ModBlocks.JUNGLE_CRAFTER.get());
+        this.createCustomCrafterBlock(ModBlocks.ACACIA_CRAFTER.get());
+        this.createCustomCrafterBlock(ModBlocks.DARK_OAK_CRAFTER.get());
+        this.createCustomCrafterBlock(ModBlocks.CRIMSON_CRAFTER.get());
+        this.createCustomCrafterBlock(ModBlocks.WARPED_CRAFTER.get());
+        this.createCustomCrafterBlock(ModBlocks.MANGROVE_CRAFTER.get());
+        this.createCustomCrafterBlock(ModBlocks.CHERRY_CRAFTER.get());
+        this.createCustomCrafterBlock(ModBlocks.BAMBOO_CRAFTER.get());
+        this.createCustomCrafterBlock(ModBlocks.PALE_OAK_CRAFTER.get());
+
+        this.createCustomChests();
 
         ModBlockFamilies.getAllFamilies()
                 .filter(BlockFamily::shouldGenerateModel)

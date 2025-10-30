@@ -40,7 +40,10 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 Blocks.BARREL,
                 Blocks.DISPENSER,
                 Blocks.DROPPER,
-                Blocks.OBSERVER
+                Blocks.OBSERVER,
+                Blocks.CRAFTER,
+                Blocks.CHEST,
+                Blocks.TRAPPED_CHEST
         );
 
         Set<Block> handMadeBlocks = Set.of(
@@ -120,6 +123,14 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                         tag(ModBlockTags.DROPPERS).add(block);
                     } else if (block instanceof ObserverBlock) {
                         tag(ModBlockTags.OBSERVERS).add(block);
+                    } else if (block instanceof CrafterBlock) {
+                        tag(ModBlockTags.CRAFTERS).add(block);
+                    } else if (block instanceof ChestBlock || block instanceof TrappedChestBlock) {
+                        tag(BlockTags.GUARDED_BY_PIGLINS).add(block);
+                        tag(ModBlockTags.WOODEN_CHESTS).add(block);
+                        if (block instanceof TrappedChestBlock){
+                            tag(ModBlockTags.TRAPPED_CHESTS).add(block);
+                        }
                     }
                 }
         );

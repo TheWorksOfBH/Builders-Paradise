@@ -5,8 +5,10 @@ import github.theworksofbh.buildersparadise.fluids.ModFluids;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.FlowingFluid;
@@ -679,6 +681,42 @@ public class ModBlocks {
     public static final DeferredBlock<ObserverBlock> BLACKSTONE_OBSERVER = registerObserver("blackstone_observer");
     public static final DeferredBlock<ObserverBlock> DEEPSLATE_OBSERVER = registerObserver("deepslate_observer");
 
+    public static final DeferredBlock<CrafterBlock> SPRUCE_CRAFTER = registerCrafter("spruce_crafter");
+    public static final DeferredBlock<CrafterBlock> BIRCH_CRAFTER = registerCrafter("birch_crafter");
+    public static final DeferredBlock<CrafterBlock> JUNGLE_CRAFTER = registerCrafter("jungle_crafter");
+    public static final DeferredBlock<CrafterBlock> ACACIA_CRAFTER = registerCrafter("acacia_crafter");
+    public static final DeferredBlock<CrafterBlock> DARK_OAK_CRAFTER = registerCrafter("dark_oak_crafter");
+    public static final DeferredBlock<CrafterBlock> CRIMSON_CRAFTER = registerCrafter("crimson_crafter");
+    public static final DeferredBlock<CrafterBlock> WARPED_CRAFTER = registerCrafter("warped_crafter");
+    public static final DeferredBlock<CrafterBlock> MANGROVE_CRAFTER = registerCrafter("mangrove_crafter");
+    public static final DeferredBlock<CrafterBlock> CHERRY_CRAFTER = registerCrafter("cherry_crafter");
+    public static final DeferredBlock<CrafterBlock> BAMBOO_CRAFTER = registerCrafter("bamboo_crafter");
+    public static final DeferredBlock<CrafterBlock> PALE_OAK_CRAFTER = registerCrafter("pale_oak_crafter");
+
+    public static final DeferredBlock<ChestBlock> SPRUCE_CHEST = registerWoodenChest("spruce_chest");
+    public static final DeferredBlock<ChestBlock> BIRCH_CHEST = registerWoodenChest("birch_chest");
+    public static final DeferredBlock<ChestBlock> JUNGLE_CHEST = registerWoodenChest("jungle_chest");
+    public static final DeferredBlock<ChestBlock> ACACIA_CHEST = registerWoodenChest("acacia_chest");
+    public static final DeferredBlock<ChestBlock> DARK_OAK_CHEST = registerWoodenChest("dark_oak_chest");
+    public static final DeferredBlock<ChestBlock> CRIMSON_CHEST = registerWoodenChest("crimson_chest");
+    public static final DeferredBlock<ChestBlock> WARPED_CHEST = registerWoodenChest("warped_chest");
+    public static final DeferredBlock<ChestBlock> MANGROVE_CHEST = registerWoodenChest("mangrove_chest");
+    public static final DeferredBlock<ChestBlock> CHERRY_CHEST = registerWoodenChest("cherry_chest");
+    public static final DeferredBlock<ChestBlock> BAMBOO_CHEST = registerWoodenChest("bamboo_chest");
+    public static final DeferredBlock<ChestBlock> PALE_OAK_CHEST = registerWoodenChest("pale_oak_chest");
+
+    public static final DeferredBlock<TrappedChestBlock> SPRUCE_TRAPPED_CHEST = registerTrappedChest("spruce_trapped_chest");
+    public static final DeferredBlock<TrappedChestBlock> BIRCH_TRAPPED_CHEST = registerTrappedChest("birch_trapped_chest");
+    public static final DeferredBlock<TrappedChestBlock> JUNGLE_TRAPPED_CHEST = registerTrappedChest("jungle_trapped_chest");
+    public static final DeferredBlock<TrappedChestBlock> ACACIA_TRAPPED_CHEST = registerTrappedChest("acacia_trapped_chest");
+    public static final DeferredBlock<TrappedChestBlock> DARK_OAK_TRAPPED_CHEST = registerTrappedChest("dark_oak_trapped_chest");
+    public static final DeferredBlock<TrappedChestBlock> CRIMSON_TRAPPED_CHEST = registerTrappedChest("crimson_trapped_chest");
+    public static final DeferredBlock<TrappedChestBlock> WARPED_TRAPPED_CHEST = registerTrappedChest("warped_trapped_chest");
+    public static final DeferredBlock<TrappedChestBlock> MANGROVE_TRAPPED_CHEST = registerTrappedChest("mangrove_trapped_chest");
+    public static final DeferredBlock<TrappedChestBlock> CHERRY_TRAPPED_CHEST = registerTrappedChest("cherry_trapped_chest");
+    public static final DeferredBlock<TrappedChestBlock> BAMBOO_TRAPPED_CHEST = registerTrappedChest("bamboo_trapped_chest");
+    public static final DeferredBlock<TrappedChestBlock> PALE_OAK_TRAPPED_CHEST = registerTrappedChest("pale_oak_trapped_chest");
+
     public static DeferredBlock<CraftingTableBlock> registerCraftingTable(String registryName) {
         if (registryName == "crimson_crafting_table" || registryName == "warped_crafting_table") {
             return BLOCKS.register(
@@ -1069,6 +1107,148 @@ public class ModBlocks {
 
     }
 
+    public static DeferredBlock<ChestBlock> registerWoodenChest(String registryName) {
+        if (registryName == "crimson_chest" || registryName == "warped_chest") {
+            return BLOCKS.register(
+                    registryName, () -> new ChestBlock(
+                            () -> BlockEntityType.CHEST,
+                            SoundEvents.CHEST_OPEN,
+                            SoundEvents.CHEST_CLOSE,
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.CHEST).sound(SoundType.NETHER_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "cherry_chest") {
+            return BLOCKS.register(
+                    registryName, () -> new ChestBlock(
+                            () -> BlockEntityType.CHEST,
+                            SoundEvents.CHEST_OPEN,
+                            SoundEvents.CHEST_CLOSE,
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.CHEST).sound(SoundType.CHERRY_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "bamboo_chest") {
+            return BLOCKS.register(
+                    registryName, () -> new ChestBlock(
+                            () -> BlockEntityType.CHEST,
+                            SoundEvents.CHEST_OPEN,
+                            SoundEvents.CHEST_CLOSE,
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.CHEST).sound(SoundType.BAMBOO_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new ChestBlock(
+                            () -> BlockEntityType.CHEST,
+                            SoundEvents.CHEST_OPEN,
+                            SoundEvents.CHEST_CLOSE,
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.CHEST)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        }
+
+    }
+
+    public static DeferredBlock<TrappedChestBlock> registerTrappedChest(String registryName) {
+        if (registryName == "crimson_trapped_chest" || registryName == "warped_trapped_chest") {
+            return BLOCKS.register(
+                    registryName, () -> new TrappedChestBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.TRAPPED_CHEST).sound(SoundType.NETHER_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "cherry_trapped_chest") {
+            return BLOCKS.register(
+                    registryName, () -> new TrappedChestBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.TRAPPED_CHEST).sound(SoundType.CHERRY_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else if (registryName == "bamboo_trapped_chest") {
+            return BLOCKS.register(
+                    registryName, () -> new TrappedChestBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.TRAPPED_CHEST).sound(SoundType.BAMBOO_WOOD)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new TrappedChestBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.TRAPPED_CHEST)
+                                    .setId(
+                                            ResourceKey.create(
+                                                    Registries.BLOCK,
+                                                    ResourceLocation.fromNamespaceAndPath(
+                                                            BuildersParadise.MODID,
+                                                            registryName
+                                                    )
+                                            )
+                                    )
+                    )
+            );
+        }
+
+    }
+
     public static DeferredBlock<SmithingTableBlock> registerSmithingTable(String registryName) {
         if (registryName == "crimson_smithing_table" || registryName == "warped_smithing_table") {
             return BLOCKS.register(
@@ -1366,6 +1546,23 @@ public class ModBlocks {
         return BLOCKS.register(
                 registryName, () -> new ChiseledBookShelfBlock(
                         BlockBehaviour.Properties.ofFullCopy(Blocks.CHISELED_BOOKSHELF)
+                                .setId(
+                                        ResourceKey.create(
+                                                Registries.BLOCK,
+                                                ResourceLocation.fromNamespaceAndPath(
+                                                        BuildersParadise.MODID,
+                                                        registryName
+                                                )
+                                        )
+                                )
+                )
+        );
+    }
+
+    public static DeferredBlock<CrafterBlock> registerCrafter(String registryName) {
+        return BLOCKS.register(
+                registryName, () -> new CrafterBlock(
+                        BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTER)
                                 .setId(
                                         ResourceKey.create(
                                                 Registries.BLOCK,
