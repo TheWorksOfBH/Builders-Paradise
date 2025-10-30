@@ -18,7 +18,6 @@ public class ModLiquidBlock extends LiquidBlock {
         super(fluid, properties);
     }
 
-    @Override
     protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity, InsideBlockEffectApplier effectApplier) {
         if (level.getDifficulty() != Difficulty.PEACEFUL && entity instanceof LivingEntity livingentity) {
             livingentity.addEffect(new MobEffectInstance(ModEffects.IRRADIATION_EFFECT, 135));
