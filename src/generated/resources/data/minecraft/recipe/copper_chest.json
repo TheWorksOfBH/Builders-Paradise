@@ -1,22 +1,14 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:never"
+    }
+  ],
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
     "#": "minecraft:copper_ingot",
-    "X": [
-      "buildersparadise:oak_chest",
-      "buildersparadise:spruce_chest",
-      "buildersparadise:birch_chest",
-      "buildersparadise:jungle_chest",
-      "buildersparadise:acacia_chest",
-      "buildersparadise:dark_oak_chest",
-      "buildersparadise:crimson_chest",
-      "buildersparadise:warped_chest",
-      "buildersparadise:mangrove_chest",
-      "buildersparadise:cherry_chest",
-      "buildersparadise:bamboo_chest",
-      "buildersparadise:pale_oak_chest"
-    ]
+    "X": "minecraft:chest"
   },
   "pattern": [
     "###",

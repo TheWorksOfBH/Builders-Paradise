@@ -58,6 +58,18 @@ public class ModItemModelGenerator extends ItemModelGenerators {
         this.generateFlatItem(ModItems.STONE_FURNACE_MINECART.get(), Items.FURNACE_MINECART, ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(ModItems.BLACKSTONE_FURNACE_MINECART.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(ModItems.DEEPSLATE_FURNACE_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.OAK_CHEST_MINECART.get(), Items.CHEST_MINECART, ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.SPRUCE_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.BIRCH_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.JUNGLE_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.ACACIA_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.DARK_OAK_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.CRIMSON_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.WARPED_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.MANGROVE_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.CHERRY_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.BAMBOO_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.PALE_OAK_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
 
     }
 }

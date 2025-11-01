@@ -1,7 +1,7 @@
 {
   "values": [
-    "minecraft:dispenser",
     "minecraft:dropper",
+    "minecraft:dispenser",
     "buildersparadise:blackstone_dispenser",
     "buildersparadise:deepslate_dispenser",
     "buildersparadise:blackstone_dropper",

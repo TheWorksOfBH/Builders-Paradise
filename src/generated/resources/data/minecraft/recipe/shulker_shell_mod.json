@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "#buildersparadise:chests",
+    "-": "minecraft:shulker_shell"
+  },
+  "pattern": [
+    "-",
+    "#",
+    "-"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:shulker_box"
+  }
+}

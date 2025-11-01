@@ -13,6 +13,17 @@ public class EntityLayersConfig {
         event.registerLayerDefinition(ModModelLayers.WARPED_CHEST_BOAT, BoatModel::createChestBoatModel);
         event.registerLayerDefinition(ModModelLayers.BLACKSTONE_FURNACE_MINECART, MinecartModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.DEEPSLATE_FURNACE_MINECART, MinecartModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SPRUCE_CHEST_MINECART, MinecartModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.BIRCH_CHEST_MINECART, MinecartModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.JUNGLE_CHEST_MINECART, MinecartModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.ACACIA_CHEST_MINECART, MinecartModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.DARK_OAK_CHEST_MINECART, MinecartModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.CRIMSON_CHEST_MINECART, MinecartModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.WARPED_CHEST_MINECART, MinecartModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.MANGROVE_CHEST_MINECART, MinecartModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.CHERRY_CHEST_MINECART, MinecartModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.BAMBOO_CHEST_MINECART, MinecartModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.PALE_OAK_CHEST_MINECART, MinecartModel::createBodyLayer);
 
     }
 }

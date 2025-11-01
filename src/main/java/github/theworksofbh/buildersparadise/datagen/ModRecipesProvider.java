@@ -6,6 +6,7 @@ import github.theworksofbh.buildersparadise.block.ModBlockFamilies;
 import github.theworksofbh.buildersparadise.block.ModBlocks;
 import github.theworksofbh.buildersparadise.items.ModItems;
 import github.theworksofbh.buildersparadise.recipes.FletchingRecipeBuilder;
+import github.theworksofbh.buildersparadise.tags.ModItemTags;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.MinMaxBounds;
@@ -792,32 +793,77 @@ public class ModRecipesProvider extends RecipeProvider {
                 .save(this.output.withConditions(NeoForgeConditions.never()));
 
         this.shaped(RecipeCategory.DECORATIONS, Items.SHULKER_BOX)
-                .define('#', Ingredient.of(new Item[]{ModItems.OAK_CHEST.get(), ModItems.SPRUCE_CHEST.get(), ModItems.BIRCH_CHEST.get(), ModItems.JUNGLE_CHEST.get(), ModItems.ACACIA_CHEST.get(), ModItems.DARK_OAK_CHEST.get(), ModItems.CRIMSON_CHEST.get(), ModItems.WARPED_CHEST.get(), ModItems.MANGROVE_CHEST.get(), ModItems.CHERRY_CHEST.get(), ModItems.BAMBOO_CHEST.get(), ModItems.PALE_OAK_CHEST.get()}))
+                .define('#', Items.CHEST)
                 .define('-', Items.SHULKER_SHELL)
                 .pattern("-")
                 .pattern("#")
                 .pattern("-")
                 .unlockedBy("has_shulker_shell", this.has(Items.SHULKER_SHELL))
-                .save(this.output);
+                .save(this.output.withConditions(NeoForgeConditions.never()));
 
         this.shaped(RecipeCategory.REDSTONE, Items.HOPPER)
-                .define('C', Ingredient.of(new Item[]{ModItems.OAK_CHEST.get(), ModItems.SPRUCE_CHEST.get(), ModItems.BIRCH_CHEST.get(), ModItems.JUNGLE_CHEST.get(), ModItems.ACACIA_CHEST.get(), ModItems.DARK_OAK_CHEST.get(), ModItems.CRIMSON_CHEST.get(), ModItems.WARPED_CHEST.get(), ModItems.MANGROVE_CHEST.get(), ModItems.CHERRY_CHEST.get(), ModItems.BAMBOO_CHEST.get(), ModItems.PALE_OAK_CHEST.get()}))
+                .define('C', Items.CHEST)
                 .define('I', Items.IRON_INGOT)
                 .pattern("I I")
                 .pattern("ICI")
                 .pattern(" I ")
                 .unlockedBy("has_iron_ingot", this.has(Items.IRON_INGOT))
-                .save(this.output);
+                .save(this.output.withConditions(NeoForgeConditions.never()));
 
         this.shaped(RecipeCategory.DECORATIONS, Items.COPPER_CHEST)
                 .define('#', Items.COPPER_INGOT)
-                .define('X', Ingredient.of(new Item[]{ModItems.OAK_CHEST.get(), ModItems.SPRUCE_CHEST.get(), ModItems.BIRCH_CHEST.get(), ModItems.JUNGLE_CHEST.get(), ModItems.ACACIA_CHEST.get(), ModItems.DARK_OAK_CHEST.get(), ModItems.CRIMSON_CHEST.get(), ModItems.WARPED_CHEST.get(), ModItems.MANGROVE_CHEST.get(), ModItems.CHERRY_CHEST.get(), ModItems.BAMBOO_CHEST.get(), ModItems.PALE_OAK_CHEST.get()}))
+                .define('X', Items.CHEST)
                 .pattern("###")
                 .pattern("#X#")
                 .pattern("###")
                 .unlockedBy("has_copper_chest", this.has(Items.COPPER_CHEST))
-                .save(this.output);
+                .save(this.output.withConditions(NeoForgeConditions.never()));
 
+        this.shaped(RecipeCategory.DECORATIONS, Items.SHULKER_BOX)
+                .define('#', ModItemTags.CHESTS)
+                .define('-', Items.SHULKER_SHELL)
+                .pattern("-")
+                .pattern("#")
+                .pattern("-")
+                .unlockedBy("has_shulker_shell", this.has(Items.SHULKER_SHELL))
+                .save(this.output, "shulker_shell_mod");
+
+        this.shaped(RecipeCategory.REDSTONE, Items.HOPPER)
+                .define('C', ModItemTags.CHESTS)
+                .define('I', Items.IRON_INGOT)
+                .pattern("I I")
+                .pattern("ICI")
+                .pattern(" I ")
+                .unlockedBy("has_iron_ingot", this.has(Items.IRON_INGOT))
+                .save(this.output, "hopper_mod");
+
+        this.shaped(RecipeCategory.DECORATIONS, Items.COPPER_CHEST)
+                .define('#', Items.COPPER_INGOT)
+                .define('X', ModItemTags.CHESTS)
+                .pattern("###")
+                .pattern("#X#")
+                .pattern("###")
+                .unlockedBy("has_copper_chest", this.has(Items.COPPER_CHEST))
+                .save(this.output, "copper_chest_mod");
+
+        this.shapeless(RecipeCategory.TRANSPORTATION, Items.CHEST_MINECART)
+                .requires(Items.CHEST)
+                .requires(Items.MINECART)
+                .unlockedBy("has_minecart", this.has(Items.MINECART))
+                .save(this.output.withConditions(NeoForgeConditions.never()));
+
+        this.createMinecart(ModItems.OAK_CHEST_MINECART.get(), ModItems.OAK_CHEST.get());
+        this.createMinecart(ModItems.SPRUCE_CHEST_MINECART.get(), ModItems.SPRUCE_CHEST.get());
+        this.createMinecart(ModItems.BIRCH_CHEST_MINECART.get(), ModItems.BIRCH_CHEST.get());
+        this.createMinecart(ModItems.JUNGLE_CHEST_MINECART.get(), ModItems.JUNGLE_CHEST.get());
+        this.createMinecart(ModItems.ACACIA_CHEST_MINECART.get(), ModItems.ACACIA_CHEST.get());
+        this.createMinecart(ModItems.DARK_OAK_CHEST_MINECART.get(), ModItems.DARK_OAK_CHEST.get());
+        this.createMinecart(ModItems.CRIMSON_CHEST_MINECART.get(), ModItems.CRIMSON_CHEST.get());
+        this.createMinecart(ModItems.WARPED_CHEST_MINECART.get(), ModItems.WARPED_CHEST.get());
+        this.createMinecart(ModItems.MANGROVE_CHEST_MINECART.get(), ModItems.MANGROVE_CHEST.get());
+        this.createMinecart(ModItems.CHERRY_CHEST_MINECART.get(), ModItems.CHERRY_CHEST.get());
+        this.createMinecart(ModItems.BAMBOO_CHEST_MINECART.get(), ModItems.BAMBOO_CHEST.get());
+        this.createMinecart(ModItems.PALE_OAK_CHEST_MINECART.get(), ModItems.PALE_OAK_CHEST.get());
     }
 
     @Override
@@ -876,7 +922,7 @@ public class ModRecipesProvider extends RecipeProvider {
                 .define('#', Items.IRON_INGOT)
                 .define('C', craftingTable)
                 .define('R', Items.REDSTONE)
-                .define('D', Ingredient.of(new Item[]{ModItems.STONE_DROPPER.get(), ModItems.BLACKSTONE_DROPPER.get(), ModItems.DEEPSLATE_DROPPER.get()}))
+                .define('D', ModItemTags.DROPPERS)
                 .pattern("###")
                 .pattern("#C#")
                 .pattern("RDR")

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "buildersparadise:crimson_chest",
+    "minecraft:minecart"
+  ],
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:crimson_chest_minecart"
+  }
+}

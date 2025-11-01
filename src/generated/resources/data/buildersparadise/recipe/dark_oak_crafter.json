@@ -4,11 +4,7 @@
   "key": {
     "#": "minecraft:iron_ingot",
     "C": "buildersparadise:dark_oak_crafting_table",
-    "D": [
-      "buildersparadise:stone_dropper",
-      "buildersparadise:blackstone_dropper",
-      "buildersparadise:deepslate_dropper"
-    ],
+    "D": "#buildersparadise:droppers",
     "R": "minecraft:redstone"
   },
   "pattern": [

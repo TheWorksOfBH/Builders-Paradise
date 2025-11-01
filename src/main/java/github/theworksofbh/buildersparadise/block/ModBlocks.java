@@ -1814,7 +1814,6 @@ public class ModBlocks {
         }
     }
 
-
     public static DeferredBlock<NukeBlock> registerNuke(String registryName) {
         return BLOCKS.register(
                 registryName, () -> new NukeBlock(

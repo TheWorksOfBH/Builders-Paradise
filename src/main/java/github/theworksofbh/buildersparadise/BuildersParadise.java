@@ -25,6 +25,7 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.client.event.RegisterSpecialBlockModelRendererEvent;
 import net.neoforged.neoforge.client.event.RenderBlockScreenEffectEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.common.NeoForge;
@@ -71,9 +72,12 @@ public class BuildersParadise
         modEventBus.addListener(this::addPOIBlocks);
         modEventBus.addListener(this::addBlockEntities);
         modEventBus.addListener(this::addEntityLayerRenderers);
+        modEventBus.addListener(this::addBlockEntityRenderers);
+
         NeoForge.EVENT_BUS.addListener(this::addEntityDamages);
         NeoForge.EVENT_BUS.addListener(this::addNoteBlockInstruments);
         NeoForge.EVENT_BUS.addListener(this::omitFireOverlayInBoats);
+
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -130,6 +134,10 @@ public class BuildersParadise
 
     private void omitFireOverlayInBoats(RenderBlockScreenEffectEvent event) {
         FireproofBoatConfig.onRenderOverlay(event);
+    }
+
+    private void addBlockEntityRenderers(RegisterSpecialBlockModelRendererEvent event){
+        BlockEntityModelRendersConfig.registerBlockEntities(event);
     }
 
     @EventBusSubscriber(modid = MODID, value = Dist.CLIENT)

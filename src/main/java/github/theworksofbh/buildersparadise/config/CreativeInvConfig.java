@@ -474,6 +474,11 @@ public class CreativeInvConfig {
             tabData.insertAfter(ModItems.BAMBOO_CRAFTER.get().getDefaultInstance(), ModItems.CRIMSON_CRAFTER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.CRIMSON_CRAFTER.get().getDefaultInstance(), ModItems.WARPED_CRAFTER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
+            tabData.remove(Items.FURNACE_MINECART.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.CHEST_MINECART.getDefaultInstance(), ModItems.STONE_FURNACE_MINECART.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(Items.CHEST_MINECART.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.HOPPER_MINECART.getDefaultInstance(), ModItems.OAK_CHEST_MINECART.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
         } else if (tabData.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             tabData.insertAfter(Items.PRISMARINE.getDefaultInstance(), ModItems.ELDER_PRISMARINE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(Items.SOUL_SAND.getDefaultInstance(), ModItems.SOUL_SANDSTONE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -822,6 +827,20 @@ public class CreativeInvConfig {
             tabData.insertAfter(Items.CHEST_MINECART.getDefaultInstance(), ModItems.STONE_FURNACE_MINECART.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.STONE_FURNACE_MINECART.get().getDefaultInstance(), ModItems.BLACKSTONE_FURNACE_MINECART.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.BLACKSTONE_FURNACE_MINECART.get().getDefaultInstance(), ModItems.DEEPSLATE_FURNACE_MINECART.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.remove(Items.CHEST_MINECART.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.HOPPER_MINECART.getDefaultInstance(), ModItems.OAK_CHEST_MINECART.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.OAK_CHEST_MINECART.get().getDefaultInstance(), ModItems.SPRUCE_CHEST_MINECART.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.SPRUCE_CHEST_MINECART.get().getDefaultInstance(), ModItems.BIRCH_CHEST_MINECART.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BIRCH_CHEST_MINECART.get().getDefaultInstance(), ModItems.JUNGLE_CHEST_MINECART.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.JUNGLE_CHEST_MINECART.get().getDefaultInstance(), ModItems.ACACIA_CHEST_MINECART.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.ACACIA_CHEST_MINECART.get().getDefaultInstance(), ModItems.DARK_OAK_CHEST_MINECART.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.DARK_OAK_CHEST_MINECART.get().getDefaultInstance(), ModItems.MANGROVE_CHEST_MINECART.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.MANGROVE_CHEST_MINECART.get().getDefaultInstance(), ModItems.CHERRY_CHEST_MINECART.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CHERRY_CHEST_MINECART.get().getDefaultInstance(), ModItems.PALE_OAK_CHEST_MINECART.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.PALE_OAK_CHEST_MINECART.get().getDefaultInstance(), ModItems.BAMBOO_CHEST_MINECART.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BAMBOO_CHEST_MINECART.get().getDefaultInstance(), ModItems.CRIMSON_CHEST_MINECART.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CRIMSON_CHEST_MINECART.get().getDefaultInstance(), ModItems.WARPED_CHEST_MINECART.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
         } else if (tabData.getTabKey() == CreativeModeTabs.COMBAT) {
             tabData.insertAfter(Items.TNT.getDefaultInstance(), ModItems.NUKE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);

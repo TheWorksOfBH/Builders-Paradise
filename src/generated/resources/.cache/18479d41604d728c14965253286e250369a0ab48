@@ -1,2 +1,4 @@
-// 1.21.9	2025-10-11T16:06:21.7228758	Tags for minecraft:item mod id buildersparadise
+// 1.21.10	2025-10-31T12:36:23.8562398	Tags for minecraft:item mod id buildersparadise
+856b23050e5dcac13b005737768f98f74bf6884c data/buildersparadise/tags/item/chests.json
+a85cbdb453d3706d010afa477d39de7fde7f35ef data/buildersparadise/tags/item/droppers.json
 44c7b347a02f560593111e6b05b5bb05421404af data/minecraft/tags/item/piglin_loved.json

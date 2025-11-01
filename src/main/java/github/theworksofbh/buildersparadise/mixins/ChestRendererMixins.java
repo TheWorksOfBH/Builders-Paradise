@@ -5,6 +5,7 @@ import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.ChestRenderer;
 import net.minecraft.client.renderer.blockentity.state.ChestRenderState;
 import net.minecraft.client.resources.model.Material;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ChestBlock;
@@ -25,9 +26,9 @@ public class ChestRendererMixins<T extends BlockEntity & LidBlockEntity> {
     @Unique
     private static Material getCustomChestPath(String path, boolean isTrapped, String part) {
         if (isTrapped) {
-            return new Material(Sheets.CHEST_SHEET, ResourceLocation.fromNamespaceAndPath(BuildersParadise.MODID, "entity/chest/" + path + "/trapped" + part));
+            return new Material(Sheets.CHEST_SHEET, ResourceLocation.fromNamespaceAndPath(BuildersParadise.MODID, "entity/chest" + path + "/trapped" + part));
         } else {
-            return new Material(Sheets.CHEST_SHEET, ResourceLocation.fromNamespaceAndPath(BuildersParadise.MODID, "entity/chest/" + path + "/normal" + part));
+            return new Material(Sheets.CHEST_SHEET, ResourceLocation.fromNamespaceAndPath(BuildersParadise.MODID, "entity/chest" + path + "/normal" + part));
         }
     }
 
@@ -50,17 +51,21 @@ public class ChestRendererMixins<T extends BlockEntity & LidBlockEntity> {
 
     @Inject(method = "getCustomMaterial", at = @At("HEAD"), cancellable = true)
     private void getModdedChestMaterial(T blockEntity, ChestRenderState renderState, CallbackInfoReturnable<Material> cir) {
-        boolean isTrapped;
-        String path;
-        Block chestBlock = blockEntity.getBlockState().getBlock();
-        ChestType chestType = blockEntity.getBlockState().getValue(ChestBlock.TYPE);
-        if (chestBlock instanceof TrappedChestBlock) {
-            isTrapped = true;
-            path = chestBlock.getDescriptionId().replace("block.buildersparadise.", "").replace("trapped_", "");
-        } else {
-            isTrapped = false;
-            path = chestBlock.getDescriptionId().replace("block.buildersparadise.", "");
+        Block block = blockEntity.getBlockState().getBlock();
+
+        if (!(block instanceof ChestBlock) && !(block instanceof TrappedChestBlock)) return;
+
+        ResourceLocation key = BuiltInRegistries.BLOCK.getKey(block);
+        if (key == null || !key.getNamespace().equals(BuildersParadise.MODID)) return;
+
+        boolean isTrapped = block instanceof TrappedChestBlock;
+        ChestType type = blockEntity.getBlockState().getValue(ChestBlock.TYPE);
+        String rawPath = key.getPath().replace("trapped_", "");
+        String path = "/" + rawPath;
+
+        Material mat = determineCustomMaterial(type, isTrapped, path);
+        if (mat != null) {
+            cir.setReturnValue(mat);
         }
-        cir.setReturnValue(determineCustomMaterial(chestType, isTrapped, path));
     }
 }

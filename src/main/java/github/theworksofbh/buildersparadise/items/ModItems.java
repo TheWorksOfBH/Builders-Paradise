@@ -781,6 +781,19 @@ public class ModItems {
     public static final DeferredItem<BlockItem> BAMBOO_TRAPPED_CHEST = registerBlockItem("bamboo_trapped_chest", () -> ModBlocks.BAMBOO_TRAPPED_CHEST.get());
     public static final DeferredItem<BlockItem> PALE_OAK_TRAPPED_CHEST = registerBlockItem("pale_oak_trapped_chest", () -> ModBlocks.PALE_OAK_TRAPPED_CHEST.get());
 
+    public static final DeferredItem<MinecartItem> OAK_CHEST_MINECART = registerMinecartItem("oak_chest_minecart", () -> EntityType.CHEST_MINECART);
+    public static final DeferredItem<MinecartItem> SPRUCE_CHEST_MINECART = registerMinecartItem("spruce_chest_minecart", () -> ModEntities.SPRUCE_CHEST_MINECART.get());
+    public static final DeferredItem<MinecartItem> BIRCH_CHEST_MINECART = registerMinecartItem("birch_chest_minecart", () -> ModEntities.BIRCH_CHEST_MINECART.get());
+    public static final DeferredItem<MinecartItem> JUNGLE_CHEST_MINECART = registerMinecartItem("jungle_chest_minecart", () -> ModEntities.JUNGLE_CHEST_MINECART.get());
+    public static final DeferredItem<MinecartItem> ACACIA_CHEST_MINECART = registerMinecartItem("acacia_chest_minecart", () -> ModEntities.ACACIA_CHEST_MINECART.get());
+    public static final DeferredItem<MinecartItem> DARK_OAK_CHEST_MINECART = registerMinecartItem("dark_oak_chest_minecart", () -> ModEntities.DARK_OAK_CHEST_MINECART.get());
+    public static final DeferredItem<MinecartItem> CRIMSON_CHEST_MINECART = registerMinecartItem("crimson_chest_minecart", () -> ModEntities.CRIMSON_CHEST_MINECART.get());
+    public static final DeferredItem<MinecartItem> WARPED_CHEST_MINECART = registerMinecartItem("warped_chest_minecart", () -> ModEntities.WARPED_CHEST_MINECART.get());
+    public static final DeferredItem<MinecartItem> MANGROVE_CHEST_MINECART = registerMinecartItem("mangrove_chest_minecart", () -> ModEntities.MANGROVE_CHEST_MINECART.get());
+    public static final DeferredItem<MinecartItem> CHERRY_CHEST_MINECART = registerMinecartItem("cherry_chest_minecart", () -> ModEntities.CHERRY_CHEST_MINECART.get());
+    public static final DeferredItem<MinecartItem> BAMBOO_CHEST_MINECART = registerMinecartItem("bamboo_chest_minecart", () -> ModEntities.BAMBOO_CHEST_MINECART.get());
+    public static final DeferredItem<MinecartItem> PALE_OAK_CHEST_MINECART = registerMinecartItem("pale_oak_chest_minecart", () -> ModEntities.PALE_OAK_CHEST_MINECART.get());
+
     private static DeferredItem<Item> registerCustomItem(String registryName) {
         if (registryName == "netherite_nugget") {
             return ITEMS.register(
