@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/coal_slab"
+    },
+    "type=double": {
+      "model": "minecraft:block/coal_block"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/coal_slab_top"
+    }
+  }
+}

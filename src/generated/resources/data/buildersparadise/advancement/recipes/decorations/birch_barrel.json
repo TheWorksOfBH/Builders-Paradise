@@ -6,7 +6,7 @@
   ],
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_block.minecraft.birch_planks": {
+    "has_birch_planks": {
       "conditions": {
         "items": [
           {
@@ -16,7 +16,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_block.minecraft.birch_slab": {
+    "has_birch_slab": {
       "conditions": {
         "items": [
           {
@@ -36,8 +36,8 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_block.minecraft.birch_planks",
-      "has_block.minecraft.birch_slab"
+      "has_birch_planks",
+      "has_birch_slab"
     ]
   ],
   "rewards": {

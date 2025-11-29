@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "buildersparadise:bronze"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "buildersparadise:bronze"
+      }
+    ]
+  }
+}

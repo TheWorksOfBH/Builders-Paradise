@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/corroded_cut_zinc_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/corroded_cut_zinc_slab"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/corroded_cut_zinc_slab_top"
+    }
+  }
+}

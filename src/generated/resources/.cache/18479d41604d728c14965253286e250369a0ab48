@@ -1,4 +1,8 @@
-// 1.21.10	2025-10-31T12:36:23.8562398	Tags for minecraft:item mod id buildersparadise
+// 1.21.10	2025-11-13T13:46:20.0455576	Tags for minecraft:item mod id buildersparadise
+c29e5ac914e914c7ff1ecfe43d740dc2d416071d data/buildersparadise/tags/item/bronze_tool_materials.json
 856b23050e5dcac13b005737768f98f74bf6884c data/buildersparadise/tags/item/chests.json
+c882f1fc924c7ace24f2ece6ec48f727ede793e9 data/buildersparadise/tags/item/concrete.json
 a85cbdb453d3706d010afa477d39de7fde7f35ef data/buildersparadise/tags/item/droppers.json
-44c7b347a02f560593111e6b05b5bb05421404af data/minecraft/tags/item/piglin_loved.json
+2c2e69dbf5efb2152e5f55c5b115869d2a389d54 data/buildersparadise/tags/item/repairs_bronze_armor.json
+1a38feabcaf1be26c9ce818e34c5b05dd62f150b data/minecraft/tags/item/beacon_payment_items.json
+e2e00ec5beaec4610e40f875bfb4bd5e065321eb data/minecraft/tags/item/piglin_loved.json

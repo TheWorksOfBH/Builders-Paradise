@@ -68,6 +68,11 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
             mapping.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(ModBlocks.SOUL_SANDSTONE.get(), "_top"));
             mapping.put(TextureSlot.TOP, TextureMapping.getBlockTexture(ModBlocks.SOUL_SANDSTONE.get(), "_top"));
             mapping.put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(ModBlocks.SOUL_SANDSTONE.get(), "_top"));
+        } else if (fullBlock == Blocks.SNOW_BLOCK) {
+            mapping = TexturedModel.CUBE.get(Blocks.SNOW).getMapping();
+            mapping.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(Blocks.SNOW, ""));
+            mapping.put(TextureSlot.TOP, TextureMapping.getBlockTexture(Blocks.SNOW, ""));
+            mapping.put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(Blocks.SNOW, ""));
         } else {
             TexturedModel texturedModel = BlockModelGenerators.TEXTURED_MODELS.getOrDefault(fullBlock, TexturedModel.CUBE.get(fullBlock));
             mapping = texturedModel.getMapping().put(TextureSlot.WALL, TextureMapping.getBlockTexture(fullBlock));
@@ -82,6 +87,8 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
             mapping.put(TextureSlot.WALL, TextureMapping.getBlockTexture(ModBlocks.SOUL_SANDSTONE.get(), "_top"));
         } else if (fullBlock == Blocks.SMOOTH_QUARTZ) {
             mapping.put(TextureSlot.WALL, TextureMapping.getBlockTexture(Blocks.QUARTZ_BLOCK, "_bottom"));
+        } else if (fullBlock == Blocks.SNOW_BLOCK) {
+            mapping.put(TextureSlot.WALL, TextureMapping.getBlockTexture(Blocks.SNOW, ""));
         } else {
             mapping.put(TextureSlot.WALL, TextureMapping.getBlockTexture(fullBlock, ""));
         }
@@ -779,6 +786,11 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.blockStateOutput.accept(MultiVariantGenerator.dispatch(crafterBlock).with(PropertyDispatch.initial(BlockStateProperties.TRIGGERED, CrafterBlock.CRAFTING).select(false, false, multivariant).select(true, true, multivariant3).select(true, false, multivariant1).select(false, true, multivariant2)).with(PropertyDispatch.modify(BlockStateProperties.ORIENTATION).generate(BlockModelGenerators::applyRotation)));
     }
 
+    public void createWaxedIronChain() {
+        this.createAxisAlignedPillarBlockCustomModel(ModBlocks.WAXED_IRON_CHAIN.get(), plainVariant(ResourceLocation.withDefaultNamespace("block/iron_chain")));
+        this.registerSimpleItemModel(ModItems.WAXED_IRON_CHAIN.get(), ResourceLocation.withDefaultNamespace("item/iron_chain"));
+    }
+
     @Override
     public void run() {
         this.createTrivialCube(ModBlocks.POLISHED_CALCITE.get());
@@ -829,59 +841,59 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createDoor(ModBlocks.NETHERITE_DOOR.get());
         this.createTrapdoor(ModBlocks.NETHERITE_TRAPDOOR.get());
 
-        this.createBarsBlock(ModBlocks.MILDLY_RUSTED_IRON_BARS.get());
-        this.createBarsBlock(ModBlocks.MODERATELY_RUSTED_IRON_BARS.get());
-        this.createBarsBlock(ModBlocks.EXTREMELY_RUSTED_IRON_BARS.get());
+        this.createBarsBlock(ModBlocks.EXPOSED_IRON_BARS.get());
+        this.createBarsBlock(ModBlocks.WEATHERED_IRON_BARS.get());
+        this.createBarsBlock(ModBlocks.RUSTED_IRON_BARS.get());
 
         this.createWaxedIronBars();
-        this.copyBarsModel(ModBlocks.MILDLY_RUSTED_IRON_BARS.get(), ModBlocks.WAXED_MILDLY_RUSTED_IRON_BARS.get());
-        this.copyBarsModel(ModBlocks.MODERATELY_RUSTED_IRON_BARS.get(), ModBlocks.WAXED_MODERATELY_RUSTED_IRON_BARS.get());
-        this.copyBarsModel(ModBlocks.EXTREMELY_RUSTED_IRON_BARS.get(), ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_BARS.get());
+        this.copyBarsModel(ModBlocks.EXPOSED_IRON_BARS.get(), ModBlocks.WAXED_EXPOSED_IRON_BARS.get());
+        this.copyBarsModel(ModBlocks.WEATHERED_IRON_BARS.get(), ModBlocks.WAXED_WEATHERED_IRON_BARS.get());
+        this.copyBarsModel(ModBlocks.RUSTED_IRON_BARS.get(), ModBlocks.WAXED_RUSTED_IRON_BARS.get());
 
-        this.createTrivialCube(ModBlocks.IRON_TILES.get());
-        this.createTrivialCube(ModBlocks.MILDLY_RUSTED_IRON_TILES.get());
-        this.createTrivialCube(ModBlocks.MODERATELY_RUSTED_IRON_TILES.get());
-        this.createTrivialCube(ModBlocks.EXTREMELY_RUSTED_IRON_TILES.get());
+        this.createTrivialCube(ModBlocks.CUT_IRON.get());
+        this.createTrivialCube(ModBlocks.EXPOSED_CUT_IRON.get());
+        this.createTrivialCube(ModBlocks.WEATHERED_CUT_IRON.get());
+        this.createTrivialCube(ModBlocks.RUSTED_CUT_IRON.get());
 
-        this.copyModel(ModBlocks.IRON_TILES.get(), ModBlocks.WAXED_IRON_TILES.get());
-        this.copyModel(ModBlocks.MILDLY_RUSTED_IRON_TILES.get(), ModBlocks.WAXED_MILDLY_RUSTED_IRON_TILES.get());
-        this.copyModel(ModBlocks.MODERATELY_RUSTED_IRON_TILES.get(), ModBlocks.WAXED_MODERATELY_RUSTED_IRON_TILES.get());
-        this.copyModel(ModBlocks.EXTREMELY_RUSTED_IRON_TILES.get(), ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_TILES.get());
+        this.copyModel(ModBlocks.CUT_IRON.get(), ModBlocks.WAXED_CUT_IRON.get());
+        this.copyModel(ModBlocks.EXPOSED_CUT_IRON.get(), ModBlocks.WAXED_EXPOSED_CUT_IRON.get());
+        this.copyModel(ModBlocks.WEATHERED_CUT_IRON.get(), ModBlocks.WAXED_WEATHERED_CUT_IRON.get());
+        this.copyModel(ModBlocks.RUSTED_CUT_IRON.get(), ModBlocks.WAXED_RUSTED_CUT_IRON.get());
 
-        this.copySlabModel(ModBlocks.IRON_TILE_SLAB.get(), ModBlocks.WAXED_IRON_TILE_SLAB.get());
-        this.copySlabModel(ModBlocks.MILDLY_RUSTED_IRON_TILE_SLAB.get(), ModBlocks.WAXED_MILDLY_RUSTED_IRON_TILE_SLAB.get());
-        this.copySlabModel(ModBlocks.MODERATELY_RUSTED_IRON_TILE_SLAB.get(), ModBlocks.WAXED_MODERATELY_RUSTED_IRON_TILE_SLAB.get());
-        this.copySlabModel(ModBlocks.EXTREMELY_RUSTED_IRON_TILE_SLAB.get(), ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_TILE_SLAB.get());
+        this.copySlabModel(ModBlocks.CUT_IRON_SLAB.get(), ModBlocks.WAXED_CUT_IRON_SLAB.get());
+        this.copySlabModel(ModBlocks.EXPOSED_CUT_IRON_SLAB.get(), ModBlocks.WAXED_EXPOSED_CUT_IRON_SLAB.get());
+        this.copySlabModel(ModBlocks.WEATHERED_CUT_IRON_SLAB.get(), ModBlocks.WAXED_WEATHERED_CUT_IRON_SLAB.get());
+        this.copySlabModel(ModBlocks.RUSTED_CUT_IRON_SLAB.get(), ModBlocks.WAXED_RUSTED_CUT_IRON_SLAB.get());
 
-        this.copyStairModel(ModBlocks.IRON_TILE_STAIRS.get(), ModBlocks.WAXED_IRON_TILE_STAIRS.get());
-        this.copyStairModel(ModBlocks.MILDLY_RUSTED_IRON_TILE_STAIRS.get(), ModBlocks.WAXED_MILDLY_RUSTED_IRON_TILE_STAIRS.get());
-        this.copyStairModel(ModBlocks.MODERATELY_RUSTED_IRON_TILE_STAIRS.get(), ModBlocks.WAXED_MODERATELY_RUSTED_IRON_TILE_STAIRS.get());
-        this.copyStairModel(ModBlocks.EXTREMELY_RUSTED_IRON_TILE_STAIRS.get(), ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_TILE_STAIRS.get());
+        this.copyStairModel(ModBlocks.CUT_IRON_STAIRS.get(), ModBlocks.WAXED_CUT_IRON_STAIRS.get());
+        this.copyStairModel(ModBlocks.EXPOSED_CUT_IRON_STAIRS.get(), ModBlocks.WAXED_EXPOSED_CUT_IRON_STAIRS.get());
+        this.copyStairModel(ModBlocks.WEATHERED_CUT_IRON_STAIRS.get(), ModBlocks.WAXED_WEATHERED_CUT_IRON_STAIRS.get());
+        this.copyStairModel(ModBlocks.RUSTED_CUT_IRON_STAIRS.get(), ModBlocks.WAXED_RUSTED_CUT_COPPER_STAIRS.get());
 
-        this.createDoor(ModBlocks.MILDLY_RUSTED_IRON_DOOR.get());
-        this.createDoor(ModBlocks.MODERATELY_RUSTED_IRON_DOOR.get());
-        this.createDoor(ModBlocks.EXTREMELY_RUSTED_IRON_DOOR.get());
+        this.createDoor(ModBlocks.EXPOSED_IRON_DOOR.get());
+        this.createDoor(ModBlocks.WEATHERED_IRON_DOOR.get());
+        this.createDoor(ModBlocks.RUSTED_IRON_DOOR.get());
 
         this.createWaxedIronDoor();
-        this.copyDoorModel(ModBlocks.MILDLY_RUSTED_IRON_DOOR.get(), ModBlocks.WAXED_MILDLY_RUSTED_IRON_DOOR.get());
-        this.copyDoorModel(ModBlocks.MODERATELY_RUSTED_IRON_DOOR.get(), ModBlocks.WAXED_MODERATELY_RUSTED_IRON_DOOR.get());
-        this.copyDoorModel(ModBlocks.EXTREMELY_RUSTED_IRON_DOOR.get(), ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_DOOR.get());
+        this.copyDoorModel(ModBlocks.EXPOSED_IRON_DOOR.get(), ModBlocks.WAXED_EXPOSED_IRON_DOOR.get());
+        this.copyDoorModel(ModBlocks.WEATHERED_IRON_DOOR.get(), ModBlocks.WAXED_WEATHERED_IRON_DOOR.get());
+        this.copyDoorModel(ModBlocks.RUSTED_IRON_DOOR.get(), ModBlocks.WAXED_RUSTED_IRON_DOOR.get());
 
-        this.createTrapdoor(ModBlocks.MILDLY_RUSTED_IRON_TRAPDOOR.get());
-        this.createTrapdoor(ModBlocks.MODERATELY_RUSTED_IRON_TRAPDOOR.get());
-        this.createTrapdoor(ModBlocks.EXTREMELY_RUSTED_IRON_TRAPDOOR.get());
+        this.createTrapdoor(ModBlocks.EXPOSED_IRON_TRAPDOOR.get());
+        this.createTrapdoor(ModBlocks.WEATHERED_IRON_TRAPDOOR.get());
+        this.createTrapdoor(ModBlocks.RUSTED_IRON_TRAPDOOR.get());
 
         this.createWaxedIronTrapdoor();
-        this.copyTrapdoorModel(ModBlocks.MILDLY_RUSTED_IRON_TRAPDOOR.get(), ModBlocks.WAXED_MILDLY_RUSTED_IRON_TRAPDOOR.get());
-        this.copyTrapdoorModel(ModBlocks.MODERATELY_RUSTED_IRON_TRAPDOOR.get(), ModBlocks.WAXED_MODERATELY_RUSTED_IRON_TRAPDOOR.get());
-        this.copyTrapdoorModel(ModBlocks.EXTREMELY_RUSTED_IRON_TRAPDOOR.get(), ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_TRAPDOOR.get());
+        this.copyTrapdoorModel(ModBlocks.EXPOSED_IRON_TRAPDOOR.get(), ModBlocks.WAXED_EXPOSED_IRON_TRAPDOOR.get());
+        this.copyTrapdoorModel(ModBlocks.WEATHERED_IRON_TRAPDOOR.get(), ModBlocks.WAXED_WEATHERED_IRON_TRAPDOOR.get());
+        this.copyTrapdoorModel(ModBlocks.RUSTED_IRON_TRAPDOOR.get(), ModBlocks.WAXED_RUSTED_IRON_TRAPDOOR.get());
 
         this.createTrivialCube(ModBlocks.SILVER_ORE.get());
         this.createTrivialCube(ModBlocks.DEEPSLATE_SILVER_ORE.get());
         this.createTrivialCube(ModBlocks.RAW_SILVER_BLOCK.get());
 
         this.createTrivialCube(ModBlocks.SILVER_BLOCK.get());
-        this.createTrivialCube(ModBlocks.SILVER_TILES.get());
+        this.createTrivialCube(ModBlocks.CUT_SILVER.get());
         this.createDoor(ModBlocks.SILVER_DOOR.get());
         this.createOrientableTrapdoor(ModBlocks.SILVER_TRAPDOOR.get());
         this.createWeightedPressurePlate(ModBlocks.NOTICEABLY_LIGHT_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.SILVER_BLOCK.get());
@@ -901,7 +913,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createTrivialCube(ModBlocks.RAW_TUNGSTEN_BLOCK.get());
 
         this.createTrivialCube(ModBlocks.TUNGSTEN_BLOCK.get());
-        this.createTrivialCube(ModBlocks.TUNGSTEN_TILES.get());
+        this.createTrivialCube(ModBlocks.CUT_TUNGSTEN.get());
         this.createDoor(ModBlocks.TUNGSTEN_DOOR.get());
         this.createTrapdoor(ModBlocks.TUNGSTEN_TRAPDOOR.get());
         this.createWeightedPressurePlate(ModBlocks.EXTRAORDINARILY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.TUNGSTEN_BLOCK.get());
@@ -911,7 +923,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createTrivialCube(ModBlocks.RAW_PLATINUM_BLOCK.get());
 
         this.createTrivialCube(ModBlocks.PLATINUM_BLOCK.get());
-        this.createTrivialCube(ModBlocks.PLATINUM_TILES.get());
+        this.createTrivialCube(ModBlocks.CUT_PLATINUM.get());
         this.createDoor(ModBlocks.PLATINUM_DOOR.get());
         this.createOrientableTrapdoor(ModBlocks.PLATINUM_TRAPDOOR.get());
         this.createWeightedPressurePlate(ModBlocks.EXTRAORDINARILY_LIGHT_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.PLATINUM_BLOCK.get());
@@ -921,7 +933,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createTrivialCube(ModBlocks.RAW_LEAD_BLOCK.get());
 
         this.createTrivialCube(ModBlocks.LEAD_BLOCK.get());
-        this.createTrivialCube(ModBlocks.LEAD_TILES.get());
+        this.createTrivialCube(ModBlocks.CUT_LEAD.get());
         this.createDoor(ModBlocks.LEAD_DOOR.get());
         this.createTrapdoor(ModBlocks.LEAD_TRAPDOOR.get());
         this.createWeightedPressurePlate(ModBlocks.NOTICEABLY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.LEAD_BLOCK.get());
@@ -931,7 +943,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createTrivialCube(ModBlocks.RAW_URANIUM_BLOCK.get());
 
         this.createTrivialCube(ModBlocks.URANIUM_BLOCK.get());
-        this.createTrivialCube(ModBlocks.URANIUM_TILES.get());
+        this.createTrivialCube(ModBlocks.CUT_URANIUM.get());
         this.createDoor(ModBlocks.URANIUM_DOOR.get());
         this.createTrapdoor(ModBlocks.URANIUM_TRAPDOOR.get());
         this.createWeightedPressurePlate(ModBlocks.NEGLIGIBLE_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.URANIUM_BLOCK.get());
@@ -941,77 +953,77 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createTrivialCube(ModBlocks.RAW_ZINC_BLOCK.get());
 
         this.createTrivialCube(ModBlocks.ZINC_BLOCK.get());
-        this.createTrivialCube(ModBlocks.SLIGHTLY_CORRODED_ZINC_BLOCK.get());
-        this.createTrivialCube(ModBlocks.SOMEWHAT_CORRODED_ZINC_BLOCK.get());
-        this.createTrivialCube(ModBlocks.REALLY_CORRODED_ZINC_BLOCK.get());
+        this.createTrivialCube(ModBlocks.EXPOSED_ZINC.get());
+        this.createTrivialCube(ModBlocks.WEATHERED_ZINC.get());
+        this.createTrivialCube(ModBlocks.CORRODED_ZINC.get());
 
-        this.createTrivialCube(ModBlocks.ZINC_TILES.get());
-        this.createTrivialCube(ModBlocks.SLIGHTLY_CORRODED_ZINC_TILES.get());
-        this.createTrivialCube(ModBlocks.SOMEWHAT_CORRODED_ZINC_TILES.get());
-        this.createTrivialCube(ModBlocks.REALLY_CORRODED_ZINC_TILES.get());
+        this.createTrivialCube(ModBlocks.CUT_ZINC.get());
+        this.createTrivialCube(ModBlocks.EXPOSED_CUT_ZINC.get());
+        this.createTrivialCube(ModBlocks.WEATHERED_CUT_ZINC.get());
+        this.createTrivialCube(ModBlocks.CORRODED_CUT_ZINC.get());
 
         this.createDoor(ModBlocks.ZINC_DOOR.get());
-        this.createDoor(ModBlocks.SLIGHTLY_CORRODED_ZINC_DOOR.get());
-        this.createDoor(ModBlocks.SOMEWHAT_CORRODED_ZINC_DOOR.get());
-        this.createDoor(ModBlocks.REALLY_CORRODED_ZINC_DOOR.get());
+        this.createDoor(ModBlocks.EXPOSED_ZINC_DOOR.get());
+        this.createDoor(ModBlocks.WEATHERED_ZINC_DOOR.get());
+        this.createDoor(ModBlocks.CORRODED_ZINC_DOOR.get());
 
         this.createOrientableTrapdoor(ModBlocks.ZINC_TRAPDOOR.get());
-        this.createOrientableTrapdoor(ModBlocks.SLIGHTLY_CORRODED_ZINC_TRAPDOOR.get());
-        this.createOrientableTrapdoor(ModBlocks.SOMEWHAT_CORRODED_ZINC_TRAPDOOR.get());
-        this.createOrientableTrapdoor(ModBlocks.REALLY_CORRODED_ZINC_TRAPDOOR.get());
+        this.createOrientableTrapdoor(ModBlocks.EXPOSED_ZINC_TRAPDOOR.get());
+        this.createOrientableTrapdoor(ModBlocks.WEATHERED_ZINC_TRAPDOOR.get());
+        this.createOrientableTrapdoor(ModBlocks.CORRODED_ZINC_TRAPDOOR.get());
 
         this.copyModel(ModBlocks.ZINC_BLOCK.get(), ModBlocks.WAXED_ZINC_BLOCK.get());
-        this.copyModel(ModBlocks.SLIGHTLY_CORRODED_ZINC_BLOCK.get(), ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_BLOCK.get());
-        this.copyModel(ModBlocks.SOMEWHAT_CORRODED_ZINC_BLOCK.get(), ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_BLOCK.get());
-        this.copyModel(ModBlocks.REALLY_CORRODED_ZINC_BLOCK.get(), ModBlocks.WAXED_REALLY_CORRODED_ZINC_BLOCK.get());
+        this.copyModel(ModBlocks.EXPOSED_ZINC.get(), ModBlocks.WAXED_EXPOSED_ZINC.get());
+        this.copyModel(ModBlocks.WEATHERED_ZINC.get(), ModBlocks.WAXED_WEATHERED_ZINC.get());
+        this.copyModel(ModBlocks.CORRODED_ZINC.get(), ModBlocks.WAXED_CORRODED_ZINC.get());
 
-        this.copyModel(ModBlocks.ZINC_TILES.get(), ModBlocks.WAXED_ZINC_TILES.get());
-        this.copyModel(ModBlocks.SLIGHTLY_CORRODED_ZINC_TILES.get(), ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_TILES.get());
-        this.copyModel(ModBlocks.SOMEWHAT_CORRODED_ZINC_TILES.get(), ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_TILES.get());
-        this.copyModel(ModBlocks.REALLY_CORRODED_ZINC_TILES.get(), ModBlocks.WAXED_REALLY_CORRODED_ZINC_TILES.get());
+        this.copyModel(ModBlocks.CUT_ZINC.get(), ModBlocks.WAXED_CUT_ZINC.get());
+        this.copyModel(ModBlocks.EXPOSED_CUT_ZINC.get(), ModBlocks.WAXED_EXPOSED_CUT_ZINC.get());
+        this.copyModel(ModBlocks.WEATHERED_CUT_ZINC.get(), ModBlocks.WAXED_WEATHERED_CUT_ZINC.get());
+        this.copyModel(ModBlocks.CORRODED_CUT_ZINC.get(), ModBlocks.WAXED_CORRODED_CUT_ZINC.get());
 
-        this.copySlabModel(ModBlocks.ZINC_TILE_SLAB.get(), ModBlocks.WAXED_ZINC_TILE_SLAB.get());
-        this.copySlabModel(ModBlocks.SLIGHTLY_CORRODED_ZINC_TILE_SLAB.get(), ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_TILE_SLAB.get());
-        this.copySlabModel(ModBlocks.SOMEWHAT_CORRODED_ZINC_TILE_SLAB.get(), ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_TILE_SLAB.get());
-        this.copySlabModel(ModBlocks.REALLY_CORRODED_ZINC_TILE_SLAB.get(), ModBlocks.WAXED_REALLY_CORRODED_ZINC_TILE_SLAB.get());
+        this.copySlabModel(ModBlocks.CUT_ZINC_SLAB.get(), ModBlocks.WAXED_CUT_ZINC_SLAB.get());
+        this.copySlabModel(ModBlocks.EXPOSED_CUT_ZINC_SLAB.get(), ModBlocks.WAXED_EXPOSED_CUT_ZINC_SLAB.get());
+        this.copySlabModel(ModBlocks.WEATHERED_CUT_ZINC_SLAB.get(), ModBlocks.WAXED_WEATHERED_CUT_ZINC_SLAB.get());
+        this.copySlabModel(ModBlocks.CORRODED_CUT_ZINC_SLAB.get(), ModBlocks.WAXED_CORRODED_CUT_ZINC_SLAB.get());
 
-        this.copyStairModel(ModBlocks.ZINC_TILE_STAIRS.get(), ModBlocks.WAXED_ZINC_TILE_STAIRS.get());
-        this.copyStairModel(ModBlocks.SLIGHTLY_CORRODED_ZINC_TILE_STAIRS.get(), ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_TILE_STAIRS.get());
-        this.copyStairModel(ModBlocks.SOMEWHAT_CORRODED_ZINC_TILE_STAIRS.get(), ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_TILE_STAIRS.get());
-        this.copyStairModel(ModBlocks.REALLY_CORRODED_ZINC_TILE_STAIRS.get(), ModBlocks.WAXED_REALLY_CORRODED_ZINC_TILE_STAIRS.get());
+        this.copyStairModel(ModBlocks.CUT_ZINC_STAIRS.get(), ModBlocks.WAXED_CUT_ZINC_STAIRS.get());
+        this.copyStairModel(ModBlocks.EXPOSED_CUT_ZINC_STAIRS.get(), ModBlocks.WAXED_EXPOSED_CUT_ZINC_STAIRS.get());
+        this.copyStairModel(ModBlocks.WEATHERED_CUT_ZINC_STAIRS.get(), ModBlocks.WAXED_WEATHERED_CUT_ZINC_STAIRS.get());
+        this.copyStairModel(ModBlocks.CORRODED_CUT_ZINC_STAIRS.get(), ModBlocks.WAXED_CORRODED_CUT_ZINC_STAIRS.get());
 
         this.copyDoorModel(ModBlocks.ZINC_DOOR.get(), ModBlocks.WAXED_ZINC_DOOR.get());
-        this.copyDoorModel(ModBlocks.SLIGHTLY_CORRODED_ZINC_DOOR.get(), ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_DOOR.get());
-        this.copyDoorModel(ModBlocks.SOMEWHAT_CORRODED_ZINC_DOOR.get(), ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_DOOR.get());
-        this.copyDoorModel(ModBlocks.REALLY_CORRODED_ZINC_DOOR.get(), ModBlocks.WAXED_REALLY_CORRODED_ZINC_DOOR.get());
+        this.copyDoorModel(ModBlocks.EXPOSED_ZINC_DOOR.get(), ModBlocks.WAXED_EXPOSED_ZINC_DOOR.get());
+        this.copyDoorModel(ModBlocks.WEATHERED_ZINC_DOOR.get(), ModBlocks.WAXED_WEATHERED_ZINC_DOOR.get());
+        this.copyDoorModel(ModBlocks.CORRODED_ZINC_DOOR.get(), ModBlocks.WAXED_CORRODED_ZINC_DOOR.get());
 
         this.copyTrapdoorModel(ModBlocks.ZINC_TRAPDOOR.get(), ModBlocks.WAXED_ZINC_TRAPDOOR.get());
-        this.copyTrapdoorModel(ModBlocks.SLIGHTLY_CORRODED_ZINC_TRAPDOOR.get(), ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_TRAPDOOR.get());
-        this.copyTrapdoorModel(ModBlocks.SOMEWHAT_CORRODED_ZINC_TRAPDOOR.get(), ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_TRAPDOOR.get());
-        this.copyTrapdoorModel(ModBlocks.REALLY_CORRODED_ZINC_TRAPDOOR.get(), ModBlocks.WAXED_REALLY_CORRODED_ZINC_TRAPDOOR.get());
+        this.copyTrapdoorModel(ModBlocks.EXPOSED_ZINC_TRAPDOOR.get(), ModBlocks.WAXED_EXPOSED_ZINC_TRAPDOOR.get());
+        this.copyTrapdoorModel(ModBlocks.WEATHERED_ZINC_TRAPDOOR.get(), ModBlocks.WAXED_WEATHERED_ZINC_TRAPDOOR.get());
+        this.copyTrapdoorModel(ModBlocks.CORRODED_ZINC_TRAPDOOR.get(), ModBlocks.WAXED_CORRODED_ZINC_TRAPDOOR.get());
 
-        this.createTrivialCube(ModBlocks.GOLD_TILES.get());
-        this.createTrivialCube(ModBlocks.DIAMOND_TILES.get());
-        this.createTrivialCube(ModBlocks.EMERALD_TILES.get());
-        this.createTrivialCube(ModBlocks.NETHERITE_TILES.get());
+        this.createTrivialCube(ModBlocks.CUT_GOLD.get());
+        this.createTrivialCube(ModBlocks.CUT_DIAMOND.get());
+        this.createTrivialCube(ModBlocks.CUT_EMERALD.get());
+        this.createTrivialCube(ModBlocks.CUT_NETHERITE.get());
 
-        this.createTrivialCube(ModBlocks.MILDLY_RUSTED_IRON_BLOCK.get());
-        this.createTrivialCube(ModBlocks.MODERATELY_RUSTED_IRON_BLOCK.get());
-        this.createTrivialCube(ModBlocks.EXTREMELY_RUSTED_IRON_BLOCK.get());
+        this.createTrivialCube(ModBlocks.EXPOSED_IRON.get());
+        this.createTrivialCube(ModBlocks.WEATHERED_IRON.get());
+        this.createTrivialCube(ModBlocks.RUSTED_IRON.get());
 
-        this.createWeightedPressurePlate(ModBlocks.MILDLY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.MILDLY_RUSTED_IRON_BLOCK.get());
-        this.createWeightedPressurePlate(ModBlocks.MODERATELY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.MODERATELY_RUSTED_IRON_BLOCK.get());
-        this.createWeightedPressurePlate(ModBlocks.EXTREMELY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.EXTREMELY_RUSTED_IRON_BLOCK.get());
+        this.createWeightedPressurePlate(ModBlocks.EXPOSED_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.EXPOSED_IRON.get());
+        this.createWeightedPressurePlate(ModBlocks.WEATHERED_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WEATHERED_IRON.get());
+        this.createWeightedPressurePlate(ModBlocks.RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.RUSTED_IRON.get());
 
         this.createWaxedIronPressurePlate();
-        this.copyWeightedPressurePlateModel(ModBlocks.MILDLY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_MILDLY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
-        this.copyWeightedPressurePlateModel(ModBlocks.MODERATELY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_MODERATELY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
-        this.copyWeightedPressurePlateModel(ModBlocks.EXTREMELY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_EXTREMELY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
+        this.copyWeightedPressurePlateModel(ModBlocks.EXPOSED_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_EXPOSED_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
+        this.copyWeightedPressurePlateModel(ModBlocks.WEATHERED_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_WEATHERED_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
+        this.copyWeightedPressurePlateModel(ModBlocks.RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
 
         this.createWaxedIronBlock();
-        this.copyModel(ModBlocks.MILDLY_RUSTED_IRON_BLOCK.get(), ModBlocks.WAXED_MILDLY_RUSTED_IRON_BLOCK.get());
-        this.copyModel(ModBlocks.MODERATELY_RUSTED_IRON_BLOCK.get(), ModBlocks.WAXED_MODERATELY_RUSTED_IRON_BLOCK.get());
-        this.copyModel(ModBlocks.EXTREMELY_RUSTED_IRON_BLOCK.get(), ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_BLOCK.get());
+        this.copyModel(ModBlocks.EXPOSED_IRON.get(), ModBlocks.WAXED_EXPOSED_IRON.get());
+        this.copyModel(ModBlocks.WEATHERED_IRON.get(), ModBlocks.WAXED_WEATHERED_IRON.get());
+        this.copyModel(ModBlocks.RUSTED_IRON.get(), ModBlocks.WAXED_RUSTED_IRON.get());
 
         this.createWeightedPressurePlate(ModBlocks.MEDIUM_WEIGHTED_PRESSURE_PLATE.get(), Blocks.COPPER_BLOCK);
         this.createWeightedPressurePlate(ModBlocks.EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get(), Blocks.EXPOSED_COPPER);
@@ -1024,14 +1036,14 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.copyWeightedPressurePlateModel(ModBlocks.OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get());
 
         this.createWeightedPressurePlate(ModBlocks.BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.ZINC_BLOCK.get());
-        this.createWeightedPressurePlate(ModBlocks.SLIGHTLY_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.SLIGHTLY_CORRODED_ZINC_BLOCK.get());
-        this.createWeightedPressurePlate(ModBlocks.SOMEWHAT_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.SOMEWHAT_CORRODED_ZINC_BLOCK.get());
-        this.createWeightedPressurePlate(ModBlocks.REALLY_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.REALLY_CORRODED_ZINC_BLOCK.get());
+        this.createWeightedPressurePlate(ModBlocks.EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.EXPOSED_ZINC.get());
+        this.createWeightedPressurePlate(ModBlocks.WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WEATHERED_ZINC.get());
+        this.createWeightedPressurePlate(ModBlocks.CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.CORRODED_ZINC.get());
 
         this.copyWeightedPressurePlateModel(ModBlocks.BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
-        this.copyWeightedPressurePlateModel(ModBlocks.SLIGHTLY_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_SLIGHTLY_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
-        this.copyWeightedPressurePlateModel(ModBlocks.SOMEWHAT_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_SOMEWHAT_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
-        this.copyWeightedPressurePlateModel(ModBlocks.REALLY_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_REALLY_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
+        this.copyWeightedPressurePlateModel(ModBlocks.EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
+        this.copyWeightedPressurePlateModel(ModBlocks.WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
+        this.copyWeightedPressurePlateModel(ModBlocks.CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
 
         this.createTrivialCube(ModBlocks.BRONZE_BLOCK.get());
         this.createTrivialCube(ModBlocks.CUT_BRONZE.get());
@@ -1040,13 +1052,13 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createCustomPressurePlate(ModBlocks.PASSIVE_MOB_ONLY_PRESSURE_PLATE.get(), ModBlocks.BRONZE_BLOCK.get());
 
         this.createTrivialCube(ModBlocks.BRASS_BLOCK.get());
-        this.createTrivialCube(ModBlocks.BRASS_TILES.get());
+        this.createTrivialCube(ModBlocks.CUT_BRASS.get());
         this.createDoor(ModBlocks.BRASS_DOOR.get());
         this.createTrapdoor(ModBlocks.BRASS_TRAPDOOR.get());
         this.createCustomPressurePlate(ModBlocks.HOSTILE_MOB_ONLY_PRESSURE_PLATE.get(), ModBlocks.BRASS_BLOCK.get());
 
         this.createTrivialCube(ModBlocks.STEEL_BLOCK.get());
-        this.createTrivialCube(ModBlocks.STEEL_TILES.get());
+        this.createTrivialCube(ModBlocks.CUT_STEEL.get());
         this.createDoor(ModBlocks.STEEL_DOOR.get());
         this.createTrapdoor(ModBlocks.STEEL_TRAPDOOR.get());
         this.createCustomPressurePlate(ModBlocks.VILLAGER_ONLY_PRESSURE_PLATE.get(), ModBlocks.STEEL_BLOCK.get());
@@ -1277,6 +1289,47 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createCustomCrafterBlock(ModBlocks.PALE_OAK_CRAFTER.get());
 
         this.createCustomChests();
+
+        this.createTrivialCube(ModBlocks.OAK_MOSAIC.get());
+        this.createTrivialCube(ModBlocks.SPRUCE_MOSAIC.get());
+        this.createTrivialCube(ModBlocks.BIRCH_MOSAIC.get());
+        this.createTrivialCube(ModBlocks.JUNGLE_MOSAIC.get());
+        this.createTrivialCube(ModBlocks.ACACIA_MOSAIC.get());
+        this.createTrivialCube(ModBlocks.DARK_OAK_MOSAIC.get());
+        this.createTrivialCube(ModBlocks.CRIMSON_MOSAIC.get());
+        this.createTrivialCube(ModBlocks.WARPED_MOSAIC.get());
+        this.createTrivialCube(ModBlocks.MANGROVE_MOSAIC.get());
+        this.createTrivialCube(ModBlocks.CHERRY_MOSAIC.get());
+        this.createTrivialCube(ModBlocks.PALE_OAK_MOSAIC.get());
+
+        this.createTrivialCube(ModBlocks.STONE_TILES.get());
+        this.createTrivialCube(ModBlocks.MOSSY_STONE_TILES.get());
+        this.createTrivialCube(ModBlocks.CRACKED_STONE_TILES.get());
+
+        this.createCopperChain(ModBlocks.EXPOSED_IRON_CHAIN.get(), ModBlocks.WAXED_EXPOSED_IRON_CHAIN.get());
+        this.createCopperChain(ModBlocks.WEATHERED_IRON_CHAIN.get(), ModBlocks.WAXED_WEATHERED_IRON_CHAIN.get());
+        this.createCopperChain(ModBlocks.RUSTED_IRON_CHAIN.get(), ModBlocks.WAXED_RUSTED_IRON_CHAIN.get());
+        this.createWaxedIronChain();
+        this.createCopperChainItem(ModItems.EXPOSED_IRON_CHAIN.get(), ModItems.WAXED_EXPOSED_IRON_CHAIN.get());
+        this.createCopperChainItem(ModItems.WEATHERED_IRON_CHAIN.get(), ModItems.WAXED_WEATHERED_IRON_CHAIN.get());
+        this.createCopperChainItem(ModItems.RUSTED_IRON_CHAIN.get(), ModItems.WAXED_RUSTED_IRON_CHAIN.get());
+
+        this.createTrivialCube(ModBlocks.OBSIDIAN_BRICKS.get());
+        this.createTrivialCube(ModBlocks.CRYING_OBSIDIAN_BRICKS.get());
+
+        this.createTrivialCube(ModBlocks.COAL_BRICKS.get());
+        this.createTrivialCube(ModBlocks.CHARCOAL_BRICKS.get());
+
+        this.createTrivialCube(ModBlocks.LAPIS_BRICKS.get());
+        this.createTrivialCube(ModBlocks.SMOOTH_LAPIS.get());
+
+        this.createTrivialCube(ModBlocks.SNOW_BRICKS.get());
+        this.createTrivialCube(ModBlocks.ICE_BRICKS.get());
+        this.createTrivialCube(ModBlocks.PACKED_ICE_BRICKS.get());
+        this.createTrivialCube(ModBlocks.BLUE_ICE_BRICKS.get());
+
+        this.createTrivialCube(ModBlocks.SCULK_BRICKS.get());
+
 
         ModBlockFamilies.getAllFamilies()
                 .filter(BlockFamily::shouldGenerateModel)

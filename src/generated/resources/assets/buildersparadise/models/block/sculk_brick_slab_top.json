@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "buildersparadise:block/sculk_bricks",
+    "side": "buildersparadise:block/sculk_bricks",
+    "top": "buildersparadise:block/sculk_bricks"
+  }
+}

@@ -20,21 +20,21 @@ public class ModSlabBlock extends SlabBlock {
 
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        if (level.random.nextFloat() < 0.05296323F) {
-            if (state.is(ModBlocks.IRON_TILE_SLAB.get())) {
-                level.setBlock(pos, ModBlocks.MILDLY_RUSTED_IRON_TILE_SLAB.get().withPropertiesOf(state), Block.UPDATE_ALL);
-            } else if (state.is(ModBlocks.MILDLY_RUSTED_IRON_TILE_SLAB.get())) {
-                level.setBlock(pos, ModBlocks.MODERATELY_RUSTED_IRON_TILE_SLAB.get().withPropertiesOf(state), Block.UPDATE_ALL);
-            } else if (state.is(ModBlocks.MODERATELY_RUSTED_IRON_TILE_SLAB.get())) {
-                level.setBlock(pos, ModBlocks.EXTREMELY_RUSTED_IRON_TILE_SLAB.get().withPropertiesOf(state), Block.UPDATE_ALL);
+        if (level.random.nextFloat() < BlockOxidationValues.IRON) {
+            if (state.is(ModBlocks.CUT_IRON_SLAB.get())) {
+                level.setBlock(pos, ModBlocks.EXPOSED_CUT_IRON_SLAB.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            } else if (state.is(ModBlocks.EXPOSED_CUT_IRON_SLAB.get())) {
+                level.setBlock(pos, ModBlocks.WEATHERED_CUT_IRON_SLAB.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            } else if (state.is(ModBlocks.WEATHERED_CUT_IRON_SLAB.get())) {
+                level.setBlock(pos, ModBlocks.RUSTED_CUT_IRON_SLAB.get().withPropertiesOf(state), Block.UPDATE_ALL);
             }
-        } else if (level.random.nextFloat() < 0.06347294F) {
-            if (state.is(ModBlocks.ZINC_TILE_SLAB.get())) {
-                level.setBlock(pos, ModBlocks.SLIGHTLY_CORRODED_ZINC_TILE_SLAB.get().withPropertiesOf(state), Block.UPDATE_ALL);
-            } else if (state.is(ModBlocks.SLIGHTLY_CORRODED_ZINC_TILE_SLAB.get())) {
-                level.setBlock(pos, ModBlocks.SOMEWHAT_CORRODED_ZINC_TILE_SLAB.get().withPropertiesOf(state), Block.UPDATE_ALL);
-            } else if (state.is(ModBlocks.SOMEWHAT_CORRODED_ZINC_TILE_SLAB.get())) {
-                level.setBlock(pos, ModBlocks.REALLY_CORRODED_ZINC_TILE_SLAB.get().withPropertiesOf(state), Block.UPDATE_ALL);
+        } else if (level.random.nextFloat() < BlockOxidationValues.ZINC) {
+            if (state.is(ModBlocks.CUT_ZINC_SLAB.get())) {
+                level.setBlock(pos, ModBlocks.EXPOSED_CUT_ZINC_SLAB.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            } else if (state.is(ModBlocks.EXPOSED_CUT_ZINC_SLAB.get())) {
+                level.setBlock(pos, ModBlocks.WEATHERED_CUT_ZINC_SLAB.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            } else if (state.is(ModBlocks.WEATHERED_CUT_ZINC_SLAB.get())) {
+                level.setBlock(pos, ModBlocks.CORRODED_CUT_ZINC_SLAB.get().withPropertiesOf(state), Block.UPDATE_ALL);
             }
         }
     }

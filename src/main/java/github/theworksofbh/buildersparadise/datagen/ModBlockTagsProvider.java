@@ -64,59 +64,89 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         getKnownBlocks().forEach(
                 block -> {
-                    if (!(block instanceof WeatheringCopperPressurePlateBlock) | !(block instanceof WeightedPressurePlateBlock) | !(block instanceof ModPressurePlateBlock)) {
+                    if ((block instanceof BasePressurePlateBlock) || block.getDescriptionId().contains("mosaic") || block.getDescriptionId().contains("oak") || block.getDescriptionId().contains("spruce") || block.getDescriptionId().contains("birch") || block.getDescriptionId().contains("jungle") || block.getDescriptionId().contains("acacia") || block.getDescriptionId().contains("crimson") || block.getDescriptionId().contains("warped") || block.getDescriptionId().contains("mangrove") || block.getDescriptionId().contains("cherry") || block.getDescriptionId().contains("bamboo") || (block instanceof CraftingTableBlock) || (block instanceof ChestBlock) || (block instanceof BarrelBlock) || (block instanceof CampfireBlock) || (block instanceof CartographyTableBlock) || (block instanceof BeehiveBlock) || (block instanceof ChiseledBookShelfBlock) || (block instanceof SmithingTableBlock) || (block instanceof LoomBlock) || block.getDescriptionId().contains("bookshelf") || block.getDescriptionId().contains("snow") || block.getDescriptionId().contains("resin") || block.getDescriptionId().contains("sculk")) {
+                        if (block instanceof BasePressurePlateBlock) {
+                            tag(BlockTags.PRESSURE_PLATES).add(block);
+                        } else if (block instanceof CraftingTableBlock) {
+                            tag(ModBlockTags.CRAFTING_TABLES).add(block);
+                            tag(BlockTags.MINEABLE_WITH_AXE).add(block);
+                        } else if (block instanceof CartographyTableBlock) {
+                            tag(ModBlockTags.CARTOGRAPHY_TABLES).add(block);
+                            tag(BlockTags.MINEABLE_WITH_AXE).add(block);
+                        } else if (block instanceof FletchingTableBlock) {
+                            tag(ModBlockTags.FLETCHING_TABLES).add(block);
+                            tag(BlockTags.MINEABLE_WITH_AXE).add(block);
+                        } else if (block instanceof SmithingTableBlock) {
+                            tag(ModBlockTags.SMITHING_TABLES).add(block);
+                            tag(BlockTags.MINEABLE_WITH_AXE).add(block);
+                        } else if (block instanceof LoomBlock) {
+                            tag(ModBlockTags.LOOMS).add(block);
+                            tag(BlockTags.MINEABLE_WITH_AXE).add(block);
+                        } else if (block instanceof CampfireBlock) {
+                            tag(BlockTags.CAMPFIRES).add(block);
+                            tag(BlockTags.MINEABLE_WITH_AXE).add(block);
+                        } else if (block instanceof BeehiveBlock) {
+                            tag(ModBlockTags.BEEHIVES).add(block);
+                            tag(BlockTags.MINEABLE_WITH_AXE).add(block);
+                        } else if (block.getDescriptionId().contains("bookshelf") && !block.getDescriptionId().contains("chiseled")) {
+                            tag(BlockTags.ENCHANTMENT_POWER_PROVIDER).add(block);
+                            tag(ModBlockTags.BOOKSHELVES).add(block);
+                            tag(BlockTags.MINEABLE_WITH_AXE).add(block);
+                        } else if (block instanceof ChiseledBookShelfBlock) {
+                            tag(ModBlockTags.CHISELED_BOOKSHELVES).add(block);
+                            tag(BlockTags.MINEABLE_WITH_AXE).add(block);
+                        } else if (block instanceof LecternBlock) {
+                            tag(ModBlockTags.LECTERNS).add(block);
+                            tag(BlockTags.MINEABLE_WITH_AXE).add(block);
+                        } else if (block instanceof BarrelBlock) {
+                            tag(ModBlockTags.BARRELS).add(block);
+                            tag(BlockTags.MINEABLE_WITH_AXE).add(block);
+                        } else if (block instanceof ChestBlock || block instanceof TrappedChestBlock) {
+                            tag(BlockTags.GUARDED_BY_PIGLINS).add(block);
+                            tag(ModBlockTags.WOODEN_CHESTS).add(block);
+                            if (block instanceof TrappedChestBlock){
+                                tag(ModBlockTags.TRAPPED_CHESTS).add(block);
+                            }
+                            tag(BlockTags.MINEABLE_WITH_AXE).add(block);
+                        } else if (block.getDescriptionId().contains("mosaic")) {
+                            tag(BlockTags.MINEABLE_WITH_AXE).add(block);
+                        } else if (block.getDescriptionId().contains("snow")) {
+                            tag(BlockTags.MINEABLE_WITH_SHOVEL).add(block);
+                        } else if (block.getDescriptionId().contains("sculk")) {
+                            if (block.getDescriptionId().contains("brick")) {
+                                tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
+                            } else {
+                                tag(BlockTags.MINEABLE_WITH_HOE).add(block);
+                            }
+                        }
+                    } else {
                         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
                     }
-                    if (block instanceof SlabBlock || block instanceof ModSlabBlock){
+                    if (block instanceof SlabBlock){
                         tag(BlockTags.SLABS).add(block);
                     }
-                    else if (block instanceof StairBlock || block instanceof ModStairBlock) {
+                    else if (block instanceof StairBlock) {
                         tag(BlockTags.STAIRS).add(block);
                     }
-                    else if (block instanceof DoorBlock || block instanceof ModDoorBlock) {
+                    else if (block instanceof DoorBlock) {
                         tag(BlockTags.DOORS).add(block);
                     }
-                    else if (block instanceof TrapDoorBlock || block instanceof ModTrapdoorBlock) {
+                    else if (block instanceof TrapDoorBlock) {
                         tag(BlockTags.TRAPDOORS).add(block);
                     }
                     else if (block instanceof WallBlock) {
                         tag(BlockTags.WALLS).add(block);
                     }
-                    else if (block instanceof WeatheringCopperPressurePlateBlock | block instanceof WeightedPressurePlateBlock | block instanceof ModPressurePlateBlock) {
-                        tag(BlockTags.PRESSURE_PLATES).add(block);
-                    } else if (block instanceof CraftingTableBlock) {
-                        tag(ModBlockTags.CRAFTING_TABLES).add(block);
-                    } else if (block instanceof CartographyTableBlock) {
-                        tag(ModBlockTags.CARTOGRAPHY_TABLES).add(block);
-                    } else if (block instanceof FletchingTableBlock) {
-                        tag(ModBlockTags.FLETCHING_TABLES).add(block);
-                    } else if (block instanceof SmithingTableBlock) {
-                        tag(ModBlockTags.SMITHING_TABLES).add(block);
-                    } else if (block instanceof GrindstoneBlock) {
+                    else if (block instanceof GrindstoneBlock) {
                         tag(ModBlockTags.GRINDSTONES).add(block);
-                    } else if (block instanceof LoomBlock) {
-                        tag(ModBlockTags.LOOMS).add(block);
                     } else if (block instanceof FurnaceBlock) {
                         tag(ModBlockTags.FURNACES).add(block);
                     } else if (block instanceof SmokerBlock) {
                         tag(ModBlockTags.SMOKERS).add(block);
                     } else if (block instanceof BlastFurnaceBlock) {
                         tag(ModBlockTags.BLAST_FURNACES).add(block);
-                    } else if (block instanceof CampfireBlock) {
-                        tag(BlockTags.CAMPFIRES).add(block);
-                    } else if (block instanceof BeehiveBlock) {
-                        tag(ModBlockTags.BEEHIVES).add(block);
-                    } else if (block.getDescriptionId().contains("bookshelf") && !block.getDescriptionId().contains("chiselled")) {
-                        tag(BlockTags.ENCHANTMENT_POWER_PROVIDER).add(block);
-                        tag(ModBlockTags.BOOKSHELVES).add(block);
-                    } else if (block instanceof ChiseledBookShelfBlock) {
-                        tag(ModBlockTags.CHISELED_BOOKSHELVES).add(block);
-                    } else if (block instanceof LecternBlock) {
-                        tag(ModBlockTags.LECTERNS).add(block);
                     } else if (block instanceof BrewingStandBlock) {
                         tag(ModBlockTags.BREWING_STANDS).add(block);
-                    } else if (block instanceof BarrelBlock) {
-                        tag(ModBlockTags.BARRELS).add(block);
                     } else if (block instanceof DispenserBlock) {
                         tag(ModBlockTags.DISPENSERS).add(block);
                     } else if (block instanceof DropperBlock) {
@@ -125,87 +155,31 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                         tag(ModBlockTags.OBSERVERS).add(block);
                     } else if (block instanceof CrafterBlock) {
                         tag(ModBlockTags.CRAFTERS).add(block);
-                    } else if (block instanceof ChestBlock || block instanceof TrappedChestBlock) {
-                        tag(BlockTags.GUARDED_BY_PIGLINS).add(block);
-                        tag(ModBlockTags.WOODEN_CHESTS).add(block);
-                        if (block instanceof TrappedChestBlock){
-                            tag(ModBlockTags.TRAPPED_CHESTS).add(block);
-                        }
+                    } else if (block.getDescriptionId().contains("iron") || block.getDescriptionId().contains("copper") || block.getDescriptionId().contains("lapis")|| block.getDescriptionId().contains("tin") || block.getDescriptionId().contains("lead") || block.getDescriptionId().contains("bronze") || block.getDescriptionId().contains("steel")) {
+                        tag(BlockTags.NEEDS_STONE_TOOL).add(block);
+                    } else if (block.getDescriptionId().contains("gold") || block.getDescriptionId().contains("diamond") || block.getDescriptionId().contains("emerald") || block.getDescriptionId().contains("zinc") || block.getDescriptionId().contains("silver") || block.getDescriptionId().contains("platinum") || block.getDescriptionId().contains("brass") || block.getDescriptionId().contains("uranium")) {
+                        tag(BlockTags.NEEDS_IRON_TOOL).add(block);
+                    } else if (block.getDescriptionId().contains("obsidian") || block.getDescriptionId().contains("netherite")) {
+                        tag(BlockTags.NEEDS_DIAMOND_TOOL).add(block);
+                    } else if (block.getDescriptionId().contains("tungsten")) {
+                        tag(Tags.Blocks.NEEDS_NETHERITE_TOOL).add(block);
+                    } else if (block instanceof ChainBlock) {
+                        tag(BlockTags.CHAINS).add(block);
                     }
                 }
         );
-        tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.IRON_TILES.get(), ModBlocks.IRON_TILE_SLAB.get(), ModBlocks.IRON_TILE_STAIRS.get());
-        tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.MILDLY_RUSTED_IRON_TILES.get(), ModBlocks.MILDLY_RUSTED_IRON_TILE_SLAB.get(), ModBlocks.MILDLY_RUSTED_IRON_TILE_STAIRS.get());
-        tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.MODERATELY_RUSTED_IRON_TILES.get(), ModBlocks.MODERATELY_RUSTED_IRON_TILE_SLAB.get(), ModBlocks.MODERATELY_RUSTED_IRON_TILE_STAIRS.get());
-        tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.EXTREMELY_RUSTED_IRON_TILES.get(), ModBlocks.EXTREMELY_RUSTED_IRON_TILE_SLAB.get(), ModBlocks.EXTREMELY_RUSTED_IRON_TILE_STAIRS.get());
-
-        tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.WAXED_IRON_TILES.get(), ModBlocks.WAXED_IRON_TILE_SLAB.get(), ModBlocks.WAXED_IRON_TILE_STAIRS.get());
-        tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.WAXED_MILDLY_RUSTED_IRON_TILES.get(), ModBlocks.WAXED_MILDLY_RUSTED_IRON_TILE_SLAB.get(), ModBlocks.WAXED_MILDLY_RUSTED_IRON_TILE_STAIRS.get());
-        tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.WAXED_MODERATELY_RUSTED_IRON_TILES.get(), ModBlocks.WAXED_MODERATELY_RUSTED_IRON_TILE_SLAB.get(), ModBlocks.WAXED_MODERATELY_RUSTED_IRON_TILE_STAIRS.get());
-        tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_TILES.get(), ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_TILE_SLAB.get(), ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_TILE_STAIRS.get());
-
-        tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.MILDLY_RUSTED_IRON_DOOR.get()).add(ModBlocks.MODERATELY_RUSTED_IRON_DOOR.get()).add(ModBlocks.EXTREMELY_RUSTED_IRON_DOOR.get());
-        tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.WAXED_IRON_DOOR.get()).add(ModBlocks.WAXED_MILDLY_RUSTED_IRON_DOOR.get()).add(ModBlocks.WAXED_MODERATELY_RUSTED_IRON_DOOR.get()).add(ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_DOOR.get());
-
-        tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.MILDLY_RUSTED_IRON_TRAPDOOR.get()).add(ModBlocks.MODERATELY_RUSTED_IRON_TRAPDOOR.get()).add(ModBlocks.EXTREMELY_RUSTED_IRON_TRAPDOOR.get());
-        tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.WAXED_IRON_TRAPDOOR.get()).add(ModBlocks.WAXED_MILDLY_RUSTED_IRON_TRAPDOOR.get()).add(ModBlocks.WAXED_MODERATELY_RUSTED_IRON_TRAPDOOR.get()).add(ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_TRAPDOOR.get());
-
-        tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.MILDLY_RUSTED_IRON_BLOCK.get(), ModBlocks.MODERATELY_RUSTED_IRON_BLOCK.get(), ModBlocks.EXTREMELY_RUSTED_IRON_BLOCK.get());
-        tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.WAXED_IRON_BLOCK.get(), ModBlocks.WAXED_MILDLY_RUSTED_IRON_BLOCK.get(), ModBlocks.WAXED_MODERATELY_RUSTED_IRON_BLOCK.get(), ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_BLOCK.get());
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.GOLD_TILES.get(), ModBlocks.GOLD_TILE_SLAB.get(), ModBlocks.GOLD_TILE_STAIRS.get());
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.DIAMOND_TILES.get(), ModBlocks.DIAMOND_TILE_SLAB.get(), ModBlocks.DIAMOND_TILE_STAIRS.get());
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.EMERALD_TILES.get(), ModBlocks.EMERALD_TILE_SLAB.get(), ModBlocks.EMERALD_TILE_STAIRS.get());
-        tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.NETHERITE_TILES.get(), ModBlocks.NETHERITE_TILE_SLAB.get(), ModBlocks.NETHERITE_TILE_STAIRS.get());
-
-        tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.NETHERITE_DOOR.get()).add(ModBlocks.NETHERITE_TRAPDOOR.get()).add(ModBlocks.PLAYER_ONLY_PRESSURE_PLATE.get());
 
         tag(ModBlockTags.ZINC_ORES).add(ModBlocks.ZINC_ORE.get()).add(ModBlocks.DEEPSLATE_ZINC_ORE.get());
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.ZINC_ORE.get()).add(ModBlocks.DEEPSLATE_ZINC_ORE.get()).add(ModBlocks.RAW_ZINC_BLOCK.get());
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.ZINC_BLOCK.get(), ModBlocks.SLIGHTLY_CORRODED_ZINC_BLOCK.get(), ModBlocks.SOMEWHAT_CORRODED_ZINC_BLOCK.get(), ModBlocks.REALLY_CORRODED_ZINC_BLOCK.get());
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.WAXED_ZINC_BLOCK.get(), ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_BLOCK.get(), ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_BLOCK.get(), ModBlocks.WAXED_REALLY_CORRODED_ZINC_BLOCK.get());
-
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.ZINC_TILES.get(), ModBlocks.ZINC_TILE_SLAB.get(), ModBlocks.ZINC_TILE_STAIRS.get());
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.SLIGHTLY_CORRODED_ZINC_TILES.get(), ModBlocks.SLIGHTLY_CORRODED_ZINC_TILE_SLAB.get(), ModBlocks.SLIGHTLY_CORRODED_ZINC_TILE_STAIRS.get());
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.SOMEWHAT_CORRODED_ZINC_TILES.get(), ModBlocks.SOMEWHAT_CORRODED_ZINC_TILE_SLAB.get(), ModBlocks.SOMEWHAT_CORRODED_ZINC_TILE_STAIRS.get());
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.REALLY_CORRODED_ZINC_TILES.get(), ModBlocks.REALLY_CORRODED_ZINC_TILE_SLAB.get(), ModBlocks.REALLY_CORRODED_ZINC_TILE_STAIRS.get());
-
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.WAXED_ZINC_TILES.get(), ModBlocks.WAXED_ZINC_TILE_SLAB.get(), ModBlocks.WAXED_ZINC_TILE_STAIRS.get());
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_TILES.get(), ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_TILE_SLAB.get(), ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_TILE_STAIRS.get());
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_TILES.get(), ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_TILE_SLAB.get(), ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_TILE_STAIRS.get());
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.WAXED_REALLY_CORRODED_ZINC_TILES.get(), ModBlocks.WAXED_REALLY_CORRODED_ZINC_TILE_SLAB.get(), ModBlocks.WAXED_REALLY_CORRODED_ZINC_TILE_STAIRS.get());
-
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.ZINC_DOOR.get(), ModBlocks.SLIGHTLY_CORRODED_ZINC_DOOR.get(), ModBlocks.SOMEWHAT_CORRODED_ZINC_DOOR.get(), ModBlocks.REALLY_CORRODED_ZINC_DOOR.get());
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.WAXED_ZINC_DOOR.get(), ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_DOOR.get(), ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_DOOR.get(), ModBlocks.WAXED_REALLY_CORRODED_ZINC_DOOR.get());
-
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.ZINC_TRAPDOOR.get(), ModBlocks.SLIGHTLY_CORRODED_ZINC_TRAPDOOR.get(), ModBlocks.SOMEWHAT_CORRODED_ZINC_TRAPDOOR.get(), ModBlocks.REALLY_CORRODED_ZINC_TRAPDOOR.get());
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.WAXED_ZINC_TRAPDOOR.get(), ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_TRAPDOOR.get(), ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_TRAPDOOR.get(), ModBlocks.WAXED_REALLY_CORRODED_ZINC_TRAPDOOR.get());
-
         tag(ModBlockTags.SILVER_ORES).add(ModBlocks.SILVER_ORE.get()).add(ModBlocks.DEEPSLATE_SILVER_ORE.get());
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.SILVER_ORE.get()).add(ModBlocks.DEEPSLATE_SILVER_ORE.get()).add(ModBlocks.RAW_SILVER_BLOCK.get());
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.SILVER_BLOCK.get()).add(ModBlocks.SILVER_TILES.get()).add(ModBlocks.SILVER_TILE_SLAB.get()).add(ModBlocks.SILVER_TILE_STAIRS.get()).add(ModBlocks.SILVER_DOOR.get()).add(ModBlocks.SILVER_TRAPDOOR.get());
-
         tag(ModBlockTags.TIN_ORES).add(ModBlocks.TIN_ORE.get()).add(ModBlocks.DEEPSLATE_TIN_ORE.get());
-        tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.TIN_ORE.get()).add(ModBlocks.DEEPSLATE_TIN_ORE.get()).add(ModBlocks.RAW_TIN_BLOCK.get());
-        tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.TIN_BLOCK.get()).add(ModBlocks.CUT_TIN.get()).add(ModBlocks.CUT_TIN_SLAB.get()).add(ModBlocks.CUT_TIN_STAIRS.get()).add(ModBlocks.TIN_DOOR.get()).add(ModBlocks.TIN_TRAPDOOR.get());
-
         tag(ModBlockTags.TUNGSTEN_ORES).add(ModBlocks.TUNGSTEN_ORE.get()).add(ModBlocks.DEEPSLATE_TUNGSTEN_ORE.get());
-        tag(Tags.Blocks.NEEDS_NETHERITE_TOOL).add(ModBlocks.TUNGSTEN_ORE.get()).add(ModBlocks.DEEPSLATE_TUNGSTEN_ORE.get()).add(ModBlocks.RAW_TUNGSTEN_BLOCK.get());
-        tag(Tags.Blocks.NEEDS_NETHERITE_TOOL).add(ModBlocks.TUNGSTEN_BLOCK.get()).add(ModBlocks.TUNGSTEN_TILES.get()).add(ModBlocks.TUNGSTEN_TILE_SLAB.get()).add(ModBlocks.TUNGSTEN_TILE_STAIRS.get()).add(ModBlocks.TUNGSTEN_DOOR.get()).add(ModBlocks.TUNGSTEN_TRAPDOOR.get());
-
         tag(ModBlockTags.PLATINUM_ORES).add(ModBlocks.PLATINUM_ORE.get()).add(ModBlocks.DEEPSLATE_PLATINUM_ORE.get());
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.PLATINUM_ORE.get()).add(ModBlocks.DEEPSLATE_PLATINUM_ORE.get()).add(ModBlocks.RAW_PLATINUM_BLOCK.get());
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.PLATINUM_BLOCK.get()).add(ModBlocks.PLATINUM_TILES.get()).add(ModBlocks.PLATINUM_TILE_SLAB.get()).add(ModBlocks.PLATINUM_TILE_STAIRS.get()).add(ModBlocks.PLATINUM_DOOR.get()).add(ModBlocks.PLATINUM_TRAPDOOR.get());
-
         tag(ModBlockTags.LEAD_ORES).add(ModBlocks.LEAD_ORE.get()).add(ModBlocks.DEEPSLATE_LEAD_ORE.get());
-        tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.LEAD_ORE.get()).add(ModBlocks.DEEPSLATE_LEAD_ORE.get()).add(ModBlocks.RAW_LEAD_BLOCK.get());
-        tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.LEAD_BLOCK.get()).add(ModBlocks.LEAD_TILES.get()).add(ModBlocks.LEAD_TILE_SLAB.get()).add(ModBlocks.LEAD_TILE_STAIRS.get()).add(ModBlocks.LEAD_DOOR.get()).add(ModBlocks.LEAD_TRAPDOOR.get());
-
         tag(ModBlockTags.URANIUM_ORES).add(ModBlocks.URANIUM_ORE.get()).add(ModBlocks.DEEPSLATE_URANIUM_ORE.get());
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.URANIUM_ORE.get()).add(ModBlocks.DEEPSLATE_URANIUM_ORE.get()).add(ModBlocks.RAW_URANIUM_BLOCK.get());
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.URANIUM_BLOCK.get()).add(ModBlocks.URANIUM_TILES.get()).add(ModBlocks.URANIUM_TILE_SLAB.get()).add(ModBlocks.URANIUM_TILE_STAIRS.get()).add(ModBlocks.URANIUM_DOOR.get()).add(ModBlocks.URANIUM_TRAPDOOR.get());
+        tag(ModBlockTags.IRON).add(Blocks.IRON_BLOCK).add(ModBlocks.EXPOSED_IRON.get()).add(ModBlocks.WEATHERED_IRON.get()).add(ModBlocks.RUSTED_IRON.get()).add(ModBlocks.WAXED_IRON_BLOCK.get()).add(ModBlocks.WAXED_EXPOSED_IRON.get()).add(ModBlocks.WAXED_WEATHERED_IRON.get()).add(ModBlocks.WAXED_RUSTED_IRON.get());
+        tag(ModBlockTags.ZINC).add(ModBlocks.ZINC_BLOCK.get()).add(ModBlocks.EXPOSED_ZINC.get()).add(ModBlocks.WEATHERED_ZINC.get()).add(ModBlocks.CORRODED_ZINC.get()).add(ModBlocks.WAXED_ZINC_BLOCK.get()).add(ModBlocks.WAXED_EXPOSED_ZINC.get()).add(ModBlocks.WAXED_WEATHERED_ZINC.get()).add(ModBlocks.WAXED_CORRODED_ZINC.get());
 
-        tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.BRONZE_BLOCK.get()).add(ModBlocks.CUT_BRONZE.get()).add(ModBlocks.CUT_BRONZE_SLAB.get()).add(ModBlocks.CUT_BRONZE_STAIRS.get()).add(ModBlocks.BRONZE_DOOR.get()).add(ModBlocks.BRONZE_TRAPDOOR.get());
-        tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.BRASS_BLOCK.get()).add(ModBlocks.BRASS_TILES.get()).add(ModBlocks.BRASS_TILE_SLAB.get()).add(ModBlocks.BRASS_TILE_STAIRS.get()).add(ModBlocks.BRASS_DOOR.get()).add(ModBlocks.BRASS_TRAPDOOR.get());
-        tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.STEEL_BLOCK.get()).add(ModBlocks.STEEL_TILES.get()).add(ModBlocks.STEEL_TILE_SLAB.get()).add(ModBlocks.STEEL_TILE_STAIRS.get()).add(ModBlocks.STEEL_DOOR.get()).add(ModBlocks.STEEL_TRAPDOOR.get());
+        tag(BlockTags.BEACON_BASE_BLOCKS).addTag(ModBlockTags.IRON).add(ModBlocks.BRONZE_BLOCK.get()).add(ModBlocks.SILVER_BLOCK.get()).add(ModBlocks.PLATINUM_BLOCK.get());
+        tag(ModBlockTags.INCORRECT_FOR_BRONZE_TOOL).addTag(BlockTags.INCORRECT_FOR_COPPER_TOOL);
     }
 }

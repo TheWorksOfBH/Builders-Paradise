@@ -59,35 +59,35 @@ public class ModBlockFamilies {
     public static final BlockFamily PACKED_MUD = familyBuilder(Blocks.PACKED_MUD).stairs(ModBlocks.PACKED_MUD_STAIRS.get()).slab(ModBlocks.PACKED_MUD_SLAB.get()).wall(ModBlocks.PACKED_MUD_WALL.get()).getFamily();
     public static final BlockFamily RESIN = familyBuilder(Blocks.RESIN_BLOCK).stairs(ModBlocks.RESIN_STAIRS.get()).slab(ModBlocks.RESIN_SLAB.get()).wall(ModBlocks.RESIN_WALL.get()).getFamily();
 
-    public static final BlockFamily IRON_BLOCK = familyBuilder(Blocks.IRON_BLOCK).cut(ModBlocks.IRON_TILES.get()).getFamily();
-    public static final BlockFamily MILDLY_RUSTED_IRON_BLOCK = familyBuilder(ModBlocks.MILDLY_RUSTED_IRON_BLOCK.get()).cut(ModBlocks.MILDLY_RUSTED_IRON_TILES.get()).getFamily();
-    public static final BlockFamily MODERATELY_RUSTED_IRON_BLOCK = familyBuilder(ModBlocks.MODERATELY_RUSTED_IRON_BLOCK.get()).cut(ModBlocks.MODERATELY_RUSTED_IRON_BLOCK.get()).getFamily();
-    public static final BlockFamily EXTREMELY_RUSTED_IRON_BLOCK = familyBuilder(ModBlocks.EXTREMELY_RUSTED_IRON_BLOCK.get()).cut(ModBlocks.EXTREMELY_RUSTED_IRON_BLOCK.get()).getFamily();
+    public static final BlockFamily IRON_BLOCK = familyBuilder(Blocks.IRON_BLOCK).cut(ModBlocks.CUT_IRON.get()).getFamily();
+    public static final BlockFamily EXPOSED_IRON = familyBuilder(ModBlocks.EXPOSED_IRON.get()).cut(ModBlocks.EXPOSED_CUT_IRON.get()).getFamily();
+    public static final BlockFamily WEATHERED_IRON = familyBuilder(ModBlocks.WEATHERED_IRON.get()).cut(ModBlocks.WEATHERED_IRON.get()).getFamily();
+    public static final BlockFamily RUSTED_IRON = familyBuilder(ModBlocks.RUSTED_IRON.get()).cut(ModBlocks.RUSTED_IRON.get()).getFamily();
 
-    public static final BlockFamily WAXED_IRON_BLOCK = familyBuilder(ModBlocks.WAXED_IRON_BLOCK.get()).cut(ModBlocks.WAXED_IRON_TILES.get()).getFamily();
-    public static final BlockFamily WAXED_MILDLY_RUSTED_IRON_BLOCK = familyBuilder(ModBlocks.WAXED_MILDLY_RUSTED_IRON_BLOCK.get()).cut(ModBlocks.WAXED_MILDLY_RUSTED_IRON_TILES.get()).getFamily();
-    public static final BlockFamily WAXED_MODERATELY_RUSTED_IRON_BLOCK = familyBuilder(ModBlocks.WAXED_MODERATELY_RUSTED_IRON_BLOCK.get()).cut(ModBlocks.WAXED_MODERATELY_RUSTED_IRON_BLOCK.get()).getFamily();
-    public static final BlockFamily WAXED_EXTREMELY_RUSTED_IRON_BLOCK = familyBuilder(ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_BLOCK.get()).cut(ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_BLOCK.get()).getFamily();
+    public static final BlockFamily WAXED_IRON_BLOCK = familyBuilder(ModBlocks.WAXED_IRON_BLOCK.get()).cut(ModBlocks.WAXED_CUT_IRON.get()).getFamily();
+    public static final BlockFamily WAXED_EXPOSED_IRON = familyBuilder(ModBlocks.WAXED_EXPOSED_IRON.get()).cut(ModBlocks.WAXED_EXPOSED_CUT_IRON.get()).getFamily();
+    public static final BlockFamily WAXED_WEATHERED_IRON = familyBuilder(ModBlocks.WAXED_WEATHERED_IRON.get()).cut(ModBlocks.WAXED_WEATHERED_IRON.get()).getFamily();
+    public static final BlockFamily WAXED_RUSTED_IRON = familyBuilder(ModBlocks.WAXED_RUSTED_IRON.get()).cut(ModBlocks.WAXED_RUSTED_IRON.get()).getFamily();
 
-    public static final BlockFamily GOLD_BLOCK = familyBuilder(Blocks.GOLD_BLOCK).cut(ModBlocks.GOLD_TILES.get()).getFamily();
-    public static final BlockFamily DIAMOND_BLOCK = familyBuilder(Blocks.DIAMOND_BLOCK).cut(ModBlocks.DIAMOND_TILES.get()).getFamily();
-    public static final BlockFamily EMERALD_BLOCK = familyBuilder(Blocks.EMERALD_BLOCK).cut(ModBlocks.EMERALD_TILES.get()).getFamily();
-    public static final BlockFamily NETHERITE_BLOCK = familyBuilder(Blocks.NETHERITE_BLOCK).cut(ModBlocks.NETHERITE_TILES.get()).getFamily();
+    public static final BlockFamily GOLD_BLOCK = familyBuilder(Blocks.GOLD_BLOCK).cut(ModBlocks.CUT_GOLD.get()).getFamily();
+    public static final BlockFamily DIAMOND_BLOCK = familyBuilder(Blocks.DIAMOND_BLOCK).cut(ModBlocks.CUT_DIAMOND.get()).getFamily();
+    public static final BlockFamily EMERALD_BLOCK = familyBuilder(Blocks.EMERALD_BLOCK).cut(ModBlocks.CUT_EMERALD.get()).getFamily();
+    public static final BlockFamily NETHERITE_BLOCK = familyBuilder(Blocks.NETHERITE_BLOCK).cut(ModBlocks.CUT_NETHERITE.get()).getFamily();
 
-    public static final BlockFamily IRON_TILES = familyBuilder(ModBlocks.IRON_TILES.get()).stairs(ModBlocks.IRON_TILE_STAIRS.get()).slab(ModBlocks.IRON_TILE_SLAB.get()).getFamily();
-    public static final BlockFamily MILDLY_RUSTED_IRON_TILES = familyBuilder(ModBlocks.MILDLY_RUSTED_IRON_TILES.get()).stairs(ModBlocks.MILDLY_RUSTED_IRON_TILE_STAIRS.get()).slab(ModBlocks.MILDLY_RUSTED_IRON_TILE_SLAB.get()).getFamily();
-    public static final BlockFamily MODERATELY_RUSTED_IRON_TILES = familyBuilder(ModBlocks.MODERATELY_RUSTED_IRON_TILES.get()).stairs(ModBlocks.MODERATELY_RUSTED_IRON_TILE_STAIRS.get()).slab(ModBlocks.MODERATELY_RUSTED_IRON_TILE_SLAB.get()).getFamily();
-    public static final BlockFamily EXTREMELY_RUSTED_IRON_TILES = familyBuilder(ModBlocks.EXTREMELY_RUSTED_IRON_TILES.get()).stairs(ModBlocks.EXTREMELY_RUSTED_IRON_TILE_STAIRS.get()).slab(ModBlocks.EXTREMELY_RUSTED_IRON_TILE_SLAB.get()).getFamily();
+    public static final BlockFamily CUT_IRON = familyBuilder(ModBlocks.CUT_IRON.get()).stairs(ModBlocks.CUT_IRON_STAIRS.get()).slab(ModBlocks.CUT_IRON_SLAB.get()).getFamily();
+    public static final BlockFamily EXPOSED_CUT_IRON = familyBuilder(ModBlocks.EXPOSED_CUT_IRON.get()).stairs(ModBlocks.EXPOSED_CUT_IRON_STAIRS.get()).slab(ModBlocks.EXPOSED_CUT_IRON_SLAB.get()).getFamily();
+    public static final BlockFamily WEATHERED_CUT_IRON = familyBuilder(ModBlocks.WEATHERED_CUT_IRON.get()).stairs(ModBlocks.WEATHERED_CUT_IRON_STAIRS.get()).slab(ModBlocks.WEATHERED_CUT_IRON_SLAB.get()).getFamily();
+    public static final BlockFamily RUSTED_CUT_IRON = familyBuilder(ModBlocks.RUSTED_CUT_IRON.get()).stairs(ModBlocks.RUSTED_CUT_IRON_STAIRS.get()).slab(ModBlocks.RUSTED_CUT_IRON_SLAB.get()).getFamily();
 
-    public static final BlockFamily WAXED_IRON_TILES = familyBuilder(ModBlocks.WAXED_IRON_TILES.get()).stairs(ModBlocks.WAXED_IRON_TILE_STAIRS.get()).slab(ModBlocks.WAXED_IRON_TILE_SLAB.get()).dontGenerateModel().getFamily();
-    public static final BlockFamily WAXED_MILDLY_RUSTED_IRON_TILES = familyBuilder(ModBlocks.WAXED_MILDLY_RUSTED_IRON_TILES.get()).stairs(ModBlocks.WAXED_MILDLY_RUSTED_IRON_TILE_STAIRS.get()).slab(ModBlocks.WAXED_MILDLY_RUSTED_IRON_TILE_SLAB.get()).dontGenerateModel().getFamily();
-    public static final BlockFamily WAXED_MODERATELY_RUSTED_IRON_TILES = familyBuilder(ModBlocks.WAXED_MODERATELY_RUSTED_IRON_TILES.get()).stairs(ModBlocks.WAXED_MODERATELY_RUSTED_IRON_TILE_STAIRS.get()).slab(ModBlocks.WAXED_MODERATELY_RUSTED_IRON_TILE_SLAB.get()).dontGenerateModel().getFamily();
-    public static final BlockFamily WAXED_EXTREMELY_RUSTED_IRON_TILES = familyBuilder(ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_TILES.get()).stairs(ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_TILE_STAIRS.get()).slab(ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_TILE_SLAB.get()).dontGenerateModel().getFamily();
+    public static final BlockFamily WAXED_CUT_IRON = familyBuilder(ModBlocks.WAXED_CUT_IRON.get()).stairs(ModBlocks.WAXED_CUT_IRON_STAIRS.get()).slab(ModBlocks.WAXED_CUT_IRON_SLAB.get()).dontGenerateModel().getFamily();
+    public static final BlockFamily WAXED_EXPOSED_CUT_IRON = familyBuilder(ModBlocks.WAXED_EXPOSED_CUT_IRON.get()).stairs(ModBlocks.WAXED_EXPOSED_CUT_IRON_STAIRS.get()).slab(ModBlocks.WAXED_EXPOSED_CUT_IRON_SLAB.get()).dontGenerateModel().getFamily();
+    public static final BlockFamily WAXED_WEATHERED_CUT_IRON = familyBuilder(ModBlocks.WAXED_WEATHERED_CUT_IRON.get()).stairs(ModBlocks.WAXED_WEATHERED_CUT_IRON_STAIRS.get()).slab(ModBlocks.WAXED_WEATHERED_CUT_IRON_SLAB.get()).dontGenerateModel().getFamily();
+    public static final BlockFamily WAXED_RUSTED_CUT_IRON = familyBuilder(ModBlocks.WAXED_RUSTED_CUT_IRON.get()).stairs(ModBlocks.WAXED_RUSTED_CUT_COPPER_STAIRS.get()).slab(ModBlocks.WAXED_RUSTED_CUT_IRON_SLAB.get()).dontGenerateModel().getFamily();
 
-    public static final BlockFamily GOLD_TILES = familyBuilder(ModBlocks.GOLD_TILES.get()).stairs(ModBlocks.GOLD_TILE_STAIRS.get()).slab(ModBlocks.GOLD_TILE_SLAB.get()).getFamily();
-    public static final BlockFamily DIAMOND_TILES = familyBuilder(ModBlocks.DIAMOND_TILES.get()).stairs(ModBlocks.DIAMOND_TILE_STAIRS.get()).slab(ModBlocks.DIAMOND_TILE_SLAB.get()).getFamily();
-    public static final BlockFamily EMERALD_TILES = familyBuilder(ModBlocks.EMERALD_TILES.get()).stairs(ModBlocks.EMERALD_TILE_STAIRS.get()).slab(ModBlocks.EMERALD_TILE_SLAB.get()).getFamily();
-    public static final BlockFamily NETHERITE_TILES = familyBuilder(ModBlocks.NETHERITE_TILES.get()).stairs(ModBlocks.NETHERITE_TILE_STAIRS.get()).slab(ModBlocks.NETHERITE_TILE_SLAB.get()).getFamily();
+    public static final BlockFamily CUT_GOLD = familyBuilder(ModBlocks.CUT_GOLD.get()).stairs(ModBlocks.CUT_GOLD_STAIRS.get()).slab(ModBlocks.CUT_GOLD_SLAB.get()).getFamily();
+    public static final BlockFamily CUT_DIAMOND = familyBuilder(ModBlocks.CUT_DIAMOND.get()).stairs(ModBlocks.CUT_DIAMOND_STAIRS.get()).slab(ModBlocks.CUT_DIAMOND_SLAB.get()).getFamily();
+    public static final BlockFamily CUT_EMERALD = familyBuilder(ModBlocks.CUT_EMERALD.get()).stairs(ModBlocks.CUT_EMERALD_SLAB.get()).slab(ModBlocks.CUT_EMERALD_STAIRS.get()).getFamily();
+    public static final BlockFamily CUT_NETHERITE = familyBuilder(ModBlocks.CUT_NETHERITE.get()).stairs(ModBlocks.CUT_NETHERITE_STAIRS.get()).slab(ModBlocks.CUT_NETHERITE_SLAB.get()).getFamily();
 
     public static final BlockFamily POLISHED_DRIPSTONE = familyBuilder(ModBlocks.POLISHED_DRIPSTONE.get()).stairs(ModBlocks.POLISHED_DRIPSTONE_STAIRS.get()).slab(ModBlocks.POLISHED_DRIPSTONE_SLAB.get()).wall(ModBlocks.POLISHED_DRIPSTONE_WALL.get()).polished(ModBlocks.DRIPSTONE_BRICKS.get()).getFamily();
     public static final BlockFamily POLISHED_CALCITE = familyBuilder(ModBlocks.POLISHED_CALCITE.get()).stairs(ModBlocks.POLISHED_CALCITE_STAIRS.get()).slab(ModBlocks.POLISHED_CALCITE_SLAB.get()).wall(ModBlocks.POLISHED_CALCITE_WALL.get()).polished(ModBlocks.CALCITE_BRICKS.get()).getFamily();
@@ -108,51 +108,137 @@ public class ModBlockFamilies {
     public static final BlockFamily ELDER_PRISMARINE_BRICKS = familyBuilder(ModBlocks.ELDER_PRISMARINE_BRICKS.get()).slab(ModBlocks.ELDER_PRISMARINE_BRICK_SLAB.get()).stairs(ModBlocks.ELDER_PRISMARINE_BRICK_STAIRS.get()).wall(ModBlocks.ELDER_PRISMARINE_BRICK_WALL.get()).getFamily();
     public static final BlockFamily DARK_ELDER_PRISMARINE = familyBuilder(ModBlocks.DARK_ELDER_PRISMARINE.get()).slab(ModBlocks.DARK_ELDER_PRISMARINE_SLAB.get()).stairs(ModBlocks.DARK_ELDER_PRISMARINE_STAIRS.get()).wall(ModBlocks.DARK_ELDER_PRISMARINE_WALL.get()).getFamily();
 
-    public static final BlockFamily ZINC_BLOCK = familyBuilder(ModBlocks.ZINC_BLOCK.get()).cut(ModBlocks.ZINC_TILES.get()).getFamily();
-    public static final BlockFamily SLIGHTLY_CORRODED_ZINC_BLOCK = familyBuilder(ModBlocks.SLIGHTLY_CORRODED_ZINC_BLOCK.get()).cut(ModBlocks.SLIGHTLY_CORRODED_ZINC_TILES.get()).getFamily();
-    public static final BlockFamily SOMEWHAT_CORRODED_ZINC_BLOCK = familyBuilder(ModBlocks.SOMEWHAT_CORRODED_ZINC_BLOCK.get()).cut(ModBlocks.SOMEWHAT_CORRODED_ZINC_TILES.get()).getFamily();
-    public static final BlockFamily REALLY_CORRODED_ZINC_BLOCK = familyBuilder(ModBlocks.REALLY_CORRODED_ZINC_BLOCK.get()).cut(ModBlocks.REALLY_CORRODED_ZINC_TILES.get()).getFamily();
+    public static final BlockFamily ZINC_BLOCK = familyBuilder(ModBlocks.ZINC_BLOCK.get()).cut(ModBlocks.CUT_ZINC.get()).getFamily();
+    public static final BlockFamily EXPOSED_ZINC = familyBuilder(ModBlocks.EXPOSED_ZINC.get()).cut(ModBlocks.EXPOSED_CUT_ZINC.get()).getFamily();
+    public static final BlockFamily WEATHERED_ZINC = familyBuilder(ModBlocks.WEATHERED_ZINC.get()).cut(ModBlocks.WEATHERED_CUT_ZINC.get()).getFamily();
+    public static final BlockFamily CORRODED_ZINC = familyBuilder(ModBlocks.CORRODED_ZINC.get()).cut(ModBlocks.CORRODED_CUT_ZINC.get()).getFamily();
 
-    public static final BlockFamily WAXED_ZINC_BLOCK = familyBuilder(ModBlocks.WAXED_ZINC_BLOCK.get()).cut(ModBlocks.WAXED_ZINC_TILES.get()).getFamily();
-    public static final BlockFamily WAXED_SLIGHTLY_CORRODED_ZINC_BLOCK = familyBuilder(ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_BLOCK.get()).cut(ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_TILES.get()).getFamily();
-    public static final BlockFamily WAXED_SOMEWHAT_CORRODED_ZINC_BLOCK = familyBuilder(ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_BLOCK.get()).cut(ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_TILES.get()).getFamily();
-    public static final BlockFamily WAXED_REALLY_CORRODED_ZINC_BLOCK = familyBuilder(ModBlocks.WAXED_REALLY_CORRODED_ZINC_BLOCK.get()).cut(ModBlocks.WAXED_REALLY_CORRODED_ZINC_TILES.get()).getFamily();
+    public static final BlockFamily WAXED_ZINC_BLOCK = familyBuilder(ModBlocks.WAXED_ZINC_BLOCK.get()).cut(ModBlocks.WAXED_CUT_ZINC.get()).getFamily();
+    public static final BlockFamily WAXED_EXPOSED_ZINC = familyBuilder(ModBlocks.WAXED_EXPOSED_ZINC.get()).cut(ModBlocks.WAXED_EXPOSED_CUT_ZINC.get()).getFamily();
+    public static final BlockFamily WAXED_WEATHERED_ZINC = familyBuilder(ModBlocks.WAXED_WEATHERED_ZINC.get()).cut(ModBlocks.WAXED_WEATHERED_CUT_ZINC.get()).getFamily();
+    public static final BlockFamily WAXED_CORRODED_ZINC = familyBuilder(ModBlocks.WAXED_CORRODED_ZINC.get()).cut(ModBlocks.WAXED_CORRODED_CUT_ZINC.get()).getFamily();
 
-    public static final BlockFamily ZINC_TILES = familyBuilder(ModBlocks.ZINC_TILES.get()).stairs(ModBlocks.ZINC_TILE_STAIRS.get()).slab(ModBlocks.ZINC_TILE_SLAB.get()).getFamily();
-    public static final BlockFamily SLIGHTLY_CORRODED_ZINC_TILES = familyBuilder(ModBlocks.SLIGHTLY_CORRODED_ZINC_TILES.get()).stairs(ModBlocks.SLIGHTLY_CORRODED_ZINC_TILE_STAIRS.get()).slab(ModBlocks.SLIGHTLY_CORRODED_ZINC_TILE_SLAB.get()).getFamily();
-    public static final BlockFamily SOMEWHAT_CORRODED_ZINC_TILES = familyBuilder(ModBlocks.SOMEWHAT_CORRODED_ZINC_TILES.get()).stairs(ModBlocks.SOMEWHAT_CORRODED_ZINC_TILE_STAIRS.get()).slab(ModBlocks.SOMEWHAT_CORRODED_ZINC_TILE_SLAB.get()).getFamily();
-    public static final BlockFamily REALLY_CORRODED_ZINC_TILES = familyBuilder(ModBlocks.REALLY_CORRODED_ZINC_TILES.get()).stairs(ModBlocks.REALLY_CORRODED_ZINC_TILE_STAIRS.get()).slab(ModBlocks.REALLY_CORRODED_ZINC_TILE_SLAB.get()).getFamily();
+    public static final BlockFamily CUT_ZINC = familyBuilder(ModBlocks.CUT_ZINC.get()).stairs(ModBlocks.CUT_ZINC_STAIRS.get()).slab(ModBlocks.CUT_ZINC_SLAB.get()).getFamily();
+    public static final BlockFamily EXPOSED_CUT_ZINC = familyBuilder(ModBlocks.EXPOSED_CUT_ZINC.get()).stairs(ModBlocks.EXPOSED_CUT_ZINC_STAIRS.get()).slab(ModBlocks.EXPOSED_CUT_ZINC_SLAB.get()).getFamily();
+    public static final BlockFamily WEATHERED_CUT_ZINC = familyBuilder(ModBlocks.WEATHERED_CUT_ZINC.get()).stairs(ModBlocks.WEATHERED_CUT_ZINC_STAIRS.get()).slab(ModBlocks.WEATHERED_CUT_ZINC_SLAB.get()).getFamily();
+    public static final BlockFamily CORRODED_CUT_ZINC = familyBuilder(ModBlocks.CORRODED_CUT_ZINC.get()).stairs(ModBlocks.CORRODED_CUT_ZINC_STAIRS.get()).slab(ModBlocks.CORRODED_CUT_ZINC_SLAB.get()).getFamily();
 
-    public static final BlockFamily WAXED_ZINC_TILES = familyBuilder(ModBlocks.WAXED_ZINC_TILES.get()).stairs(ModBlocks.WAXED_ZINC_TILE_STAIRS.get()).slab(ModBlocks.WAXED_ZINC_TILE_SLAB.get()).dontGenerateModel().getFamily();
-    public static final BlockFamily WAXED_SLIGHTLY_CORRODED_ZINC_TILES = familyBuilder(ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_TILES.get()).stairs(ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_TILE_STAIRS.get()).slab(ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_TILE_SLAB.get()).dontGenerateModel().getFamily();
-    public static final BlockFamily WAXED_SOMEWHAT_CORRODED_ZINC_TILES = familyBuilder(ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_TILES.get()).stairs(ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_TILE_STAIRS.get()).slab(ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_TILE_SLAB.get()).dontGenerateModel().getFamily();
-    public static final BlockFamily WAXED_REALLY_CORRODED_ZINC_TILES = familyBuilder(ModBlocks.WAXED_REALLY_CORRODED_ZINC_TILES.get()).stairs(ModBlocks.WAXED_REALLY_CORRODED_ZINC_TILE_STAIRS.get()).slab(ModBlocks.WAXED_REALLY_CORRODED_ZINC_TILE_SLAB.get()).dontGenerateModel().getFamily();
+    public static final BlockFamily WAXED_ZINC_TILES = familyBuilder(ModBlocks.WAXED_CUT_ZINC.get()).stairs(ModBlocks.WAXED_CUT_ZINC_STAIRS.get()).slab(ModBlocks.WAXED_CUT_ZINC_SLAB.get()).dontGenerateModel().getFamily();
+    public static final BlockFamily WAXED_EXPOSED_CUT_ZINC = familyBuilder(ModBlocks.WAXED_EXPOSED_CUT_ZINC.get()).stairs(ModBlocks.WAXED_EXPOSED_CUT_ZINC_STAIRS.get()).slab(ModBlocks.WAXED_EXPOSED_CUT_ZINC_SLAB.get()).dontGenerateModel().getFamily();
+    public static final BlockFamily WAXED_WEATHERED_CUT_ZINC = familyBuilder(ModBlocks.WAXED_WEATHERED_CUT_ZINC.get()).stairs(ModBlocks.WAXED_WEATHERED_CUT_ZINC_STAIRS.get()).slab(ModBlocks.WAXED_WEATHERED_CUT_ZINC_SLAB.get()).dontGenerateModel().getFamily();
+    public static final BlockFamily WAXED_CORRODED_CUT_ZINC = familyBuilder(ModBlocks.WAXED_CORRODED_CUT_ZINC.get()).stairs(ModBlocks.WAXED_CORRODED_CUT_ZINC_STAIRS.get()).slab(ModBlocks.WAXED_CORRODED_CUT_ZINC_SLAB.get()).dontGenerateModel().getFamily();
 
-    public static final BlockFamily SILVER_BLOCK = familyBuilder(ModBlocks.SILVER_BLOCK.get()).cut(ModBlocks.SILVER_TILES.get()).getFamily();
-    public static final BlockFamily SILVER_TILES = familyBuilder(ModBlocks.SILVER_TILES.get()).slab(ModBlocks.SILVER_TILE_SLAB.get()).stairs(ModBlocks.SILVER_TILE_STAIRS.get()).getFamily();
+    public static final BlockFamily SILVER_BLOCK = familyBuilder(ModBlocks.SILVER_BLOCK.get()).cut(ModBlocks.CUT_SILVER.get()).getFamily();
+    public static final BlockFamily CUT_SILVER = familyBuilder(ModBlocks.CUT_SILVER.get()).slab(ModBlocks.CUT_SILVER_SLAB.get()).stairs(ModBlocks.CUT_SILVER_STAIRS.get()).getFamily();
 
     public static final BlockFamily TIN_BLOCK = familyBuilder(ModBlocks.TIN_BLOCK.get()).cut(ModBlocks.CUT_TIN.get()).getFamily();
     public static final BlockFamily CUT_TIN = familyBuilder(ModBlocks.CUT_TIN.get()).slab(ModBlocks.CUT_TIN_SLAB.get()).stairs(ModBlocks.CUT_TIN_STAIRS.get()).getFamily();
 
-    public static final BlockFamily TUNGSTEN_BLOCK = familyBuilder(ModBlocks.TUNGSTEN_BLOCK.get()).cut(ModBlocks.TUNGSTEN_TILES.get()).getFamily();
-    public static final BlockFamily TUNGSTEN_TILES = familyBuilder(ModBlocks.TUNGSTEN_TILES.get()).slab(ModBlocks.TUNGSTEN_TILE_SLAB.get()).stairs(ModBlocks.TUNGSTEN_TILE_STAIRS.get()).getFamily();
+    public static final BlockFamily TUNGSTEN_BLOCK = familyBuilder(ModBlocks.TUNGSTEN_BLOCK.get()).cut(ModBlocks.CUT_TUNGSTEN.get()).getFamily();
+    public static final BlockFamily CUT_TUNGSTEN = familyBuilder(ModBlocks.CUT_TUNGSTEN.get()).slab(ModBlocks.CUT_TUNGSTEN_SLAB.get()).stairs(ModBlocks.CUT_TUNGSTEN_STAIRS.get()).getFamily();
 
-    public static final BlockFamily PLATINUM_BLOCK = familyBuilder(ModBlocks.PLATINUM_BLOCK.get()).cut(ModBlocks.PLATINUM_TILES.get()).getFamily();
-    public static final BlockFamily PLATINUM_TILES = familyBuilder(ModBlocks.PLATINUM_TILES.get()).slab(ModBlocks.PLATINUM_TILE_SLAB.get()).stairs(ModBlocks.PLATINUM_TILE_STAIRS.get()).getFamily();
+    public static final BlockFamily PLATINUM_BLOCK = familyBuilder(ModBlocks.PLATINUM_BLOCK.get()).cut(ModBlocks.CUT_PLATINUM.get()).getFamily();
+    public static final BlockFamily CUT_PLATINUM = familyBuilder(ModBlocks.CUT_PLATINUM.get()).slab(ModBlocks.CUT_PLATINUM_SLAB.get()).stairs(ModBlocks.CUT_PLATINUM_STAIRS.get()).getFamily();
 
-    public static final BlockFamily LEAD_BLOCK = familyBuilder(ModBlocks.LEAD_BLOCK.get()).cut(ModBlocks.LEAD_TILES.get()).getFamily();
-    public static final BlockFamily LEAD_TILES = familyBuilder(ModBlocks.LEAD_TILES.get()).slab(ModBlocks.LEAD_TILE_SLAB.get()).stairs(ModBlocks.LEAD_TILE_STAIRS.get()).getFamily();
+    public static final BlockFamily LEAD_BLOCK = familyBuilder(ModBlocks.LEAD_BLOCK.get()).cut(ModBlocks.CUT_LEAD.get()).getFamily();
+    public static final BlockFamily CUT_LEAD = familyBuilder(ModBlocks.CUT_LEAD.get()).slab(ModBlocks.CUT_LEAD_SLAB.get()).stairs(ModBlocks.CUT_LEAD_STAIRS.get()).getFamily();
 
-    public static final BlockFamily URANIUM_BLOCK = familyBuilder(ModBlocks.URANIUM_BLOCK.get()).cut(ModBlocks.URANIUM_TILES.get()).getFamily();
-    public static final BlockFamily URANIUM_TILES = familyBuilder(ModBlocks.URANIUM_TILES.get()).slab(ModBlocks.URANIUM_TILE_SLAB.get()).stairs(ModBlocks.URANIUM_TILE_STAIRS.get()).getFamily();
+    public static final BlockFamily URANIUM_BLOCK = familyBuilder(ModBlocks.URANIUM_BLOCK.get()).cut(ModBlocks.CUT_URANIUM.get()).getFamily();
+    public static final BlockFamily CUT_URANIUM = familyBuilder(ModBlocks.CUT_URANIUM.get()).slab(ModBlocks.CUT_URANIUM_SLAB.get()).stairs(ModBlocks.CUT_URANIUM_STAIRS.get()).getFamily();
 
     public static final BlockFamily BRONZE_BLOCK = familyBuilder(ModBlocks.BRONZE_BLOCK.get()).cut(ModBlocks.CUT_BRONZE.get()).getFamily();
     public static final BlockFamily CUT_BRONZE = familyBuilder(ModBlocks.CUT_BRONZE.get()).slab(ModBlocks.CUT_BRONZE_SLAB.get()).stairs(ModBlocks.CUT_BRONZE_STAIRS.get()).getFamily();
 
-    public static final BlockFamily BRASS_BLOCK = familyBuilder(ModBlocks.BRASS_BLOCK.get()).cut(ModBlocks.BRASS_TILES.get()).getFamily();
-    public static final BlockFamily BRASS_TILES = familyBuilder(ModBlocks.BRASS_TILES.get()).slab(ModBlocks.BRASS_TILE_SLAB.get()).stairs(ModBlocks.BRASS_TILE_STAIRS.get()).getFamily();
+    public static final BlockFamily BRASS_BLOCK = familyBuilder(ModBlocks.BRASS_BLOCK.get()).cut(ModBlocks.CUT_BRASS.get()).getFamily();
+    public static final BlockFamily CUT_BRASS = familyBuilder(ModBlocks.CUT_BRASS.get()).slab(ModBlocks.CUT_BRASS_SLAB.get()).stairs(ModBlocks.CUT_BRASS_STAIRS.get()).getFamily();
 
-    public static final BlockFamily STEEL_BLOCK = familyBuilder(ModBlocks.STEEL_BLOCK.get()).cut(ModBlocks.STEEL_TILES.get()).getFamily();
-    public static final BlockFamily STEEL_TILES = familyBuilder(ModBlocks.STEEL_TILES.get()).slab(ModBlocks.STEEL_TILE_SLAB.get()).stairs(ModBlocks.STEEL_TILE_STAIRS.get()).getFamily();
+    public static final BlockFamily STEEL_BLOCK = familyBuilder(ModBlocks.STEEL_BLOCK.get()).cut(ModBlocks.CUT_STEEL.get()).getFamily();
+    public static final BlockFamily CUT_STEEL = familyBuilder(ModBlocks.CUT_STEEL.get()).slab(ModBlocks.CUT_STEEL_SLAB.get()).stairs(ModBlocks.CUT_STEEL_STAIRS.get()).getFamily();
+
+    public static final BlockFamily OAK_PLANKS = familyBuilder(Blocks.OAK_PLANKS).mosaic(ModBlocks.OAK_MOSAIC.get()).getFamily();
+    public static final BlockFamily SPRUCE_PLANKS = familyBuilder(Blocks.SPRUCE_PLANKS).mosaic(ModBlocks.SPRUCE_MOSAIC.get()).getFamily();
+    public static final BlockFamily BIRCH_PLANKS = familyBuilder(Blocks.BIRCH_PLANKS).mosaic(ModBlocks.BIRCH_MOSAIC.get()).getFamily();
+    public static final BlockFamily JUNGLE_PLANKS = familyBuilder(Blocks.JUNGLE_PLANKS).mosaic(ModBlocks.JUNGLE_MOSAIC.get()).getFamily();
+    public static final BlockFamily ACACIA_PLANKS = familyBuilder(Blocks.ACACIA_PLANKS).mosaic(ModBlocks.ACACIA_MOSAIC.get()).getFamily();
+    public static final BlockFamily DARK_OAK_PLANKS = familyBuilder(Blocks.DARK_OAK_PLANKS).mosaic(ModBlocks.DARK_OAK_MOSAIC.get()).getFamily();
+    public static final BlockFamily CRIMSON_PLANKS = familyBuilder(Blocks.CRIMSON_PLANKS).mosaic(ModBlocks.CRIMSON_MOSAIC.get()).getFamily();
+    public static final BlockFamily WARPED_PLANKS = familyBuilder(Blocks.WARPED_PLANKS).mosaic(ModBlocks.WARPED_MOSAIC.get()).getFamily();
+    public static final BlockFamily MANGROVE_PLANKS = familyBuilder(Blocks.MANGROVE_PLANKS).mosaic(ModBlocks.MANGROVE_MOSAIC.get()).getFamily();
+    public static final BlockFamily CHERRY_PLANKS = familyBuilder(Blocks.CHERRY_PLANKS).mosaic(ModBlocks.CHERRY_MOSAIC.get()).getFamily();
+    public static final BlockFamily PALE_OAK_PLANKS = familyBuilder(Blocks.PALE_OAK_PLANKS).mosaic(ModBlocks.PALE_OAK_MOSAIC.get()).getFamily();
+
+    public static final BlockFamily OAK_MOSAIC = familyBuilder(ModBlocks.OAK_MOSAIC.get()).slab(ModBlocks.OAK_MOSAIC_SLAB.get()).stairs(ModBlocks.OAK_MOSAIC_STAIRS.get()).getFamily();
+    public static final BlockFamily SPRUCE_MOSAIC = familyBuilder(ModBlocks.SPRUCE_MOSAIC.get()).slab(ModBlocks.SPRUCE_MOSAIC_SLAB.get()).stairs(ModBlocks.SPRUCE_MOSAIC_STAIRS.get()).getFamily();
+    public static final BlockFamily BIRCH_MOSAIC = familyBuilder(ModBlocks.BIRCH_MOSAIC.get()).slab(ModBlocks.BIRCH_MOSAIC_SLAB.get()).stairs(ModBlocks.BIRCH_MOSAIC_STAIRS.get()).getFamily();
+    public static final BlockFamily JUNGLE_MOSAIC = familyBuilder(ModBlocks.JUNGLE_MOSAIC.get()).slab(ModBlocks.JUNGLE_MOSAIC_SLAB.get()).stairs(ModBlocks.JUNGLE_MOSAIC_STAIRS.get()).getFamily();
+    public static final BlockFamily ACACIA_MOSAIC = familyBuilder(ModBlocks.ACACIA_MOSAIC.get()).slab(ModBlocks.ACACIA_MOSAIC_SLAB.get()).stairs(ModBlocks.ACACIA_MOSAIC_STAIRS.get()).getFamily();
+    public static final BlockFamily DARK_OAK_MOSAIC = familyBuilder(ModBlocks.DARK_OAK_MOSAIC.get()).slab(ModBlocks.DARK_OAK_MOSAIC_SLAB.get()).stairs(ModBlocks.DARK_OAK_MOSAIC_STAIRS.get()).getFamily();
+    public static final BlockFamily CRIMSON_MOSAIC = familyBuilder(ModBlocks.CRIMSON_MOSAIC.get()).slab(ModBlocks.CRIMSON_MOSAIC_SLAB.get()).stairs(ModBlocks.CRIMSON_MOSAIC_STAIRS.get()).getFamily();
+    public static final BlockFamily WARPED_MOSAIC = familyBuilder(ModBlocks.WARPED_MOSAIC.get()).slab(ModBlocks.WARPED_MOSAIC_SLAB.get()).stairs(ModBlocks.WARPED_MOSAIC_STAIRS.get()).getFamily();
+    public static final BlockFamily MANGROVE_MOSAIC = familyBuilder(ModBlocks.MANGROVE_MOSAIC.get()).slab(ModBlocks.MANGROVE_MOSAIC_SLAB.get()).stairs(ModBlocks.MANGROVE_MOSAIC_STAIRS.get()).getFamily();
+    public static final BlockFamily CHERRY_MOSAIC = familyBuilder(ModBlocks.CHERRY_MOSAIC.get()).slab(ModBlocks.CHERRY_MOSAIC_SLAB.get()).stairs(ModBlocks.CHERRY_MOSAIC_STAIRS.get()).getFamily();
+    public static final BlockFamily PALE_OAK_MOSAIC = familyBuilder(ModBlocks.PALE_OAK_MOSAIC.get()).slab(ModBlocks.PALE_OAK_MOSAIC_SLAB.get()).stairs(ModBlocks.PALE_OAK_MOSAIC_STAIRS.get()).getFamily();
+
+    public static final BlockFamily OBSIDIAN = familyBuilder(Blocks.OBSIDIAN).stairs(ModBlocks.OBSIDIAN_STAIRS.get()).slab(ModBlocks.OBSIDIAN_SLAB.get()).wall(ModBlocks.OBSIDIAN_WALL.get()).polished(ModBlocks.OBSIDIAN_BRICKS.get()).getFamily();
+    public static final BlockFamily CRYING_OBSIDIAN = familyBuilder(Blocks.CRYING_OBSIDIAN).stairs(ModBlocks.CRYING_OBSIDIAN_STAIRS.get()).slab(ModBlocks.CRYING_OBSIDIAN_SLAB.get()).wall(ModBlocks.CRYING_OBSIDIAN_WALL.get()).polished(ModBlocks.CRYING_OBSIDIAN_BRICKS.get()).getFamily();
+    public static final BlockFamily COAL = familyBuilder(Blocks.COAL_BLOCK).stairs(ModBlocks.COAL_STAIRS.get()).slab(ModBlocks.COAL_SLAB.get()).wall(ModBlocks.COAL_WALL.get()).polished(ModBlocks.COAL_BRICKS.get()).getFamily();
+    public static final BlockFamily CHARCOAL = familyBuilder(ModBlocks.CHARCOAL_BLOCK.get()).stairs(ModBlocks.CHARCOAL_STAIRS.get()).slab(ModBlocks.CHARCOAL_SLAB.get()).wall(ModBlocks.CHARCOAL_WALL.get()).polished(ModBlocks.CHARCOAL_BRICKS.get()).getFamily();
+    public static final BlockFamily LAPIS = familyBuilder(Blocks.LAPIS_BLOCK).stairs(ModBlocks.LAPIS_STAIRS.get()).slab(ModBlocks.LAPIS_SLAB.get()).wall(ModBlocks.LAPIS_WALL.get()).polished(ModBlocks.LAPIS_BRICKS.get()).getFamily();
+    public static final BlockFamily SNOW = familyBuilder(Blocks.SNOW_BLOCK).stairs(ModBlocks.SNOW_STAIRS.get()).slab(ModBlocks.SNOW_SLAB.get()).wall(ModBlocks.SNOW_WALL.get()).polished(ModBlocks.SNOW_BRICKS.get()).getFamily();
+    public static final BlockFamily ICE = familyBuilder(Blocks.ICE).stairs(ModBlocks.ICE_STAIRS.get()).slab(ModBlocks.ICE_SLAB.get()).wall(ModBlocks.ICE_WALL.get()).polished(ModBlocks.ICE_BRICKS.get()).getFamily();
+    public static final BlockFamily PACKED_ICE = familyBuilder(Blocks.PACKED_ICE).stairs(ModBlocks.PACKED_ICE_STAIRS.get()).slab(ModBlocks.PACKED_ICE_SLAB.get()).wall(ModBlocks.PACKED_ICE_WALL.get()).polished(ModBlocks.PACKED_ICE_BRICKS.get()).getFamily();
+    public static final BlockFamily BLUE_ICE = familyBuilder(Blocks.BLUE_ICE).stairs(ModBlocks.BLUE_ICE_STAIRS.get()).slab(ModBlocks.BLUE_ICE_SLAB.get()).wall(ModBlocks.BLUE_ICE_WALL.get()).polished(ModBlocks.BLUE_ICE_BRICKS.get()).getFamily();
+    public static final BlockFamily TERRACOTTA = familyBuilder(Blocks.TERRACOTTA).stairs(ModBlocks.TERRACOTTA_STAIRS.get()).slab(ModBlocks.TERRACOTTA_SLAB.get()).wall(ModBlocks.TERRACOTTA_WALL.get()).getFamily();
+    public static final BlockFamily SCULK = familyBuilder(Blocks.SCULK).stairs(ModBlocks.SCULK_STAIRS.get()).slab(ModBlocks.SCULK_SLAB.get()).wall(ModBlocks.SCULK_WALL.get()).getFamily();
+
+    public static final BlockFamily WHITE_TERRACOTTA = familyBuilder(Blocks.WHITE_TERRACOTTA).stairs(ModBlocks.WHITE_TERRACOTTA_STAIRS.get()).slab(ModBlocks.WHITE_TERRACOTTA_SLAB.get()).wall(ModBlocks.WHITE_TERRACOTTA_WALL.get()).getFamily();
+    public static final BlockFamily ORANGE_TERRACOTTA = familyBuilder(Blocks.ORANGE_TERRACOTTA).stairs(ModBlocks.ORANGE_TERRACOTTA_STAIRS.get()).slab(ModBlocks.ORANGE_TERRACOTTA_SLAB.get()).wall(ModBlocks.ORANGE_TERRACOTTA_WALL.get()).getFamily();
+    public static final BlockFamily MAGENTA_TERRACOTTA = familyBuilder(Blocks.MAGENTA_TERRACOTTA).stairs(ModBlocks.MAGENTA_TERRACOTTA_STAIRS.get()).slab(ModBlocks.MAGENTA_TERRACOTTA_SLAB.get()).wall(ModBlocks.MAGENTA_TERRACOTTA_WALL.get()).getFamily();
+    public static final BlockFamily LIGHT_BLUE_TERRACOTTA = familyBuilder(Blocks.LIGHT_BLUE_TERRACOTTA).stairs(ModBlocks.LIGHT_BLUE_TERRACOTTA_STAIRS.get()).slab(ModBlocks.LIGHT_BLUE_TERRACOTTA_SLAB.get()).wall(ModBlocks.LIGHT_BLUE_TERRACOTTA_WALL.get()).getFamily();
+    public static final BlockFamily YELLOW_TERRACOTTA = familyBuilder(Blocks.YELLOW_TERRACOTTA).stairs(ModBlocks.YELLOW_TERRACOTTA_STAIRS.get()).slab(ModBlocks.YELLOW_TERRACOTTA_SLAB.get()).wall(ModBlocks.YELLOW_TERRACOTTA_WALL.get()).getFamily();
+    public static final BlockFamily LIME_TERRACOTTA = familyBuilder(Blocks.LIME_TERRACOTTA).stairs(ModBlocks.LIME_TERRACOTTA_STAIRS.get()).slab(ModBlocks.LIME_TERRACOTTA_SLAB.get()).wall(ModBlocks.LIME_TERRACOTTA_WALL.get()).getFamily();
+    public static final BlockFamily PINK_TERRACOTTA = familyBuilder(Blocks.PINK_TERRACOTTA).stairs(ModBlocks.PINK_TERRACOTTA_STAIRS.get()).slab(ModBlocks.PINK_TERRACOTTA_SLAB.get()).wall(ModBlocks.PINK_TERRACOTTA_WALL.get()).getFamily();
+    public static final BlockFamily GRAY_TERRACOTTA = familyBuilder(Blocks.GRAY_TERRACOTTA).stairs(ModBlocks.GRAY_TERRACOTTA_STAIRS.get()).slab(ModBlocks.GRAY_TERRACOTTA_SLAB.get()).wall(ModBlocks.GRAY_TERRACOTTA_WALL.get()).getFamily();
+    public static final BlockFamily LIGHT_GRAY_TERRACOTTA = familyBuilder(Blocks.LIGHT_GRAY_TERRACOTTA).stairs(ModBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS.get()).slab(ModBlocks.LIGHT_GRAY_TERRACOTTA_SLAB.get()).wall(ModBlocks.LIGHT_GRAY_TERRACOTTA_WALL.get()).getFamily();
+    public static final BlockFamily CYAN_TERRACOTTA = familyBuilder(Blocks.CYAN_TERRACOTTA).stairs(ModBlocks.CYAN_TERRACOTTA_STAIRS.get()).slab(ModBlocks.CYAN_TERRACOTTA_SLAB.get()).wall(ModBlocks.CYAN_TERRACOTTA_WALL.get()).getFamily();
+    public static final BlockFamily PURPLE_TERRACOTTA = familyBuilder(Blocks.PURPLE_TERRACOTTA).stairs(ModBlocks.PURPLE_TERRACOTTA_STAIRS.get()).slab(ModBlocks.PURPLE_TERRACOTTA_SLAB.get()).wall(ModBlocks.PURPLE_TERRACOTTA_WALL.get()).getFamily();
+    public static final BlockFamily BLUE_TERRACOTTA = familyBuilder(Blocks.BLUE_TERRACOTTA).stairs(ModBlocks.BLUE_TERRACOTTA_STAIRS.get()).slab(ModBlocks.BLUE_TERRACOTTA_SLAB.get()).wall(ModBlocks.BLUE_TERRACOTTA_WALL.get()).getFamily();
+    public static final BlockFamily BROWN_TERRACOTTA = familyBuilder(Blocks.BROWN_TERRACOTTA).stairs(ModBlocks.BROWN_TERRACOTTA_STAIRS.get()).slab(ModBlocks.BROWN_TERRACOTTA_SLAB.get()).wall(ModBlocks.BROWN_TERRACOTTA_WALL.get()).getFamily();
+    public static final BlockFamily GREEN_TERRACOTTA = familyBuilder(Blocks.GREEN_TERRACOTTA).stairs(ModBlocks.GREEN_TERRACOTTA_STAIRS.get()).slab(ModBlocks.GREEN_TERRACOTTA_SLAB.get()).wall(ModBlocks.GREEN_TERRACOTTA_WALL.get()).getFamily();
+    public static final BlockFamily RED_TERRACOTTA = familyBuilder(Blocks.RED_TERRACOTTA).stairs(ModBlocks.RED_TERRACOTTA_STAIRS.get()).slab(ModBlocks.RED_TERRACOTTA_SLAB.get()).wall(ModBlocks.RED_TERRACOTTA_WALL.get()).getFamily();
+    public static final BlockFamily BLACK_TERRACOTTA = familyBuilder(Blocks.BLACK_TERRACOTTA).stairs(ModBlocks.BLACK_TERRACOTTA_STAIRS.get()).slab(ModBlocks.BLACK_TERRACOTTA_SLAB.get()).wall(ModBlocks.BLACK_TERRACOTTA_WALL.get()).getFamily();
+
+    public static final BlockFamily WHITE_CONCRETE = familyBuilder(Blocks.WHITE_CONCRETE).stairs(ModBlocks.WHITE_CONCRETE_STAIRS.get()).slab(ModBlocks.WHITE_CONCRETE_SLAB.get()).wall(ModBlocks.WHITE_CONCRETE_WALL.get()).getFamily();
+    public static final BlockFamily ORANGE_CONCRETE = familyBuilder(Blocks.ORANGE_CONCRETE).stairs(ModBlocks.ORANGE_CONCRETE_STAIRS.get()).slab(ModBlocks.ORANGE_CONCRETE_SLAB.get()).wall(ModBlocks.ORANGE_CONCRETE_WALL.get()).getFamily();
+    public static final BlockFamily MAGENTA_CONCRETE = familyBuilder(Blocks.MAGENTA_CONCRETE).stairs(ModBlocks.MAGENTA_CONCRETE_STAIRS.get()).slab(ModBlocks.MAGENTA_CONCRETE_SLAB.get()).wall(ModBlocks.MAGENTA_CONCRETE_WALL.get()).getFamily();
+    public static final BlockFamily LIGHT_BLUE_CONCRETE = familyBuilder(Blocks.LIGHT_BLUE_CONCRETE).stairs(ModBlocks.LIGHT_BLUE_CONCRETE_STAIRS.get()).slab(ModBlocks.LIGHT_BLUE_CONCRETE_SLAB.get()).wall(ModBlocks.LIGHT_BLUE_CONCRETE_WALL.get()).getFamily();
+    public static final BlockFamily YELLOW_CONCRETE = familyBuilder(Blocks.YELLOW_CONCRETE).stairs(ModBlocks.YELLOW_CONCRETE_STAIRS.get()).slab(ModBlocks.YELLOW_CONCRETE_SLAB.get()).wall(ModBlocks.YELLOW_CONCRETE_WALL.get()).getFamily();
+    public static final BlockFamily LIME_CONCRETE = familyBuilder(Blocks.LIME_CONCRETE).stairs(ModBlocks.LIME_CONCRETE_STAIRS.get()).slab(ModBlocks.LIME_CONCRETE_SLAB.get()).wall(ModBlocks.LIME_CONCRETE_WALL.get()).getFamily();
+    public static final BlockFamily PINK_CONCRETE = familyBuilder(Blocks.PINK_CONCRETE).stairs(ModBlocks.PINK_CONCRETE_STAIRS.get()).slab(ModBlocks.PINK_CONCRETE_SLAB.get()).wall(ModBlocks.PINK_CONCRETE_WALL.get()).getFamily();
+    public static final BlockFamily GRAY_CONCRETE = familyBuilder(Blocks.GRAY_CONCRETE).stairs(ModBlocks.GRAY_CONCRETE_STAIRS.get()).slab(ModBlocks.GRAY_CONCRETE_SLAB.get()).wall(ModBlocks.GRAY_CONCRETE_WALL.get()).getFamily();
+    public static final BlockFamily LIGHT_GRAY_CONCRETE = familyBuilder(Blocks.LIGHT_GRAY_CONCRETE).stairs(ModBlocks.LIGHT_GRAY_CONCRETE_STAIRS.get()).slab(ModBlocks.LIGHT_GRAY_CONCRETE_SLAB.get()).wall(ModBlocks.LIGHT_GRAY_CONCRETE_WALL.get()).getFamily();
+    public static final BlockFamily CYAN_CONCRETE = familyBuilder(Blocks.CYAN_CONCRETE).stairs(ModBlocks.CYAN_CONCRETE_STAIRS.get()).slab(ModBlocks.CYAN_CONCRETE_SLAB.get()).wall(ModBlocks.CYAN_CONCRETE_WALL.get()).getFamily();
+    public static final BlockFamily PURPLE_CONCRETE = familyBuilder(Blocks.PURPLE_CONCRETE).stairs(ModBlocks.PURPLE_CONCRETE_STAIRS.get()).slab(ModBlocks.PURPLE_CONCRETE_SLAB.get()).wall(ModBlocks.PURPLE_CONCRETE_WALL.get()).getFamily();
+    public static final BlockFamily BLUE_CONCRETE = familyBuilder(Blocks.BLUE_CONCRETE).stairs(ModBlocks.BLUE_CONCRETE_STAIRS.get()).slab(ModBlocks.BLUE_CONCRETE_SLAB.get()).wall(ModBlocks.BLUE_CONCRETE_WALL.get()).getFamily();
+    public static final BlockFamily BROWN_CONCRETE = familyBuilder(Blocks.BROWN_CONCRETE).stairs(ModBlocks.BROWN_CONCRETE_STAIRS.get()).slab(ModBlocks.BROWN_CONCRETE_SLAB.get()).wall(ModBlocks.BROWN_CONCRETE_WALL.get()).getFamily();
+    public static final BlockFamily GREEN_CONCRETE = familyBuilder(Blocks.GREEN_CONCRETE).stairs(ModBlocks.GREEN_CONCRETE_STAIRS.get()).slab(ModBlocks.GREEN_CONCRETE_SLAB.get()).wall(ModBlocks.GREEN_CONCRETE_WALL.get()).getFamily();
+    public static final BlockFamily RED_CONCRETE = familyBuilder(Blocks.RED_CONCRETE).stairs(ModBlocks.RED_CONCRETE_STAIRS.get()).slab(ModBlocks.RED_CONCRETE_SLAB.get()).wall(ModBlocks.RED_CONCRETE_WALL.get()).getFamily();
+    public static final BlockFamily BLACK_CONCRETE = familyBuilder(Blocks.BLACK_CONCRETE).stairs(ModBlocks.BLACK_CONCRETE_STAIRS.get()).slab(ModBlocks.BLACK_CONCRETE_SLAB.get()).wall(ModBlocks.BLACK_CONCRETE_WALL.get()).getFamily();
+
+    public static final BlockFamily STONE_BRICKS = familyBuilder(Blocks.STONE_BRICKS).polished(ModBlocks.STONE_TILES.get()).getFamily();
+    public static final BlockFamily STONE_TILES = familyBuilder(ModBlocks.STONE_TILES.get()).slab(ModBlocks.STONE_TILE_SLAB.get()).stairs(ModBlocks.STONE_TILE_STAIRS.get()).wall(ModBlocks.STONE_TILE_WALL.get()).getFamily();
+    public static final BlockFamily MOSSY_STONE_TILES = familyBuilder(ModBlocks.MOSSY_STONE_TILES.get()).slab(ModBlocks.MOSSY_STONE_TILE_SLAB.get()).stairs(ModBlocks.MOSSY_STONE_TILE_STAIRS.get()).wall(ModBlocks.MOSSY_STONE_TILE_WALL.get()).getFamily();
+    public static final BlockFamily CRACKED_STONE_TILES = familyBuilder(ModBlocks.CRACKED_STONE_TILES.get()).slab(ModBlocks.CRACKED_STONE_TILE_SLAB.get()).stairs(ModBlocks.CRACKED_STONE_TILE_STAIRS.get()).wall(ModBlocks.CRACKED_STONE_TILE_WALL.get()).getFamily();
+    public static final BlockFamily OBSIDIAN_BRICKS = familyBuilder(ModBlocks.OBSIDIAN_BRICKS.get()).slab(ModBlocks.OBSIDIAN_BRICK_SLAB.get()).stairs(ModBlocks.OBSIDIAN_BRICK_STAIRS.get()).wall(ModBlocks.OBSIDIAN_BRICK_WALL.get()).getFamily();
+    public static final BlockFamily CRYING_OBSIDIAN_BRICKS = familyBuilder(ModBlocks.CRYING_OBSIDIAN_BRICKS.get()).slab(ModBlocks.CRYING_OBSIDIAN_BRICK_SLAB.get()).stairs(ModBlocks.CRYING_OBSIDIAN_BRICK_STAIRS.get()).wall(ModBlocks.CRYING_OBSIDIAN_BRICK_WALL.get()).getFamily();
+    public static final BlockFamily COAL_BRICKS = familyBuilder(ModBlocks.COAL_BRICKS.get()).stairs(ModBlocks.COAL_BRICK_STAIRS.get()).slab(ModBlocks.COAL_BRICK_SLAB.get()).wall(ModBlocks.COAL_BRICK_WALL.get()).getFamily();
+    public static final BlockFamily CHARCOAL_BRICKS = familyBuilder(ModBlocks.CHARCOAL_BRICKS.get()).stairs(ModBlocks.CHARCOAL_BRICK_STAIRS.get()).slab(ModBlocks.CHARCOAL_BRICK_SLAB.get()).wall(ModBlocks.CHARCOAL_BRICK_WALL.get()).getFamily();
+    public static final BlockFamily LAPIS_BRICKS = familyBuilder(ModBlocks.LAPIS_BRICKS.get()).slab(ModBlocks.LAPIS_BRICK_SLAB.get()).stairs(ModBlocks.LAPIS_BRICK_STAIRS.get()).wall(ModBlocks.LAPIS_BRICK_WALL.get()).getFamily();
+    public static final BlockFamily SMOOTH_LAPIS = familyBuilder(ModBlocks.SMOOTH_LAPIS.get()).slab(ModBlocks.SMOOTH_LAPIS_SLAB.get()).stairs(ModBlocks.SMOOTH_LAPIS_STAIRS.get()).wall(ModBlocks.SMOOTH_LAPIS_WALL.get()).getFamily();
+    public static final BlockFamily SNOW_BRICKS = familyBuilder(ModBlocks.SNOW_BRICKS.get()).slab(ModBlocks.SNOW_BRICK_SLAB.get()).stairs(ModBlocks.SNOW_BRICK_STAIRS.get()).wall(ModBlocks.SNOW_BRICK_WALL.get()).getFamily();
+    public static final BlockFamily ICE_BRICKS = familyBuilder(ModBlocks.ICE_BRICKS.get()).slab(ModBlocks.ICE_BRICK_SLAB.get()).stairs(ModBlocks.ICE_BRICK_STAIRS.get()).wall(ModBlocks.ICE_BRICK_WALL.get()).getFamily();
+    public static final BlockFamily PACKED_ICE_BRICKS = familyBuilder(ModBlocks.PACKED_ICE_BRICKS.get()).slab(ModBlocks.PACKED_ICE_BRICK_SLAB.get()).stairs(ModBlocks.PACKED_ICE_BRICK_STAIRS.get()).wall(ModBlocks.PACKED_ICE_BRICK_WALL.get()).getFamily();
+    public static final BlockFamily BLUE_ICE_BRICKS = familyBuilder(ModBlocks.BLUE_ICE_BRICKS.get()).slab(ModBlocks.BLUE_ICE_BRICK_SLAB.get()).stairs(ModBlocks.BLUE_ICE_BRICK_STAIRS.get()).wall(ModBlocks.BLUE_ICE_BRICK_WALL.get()).getFamily();
+    public static final BlockFamily SCULK_BRICKS = familyBuilder(ModBlocks.SCULK_BRICKS.get()).slab(ModBlocks.SCULK_BRICK_SLAB.get()).stairs(ModBlocks.SCULK_BRICK_STAIRS.get()).wall(ModBlocks.SCULK_BRICK_WALL.get()).chiseled(ModBlocks.CHISELED_SCULK_BRICKS.get()).getFamily();
 
 }

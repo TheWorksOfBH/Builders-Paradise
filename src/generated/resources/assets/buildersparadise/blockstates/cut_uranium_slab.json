@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/cut_uranium_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/cut_uranium"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/cut_uranium_slab_top"
+    }
+  }
+}

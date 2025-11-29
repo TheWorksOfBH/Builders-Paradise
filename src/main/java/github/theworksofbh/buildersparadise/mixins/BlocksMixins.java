@@ -52,4 +52,12 @@ public abstract class BlocksMixins {
         return properties.randomTicks();
     }
 
+    @Definition(id = "IRON_CHAIN", field = "Lnet/minecraft/world/level/block/Blocks;IRON_CHAIN:Lnet/minecraft/world/level/block/Block;")
+    @Definition(id = "register", method = "Lnet/minecraft/world/level/block/Blocks;register(Ljava/lang/String;Ljava/util/function/Function;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;")
+    @Expression("IRON_CHAIN = @(register(?, ?, ?))")
+    @ModifyArg(method = "<clinit>", at = @At("MIXINEXTRAS:EXPRESSION"))
+    private static BlockBehaviour.Properties modifyIronChainProperties(BlockBehaviour.Properties properties) {
+        return properties.randomTicks();
+    }
+
 }

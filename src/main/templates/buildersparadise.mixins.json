@@ -5,9 +5,10 @@
   "mixins": [
     "BlockBehaviourMixins",
     "BlocksMixins",
+    "CartographyTableMenuMixins",
+    "CarvedPumpkinBlockMixins",
     "ChestRendererMixins",
     "CraftingMenuMixins",
-    "CartographyTableMenuMixins",
     "GrindstoneMenuMixins",
     "LoomMenuMixins",
     "MinecartChestMixins",

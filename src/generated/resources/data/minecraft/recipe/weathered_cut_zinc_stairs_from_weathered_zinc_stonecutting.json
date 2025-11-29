@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:weathered_zinc",
+  "result": {
+    "count": 4,
+    "id": "buildersparadise:weathered_cut_zinc_stairs"
+  }
+}

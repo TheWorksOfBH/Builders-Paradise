@@ -20,13 +20,13 @@ public class ModIronBarsBlock extends IronBarsBlock {
 
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        if (level.random.nextFloat() < 0.05296323F) {
+        if (level.random.nextFloat() < BlockOxidationValues.IRON) {
             if (state.is(Blocks.IRON_BARS)) {
-                level.setBlock(pos, ModBlocks.MILDLY_RUSTED_IRON_BARS.get().withPropertiesOf(state), Block.UPDATE_ALL);
-            } else if (state.is(ModBlocks.MILDLY_RUSTED_IRON_BARS.get())) {
-                level.setBlock(pos, ModBlocks.MODERATELY_RUSTED_IRON_BARS.get().withPropertiesOf(state), Block.UPDATE_ALL);
-            } else if (state.is(ModBlocks.MODERATELY_RUSTED_IRON_BARS.get())) {
-                level.setBlock(pos, ModBlocks.EXTREMELY_RUSTED_IRON_BARS.get().withPropertiesOf(state), Block.UPDATE_ALL);
+                level.setBlock(pos, ModBlocks.EXPOSED_IRON_BARS.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            } else if (state.is(ModBlocks.EXPOSED_IRON_BARS.get())) {
+                level.setBlock(pos, ModBlocks.WEATHERED_IRON_BARS.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            } else if (state.is(ModBlocks.WEATHERED_IRON_BARS.get())) {
+                level.setBlock(pos, ModBlocks.RUSTED_IRON_BARS.get().withPropertiesOf(state), Block.UPDATE_ALL);
             }
         }
     }

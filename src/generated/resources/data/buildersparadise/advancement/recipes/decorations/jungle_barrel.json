@@ -6,7 +6,7 @@
   ],
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_block.minecraft.jungle_planks": {
+    "has_jungle_planks": {
       "conditions": {
         "items": [
           {
@@ -16,7 +16,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_block.minecraft.jungle_slab": {
+    "has_jungle_slab": {
       "conditions": {
         "items": [
           {
@@ -36,8 +36,8 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_block.minecraft.jungle_planks",
-      "has_block.minecraft.jungle_slab"
+      "has_jungle_planks",
+      "has_jungle_slab"
     ]
   ],
   "rewards": {

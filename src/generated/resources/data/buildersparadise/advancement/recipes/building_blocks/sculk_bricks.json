@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_sculk_brick": {
+      "conditions": {
+        "items": [
+          {
+            "items": "buildersparadise:sculk_brick"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "buildersparadise:sculk_bricks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_sculk_brick"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "buildersparadise:sculk_bricks"
+    ]
+  }
+}

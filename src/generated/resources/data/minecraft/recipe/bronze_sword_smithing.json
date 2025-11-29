@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "#buildersparadise:bronze_tool_materials",
+  "base": "minecraft:copper_sword",
+  "result": {
+    "id": "buildersparadise:bronze_sword"
+  },
+  "template": "buildersparadise:bronze_upgrade_smithing_template"
+}

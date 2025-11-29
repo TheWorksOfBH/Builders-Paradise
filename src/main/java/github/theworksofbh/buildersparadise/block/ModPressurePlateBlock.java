@@ -22,21 +22,21 @@ public class ModPressurePlateBlock extends WeightedPressurePlateBlock {
 
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        if (level.random.nextFloat() < 0.05296323F) {
+        if (level.random.nextFloat() < BlockOxidationValues.IRON) {
             if (state.is(Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE)) {
-                level.setBlock(pos, ModBlocks.MILDLY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().withPropertiesOf(state), Block.UPDATE_ALL);
-            } else if (state.is(ModBlocks.MILDLY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get())) {
-                level.setBlock(pos, ModBlocks.MODERATELY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().withPropertiesOf(state), Block.UPDATE_ALL);
-            } else if (state.is(ModBlocks.MODERATELY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get())) {
-                level.setBlock(pos, ModBlocks.EXTREMELY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().withPropertiesOf(state), Block.UPDATE_ALL);
+                level.setBlock(pos, ModBlocks.EXPOSED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            } else if (state.is(ModBlocks.EXPOSED_HEAVY_WEIGHTED_PRESSURE_PLATE.get())) {
+                level.setBlock(pos, ModBlocks.WEATHERED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            } else if (state.is(ModBlocks.WEATHERED_HEAVY_WEIGHTED_PRESSURE_PLATE.get())) {
+                level.setBlock(pos, ModBlocks.RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().withPropertiesOf(state), Block.UPDATE_ALL);
             }
-        } else if (level.random.nextFloat() < 0.06347294F) {
+        } else if (level.random.nextFloat() < BlockOxidationValues.ZINC) {
             if (state.is(ModBlocks.BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get())) {
-                level.setBlock(pos, ModBlocks.SLIGHTLY_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().withPropertiesOf(state), Block.UPDATE_ALL);
-            } else if (state.is(ModBlocks.SLIGHTLY_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get())) {
-                level.setBlock(pos, ModBlocks.SOMEWHAT_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().withPropertiesOf(state), Block.UPDATE_ALL);
-            } else if (state.is(ModBlocks.SOMEWHAT_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get())) {
-                level.setBlock(pos, ModBlocks.REALLY_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().withPropertiesOf(state), Block.UPDATE_ALL);
+                level.setBlock(pos, ModBlocks.EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            } else if (state.is(ModBlocks.EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get())) {
+                level.setBlock(pos, ModBlocks.WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            } else if (state.is(ModBlocks.WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get())) {
+                level.setBlock(pos, ModBlocks.CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().withPropertiesOf(state), Block.UPDATE_ALL);
             }
         }
     }

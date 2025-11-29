@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/cut_brass_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/cut_brass"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/cut_brass_slab_top"
+    }
+  }
+}

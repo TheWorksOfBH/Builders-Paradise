@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:cut_steel",
+  "result": {
+    "count": 2,
+    "id": "buildersparadise:cut_steel_slab"
+  }
+}

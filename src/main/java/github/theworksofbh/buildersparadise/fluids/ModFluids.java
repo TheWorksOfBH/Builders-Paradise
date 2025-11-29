@@ -22,7 +22,7 @@ public class ModFluids {
             () -> ModBlocks.NUCLEAR_WASTE.get()
     ).bucket(
             () -> ModItems.NUCLEAR_WASTE_BUCKET.get()
-    ).slopeFindDistance(4).levelDecreasePerBlock(1).explosionResistance(100.0F);
+    ).slopeFindDistance(4).levelDecreasePerBlock(3).explosionResistance(100.0F).tickRate(60);
 
     public static final DeferredHolder<Fluid, FlowingFluid> NUCLEAR_WASTE = FLUIDS.register("nuclear_waste",
             () -> new BaseFlowingFluid.Source(NUCLEAR_WASTE_PROPERTIES));

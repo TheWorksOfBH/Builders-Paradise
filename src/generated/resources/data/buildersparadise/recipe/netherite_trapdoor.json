@@ -5,11 +5,11 @@
     "#": "minecraft:netherite_ingot"
   },
   "pattern": [
-    "###",
-    "###"
+    "##",
+    "##"
   ],
   "result": {
-    "count": 2,
+    "count": 1,
     "id": "buildersparadise:netherite_trapdoor"
   }
 }

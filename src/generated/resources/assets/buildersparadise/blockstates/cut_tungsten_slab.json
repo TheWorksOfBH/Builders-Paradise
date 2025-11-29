@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/cut_tungsten_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/cut_tungsten"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/cut_tungsten_slab_top"
+    }
+  }
+}

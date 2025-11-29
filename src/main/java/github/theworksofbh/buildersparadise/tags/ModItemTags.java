@@ -10,6 +10,9 @@ public class ModItemTags {
 
     public static final TagKey<Item> CHESTS = create("chests");
     public static final TagKey<Item> DROPPERS = create("droppers");
+    public static final TagKey<Item> CONCRETE = create("concrete");
+    public static final TagKey<Item> BRONZE_TOOL_MATERIALS = create("bronze_tool_materials");
+    public static final TagKey<Item> REPAIRS_BRONZE_ARMOR = create("repairs_bronze_armor");
 
     private ModItemTags() {
     }

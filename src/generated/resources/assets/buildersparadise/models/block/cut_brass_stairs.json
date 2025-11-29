@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "buildersparadise:block/cut_brass",
+    "side": "buildersparadise:block/cut_brass",
+    "top": "buildersparadise:block/cut_brass"
+  }
+}

@@ -21,15 +21,17 @@ public abstract class BlockBehaviourMixins {
     @Inject(at = @At("HEAD"), method = "randomTick", cancellable = true)
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random, CallbackInfo ci) {
         if (state.is(Blocks.IRON_BLOCK)) {
-            level.setBlock(pos, ModBlocks.MILDLY_RUSTED_IRON_BLOCK.get().defaultBlockState(), Block.UPDATE_ALL);
+            level.setBlock(pos, ModBlocks.EXPOSED_IRON.get().defaultBlockState(), Block.UPDATE_ALL);
         } else if (state.is(Blocks.IRON_DOOR)) {
-            level.setBlock(pos, ModBlocks.MILDLY_RUSTED_IRON_DOOR.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            level.setBlock(pos, ModBlocks.EXPOSED_IRON_DOOR.get().withPropertiesOf(state), Block.UPDATE_ALL);
         } else if (state.is(Blocks.IRON_TRAPDOOR)) {
-            level.setBlock(pos, ModBlocks.MILDLY_RUSTED_IRON_TRAPDOOR.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            level.setBlock(pos, ModBlocks.EXPOSED_IRON_TRAPDOOR.get().withPropertiesOf(state), Block.UPDATE_ALL);
         } else if (state.is(Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE)) {
-            level.setBlock(pos, ModBlocks.MILDLY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            level.setBlock(pos, ModBlocks.EXPOSED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().withPropertiesOf(state), Block.UPDATE_ALL);
         } else if (state.is(Blocks.IRON_BARS)) {
-            level.setBlock(pos, ModBlocks.MILDLY_RUSTED_IRON_BARS.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            level.setBlock(pos, ModBlocks.EXPOSED_IRON_BARS.get().withPropertiesOf(state), Block.UPDATE_ALL);
+        } else if (state.is(Blocks.IRON_CHAIN)) {
+            level.setBlock(pos, ModBlocks.EXPOSED_IRON_CHAIN.get().withPropertiesOf(state), Block.UPDATE_ALL);
         }
     }
 

@@ -12,6 +12,8 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.AbstractBoat;
 import net.minecraft.world.entity.vehicle.AbstractMinecart;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.FlowingFluid;
@@ -109,53 +111,53 @@ public class ModItems {
     public static final DeferredItem<BlockItem> RESIN_STAIRS = registerBlockItem("resin_stairs", () -> ModBlocks.RESIN_STAIRS.get());
     public static final DeferredItem<BlockItem> RESIN_WALL = registerBlockItem("resin_wall", () -> ModBlocks.RESIN_WALL.get());
 
-    public static final DeferredItem<BlockItem> IRON_TILES = registerBlockItem("iron_tiles", () -> ModBlocks.IRON_TILES.get());
-    public static final DeferredItem<BlockItem> IRON_TILE_SLAB = registerBlockItem("iron_tile_slab", () -> ModBlocks.IRON_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> IRON_TILE_STAIRS = registerBlockItem("iron_tile_stairs", () -> ModBlocks.IRON_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> CUT_IRON = registerBlockItem("cut_iron", () -> ModBlocks.CUT_IRON.get());
+    public static final DeferredItem<BlockItem> CUT_IRON_SLAB = registerBlockItem("cut_iron_slab", () -> ModBlocks.CUT_IRON_SLAB.get());
+    public static final DeferredItem<BlockItem> CUT_IRON_STAIRS = registerBlockItem("cut_iron_stairs", () -> ModBlocks.CUT_IRON_STAIRS.get());
 
-    public static final DeferredItem<BlockItem> MILDLY_RUSTED_IRON_TILES = registerBlockItem("mildly_rusted_iron_tiles", () -> ModBlocks.MILDLY_RUSTED_IRON_TILES.get());
-    public static final DeferredItem<BlockItem> MILDLY_RUSTED_IRON_TILE_SLAB = registerBlockItem("mildly_rusted_iron_tile_slab", () -> ModBlocks.MILDLY_RUSTED_IRON_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> MILDLY_RUSTED_IRON_TILE_STAIRS = registerBlockItem("mildly_rusted_iron_tile_stairs", () -> ModBlocks.MILDLY_RUSTED_IRON_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> EXPOSED_CUT_IRON = registerBlockItem("exposed_cut_iron", () -> ModBlocks.EXPOSED_CUT_IRON.get());
+    public static final DeferredItem<BlockItem> EXPOSED_CUT_IRON_SLAB = registerBlockItem("exposed_cut_iron_slab", () -> ModBlocks.EXPOSED_CUT_IRON_SLAB.get());
+    public static final DeferredItem<BlockItem> EXPOSED_CUT_IRON_STAIRS = registerBlockItem("exposed_cut_iron_stairs", () -> ModBlocks.EXPOSED_CUT_IRON_STAIRS.get());
 
-    public static final DeferredItem<BlockItem> MODERATELY_RUSTED_IRON_TILES = registerBlockItem("moderately_rusted_iron_tiles", () -> ModBlocks.MODERATELY_RUSTED_IRON_TILES.get());
-    public static final DeferredItem<BlockItem> MODERATELY_RUSTED_IRON_TILE_SLAB = registerBlockItem("moderately_rusted_iron_tile_slab", () -> ModBlocks.MODERATELY_RUSTED_IRON_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> MODERATELY_RUSTED_IRON_TILE_STAIRS = registerBlockItem("moderately_rusted_iron_tile_stairs", () -> ModBlocks.MODERATELY_RUSTED_IRON_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> WEATHERED_CUT_IRON = registerBlockItem("weathered_cut_iron", () -> ModBlocks.WEATHERED_CUT_IRON.get());
+    public static final DeferredItem<BlockItem> WEATHERED_CUT_IRON_SLAB = registerBlockItem("weathered_cut_iron_slab", () -> ModBlocks.WEATHERED_CUT_IRON_SLAB.get());
+    public static final DeferredItem<BlockItem> WEATHERED_CUT_IRON_STAIRS = registerBlockItem("weathered_cut_iron_stairs", () -> ModBlocks.WEATHERED_CUT_IRON_STAIRS.get());
 
-    public static final DeferredItem<BlockItem> EXTREMELY_RUSTED_IRON_TILES = registerBlockItem("extremely_rusted_iron_tiles", () -> ModBlocks.EXTREMELY_RUSTED_IRON_TILES.get());
-    public static final DeferredItem<BlockItem> EXTREMELY_RUSTED_IRON_TILE_SLAB = registerBlockItem("extremely_rusted_iron_tile_slab", () -> ModBlocks.EXTREMELY_RUSTED_IRON_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> EXTREMELY_RUSTED_IRON_TILE_STAIRS = registerBlockItem("extremely_rusted_iron_tile_stairs", () -> ModBlocks.EXTREMELY_RUSTED_IRON_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> RUSTED_CUT_IRON = registerBlockItem("rusted_cut_iron", () -> ModBlocks.RUSTED_CUT_IRON.get());
+    public static final DeferredItem<BlockItem> RUSTED_CUT_IRON_SLAB = registerBlockItem("rusted_cut_iron_slab", () -> ModBlocks.RUSTED_CUT_IRON_SLAB.get());
+    public static final DeferredItem<BlockItem> RUSTED_CUT_IRON_STAIRS = registerBlockItem("rusted_cut_iron_stairs", () -> ModBlocks.RUSTED_CUT_IRON_STAIRS.get());
 
-    public static final DeferredItem<BlockItem> WAXED_IRON_TILES = registerBlockItem("waxed_iron_tiles", () -> ModBlocks.WAXED_IRON_TILES.get());
-    public static final DeferredItem<BlockItem> WAXED_IRON_TILE_SLAB = registerBlockItem("waxed_iron_tile_slab", () -> ModBlocks.WAXED_IRON_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> WAXED_IRON_TILE_STAIRS = registerBlockItem("waxed_iron_tile_stairs", () -> ModBlocks.WAXED_IRON_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> WAXED_CUT_IRON = registerBlockItem("waxed_cut_iron", () -> ModBlocks.WAXED_CUT_IRON.get());
+    public static final DeferredItem<BlockItem> WAXED_CUT_IRON_SLAB = registerBlockItem("waxed_cut_iron_slab", () -> ModBlocks.WAXED_CUT_IRON_SLAB.get());
+    public static final DeferredItem<BlockItem> WAXED_CUT_IRON_STAIRS = registerBlockItem("waxed_cut_iron_stairs", () -> ModBlocks.WAXED_CUT_IRON_STAIRS.get());
 
-    public static final DeferredItem<BlockItem> WAXED_MILDLY_RUSTED_IRON_TILES = registerBlockItem("waxed_mildly_rusted_iron_tiles", () -> ModBlocks.WAXED_MILDLY_RUSTED_IRON_TILES.get());
-    public static final DeferredItem<BlockItem> WAXED_MILDLY_RUSTED_IRON_TILE_SLAB = registerBlockItem("waxed_mildly_rusted_iron_tile_slab", () -> ModBlocks.WAXED_MILDLY_RUSTED_IRON_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> WAXED_MILDLY_RUSTED_IRON_TILE_STAIRS = registerBlockItem("waxed_mildly_rusted_iron_tile_stairs", () -> ModBlocks.WAXED_MILDLY_RUSTED_IRON_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_CUT_IRON = registerBlockItem("waxed_exposed_cut_iron", () -> ModBlocks.WAXED_EXPOSED_CUT_IRON.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_CUT_IRON_SLAB = registerBlockItem("waxed_exposed_cut_iron_slab", () -> ModBlocks.WAXED_EXPOSED_CUT_IRON_SLAB.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_CUT_IRON_STAIRS = registerBlockItem("waxed_exposed_cut_iron_stairs", () -> ModBlocks.WAXED_EXPOSED_CUT_IRON_STAIRS.get());
 
-    public static final DeferredItem<BlockItem> WAXED_MODERATELY_RUSTED_IRON_TILES = registerBlockItem("waxed_moderately_rusted_iron_tiles", () -> ModBlocks.WAXED_MODERATELY_RUSTED_IRON_TILES.get());
-    public static final DeferredItem<BlockItem> WAXED_MODERATELY_RUSTED_IRON_TILE_SLAB = registerBlockItem("waxed_moderately_rusted_iron_tile_slab", () -> ModBlocks.WAXED_MODERATELY_RUSTED_IRON_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> WAXED_MODERATELY_RUSTED_IRON_TILE_STAIRS = registerBlockItem("waxed_moderately_rusted_iron_tile_stairs", () -> ModBlocks.WAXED_MODERATELY_RUSTED_IRON_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_CUT_IRON = registerBlockItem("waxed_weathered_cut_iron", () -> ModBlocks.WAXED_WEATHERED_CUT_IRON.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_CUT_IRON_SLAB = registerBlockItem("waxed_weathered_cut_iron_slab", () -> ModBlocks.WAXED_WEATHERED_CUT_IRON_SLAB.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_CUT_IRON_STAIRS = registerBlockItem("waxed_weathered_cut_iron_stairs", () -> ModBlocks.WAXED_WEATHERED_CUT_IRON_STAIRS.get());
 
-    public static final DeferredItem<BlockItem> WAXED_EXTREMELY_RUSTED_IRON_TILES = registerBlockItem("waxed_extremely_rusted_iron_tiles", () -> ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_TILES.get());
-    public static final DeferredItem<BlockItem> WAXED_EXTREMELY_RUSTED_IRON_TILE_SLAB = registerBlockItem("waxed_extremely_rusted_iron_tile_slab", () -> ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> WAXED_EXTREMELY_RUSTED_IRON_TILE_STAIRS = registerBlockItem("waxed_extremely_rusted_iron_tile_stairs", () -> ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> WAXED_RUSTED_CUT_IRON = registerBlockItem("waxed_rusted_cut_iron", () -> ModBlocks.WAXED_RUSTED_CUT_IRON.get());
+    public static final DeferredItem<BlockItem> WAXED_RUSTED_CUT_IRON_SLAB = registerBlockItem("waxed_rusted_cut_iron_slab", () -> ModBlocks.WAXED_RUSTED_CUT_IRON_SLAB.get());
+    public static final DeferredItem<BlockItem> WAXED_RUSTED_CUT_IRON_STAIRS = registerBlockItem("waxed_rusted_cut_iron_stairs", () -> ModBlocks.WAXED_RUSTED_CUT_COPPER_STAIRS.get());
 
-    public static final DeferredItem<BlockItem> GOLD_TILES = registerBlockItem("gold_tiles", () -> ModBlocks.GOLD_TILES.get());
-    public static final DeferredItem<BlockItem> GOLD_TILE_SLAB = registerBlockItem("gold_tile_slab", () -> ModBlocks.GOLD_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> GOLD_TILE_STAIRS = registerBlockItem("gold_tile_stairs", () -> ModBlocks.GOLD_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> CUT_GOLD = registerBlockItem("cut_gold", () -> ModBlocks.CUT_GOLD.get());
+    public static final DeferredItem<BlockItem> CUT_GOLD_SLAB = registerBlockItem("cut_gold_slab", () -> ModBlocks.CUT_GOLD_SLAB.get());
+    public static final DeferredItem<BlockItem> CUT_GOLD_STAIRS = registerBlockItem("cut_gold_stairs", () -> ModBlocks.CUT_GOLD_STAIRS.get());
 
-    public static final DeferredItem<BlockItem> DIAMOND_TILES = registerBlockItem("diamond_tiles", () -> ModBlocks.DIAMOND_TILES.get());
-    public static final DeferredItem<BlockItem> DIAMOND_TILE_SLAB = registerBlockItem("diamond_tile_slab", () -> ModBlocks.DIAMOND_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> DIAMOND_TILE_STAIRS = registerBlockItem("diamond_tile_stairs", () -> ModBlocks.DIAMOND_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> CUT_DIAMOND = registerBlockItem("cut_diamond", () -> ModBlocks.CUT_DIAMOND.get());
+    public static final DeferredItem<BlockItem> CUT_DIAMOND_SLAB = registerBlockItem("cut_diamond_slab", () -> ModBlocks.CUT_DIAMOND_SLAB.get());
+    public static final DeferredItem<BlockItem> CUT_DIAMOND_STAIRS = registerBlockItem("cut_diamond_stairs", () -> ModBlocks.CUT_DIAMOND_STAIRS.get());
 
-    public static final DeferredItem<BlockItem> EMERALD_TILES = registerBlockItem("emerald_tiles", () -> ModBlocks.EMERALD_TILES.get());
-    public static final DeferredItem<BlockItem> EMERALD_TILE_SLAB = registerBlockItem("emerald_tile_slab", () -> ModBlocks.EMERALD_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> EMERALD_TILE_STAIRS = registerBlockItem("emerald_tile_stairs", () -> ModBlocks.EMERALD_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> CUT_EMERALD = registerBlockItem("cut_emerald", () -> ModBlocks.CUT_EMERALD.get());
+    public static final DeferredItem<BlockItem> CUT_EMERALD_SLAB = registerBlockItem("cut_emerald_slab", () -> ModBlocks.CUT_EMERALD_STAIRS.get());
+    public static final DeferredItem<BlockItem> CUT_EMERALD_STAIRS = registerBlockItem("cut_emerald_stairs", () -> ModBlocks.CUT_EMERALD_SLAB.get());
 
-    public static final DeferredItem<BlockItem> NETHERITE_TILES = registerBlockItem("netherite_tiles", () -> ModBlocks.NETHERITE_TILES.get());
-    public static final DeferredItem<BlockItem> NETHERITE_TILE_SLAB = registerBlockItem("netherite_tile_slab", () -> ModBlocks.NETHERITE_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> NETHERITE_TILE_STAIRS = registerBlockItem("netherite_tile_stairs", () -> ModBlocks.NETHERITE_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> CUT_NETHERITE = registerBlockItem("cut_netherite", () -> ModBlocks.CUT_NETHERITE.get());
+    public static final DeferredItem<BlockItem> CUT_NETHERITE_SLAB = registerBlockItem("cut_netherite_slab", () -> ModBlocks.CUT_NETHERITE_SLAB.get());
+    public static final DeferredItem<BlockItem> CUT_NETHERITE_STAIRS = registerBlockItem("cut_netherite_stairs", () -> ModBlocks.CUT_NETHERITE_STAIRS.get());
 
     public static final DeferredItem<BlockItem> MEDIUM_WEIGHTED_PRESSURE_PLATE = registerBlockItem("medium_weighted_pressure_plate", () -> ModBlocks.MEDIUM_WEIGHTED_PRESSURE_PLATE.get());
     public static final DeferredItem<BlockItem> EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerBlockItem("exposed_medium_weighted_pressure_plate", () -> ModBlocks.EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get());
@@ -167,50 +169,50 @@ public class ModItems {
     public static final DeferredItem<BlockItem> WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerBlockItem("waxed_weathered_medium_weighted_pressure_plate", () -> ModBlocks.WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get());
     public static final DeferredItem<BlockItem> WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerBlockItem("waxed_oxidized_medium_weighted_pressure_plate", () -> ModBlocks.WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get());
 
-    public static final DeferredItem<BlockItem> MILDLY_RUSTED_IRON_BLOCK = registerBlockItem("mildly_rusted_iron_block", () -> ModBlocks.MILDLY_RUSTED_IRON_BLOCK.get());
-    public static final DeferredItem<BlockItem> MODERATELY_RUSTED_IRON_BLOCK = registerBlockItem("moderately_rusted_iron_block", () -> ModBlocks.MODERATELY_RUSTED_IRON_BLOCK.get());
-    public static final DeferredItem<BlockItem> EXTREMELY_RUSTED_IRON_BLOCK = registerBlockItem("extremely_rusted_iron_block", () -> ModBlocks.EXTREMELY_RUSTED_IRON_BLOCK.get());
+    public static final DeferredItem<BlockItem> EXPOSED_IRON = registerBlockItem("exposed_iron", () -> ModBlocks.EXPOSED_IRON.get());
+    public static final DeferredItem<BlockItem> WEATHERED_IRON = registerBlockItem("weathered_iron", () -> ModBlocks.WEATHERED_IRON.get());
+    public static final DeferredItem<BlockItem> RUSTED_IRON = registerBlockItem("rusted_iron", () -> ModBlocks.RUSTED_IRON.get());
 
     public static final DeferredItem<BlockItem> WAXED_IRON_BLOCK = registerBlockItem("waxed_iron_block", () -> ModBlocks.WAXED_IRON_BLOCK.get());
-    public static final DeferredItem<BlockItem> WAXED_MILDLY_RUSTED_IRON_BLOCK = registerBlockItem("waxed_mildly_rusted_iron_block", () -> ModBlocks.WAXED_MILDLY_RUSTED_IRON_BLOCK.get());
-    public static final DeferredItem<BlockItem> WAXED_MODERATELY_RUSTED_IRON_BLOCK = registerBlockItem("waxed_moderately_rusted_iron_block", () -> ModBlocks.WAXED_MODERATELY_RUSTED_IRON_BLOCK.get());
-    public static final DeferredItem<BlockItem> WAXED_EXTREMELY_RUSTED_IRON_BLOCK = registerBlockItem("waxed_extremely_rusted_iron_block", () -> ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_BLOCK.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_IRON = registerBlockItem("waxed_exposed_iron", () -> ModBlocks.WAXED_EXPOSED_IRON.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_IRON = registerBlockItem("waxed_weathered_iron", () -> ModBlocks.WAXED_WEATHERED_IRON.get());
+    public static final DeferredItem<BlockItem> WAXED_RUSTED_IRON = registerBlockItem("waxed_rusted_iron", () -> ModBlocks.WAXED_RUSTED_IRON.get());
 
-    public static final DeferredItem<BlockItem> MILDLY_RUSTED_IRON_DOOR = registerBlockItem("mildly_rusted_iron_door", () -> ModBlocks.MILDLY_RUSTED_IRON_DOOR.get());
-    public static final DeferredItem<BlockItem> MODERATELY_RUSTED_IRON_DOOR = registerBlockItem("moderately_rusted_iron_door", () -> ModBlocks.MODERATELY_RUSTED_IRON_DOOR.get());
-    public static final DeferredItem<BlockItem> EXTREMELY_RUSTED_IRON_DOOR = registerBlockItem("extremely_rusted_iron_door", () -> ModBlocks.EXTREMELY_RUSTED_IRON_DOOR.get());
+    public static final DeferredItem<BlockItem> EXPOSED_IRON_DOOR = registerBlockItem("exposed_iron_door", () -> ModBlocks.EXPOSED_IRON_DOOR.get());
+    public static final DeferredItem<BlockItem> WEATHERED_IRON_DOOR = registerBlockItem("weathered_iron_door", () -> ModBlocks.WEATHERED_IRON_DOOR.get());
+    public static final DeferredItem<BlockItem> RUSTED_IRON_DOOR = registerBlockItem("rusted_iron_door", () -> ModBlocks.RUSTED_IRON_DOOR.get());
 
     public static final DeferredItem<BlockItem> WAXED_IRON_DOOR = registerBlockItem("waxed_iron_door", () -> ModBlocks.WAXED_IRON_DOOR.get());
-    public static final DeferredItem<BlockItem> WAXED_MILDLY_RUSTED_IRON_DOOR = registerBlockItem("waxed_mildly_rusted_iron_door", () -> ModBlocks.WAXED_MILDLY_RUSTED_IRON_DOOR.get());
-    public static final DeferredItem<BlockItem> WAXED_MODERATELY_RUSTED_IRON_DOOR = registerBlockItem("waxed_moderately_rusted_iron_door", () -> ModBlocks.WAXED_MODERATELY_RUSTED_IRON_DOOR.get());
-    public static final DeferredItem<BlockItem> WAXED_EXTREMELY_RUSTED_IRON_DOOR = registerBlockItem("waxed_extremely_rusted_iron_door", () -> ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_DOOR.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_IRON_DOOR = registerBlockItem("waxed_exposed_iron_door", () -> ModBlocks.WAXED_EXPOSED_IRON_DOOR.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_IRON_DOOR = registerBlockItem("waxed_weathered_iron_door", () -> ModBlocks.WAXED_WEATHERED_IRON_DOOR.get());
+    public static final DeferredItem<BlockItem> WAXED_RUSTED_IRON_DOOR = registerBlockItem("waxed_rusted_iron_door", () -> ModBlocks.WAXED_RUSTED_IRON_DOOR.get());
 
-    public static final DeferredItem<BlockItem> MILDLY_RUSTED_IRON_TRAPDOOR = registerBlockItem("mildly_rusted_iron_trapdoor", () -> ModBlocks.MILDLY_RUSTED_IRON_TRAPDOOR.get());
-    public static final DeferredItem<BlockItem> MODERATELY_RUSTED_IRON_TRAPDOOR = registerBlockItem("moderately_rusted_iron_trapdoor", () -> ModBlocks.MODERATELY_RUSTED_IRON_TRAPDOOR.get());
-    public static final DeferredItem<BlockItem> EXTREMELY_RUSTED_IRON_TRAPDOOR = registerBlockItem("extremely_rusted_iron_trapdoor", () -> ModBlocks.EXTREMELY_RUSTED_IRON_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> EXPOSED_IRON_TRAPDOOR = registerBlockItem("exposed_iron_trapdoor", () -> ModBlocks.EXPOSED_IRON_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> WEATHERED_IRON_TRAPDOOR = registerBlockItem("weathered_iron_trapdoor", () -> ModBlocks.WEATHERED_IRON_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> RUSTED_IRON_TRAPDOOR = registerBlockItem("rusted_iron_trapdoor", () -> ModBlocks.RUSTED_IRON_TRAPDOOR.get());
 
     public static final DeferredItem<BlockItem> WAXED_IRON_TRAPDOOR = registerBlockItem("waxed_iron_trapdoor", () -> ModBlocks.WAXED_IRON_TRAPDOOR.get());
-    public static final DeferredItem<BlockItem> WAXED_MILDLY_RUSTED_IRON_TRAPDOOR = registerBlockItem("waxed_mildly_rusted_iron_trapdoor", () -> ModBlocks.WAXED_MILDLY_RUSTED_IRON_TRAPDOOR.get());
-    public static final DeferredItem<BlockItem> WAXED_MODERATELY_RUSTED_IRON_TRAPDOOR = registerBlockItem("waxed_moderately_rusted_iron_trapdoor", () -> ModBlocks.WAXED_MODERATELY_RUSTED_IRON_TRAPDOOR.get());
-    public static final DeferredItem<BlockItem> WAXED_EXTREMELY_RUSTED_IRON_TRAPDOOR = registerBlockItem("waxed_extremely_rusted_iron_trapdoor", () -> ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_IRON_TRAPDOOR = registerBlockItem("waxed_exposed_iron_trapdoor", () -> ModBlocks.WAXED_EXPOSED_IRON_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_IRON_TRAPDOOR = registerBlockItem("waxed_weathered_iron_trapdoor", () -> ModBlocks.WAXED_WEATHERED_IRON_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> WAXED_RUSTED_IRON_TRAPDOOR = registerBlockItem("waxed_rusted_iron_trapdoor", () -> ModBlocks.WAXED_RUSTED_IRON_TRAPDOOR.get());
 
-    public static final DeferredItem<BlockItem> MILDLY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("mildly_rusted_heavy_weighted_pressure_plate", () -> ModBlocks.MILDLY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
-    public static final DeferredItem<BlockItem> MODERATELY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("moderately_rusted_heavy_weighted_pressure_plate", () -> ModBlocks.MODERATELY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
-    public static final DeferredItem<BlockItem> EXTREMELY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("extremely_rusted_heavy_weighted_pressure_plate", () -> ModBlocks.EXTREMELY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
+    public static final DeferredItem<BlockItem> EXPOSED_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("exposed_heavy_weighted_pressure_plate", () -> ModBlocks.EXPOSED_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
+    public static final DeferredItem<BlockItem> WEATHERED_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("weathered_heavy_weighted_pressure_plate", () -> ModBlocks.WEATHERED_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
+    public static final DeferredItem<BlockItem> RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("rusted_heavy_weighted_pressure_plate", () -> ModBlocks.RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
 
     public static final DeferredItem<BlockItem> WAXED_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("waxed_heavy_weighted_pressure_plate", () -> ModBlocks.WAXED_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
-    public static final DeferredItem<BlockItem> WAXED_MILDLY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("waxed_mildly_rusted_heavy_weighted_pressure_plate", () -> ModBlocks.WAXED_MILDLY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
-    public static final DeferredItem<BlockItem> WAXED_MODERATELY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("waxed_moderately_rusted_heavy_weighted_pressure_plate", () -> ModBlocks.WAXED_MODERATELY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
-    public static final DeferredItem<BlockItem> WAXED_EXTREMELY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("waxed_extremely_rusted_heavy_weighted_pressure_plate", () -> ModBlocks.WAXED_EXTREMELY_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("waxed_exposed_heavy_weighted_pressure_plate", () -> ModBlocks.WAXED_EXPOSED_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("waxed_weathered_heavy_weighted_pressure_plate", () -> ModBlocks.WAXED_WEATHERED_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
+    public static final DeferredItem<BlockItem> WAXED_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("waxed_rusted_heavy_weighted_pressure_plate", () -> ModBlocks.WAXED_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
 
-    public static final DeferredItem<BlockItem> MILDLY_RUSTED_IRON_BARS = registerBlockItem("mildly_rusted_iron_bars", () -> ModBlocks.MILDLY_RUSTED_IRON_BARS.get());
-    public static final DeferredItem<BlockItem> MODERATELY_RUSTED_IRON_BARS = registerBlockItem("moderately_rusted_iron_bars", () -> ModBlocks.MODERATELY_RUSTED_IRON_BARS.get());
-    public static final DeferredItem<BlockItem> EXTREMELY_RUSTED_IRON_BARS = registerBlockItem("extremely_rusted_iron_bars", () -> ModBlocks.EXTREMELY_RUSTED_IRON_BARS.get());
+    public static final DeferredItem<BlockItem> EXPOSED_IRON_BARS = registerBlockItem("exposed_iron_bars", () -> ModBlocks.EXPOSED_IRON_BARS.get());
+    public static final DeferredItem<BlockItem> WEATHERED_IRON_BARS = registerBlockItem("weathered_iron_bars", () -> ModBlocks.WEATHERED_IRON_BARS.get());
+    public static final DeferredItem<BlockItem> RUSTED_IRON_BARS = registerBlockItem("rusted_iron_bars", () -> ModBlocks.RUSTED_IRON_BARS.get());
 
     public static final DeferredItem<BlockItem> WAXED_IRON_BARS = registerBlockItem("waxed_iron_bars", () -> ModBlocks.WAXED_IRON_BARS.get());
-    public static final DeferredItem<BlockItem> WAXED_MILDLY_RUSTED_IRON_BARS = registerBlockItem("waxed_mildly_rusted_iron_bars", () -> ModBlocks.WAXED_MILDLY_RUSTED_IRON_BARS.get());
-    public static final DeferredItem<BlockItem> WAXED_MODERATELY_RUSTED_IRON_BARS = registerBlockItem("waxed_moderately_rusted_iron_bars", () -> ModBlocks.WAXED_MODERATELY_RUSTED_IRON_BARS.get());
-    public static final DeferredItem<BlockItem> WAXED_EXTREMELY_RUSTED_IRON_BARS = registerBlockItem("waxed_extremely_rusted_iron_bars", () -> ModBlocks.WAXED_EXTREMELY_RUSTED_IRON_BARS.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_IRON_BARS = registerBlockItem("waxed_exposed_iron_bars", () -> ModBlocks.WAXED_EXPOSED_IRON_BARS.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_IRON_BARS = registerBlockItem("waxed_weathered_iron_bars", () -> ModBlocks.WAXED_WEATHERED_IRON_BARS.get());
+    public static final DeferredItem<BlockItem> WAXED_RUSTED_IRON_BARS = registerBlockItem("waxed_rusted_iron_bars", () -> ModBlocks.WAXED_RUSTED_IRON_BARS.get());
 
     public static final DeferredItem<BlockItem> GOLD_DOOR = registerBlockItem("gold_door", () -> ModBlocks.GOLD_DOOR.get());
     public static final DeferredItem<BlockItem> GOLD_TRAPDOOR = registerBlockItem("gold_trapdoor", () -> ModBlocks.GOLD_TRAPDOOR.get());
@@ -309,68 +311,68 @@ public class ModItems {
     public static final DeferredItem<Item> ZINC_NUGGET = registerCustomItem("zinc_nugget");
 
     public static final DeferredItem<BlockItem> ZINC_BLOCK = registerBlockItem("zinc_block", () -> ModBlocks.ZINC_BLOCK.get());
-    public static final DeferredItem<BlockItem> ZINC_TILES = registerBlockItem("zinc_tiles", () -> ModBlocks.ZINC_TILES.get());
-    public static final DeferredItem<BlockItem> ZINC_TILE_SLAB = registerBlockItem("zinc_tile_slab", () -> ModBlocks.ZINC_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> ZINC_TILE_STAIRS = registerBlockItem("zinc_tile_stairs", () -> ModBlocks.ZINC_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> CUT_ZINC = registerBlockItem("cut_zinc", () -> ModBlocks.CUT_ZINC.get());
+    public static final DeferredItem<BlockItem> CUT_ZINC_SLAB = registerBlockItem("cut_zinc_slab", () -> ModBlocks.CUT_ZINC_SLAB.get());
+    public static final DeferredItem<BlockItem> CUT_ZINC_STAIRS = registerBlockItem("cut_zinc_stairs", () -> ModBlocks.CUT_ZINC_STAIRS.get());
     public static final DeferredItem<BlockItem> ZINC_DOOR = registerBlockItem("zinc_door", () -> ModBlocks.ZINC_DOOR.get());
     public static final DeferredItem<BlockItem> ZINC_TRAPDOOR = registerBlockItem("zinc_trapdoor", () -> ModBlocks.ZINC_TRAPDOOR.get());
     public static final DeferredItem<BlockItem> BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("barely_heavy_weighted_pressure_plate", () -> ModBlocks.BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
 
-    public static final DeferredItem<BlockItem> SLIGHTLY_CORRODED_ZINC_BLOCK = registerBlockItem("slightly_corroded_zinc_block", () -> ModBlocks.SLIGHTLY_CORRODED_ZINC_BLOCK.get());
-    public static final DeferredItem<BlockItem> SLIGHTLY_CORRODED_ZINC_TILES = registerBlockItem("slightly_corroded_zinc_tiles", () -> ModBlocks.SLIGHTLY_CORRODED_ZINC_TILES.get());
-    public static final DeferredItem<BlockItem> SLIGHTLY_CORRODED_ZINC_TILE_SLAB = registerBlockItem("slightly_corroded_zinc_tile_slab", () -> ModBlocks.SLIGHTLY_CORRODED_ZINC_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> SLIGHTLY_CORRODED_ZINC_TILE_STAIRS = registerBlockItem("slightly_corroded_zinc_tile_stairs", () -> ModBlocks.SLIGHTLY_CORRODED_ZINC_TILE_STAIRS.get());
-    public static final DeferredItem<BlockItem> SLIGHTLY_CORRODED_ZINC_DOOR = registerBlockItem("slightly_corroded_zinc_door", () -> ModBlocks.SLIGHTLY_CORRODED_ZINC_DOOR.get());
-    public static final DeferredItem<BlockItem> SLIGHTLY_CORRODED_ZINC_TRAPDOOR = registerBlockItem("slightly_corroded_zinc_trapdoor", () -> ModBlocks.SLIGHTLY_CORRODED_ZINC_TRAPDOOR.get());
-    public static final DeferredItem<BlockItem> SLIGHTLY_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("slightly_corroded_barely_heavy_weighted_pressure_plate", () -> ModBlocks.SLIGHTLY_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
+    public static final DeferredItem<BlockItem> EXPOSED_ZINC = registerBlockItem("exposed_zinc", () -> ModBlocks.EXPOSED_ZINC.get());
+    public static final DeferredItem<BlockItem> EXPOSED_CUT_ZINC = registerBlockItem("exposed_cut_zinc", () -> ModBlocks.EXPOSED_CUT_ZINC.get());
+    public static final DeferredItem<BlockItem> EXPOSED_CUT_ZINC_SLAB = registerBlockItem("exposed_cut_zinc_slab", () -> ModBlocks.EXPOSED_CUT_ZINC_SLAB.get());
+    public static final DeferredItem<BlockItem> EXPOSED_CUT_ZINC_STAIRS = registerBlockItem("exposed_cut_zinc_stairs", () -> ModBlocks.EXPOSED_CUT_ZINC_STAIRS.get());
+    public static final DeferredItem<BlockItem> EXPOSED_ZINC_DOOR = registerBlockItem("exposed_zinc_door", () -> ModBlocks.EXPOSED_ZINC_DOOR.get());
+    public static final DeferredItem<BlockItem> EXPOSED_ZINC_TRAPDOOR = registerBlockItem("exposed_zinc_trapdoor", () -> ModBlocks.EXPOSED_ZINC_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("exposed_barely_heavy_weighted_pressure_plate", () -> ModBlocks.EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
 
-    public static final DeferredItem<BlockItem> SOMEWHAT_CORRODED_ZINC_BLOCK = registerBlockItem("somewhat_corroded_zinc_block", () -> ModBlocks.SOMEWHAT_CORRODED_ZINC_BLOCK.get());
-    public static final DeferredItem<BlockItem> SOMEWHAT_CORRODED_ZINC_TILES = registerBlockItem("somewhat_corroded_zinc_tiles", () -> ModBlocks.SOMEWHAT_CORRODED_ZINC_TILES.get());
-    public static final DeferredItem<BlockItem> SOMEWHAT_CORRODED_ZINC_TILE_SLAB = registerBlockItem("somewhat_corroded_zinc_tile_slab", () -> ModBlocks.SOMEWHAT_CORRODED_ZINC_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> SOMEWHAT_CORRODED_ZINC_TILE_STAIRS = registerBlockItem("somewhat_corroded_zinc_tile_stairs", () -> ModBlocks.SOMEWHAT_CORRODED_ZINC_TILE_STAIRS.get());
-    public static final DeferredItem<BlockItem> SOMEWHAT_CORRODED_ZINC_DOOR = registerBlockItem("somewhat_corroded_zinc_door", () -> ModBlocks.SOMEWHAT_CORRODED_ZINC_DOOR.get());
-    public static final DeferredItem<BlockItem> SOMEWHAT_CORRODED_ZINC_TRAPDOOR = registerBlockItem("somewhat_corroded_zinc_trapdoor", () -> ModBlocks.SOMEWHAT_CORRODED_ZINC_TRAPDOOR.get());
-    public static final DeferredItem<BlockItem> SOMEWHAT_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("somewhat_corroded_barely_heavy_weighted_pressure_plate", () -> ModBlocks.SOMEWHAT_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
+    public static final DeferredItem<BlockItem> WEATHERED_ZINC = registerBlockItem("weathered_zinc", () -> ModBlocks.WEATHERED_ZINC.get());
+    public static final DeferredItem<BlockItem> WEATHERED_CUT_ZINC = registerBlockItem("weathered_cut_zinc", () -> ModBlocks.WEATHERED_CUT_ZINC.get());
+    public static final DeferredItem<BlockItem> WEATHERED_CUT_ZINC_SLAB = registerBlockItem("weathered_cut_zinc_slab", () -> ModBlocks.WEATHERED_CUT_ZINC_SLAB.get());
+    public static final DeferredItem<BlockItem> WEATHERED_CUT_ZINC_STAIRS = registerBlockItem("weathered_cut_zinc_stairs", () -> ModBlocks.WEATHERED_CUT_ZINC_STAIRS.get());
+    public static final DeferredItem<BlockItem> WEATHERED_ZINC_DOOR = registerBlockItem("weathered_zinc_door", () -> ModBlocks.WEATHERED_ZINC_DOOR.get());
+    public static final DeferredItem<BlockItem> WEATHERED_ZINC_TRAPDOOR = registerBlockItem("weathered_zinc_trapdoor", () -> ModBlocks.WEATHERED_ZINC_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("weathered_barely_heavy_weighted_pressure_plate", () -> ModBlocks.WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
 
-    public static final DeferredItem<BlockItem> REALLY_CORRODED_ZINC_BLOCK = registerBlockItem("really_corroded_zinc_block", () -> ModBlocks.REALLY_CORRODED_ZINC_BLOCK.get());
-    public static final DeferredItem<BlockItem> REALLY_CORRODED_ZINC_TILES = registerBlockItem("really_corroded_zinc_tiles", () -> ModBlocks.REALLY_CORRODED_ZINC_TILES.get());
-    public static final DeferredItem<BlockItem> REALLY_CORRODED_ZINC_TILE_SLAB = registerBlockItem("really_corroded_zinc_tile_slab", () -> ModBlocks.REALLY_CORRODED_ZINC_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> REALLY_CORRODED_ZINC_TILE_STAIRS = registerBlockItem("really_corroded_zinc_tile_stairs", () -> ModBlocks.REALLY_CORRODED_ZINC_TILE_STAIRS.get());
-    public static final DeferredItem<BlockItem> REALLY_CORRODED_ZINC_DOOR = registerBlockItem("really_corroded_zinc_door", () -> ModBlocks.REALLY_CORRODED_ZINC_DOOR.get());
-    public static final DeferredItem<BlockItem> REALLY_CORRODED_ZINC_TRAPDOOR = registerBlockItem("really_corroded_zinc_trapdoor", () -> ModBlocks.REALLY_CORRODED_ZINC_TRAPDOOR.get());
-    public static final DeferredItem<BlockItem> REALLY_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("really_corroded_barely_heavy_weighted_pressure_plate", () -> ModBlocks.REALLY_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
+    public static final DeferredItem<BlockItem> CORRODED_ZINC = registerBlockItem("corroded_zinc", () -> ModBlocks.CORRODED_ZINC.get());
+    public static final DeferredItem<BlockItem> CORRODED_CUT_ZINC = registerBlockItem("corroded_cut_zinc", () -> ModBlocks.CORRODED_CUT_ZINC.get());
+    public static final DeferredItem<BlockItem> CORRODED_CUT_ZINC_SLAB = registerBlockItem("corroded_cut_zinc_slab", () -> ModBlocks.CORRODED_CUT_ZINC_SLAB.get());
+    public static final DeferredItem<BlockItem> CORRODED_CUT_ZINC_STAIRS = registerBlockItem("corroded_cut_zinc_stairs", () -> ModBlocks.CORRODED_CUT_ZINC_STAIRS.get());
+    public static final DeferredItem<BlockItem> CORRODED_ZINC_DOOR = registerBlockItem("corroded_zinc_door", () -> ModBlocks.CORRODED_ZINC_DOOR.get());
+    public static final DeferredItem<BlockItem> CORRODED_ZINC_TRAPDOOR = registerBlockItem("corroded_zinc_trapdoor", () -> ModBlocks.CORRODED_ZINC_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("corroded_barely_heavy_weighted_pressure_plate", () -> ModBlocks.CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
 
     public static final DeferredItem<BlockItem> WAXED_ZINC_BLOCK = registerBlockItem("waxed_zinc_block", () -> ModBlocks.WAXED_ZINC_BLOCK.get());
-    public static final DeferredItem<BlockItem> WAXED_ZINC_TILES = registerBlockItem("waxed_zinc_tiles", () -> ModBlocks.WAXED_ZINC_TILES.get());
-    public static final DeferredItem<BlockItem> WAXED_ZINC_TILE_SLAB = registerBlockItem("waxed_zinc_tile_slab", () -> ModBlocks.WAXED_ZINC_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> WAXED_ZINC_TILE_STAIRS = registerBlockItem("waxed_zinc_tile_stairs", () -> ModBlocks.WAXED_ZINC_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> WAXED_CUT_ZINC = registerBlockItem("waxed_cut_zinc", () -> ModBlocks.WAXED_CUT_ZINC.get());
+    public static final DeferredItem<BlockItem> WAXED_CUT_ZINC_SLAB = registerBlockItem("waxed_cut_zinc_slab", () -> ModBlocks.WAXED_CUT_ZINC_SLAB.get());
+    public static final DeferredItem<BlockItem> WAXED_CUT_ZINC_STAIRS = registerBlockItem("waxed_cut_zinc_stairs", () -> ModBlocks.WAXED_CUT_ZINC_STAIRS.get());
     public static final DeferredItem<BlockItem> WAXED_ZINC_DOOR = registerBlockItem("waxed_zinc_door", () -> ModBlocks.WAXED_ZINC_DOOR.get());
     public static final DeferredItem<BlockItem> WAXED_ZINC_TRAPDOOR = registerBlockItem("waxed_zinc_trapdoor", () -> ModBlocks.WAXED_ZINC_TRAPDOOR.get());
     public static final DeferredItem<BlockItem> WAXED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("waxed_barely_heavy_weighted_pressure_plate", () -> ModBlocks.WAXED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
 
-    public static final DeferredItem<BlockItem> WAXED_SLIGHTLY_CORRODED_ZINC_BLOCK = registerBlockItem("waxed_slightly_corroded_zinc_block", () -> ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_BLOCK.get());
-    public static final DeferredItem<BlockItem> WAXED_SLIGHTLY_CORRODED_ZINC_TILES = registerBlockItem("waxed_slightly_corroded_zinc_tiles", () -> ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_TILES.get());
-    public static final DeferredItem<BlockItem> WAXED_SLIGHTLY_CORRODED_ZINC_TILE_SLAB = registerBlockItem("waxed_slightly_corroded_zinc_tile_slab", () -> ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> WAXED_SLIGHTLY_CORRODED_ZINC_TILE_STAIRS = registerBlockItem("waxed_slightly_corroded_zinc_tile_stairs", () -> ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_TILE_STAIRS.get());
-    public static final DeferredItem<BlockItem> WAXED_SLIGHTLY_CORRODED_ZINC_DOOR = registerBlockItem("waxed_slightly_corroded_zinc_door", () -> ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_DOOR.get());
-    public static final DeferredItem<BlockItem> WAXED_SLIGHTLY_CORRODED_ZINC_TRAPDOOR = registerBlockItem("waxed_slightly_corroded_zinc_trapdoor", () -> ModBlocks.WAXED_SLIGHTLY_CORRODED_ZINC_TRAPDOOR.get());
-    public static final DeferredItem<BlockItem> WAXED_SLIGHTLY_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("waxed_slightly_corroded_barely_heavy_weighted_pressure_plate", () -> ModBlocks.WAXED_SLIGHTLY_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_ZINC = registerBlockItem("waxed_exposed_zinc", () -> ModBlocks.WAXED_EXPOSED_ZINC.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_CUT_ZINC = registerBlockItem("waxed_exposed_cut_zinc", () -> ModBlocks.WAXED_EXPOSED_CUT_ZINC.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_CUT_ZINC_SLAB = registerBlockItem("waxed_exposed_cut_zinc_slab", () -> ModBlocks.WAXED_EXPOSED_CUT_ZINC_SLAB.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_CUT_ZINC_STAIRS = registerBlockItem("waxed_exposed_cut_zinc_stairs", () -> ModBlocks.WAXED_EXPOSED_CUT_ZINC_STAIRS.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_ZINC_DOOR = registerBlockItem("waxed_exposed_zinc_door", () -> ModBlocks.WAXED_EXPOSED_ZINC_DOOR.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_ZINC_TRAPDOOR = registerBlockItem("waxed_exposed_zinc_trapdoor", () -> ModBlocks.WAXED_EXPOSED_ZINC_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("waxed_exposed_barely_heavy_weighted_pressure_plate", () -> ModBlocks.WAXED_EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
 
-    public static final DeferredItem<BlockItem> WAXED_SOMEWHAT_CORRODED_ZINC_BLOCK = registerBlockItem("waxed_somewhat_corroded_zinc_block", () -> ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_BLOCK.get());
-    public static final DeferredItem<BlockItem> WAXED_SOMEWHAT_CORRODED_ZINC_TILES = registerBlockItem("waxed_somewhat_corroded_zinc_tiles", () -> ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_TILES.get());
-    public static final DeferredItem<BlockItem> WAXED_SOMEWHAT_CORRODED_ZINC_TILE_SLAB = registerBlockItem("waxed_somewhat_corroded_zinc_tile_slab", () -> ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> WAXED_SOMEWHAT_CORRODED_ZINC_TILE_STAIRS = registerBlockItem("waxed_somewhat_corroded_zinc_tile_stairs", () -> ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_TILE_STAIRS.get());
-    public static final DeferredItem<BlockItem> WAXED_SOMEWHAT_CORRODED_ZINC_DOOR = registerBlockItem("waxed_somewhat_corroded_zinc_door", () -> ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_DOOR.get());
-    public static final DeferredItem<BlockItem> WAXED_SOMEWHAT_CORRODED_ZINC_TRAPDOOR = registerBlockItem("waxed_somewhat_corroded_zinc_trapdoor", () -> ModBlocks.WAXED_SOMEWHAT_CORRODED_ZINC_TRAPDOOR.get());
-    public static final DeferredItem<BlockItem> WAXED_SOMEWHAT_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("waxed_somewhat_corroded_barely_heavy_weighted_pressure_plate", () -> ModBlocks.WAXED_SOMEWHAT_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_ZINC = registerBlockItem("waxed_weathered_zinc", () -> ModBlocks.WAXED_WEATHERED_ZINC.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_CUT_ZINC = registerBlockItem("waxed_weathered_cut_zinc", () -> ModBlocks.WAXED_WEATHERED_CUT_ZINC.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_CUT_ZINC_SLAB = registerBlockItem("waxed_weathered_cut_zinc_slab", () -> ModBlocks.WAXED_WEATHERED_CUT_ZINC_SLAB.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_CUT_ZINC_STAIRS = registerBlockItem("waxed_weathered_cut_zinc_stairs", () -> ModBlocks.WAXED_WEATHERED_CUT_ZINC_STAIRS.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_ZINC_DOOR = registerBlockItem("waxed_weathered_zinc_door", () -> ModBlocks.WAXED_WEATHERED_ZINC_DOOR.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_ZINC_TRAPDOOR = registerBlockItem("waxed_weathered_zinc_trapdoor", () -> ModBlocks.WAXED_WEATHERED_ZINC_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("waxed_weathered_barely_heavy_weighted_pressure_plate", () -> ModBlocks.WAXED_WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
 
-    public static final DeferredItem<BlockItem> WAXED_REALLY_CORRODED_ZINC_BLOCK = registerBlockItem("waxed_really_corroded_zinc_block", () -> ModBlocks.WAXED_REALLY_CORRODED_ZINC_BLOCK.get());
-    public static final DeferredItem<BlockItem> WAXED_REALLY_CORRODED_ZINC_TILES = registerBlockItem("waxed_really_corroded_zinc_tiles", () -> ModBlocks.WAXED_REALLY_CORRODED_ZINC_TILES.get());
-    public static final DeferredItem<BlockItem> WAXED_REALLY_CORRODED_ZINC_TILE_SLAB = registerBlockItem("waxed_really_corroded_zinc_tile_slab", () -> ModBlocks.WAXED_REALLY_CORRODED_ZINC_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> WAXED_REALLY_CORRODED_ZINC_TILE_STAIRS = registerBlockItem("waxed_really_corroded_zinc_tile_stairs", () -> ModBlocks.WAXED_REALLY_CORRODED_ZINC_TILE_STAIRS.get());
-    public static final DeferredItem<BlockItem> WAXED_REALLY_CORRODED_ZINC_DOOR = registerBlockItem("waxed_really_corroded_zinc_door", () -> ModBlocks.WAXED_REALLY_CORRODED_ZINC_DOOR.get());
-    public static final DeferredItem<BlockItem> WAXED_REALLY_CORRODED_ZINC_TRAPDOOR = registerBlockItem("waxed_really_corroded_zinc_trapdoor", () -> ModBlocks.WAXED_REALLY_CORRODED_ZINC_TRAPDOOR.get());
-    public static final DeferredItem<BlockItem> WAXED_REALLY_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("waxed_really_corroded_barely_heavy_weighted_pressure_plate", () -> ModBlocks.WAXED_REALLY_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
+    public static final DeferredItem<BlockItem> WAXED_CORRODED_ZINC = registerBlockItem("waxed_corroded_zinc", () -> ModBlocks.WAXED_CORRODED_ZINC.get());
+    public static final DeferredItem<BlockItem> WAXED_CORRODED_CUT_ZINC = registerBlockItem("waxed_corroded_cut_zinc", () -> ModBlocks.WAXED_CORRODED_CUT_ZINC.get());
+    public static final DeferredItem<BlockItem> WAXED_CORRODED_CUT_ZINC_SLAB = registerBlockItem("waxed_corroded_cut_zinc_slab", () -> ModBlocks.WAXED_CORRODED_CUT_ZINC_SLAB.get());
+    public static final DeferredItem<BlockItem> WAXED_CORRODED_CUT_ZINC_STAIRS = registerBlockItem("waxed_corroded_cut_zinc_stairs", () -> ModBlocks.WAXED_CORRODED_CUT_ZINC_STAIRS.get());
+    public static final DeferredItem<BlockItem> WAXED_CORRODED_ZINC_DOOR = registerBlockItem("waxed_corroded_zinc_door", () -> ModBlocks.WAXED_CORRODED_ZINC_DOOR.get());
+    public static final DeferredItem<BlockItem> WAXED_CORRODED_ZINC_TRAPDOOR = registerBlockItem("waxed_corroded_zinc_trapdoor", () -> ModBlocks.WAXED_CORRODED_ZINC_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> WAXED_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("waxed_corroded_barely_heavy_weighted_pressure_plate", () -> ModBlocks.WAXED_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
 
     public static final DeferredItem<BlockItem> SILVER_ORE = registerBlockItem("silver_ore", () -> ModBlocks.SILVER_ORE.get());
     public static final DeferredItem<BlockItem> DEEPSLATE_SILVER_ORE = registerBlockItem("deepslate_silver_ore", () -> ModBlocks.DEEPSLATE_SILVER_ORE.get());
@@ -380,9 +382,9 @@ public class ModItems {
     public static final DeferredItem<Item> SILVER_NUGGET = registerCustomItem("silver_nugget");
 
     public static final DeferredItem<BlockItem> SILVER_BLOCK = registerBlockItem("silver_block", () -> ModBlocks.SILVER_BLOCK.get());
-    public static final DeferredItem<BlockItem> SILVER_TILES = registerBlockItem("silver_tiles", () -> ModBlocks.SILVER_TILES.get());
-    public static final DeferredItem<BlockItem> SILVER_TILE_SLAB = registerBlockItem("silver_tile_slab", () -> ModBlocks.SILVER_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> SILVER_TILE_STAIRS = registerBlockItem("silver_tile_stairs", () -> ModBlocks.SILVER_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> CUT_SILVER = registerBlockItem("cut_silver", () -> ModBlocks.CUT_SILVER.get());
+    public static final DeferredItem<BlockItem> CUT_SILVER_SLAB = registerBlockItem("cut_silver_slab", () -> ModBlocks.CUT_SILVER_SLAB.get());
+    public static final DeferredItem<BlockItem> CUT_SILVER_STAIRS = registerBlockItem("cut_silver_stairs", () -> ModBlocks.CUT_SILVER_STAIRS.get());
     public static final DeferredItem<BlockItem> SILVER_DOOR = registerBlockItem("silver_door", () -> ModBlocks.SILVER_DOOR.get());
     public static final DeferredItem<BlockItem> SILVER_TRAPDOOR = registerBlockItem("silver_trapdoor", () -> ModBlocks.SILVER_TRAPDOOR.get());
     public static final DeferredItem<BlockItem> NOTICEABLY_LIGHT_WEIGHTED_PRESSURE_PLATE = registerBlockItem("noticeably_light_weighted_pressure_plate", () -> ModBlocks.NOTICEABLY_LIGHT_WEIGHTED_PRESSURE_PLATE.get());
@@ -410,9 +412,9 @@ public class ModItems {
     public static final DeferredItem<Item> TUNGSTEN_NUGGET = registerCustomItem("tungsten_nugget");
 
     public static final DeferredItem<BlockItem> TUNGSTEN_BLOCK = registerBlockItem("tungsten_block", () -> ModBlocks.TUNGSTEN_BLOCK.get());
-    public static final DeferredItem<BlockItem> TUNGSTEN_TILES = registerBlockItem("tungsten_tiles", () -> ModBlocks.TUNGSTEN_TILES.get());
-    public static final DeferredItem<BlockItem> TUNGSTEN_TILE_SLAB = registerBlockItem("tungsten_tile_slab", () -> ModBlocks.TUNGSTEN_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> TUNGSTEN_TILE_STAIRS = registerBlockItem("tungsten_tile_stairs", () -> ModBlocks.TUNGSTEN_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> CUT_TUNGSTEN = registerBlockItem("cut_tungsten", () -> ModBlocks.CUT_TUNGSTEN.get());
+    public static final DeferredItem<BlockItem> CUT_TUNGSTEN_SLAB = registerBlockItem("cut_tungsten_slab", () -> ModBlocks.CUT_TUNGSTEN_SLAB.get());
+    public static final DeferredItem<BlockItem> CUT_TUNGSTEN_STAIRS = registerBlockItem("cut_tungsten_stairs", () -> ModBlocks.CUT_TUNGSTEN_STAIRS.get());
     public static final DeferredItem<BlockItem> TUNGSTEN_DOOR = registerBlockItem("tungsten_door", () -> ModBlocks.TUNGSTEN_DOOR.get());
     public static final DeferredItem<BlockItem> TUNGSTEN_TRAPDOOR = registerBlockItem("tungsten_trapdoor", () -> ModBlocks.TUNGSTEN_TRAPDOOR.get());
     public static final DeferredItem<BlockItem> EXTRAORDINARILY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("extraordinarily_heavy_weighted_pressure_plate", () -> ModBlocks.EXTRAORDINARILY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
@@ -425,9 +427,9 @@ public class ModItems {
     public static final DeferredItem<Item> PLATINUM_NUGGET = registerCustomItem("platinum_nugget");
 
     public static final DeferredItem<BlockItem> PLATINUM_BLOCK = registerBlockItem("platinum_block", () -> ModBlocks.PLATINUM_BLOCK.get());
-    public static final DeferredItem<BlockItem> PLATINUM_TILES = registerBlockItem("platinum_tiles", () -> ModBlocks.PLATINUM_TILES.get());
-    public static final DeferredItem<BlockItem> PLATINUM_TILE_SLAB = registerBlockItem("platinum_tile_slab", () -> ModBlocks.PLATINUM_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> PLATINUM_TILE_STAIRS = registerBlockItem("platinum_tile_stairs", () -> ModBlocks.PLATINUM_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> CUT_PLATINUM = registerBlockItem("cut_platinum", () -> ModBlocks.CUT_PLATINUM.get());
+    public static final DeferredItem<BlockItem> CUT_PLATINUM_SLAB = registerBlockItem("cut_platinum_slab", () -> ModBlocks.CUT_PLATINUM_SLAB.get());
+    public static final DeferredItem<BlockItem> CUT_PLATINUM_STAIRS = registerBlockItem("cut_platinum_stairs", () -> ModBlocks.CUT_PLATINUM_STAIRS.get());
     public static final DeferredItem<BlockItem> PLATINUM_DOOR = registerBlockItem("platinum_door", () -> ModBlocks.PLATINUM_DOOR.get());
     public static final DeferredItem<BlockItem> PLATINUM_TRAPDOOR = registerBlockItem("platinum_trapdoor", () -> ModBlocks.PLATINUM_TRAPDOOR.get());
     public static final DeferredItem<BlockItem> EXTRAORDINARILY_LIGHT_WEIGHTED_PRESSURE_PLATE = registerBlockItem("extraordinarily_light_weighted_pressure_plate", () -> ModBlocks.EXTRAORDINARILY_LIGHT_WEIGHTED_PRESSURE_PLATE.get());
@@ -440,9 +442,9 @@ public class ModItems {
     public static final DeferredItem<Item> LEAD_NUGGET = registerCustomItem("lead_nugget");
 
     public static final DeferredItem<BlockItem> LEAD_BLOCK = registerBlockItem("lead_block", () -> ModBlocks.LEAD_BLOCK.get());
-    public static final DeferredItem<BlockItem> LEAD_TILES = registerBlockItem("lead_tiles", () -> ModBlocks.LEAD_TILES.get());
-    public static final DeferredItem<BlockItem> LEAD_TILE_SLAB = registerBlockItem("lead_tile_slab", () -> ModBlocks.LEAD_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> LEAD_TILE_STAIRS = registerBlockItem("lead_tile_stairs", () -> ModBlocks.LEAD_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> CUT_LEAD = registerBlockItem("cut_lead", () -> ModBlocks.CUT_LEAD.get());
+    public static final DeferredItem<BlockItem> CUT_LEAD_SLAB = registerBlockItem("cut_lead_slab", () -> ModBlocks.CUT_LEAD_SLAB.get());
+    public static final DeferredItem<BlockItem> CUT_LEAD_STAIRS = registerBlockItem("cut_lead_stairs", () -> ModBlocks.CUT_LEAD_STAIRS.get());
     public static final DeferredItem<BlockItem> LEAD_DOOR = registerBlockItem("lead_door", () -> ModBlocks.LEAD_DOOR.get());
     public static final DeferredItem<BlockItem> LEAD_TRAPDOOR = registerBlockItem("lead_trapdoor", () -> ModBlocks.LEAD_TRAPDOOR.get());
     public static final DeferredItem<BlockItem> NOTICEABLY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerBlockItem("noticeably_heavy_weighted_pressure_plate", () -> ModBlocks.NOTICEABLY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
@@ -455,9 +457,9 @@ public class ModItems {
     public static final DeferredItem<Item> URANIUM_NUGGET = registerCustomItem("uranium_nugget");
 
     public static final DeferredItem<BlockItem> URANIUM_BLOCK = registerBlockItem("uranium_block", () -> ModBlocks.URANIUM_BLOCK.get());
-    public static final DeferredItem<BlockItem> URANIUM_TILES = registerBlockItem("uranium_tiles", () -> ModBlocks.URANIUM_TILES.get());
-    public static final DeferredItem<BlockItem> URANIUM_TILE_SLAB = registerBlockItem("uranium_tile_slab", () -> ModBlocks.URANIUM_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> URANIUM_TILE_STAIRS = registerBlockItem("uranium_tile_stairs", () -> ModBlocks.URANIUM_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> CUT_URANIUM = registerBlockItem("cut_uranium", () -> ModBlocks.CUT_URANIUM.get());
+    public static final DeferredItem<BlockItem> CUT_URANIUM_SLAB = registerBlockItem("cut_uranium_slab", () -> ModBlocks.CUT_URANIUM_SLAB.get());
+    public static final DeferredItem<BlockItem> CUT_URANIUM_STAIRS = registerBlockItem("cut_uranium_stairs", () -> ModBlocks.CUT_URANIUM_STAIRS.get());
     public static final DeferredItem<BlockItem> URANIUM_DOOR = registerBlockItem("uranium_door", () -> ModBlocks.URANIUM_DOOR.get());
     public static final DeferredItem<BlockItem> URANIUM_TRAPDOOR = registerBlockItem("uranium_trapdoor", () -> ModBlocks.URANIUM_TRAPDOOR.get());
     public static final DeferredItem<BlockItem> NEGLIGIBLE_WEIGHTED_PRESSURE_PLATE = registerBlockItem("negligible_weighted_pressure_plate", () -> ModBlocks.NEGLIGIBLE_WEIGHTED_PRESSURE_PLATE.get());
@@ -477,9 +479,9 @@ public class ModItems {
     public static final DeferredItem<Item> BRASS_NUGGET = registerCustomItem("brass_nugget");
 
     public static final DeferredItem<BlockItem> BRASS_BLOCK = registerBlockItem("brass_block", () -> ModBlocks.BRASS_BLOCK.get());
-    public static final DeferredItem<BlockItem> BRASS_TILES = registerBlockItem("brass_tiles", () -> ModBlocks.BRASS_TILES.get());
-    public static final DeferredItem<BlockItem> BRASS_TILE_SLAB = registerBlockItem("brass_tile_slab", () -> ModBlocks.BRASS_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> BRASS_TILE_STAIRS = registerBlockItem("brass_tile_stairs", () -> ModBlocks.BRASS_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> CUT_BRASS = registerBlockItem("cut_brass", () -> ModBlocks.CUT_BRASS.get());
+    public static final DeferredItem<BlockItem> CUT_BRASS_SLAB = registerBlockItem("cut_brass_slab", () -> ModBlocks.CUT_BRASS_SLAB.get());
+    public static final DeferredItem<BlockItem> CUT_BRASS_STAIRS = registerBlockItem("cut_brass_stairs", () -> ModBlocks.CUT_BRASS_STAIRS.get());
     public static final DeferredItem<BlockItem> BRASS_DOOR = registerBlockItem("brass_door", () -> ModBlocks.BRASS_DOOR.get());
     public static final DeferredItem<BlockItem> BRASS_TRAPDOOR = registerBlockItem("brass_trapdoor", () -> ModBlocks.BRASS_TRAPDOOR.get());
     public static final DeferredItem<BlockItem> HOSTILE_MOB_ONLY_PRESSURE_PLATE = registerBlockItem("hostile_mob_only_pressure_plate", () -> ModBlocks.HOSTILE_MOB_ONLY_PRESSURE_PLATE.get());
@@ -488,9 +490,9 @@ public class ModItems {
     public static final DeferredItem<Item> STEEL_NUGGET = registerCustomItem("steel_nugget");
 
     public static final DeferredItem<BlockItem> STEEL_BLOCK = registerBlockItem("steel_block", () -> ModBlocks.STEEL_BLOCK.get());
-    public static final DeferredItem<BlockItem> STEEL_TILES = registerBlockItem("steel_tiles", () -> ModBlocks.STEEL_TILES.get());
-    public static final DeferredItem<BlockItem> STEEL_TILE_SLAB = registerBlockItem("steel_tile_slab", () -> ModBlocks.STEEL_TILE_SLAB.get());
-    public static final DeferredItem<BlockItem> STEEL_TILE_STAIRS = registerBlockItem("steel_tile_stairs", () -> ModBlocks.STEEL_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> CUT_STEEL = registerBlockItem("cut_steel", () -> ModBlocks.CUT_STEEL.get());
+    public static final DeferredItem<BlockItem> CUT_STEEL_SLAB = registerBlockItem("cut_steel_slab", () -> ModBlocks.CUT_STEEL_SLAB.get());
+    public static final DeferredItem<BlockItem> CUT_STEEL_STAIRS = registerBlockItem("cut_steel_stairs", () -> ModBlocks.CUT_STEEL_STAIRS.get());
     public static final DeferredItem<BlockItem> STEEL_DOOR = registerBlockItem("steel_door", () -> ModBlocks.STEEL_DOOR.get());
     public static final DeferredItem<BlockItem> STEEL_TRAPDOOR = registerBlockItem("steel_trapdoor", () -> ModBlocks.STEEL_TRAPDOOR.get());
     public static final DeferredItem<BlockItem> VILLAGER_ONLY_PRESSURE_PLATE = registerBlockItem("villager_only_pressure_plate", () -> ModBlocks.VILLAGER_ONLY_PRESSURE_PLATE.get());
@@ -794,6 +796,296 @@ public class ModItems {
     public static final DeferredItem<MinecartItem> BAMBOO_CHEST_MINECART = registerMinecartItem("bamboo_chest_minecart", () -> ModEntities.BAMBOO_CHEST_MINECART.get());
     public static final DeferredItem<MinecartItem> PALE_OAK_CHEST_MINECART = registerMinecartItem("pale_oak_chest_minecart", () -> ModEntities.PALE_OAK_CHEST_MINECART.get());
 
+    public static final DeferredItem<BlockItem> OAK_MOSAIC = registerBlockItem("oak_mosaic", () -> ModBlocks.OAK_MOSAIC.get());
+    public static final DeferredItem<BlockItem> SPRUCE_MOSAIC = registerBlockItem("spruce_mosaic", () -> ModBlocks.SPRUCE_MOSAIC.get());
+    public static final DeferredItem<BlockItem> BIRCH_MOSAIC = registerBlockItem("birch_mosaic", () -> ModBlocks.BIRCH_MOSAIC.get());
+    public static final DeferredItem<BlockItem> JUNGLE_MOSAIC = registerBlockItem("jungle_mosaic", () -> ModBlocks.JUNGLE_MOSAIC.get());
+    public static final DeferredItem<BlockItem> ACACIA_MOSAIC = registerBlockItem("acacia_mosaic", () -> ModBlocks.ACACIA_MOSAIC.get());
+    public static final DeferredItem<BlockItem> DARK_OAK_MOSAIC = registerBlockItem("dark_oak_mosaic", () -> ModBlocks.DARK_OAK_MOSAIC.get());
+    public static final DeferredItem<BlockItem> CRIMSON_MOSAIC = registerBlockItem("crimson_mosaic", () -> ModBlocks.CRIMSON_MOSAIC.get());
+    public static final DeferredItem<BlockItem> WARPED_MOSAIC = registerBlockItem("warped_mosaic", () -> ModBlocks.WARPED_MOSAIC.get());
+    public static final DeferredItem<BlockItem> MANGROVE_MOSAIC = registerBlockItem("mangrove_mosaic", () -> ModBlocks.MANGROVE_MOSAIC.get());
+    public static final DeferredItem<BlockItem> CHERRY_MOSAIC = registerBlockItem("cherry_mosaic", () -> ModBlocks.CHERRY_MOSAIC.get());
+    public static final DeferredItem<BlockItem> PALE_OAK_MOSAIC = registerBlockItem("pale_oak_mosaic", () -> ModBlocks.PALE_OAK_MOSAIC.get());
+
+    public static final DeferredItem<BlockItem> OAK_MOSAIC_SLAB = registerBlockItem("oak_mosaic_slab", () -> ModBlocks.OAK_MOSAIC_SLAB.get());
+    public static final DeferredItem<BlockItem> SPRUCE_MOSAIC_SLAB = registerBlockItem("spruce_mosaic_slab", () -> ModBlocks.SPRUCE_MOSAIC_SLAB.get());
+    public static final DeferredItem<BlockItem> BIRCH_MOSAIC_SLAB = registerBlockItem("birch_mosaic_slab", () -> ModBlocks.BIRCH_MOSAIC_SLAB.get());
+    public static final DeferredItem<BlockItem> JUNGLE_MOSAIC_SLAB = registerBlockItem("jungle_mosaic_slab", () -> ModBlocks.JUNGLE_MOSAIC_SLAB.get());
+    public static final DeferredItem<BlockItem> ACACIA_MOSAIC_SLAB = registerBlockItem("acacia_mosaic_slab", () -> ModBlocks.ACACIA_MOSAIC_SLAB.get());
+    public static final DeferredItem<BlockItem> DARK_OAK_MOSAIC_SLAB = registerBlockItem("dark_oak_mosaic_slab", () -> ModBlocks.DARK_OAK_MOSAIC_SLAB.get());
+    public static final DeferredItem<BlockItem> CRIMSON_MOSAIC_SLAB = registerBlockItem("crimson_mosaic_slab", () -> ModBlocks.CRIMSON_MOSAIC_SLAB.get());
+    public static final DeferredItem<BlockItem> WARPED_MOSAIC_SLAB = registerBlockItem("warped_mosaic_slab", () -> ModBlocks.WARPED_MOSAIC_SLAB.get());
+    public static final DeferredItem<BlockItem> MANGROVE_MOSAIC_SLAB = registerBlockItem("mangrove_mosaic_slab", () -> ModBlocks.MANGROVE_MOSAIC_SLAB.get());
+    public static final DeferredItem<BlockItem> CHERRY_MOSAIC_SLAB = registerBlockItem("cherry_mosaic_slab", () -> ModBlocks.CHERRY_MOSAIC_SLAB.get());
+    public static final DeferredItem<BlockItem> PALE_OAK_MOSAIC_SLAB = registerBlockItem("pale_oak_mosaic_slab", () -> ModBlocks.PALE_OAK_MOSAIC_SLAB.get());
+
+    public static final DeferredItem<BlockItem> OAK_MOSAIC_STAIRS = registerBlockItem("oak_mosaic_stairs", () -> ModBlocks.OAK_MOSAIC_STAIRS.get());
+    public static final DeferredItem<BlockItem> SPRUCE_MOSAIC_STAIRS = registerBlockItem("spruce_mosaic_stairs", () -> ModBlocks.SPRUCE_MOSAIC_STAIRS.get());
+    public static final DeferredItem<BlockItem> BIRCH_MOSAIC_STAIRS = registerBlockItem("birch_mosaic_stairs", () -> ModBlocks.BIRCH_MOSAIC_STAIRS.get());
+    public static final DeferredItem<BlockItem> JUNGLE_MOSAIC_STAIRS = registerBlockItem("jungle_mosaic_stairs", () -> ModBlocks.JUNGLE_MOSAIC_STAIRS.get());
+    public static final DeferredItem<BlockItem> ACACIA_MOSAIC_STAIRS = registerBlockItem("acacia_mosaic_stairs", () -> ModBlocks.ACACIA_MOSAIC_STAIRS.get());
+    public static final DeferredItem<BlockItem> DARK_OAK_MOSAIC_STAIRS = registerBlockItem("dark_oak_mosaic_stairs", () -> ModBlocks.DARK_OAK_MOSAIC_STAIRS.get());
+    public static final DeferredItem<BlockItem> CRIMSON_MOSAIC_STAIRS = registerBlockItem("crimson_mosaic_stairs", () -> ModBlocks.CRIMSON_MOSAIC_STAIRS.get());
+    public static final DeferredItem<BlockItem> WARPED_MOSAIC_STAIRS = registerBlockItem("warped_mosaic_stairs", () -> ModBlocks.WARPED_MOSAIC_STAIRS.get());
+    public static final DeferredItem<BlockItem> MANGROVE_MOSAIC_STAIRS = registerBlockItem("mangrove_mosaic_stairs", () -> ModBlocks.MANGROVE_MOSAIC_STAIRS.get());
+    public static final DeferredItem<BlockItem> CHERRY_MOSAIC_STAIRS = registerBlockItem("cherry_mosaic_stairs", () -> ModBlocks.CHERRY_MOSAIC_STAIRS.get());
+    public static final DeferredItem<BlockItem> PALE_OAK_MOSAIC_STAIRS = registerBlockItem("pale_oak_mosaic_stairs", () -> ModBlocks.PALE_OAK_MOSAIC_STAIRS.get());
+
+    public static final DeferredItem<Item> STONE_BATON = registerCustomItem("stone_baton");
+    public static final DeferredItem<Item> GRANITE_BATON = registerCustomItem("granite_baton");
+    public static final DeferredItem<Item> DIORITE_BATON = registerCustomItem("diorite_baton");
+    public static final DeferredItem<Item> ANDESITE_BATON = registerCustomItem("andesite_baton");
+    public static final DeferredItem<Item> DEEPSLATE_BATON = registerCustomItem("deepslate_baton");
+    public static final DeferredItem<Item> TUFF_BATON = registerCustomItem("tuff_baton");
+    public static final DeferredItem<Item> CALCITE_BATON = registerCustomItem("calcite_baton");
+    public static final DeferredItem<Item> PACKED_MUD_BATON = registerCustomItem("packed_mud_baton");
+    public static final DeferredItem<Item> SANDSTONE_BATON = registerCustomItem("sandstone_baton");
+    public static final DeferredItem<Item> RED_SANDSTONE_BATON = registerCustomItem("red_sandstone_baton");
+    public static final DeferredItem<Item> SOUL_SANDSTONE_BATON = registerCustomItem("soul_sandstone_baton");
+    public static final DeferredItem<Item> END_STONE_BATON = registerCustomItem("end_stone_baton");
+    public static final DeferredItem<Item> NETHERRACK_BATON = registerCustomItem("netherrack_baton");
+    public static final DeferredItem<Item> BLACKSTONE_BATON = registerCustomItem("blackstone_baton");
+    public static final DeferredItem<Item> BASALT_BATON = registerCustomItem("basalt_baton");
+    public static final DeferredItem<Item> OBSIDIAN_BATON = registerCustomItem("obsidian_baton");
+    public static final DeferredItem<Item> TERRACOTTA_BATON = registerCustomItem("terracotta_baton");
+    public static final DeferredItem<Item> CONCRETE_BATON = registerCustomItem("concrete_baton");
+    public static final DeferredItem<Item> ICE_SHARD = registerCustomItem("ice_shard");
+
+    public static final DeferredItem<BlockItem> OBSIDIAN_SLAB = registerBlockItem("obsidian_slab", () -> ModBlocks.OBSIDIAN_SLAB.get());
+    public static final DeferredItem<BlockItem> OBSIDIAN_STAIRS = registerBlockItem("obsidian_stairs", () -> ModBlocks.OBSIDIAN_STAIRS.get());
+    public static final DeferredItem<BlockItem> OBSIDIAN_WALL = registerBlockItem("obsidian_wall", () -> ModBlocks.OBSIDIAN_WALL.get());
+
+    public static final DeferredItem<BlockItem> CRYING_OBSIDIAN_SLAB = registerBlockItem("crying_obsidian_slab", () -> ModBlocks.CRYING_OBSIDIAN_SLAB.get());
+    public static final DeferredItem<BlockItem> CRYING_OBSIDIAN_STAIRS = registerBlockItem("crying_obsidian_stairs", () -> ModBlocks.CRYING_OBSIDIAN_STAIRS.get());
+    public static final DeferredItem<BlockItem> CRYING_OBSIDIAN_WALL = registerBlockItem("crying_obsidian_wall", () -> ModBlocks.CRYING_OBSIDIAN_WALL.get());
+
+    public static final DeferredItem<BlockItem> COAL_SLAB = registerBlockItem("coal_slab", () -> ModBlocks.COAL_SLAB.get());
+    public static final DeferredItem<BlockItem> COAL_STAIRS = registerBlockItem("coal_stairs", () -> ModBlocks.COAL_STAIRS.get());
+    public static final DeferredItem<BlockItem> COAL_WALL = registerBlockItem("coal_wall", () -> ModBlocks.COAL_WALL.get());
+
+    public static final DeferredItem<BlockItem> CHARCOAL_SLAB = registerBlockItem("charcoal_slab", () -> ModBlocks.CHARCOAL_SLAB.get());
+    public static final DeferredItem<BlockItem> CHARCOAL_STAIRS = registerBlockItem("charcoal_stairs", () -> ModBlocks.CHARCOAL_STAIRS.get());
+    public static final DeferredItem<BlockItem> CHARCOAL_WALL = registerBlockItem("charcoal_wall", () -> ModBlocks.CHARCOAL_WALL.get());
+
+    public static final DeferredItem<BlockItem> LAPIS_SLAB = registerBlockItem("lapis_slab", () -> ModBlocks.LAPIS_SLAB.get());
+    public static final DeferredItem<BlockItem> LAPIS_STAIRS = registerBlockItem("lapis_stairs", () -> ModBlocks.LAPIS_STAIRS.get());
+    public static final DeferredItem<BlockItem> LAPIS_WALL = registerBlockItem("lapis_wall", () -> ModBlocks.LAPIS_WALL.get());
+
+    public static final DeferredItem<BlockItem> SNOW_SLAB = registerBlockItem("snow_slab", () -> ModBlocks.SNOW_SLAB.get());
+    public static final DeferredItem<BlockItem> SNOW_STAIRS = registerBlockItem("snow_stairs", () -> ModBlocks.SNOW_STAIRS.get());
+    public static final DeferredItem<BlockItem> SNOW_WALL = registerBlockItem("snow_wall", () -> ModBlocks.SNOW_WALL.get());
+
+    public static final DeferredItem<BlockItem> ICE_SLAB = registerBlockItem("ice_slab", () -> ModBlocks.ICE_SLAB.get());
+    public static final DeferredItem<BlockItem> ICE_STAIRS = registerBlockItem("ice_stairs", () -> ModBlocks.ICE_STAIRS.get());
+    public static final DeferredItem<BlockItem> ICE_WALL = registerBlockItem("ice_wall", () -> ModBlocks.ICE_WALL.get());
+
+    public static final DeferredItem<BlockItem> PACKED_ICE_SLAB = registerBlockItem("packed_ice_slab", () -> ModBlocks.PACKED_ICE_SLAB.get());
+    public static final DeferredItem<BlockItem> PACKED_ICE_STAIRS = registerBlockItem("packed_ice_stairs", () -> ModBlocks.PACKED_ICE_STAIRS.get());
+    public static final DeferredItem<BlockItem> PACKED_ICE_WALL = registerBlockItem("packed_ice_wall", () -> ModBlocks.PACKED_ICE_WALL.get());
+
+    public static final DeferredItem<BlockItem> BLUE_ICE_SLAB = registerBlockItem("blue_ice_slab", () -> ModBlocks.BLUE_ICE_SLAB.get());
+    public static final DeferredItem<BlockItem> BLUE_ICE_STAIRS = registerBlockItem("blue_ice_stairs", () -> ModBlocks.BLUE_ICE_STAIRS.get());
+    public static final DeferredItem<BlockItem> BLUE_ICE_WALL = registerBlockItem("blue_ice_wall", () -> ModBlocks.BLUE_ICE_WALL.get());
+
+    public static final DeferredItem<BlockItem> TERRACOTTA_SLAB = registerBlockItem("terracotta_slab", () -> ModBlocks.TERRACOTTA_SLAB.get());
+    public static final DeferredItem<BlockItem> TERRACOTTA_STAIRS = registerBlockItem("terracotta_stairs", () -> ModBlocks.TERRACOTTA_STAIRS.get());
+    public static final DeferredItem<BlockItem> TERRACOTTA_WALL = registerBlockItem("terracotta_wall", () -> ModBlocks.TERRACOTTA_WALL.get());
+
+    public static final DeferredItem<BlockItem> SCULK_SLAB = registerBlockItem("sculk_slab", () -> ModBlocks.SCULK_SLAB.get());
+    public static final DeferredItem<BlockItem> SCULK_STAIRS = registerBlockItem("sculk_stairs", () -> ModBlocks.SCULK_STAIRS.get());
+    public static final DeferredItem<BlockItem> SCULK_WALL = registerBlockItem("sculk_wall", () -> ModBlocks.SCULK_WALL.get());
+
+    public static final DeferredItem<BlockItem> WHITE_TERRACOTTA_SLAB = registerBlockItem("white_terracotta_slab", () -> ModBlocks.WHITE_TERRACOTTA_SLAB.get());
+    public static final DeferredItem<BlockItem> WHITE_TERRACOTTA_STAIRS = registerBlockItem("white_terracotta_stairs", () -> ModBlocks.WHITE_TERRACOTTA_STAIRS.get());
+    public static final DeferredItem<BlockItem> WHITE_TERRACOTTA_WALL = registerBlockItem("white_terracotta_wall", () -> ModBlocks.WHITE_TERRACOTTA_WALL.get());
+    public static final DeferredItem<BlockItem> ORANGE_TERRACOTTA_SLAB = registerBlockItem("orange_terracotta_slab", () -> ModBlocks.ORANGE_TERRACOTTA_SLAB.get());
+    public static final DeferredItem<BlockItem> ORANGE_TERRACOTTA_STAIRS = registerBlockItem("orange_terracotta_stairs", () -> ModBlocks.ORANGE_TERRACOTTA_STAIRS.get());
+    public static final DeferredItem<BlockItem> ORANGE_TERRACOTTA_WALL = registerBlockItem("orange_terracotta_wall", () -> ModBlocks.ORANGE_TERRACOTTA_WALL.get());
+    public static final DeferredItem<BlockItem> MAGENTA_TERRACOTTA_SLAB = registerBlockItem("magenta_terracotta_slab", () -> ModBlocks.MAGENTA_TERRACOTTA_SLAB.get());
+    public static final DeferredItem<BlockItem> MAGENTA_TERRACOTTA_STAIRS = registerBlockItem("magenta_terracotta_stairs", () -> ModBlocks.MAGENTA_TERRACOTTA_STAIRS.get());
+    public static final DeferredItem<BlockItem> MAGENTA_TERRACOTTA_WALL = registerBlockItem("magenta_terracotta_wall", () -> ModBlocks.MAGENTA_TERRACOTTA_WALL.get());
+    public static final DeferredItem<BlockItem> LIGHT_BLUE_TERRACOTTA_SLAB = registerBlockItem("light_blue_terracotta_slab", () -> ModBlocks.LIGHT_BLUE_TERRACOTTA_SLAB.get());
+    public static final DeferredItem<BlockItem> LIGHT_BLUE_TERRACOTTA_STAIRS = registerBlockItem("light_blue_terracotta_stairs", () -> ModBlocks.LIGHT_BLUE_TERRACOTTA_STAIRS.get());
+    public static final DeferredItem<BlockItem> LIGHT_BLUE_TERRACOTTA_WALL = registerBlockItem("light_blue_terracotta_wall", () -> ModBlocks.LIGHT_BLUE_TERRACOTTA_WALL.get());
+    public static final DeferredItem<BlockItem> YELLOW_TERRACOTTA_SLAB = registerBlockItem("yellow_terracotta_slab", () -> ModBlocks.YELLOW_TERRACOTTA_SLAB.get());
+    public static final DeferredItem<BlockItem> YELLOW_TERRACOTTA_STAIRS = registerBlockItem("yellow_terracotta_stairs", () -> ModBlocks.YELLOW_TERRACOTTA_STAIRS.get());
+    public static final DeferredItem<BlockItem> YELLOW_TERRACOTTA_WALL = registerBlockItem("yellow_terracotta_wall", () -> ModBlocks.YELLOW_TERRACOTTA_WALL.get());
+    public static final DeferredItem<BlockItem> LIME_TERRACOTTA_SLAB = registerBlockItem("lime_terracotta_slab", () -> ModBlocks.LIME_TERRACOTTA_SLAB.get());
+    public static final DeferredItem<BlockItem> LIME_TERRACOTTA_STAIRS = registerBlockItem("lime_terracotta_stairs", () -> ModBlocks.LIME_TERRACOTTA_STAIRS.get());
+    public static final DeferredItem<BlockItem> LIME_TERRACOTTA_WALL = registerBlockItem("lime_terracotta_wall", () -> ModBlocks.LIME_TERRACOTTA_WALL.get());
+    public static final DeferredItem<BlockItem> PINK_TERRACOTTA_SLAB = registerBlockItem("pink_terracotta_slab", () -> ModBlocks.PINK_TERRACOTTA_SLAB.get());
+    public static final DeferredItem<BlockItem> PINK_TERRACOTTA_STAIRS = registerBlockItem("pink_terracotta_stairs", () -> ModBlocks.PINK_TERRACOTTA_STAIRS.get());
+    public static final DeferredItem<BlockItem> PINK_TERRACOTTA_WALL = registerBlockItem("pink_terracotta_wall", () -> ModBlocks.PINK_TERRACOTTA_WALL.get());
+    public static final DeferredItem<BlockItem> GRAY_TERRACOTTA_SLAB = registerBlockItem("gray_terracotta_slab", () -> ModBlocks.GRAY_TERRACOTTA_SLAB.get());
+    public static final DeferredItem<BlockItem> GRAY_TERRACOTTA_STAIRS = registerBlockItem("gray_terracotta_stairs", () -> ModBlocks.GRAY_TERRACOTTA_STAIRS.get());
+    public static final DeferredItem<BlockItem> GRAY_TERRACOTTA_WALL = registerBlockItem("gray_terracotta_wall", () -> ModBlocks.GRAY_TERRACOTTA_WALL.get());
+    public static final DeferredItem<BlockItem> LIGHT_GRAY_TERRACOTTA_SLAB = registerBlockItem("light_gray_terracotta_slab", () -> ModBlocks.LIGHT_GRAY_TERRACOTTA_SLAB.get());
+    public static final DeferredItem<BlockItem> LIGHT_GRAY_TERRACOTTA_STAIRS = registerBlockItem("light_gray_terracotta_stairs", () -> ModBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS.get());
+    public static final DeferredItem<BlockItem> LIGHT_GRAY_TERRACOTTA_WALL = registerBlockItem("light_gray_terracotta_wall", () -> ModBlocks.LIGHT_GRAY_TERRACOTTA_WALL.get());
+    public static final DeferredItem<BlockItem> CYAN_TERRACOTTA_SLAB = registerBlockItem("cyan_terracotta_slab", () -> ModBlocks.CYAN_TERRACOTTA_SLAB.get());
+    public static final DeferredItem<BlockItem> CYAN_TERRACOTTA_STAIRS = registerBlockItem("cyan_terracotta_stairs", () -> ModBlocks.CYAN_TERRACOTTA_STAIRS.get());
+    public static final DeferredItem<BlockItem> CYAN_TERRACOTTA_WALL = registerBlockItem("cyan_terracotta_wall", () -> ModBlocks.CYAN_TERRACOTTA_WALL.get());
+    public static final DeferredItem<BlockItem> PURPLE_TERRACOTTA_SLAB = registerBlockItem("purple_terracotta_slab", () -> ModBlocks.PURPLE_TERRACOTTA_SLAB.get());
+    public static final DeferredItem<BlockItem> PURPLE_TERRACOTTA_STAIRS = registerBlockItem("purple_terracotta_stairs", () -> ModBlocks.PURPLE_TERRACOTTA_STAIRS.get());
+    public static final DeferredItem<BlockItem> PURPLE_TERRACOTTA_WALL = registerBlockItem("purple_terracotta_wall", () -> ModBlocks.PURPLE_TERRACOTTA_WALL.get());
+    public static final DeferredItem<BlockItem> BLUE_TERRACOTTA_SLAB = registerBlockItem("blue_terracotta_slab", () -> ModBlocks.BLUE_TERRACOTTA_SLAB.get());
+    public static final DeferredItem<BlockItem> BLUE_TERRACOTTA_STAIRS = registerBlockItem("blue_terracotta_stairs", () -> ModBlocks.BLUE_TERRACOTTA_STAIRS.get());
+    public static final DeferredItem<BlockItem> BLUE_TERRACOTTA_WALL = registerBlockItem("blue_terracotta_wall", () -> ModBlocks.BLUE_TERRACOTTA_WALL.get());
+    public static final DeferredItem<BlockItem> BROWN_TERRACOTTA_SLAB = registerBlockItem("brown_terracotta_slab", () -> ModBlocks.BROWN_TERRACOTTA_SLAB.get());
+    public static final DeferredItem<BlockItem> BROWN_TERRACOTTA_STAIRS = registerBlockItem("brown_terracotta_stairs", () -> ModBlocks.BROWN_TERRACOTTA_STAIRS.get());
+    public static final DeferredItem<BlockItem> BROWN_TERRACOTTA_WALL = registerBlockItem("brown_terracotta_wall", () -> ModBlocks.BROWN_TERRACOTTA_WALL.get());
+    public static final DeferredItem<BlockItem> GREEN_TERRACOTTA_SLAB = registerBlockItem("green_terracotta_slab", () -> ModBlocks.GREEN_TERRACOTTA_SLAB.get());
+    public static final DeferredItem<BlockItem> GREEN_TERRACOTTA_STAIRS = registerBlockItem("green_terracotta_stairs", () -> ModBlocks.GREEN_TERRACOTTA_STAIRS.get());
+    public static final DeferredItem<BlockItem> GREEN_TERRACOTTA_WALL = registerBlockItem("green_terracotta_wall", () -> ModBlocks.GREEN_TERRACOTTA_WALL.get());
+    public static final DeferredItem<BlockItem> RED_TERRACOTTA_SLAB = registerBlockItem("red_terracotta_slab", () -> ModBlocks.RED_TERRACOTTA_SLAB.get());
+    public static final DeferredItem<BlockItem> RED_TERRACOTTA_STAIRS = registerBlockItem("red_terracotta_stairs", () -> ModBlocks.RED_TERRACOTTA_STAIRS.get());
+    public static final DeferredItem<BlockItem> RED_TERRACOTTA_WALL = registerBlockItem("red_terracotta_wall", () -> ModBlocks.RED_TERRACOTTA_WALL.get());
+    public static final DeferredItem<BlockItem> BLACK_TERRACOTTA_SLAB = registerBlockItem("black_terracotta_slab", () -> ModBlocks.BLACK_TERRACOTTA_SLAB.get());
+    public static final DeferredItem<BlockItem> BLACK_TERRACOTTA_STAIRS = registerBlockItem("black_terracotta_stairs", () -> ModBlocks.BLACK_TERRACOTTA_STAIRS.get());
+    public static final DeferredItem<BlockItem> BLACK_TERRACOTTA_WALL = registerBlockItem("black_terracotta_wall", () -> ModBlocks.BLACK_TERRACOTTA_WALL.get());
+
+    public static final DeferredItem<BlockItem> WHITE_CONCRETE_SLAB = registerBlockItem("white_concrete_slab", () -> ModBlocks.WHITE_CONCRETE_SLAB.get());
+    public static final DeferredItem<BlockItem> WHITE_CONCRETE_STAIRS = registerBlockItem("white_concrete_stairs", () -> ModBlocks.WHITE_CONCRETE_STAIRS.get());
+    public static final DeferredItem<BlockItem> WHITE_CONCRETE_WALL = registerBlockItem("white_concrete_wall", () -> ModBlocks.WHITE_CONCRETE_WALL.get());
+    public static final DeferredItem<BlockItem> ORANGE_CONCRETE_SLAB = registerBlockItem("orange_concrete_slab", () -> ModBlocks.ORANGE_CONCRETE_SLAB.get());
+    public static final DeferredItem<BlockItem> ORANGE_CONCRETE_STAIRS = registerBlockItem("orange_concrete_stairs", () -> ModBlocks.ORANGE_CONCRETE_STAIRS.get());
+    public static final DeferredItem<BlockItem> ORANGE_CONCRETE_WALL = registerBlockItem("orange_concrete_wall", () -> ModBlocks.ORANGE_CONCRETE_WALL.get());
+    public static final DeferredItem<BlockItem> MAGENTA_CONCRETE_SLAB = registerBlockItem("magenta_concrete_slab", () -> ModBlocks.MAGENTA_CONCRETE_SLAB.get());
+    public static final DeferredItem<BlockItem> MAGENTA_CONCRETE_STAIRS = registerBlockItem("magenta_concrete_stairs", () -> ModBlocks.MAGENTA_CONCRETE_STAIRS.get());
+    public static final DeferredItem<BlockItem> MAGENTA_CONCRETE_WALL = registerBlockItem("magenta_concrete_wall", () -> ModBlocks.MAGENTA_CONCRETE_WALL.get());
+    public static final DeferredItem<BlockItem> LIGHT_BLUE_CONCRETE_SLAB = registerBlockItem("light_blue_concrete_slab", () -> ModBlocks.LIGHT_BLUE_CONCRETE_SLAB.get());
+    public static final DeferredItem<BlockItem> LIGHT_BLUE_CONCRETE_STAIRS = registerBlockItem("light_blue_concrete_stairs", () -> ModBlocks.LIGHT_BLUE_CONCRETE_STAIRS.get());
+    public static final DeferredItem<BlockItem> LIGHT_BLUE_CONCRETE_WALL = registerBlockItem("light_blue_concrete_wall", () -> ModBlocks.LIGHT_BLUE_CONCRETE_WALL.get());
+    public static final DeferredItem<BlockItem> YELLOW_CONCRETE_SLAB = registerBlockItem("yellow_concrete_slab", () -> ModBlocks.YELLOW_CONCRETE_SLAB.get());
+    public static final DeferredItem<BlockItem> YELLOW_CONCRETE_STAIRS = registerBlockItem("yellow_concrete_stairs", () -> ModBlocks.YELLOW_CONCRETE_STAIRS.get());
+    public static final DeferredItem<BlockItem> YELLOW_CONCRETE_WALL = registerBlockItem("yellow_concrete_wall", () -> ModBlocks.YELLOW_CONCRETE_WALL.get());
+    public static final DeferredItem<BlockItem> LIME_CONCRETE_SLAB = registerBlockItem("lime_concrete_slab", () -> ModBlocks.LIME_CONCRETE_SLAB.get());
+    public static final DeferredItem<BlockItem> LIME_CONCRETE_STAIRS = registerBlockItem("lime_concrete_stairs", () -> ModBlocks.LIME_CONCRETE_STAIRS.get());
+    public static final DeferredItem<BlockItem> LIME_CONCRETE_WALL = registerBlockItem("lime_concrete_wall", () -> ModBlocks.LIME_CONCRETE_WALL.get());
+    public static final DeferredItem<BlockItem> PINK_CONCRETE_SLAB = registerBlockItem("pink_concrete_slab", () -> ModBlocks.PINK_CONCRETE_SLAB.get());
+    public static final DeferredItem<BlockItem> PINK_CONCRETE_STAIRS = registerBlockItem("pink_concrete_stairs", () -> ModBlocks.PINK_CONCRETE_STAIRS.get());
+    public static final DeferredItem<BlockItem> PINK_CONCRETE_WALL = registerBlockItem("pink_concrete_wall", () -> ModBlocks.PINK_CONCRETE_WALL.get());
+    public static final DeferredItem<BlockItem> GRAY_CONCRETE_SLAB = registerBlockItem("gray_concrete_slab", () -> ModBlocks.GRAY_CONCRETE_SLAB.get());
+    public static final DeferredItem<BlockItem> GRAY_CONCRETE_STAIRS = registerBlockItem("gray_concrete_stairs", () -> ModBlocks.GRAY_CONCRETE_STAIRS.get());
+    public static final DeferredItem<BlockItem> GRAY_CONCRETE_WALL = registerBlockItem("gray_concrete_wall", () -> ModBlocks.GRAY_CONCRETE_WALL.get());
+    public static final DeferredItem<BlockItem> LIGHT_GRAY_CONCRETE_SLAB = registerBlockItem("light_gray_concrete_slab", () -> ModBlocks.LIGHT_GRAY_CONCRETE_SLAB.get());
+    public static final DeferredItem<BlockItem> LIGHT_GRAY_CONCRETE_STAIRS = registerBlockItem("light_gray_concrete_stairs", () -> ModBlocks.LIGHT_GRAY_CONCRETE_STAIRS.get());
+    public static final DeferredItem<BlockItem> LIGHT_GRAY_CONCRETE_WALL = registerBlockItem("light_gray_concrete_wall", () -> ModBlocks.LIGHT_GRAY_CONCRETE_WALL.get());
+    public static final DeferredItem<BlockItem> CYAN_CONCRETE_SLAB = registerBlockItem("cyan_concrete_slab", () -> ModBlocks.CYAN_CONCRETE_SLAB.get());
+    public static final DeferredItem<BlockItem> CYAN_CONCRETE_STAIRS = registerBlockItem("cyan_concrete_stairs", () -> ModBlocks.CYAN_CONCRETE_STAIRS.get());
+    public static final DeferredItem<BlockItem> CYAN_CONCRETE_WALL = registerBlockItem("cyan_concrete_wall", () -> ModBlocks.CYAN_CONCRETE_WALL.get());
+    public static final DeferredItem<BlockItem> PURPLE_CONCRETE_SLAB = registerBlockItem("purple_concrete_slab", () -> ModBlocks.PURPLE_CONCRETE_SLAB.get());
+    public static final DeferredItem<BlockItem> PURPLE_CONCRETE_STAIRS = registerBlockItem("purple_concrete_stairs", () -> ModBlocks.PURPLE_CONCRETE_STAIRS.get());
+    public static final DeferredItem<BlockItem> PURPLE_CONCRETE_WALL = registerBlockItem("purple_concrete_wall", () -> ModBlocks.PURPLE_CONCRETE_WALL.get());
+    public static final DeferredItem<BlockItem> BLUE_CONCRETE_SLAB = registerBlockItem("blue_concrete_slab", () -> ModBlocks.BLUE_CONCRETE_SLAB.get());
+    public static final DeferredItem<BlockItem> BLUE_CONCRETE_STAIRS = registerBlockItem("blue_concrete_stairs", () -> ModBlocks.BLUE_CONCRETE_STAIRS.get());
+    public static final DeferredItem<BlockItem> BLUE_CONCRETE_WALL = registerBlockItem("blue_concrete_wall", () -> ModBlocks.BLUE_CONCRETE_WALL.get());
+    public static final DeferredItem<BlockItem> BROWN_CONCRETE_SLAB = registerBlockItem("brown_concrete_slab", () -> ModBlocks.BROWN_CONCRETE_SLAB.get());
+    public static final DeferredItem<BlockItem> BROWN_CONCRETE_STAIRS = registerBlockItem("brown_concrete_stairs", () -> ModBlocks.BROWN_CONCRETE_STAIRS.get());
+    public static final DeferredItem<BlockItem> BROWN_CONCRETE_WALL = registerBlockItem("brown_concrete_wall", () -> ModBlocks.BROWN_CONCRETE_WALL.get());
+    public static final DeferredItem<BlockItem> GREEN_CONCRETE_SLAB = registerBlockItem("green_concrete_slab", () -> ModBlocks.GREEN_CONCRETE_SLAB.get());
+    public static final DeferredItem<BlockItem> GREEN_CONCRETE_STAIRS = registerBlockItem("green_concrete_stairs", () -> ModBlocks.GREEN_CONCRETE_STAIRS.get());
+    public static final DeferredItem<BlockItem> GREEN_CONCRETE_WALL = registerBlockItem("green_concrete_wall", () -> ModBlocks.GREEN_CONCRETE_WALL.get());
+    public static final DeferredItem<BlockItem> RED_CONCRETE_SLAB = registerBlockItem("red_concrete_slab", () -> ModBlocks.RED_CONCRETE_SLAB.get());
+    public static final DeferredItem<BlockItem> RED_CONCRETE_STAIRS = registerBlockItem("red_concrete_stairs", () -> ModBlocks.RED_CONCRETE_STAIRS.get());
+    public static final DeferredItem<BlockItem> RED_CONCRETE_WALL = registerBlockItem("red_concrete_wall", () -> ModBlocks.RED_CONCRETE_WALL.get());
+    public static final DeferredItem<BlockItem> BLACK_CONCRETE_SLAB = registerBlockItem("black_concrete_slab", () -> ModBlocks.BLACK_CONCRETE_SLAB.get());
+    public static final DeferredItem<BlockItem> BLACK_CONCRETE_STAIRS = registerBlockItem("black_concrete_stairs", () -> ModBlocks.BLACK_CONCRETE_STAIRS.get());
+    public static final DeferredItem<BlockItem> BLACK_CONCRETE_WALL = registerBlockItem("black_concrete_wall", () -> ModBlocks.BLACK_CONCRETE_WALL.get());
+
+    public static final DeferredItem<BlockItem> STONE_TILES = registerBlockItem("stone_tiles", () -> ModBlocks.STONE_TILES.get());
+    public static final DeferredItem<BlockItem> STONE_TILE_SLAB = registerBlockItem("stone_tile_slab", () -> ModBlocks.STONE_TILE_SLAB.get());
+    public static final DeferredItem<BlockItem> STONE_TILE_STAIRS = registerBlockItem("stone_tile_stairs", () -> ModBlocks.STONE_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> STONE_TILE_WALL = registerBlockItem("stone_tile_wall", () -> ModBlocks.STONE_TILE_WALL.get());
+
+    public static final DeferredItem<BlockItem> MOSSY_STONE_TILES = registerBlockItem("mossy_stone_tiles", () -> ModBlocks.MOSSY_STONE_TILES.get());
+    public static final DeferredItem<BlockItem> MOSSY_STONE_TILE_SLAB = registerBlockItem("mossy_stone_tile_slab", () -> ModBlocks.MOSSY_STONE_TILE_SLAB.get());
+    public static final DeferredItem<BlockItem> MOSSY_STONE_TILE_STAIRS = registerBlockItem("mossy_stone_tile_stairs", () -> ModBlocks.MOSSY_STONE_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> MOSSY_STONE_TILE_WALL = registerBlockItem("mossy_stone_tile_wall", () -> ModBlocks.MOSSY_STONE_TILE_WALL.get());
+
+    public static final DeferredItem<BlockItem> CRACKED_STONE_TILES = registerBlockItem("cracked_stone_tiles", () -> ModBlocks.CRACKED_STONE_TILES.get());
+    public static final DeferredItem<BlockItem> CRACKED_STONE_TILE_SLAB = registerBlockItem("cracked_stone_tile_slab", () -> ModBlocks.CRACKED_STONE_TILE_SLAB.get());
+    public static final DeferredItem<BlockItem> CRACKED_STONE_TILE_STAIRS = registerBlockItem("cracked_stone_tile_stairs", () -> ModBlocks.CRACKED_STONE_TILE_STAIRS.get());
+    public static final DeferredItem<BlockItem> CRACKED_STONE_TILE_WALL = registerBlockItem("cracked_stone_tile_wall", () -> ModBlocks.CRACKED_STONE_TILE_WALL.get());
+
+    public static final DeferredItem<BlockItem> EXPOSED_IRON_CHAIN = registerBlockItem("exposed_iron_chain", () -> ModBlocks.EXPOSED_IRON_CHAIN.get());
+    public static final DeferredItem<BlockItem> WEATHERED_IRON_CHAIN = registerBlockItem("weathered_iron_chain", () -> ModBlocks.WEATHERED_IRON_CHAIN.get());
+    public static final DeferredItem<BlockItem> RUSTED_IRON_CHAIN = registerBlockItem("rusted_iron_chain", () -> ModBlocks.RUSTED_IRON_CHAIN.get());
+
+    public static final DeferredItem<BlockItem> WAXED_IRON_CHAIN = registerBlockItem("waxed_iron_chain", () -> ModBlocks.WAXED_IRON_CHAIN.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_IRON_CHAIN = registerBlockItem("waxed_exposed_iron_chain", () -> ModBlocks.WAXED_EXPOSED_IRON_CHAIN.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_IRON_CHAIN = registerBlockItem("waxed_weathered_iron_chain", () -> ModBlocks.WAXED_WEATHERED_IRON_CHAIN.get());
+    public static final DeferredItem<BlockItem> WAXED_RUSTED_IRON_CHAIN = registerBlockItem("waxed_rusted_iron_chain", () -> ModBlocks.WAXED_RUSTED_IRON_CHAIN.get());
+
+    public static final DeferredItem<BlockItem> OBSIDIAN_BRICKS = registerBlockItem("obsidian_bricks", () -> ModBlocks.OBSIDIAN_BRICKS.get());
+    public static final DeferredItem<BlockItem> OBSIDIAN_BRICK_SLAB = registerBlockItem("obsidian_brick_slab", () -> ModBlocks.OBSIDIAN_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> OBSIDIAN_BRICK_STAIRS = registerBlockItem("obsidian_brick_stairs", () -> ModBlocks.OBSIDIAN_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> OBSIDIAN_BRICK_WALL = registerBlockItem("obsidian_brick_wall", () -> ModBlocks.OBSIDIAN_BRICK_WALL.get());
+
+    public static final DeferredItem<BlockItem> CRYING_OBSIDIAN_BRICKS = registerBlockItem("crying_obsidian_bricks", () -> ModBlocks.CRYING_OBSIDIAN_BRICKS.get());
+    public static final DeferredItem<BlockItem> CRYING_OBSIDIAN_BRICK_SLAB = registerBlockItem("crying_obsidian_brick_slab", () -> ModBlocks.CRYING_OBSIDIAN_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> CRYING_OBSIDIAN_BRICK_STAIRS = registerBlockItem("crying_obsidian_brick_stairs", () -> ModBlocks.CRYING_OBSIDIAN_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> CRYING_OBSIDIAN_BRICK_WALL = registerBlockItem("crying_obsidian_brick_wall", () -> ModBlocks.CRYING_OBSIDIAN_BRICK_WALL.get());
+
+    public static final DeferredItem<BlockItem> COAL_BRICKS = registerBlockItem("coal_bricks", () -> ModBlocks.COAL_BRICKS.get());
+    public static final DeferredItem<BlockItem> COAL_BRICK_SLAB = registerBlockItem("coal_brick_slab", () -> ModBlocks.COAL_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> COAL_BRICK_STAIRS = registerBlockItem("coal_brick_stairs", () -> ModBlocks.COAL_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> COAL_BRICK_WALL = registerBlockItem("coal_brick_wall", () -> ModBlocks.COAL_BRICK_WALL.get());
+
+    public static final DeferredItem<BlockItem> CHARCOAL_BRICKS = registerBlockItem("charcoal_bricks", () -> ModBlocks.CHARCOAL_BRICKS.get());
+    public static final DeferredItem<BlockItem> CHARCOAL_BRICK_SLAB = registerBlockItem("charcoal_brick_slab", () -> ModBlocks.CHARCOAL_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> CHARCOAL_BRICK_STAIRS = registerBlockItem("charcoal_brick_stairs", () -> ModBlocks.CHARCOAL_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> CHARCOAL_BRICK_WALL = registerBlockItem("charcoal_brick_wall", () -> ModBlocks.CHARCOAL_BRICK_WALL.get());
+
+    public static final DeferredItem<BlockItem> LAPIS_BRICKS = registerBlockItem("lapis_bricks", () -> ModBlocks.LAPIS_BRICKS.get());
+    public static final DeferredItem<BlockItem> LAPIS_BRICK_SLAB = registerBlockItem("lapis_brick_slab", () -> ModBlocks.LAPIS_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> LAPIS_BRICK_STAIRS = registerBlockItem("lapis_brick_stairs", () -> ModBlocks.LAPIS_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> LAPIS_BRICK_WALL = registerBlockItem("lapis_brick_wall", () -> ModBlocks.LAPIS_BRICK_WALL.get());
+
+    public static final DeferredItem<BlockItem> SMOOTH_LAPIS = registerBlockItem("smooth_lapis", () -> ModBlocks.SMOOTH_LAPIS.get());
+    public static final DeferredItem<BlockItem> SMOOTH_LAPIS_SLAB = registerBlockItem("smooth_lapis_slab", () -> ModBlocks.SMOOTH_LAPIS_SLAB.get());
+    public static final DeferredItem<BlockItem> SMOOTH_LAPIS_STAIRS = registerBlockItem("smooth_lapis_stairs", () -> ModBlocks.SMOOTH_LAPIS_STAIRS.get());
+    public static final DeferredItem<BlockItem> SMOOTH_LAPIS_WALL = registerBlockItem("smooth_lapis_wall", () -> ModBlocks.SMOOTH_LAPIS_WALL.get());
+
+    public static final DeferredItem<BlockItem> SNOW_BRICKS = registerBlockItem("snow_bricks", () -> ModBlocks.SNOW_BRICKS.get());
+    public static final DeferredItem<BlockItem> SNOW_BRICK_SLAB = registerBlockItem("snow_brick_slab", () -> ModBlocks.SNOW_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> SNOW_BRICK_STAIRS = registerBlockItem("snow_brick_stairs", () -> ModBlocks.SNOW_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> SNOW_BRICK_WALL = registerBlockItem("snow_brick_wall", () -> ModBlocks.SNOW_BRICK_WALL.get());
+
+    public static final DeferredItem<BlockItem> ICE_BRICKS = registerBlockItem("ice_bricks", () -> ModBlocks.ICE_BRICKS.get());
+    public static final DeferredItem<BlockItem> ICE_BRICK_SLAB = registerBlockItem("ice_brick_slab", () -> ModBlocks.ICE_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> ICE_BRICK_STAIRS = registerBlockItem("ice_brick_stairs", () -> ModBlocks.ICE_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> ICE_BRICK_WALL = registerBlockItem("ice_brick_wall", () -> ModBlocks.ICE_BRICK_WALL.get());
+
+    public static final DeferredItem<BlockItem> PACKED_ICE_BRICKS = registerBlockItem("packed_ice_bricks", () -> ModBlocks.PACKED_ICE_BRICKS.get());
+    public static final DeferredItem<BlockItem> PACKED_ICE_BRICK_SLAB = registerBlockItem("packed_ice_brick_slab", () -> ModBlocks.PACKED_ICE_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> PACKED_ICE_BRICK_STAIRS = registerBlockItem("packed_ice_brick_stairs", () -> ModBlocks.PACKED_ICE_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> PACKED_ICE_BRICK_WALL = registerBlockItem("packed_ice_brick_wall", () -> ModBlocks.PACKED_ICE_BRICK_WALL.get());
+
+    public static final DeferredItem<BlockItem> BLUE_ICE_BRICKS = registerBlockItem("blue_ice_bricks", () -> ModBlocks.BLUE_ICE_BRICKS.get());
+    public static final DeferredItem<BlockItem> BLUE_ICE_BRICK_SLAB = registerBlockItem("blue_ice_brick_slab", () -> ModBlocks.BLUE_ICE_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> BLUE_ICE_BRICK_STAIRS = registerBlockItem("blue_ice_brick_stairs", () -> ModBlocks.BLUE_ICE_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> BLUE_ICE_BRICK_WALL = registerBlockItem("blue_ice_brick_wall", () -> ModBlocks.BLUE_ICE_BRICK_WALL.get());
+
+    public static final DeferredItem<Item> SCULK_BRICK = registerCustomItem("sculk_brick");
+    public static final DeferredItem<BlockItem> SCULK_BRICKS = registerBlockItem("sculk_bricks", () -> ModBlocks.SCULK_BRICKS.get());
+    public static final DeferredItem<BlockItem> SCULK_BRICK_SLAB = registerBlockItem("sculk_brick_slab", () -> ModBlocks.SCULK_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> SCULK_BRICK_STAIRS = registerBlockItem("sculk_brick_stairs", () -> ModBlocks.SCULK_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> SCULK_BRICK_WALL = registerBlockItem("sculk_brick_wall", () -> ModBlocks.SCULK_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> CHISELED_SCULK_BRICKS = registerBlockItem("chiseled_sculk_bricks", () -> ModBlocks.CHISELED_SCULK_BRICKS.get());
+
+    public static final DeferredItem<Item> BRONZE_SWORD = registerSword("bronze_sword", ModToolMaterials.BRONZE, 3.0F, -2.4F);
+    public static final DeferredItem<Item> BRONZE_AXE = registerAxe("bronze_axe", ModToolMaterials.BRONZE, 7.0F, -3.2F);
+    public static final DeferredItem<Item> BRONZE_SHOVEL = registerShovel("bronze_shovel", ModToolMaterials.BRONZE, 1.5F, -3.0F);
+    public static final DeferredItem<Item> BRONZE_PICKAXE = registerPickAxe("bronze_pickaxe", ModToolMaterials.BRONZE, 7.0F, -3.2F);
+    public static final DeferredItem<Item> BRONZE_HOE = registerHoe("bronze_hoe", ModToolMaterials.BRONZE, -1.0F, -2.0F);
+    public static final DeferredItem<Item> BRONZE_HELMET = registerArmor("bronze_helmet", ModArmorMaterials.BRONZE, ArmorType.HELMET);
+    public static final DeferredItem<Item> BRONZE_CHESTPLATE = registerArmor("bronze_chestplate", ModArmorMaterials.BRONZE, ArmorType.CHESTPLATE);
+    public static final DeferredItem<Item> BRONZE_LEGGINGS = registerArmor("bronze_leggings", ModArmorMaterials.BRONZE, ArmorType.LEGGINGS);
+    public static final DeferredItem<Item> BRONZE_BOOTS = registerArmor("bronze_boots", ModArmorMaterials.BRONZE, ArmorType.BOOTS);
+    public static final DeferredItem<SmithingTemplateItem> BRONZE_UPGRADE_SMITHING_TEMPLATE = registerSmithingTemplate("bronze_upgrade_smithing_template");
+
     private static DeferredItem<Item> registerCustomItem(String registryName) {
         if (registryName == "netherite_nugget") {
             return ITEMS.register(
@@ -827,7 +1119,7 @@ public class ModItems {
     }
 
     private static DeferredItem<BlockItem> registerBlockItem(String registryName, Supplier<Block> block){
-        if (registryName == "netherite_door" | registryName == "netherite_trapdoor" | registryName == "player_only_pressure_plate" | registryName == "netherite_tiles" | registryName == "netherite_tile_slab" | registryName == "netherite_tile_stairs") {
+        if (registryName == "netherite_door" | registryName == "netherite_trapdoor" | registryName == "player_only_pressure_plate" | registryName == "cut_netherite" | registryName == "cut_netherite_slab" | registryName == "cut_netherite_stairs") {
             return ITEMS.register(
                     registryName, () -> new BlockItem(
                             block.get(), new Item.Properties().setId(
@@ -919,6 +1211,103 @@ public class ModItems {
                         )
                 )
         ));
+    }
+
+    private static DeferredItem<Item> registerSword(String registryName, ToolMaterial toolMaterial, float attackDamage, float attackSpeed) {
+        return ITEMS.register(registryName, () -> new Item(
+                new Item.Properties().sword(toolMaterial, attackDamage, attackSpeed).setId(
+                        ResourceKey.create(
+                                Registries.ITEM,
+                                ResourceLocation.fromNamespaceAndPath(
+                                        BuildersParadise.MODID,
+                                        registryName
+                                )
+                        )
+                )
+        ));
+    }
+
+    private static DeferredItem<Item> registerAxe(String registryName, ToolMaterial toolMaterial, float attackDamage, float attackSpeed) {
+        return ITEMS.register(registryName, () -> new Item(
+                new Item.Properties().axe(toolMaterial, attackDamage, attackSpeed).setId(
+                        ResourceKey.create(
+                                Registries.ITEM,
+                                ResourceLocation.fromNamespaceAndPath(
+                                        BuildersParadise.MODID,
+                                        registryName
+                                )
+                        )
+                )
+        ));
+    }
+
+    private static DeferredItem<Item> registerPickAxe(String registryName, ToolMaterial toolMaterial, float attackDamage, float attackSpeed) {
+        return ITEMS.register(registryName, () -> new Item(
+                new Item.Properties().pickaxe(toolMaterial, attackDamage, attackSpeed).setId(
+                        ResourceKey.create(
+                                Registries.ITEM,
+                                ResourceLocation.fromNamespaceAndPath(
+                                        BuildersParadise.MODID,
+                                        registryName
+                                )
+                        )
+                )
+        ));
+    }
+
+    private static DeferredItem<Item> registerShovel(String registryName, ToolMaterial toolMaterial, float attackDamage, float attackSpeed) {
+        return ITEMS.register(registryName, () -> new Item(
+                new Item.Properties().shovel(toolMaterial, attackDamage, attackSpeed).setId(
+                        ResourceKey.create(
+                                Registries.ITEM,
+                                ResourceLocation.fromNamespaceAndPath(
+                                        BuildersParadise.MODID,
+                                        registryName
+                                )
+                        )
+                )
+        ));
+    }
+
+    private static DeferredItem<Item> registerHoe(String registryName, ToolMaterial toolMaterial, float attackDamage, float attackSpeed) {
+        return ITEMS.register(registryName, () -> new Item(
+                new Item.Properties().hoe(toolMaterial, attackDamage, attackSpeed).setId(
+                        ResourceKey.create(
+                                Registries.ITEM,
+                                ResourceLocation.fromNamespaceAndPath(
+                                        BuildersParadise.MODID,
+                                        registryName
+                                )
+                        )
+                )
+        ));
+    }
+
+    private static DeferredItem<Item> registerArmor(String registryName, ArmorMaterial armorMaterial, ArmorType armorType) {
+        return ITEMS.register(registryName, () -> new Item(
+                new Item.Properties().humanoidArmor(armorMaterial, armorType).setId(
+                        ResourceKey.create(
+                                Registries.ITEM,
+                                ResourceLocation.fromNamespaceAndPath(
+                                        BuildersParadise.MODID,
+                                        registryName
+                                )
+                        )
+                )
+        ));
+    }
+
+    private static DeferredItem<SmithingTemplateItem> registerSmithingTemplate(String registryName) {
+        return ITEMS.register(registryName,
+                () -> ModSmithingTemplateItemConfig.createBronzeUpgradeTemplate(new Item.Properties().rarity(Rarity.UNCOMMON).setId(
+                        ResourceKey.create(
+                                Registries.ITEM,
+                                ResourceLocation.fromNamespaceAndPath(
+                                        BuildersParadise.MODID,
+                                        registryName
+                                )
+                        )
+                )));
     }
 
     public static void register(IEventBus eventBus){

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "buildersparadise:block/diamond_tiles",
-    "side": "buildersparadise:block/diamond_tiles",
-    "top": "buildersparadise:block/diamond_tiles"
-  }
-}

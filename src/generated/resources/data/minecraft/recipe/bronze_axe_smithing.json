@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "#buildersparadise:bronze_tool_materials",
+  "base": "minecraft:copper_axe",
+  "result": {
+    "id": "buildersparadise:bronze_axe"
+  },
+  "template": "buildersparadise:bronze_upgrade_smithing_template"
+}

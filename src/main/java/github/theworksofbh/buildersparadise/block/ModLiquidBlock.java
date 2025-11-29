@@ -4,6 +4,7 @@ import github.theworksofbh.buildersparadise.effect.ModEffects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.InsideBlockEffectApplier;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,9 +19,11 @@ public class ModLiquidBlock extends LiquidBlock {
         super(fluid, properties);
     }
 
-    protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity, InsideBlockEffectApplier effectApplier) {
+    @Override
+    protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity, InsideBlockEffectApplier applier, boolean intersects) {
         if (level.getDifficulty() != Difficulty.PEACEFUL && entity instanceof LivingEntity livingentity) {
-            livingentity.addEffect(new MobEffectInstance(ModEffects.IRRADIATION_EFFECT, 135));
+            livingentity.addEffect(new MobEffectInstance(ModEffects.IRRADIATION, 1350));
+            livingentity.addEffect(new MobEffectInstance(MobEffects.WITHER, 1350));
         }
     }
 }

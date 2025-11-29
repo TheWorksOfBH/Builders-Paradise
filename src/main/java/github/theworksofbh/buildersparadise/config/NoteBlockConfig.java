@@ -14,7 +14,7 @@ import net.neoforged.neoforge.event.level.NoteBlockEvent;
 
 public class NoteBlockConfig {
     public static void brassBlockNoteBlock(NoteBlockEvent.Play event){
-        if (event.getLevel().getBlockState(event.getPos().below()).is(ModBlocks.BRASS_BLOCK.get()) || event.getLevel().getBlockState(event.getPos().below()).is(ModBlocks.BRASS_TILES.get()) || event.getLevel().getBlockState(event.getPos().below()).is(ModBlocks.BRASS_TILE_SLAB.get()) || event.getLevel().getBlockState(event.getPos().below()).is(ModBlocks.BRASS_TILE_STAIRS.get())) {
+        if (event.getLevel().getBlockState(event.getPos().below()).is(ModBlocks.BRASS_BLOCK.get()) || event.getLevel().getBlockState(event.getPos().below()).is(ModBlocks.CUT_BRASS.get()) || event.getLevel().getBlockState(event.getPos().below()).is(ModBlocks.CUT_BRASS_SLAB.get()) || event.getLevel().getBlockState(event.getPos().below()).is(ModBlocks.CUT_BRASS_STAIRS.get())) {
             event.setCanceled(true);
 
             Level level = (Level) event.getLevel();

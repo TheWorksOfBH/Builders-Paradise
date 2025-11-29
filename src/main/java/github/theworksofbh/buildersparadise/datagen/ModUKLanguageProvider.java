@@ -168,18 +168,24 @@ public class ModUKLanguageProvider extends LanguageProvider {
             readjusted = reformatted.replace("brass block", "block of brass");
         } else if (reformatted.contains("steel block")) {
             readjusted = reformatted.replace("steel block", "block of steel");
+        } else if (reformatted.contains("lapis")) {
+            readjusted = reformatted.replace("lapis", "lapis lazuli");
         } else if (reformatted.contains("music disc")) {
             readjusted = "music disc";
         } else if (reformatted.contains("chest boat")) {
             readjusted = reformatted.replace("chest boat", "boat with chest");
         } else if (reformatted.contains("minecart")) {
             readjusted = "minecart with " + reformatted.replace(" minecart", "");
+        } else if (reformatted.contains("smithing template")) {
+            readjusted = reformatted.replace("smithing template", "");
         } else {
             readjusted = reformatted;
         }
 
         if (readjusted.contains("ize")) {
             briIsh = readjusted.replace("ize", "ise");
+        } else if (readjusted.contains("gray")) {
+            briIsh = readjusted.replace("gray", "grey");
         } else {
             briIsh = readjusted;
         }
@@ -230,5 +236,9 @@ public class ModUKLanguageProvider extends LanguageProvider {
         this.add("container.fletching", "Fletching");
         this.add("jukebox_song.buildersparadise.circuitric_magnet", "The Works of BH - Circuitric Magnet");
         this.add("jukebox_song.buildersparadise.angry_boyfriends", "The Works of BH - Angry Boyfriends");
+        this.add("item.buildersparadise.smithing_template.bronze_upgrade.applies_to", "Copper Equipment");
+        this.add("item.buildersparadise.smithing_template.bronze_upgrade.ingredients", "Bronze Ingot");
+        this.add("item.buildersparadise.smithing_template.bronze_upgrade.base_slot_description", "Add copper armour, weapon, or tool");
+        this.add("item.buildersparadise.smithing_template.bronze_upgrade.additions_slot_description", "Add Bronze Ingot");
     }
 }

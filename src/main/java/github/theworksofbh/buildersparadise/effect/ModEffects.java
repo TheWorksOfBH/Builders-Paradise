@@ -11,7 +11,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class ModEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(BuiltInRegistries.MOB_EFFECT, BuildersParadise.MODID);
 
-    public static final Holder<MobEffect> IRRADIATION_EFFECT = MOB_EFFECTS.register("irradiation",
+    public static final Holder<MobEffect> IRRADIATION = MOB_EFFECTS.register("irradiation",
             () -> new IrradiationEffect(
                     MobEffectCategory.HARMFUL,
                     0x35f067

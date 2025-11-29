@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:cracked_stone_tiles",
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:cracked_stone_tile_wall"
+  }
+}

@@ -67,7 +67,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 Blocks.OBSERVER,
                 Blocks.CRAFTER,
                 Blocks.CHEST,
-                Blocks.TRAPPED_CHEST
+                Blocks.TRAPPED_CHEST,
+                Blocks.ICE,
+                Blocks.PACKED_ICE,
+                Blocks.BLUE_ICE
         );
 
         Set<Block> handMadeBlocks = Set.of(
@@ -89,66 +92,120 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         return this.createSilkTouchDispatchTable(block, (LootPoolEntryContainer.Builder)this.applyExplosionDecay(block, LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(UniformGenerator.between(min, max))).apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
     }
 
+    protected LootTable.Builder createSilkTouchSlabItemTable(Block block, Item otherWiseItem) {
+        return LootTable.lootTable()
+                .withPool(
+                        LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .add(
+                                        LootItem.lootTableItem(block.asItem())
+                                                .when(this.hasSilkTouch())
+                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))
+                                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                                        .hasProperty(SlabBlock.TYPE, SlabType.DOUBLE))))
+                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))
+                                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                                        .hasProperty(SlabBlock.TYPE, SlabType.BOTTOM))))
+                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))
+                                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                                        .hasProperty(SlabBlock.TYPE, SlabType.TOP))))
+                                                .otherwise(
+                                                        LootItem.lootTableItem(otherWiseItem)
+                                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))
+                                                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                                                        .hasProperty(SlabBlock.TYPE, SlabType.DOUBLE))))
+                                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))
+                                                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                                                        .hasProperty(SlabBlock.TYPE, SlabType.BOTTOM))))
+                                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))
+                                                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                                                        .hasProperty(SlabBlock.TYPE, SlabType.TOP))))
+                                                )
+                                )
+                );
+    }
+
+    protected LootTable.Builder createColdSlabItemTable(Block block, Item otherWiseItem) {
+        return LootTable.lootTable()
+                .withPool(
+                        LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .add(
+                                        LootItem.lootTableItem(block.asItem())
+                                                .when(this.hasSilkTouch())
+                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))
+                                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                                        .hasProperty(SlabBlock.TYPE, SlabType.DOUBLE))))
+                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))
+                                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                                        .hasProperty(SlabBlock.TYPE, SlabType.BOTTOM))))
+                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))
+                                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                                        .hasProperty(SlabBlock.TYPE, SlabType.TOP))))
+                                                .otherwise(
+                                                        LootItem.lootTableItem(otherWiseItem)
+                                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))
+                                                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                                                        .hasProperty(SlabBlock.TYPE, SlabType.DOUBLE))))
+                                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))
+                                                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                                                        .hasProperty(SlabBlock.TYPE, SlabType.BOTTOM))))
+                                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))
+                                                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                                                        .hasProperty(SlabBlock.TYPE, SlabType.TOP))))
+                                                )
+                                )
+                );
+    }
+
     protected void generate(){
         getKnownBlocks().forEach(
             block -> {
                 if (block instanceof SlabBlock || block instanceof ModSlabBlock){
                     if (block == Blocks.STONE_SLAB) {
-                        this.add(block, LootTable.lootTable()
-                            .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1))
-                                .add(LootItem.lootTableItem(Blocks.COBBLESTONE_SLAB)
-                                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))
-                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                            .setProperties(StatePropertiesPredicate.Builder.properties()
-                                                .hasProperty(SlabBlock.TYPE, SlabType.DOUBLE))))
-                                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))
-                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                            .setProperties(StatePropertiesPredicate.Builder.properties()
-                                                .hasProperty(SlabBlock.TYPE, SlabType.BOTTOM))))
-                                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))
-                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                            .setProperties(StatePropertiesPredicate.Builder.properties()
-                                                .hasProperty(SlabBlock.TYPE, SlabType.TOP))))
-                                )
-                            )
-                        );
+                        this.add(block, createSilkTouchSlabItemTable(block, Items.COBBLESTONE_SLAB));
                     } else if (block == ModBlocks.DEEPSLATE_SLAB.get()) {
-                        this.add(block, LootTable.lootTable()
-                            .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1))
-                                .add(LootItem.lootTableItem(Blocks.COBBLED_DEEPSLATE_SLAB)
-                                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))
-                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                            .setProperties(StatePropertiesPredicate.Builder.properties()
-                                                .hasProperty(SlabBlock.TYPE, SlabType.DOUBLE))))
-                                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))
-                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                            .setProperties(StatePropertiesPredicate.Builder.properties()
-                                                .hasProperty(SlabBlock.TYPE, SlabType.BOTTOM))))
-                                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))
-                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                            .setProperties(StatePropertiesPredicate.Builder.properties()
-                                                .hasProperty(SlabBlock.TYPE, SlabType.TOP))))
-                                )
-                            )
-                        );
+                        this.add(block, createSilkTouchSlabItemTable(block, Items.COBBLED_DEEPSLATE_SLAB));
+                    } else if (block == ModBlocks.SNOW_SLAB.get()) {
+                        this.add(block, createColdSlabItemTable(block, Items.SNOWBALL));
+                    } else if (block == ModBlocks.ICE_SLAB.get() || block == ModBlocks.PACKED_ICE_SLAB.get() || block == ModBlocks.BLUE_ICE_SLAB.get()) {
+                        this.add(block, createColdSlabItemTable(block, ModItems.ICE_SHARD.get()));
                     } else {
                         this.add(block, createSlabItemTable(block));
                     }
                 } else if (block instanceof StairBlock || block instanceof ModStairBlock) {
                     if (block == Blocks.STONE_STAIRS) {
-                        this.dropOther(block, Items.COBBLESTONE_STAIRS);
+                        this.add(block, createSingleItemTableWithSilkTouch(block, Items.COBBLESTONE_STAIRS));
                     } else if (block == ModBlocks.DEEPSLATE_STAIRS.get()) {
-                        this.dropOther(block, Items.COBBLED_DEEPSLATE_STAIRS);
-                    } else {
+                        this.add(block, createSingleItemTableWithSilkTouch(block, Items.COBBLED_DEEPSLATE_STAIRS));
+                    } else if (block == ModBlocks.SNOW_STAIRS.get()) {
+                        this.add(block, createSingleItemTableWithSilkTouch(block, Items.SNOWBALL, ConstantValue.exactly(3.0F)));
+                    } else if (block == ModBlocks.ICE_STAIRS.get() || block == ModBlocks.PACKED_ICE_STAIRS.get() || block == ModBlocks.BLUE_ICE_STAIRS.get()) {
+                        this.add(block, createSingleItemTableWithSilkTouch(block, ModItems.ICE_SHARD.get(), ConstantValue.exactly(3.0F)));
+                    } else  {
                         this.dropSelf(block);
                     }
                 } else if (block instanceof WallBlock) {
                     if (block == ModBlocks.STONE_WALL.get()) {
-                        this.dropOther(block, Items.COBBLESTONE_WALL);
+                        this.add(block, createSingleItemTableWithSilkTouch(block, Items.COBBLESTONE_WALL));
                     } else if (block == ModBlocks.DEEPSLATE_WALL.get()) {
-                        this.dropOther(block, Items.COBBLED_DEEPSLATE_WALL);
+                        this.add(block, createSingleItemTableWithSilkTouch(block, Items.COBBLED_DEEPSLATE_WALL));
+                    } else if (block == ModBlocks.SNOW_WALL.get()) {
+                        this.add(block, createSingleItemTableWithSilkTouch(block, Items.SNOWBALL));
+                    } else if (block == ModBlocks.ICE_WALL.get() || block == ModBlocks.PACKED_ICE_WALL.get() || block == ModBlocks.BLUE_ICE_WALL.get()) {
+                        this.add(block, createSingleItemTableWithSilkTouch(block, ModItems.ICE_SHARD.get()));
                     } else {
                         this.dropSelf(block);
                     }
@@ -345,6 +402,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                     } else {
                         this.add(block, createNameableBlockEntityTable(block));
                     }
+                } else if (block.getDescriptionId().contains("ice")) {
+                    this.add(block, createSingleItemTableWithSilkTouch(block, ModItems.ICE_SHARD.get(), ConstantValue.exactly(4.0F)));
                 } else {
                     this.dropSelf(block);
                 }

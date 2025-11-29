@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:blue_ice_bricks",
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:blue_ice_brick_wall"
+  }
+}

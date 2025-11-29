@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/cut_silver_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/cut_silver"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/cut_silver_slab_top"
+    }
+  }
+}

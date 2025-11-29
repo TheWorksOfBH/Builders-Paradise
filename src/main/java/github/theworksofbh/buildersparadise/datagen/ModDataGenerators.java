@@ -43,5 +43,7 @@ public class ModDataGenerators {
         event.createProvider(ModFluidTagsProvider::new);
 
         event.createProvider(ModEntityTagsProvider::new);
+
+        event.createProvider(ModEquipmentAssetProvider::new);
     }
 }

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cut_platinum": {
+      "conditions": {
+        "items": [
+          {
+            "items": "buildersparadise:cut_platinum"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:cut_platinum_stairs_from_cut_platinum_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cut_platinum"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:cut_platinum_stairs_from_cut_platinum_stonecutting"
+    ]
+  }
+}

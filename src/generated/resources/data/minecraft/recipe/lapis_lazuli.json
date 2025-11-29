@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:never"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:lapis_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "minecraft:lapis_lazuli"
+  }
+}

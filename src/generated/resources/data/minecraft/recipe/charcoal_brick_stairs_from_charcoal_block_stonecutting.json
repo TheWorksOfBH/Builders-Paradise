@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:charcoal_block",
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:charcoal_brick_stairs"
+  }
+}

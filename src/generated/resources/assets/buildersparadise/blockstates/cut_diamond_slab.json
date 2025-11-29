@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/cut_diamond_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/cut_diamond"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/cut_diamond_slab_top"
+    }
+  }
+}

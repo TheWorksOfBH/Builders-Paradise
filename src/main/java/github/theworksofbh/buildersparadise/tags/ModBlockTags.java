@@ -36,6 +36,9 @@ public final class ModBlockTags {
     public static final TagKey<Block> CRAFTERS = create("crafters");
     public static final TagKey<Block> WOODEN_CHESTS = create("wooden_chests");
     public static final TagKey<Block> TRAPPED_CHESTS = create("trapped_chests");
+    public static final TagKey<Block> IRON = create("iron");
+    public static final TagKey<Block> ZINC = create("zinc");
+    public static final TagKey<Block> INCORRECT_FOR_BRONZE_TOOL = create("incorrect_for_bronze_tool");
 
     private ModBlockTags() {
     }

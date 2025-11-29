@@ -6,7 +6,7 @@
   ],
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_block.minecraft.bamboo_planks": {
+    "has_bamboo_planks": {
       "conditions": {
         "items": [
           {
@@ -16,7 +16,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_block.minecraft.bamboo_slab": {
+    "has_bamboo_slab": {
       "conditions": {
         "items": [
           {
@@ -36,8 +36,8 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_block.minecraft.bamboo_planks",
-      "has_block.minecraft.bamboo_slab"
+      "has_bamboo_planks",
+      "has_bamboo_slab"
     ]
   ],
   "rewards": {

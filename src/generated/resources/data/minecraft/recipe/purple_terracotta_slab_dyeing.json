@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "stained_terracotta_slabs",
+  "key": {
+    "#": "buildersparadise:terracotta_slab",
+    "X": "minecraft:purple_dye"
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "id": "buildersparadise:purple_terracotta_slab"
+  }
+}

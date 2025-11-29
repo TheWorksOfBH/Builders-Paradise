@@ -202,7 +202,7 @@ public record ModBlockSetTypes() {
                     false,
                     false,
                     BlockSetType.PressurePlateSensitivity.EVERYTHING,
-                    SoundType.METAL,
+                    SoundType.IRON,
                     SoundEvents.IRON_DOOR_CLOSE,
                     SoundEvents.IRON_DOOR_OPEN,
                     SoundEvents.IRON_TRAPDOOR_CLOSE,

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "stained_terracotta_stairs",
+  "key": {
+    "#": "buildersparadise:terracotta_stairs",
+    "X": "minecraft:light_blue_dye"
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "id": "buildersparadise:light_blue_terracotta_stairs"
+  }
+}

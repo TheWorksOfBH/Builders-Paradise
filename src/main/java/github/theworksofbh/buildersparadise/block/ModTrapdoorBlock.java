@@ -21,21 +21,21 @@ public class ModTrapdoorBlock extends TrapDoorBlock {
 
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        if (level.random.nextFloat() < 0.05296323F) {
+        if (level.random.nextFloat() < BlockOxidationValues.IRON) {
             if (state.is(Blocks.IRON_TRAPDOOR)) {
-                level.setBlock(pos, ModBlocks.MILDLY_RUSTED_IRON_TRAPDOOR.get().withPropertiesOf(state), Block.UPDATE_ALL);
-            } else if (state.is(ModBlocks.MILDLY_RUSTED_IRON_TRAPDOOR.get())) {
-                level.setBlock(pos, ModBlocks.MODERATELY_RUSTED_IRON_TRAPDOOR.get().withPropertiesOf(state), Block.UPDATE_ALL);
-            } else if (state.is(ModBlocks.MODERATELY_RUSTED_IRON_TRAPDOOR.get())) {
-                level.setBlock(pos, ModBlocks.EXTREMELY_RUSTED_IRON_TRAPDOOR.get().withPropertiesOf(state), Block.UPDATE_ALL);
+                level.setBlock(pos, ModBlocks.EXPOSED_IRON_TRAPDOOR.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            } else if (state.is(ModBlocks.EXPOSED_IRON_TRAPDOOR.get())) {
+                level.setBlock(pos, ModBlocks.WEATHERED_IRON_TRAPDOOR.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            } else if (state.is(ModBlocks.WEATHERED_IRON_TRAPDOOR.get())) {
+                level.setBlock(pos, ModBlocks.RUSTED_IRON_TRAPDOOR.get().withPropertiesOf(state), Block.UPDATE_ALL);
             }
-        } else if (level.random.nextFloat() < 0.06347294F) {
+        } else if (level.random.nextFloat() < BlockOxidationValues.ZINC) {
             if (state.is(ModBlocks.ZINC_TRAPDOOR.get())) {
-                level.setBlock(pos, ModBlocks.SLIGHTLY_CORRODED_ZINC_TRAPDOOR.get().withPropertiesOf(state), Block.UPDATE_ALL);
-            } else if (state.is(ModBlocks.SLIGHTLY_CORRODED_ZINC_TRAPDOOR.get())) {
-                level.setBlock(pos, ModBlocks.SOMEWHAT_CORRODED_ZINC_TRAPDOOR.get().withPropertiesOf(state), Block.UPDATE_ALL);
-            } else if (state.is(ModBlocks.SOMEWHAT_CORRODED_ZINC_TRAPDOOR.get())) {
-                level.setBlock(pos, ModBlocks.REALLY_CORRODED_ZINC_TRAPDOOR.get().withPropertiesOf(state), Block.UPDATE_ALL);
+                level.setBlock(pos, ModBlocks.EXPOSED_ZINC_TRAPDOOR.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            } else if (state.is(ModBlocks.EXPOSED_ZINC_TRAPDOOR.get())) {
+                level.setBlock(pos, ModBlocks.WEATHERED_ZINC_TRAPDOOR.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            } else if (state.is(ModBlocks.WEATHERED_ZINC_TRAPDOOR.get())) {
+                level.setBlock(pos, ModBlocks.CORRODED_ZINC_TRAPDOOR.get().withPropertiesOf(state), Block.UPDATE_ALL);
             }
         }
     }

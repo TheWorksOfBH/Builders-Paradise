@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:netherite_tiles",
-  "result": {
-    "count": 1,
-    "id": "buildersparadise:netherite_tile_stairs"
-  }
-}

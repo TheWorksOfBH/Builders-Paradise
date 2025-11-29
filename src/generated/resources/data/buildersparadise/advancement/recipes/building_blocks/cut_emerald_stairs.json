@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cut_emerald": {
+      "conditions": {
+        "items": [
+          {
+            "items": "buildersparadise:cut_emerald"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "buildersparadise:cut_emerald_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cut_emerald"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "buildersparadise:cut_emerald_stairs"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/packed_ice_brick_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/packed_ice_bricks"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/packed_ice_brick_slab_top"
+    }
+  }
+}
