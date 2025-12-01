@@ -27,6 +27,9 @@ public class ModDataGenerators {
 
         event.createProvider(ModLanguageProvider::new);
         event.createProvider(ModUKLanguageProvider::new);
+        event.createProvider(ModAustraliaLanguageProvider::new);
+        event.createProvider(ModNewZealandLanguageProvider::new);
+        event.createProvider(ModCanadaLanguageProvider::new);
 
         event.createProvider(ModSoundDefinitionsProvider::new);
 

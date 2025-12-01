@@ -18,9 +18,9 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
-public class ModUKLanguageProvider extends LanguageProvider {
-    public ModUKLanguageProvider(PackOutput output) {
-        super(output, BuildersParadise.MODID, "en_gb");
+public class ModCanadaLanguageProvider extends LanguageProvider {
+    public ModCanadaLanguageProvider(PackOutput output) {
+        super(output, BuildersParadise.MODID, "en_ca");
     }
 
     protected Iterable<Block> getKnownBlocks() {
@@ -102,8 +102,8 @@ public class ModUKLanguageProvider extends LanguageProvider {
         String replaced = input.replace('_', ' ');
         String reformatted = "";
         String readjusted = "";
-        String briIsh = "";
-        
+        String terranceAndPhillip = "";
+
         if (replaced.contains("item")) {
             reformatted = replaced.replace("item.buildersparadise.", "");
         } else if (replaced.contains("block")) {
@@ -183,16 +183,14 @@ public class ModUKLanguageProvider extends LanguageProvider {
         }
 
         if (readjusted.contains("ize")) {
-            briIsh = readjusted.replace("ize", "ise");
+            terranceAndPhillip = readjusted.replace("ize", "ise");
         } else if (readjusted.contains("gray")) {
-            briIsh = readjusted.replace("gray", "grey");
-        } else if (readjusted.contains("packed ice")) {
-            briIsh = readjusted.replace("packed ice", "compressed ice");
+            terranceAndPhillip = readjusted.replace("gray", "grey");
         } else {
-            briIsh = readjusted;
+            terranceAndPhillip = readjusted;
         }
 
-        String[] words = briIsh.split(" ");
+        String[] words = terranceAndPhillip.split(" ");
 
         StringBuilder result = new StringBuilder();
 
