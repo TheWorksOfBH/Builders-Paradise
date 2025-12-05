@@ -9,6 +9,7 @@ import net.minecraft.world.item.Item;
 public class ModItemTags {
 
     public static final TagKey<Item> CHESTS = create("chests");
+    public static final TagKey<Item> BARRELS = create("barrels");
     public static final TagKey<Item> DROPPERS = create("droppers");
     public static final TagKey<Item> CONCRETE = create("concrete");
     public static final TagKey<Item> BRONZE_TOOL_MATERIALS = create("bronze_tool_materials");

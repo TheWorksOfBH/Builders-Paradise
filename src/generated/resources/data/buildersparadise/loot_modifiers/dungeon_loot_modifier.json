@@ -1,0 +1,45 @@
+{
+  "type": "buildersparadise:add_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/simple_dungeon"
+    }
+  ],
+  "entries": [
+    {
+      "item": "buildersparadise:music_disc_circuitric_magnet",
+      "weight": 2
+    },
+    {
+      "item": "buildersparadise:zinc_ingot",
+      "maximum": 4,
+      "minimum": 1,
+      "weight": 10
+    },
+    {
+      "item": "buildersparadise:silver_ingot",
+      "maximum": 4,
+      "minimum": 1,
+      "weight": 5
+    },
+    {
+      "item": "buildersparadise:platinum_ingot",
+      "maximum": 4,
+      "minimum": 1,
+      "weight": 5
+    },
+    {
+      "item": "buildersparadise:lead_ingot",
+      "maximum": 4,
+      "minimum": 1,
+      "weight": 10
+    },
+    {
+      "item": "buildersparadise:bronze_ingot",
+      "maximum": 4,
+      "minimum": 1,
+      "weight": 10
+    }
+  ]
+}

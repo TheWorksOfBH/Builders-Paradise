@@ -1,0 +1,41 @@
+{
+  "type": "buildersparadise:add_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/stronghold_crossing"
+    }
+  ],
+  "entries": [
+    {
+      "item": "buildersparadise:zinc_ingot",
+      "maximum": 5,
+      "minimum": 1,
+      "weight": 10
+    },
+    {
+      "item": "buildersparadise:silver_ingot",
+      "maximum": 3,
+      "minimum": 1,
+      "weight": 5
+    },
+    {
+      "item": "buildersparadise:platinum_ingot",
+      "maximum": 3,
+      "minimum": 1,
+      "weight": 5
+    },
+    {
+      "item": "buildersparadise:lead_ingot",
+      "maximum": 5,
+      "minimum": 1,
+      "weight": 10
+    },
+    {
+      "item": "buildersparadise:bronze_ingot",
+      "maximum": 4,
+      "minimum": 1,
+      "weight": 10
+    }
+  ]
+}

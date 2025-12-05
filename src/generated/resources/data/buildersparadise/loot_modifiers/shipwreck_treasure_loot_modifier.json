@@ -1,0 +1,41 @@
+{
+  "type": "buildersparadise:add_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/shipwreck_treasure"
+    }
+  ],
+  "entries": [
+    {
+      "item": "buildersparadise:zinc_ingot",
+      "maximum": 5,
+      "minimum": 1,
+      "weight": 80
+    },
+    {
+      "item": "buildersparadise:silver_ingot",
+      "maximum": 5,
+      "minimum": 1,
+      "weight": 10
+    },
+    {
+      "item": "buildersparadise:platinum_ingot",
+      "maximum": 5,
+      "minimum": 1,
+      "weight": 10
+    },
+    {
+      "item": "buildersparadise:lead_ingot",
+      "maximum": 5,
+      "minimum": 1,
+      "weight": 60
+    },
+    {
+      "item": "buildersparadise:bronze_ingot",
+      "maximum": 5,
+      "minimum": 1,
+      "weight": 30
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-// 1.21.10	2025-11-09T15:58:43.2643858	Loot Tables
+// 1.21.10	2025-12-02T00:05:12.1216087	Loot Tables
 0579d33941d7982974f1387f3def9bcabde5df78 data/buildersparadise/loot_table/blocks/acacia_barrel.json
 1ae5ea6e5435d1526192f6cba22816b1aaac4ff0 data/buildersparadise/loot_table/blocks/acacia_beehive.json
 5ede1225612422dc7087d3cedd58029ef98b6e63 data/buildersparadise/loot_table/blocks/acacia_blackstone_smoker.json
@@ -826,3 +826,5 @@ ca8c5c90dc2bd65be818a7a0d5011e4b626177e0 data/minecraft/loot_table/blocks/smoker
 2d79b5efa39e745b02a26a36fabe43f60330b77f data/minecraft/loot_table/blocks/stone_slab.json
 579ce8b68bbac63d74a3b5a3ec2d0105a46897aa data/minecraft/loot_table/blocks/stone_stairs.json
 2e920379a408e7aea410b9571dcd5d3436de00ed data/minecraft/loot_table/blocks/trapped_chest.json
+8f9ab67e75f3e012d17128f6fc8c19c3aa30c6ab data/minecraft/loot_table/entities/elder_guardian.json
+f527b3c554e2a1cbe47dc357dd414b8a79d2fb19 data/minecraft/loot_table/entities/husk.json

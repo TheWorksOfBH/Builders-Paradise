@@ -1,0 +1,41 @@
+{
+  "type": "buildersparadise:add_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/jungle_temple"
+    }
+  ],
+  "entries": [
+    {
+      "item": "buildersparadise:zinc_ingot",
+      "maximum": 5,
+      "minimum": 1,
+      "weight": 15
+    },
+    {
+      "item": "buildersparadise:silver_ingot",
+      "maximum": 3,
+      "minimum": 2,
+      "weight": 15
+    },
+    {
+      "item": "buildersparadise:platinum_ingot",
+      "maximum": 3,
+      "minimum": 2,
+      "weight": 15
+    },
+    {
+      "item": "buildersparadise:lead_ingot",
+      "maximum": 7,
+      "minimum": 1,
+      "weight": 15
+    },
+    {
+      "item": "buildersparadise:bronze_ingot",
+      "maximum": 7,
+      "minimum": 2,
+      "weight": 15
+    }
+  ]
+}

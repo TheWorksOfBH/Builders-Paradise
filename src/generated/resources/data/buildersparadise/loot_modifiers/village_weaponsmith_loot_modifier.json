@@ -1,0 +1,15 @@
+{
+  "type": "buildersparadise:add_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/village/village_weaponsmith"
+    }
+  ],
+  "entries": [
+    {
+      "item": "buildersparadise:bronze_upgrade_smithing_template",
+      "weight": 1
+    }
+  ]
+}

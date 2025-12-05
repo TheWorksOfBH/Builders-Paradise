@@ -27,5 +27,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.BEACON_PAYMENT_ITEMS).add(ModItems.BRONZE_INGOT.get()).add(ModItems.SILVER_INGOT.get()).add(ModItems.PLATINUM_INGOT.get());
         tag(ModItemTags.BRONZE_TOOL_MATERIALS).add(ModItems.BRONZE_INGOT.get());
         tag(ModItemTags.REPAIRS_BRONZE_ARMOR).addTag(ModItemTags.BRONZE_TOOL_MATERIALS);
+        tag(ModItemTags.BARRELS).add(ModItems.OAK_BARREL.get()).add(ModItems.SPRUCE_BARREL.get()).add(ModItems.BIRCH_BARREL.get()).add(ModItems.JUNGLE_BARREL.get()).add(ModItems.ACACIA_BARREL.get()).add(ModItems.DARK_OAK_BARREL.get()).add(ModItems.CRIMSON_BARREL.get()).add(ModItems.WARPED_BARREL.get()).add(ModItems.MANGROVE_BARREL.get()).add(ModItems.CHERRY_BARREL.get()).add(ModItems.BAMBOO_BARREL.get()).add(ModItems.PALE_OAK_BARREL.get());
     }
 }

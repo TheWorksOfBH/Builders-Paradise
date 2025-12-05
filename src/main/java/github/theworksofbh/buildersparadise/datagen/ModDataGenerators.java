@@ -18,7 +18,10 @@ public class ModDataGenerators {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         generator.addProvider(true, new LootTableProvider(packOutput, Collections.emptySet(),
-                List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
+                List.of(
+                        new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK),
+                        new LootTableProvider.SubProviderEntry(ModEntityLootTableProvider::new, LootContextParamSets.ENTITY)
+                ), lookupProvider));
 
         event.createProvider(ModBlockTagsProvider::new);
         event.createProvider(ModItemTagsProvider::new);
@@ -35,8 +38,6 @@ public class ModDataGenerators {
 
         event.createProvider(ModDataMapProvider::new);
 
-        event.createProvider(ModLootModifierProvider::new);
-
         event.createProvider(ModRecipesProvider.Runner::new);
 
         event.createProvider(ModDataPackEntries::new);
@@ -48,5 +49,6 @@ public class ModDataGenerators {
         event.createProvider(ModEntityTagsProvider::new);
 
         event.createProvider(ModEquipmentAssetProvider::new);
+        event.createProvider(ModChestLootModifierProvider::new);
     }
 }
