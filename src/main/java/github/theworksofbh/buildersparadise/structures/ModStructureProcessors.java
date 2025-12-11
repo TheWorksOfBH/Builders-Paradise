@@ -4,13 +4,13 @@ import github.theworksofbh.buildersparadise.BuildersParadise;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 
 public class ModStructureProcessors {
 
     public static ResourceKey<StructureProcessorType<?>> registerKey(String name) {
-        return ResourceKey.create(Registries.STRUCTURE_PROCESSOR, ResourceLocation.fromNamespaceAndPath(BuildersParadise.MODID, name));
+        return ResourceKey.create(Registries.STRUCTURE_PROCESSOR, Identifier.fromNamespaceAndPath(BuildersParadise.MODID, name));
     }
 
     public static void bootstrap(BootstrapContext<StructureProcessorType<?>> context) {

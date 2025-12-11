@@ -5,7 +5,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -63,7 +63,7 @@ public class GenericBlockReplacementProcessor extends StructureProcessor {
             newNbt = originalNbt.copy();
 
             if (replacementBlockEntity != null) {
-                ResourceLocation beId = BuiltInRegistries.BLOCK_ENTITY_TYPE.getKey(replacementBlockEntity);
+                Identifier beId = BuiltInRegistries.BLOCK_ENTITY_TYPE.getKey(replacementBlockEntity);
                 if (beId != null) {
                     newNbt.putString("id", beId.toString());
                 }

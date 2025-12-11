@@ -20,7 +20,7 @@ import net.minecraft.client.renderer.special.ChestSpecialRenderer;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.BlockFamily;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -38,7 +38,7 @@ import java.util.function.Consumer;
 public class ModBlockModelGenerator extends BlockModelGenerators {
 
 
-    public ModBlockModelGenerator(Consumer<BlockModelDefinitionGenerator> blockStateOutput, ItemModelOutput itemModelOutput, BiConsumer<ResourceLocation, ModelInstance> modelOutput) {
+    public ModBlockModelGenerator(Consumer<BlockModelDefinitionGenerator> blockStateOutput, ItemModelOutput itemModelOutput, BiConsumer<Identifier, ModelInstance> modelOutput) {
         super(blockStateOutput, itemModelOutput, modelOutput);
     }
 
@@ -118,10 +118,10 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.itemModelOutput.accept(ModItems.OAK_CHEST.get(),
                 ItemModelUtils.isXmas(
                         ItemModelUtils.specialModel(
-                                ResourceLocation.parse("minecraft:item/chest"),
+                                Identifier.parse("minecraft:item/chest"),
                                 new ChestSpecialRenderer.Unbaked(ChestSpecialRenderer.GIFT_CHEST_TEXTURE)),
                         ItemModelUtils.specialModel(
-                                ResourceLocation.parse("minecraft:item/chest"),
+                                Identifier.parse("minecraft:item/chest"),
                                 new ChestSpecialRenderer.Unbaked(ChestSpecialRenderer.NORMAL_CHEST_TEXTURE))
                 )
         );
@@ -140,10 +140,10 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.itemModelOutput.accept(ModItems.OAK_TRAPPED_CHEST.get(),
                 ItemModelUtils.isXmas(
                         ItemModelUtils.specialModel(
-                                ResourceLocation.parse("minecraft:item/trapped_chest"),
+                                Identifier.parse("minecraft:item/trapped_chest"),
                                 new ChestSpecialRenderer.Unbaked(ChestSpecialRenderer.GIFT_CHEST_TEXTURE)),
                         ItemModelUtils.specialModel(
-                                ResourceLocation.parse("minecraft:item/trapped_chest"),
+                                Identifier.parse("minecraft:item/trapped_chest"),
                                 new ChestSpecialRenderer.Unbaked(ChestSpecialRenderer.NORMAL_CHEST_TEXTURE))
                 )
         );
@@ -155,82 +155,82 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
     }
 
     public void copyWeightedPressurePlateModel(Block pressurePlateBlock, Block sourceBlock) {
-        MultiVariant resourceLocation = plainVariant(ModelTemplates.PRESSURE_PLATE_UP.getDefaultModelLocation(pressurePlateBlock));
-        MultiVariant resourceLocation1 = plainVariant(ModelTemplates.PRESSURE_PLATE_DOWN.getDefaultModelLocation(pressurePlateBlock));
+        MultiVariant identifier = plainVariant(ModelTemplates.PRESSURE_PLATE_UP.getDefaultModelLocation(pressurePlateBlock));
+        MultiVariant identifier1 = plainVariant(ModelTemplates.PRESSURE_PLATE_DOWN.getDefaultModelLocation(pressurePlateBlock));
         itemModelOutput.copy(pressurePlateBlock.asItem(), sourceBlock.asItem());
-        this.blockStateOutput.accept(MultiVariantGenerator.dispatch(sourceBlock).with(createEmptyOrFullDispatch(BlockStateProperties.POWER, 1, resourceLocation1, resourceLocation)));
+        this.blockStateOutput.accept(MultiVariantGenerator.dispatch(sourceBlock).with(createEmptyOrFullDispatch(BlockStateProperties.POWER, 1, identifier1, identifier)));
     }
 
     public void copySlabModel(Block slabBlock, Block sourceBlock) {
-        MultiVariant resourceLocation = plainVariant(ModelTemplates.SLAB_BOTTOM.getDefaultModelLocation(slabBlock));
-        MultiVariant resourceLocation1 = plainVariant(ModelTemplates.SLAB_TOP.getDefaultModelLocation(slabBlock));
-        MultiVariant resourceLocation2 = plainVariant(ModelTemplates.CUBE.getDefaultModelLocation(slabBlock));
+        MultiVariant identifier = plainVariant(ModelTemplates.SLAB_BOTTOM.getDefaultModelLocation(slabBlock));
+        MultiVariant identifier1 = plainVariant(ModelTemplates.SLAB_TOP.getDefaultModelLocation(slabBlock));
+        MultiVariant identifier2 = plainVariant(ModelTemplates.CUBE.getDefaultModelLocation(slabBlock));
         itemModelOutput.copy(slabBlock.asItem(), sourceBlock.asItem());
-        this.blockStateOutput.accept(createSlab(sourceBlock, resourceLocation, resourceLocation1, resourceLocation2));
+        this.blockStateOutput.accept(createSlab(sourceBlock, identifier, identifier1, identifier2));
     }
 
     public void copyStairModel(Block stairBlock, Block sourceBlock) {
-        MultiVariant resourceLocation = plainVariant(ModelTemplates.STAIRS_STRAIGHT.getDefaultModelLocation(stairBlock));
-        MultiVariant resourceLocation1 = plainVariant(ModelTemplates.STAIRS_INNER.getDefaultModelLocation(stairBlock));
-        MultiVariant resourceLocation2 = plainVariant(ModelTemplates.STAIRS_OUTER.getDefaultModelLocation(stairBlock));
+        MultiVariant identifier = plainVariant(ModelTemplates.STAIRS_STRAIGHT.getDefaultModelLocation(stairBlock));
+        MultiVariant identifier1 = plainVariant(ModelTemplates.STAIRS_INNER.getDefaultModelLocation(stairBlock));
+        MultiVariant identifier2 = plainVariant(ModelTemplates.STAIRS_OUTER.getDefaultModelLocation(stairBlock));
         itemModelOutput.copy(stairBlock.asItem(), sourceBlock.asItem());
-        this.blockStateOutput.accept(createStairs(sourceBlock, resourceLocation1, resourceLocation, resourceLocation2));
+        this.blockStateOutput.accept(createStairs(sourceBlock, identifier1, identifier, identifier2));
     }
 
     public void createWaxedIronBlock() {
-        this.registerSimpleItemModel(ModBlocks.WAXED_IRON_BLOCK.get(), ResourceLocation.parse("minecraft:block/iron_block"));
+        this.registerSimpleItemModel(ModBlocks.WAXED_IRON_BLOCK.get(), Identifier.parse("minecraft:block/iron_block"));
         this.blockStateOutput.accept(
                 createSimpleBlock(
                         ModBlocks.WAXED_IRON_BLOCK.get(),
-                        plainVariant(ResourceLocation.parse("minecraft:block/iron_block"))
+                        plainVariant(Identifier.parse("minecraft:block/iron_block"))
                 )
         );
     }
 
     public void createWaxedIronDoor() {
-        this.registerSimpleItemModel(ModBlocks.WAXED_IRON_DOOR.get(), ResourceLocation.parse("minecraft:item/iron_door"));
+        this.registerSimpleItemModel(ModBlocks.WAXED_IRON_DOOR.get(), Identifier.parse("minecraft:item/iron_door"));
         this.blockStateOutput.accept(
                 createDoor(
                         ModBlocks.WAXED_IRON_DOOR.get(),
-                        plainVariant(ResourceLocation.parse("minecraft:block/iron_door_bottom_left")),
-                        plainVariant(ResourceLocation.parse("minecraft:block/iron_door_bottom_left_open")),
-                        plainVariant(ResourceLocation.parse("minecraft:block/iron_door_bottom_right")),
-                        plainVariant(ResourceLocation.parse("minecraft:block/iron_door_bottom_right_open")),
-                        plainVariant(ResourceLocation.parse("minecraft:block/iron_door_top_left")),
-                        plainVariant(ResourceLocation.parse("minecraft:block/iron_door_top_left_open")),
-                        plainVariant(ResourceLocation.parse("minecraft:block/iron_door_top_right")),
-                        plainVariant(ResourceLocation.parse("minecraft:block/iron_door_top_right_open"))
+                        plainVariant(Identifier.parse("minecraft:block/iron_door_bottom_left")),
+                        plainVariant(Identifier.parse("minecraft:block/iron_door_bottom_left_open")),
+                        plainVariant(Identifier.parse("minecraft:block/iron_door_bottom_right")),
+                        plainVariant(Identifier.parse("minecraft:block/iron_door_bottom_right_open")),
+                        plainVariant(Identifier.parse("minecraft:block/iron_door_top_left")),
+                        plainVariant(Identifier.parse("minecraft:block/iron_door_top_left_open")),
+                        plainVariant(Identifier.parse("minecraft:block/iron_door_top_right")),
+                        plainVariant(Identifier.parse("minecraft:block/iron_door_top_right_open"))
                 )
         );
     }
 
     public void createWaxedIronTrapdoor() {
-        this.registerSimpleItemModel(ModBlocks.WAXED_IRON_TRAPDOOR.get(), ResourceLocation.parse("minecraft:block/iron_trapdoor_bottom"));
+        this.registerSimpleItemModel(ModBlocks.WAXED_IRON_TRAPDOOR.get(), Identifier.parse("minecraft:block/iron_trapdoor_bottom"));
         this.blockStateOutput.accept(
                 createTrapdoor(
                         ModBlocks.WAXED_IRON_TRAPDOOR.get(),
-                        plainVariant(ResourceLocation.parse("minecraft:block/iron_trapdoor_top")),
-                        plainVariant(ResourceLocation.parse("minecraft:block/iron_trapdoor_bottom")),
-                        plainVariant(ResourceLocation.parse("minecraft:block/iron_trapdoor_open"))
+                        plainVariant(Identifier.parse("minecraft:block/iron_trapdoor_top")),
+                        plainVariant(Identifier.parse("minecraft:block/iron_trapdoor_bottom")),
+                        plainVariant(Identifier.parse("minecraft:block/iron_trapdoor_open"))
                 )
         );
     }
 
     public void createWaxedIronPressurePlate() {
-        this.registerSimpleItemModel(ModBlocks.WAXED_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ResourceLocation.parse("minecraft:block/heavy_weighted_pressure_plate"));
+        this.registerSimpleItemModel(ModBlocks.WAXED_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), Identifier.parse("minecraft:block/heavy_weighted_pressure_plate"));
         this.blockStateOutput.accept(
                 MultiVariantGenerator.dispatch(ModBlocks.WAXED_HEAVY_WEIGHTED_PRESSURE_PLATE.get())
                         .with(createEmptyOrFullDispatch(BlockStateProperties.POWER,
                                 1,
-                                plainVariant(ResourceLocation.parse("minecraft:block/heavy_weighted_pressure_plate_down")),
-                                plainVariant(ResourceLocation.parse("minecraft:block/heavy_weighted_pressure_plate"))
+                                plainVariant(Identifier.parse("minecraft:block/heavy_weighted_pressure_plate_down")),
+                                plainVariant(Identifier.parse("minecraft:block/heavy_weighted_pressure_plate"))
                         )
                 )
         );
     }
 
     public MultiVariant createBars(Block block, String suffix) {
-        ResourceLocation parent = ModelLocationUtils.getModelLocation(Blocks.IRON_BARS, suffix);
+        Identifier parent = ModelLocationUtils.getModelLocation(Blocks.IRON_BARS, suffix);
         TextureSlot barsSlot = TextureSlot.create("bars");
         ModelTemplate modelTemplate = new ModelTemplate(Optional.of(parent), Optional.of(suffix), TextureSlot.PARTICLE, barsSlot, TextureSlot.EDGE);
         return plainVariant(TexturedModel.createDefault(b -> new TextureMapping()
@@ -241,136 +241,136 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
     }
 
     public void createBarsBlock(Block block) {
-        MultiVariant resourcelocation = createBars(block, "_post_ends");
-        MultiVariant resourcelocation1 = createBars(block, "_post");
-        MultiVariant resourcelocation2 = createBars(block, "_cap");
-        MultiVariant resourcelocation3 = createBars(block, "_cap_alt");
-        MultiVariant resourcelocation4 = createBars(block, "_side");
-        MultiVariant resourcelocation5 = createBars(block, "_side_alt");
+        MultiVariant identifier = createBars(block, "_post_ends");
+        MultiVariant identifier1 = createBars(block, "_post");
+        MultiVariant identifier2 = createBars(block, "_cap");
+        MultiVariant identifier3 = createBars(block, "_cap_alt");
+        MultiVariant identifier4 = createBars(block, "_side");
+        MultiVariant identifier5 = createBars(block, "_side_alt");
         this.blockStateOutput.accept(
                 MultiPartGenerator.multiPart(block)
-                        .with(resourcelocation)
+                        .with(identifier)
                         .with(condition().term(BlockStateProperties.NORTH, false)
                                 .term(BlockStateProperties.EAST, false)
                                 .term(BlockStateProperties.SOUTH, false)
-                                .term(BlockStateProperties.WEST, false), resourcelocation1)
+                                .term(BlockStateProperties.WEST, false), identifier1)
                         .with(condition().term(BlockStateProperties.NORTH, true)
                                 .term(BlockStateProperties.EAST, false)
                                 .term(BlockStateProperties.SOUTH, false)
-                                .term(BlockStateProperties.WEST, false), resourcelocation2)
+                                .term(BlockStateProperties.WEST, false), identifier2)
                         .with(condition().term(BlockStateProperties.NORTH, false)
                                 .term(BlockStateProperties.EAST, true)
                                 .term(BlockStateProperties.SOUTH, false)
-                                .term(BlockStateProperties.WEST, false), resourcelocation2.with(Y_ROT_90))
+                                .term(BlockStateProperties.WEST, false), identifier2.with(Y_ROT_90))
                         .with(condition().term(BlockStateProperties.NORTH, false)
                                 .term(BlockStateProperties.EAST, false)
                                 .term(BlockStateProperties.SOUTH, true)
-                                .term(BlockStateProperties.WEST, false), resourcelocation3)
+                                .term(BlockStateProperties.WEST, false), identifier3)
                         .with(condition().term(BlockStateProperties.NORTH, false)
                                 .term(BlockStateProperties.EAST, false)
                                 .term(BlockStateProperties.SOUTH, false)
-                                .term(BlockStateProperties.WEST, true), resourcelocation3.with(Y_ROT_90))
-                        .with(condition().term(BlockStateProperties.NORTH, true), resourcelocation4)
-                        .with(condition().term(BlockStateProperties.EAST, true), resourcelocation4.with(Y_ROT_90))
-                        .with(condition().term(BlockStateProperties.SOUTH, true), resourcelocation5)
-                        .with(condition().term(BlockStateProperties.WEST, true), resourcelocation5.with(Y_ROT_90))
+                                .term(BlockStateProperties.WEST, true), identifier3.with(Y_ROT_90))
+                        .with(condition().term(BlockStateProperties.NORTH, true), identifier4)
+                        .with(condition().term(BlockStateProperties.EAST, true), identifier4.with(Y_ROT_90))
+                        .with(condition().term(BlockStateProperties.SOUTH, true), identifier5)
+                        .with(condition().term(BlockStateProperties.WEST, true), identifier5.with(Y_ROT_90))
         );
         this.registerSimpleFlatItemModel(block);
     }
 
     public void createCustomBarrel(Block barrel) {
-        ResourceLocation resourcelocation = TextureMapping.getBlockTexture(barrel, "_top_open");
+        Identifier identifier = TextureMapping.getBlockTexture(barrel, "_top_open");
         MultiVariant multivariant = plainVariant(TexturedModel.CUBE_TOP_BOTTOM.create(barrel, this.modelOutput));
-        MultiVariant multivariant1 = plainVariant(TexturedModel.CUBE_TOP_BOTTOM.get(barrel).updateTextures((p_386917_) -> p_386917_.put(TextureSlot.TOP, resourcelocation)).createWithSuffix(barrel, "_open", this.modelOutput));
+        MultiVariant multivariant1 = plainVariant(TexturedModel.CUBE_TOP_BOTTOM.get(barrel).updateTextures((p_386917_) -> p_386917_.put(TextureSlot.TOP, identifier)).createWithSuffix(barrel, "_open", this.modelOutput));
         this.blockStateOutput.accept(MultiVariantGenerator.dispatch(barrel).with(PropertyDispatch.initial(BlockStateProperties.OPEN).select(false, multivariant).select(true, multivariant1)).with(ROTATIONS_COLUMN_WITH_FACING));
     }
 
     public void copyBarsModel(Block sourceBlock, Block targetBlock) {
-        MultiVariant resourcelocation = plainVariant(ModelLocationUtils.getModelLocation(sourceBlock, "_post_ends"));
-        MultiVariant resourcelocation1 = plainVariant(ModelLocationUtils.getModelLocation(sourceBlock, "_post"));
-        MultiVariant resourcelocation2 = plainVariant(ModelLocationUtils.getModelLocation(sourceBlock, "_cap"));
-        MultiVariant resourcelocation3 = plainVariant(ModelLocationUtils.getModelLocation(sourceBlock, "_cap_alt"));
-        MultiVariant resourcelocation4 = plainVariant(ModelLocationUtils.getModelLocation(sourceBlock, "_side"));
-        MultiVariant resourcelocation5 = plainVariant(ModelLocationUtils.getModelLocation(sourceBlock, "_side_alt"));
+        MultiVariant identifier = plainVariant(ModelLocationUtils.getModelLocation(sourceBlock, "_post_ends"));
+        MultiVariant identifier1 = plainVariant(ModelLocationUtils.getModelLocation(sourceBlock, "_post"));
+        MultiVariant identifier2 = plainVariant(ModelLocationUtils.getModelLocation(sourceBlock, "_cap"));
+        MultiVariant identifier3 = plainVariant(ModelLocationUtils.getModelLocation(sourceBlock, "_cap_alt"));
+        MultiVariant identifier4 = plainVariant(ModelLocationUtils.getModelLocation(sourceBlock, "_side"));
+        MultiVariant identifier5 = plainVariant(ModelLocationUtils.getModelLocation(sourceBlock, "_side_alt"));
         this.blockStateOutput.accept(
                 MultiPartGenerator.multiPart(targetBlock)
-                        .with(resourcelocation)
+                        .with(identifier)
                         .with(condition().term(BlockStateProperties.NORTH, false)
                                 .term(BlockStateProperties.EAST, false)
                                 .term(BlockStateProperties.SOUTH, false)
-                                .term(BlockStateProperties.WEST, false), resourcelocation1)
+                                .term(BlockStateProperties.WEST, false), identifier1)
                         .with(condition().term(BlockStateProperties.NORTH, true)
                                 .term(BlockStateProperties.EAST, false)
                                 .term(BlockStateProperties.SOUTH, false)
-                                .term(BlockStateProperties.WEST, false), resourcelocation2)
+                                .term(BlockStateProperties.WEST, false), identifier2)
                         .with(condition().term(BlockStateProperties.NORTH, false)
                                 .term(BlockStateProperties.EAST, true)
                                 .term(BlockStateProperties.SOUTH, false)
-                                .term(BlockStateProperties.WEST, false), resourcelocation2.with(Y_ROT_90))
+                                .term(BlockStateProperties.WEST, false), identifier2.with(Y_ROT_90))
                         .with(condition().term(BlockStateProperties.NORTH, false)
                                 .term(BlockStateProperties.EAST, false)
                                 .term(BlockStateProperties.SOUTH, true)
-                                .term(BlockStateProperties.WEST, false), resourcelocation3)
+                                .term(BlockStateProperties.WEST, false), identifier3)
                         .with(condition().term(BlockStateProperties.NORTH, false)
                                 .term(BlockStateProperties.EAST, false)
                                 .term(BlockStateProperties.SOUTH, false)
-                                .term(BlockStateProperties.WEST, true), resourcelocation3.with(Y_ROT_90))
-                        .with(condition().term(BlockStateProperties.NORTH, true), resourcelocation4)
-                        .with(condition().term(BlockStateProperties.EAST, true), resourcelocation4.with(Y_ROT_90))
-                        .with(condition().term(BlockStateProperties.SOUTH, true), resourcelocation5)
-                        .with(condition().term(BlockStateProperties.WEST, true), resourcelocation5.with(Y_ROT_90))
+                                .term(BlockStateProperties.WEST, true), identifier3.with(Y_ROT_90))
+                        .with(condition().term(BlockStateProperties.NORTH, true), identifier4)
+                        .with(condition().term(BlockStateProperties.EAST, true), identifier4.with(Y_ROT_90))
+                        .with(condition().term(BlockStateProperties.SOUTH, true), identifier5)
+                        .with(condition().term(BlockStateProperties.WEST, true), identifier5.with(Y_ROT_90))
         );
         this.itemModelOutput.copy(sourceBlock.asItem(), targetBlock.asItem());
     }
 
     public void createWaxedIronBars() {
-        MultiVariant resourcelocation = plainVariant(ResourceLocation.parse("minecraft:block/iron_bars_post_ends"));
-        MultiVariant resourcelocation1 = plainVariant(ResourceLocation.parse("minecraft:block/iron_bars_post"));
-        MultiVariant resourcelocation2 = plainVariant(ResourceLocation.parse("minecraft:block/iron_bars_cap"));
-        MultiVariant resourcelocation3 = plainVariant(ResourceLocation.parse("minecraft:block/iron_bars_cap_alt"));
-        MultiVariant resourcelocation4 = plainVariant(ResourceLocation.parse("minecraft:block/iron_bars_side"));
-        MultiVariant resourcelocation5 = plainVariant(ResourceLocation.parse("minecraft:block/iron_bars_side_alt"));
+        MultiVariant identifier = plainVariant(Identifier.parse("minecraft:block/iron_bars_post_ends"));
+        MultiVariant identifier1 = plainVariant(Identifier.parse("minecraft:block/iron_bars_post"));
+        MultiVariant identifier2 = plainVariant(Identifier.parse("minecraft:block/iron_bars_cap"));
+        MultiVariant identifier3 = plainVariant(Identifier.parse("minecraft:block/iron_bars_cap_alt"));
+        MultiVariant identifier4 = plainVariant(Identifier.parse("minecraft:block/iron_bars_side"));
+        MultiVariant identifier5 = plainVariant(Identifier.parse("minecraft:block/iron_bars_side_alt"));
         this.blockStateOutput.accept(
                 MultiPartGenerator.multiPart(ModBlocks.WAXED_IRON_BARS.get())
-                        .with(resourcelocation)
+                        .with(identifier)
                         .with(condition().term(BlockStateProperties.NORTH, false)
                                 .term(BlockStateProperties.EAST, false)
                                 .term(BlockStateProperties.SOUTH, false)
-                                .term(BlockStateProperties.WEST, false), resourcelocation1)
+                                .term(BlockStateProperties.WEST, false), identifier1)
                         .with(condition().term(BlockStateProperties.NORTH, true)
                                 .term(BlockStateProperties.EAST, false)
                                 .term(BlockStateProperties.SOUTH, false)
-                                .term(BlockStateProperties.WEST, false), resourcelocation2)
+                                .term(BlockStateProperties.WEST, false), identifier2)
                         .with(condition().term(BlockStateProperties.NORTH, false)
                                 .term(BlockStateProperties.EAST, true)
                                 .term(BlockStateProperties.SOUTH, false)
-                                .term(BlockStateProperties.WEST, false), resourcelocation2.with(Y_ROT_90))
+                                .term(BlockStateProperties.WEST, false), identifier2.with(Y_ROT_90))
                         .with(condition().term(BlockStateProperties.NORTH, false)
                                 .term(BlockStateProperties.EAST, false)
                                 .term(BlockStateProperties.SOUTH, true)
-                                .term(BlockStateProperties.WEST, false), resourcelocation3)
+                                .term(BlockStateProperties.WEST, false), identifier3)
                         .with(condition().term(BlockStateProperties.NORTH, false)
                                 .term(BlockStateProperties.EAST, false)
                                 .term(BlockStateProperties.SOUTH, false)
-                                .term(BlockStateProperties.WEST, true), resourcelocation3.with(Y_ROT_90))
-                        .with(condition().term(BlockStateProperties.NORTH, true), resourcelocation4)
-                        .with(condition().term(BlockStateProperties.EAST, true), resourcelocation4.with(Y_ROT_90))
-                        .with(condition().term(BlockStateProperties.SOUTH, true), resourcelocation5)
-                        .with(condition().term(BlockStateProperties.WEST, true), resourcelocation5.with(Y_ROT_90))
+                                .term(BlockStateProperties.WEST, true), identifier3.with(Y_ROT_90))
+                        .with(condition().term(BlockStateProperties.NORTH, true), identifier4)
+                        .with(condition().term(BlockStateProperties.EAST, true), identifier4.with(Y_ROT_90))
+                        .with(condition().term(BlockStateProperties.SOUTH, true), identifier5)
+                        .with(condition().term(BlockStateProperties.WEST, true), identifier5.with(Y_ROT_90))
         );
-        this.registerSimpleItemModel(ModBlocks.WAXED_IRON_BARS.get(), ResourceLocation.parse("minecraft:item/iron_bars"));
+        this.registerSimpleItemModel(ModBlocks.WAXED_IRON_BARS.get(), Identifier.parse("minecraft:item/iron_bars"));
     }
 
     public void createCustomPressurePlate(Block pressurePlate, Block baseBlock) {
         TextureMapping textureMapping = TextureMapping.defaultTexture(baseBlock);
-        MultiVariant resourcelocation = plainVariant(ModelTemplates.PRESSURE_PLATE_UP.create(pressurePlate, textureMapping, this.modelOutput));
-        MultiVariant resourcelocation1 = plainVariant(ModelTemplates.PRESSURE_PLATE_DOWN.create(pressurePlate, textureMapping, this.modelOutput));
-        this.blockStateOutput.accept(createPressurePlate(pressurePlate, resourcelocation, resourcelocation1));
+        MultiVariant identifier = plainVariant(ModelTemplates.PRESSURE_PLATE_UP.create(pressurePlate, textureMapping, this.modelOutput));
+        MultiVariant identifier1 = plainVariant(ModelTemplates.PRESSURE_PLATE_DOWN.create(pressurePlate, textureMapping, this.modelOutput));
+        this.blockStateOutput.accept(createPressurePlate(pressurePlate, identifier, identifier1));
     }
 
     public void createNuke(Block nukeBlock, TexturedModel.Provider modelProvider) {
-        MultiVariant resourcelocation = plainVariant(modelProvider.create(nukeBlock, this.modelOutput));
-        this.blockStateOutput.accept(MultiVariantGenerator.dispatch(nukeBlock, resourcelocation).with(BlockModelGenerators.ROTATION_HORIZONTAL_FACING));
+        MultiVariant identifier = plainVariant(modelProvider.create(nukeBlock, this.modelOutput));
+        this.blockStateOutput.accept(MultiVariantGenerator.dispatch(nukeBlock, identifier).with(BlockModelGenerators.ROTATION_HORIZONTAL_FACING));
     }
 
     @Override
@@ -391,7 +391,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
 
 
     public void createGrindstoneTextureMapping(Block block, Block woodType) {
-        ResourceLocation parent = ModelLocationUtils.getModelLocation(Blocks.GRINDSTONE);
+        Identifier parent = ModelLocationUtils.getModelLocation(Blocks.GRINDSTONE);
         TextureSlot pivotSlot = TextureSlot.create("pivot");
         TextureSlot roundelSlot = TextureSlot.create("round");
         TextureSlot legSlot = TextureSlot.create("leg");
@@ -468,7 +468,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
     }
     @Override
     public void createCampfires(Block... campfireBlocks) {
-        ResourceLocation unlitVariant = ModelLocationUtils.getModelLocation(Blocks.CAMPFIRE, "_off");
+        Identifier unlitVariant = ModelLocationUtils.getModelLocation(Blocks.CAMPFIRE, "_off");
 
         TextureSlot logSlot = TextureSlot.create("log");
 
@@ -480,11 +480,11 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
                 .createWithSuffix(Arrays.stream(campfireBlocks).findFirst().get(), "_off", modelOutput));
 
         for(Block block : campfireBlocks) {
-            ResourceLocation id = BuiltInRegistries.BLOCK.getKey(block);
+            Identifier id = BuiltInRegistries.BLOCK.getKey(block);
             String name = id.getPath();
             boolean isSoul = name.contains("soul");
 
-            ResourceLocation litVariant = ModelLocationUtils.getModelLocation(Blocks.CAMPFIRE);
+            Identifier litVariant = ModelLocationUtils.getModelLocation(Blocks.CAMPFIRE);
 
             ModelTemplate modelTemplate1 = new ModelTemplate(Optional.of(litVariant), Optional.of(""), TextureSlot.LIT_LOG, TextureSlot.PARTICLE, logSlot, TextureSlot.FIRE);
 
@@ -549,12 +549,12 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
     }
 
     public void createChiseledBookshelfTextureMapping(Block chiseledBookshelf) {
-        ResourceLocation topTexture = TextureMapping.getBlockTexture(chiseledBookshelf, "_top");
-        ResourceLocation sideTexture = TextureMapping.getBlockTexture(chiseledBookshelf, "_side");
-        ResourceLocation emptyFrontTexture = TextureMapping.getBlockTexture(chiseledBookshelf, "_empty");
-        ResourceLocation occupiedFrontTexture = TextureMapping.getBlockTexture(chiseledBookshelf, "_occupied");
+        Identifier topTexture = TextureMapping.getBlockTexture(chiseledBookshelf, "_top");
+        Identifier sideTexture = TextureMapping.getBlockTexture(chiseledBookshelf, "_side");
+        Identifier emptyFrontTexture = TextureMapping.getBlockTexture(chiseledBookshelf, "_empty");
+        Identifier occupiedFrontTexture = TextureMapping.getBlockTexture(chiseledBookshelf, "_occupied");
 
-        ResourceLocation parent = ModelLocationUtils.getModelLocation(Blocks.CHISELED_BOOKSHELF);
+        Identifier parent = ModelLocationUtils.getModelLocation(Blocks.CHISELED_BOOKSHELF);
         ModelTemplate modelTemplate = new ModelTemplate(Optional.of(parent), Optional.empty(), TextureSlot.TOP, TextureSlot.SIDE, TextureSlot.PARTICLE);
 
         for (int i = 0; i < 6; i++) {
@@ -634,12 +634,12 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         String s = hasBook ? "_occupied" : "_empty";
         TextureMapping texturemapping = (new TextureMapping()).put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(block, s));
         BookSlotModelCacheKey blockmodelgenerators$bookslotmodelcachekey = new BookSlotModelCacheKey(template, s);
-        MultiVariant multivariant = plainVariant((ResourceLocation)CHISELED_BOOKSHELF_SLOT_MODEL_CACHE.computeIfAbsent(blockmodelgenerators$bookslotmodelcachekey, (p_387964_) -> template.createWithSuffix(block, s, texturemapping, this.modelOutput)));
+        MultiVariant multivariant = plainVariant((Identifier)CHISELED_BOOKSHELF_SLOT_MODEL_CACHE.computeIfAbsent(blockmodelgenerators$bookslotmodelcachekey, (p_387964_) -> template.createWithSuffix(block, s, texturemapping, this.modelOutput)));
         generator.with(new CombinedCondition(CombinedCondition.Operation.AND, List.of(conditon, condition().term(hasBookProperty, hasBook).build())), multivariant.with(rotation));
     }
 
     public void createLecternTextureMapping(Block block, Block woodType) {
-        ResourceLocation parent = ModelLocationUtils.getModelLocation(Blocks.LECTERN);
+        Identifier parent = ModelLocationUtils.getModelLocation(Blocks.LECTERN);
         TextureSlot baseSlot = TextureSlot.create("base");
         TextureSlot sidesSlot = TextureSlot.create("sides");
         ModelTemplate modelTemplate = new ModelTemplate(Optional.of(parent), Optional.empty(), TextureSlot.PARTICLE, TextureSlot.BOTTOM, baseSlot, TextureSlot.FRONT, sidesSlot, TextureSlot.TOP);
@@ -680,7 +680,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
     }
 
     public void createBrewingStandTextureMapping(Block block) {
-        ResourceLocation parent = ModelLocationUtils.getModelLocation(Blocks.BREWING_STAND);
+        Identifier parent = ModelLocationUtils.getModelLocation(Blocks.BREWING_STAND);
         TextureSlot baseSlot = TextureSlot.create("base");
         TextureSlot standSlot = TextureSlot.create("stand");
         ModelTemplate modelTemplate = new ModelTemplate(Optional.of(parent), Optional.empty(), baseSlot, standSlot);
@@ -720,7 +720,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
     }
 
     public void createCustomObserver(Block observerBlock) {
-        ResourceLocation parent = ModelLocationUtils.getModelLocation(Blocks.OBSERVER);
+        Identifier parent = ModelLocationUtils.getModelLocation(Blocks.OBSERVER);
 
         ModelTemplate modelTemplate = new ModelTemplate(Optional.of(parent), Optional.empty(), TextureSlot.TOP, TextureSlot.BOTTOM, TextureSlot.FRONT, TextureSlot.SIDE, TextureSlot.PARTICLE);
 
@@ -743,7 +743,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
     }
 
     public void createCustomCrafterBlock(Block crafterBlock) {
-        ResourceLocation parent = ModelLocationUtils.getModelLocation(Blocks.CRAFTER);
+        Identifier parent = ModelLocationUtils.getModelLocation(Blocks.CRAFTER);
 
         ModelTemplate modelTemplate = new ModelTemplate(Optional.of(parent), Optional.empty(), TextureSlot.BOTTOM, TextureSlot.TOP, TextureSlot.NORTH, TextureSlot.SOUTH, TextureSlot.WEST, TextureSlot.EAST, TextureSlot.PARTICLE);
 
@@ -787,8 +787,8 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
     }
 
     public void createWaxedIronChain() {
-        this.createAxisAlignedPillarBlockCustomModel(ModBlocks.WAXED_IRON_CHAIN.get(), plainVariant(ResourceLocation.withDefaultNamespace("block/iron_chain")));
-        this.registerSimpleItemModel(ModItems.WAXED_IRON_CHAIN.get(), ResourceLocation.withDefaultNamespace("item/iron_chain"));
+        this.createAxisAlignedPillarBlockCustomModel(ModBlocks.WAXED_IRON_CHAIN.get(), plainVariant(Identifier.withDefaultNamespace("block/iron_chain")));
+        this.registerSimpleItemModel(ModItems.WAXED_IRON_CHAIN.get(), Identifier.withDefaultNamespace("item/iron_chain"));
     }
 
     @Override
@@ -1195,8 +1195,8 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createCampfires(ModBlocks.BAMBOO_CAMPFIRE.get(), ModBlocks.BAMBOO_SOUL_CAMPFIRE.get());
         this.createCampfires(ModBlocks.PALE_OAK_CAMPFIRE.get(), ModBlocks.PALE_OAK_SOUL_CAMPFIRE.get());
 
-        this.registerSimpleItemModel(ModItems.OAK_CAMPFIRE.get(), ResourceLocation.parse("minecraft:item/campfire"));
-        this.registerSimpleItemModel(ModItems.OAK_SOUL_CAMPFIRE.get(), ResourceLocation.parse("minecraft:item/soul_campfire"));
+        this.registerSimpleItemModel(ModItems.OAK_CAMPFIRE.get(), Identifier.parse("minecraft:item/campfire"));
+        this.registerSimpleItemModel(ModItems.OAK_SOUL_CAMPFIRE.get(), Identifier.parse("minecraft:item/soul_campfire"));
 
         this.createBeeNest(ModBlocks.SPRUCE_BEEHIVE.get(), TextureMapping::orientableCubeSameEnds);
         this.createBeeNest(ModBlocks.BIRCH_BEEHIVE.get(), TextureMapping::orientableCubeSameEnds);
@@ -1210,7 +1210,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createBeeNest(ModBlocks.BAMBOO_BEEHIVE.get(), TextureMapping::orientableCubeSameEnds);
         this.createBeeNest(ModBlocks.PALE_OAK_BEEHIVE.get(), TextureMapping::orientableCubeSameEnds);
 
-        this.itemModelOutput.accept(ModItems.OAK_BEEHIVE.get(), ItemModelUtils.selectBlockItemProperty(BeehiveBlock.HONEY_LEVEL, ItemModelUtils.plainModel(ResourceLocation.withDefaultNamespace("block/beehive_empty")), Map.of(5, ItemModelUtils.plainModel(ResourceLocation.withDefaultNamespace("block/beehive_honey")))));
+        this.itemModelOutput.accept(ModItems.OAK_BEEHIVE.get(), ItemModelUtils.selectBlockItemProperty(BeehiveBlock.HONEY_LEVEL, ItemModelUtils.plainModel(Identifier.withDefaultNamespace("block/beehive_empty")), Map.of(5, ItemModelUtils.plainModel(Identifier.withDefaultNamespace("block/beehive_honey")))));
 
         this.createCustomBookshelf(ModBlocks.SPRUCE_BOOKSHELF.get(), Blocks.SPRUCE_PLANKS);
         this.createCustomBookshelf(ModBlocks.BIRCH_BOOKSHELF.get(), Blocks.BIRCH_PLANKS);
@@ -1236,7 +1236,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createCustomChiseledBookshelf(ModBlocks.BAMBOO_CHISELED_BOOKSHELF.get());
         this.createCustomChiseledBookshelf(ModBlocks.PALE_OAK_CHISELED_BOOKSHELF.get());
 
-        this.registerSimpleItemModel(ModItems.OAK_CHISELED_BOOKSHELF.get(), ResourceLocation.parse("minecraft:block/chiseled_bookshelf_inventory"));
+        this.registerSimpleItemModel(ModItems.OAK_CHISELED_BOOKSHELF.get(), Identifier.parse("minecraft:block/chiseled_bookshelf_inventory"));
 
         this.createLectern(ModBlocks.SPRUCE_LECTERN.get(), Blocks.SPRUCE_PLANKS);
         this.createLectern(ModBlocks.BIRCH_LECTERN.get(), Blocks.BIRCH_PLANKS);
@@ -1253,7 +1253,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createCustomBrewingStand(ModBlocks.BLACKSTONE_BREWING_STAND.get());
         this.createCustomBrewingStand(ModBlocks.DEEPSLATE_BREWING_STAND.get());
 
-        this.registerSimpleItemModel(ModItems.STONE_BREWING_STAND.get(), ResourceLocation.parse("minecraft:item/brewing_stand"));
+        this.registerSimpleItemModel(ModItems.STONE_BREWING_STAND.get(), Identifier.parse("minecraft:item/brewing_stand"));
 
         this.createCustomBarrel(ModBlocks.OAK_BARREL.get());
         this.createCustomBarrel(ModBlocks.BIRCH_BARREL.get());

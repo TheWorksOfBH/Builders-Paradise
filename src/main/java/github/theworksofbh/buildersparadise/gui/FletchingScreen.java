@@ -5,15 +5,15 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.Slot;
 
 public class FletchingScreen extends AbstractContainerScreen<FletchingMenu> {
-    private static final ResourceLocation BG = ResourceLocation.fromNamespaceAndPath(BuildersParadise.MODID, "textures/gui/container/fletching.png");
-    private static final ResourceLocation ARROW_SLOT_SPRITE = ResourceLocation.fromNamespaceAndPath(BuildersParadise.MODID, "container/slot/arrow");
-    private static final ResourceLocation GLOWSTONE_POTION_SLOT_SPRITE = ResourceLocation.fromNamespaceAndPath(BuildersParadise.MODID, "container/slot/glowstone_potion");
-    private static final ResourceLocation ERROR_SPRITE = ResourceLocation.fromNamespaceAndPath(BuildersParadise.MODID, "container/fletching/error");
+    private static final Identifier BG = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "textures/gui/container/fletching.png");
+    private static final Identifier ARROW_SLOT_SPRITE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "container/slot/arrow");
+    private static final Identifier GLOWSTONE_POTION_SLOT_SPRITE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "container/slot/glowstone_potion");
+    private static final Identifier ERROR_SPRITE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "container/fletching/error");
 
     public FletchingScreen(FletchingMenu menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);

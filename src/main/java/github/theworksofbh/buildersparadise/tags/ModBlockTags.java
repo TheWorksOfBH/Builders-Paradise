@@ -2,7 +2,7 @@ package github.theworksofbh.buildersparadise.tags;
 
 import github.theworksofbh.buildersparadise.BuildersParadise;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 
@@ -44,10 +44,10 @@ public final class ModBlockTags {
     }
 
     private static TagKey<Block> create(String name) {
-        return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BuildersParadise.MODID, name));
+        return TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(BuildersParadise.MODID, name));
     }
 
-    public static TagKey<Block> create(ResourceLocation name) {
+    public static TagKey<Block> create(Identifier name) {
         return TagKey.create(Registries.BLOCK, name);
     }
 }

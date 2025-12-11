@@ -4,7 +4,7 @@ import github.theworksofbh.buildersparadise.BuildersParadise;
 import github.theworksofbh.buildersparadise.fluids.ModFluids;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.*;
@@ -992,7 +992,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1007,7 +1007,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1022,7 +1022,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1037,7 +1037,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1057,7 +1057,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1072,7 +1072,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1087,7 +1087,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1102,7 +1102,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1122,7 +1122,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1137,7 +1137,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1152,7 +1152,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1167,7 +1167,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1187,7 +1187,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1202,7 +1202,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1217,7 +1217,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1232,7 +1232,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1252,7 +1252,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1267,7 +1267,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1282,7 +1282,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1297,7 +1297,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1317,7 +1317,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1332,7 +1332,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1347,7 +1347,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1362,7 +1362,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1385,7 +1385,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1403,7 +1403,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1421,7 +1421,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1439,7 +1439,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1459,7 +1459,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1474,7 +1474,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1489,7 +1489,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1504,7 +1504,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1524,7 +1524,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1539,7 +1539,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1554,7 +1554,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1569,7 +1569,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1589,7 +1589,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1604,7 +1604,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1619,7 +1619,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1634,7 +1634,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1656,7 +1656,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1673,7 +1673,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1690,7 +1690,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1707,7 +1707,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1729,7 +1729,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1746,7 +1746,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1763,7 +1763,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1780,7 +1780,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1799,7 +1799,7 @@ public class ModBlocks {
                                 .setId(
                                         ResourceKey.create(
                                                 Registries.BLOCK,
-                                                ResourceLocation.fromNamespaceAndPath(
+                                                Identifier.fromNamespaceAndPath(
                                                         BuildersParadise.MODID,
                                                         registryName
                                                 )
@@ -1816,7 +1816,7 @@ public class ModBlocks {
                                 .setId(
                                         ResourceKey.create(
                                                 Registries.BLOCK,
-                                                ResourceLocation.fromNamespaceAndPath(
+                                                Identifier.fromNamespaceAndPath(
                                                         BuildersParadise.MODID,
                                                         registryName
                                                 )
@@ -1833,7 +1833,7 @@ public class ModBlocks {
                                 .setId(
                                         ResourceKey.create(
                                                 Registries.BLOCK,
-                                                ResourceLocation.fromNamespaceAndPath(
+                                                Identifier.fromNamespaceAndPath(
                                                         BuildersParadise.MODID,
                                                         registryName
                                                 )
@@ -1851,7 +1851,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1866,7 +1866,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1885,7 +1885,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1900,7 +1900,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1919,7 +1919,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1934,7 +1934,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1953,7 +1953,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1968,7 +1968,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -1987,7 +1987,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -2002,7 +2002,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -2021,7 +2021,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -2036,7 +2036,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -2055,7 +2055,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -2070,7 +2070,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -2088,7 +2088,7 @@ public class ModBlocks {
                                 .setId(
                                         ResourceKey.create(
                                                 Registries.BLOCK,
-                                                ResourceLocation.fromNamespaceAndPath(
+                                                Identifier.fromNamespaceAndPath(
                                                         BuildersParadise.MODID,
                                                         registryName
                                                 )
@@ -2106,7 +2106,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -2121,7 +2121,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -2136,7 +2136,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -2151,7 +2151,7 @@ public class ModBlocks {
                                     .setId(
                                             ResourceKey.create(
                                                     Registries.BLOCK,
-                                                    ResourceLocation.fromNamespaceAndPath(
+                                                    Identifier.fromNamespaceAndPath(
                                                             BuildersParadise.MODID,
                                                             registryName
                                                     )
@@ -2176,7 +2176,7 @@ public class ModBlocks {
                                 .setId(
                                     ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                     )
@@ -2197,7 +2197,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2217,7 +2217,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2236,7 +2236,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2254,7 +2254,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2272,7 +2272,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2291,7 +2291,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2310,7 +2310,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2329,7 +2329,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2352,7 +2352,7 @@ public class ModBlocks {
                             ).setId(
                                     ResourceKey.create(
                                             Registries.BLOCK,
-                                            ResourceLocation.fromNamespaceAndPath(
+                                            Identifier.fromNamespaceAndPath(
                                                     BuildersParadise.MODID,
                                                     registryName
                                             )
@@ -2369,7 +2369,7 @@ public class ModBlocks {
                             ).setId(
                                     ResourceKey.create(
                                             Registries.BLOCK,
-                                            ResourceLocation.fromNamespaceAndPath(
+                                            Identifier.fromNamespaceAndPath(
                                                     BuildersParadise.MODID,
                                                     registryName
                                             )
@@ -2393,7 +2393,7 @@ public class ModBlocks {
                             ).setId(
                                     ResourceKey.create(
                                             Registries.BLOCK,
-                                            ResourceLocation.fromNamespaceAndPath(
+                                            Identifier.fromNamespaceAndPath(
                                                     BuildersParadise.MODID,
                                                     registryName
                                             )
@@ -2410,7 +2410,7 @@ public class ModBlocks {
                             ).setId(
                                     ResourceKey.create(
                                             Registries.BLOCK,
-                                            ResourceLocation.fromNamespaceAndPath(
+                                            Identifier.fromNamespaceAndPath(
                                                     BuildersParadise.MODID,
                                                     registryName
                                             )
@@ -2429,7 +2429,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2447,7 +2447,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2465,7 +2465,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2483,7 +2483,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2502,7 +2502,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2526,7 +2526,7 @@ public class ModBlocks {
                             ).setId(
                                     ResourceKey.create(
                                             Registries.BLOCK,
-                                            ResourceLocation.fromNamespaceAndPath(
+                                            Identifier.fromNamespaceAndPath(
                                                     BuildersParadise.MODID,
                                                     registryName
                                             )
@@ -2544,7 +2544,7 @@ public class ModBlocks {
                             ).setId(
                                     ResourceKey.create(
                                             Registries.BLOCK,
-                                            ResourceLocation.fromNamespaceAndPath(
+                                            Identifier.fromNamespaceAndPath(
                                                     BuildersParadise.MODID,
                                                     registryName
                                             )
@@ -2565,7 +2565,7 @@ public class ModBlocks {
                             .setId(
                                     ResourceKey.create(
                                             Registries.BLOCK,
-                                            ResourceLocation.fromNamespaceAndPath(
+                                            Identifier.fromNamespaceAndPath(
                                                     BuildersParadise.MODID,
                                                     registryName
                                             )
@@ -2585,7 +2585,7 @@ public class ModBlocks {
                                 .setId(
                                         ResourceKey.create(
                                                 Registries.BLOCK,
-                                                ResourceLocation.fromNamespaceAndPath(
+                                                Identifier.fromNamespaceAndPath(
                                                         BuildersParadise.MODID,
                                                         registryName
                                                 )
@@ -2605,7 +2605,7 @@ public class ModBlocks {
                                 .setId(
                                         ResourceKey.create(
                                                 Registries.BLOCK,
-                                                ResourceLocation.fromNamespaceAndPath(
+                                                Identifier.fromNamespaceAndPath(
                                                         BuildersParadise.MODID,
                                                         registryName
                                                 )
@@ -2625,7 +2625,7 @@ public class ModBlocks {
                                 .setId(
                                         ResourceKey.create(
                                                 Registries.BLOCK,
-                                                ResourceLocation.fromNamespaceAndPath(
+                                                Identifier.fromNamespaceAndPath(
                                                         BuildersParadise.MODID,
                                                         registryName
                                                 )
@@ -2647,7 +2647,7 @@ public class ModBlocks {
                             ).setId(
                                     ResourceKey.create(
                                             Registries.BLOCK,
-                                            ResourceLocation.fromNamespaceAndPath(
+                                            Identifier.fromNamespaceAndPath(
                                                     BuildersParadise.MODID,
                                                     registryName
                                             )
@@ -2663,7 +2663,7 @@ public class ModBlocks {
                             ).setId(
                                     ResourceKey.create(
                                             Registries.BLOCK,
-                                            ResourceLocation.fromNamespaceAndPath(
+                                            Identifier.fromNamespaceAndPath(
                                                     BuildersParadise.MODID,
                                                     registryName
                                             )
@@ -2687,7 +2687,7 @@ public class ModBlocks {
                             ).setId(
                                     ResourceKey.create(
                                             Registries.BLOCK,
-                                            ResourceLocation.fromNamespaceAndPath(
+                                            Identifier.fromNamespaceAndPath(
                                                     BuildersParadise.MODID,
                                                     registryName
                                             )
@@ -2704,7 +2704,7 @@ public class ModBlocks {
                             ).setId(
                                     ResourceKey.create(
                                             Registries.BLOCK,
-                                            ResourceLocation.fromNamespaceAndPath(
+                                            Identifier.fromNamespaceAndPath(
                                                     BuildersParadise.MODID,
                                                     registryName
                                             )
@@ -2728,7 +2728,7 @@ public class ModBlocks {
                             ).setId(
                                     ResourceKey.create(
                                             Registries.BLOCK,
-                                            ResourceLocation.fromNamespaceAndPath(
+                                            Identifier.fromNamespaceAndPath(
                                                     BuildersParadise.MODID,
                                                     registryName
                                             )
@@ -2745,7 +2745,7 @@ public class ModBlocks {
                             ).setId(
                                     ResourceKey.create(
                                             Registries.BLOCK,
-                                            ResourceLocation.fromNamespaceAndPath(
+                                            Identifier.fromNamespaceAndPath(
                                                     BuildersParadise.MODID,
                                                     registryName
                                             )
@@ -2764,7 +2764,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2782,7 +2782,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2800,7 +2800,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2819,7 +2819,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2837,7 +2837,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2855,7 +2855,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2874,7 +2874,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2892,7 +2892,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2910,7 +2910,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2928,7 +2928,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -2947,7 +2947,7 @@ public class ModBlocks {
                         ).setId(
                                 ResourceKey.create(
                                         Registries.BLOCK,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )

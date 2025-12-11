@@ -6,7 +6,7 @@ import github.theworksofbh.buildersparadise.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessor;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorList;
@@ -19,7 +19,7 @@ public class ModProcessorLists {
     }
 
     private static ResourceKey<StructureProcessorList> createKey(String name) {
-        return ResourceKey.create(Registries.PROCESSOR_LIST, ResourceLocation.fromNamespaceAndPath(BuildersParadise.MODID, name));
+        return ResourceKey.create(Registries.PROCESSOR_LIST, Identifier.fromNamespaceAndPath(BuildersParadise.MODID, name));
     }
 
     public static final ResourceKey<StructureProcessorList> REPLACE_SNOW_BLOCK_WITH_SNOW_BRICKS = createKey("replace_snow_block_with_snow_bricks");

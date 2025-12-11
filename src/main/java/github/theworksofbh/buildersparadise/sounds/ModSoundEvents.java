@@ -2,7 +2,7 @@ package github.theworksofbh.buildersparadise.sounds;
 
 import github.theworksofbh.buildersparadise.BuildersParadise;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvent;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -16,8 +16,8 @@ public class ModSoundEvents {
     public static final DeferredHolder<SoundEvent, SoundEvent> MUSIC_DISC_ANGRY_BOYFRIENDS = registerSoundEvent("music_disc.angry_boyfriends");
 
     private static DeferredHolder<SoundEvent, SoundEvent> registerSoundEvent(String registryName) {
-        ResourceLocation resourceLocation = ResourceLocation.fromNamespaceAndPath(BuildersParadise.MODID, registryName);
-        return SOUND_EVENTS.register(registryName, () -> SoundEvent.createVariableRangeEvent(resourceLocation));
+        Identifier identifier = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, registryName);
+        return SOUND_EVENTS.register(registryName, () -> SoundEvent.createVariableRangeEvent(identifier));
     }
 
     public static void register(IEventBus eventBus) {

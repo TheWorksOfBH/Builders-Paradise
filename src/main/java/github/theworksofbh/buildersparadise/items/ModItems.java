@@ -7,10 +7,10 @@ import github.theworksofbh.buildersparadise.fluids.ModFluids;
 import github.theworksofbh.buildersparadise.sounds.ModJukeboxSongs;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.vehicle.AbstractBoat;
-import net.minecraft.world.entity.vehicle.AbstractMinecart;
+import net.minecraft.world.entity.vehicle.boat.AbstractBoat;
+import net.minecraft.world.entity.vehicle.minecart.AbstractMinecart;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
@@ -1093,7 +1093,7 @@ public class ModItems {
                             new Item.Properties().setId(
                                     ResourceKey.create(
                                             Registries.ITEM,
-                                            ResourceLocation.fromNamespaceAndPath(
+                                            Identifier.fromNamespaceAndPath(
                                                     BuildersParadise.MODID,
                                                     registryName
                                             )
@@ -1107,7 +1107,7 @@ public class ModItems {
                             new Item.Properties().setId(
                                     ResourceKey.create(
                                             Registries.ITEM,
-                                            ResourceLocation.fromNamespaceAndPath(
+                                            Identifier.fromNamespaceAndPath(
                                                     BuildersParadise.MODID,
                                                     registryName
                                             )
@@ -1125,7 +1125,7 @@ public class ModItems {
                             block.get(), new Item.Properties().setId(
                                     ResourceKey.create(
                                             Registries.ITEM,
-                                            ResourceLocation.fromNamespaceAndPath(
+                                            Identifier.fromNamespaceAndPath(
                                                     BuildersParadise.MODID,
                                                     registryName
                                             )
@@ -1139,7 +1139,7 @@ public class ModItems {
                             block.get(), new Item.Properties().setId(
                                     ResourceKey.create(
                                             Registries.ITEM,
-                                            ResourceLocation.fromNamespaceAndPath(
+                                            Identifier.fromNamespaceAndPath(
                                                     BuildersParadise.MODID,
                                                     registryName
                                             )
@@ -1159,7 +1159,7 @@ public class ModItems {
                         new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).setId(
                                 ResourceKey.create(
                                         Registries.ITEM,
-                                        ResourceLocation.fromNamespaceAndPath(
+                                        Identifier.fromNamespaceAndPath(
                                                 BuildersParadise.MODID,
                                                 registryName
                                         )
@@ -1174,7 +1174,7 @@ public class ModItems {
                 new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON).jukeboxPlayable(jukeboxSong).setId(
                         ResourceKey.create(
                                 Registries.ITEM,
-                                ResourceLocation.fromNamespaceAndPath(
+                                Identifier.fromNamespaceAndPath(
                                         BuildersParadise.MODID,
                                         registryName
                                 )
@@ -1189,7 +1189,7 @@ public class ModItems {
                 new Item.Properties().stacksTo(1).setId(
                         ResourceKey.create(
                                 Registries.ITEM,
-                                ResourceLocation.fromNamespaceAndPath(
+                                Identifier.fromNamespaceAndPath(
                                         BuildersParadise.MODID,
                                         registryName
                                 )
@@ -1204,7 +1204,7 @@ public class ModItems {
                 new Item.Properties().stacksTo(1).setId(
                         ResourceKey.create(
                                 Registries.ITEM,
-                                ResourceLocation.fromNamespaceAndPath(
+                                Identifier.fromNamespaceAndPath(
                                         BuildersParadise.MODID,
                                         registryName
                                 )
@@ -1218,7 +1218,7 @@ public class ModItems {
                 new Item.Properties().sword(toolMaterial, attackDamage, attackSpeed).setId(
                         ResourceKey.create(
                                 Registries.ITEM,
-                                ResourceLocation.fromNamespaceAndPath(
+                                Identifier.fromNamespaceAndPath(
                                         BuildersParadise.MODID,
                                         registryName
                                 )
@@ -1232,7 +1232,7 @@ public class ModItems {
                 new Item.Properties().axe(toolMaterial, attackDamage, attackSpeed).setId(
                         ResourceKey.create(
                                 Registries.ITEM,
-                                ResourceLocation.fromNamespaceAndPath(
+                                Identifier.fromNamespaceAndPath(
                                         BuildersParadise.MODID,
                                         registryName
                                 )
@@ -1246,7 +1246,7 @@ public class ModItems {
                 new Item.Properties().pickaxe(toolMaterial, attackDamage, attackSpeed).setId(
                         ResourceKey.create(
                                 Registries.ITEM,
-                                ResourceLocation.fromNamespaceAndPath(
+                                Identifier.fromNamespaceAndPath(
                                         BuildersParadise.MODID,
                                         registryName
                                 )
@@ -1260,7 +1260,7 @@ public class ModItems {
                 new Item.Properties().shovel(toolMaterial, attackDamage, attackSpeed).setId(
                         ResourceKey.create(
                                 Registries.ITEM,
-                                ResourceLocation.fromNamespaceAndPath(
+                                Identifier.fromNamespaceAndPath(
                                         BuildersParadise.MODID,
                                         registryName
                                 )
@@ -1274,7 +1274,7 @@ public class ModItems {
                 new Item.Properties().hoe(toolMaterial, attackDamage, attackSpeed).setId(
                         ResourceKey.create(
                                 Registries.ITEM,
-                                ResourceLocation.fromNamespaceAndPath(
+                                Identifier.fromNamespaceAndPath(
                                         BuildersParadise.MODID,
                                         registryName
                                 )
@@ -1288,7 +1288,7 @@ public class ModItems {
                 new Item.Properties().humanoidArmor(armorMaterial, armorType).setId(
                         ResourceKey.create(
                                 Registries.ITEM,
-                                ResourceLocation.fromNamespaceAndPath(
+                                Identifier.fromNamespaceAndPath(
                                         BuildersParadise.MODID,
                                         registryName
                                 )
@@ -1302,7 +1302,7 @@ public class ModItems {
                 () -> ModSmithingTemplateItemConfig.createBronzeUpgradeTemplate(new Item.Properties().rarity(Rarity.UNCOMMON).setId(
                         ResourceKey.create(
                                 Registries.ITEM,
-                                ResourceLocation.fromNamespaceAndPath(
+                                Identifier.fromNamespaceAndPath(
                                         BuildersParadise.MODID,
                                         registryName
                                 )

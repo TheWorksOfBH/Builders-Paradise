@@ -6,7 +6,7 @@ import net.minecraft.client.renderer.blockentity.ChestRenderer;
 import net.minecraft.client.renderer.blockentity.state.ChestRenderState;
 import net.minecraft.client.resources.model.Material;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ChestBlock;
 import net.minecraft.world.level.block.TrappedChestBlock;
@@ -26,9 +26,9 @@ public class ChestRendererMixins<T extends BlockEntity & LidBlockEntity> {
     @Unique
     private static Material getCustomChestPath(String path, boolean isTrapped, String part) {
         if (isTrapped) {
-            return new Material(Sheets.CHEST_SHEET, ResourceLocation.fromNamespaceAndPath(BuildersParadise.MODID, "entity/chest" + path + "/trapped" + part));
+            return new Material(Sheets.CHEST_SHEET, Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "entity/chest" + path + "/trapped" + part));
         } else {
-            return new Material(Sheets.CHEST_SHEET, ResourceLocation.fromNamespaceAndPath(BuildersParadise.MODID, "entity/chest" + path + "/normal" + part));
+            return new Material(Sheets.CHEST_SHEET, Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "entity/chest" + path + "/normal" + part));
         }
     }
 
@@ -55,7 +55,7 @@ public class ChestRendererMixins<T extends BlockEntity & LidBlockEntity> {
 
         if (!(block instanceof ChestBlock) && !(block instanceof TrappedChestBlock)) return;
 
-        ResourceLocation key = BuiltInRegistries.BLOCK.getKey(block);
+        Identifier key = BuiltInRegistries.BLOCK.getKey(block);
         if (key == null || !key.getNamespace().equals(BuildersParadise.MODID)) return;
 
         boolean isTrapped = block instanceof TrappedChestBlock;

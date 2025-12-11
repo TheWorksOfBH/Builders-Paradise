@@ -2,7 +2,7 @@ package github.theworksofbh.buildersparadise.model_layers;
 
 import github.theworksofbh.buildersparadise.BuildersParadise;
 import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 public class ModModelLayers {
     public static final ModelLayerLocation CRIMSON_BOAT = register("boat/crimson");
@@ -33,6 +33,6 @@ public class ModModelLayers {
     }
 
     private static ModelLayerLocation createLocation(String name, String layer) {
-        return new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(BuildersParadise.MODID, name), layer);
+        return new ModelLayerLocation(Identifier.fromNamespaceAndPath(BuildersParadise.MODID, name), layer);
     }
 }

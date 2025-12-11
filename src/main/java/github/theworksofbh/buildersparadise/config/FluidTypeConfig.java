@@ -5,7 +5,7 @@ import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.fog.FogData;
 import net.minecraft.client.renderer.fog.environment.FogEnvironment;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import org.jetbrains.annotations.Nullable;
@@ -16,17 +16,17 @@ public class FluidTypeConfig {
     public static void addFluidTypes(RegisterClientExtensionsEvent event) {
         event.registerFluidType(new IClientFluidTypeExtensions() {
             @Override
-            public ResourceLocation getStillTexture() {
+            public Identifier getStillTexture() {
                 return ModFluidTypes.NUCLEAR_WASTE_TYPE.get().getStillTexture();
             }
 
             @Override
-            public ResourceLocation getFlowingTexture() {
+            public Identifier getFlowingTexture() {
                 return ModFluidTypes.NUCLEAR_WASTE_TYPE.get().getFlowingTexture();
             }
 
             @Override
-            public @Nullable ResourceLocation getOverlayTexture() {
+            public @Nullable Identifier getOverlayTexture() {
                 return null;
             }
 

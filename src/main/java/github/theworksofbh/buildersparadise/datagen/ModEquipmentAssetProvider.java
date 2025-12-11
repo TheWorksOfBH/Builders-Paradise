@@ -6,7 +6,7 @@ import net.minecraft.client.data.models.EquipmentAssetProvider;
 import net.minecraft.client.resources.model.EquipmentClientInfo;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.equipment.EquipmentAsset;
 
 import java.util.Optional;
@@ -24,14 +24,14 @@ public class ModEquipmentAssetProvider extends EquipmentAssetProvider {
                 EquipmentClientInfo.builder().addLayers(
                         EquipmentClientInfo.LayerType.HUMANOID,
                         new EquipmentClientInfo.Layer(
-                                ResourceLocation.fromNamespaceAndPath(BuildersParadise.MODID, "bronze"),
+                                Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "bronze"),
                                 Optional.empty(),
                                 false
                         )
                 ).addLayers(
                         EquipmentClientInfo.LayerType.HUMANOID_LEGGINGS,
                         new EquipmentClientInfo.Layer(
-                                ResourceLocation.fromNamespaceAndPath(BuildersParadise.MODID, "bronze"),
+                                Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "bronze"),
                                 Optional.empty(),
                                 false
                         )

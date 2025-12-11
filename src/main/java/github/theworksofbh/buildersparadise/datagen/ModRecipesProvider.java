@@ -8,16 +8,16 @@ import github.theworksofbh.buildersparadise.items.ModItems;
 import github.theworksofbh.buildersparadise.recipes.FletchingRecipeBuilder;
 import github.theworksofbh.buildersparadise.tags.ModItemTags;
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.advancements.critereon.InventoryChangeTrigger;
-import net.minecraft.advancements.critereon.MinMaxBounds;
-import net.minecraft.advancements.critereon.PlayerTrigger;
+import net.minecraft.advancements.criterion.InventoryChangeTrigger;
+import net.minecraft.advancements.criterion.MinMaxBounds;
+import net.minecraft.advancements.criterion.PlayerTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.flag.FeatureFlagSet;
@@ -707,8 +707,8 @@ public class ModRecipesProvider extends RecipeProvider {
                 .unlockedBy("has_redstone", this.has(Items.REDSTONE))
                 .save(this.output.withConditions(NeoForgeConditions.never()));
 
-        this.shapeless(RecipeCategory.MISC, Items.IRON_INGOT, 9).requires(ModItems.WAXED_IRON_BLOCK.get()).group(null).unlockedBy(getHasName(ModItems.WAXED_IRON_BLOCK.get()), this.has(ModItems.WAXED_IRON_BLOCK.get())).save(this.output, ResourceKey.create(Registries.RECIPE, ResourceLocation.parse("iron_ingot_from_waxed")));
-        this.shapeless(RecipeCategory.MISC, ModItems.ZINC_INGOT.get(), 9).requires(ModItems.WAXED_ZINC_BLOCK.get()).group(null).unlockedBy(getHasName(ModItems.WAXED_ZINC_BLOCK.get()), this.has(ModItems.WAXED_ZINC_BLOCK.get())).save(this.output, ResourceKey.create(Registries.RECIPE, ResourceLocation.parse("zinc_ingot_from_waxed")));
+        this.shapeless(RecipeCategory.MISC, Items.IRON_INGOT, 9).requires(ModItems.WAXED_IRON_BLOCK.get()).group(null).unlockedBy(getHasName(ModItems.WAXED_IRON_BLOCK.get()), this.has(ModItems.WAXED_IRON_BLOCK.get())).save(this.output, ResourceKey.create(Registries.RECIPE, Identifier.parse("iron_ingot_from_waxed")));
+        this.shapeless(RecipeCategory.MISC, ModItems.ZINC_INGOT.get(), 9).requires(ModItems.WAXED_ZINC_BLOCK.get()).group(null).unlockedBy(getHasName(ModItems.WAXED_ZINC_BLOCK.get()), this.has(ModItems.WAXED_ZINC_BLOCK.get())).save(this.output, ResourceKey.create(Registries.RECIPE, Identifier.parse("zinc_ingot_from_waxed")));
 
         this.createObserver(ModItems.STONE_OBSERVER, Items.COBBLESTONE);
         this.createObserver(ModItems.BLACKSTONE_OBSERVER, Items.BLACKSTONE);
@@ -1276,11 +1276,11 @@ public class ModRecipesProvider extends RecipeProvider {
     }
 
     protected void eightyOneBlockStorageRecipes(RecipeCategory nuggetCategory, ItemLike nugget, RecipeCategory ingotCategory, ItemLike ingot, String ingotName, @Nullable String ingotGroup, String nuggetName, @Nullable String nuggetGroup, RecipeCategory blockCategory, ItemLike block, String blockName, @Nullable String blockGroup) {
-        this.shapeless(nuggetCategory, nugget, 9).requires(ingot).group(nuggetGroup).unlockedBy(getHasName(ingot), this.has(ingot)).save(this.output, ResourceKey.create(Registries.RECIPE, ResourceLocation.parse(nuggetName)));
-        this.shaped(ingotCategory, ingot).define('#', nugget).pattern("###").pattern("###").pattern("###").group(ingotGroup).unlockedBy(getHasName(nugget), this.has(nugget)).save(this.output, ResourceKey.create(Registries.RECIPE, ResourceLocation.parse(ingotName)));
+        this.shapeless(nuggetCategory, nugget, 9).requires(ingot).group(nuggetGroup).unlockedBy(getHasName(ingot), this.has(ingot)).save(this.output, ResourceKey.create(Registries.RECIPE, Identifier.parse(nuggetName)));
+        this.shaped(ingotCategory, ingot).define('#', nugget).pattern("###").pattern("###").pattern("###").group(ingotGroup).unlockedBy(getHasName(nugget), this.has(nugget)).save(this.output, ResourceKey.create(Registries.RECIPE, Identifier.parse(ingotName)));
 
-        this.shapeless(ingotCategory, ingot, 9).requires(block).group(ingotGroup).unlockedBy(getHasName(block), this.has(block)).save(this.output, ResourceKey.create(Registries.RECIPE, ResourceLocation.parse(ingotName + "_b")));
-        this.shaped(blockCategory, block).define('#', ingot).pattern("###").pattern("###").pattern("###").group(blockGroup).unlockedBy(getHasName(ingot), this.has(block)).save(this.output, ResourceKey.create(Registries.RECIPE, ResourceLocation.parse(blockName)));
+        this.shapeless(ingotCategory, ingot, 9).requires(block).group(ingotGroup).unlockedBy(getHasName(block), this.has(block)).save(this.output, ResourceKey.create(Registries.RECIPE, Identifier.parse(ingotName + "_b")));
+        this.shaped(blockCategory, block).define('#', ingot).pattern("###").pattern("###").pattern("###").group(blockGroup).unlockedBy(getHasName(ingot), this.has(block)).save(this.output, ResourceKey.create(Registries.RECIPE, Identifier.parse(blockName)));
     }
 
     protected void createCraftingTable(ItemLike craftingTable, ItemLike planks){

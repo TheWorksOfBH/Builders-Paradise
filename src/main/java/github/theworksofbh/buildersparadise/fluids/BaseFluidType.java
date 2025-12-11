@@ -1,6 +1,6 @@
 package github.theworksofbh.buildersparadise.fluids;
 
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvent;
 import net.neoforged.neoforge.common.SoundAction;
 import net.neoforged.neoforge.fluids.FluidType;
@@ -9,13 +9,13 @@ import org.joml.Vector4f;
 import javax.annotation.Nullable;
 
 public class BaseFluidType extends FluidType {
-    private final ResourceLocation stillTexture;
-    private final ResourceLocation flowingTexture;
-    private final ResourceLocation overlayTexture;
+    private final Identifier stillTexture;
+    private final Identifier flowingTexture;
+    private final Identifier overlayTexture;
     private final int tintColor;
     private final Vector4f fogColor;
 
-    public BaseFluidType(Properties properties, ResourceLocation flowingTexture, ResourceLocation stillTexture, @Nullable ResourceLocation overlayTexture, @Nullable Integer tintColor, Vector4f fogColor) {
+    public BaseFluidType(Properties properties, Identifier flowingTexture, Identifier stillTexture, @Nullable Identifier overlayTexture, @Nullable Integer tintColor, Vector4f fogColor) {
         super(properties);
         this.flowingTexture = flowingTexture;
         this.stillTexture = stillTexture;
@@ -32,15 +32,15 @@ public class BaseFluidType extends FluidType {
         return tintColor;
     }
 
-    public ResourceLocation getStillTexture() {
+    public Identifier getStillTexture() {
         return stillTexture;
     }
 
-    public ResourceLocation getFlowingTexture() {
+    public Identifier getFlowingTexture() {
         return flowingTexture;
     }
 
-    public ResourceLocation getOverlayTexture() {
+    public Identifier getOverlayTexture() {
         return overlayTexture;
     }
 

@@ -1,36 +1,39 @@
 package github.theworksofbh.buildersparadise.entity;
 
-import github.theworksofbh.buildersparadise.block.ModBlocks;
-import github.theworksofbh.buildersparadise.items.ModItems;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.vehicle.MinecartChest;
+import net.minecraft.world.entity.vehicle.minecart.MinecartChest;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ChestBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class MinecartCrimsonChest extends MinecartChest {
+public class MinecartCustomChest extends MinecartChest {
+    public Block blockInside;
+    public Item baseItem;
 
-    public MinecartCrimsonChest(EntityType<? extends MinecartChest> entityType, Level level) {
+    public MinecartCustomChest(EntityType<? extends MinecartChest> entityType, Level level, Block blockInside, Item baseItem) {
         super(entityType, level);
+        this.blockInside = blockInside;
+        this.baseItem = baseItem;
     }
 
     @Override
     public BlockState getDefaultDisplayBlockState() {
-        return (BlockState) ModBlocks.CRIMSON_CHEST.get().defaultBlockState().setValue(ChestBlock.FACING, Direction.NORTH);
+        return (BlockState) blockInside.defaultBlockState().setValue(ChestBlock.FACING, Direction.NORTH);
     }
 
     @Override
     protected Item getDropItem() {
-        return ModItems.CRIMSON_CHEST_MINECART.get();
+        return baseItem;
     }
 
     @Override
     public ItemStack getPickResult() {
-        return new ItemStack(ModItems.CRIMSON_CHEST_MINECART.get());
+        return new ItemStack(baseItem);
     }
 
     @Override

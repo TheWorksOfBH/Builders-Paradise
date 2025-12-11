@@ -4,7 +4,7 @@ import com.google.common.collect.Maps;
 import github.theworksofbh.buildersparadise.BuildersParadise;
 import github.theworksofbh.buildersparadise.tags.ModItemTags;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
@@ -14,7 +14,7 @@ import net.minecraft.world.item.equipment.EquipmentAssets;
 import java.util.Map;
 
 public interface ModArmorMaterials {
-    public static final ResourceKey<EquipmentAsset> BRONZE_ASSETS = ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.fromNamespaceAndPath(BuildersParadise.MODID, "bronze"));
+    public static final ResourceKey<EquipmentAsset> BRONZE_ASSETS = ResourceKey.create(EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "bronze"));
 
     ArmorMaterial BRONZE = new ArmorMaterial(11, makeDefense(1, 3, 4, 2, 4), 8, SoundEvents.ARMOR_EQUIP_COPPER, 1.0F, 1.0F, ModItemTags.REPAIRS_BRONZE_ARMOR, BRONZE_ASSETS);
 
