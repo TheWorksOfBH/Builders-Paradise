@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.attribute.EnvironmentAttributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -14,8 +15,7 @@ import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.redstone.Orientation;
-
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 
 public class IceStairBlock extends StairBlock {
 
@@ -30,7 +30,7 @@ public class IceStairBlock extends StairBlock {
     public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity te, ItemStack stack) {
         super.playerDestroy(level, player, pos, state, te, stack);
         if (!EnchantmentHelper.hasTag(stack, EnchantmentTags.PREVENTS_ICE_MELTING)) {
-            if (level.dimensionType().ultraWarm()) {
+            if ((Boolean)level.environmentAttributes().getValue(EnvironmentAttributes.WATER_EVAPORATES, pos)) {
                 level.removeBlock(pos, false);
                 return;
             }
@@ -51,7 +51,7 @@ public class IceStairBlock extends StairBlock {
     }
 
     protected void melt(BlockState state, Level level, BlockPos pos) {
-        if (level.dimensionType().ultraWarm()) {
+        if ((Boolean)level.environmentAttributes().getValue(EnvironmentAttributes.WATER_EVAPORATES, pos)) {
             level.removeBlock(pos, false);
         } else {
             level.setBlockAndUpdate(pos, meltsInto());

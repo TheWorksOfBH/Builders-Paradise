@@ -78,6 +78,83 @@
           "model": "buildersparadise:item/bronze_helmet_resin_trim"
         },
         "when": "minecraft:resin"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_helmet_zinc_trim"
+        },
+        "when": "buildersparadise:zinc"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_helmet_silver_trim"
+        },
+        "when": "buildersparadise:silver"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_helmet_tin_trim"
+        },
+        "when": "buildersparadise:tin"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_helmet_tungsten_trim"
+        },
+        "when": "buildersparadise:tungsten"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_helmet_platinum_trim"
+        },
+        "when": "buildersparadise:platinum"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_helmet_lead_trim"
+        },
+        "when": "buildersparadise:lead"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_helmet_uranium_trim"
+        },
+        "when": "buildersparadise:uranium"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_helmet_bronze_trim"
+        },
+        "when": "buildersparadise:bronze"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_helmet_brass_trim"
+        },
+        "when": "buildersparadise:brass"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_helmet_steel_trim"
+        },
+        "when": "buildersparadise:steel"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_helmet_sculk_trim"
+        },
+        "when": "buildersparadise:sculk"
       }
     ],
     "fallback": {

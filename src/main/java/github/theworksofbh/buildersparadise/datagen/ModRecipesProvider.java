@@ -1018,6 +1018,10 @@ public class ModRecipesProvider extends RecipeProvider {
         this.bronzeSmithing(Items.COPPER_PICKAXE, RecipeCategory.TOOLS, ModItems.BRONZE_PICKAXE.get());
         this.bronzeSmithing(Items.COPPER_HOE, RecipeCategory.TOOLS, ModItems.BRONZE_HOE.get());
         this.bronzeSmithing(Items.COPPER_SHOVEL, RecipeCategory.TOOLS, ModItems.BRONZE_SHOVEL.get());
+        this.bronzeSmithing(Items.COPPER_SPEAR, RecipeCategory.TOOLS, ModItems.BRONZE_SPEAR.get());
+        this.bronzeSmithing(Items.COPPER_HORSE_ARMOR, RecipeCategory.TOOLS, ModItems.BRONZE_HORSE_ARMOR.get());
+        this.bronzeSmithing(Items.COPPER_NAUTILUS_ARMOR, RecipeCategory.TOOLS, ModItems.BRONZE_NAUTILUS_ARMOR.get());
+
     }
 
     @Override

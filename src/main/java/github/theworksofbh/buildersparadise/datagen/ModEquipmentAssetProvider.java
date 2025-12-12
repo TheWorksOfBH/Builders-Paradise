@@ -35,6 +35,20 @@ public class ModEquipmentAssetProvider extends EquipmentAssetProvider {
                                 Optional.empty(),
                                 false
                         )
+                ).addLayers(
+                        EquipmentClientInfo.LayerType.HORSE_BODY,
+                        new EquipmentClientInfo.Layer(
+                                Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "bronze"),
+                                Optional.empty(),
+                                false
+                        )
+                ).addLayers(
+                        EquipmentClientInfo.LayerType.NAUTILUS_BODY,
+                        new EquipmentClientInfo.Layer(
+                                Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "bronze"),
+                                Optional.empty(),
+                                false
+                        )
                 ).build()
         );
     }

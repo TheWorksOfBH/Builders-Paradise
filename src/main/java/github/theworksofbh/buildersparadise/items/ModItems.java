@@ -14,6 +14,7 @@ import net.minecraft.world.entity.vehicle.minecart.AbstractMinecart;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.trim.TrimMaterial;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.FlowingFluid;
@@ -307,7 +308,7 @@ public class ModItems {
     public static final DeferredItem<BlockItem> DEEPSLATE_ZINC_ORE = registerBlockItem("deepslate_zinc_ore", () -> ModBlocks.DEEPSLATE_ZINC_ORE.get());
     public static final DeferredItem<BlockItem> RAW_ZINC_BLOCK = registerBlockItem("raw_zinc_block", () -> ModBlocks.RAW_ZINC_BLOCK.get());
     public static final DeferredItem<Item> RAW_ZINC = registerCustomItem("raw_zinc");
-    public static final DeferredItem<Item> ZINC_INGOT = registerCustomItem("zinc_ingot");
+    public static final DeferredItem<Item> ZINC_INGOT = registerTrimmableItem("zinc_ingot", ModTrimMaterials.ZINC);
     public static final DeferredItem<Item> ZINC_NUGGET = registerCustomItem("zinc_nugget");
 
     public static final DeferredItem<BlockItem> ZINC_BLOCK = registerBlockItem("zinc_block", () -> ModBlocks.ZINC_BLOCK.get());
@@ -378,7 +379,7 @@ public class ModItems {
     public static final DeferredItem<BlockItem> DEEPSLATE_SILVER_ORE = registerBlockItem("deepslate_silver_ore", () -> ModBlocks.DEEPSLATE_SILVER_ORE.get());
     public static final DeferredItem<BlockItem> RAW_SILVER_BLOCK = registerBlockItem("raw_silver_block", () -> ModBlocks.RAW_SILVER_BLOCK.get());
     public static final DeferredItem<Item> RAW_SILVER = registerCustomItem("raw_silver");
-    public static final DeferredItem<Item> SILVER_INGOT = registerCustomItem("silver_ingot");
+    public static final DeferredItem<Item> SILVER_INGOT = registerTrimmableItem("silver_ingot", ModTrimMaterials.SILVER);
     public static final DeferredItem<Item> SILVER_NUGGET = registerCustomItem("silver_nugget");
 
     public static final DeferredItem<BlockItem> SILVER_BLOCK = registerBlockItem("silver_block", () -> ModBlocks.SILVER_BLOCK.get());
@@ -393,7 +394,7 @@ public class ModItems {
     public static final DeferredItem<BlockItem> DEEPSLATE_TIN_ORE = registerBlockItem("deepslate_tin_ore", () -> ModBlocks.DEEPSLATE_TIN_ORE.get());
     public static final DeferredItem<BlockItem> RAW_TIN_BLOCK = registerBlockItem("raw_tin_block", () -> ModBlocks.RAW_TIN_BLOCK.get());
     public static final DeferredItem<Item> RAW_TIN = registerCustomItem("raw_tin");
-    public static final DeferredItem<Item> TIN_INGOT = registerCustomItem("tin_ingot");
+    public static final DeferredItem<Item> TIN_INGOT = registerTrimmableItem("tin_ingot", ModTrimMaterials.TIN);
     public static final DeferredItem<Item> TIN_NUGGET = registerCustomItem("tin_nugget");
 
     public static final DeferredItem<BlockItem> TIN_BLOCK = registerBlockItem("tin_block", () -> ModBlocks.TIN_BLOCK.get());
@@ -408,7 +409,7 @@ public class ModItems {
     public static final DeferredItem<BlockItem> DEEPSLATE_TUNGSTEN_ORE = registerBlockItem("deepslate_tungsten_ore", () -> ModBlocks.DEEPSLATE_TUNGSTEN_ORE.get());
     public static final DeferredItem<BlockItem> RAW_TUNGSTEN_BLOCK = registerBlockItem("raw_tungsten_block", () -> ModBlocks.RAW_TUNGSTEN_BLOCK.get());
     public static final DeferredItem<Item> RAW_TUNGSTEN = registerCustomItem("raw_tungsten");
-    public static final DeferredItem<Item> TUNGSTEN_INGOT = registerCustomItem("tungsten_ingot");
+    public static final DeferredItem<Item> TUNGSTEN_INGOT = registerTrimmableItem("tungsten_ingot", ModTrimMaterials.TUNGSTEN);
     public static final DeferredItem<Item> TUNGSTEN_NUGGET = registerCustomItem("tungsten_nugget");
 
     public static final DeferredItem<BlockItem> TUNGSTEN_BLOCK = registerBlockItem("tungsten_block", () -> ModBlocks.TUNGSTEN_BLOCK.get());
@@ -423,7 +424,7 @@ public class ModItems {
     public static final DeferredItem<BlockItem> DEEPSLATE_PLATINUM_ORE = registerBlockItem("deepslate_platinum_ore", () -> ModBlocks.DEEPSLATE_PLATINUM_ORE.get());
     public static final DeferredItem<BlockItem> RAW_PLATINUM_BLOCK = registerBlockItem("raw_platinum_block", () -> ModBlocks.RAW_PLATINUM_BLOCK.get());
     public static final DeferredItem<Item> RAW_PLATINUM = registerCustomItem("raw_platinum");
-    public static final DeferredItem<Item> PLATINUM_INGOT = registerCustomItem("platinum_ingot");
+    public static final DeferredItem<Item> PLATINUM_INGOT = registerTrimmableItem("platinum_ingot", ModTrimMaterials.PLATINUM);
     public static final DeferredItem<Item> PLATINUM_NUGGET = registerCustomItem("platinum_nugget");
 
     public static final DeferredItem<BlockItem> PLATINUM_BLOCK = registerBlockItem("platinum_block", () -> ModBlocks.PLATINUM_BLOCK.get());
@@ -438,7 +439,7 @@ public class ModItems {
     public static final DeferredItem<BlockItem> DEEPSLATE_LEAD_ORE = registerBlockItem("deepslate_lead_ore", () -> ModBlocks.DEEPSLATE_LEAD_ORE.get());
     public static final DeferredItem<BlockItem> RAW_LEAD_BLOCK = registerBlockItem("raw_lead_block", () -> ModBlocks.RAW_LEAD_BLOCK.get());
     public static final DeferredItem<Item> RAW_LEAD = registerCustomItem("raw_lead");
-    public static final DeferredItem<Item> LEAD_INGOT = registerCustomItem("lead_ingot");
+    public static final DeferredItem<Item> LEAD_INGOT = registerTrimmableItem("lead_ingot", ModTrimMaterials.LEAD);
     public static final DeferredItem<Item> LEAD_NUGGET = registerCustomItem("lead_nugget");
 
     public static final DeferredItem<BlockItem> LEAD_BLOCK = registerBlockItem("lead_block", () -> ModBlocks.LEAD_BLOCK.get());
@@ -453,7 +454,7 @@ public class ModItems {
     public static final DeferredItem<BlockItem> DEEPSLATE_URANIUM_ORE = registerBlockItem("deepslate_uranium_ore", () -> ModBlocks.DEEPSLATE_URANIUM_ORE.get());
     public static final DeferredItem<BlockItem> RAW_URANIUM_BLOCK = registerBlockItem("raw_uranium_block", () -> ModBlocks.RAW_URANIUM_BLOCK.get());
     public static final DeferredItem<Item> RAW_URANIUM = registerCustomItem("raw_uranium");
-    public static final DeferredItem<Item> URANIUM_INGOT = registerCustomItem("uranium_ingot");
+    public static final DeferredItem<Item> URANIUM_INGOT = registerTrimmableItem("uranium_ingot", ModTrimMaterials.URANIUM);
     public static final DeferredItem<Item> URANIUM_NUGGET = registerCustomItem("uranium_nugget");
 
     public static final DeferredItem<BlockItem> URANIUM_BLOCK = registerBlockItem("uranium_block", () -> ModBlocks.URANIUM_BLOCK.get());
@@ -464,7 +465,7 @@ public class ModItems {
     public static final DeferredItem<BlockItem> URANIUM_TRAPDOOR = registerBlockItem("uranium_trapdoor", () -> ModBlocks.URANIUM_TRAPDOOR.get());
     public static final DeferredItem<BlockItem> NEGLIGIBLE_WEIGHTED_PRESSURE_PLATE = registerBlockItem("negligible_weighted_pressure_plate", () -> ModBlocks.NEGLIGIBLE_WEIGHTED_PRESSURE_PLATE.get());
 
-    public static final DeferredItem<Item> BRONZE_INGOT = registerCustomItem("bronze_ingot");
+    public static final DeferredItem<Item> BRONZE_INGOT = registerTrimmableItem("bronze_ingot", ModTrimMaterials.BRONZE);
     public static final DeferredItem<Item> BRONZE_NUGGET = registerCustomItem("bronze_nugget");
 
     public static final DeferredItem<BlockItem> BRONZE_BLOCK = registerBlockItem("bronze_block", () -> ModBlocks.BRONZE_BLOCK.get());
@@ -475,7 +476,7 @@ public class ModItems {
     public static final DeferredItem<BlockItem> BRONZE_TRAPDOOR = registerBlockItem("bronze_trapdoor", () -> ModBlocks.BRONZE_TRAPDOOR.get());
     public static final DeferredItem<BlockItem> PASSIVE_MOB_ONLY_PRESSURE_PLATE = registerBlockItem("passive_mob_only_pressure_plate", () -> ModBlocks.PASSIVE_MOB_ONLY_PRESSURE_PLATE.get());
 
-    public static final DeferredItem<Item> BRASS_INGOT = registerCustomItem("brass_ingot");
+    public static final DeferredItem<Item> BRASS_INGOT = registerTrimmableItem("brass_ingot", ModTrimMaterials.BRASS);
     public static final DeferredItem<Item> BRASS_NUGGET = registerCustomItem("brass_nugget");
 
     public static final DeferredItem<BlockItem> BRASS_BLOCK = registerBlockItem("brass_block", () -> ModBlocks.BRASS_BLOCK.get());
@@ -486,7 +487,7 @@ public class ModItems {
     public static final DeferredItem<BlockItem> BRASS_TRAPDOOR = registerBlockItem("brass_trapdoor", () -> ModBlocks.BRASS_TRAPDOOR.get());
     public static final DeferredItem<BlockItem> HOSTILE_MOB_ONLY_PRESSURE_PLATE = registerBlockItem("hostile_mob_only_pressure_plate", () -> ModBlocks.HOSTILE_MOB_ONLY_PRESSURE_PLATE.get());
 
-    public static final DeferredItem<Item> STEEL_INGOT = registerCustomItem("steel_ingot");
+    public static final DeferredItem<Item> STEEL_INGOT = registerTrimmableItem("steel_ingot", ModTrimMaterials.STEEL);
     public static final DeferredItem<Item> STEEL_NUGGET = registerCustomItem("steel_nugget");
 
     public static final DeferredItem<BlockItem> STEEL_BLOCK = registerBlockItem("steel_block", () -> ModBlocks.STEEL_BLOCK.get());
@@ -1068,7 +1069,7 @@ public class ModItems {
     public static final DeferredItem<BlockItem> BLUE_ICE_BRICK_STAIRS = registerBlockItem("blue_ice_brick_stairs", () -> ModBlocks.BLUE_ICE_BRICK_STAIRS.get());
     public static final DeferredItem<BlockItem> BLUE_ICE_BRICK_WALL = registerBlockItem("blue_ice_brick_wall", () -> ModBlocks.BLUE_ICE_BRICK_WALL.get());
 
-    public static final DeferredItem<Item> SCULK_BRICK = registerCustomItem("sculk_brick");
+    public static final DeferredItem<Item> SCULK_BRICK = registerTrimmableItem("sculk_brick", ModTrimMaterials.SCULK);
     public static final DeferredItem<BlockItem> SCULK_BRICKS = registerBlockItem("sculk_bricks", () -> ModBlocks.SCULK_BRICKS.get());
     public static final DeferredItem<BlockItem> SCULK_BRICK_SLAB = registerBlockItem("sculk_brick_slab", () -> ModBlocks.SCULK_BRICK_SLAB.get());
     public static final DeferredItem<BlockItem> SCULK_BRICK_STAIRS = registerBlockItem("sculk_brick_stairs", () -> ModBlocks.SCULK_BRICK_STAIRS.get());
@@ -1076,6 +1077,7 @@ public class ModItems {
     public static final DeferredItem<BlockItem> CHISELED_SCULK_BRICKS = registerBlockItem("chiseled_sculk_bricks", () -> ModBlocks.CHISELED_SCULK_BRICKS.get());
 
     public static final DeferredItem<Item> BRONZE_SWORD = registerSword("bronze_sword", ModToolMaterials.BRONZE, 3.0F, -2.4F);
+    public static final DeferredItem<Item> BRONZE_SPEAR = registerSpear("bronze_spear", ModToolMaterials.BRONZE, 0.9F, 0.87F, 0.625F, 3.0F, 8.0F, 7.5F, 5.1F, 11.75F, 4.6F);
     public static final DeferredItem<Item> BRONZE_AXE = registerAxe("bronze_axe", ModToolMaterials.BRONZE, 7.0F, -3.2F);
     public static final DeferredItem<Item> BRONZE_SHOVEL = registerShovel("bronze_shovel", ModToolMaterials.BRONZE, 1.5F, -3.0F);
     public static final DeferredItem<Item> BRONZE_PICKAXE = registerPickAxe("bronze_pickaxe", ModToolMaterials.BRONZE, 7.0F, -3.2F);
@@ -1084,6 +1086,8 @@ public class ModItems {
     public static final DeferredItem<Item> BRONZE_CHESTPLATE = registerArmor("bronze_chestplate", ModArmorMaterials.BRONZE, ArmorType.CHESTPLATE);
     public static final DeferredItem<Item> BRONZE_LEGGINGS = registerArmor("bronze_leggings", ModArmorMaterials.BRONZE, ArmorType.LEGGINGS);
     public static final DeferredItem<Item> BRONZE_BOOTS = registerArmor("bronze_boots", ModArmorMaterials.BRONZE, ArmorType.BOOTS);
+    public static final DeferredItem<Item> BRONZE_HORSE_ARMOR = registerHorseArmor("bronze_horse_armor", ModArmorMaterials.BRONZE);
+    public static final DeferredItem<Item> BRONZE_NAUTILUS_ARMOR = registerNautilusArmor("bronze_nautilus_armor", ModArmorMaterials.BRONZE);
     public static final DeferredItem<SmithingTemplateItem> BRONZE_UPGRADE_SMITHING_TEMPLATE = registerSmithingTemplate("bronze_upgrade_smithing_template");
 
     private static DeferredItem<Item> registerCustomItem(String registryName) {
@@ -1116,6 +1120,22 @@ public class ModItems {
                     )
             );
         }
+    }
+
+    private static DeferredItem<Item> registerTrimmableItem(String registryName, ResourceKey<TrimMaterial> trimMaterial) {
+        return ITEMS.register(
+                registryName, () -> new Item(
+                        new Item.Properties().setId(
+                                ResourceKey.create(
+                                        Registries.ITEM,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        ).trimMaterial(trimMaterial)
+                )
+        );
     }
 
     private static DeferredItem<BlockItem> registerBlockItem(String registryName, Supplier<Block> block){
@@ -1227,6 +1247,20 @@ public class ModItems {
         ));
     }
 
+    private static DeferredItem<Item> registerSpear(String registryName, ToolMaterial toolMaterial, float attackDuration, float damageMultiplier, float delay, float dismountTime, float dismountThreshold, float knockbackTime, float knockbackThreshold, float damageTime, float damageThreshold) {
+        return ITEMS.register(registryName, () -> new Item(
+                new Item.Properties().spear(toolMaterial, attackDuration, damageMultiplier, delay, dismountTime, dismountThreshold, knockbackTime, knockbackThreshold, damageTime, damageThreshold).setId(
+                        ResourceKey.create(
+                                Registries.ITEM,
+                                Identifier.fromNamespaceAndPath(
+                                        BuildersParadise.MODID,
+                                        registryName
+                                )
+                        )
+                )
+        ));
+    }
+
     private static DeferredItem<Item> registerAxe(String registryName, ToolMaterial toolMaterial, float attackDamage, float attackSpeed) {
         return ITEMS.register(registryName, () -> new Item(
                 new Item.Properties().axe(toolMaterial, attackDamage, attackSpeed).setId(
@@ -1286,6 +1320,34 @@ public class ModItems {
     private static DeferredItem<Item> registerArmor(String registryName, ArmorMaterial armorMaterial, ArmorType armorType) {
         return ITEMS.register(registryName, () -> new Item(
                 new Item.Properties().humanoidArmor(armorMaterial, armorType).setId(
+                        ResourceKey.create(
+                                Registries.ITEM,
+                                Identifier.fromNamespaceAndPath(
+                                        BuildersParadise.MODID,
+                                        registryName
+                                )
+                        )
+                )
+        ));
+    }
+
+    private static DeferredItem<Item> registerHorseArmor(String registryName, ArmorMaterial armorMaterial) {
+        return ITEMS.register(registryName, () -> new Item(
+                new Item.Properties().horseArmor(armorMaterial).setId(
+                        ResourceKey.create(
+                                Registries.ITEM,
+                                Identifier.fromNamespaceAndPath(
+                                        BuildersParadise.MODID,
+                                        registryName
+                                )
+                        )
+                )
+        ));
+    }
+
+    private static DeferredItem<Item> registerNautilusArmor(String registryName, ArmorMaterial armorMaterial) {
+        return ITEMS.register(registryName, () -> new Item(
+                new Item.Properties().nautilusArmor(armorMaterial).setId(
                         ResourceKey.create(
                                 Registries.ITEM,
                                 Identifier.fromNamespaceAndPath(

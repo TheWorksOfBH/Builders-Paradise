@@ -78,6 +78,83 @@
           "model": "buildersparadise:item/bronze_chestplate_resin_trim"
         },
         "when": "minecraft:resin"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_chestplate_zinc_trim"
+        },
+        "when": "buildersparadise:zinc"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_chestplate_silver_trim"
+        },
+        "when": "buildersparadise:silver"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_chestplate_tin_trim"
+        },
+        "when": "buildersparadise:tin"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_chestplate_tungsten_trim"
+        },
+        "when": "buildersparadise:tungsten"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_chestplate_platinum_trim"
+        },
+        "when": "buildersparadise:platinum"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_chestplate_lead_trim"
+        },
+        "when": "buildersparadise:lead"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_chestplate_uranium_trim"
+        },
+        "when": "buildersparadise:uranium"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_chestplate_bronze_trim"
+        },
+        "when": "buildersparadise:bronze"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_chestplate_brass_trim"
+        },
+        "when": "buildersparadise:brass"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_chestplate_steel_trim"
+        },
+        "when": "buildersparadise:steel"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_chestplate_sculk_trim"
+        },
+        "when": "buildersparadise:sculk"
       }
     ],
     "fallback": {

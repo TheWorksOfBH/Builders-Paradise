@@ -78,6 +78,83 @@
           "model": "buildersparadise:item/bronze_leggings_resin_trim"
         },
         "when": "minecraft:resin"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_leggings_zinc_trim"
+        },
+        "when": "buildersparadise:zinc"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_leggings_silver_trim"
+        },
+        "when": "buildersparadise:silver"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_leggings_tin_trim"
+        },
+        "when": "buildersparadise:tin"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_leggings_tungsten_trim"
+        },
+        "when": "buildersparadise:tungsten"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_leggings_platinum_trim"
+        },
+        "when": "buildersparadise:platinum"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_leggings_lead_trim"
+        },
+        "when": "buildersparadise:lead"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_leggings_uranium_trim"
+        },
+        "when": "buildersparadise:uranium"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_leggings_bronze_trim"
+        },
+        "when": "buildersparadise:bronze"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_leggings_brass_trim"
+        },
+        "when": "buildersparadise:brass"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_leggings_steel_trim"
+        },
+        "when": "buildersparadise:steel"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "buildersparadise:item/bronze_leggings_sculk_trim"
+        },
+        "when": "buildersparadise:sculk"
       }
     ],
     "fallback": {

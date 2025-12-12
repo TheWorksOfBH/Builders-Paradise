@@ -2,7 +2,7 @@ package github.theworksofbh.buildersparadise.mixins;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import github.theworksofbh.buildersparadise.items.ModItems;
-import net.minecraft.world.entity.vehicle.MinecartFurnace;
+import net.minecraft.world.entity.vehicle.minecart.MinecartFurnace;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;

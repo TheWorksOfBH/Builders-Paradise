@@ -1,8 +1,8 @@
 package github.theworksofbh.buildersparadise.config;
 
 import github.theworksofbh.buildersparadise.model_layers.ModModelLayers;
-import net.minecraft.client.model.BoatModel;
-import net.minecraft.client.model.MinecartModel;
+import net.minecraft.client.model.object.boat.BoatModel;
+import net.minecraft.client.model.object.cart.MinecartModel;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 
 public class EntityLayersConfig {

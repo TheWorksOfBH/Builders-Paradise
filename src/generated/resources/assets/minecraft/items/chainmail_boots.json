@@ -1,0 +1,166 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "cases": [
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_boots_quartz_trim"
+        },
+        "when": "minecraft:quartz"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_boots_iron_trim"
+        },
+        "when": "minecraft:iron"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_boots_netherite_trim"
+        },
+        "when": "minecraft:netherite"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_boots_redstone_trim"
+        },
+        "when": "minecraft:redstone"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_boots_copper_trim"
+        },
+        "when": "minecraft:copper"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_boots_gold_trim"
+        },
+        "when": "minecraft:gold"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_boots_emerald_trim"
+        },
+        "when": "minecraft:emerald"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_boots_diamond_trim"
+        },
+        "when": "minecraft:diamond"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_boots_lapis_trim"
+        },
+        "when": "minecraft:lapis"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_boots_amethyst_trim"
+        },
+        "when": "minecraft:amethyst"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_boots_resin_trim"
+        },
+        "when": "minecraft:resin"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_boots_zinc_trim"
+        },
+        "when": "buildersparadise:zinc"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_boots_silver_trim"
+        },
+        "when": "buildersparadise:silver"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_boots_tin_trim"
+        },
+        "when": "buildersparadise:tin"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_boots_tungsten_trim"
+        },
+        "when": "buildersparadise:tungsten"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_boots_platinum_trim"
+        },
+        "when": "buildersparadise:platinum"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_boots_lead_trim"
+        },
+        "when": "buildersparadise:lead"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_boots_uranium_trim"
+        },
+        "when": "buildersparadise:uranium"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_boots_bronze_trim"
+        },
+        "when": "buildersparadise:bronze"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_boots_brass_trim"
+        },
+        "when": "buildersparadise:brass"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_boots_steel_trim"
+        },
+        "when": "buildersparadise:steel"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_boots_sculk_trim"
+        },
+        "when": "buildersparadise:sculk"
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/chainmail_boots"
+    },
+    "property": "minecraft:trim_material"
+  }
+}

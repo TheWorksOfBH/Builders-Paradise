@@ -18,7 +18,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Explosion;
-import net.minecraft.world.level.GameRules;
+import net.minecraft.world.level.gamerules.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
@@ -53,7 +53,7 @@ public class NukeBlock extends TntBlock {
     @Deprecated
     private static boolean prime(Level level, BlockPos pos, @Nullable LivingEntity entity) {
         if (level instanceof ServerLevel serverlevel) {
-            if (serverlevel.getGameRules().getBoolean(GameRules.RULE_TNT_EXPLODES)) {
+            if (serverlevel.getGameRules().get(GameRules.TNT_EXPLODES)) {
                 PrimedNuke primedNuke = new PrimedNuke(level, (double)pos.getX() + (double)0.5F, (double)pos.getY(), (double)pos.getZ() + (double)0.5F, entity);
                 level.addFreshEntity(primedNuke);
                 level.playSound((Entity)null, primedNuke.getX(), primedNuke.getY(), primedNuke.getZ(), SoundEvents.TNT_PRIMED, SoundSource.BLOCKS, 1.0F, 1.0F);

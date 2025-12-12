@@ -1,11 +1,21 @@
 {
   "layers": {
+    "horse_body": [
+      {
+        "texture": "buildersparadise:bronze"
+      }
+    ],
     "humanoid": [
       {
         "texture": "buildersparadise:bronze"
       }
     ],
     "humanoid_leggings": [
+      {
+        "texture": "buildersparadise:bronze"
+      }
+    ],
+    "nautilus_body": [
       {
         "texture": "buildersparadise:bronze"
       }

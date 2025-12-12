@@ -5,7 +5,7 @@ import github.theworksofbh.buildersparadise.block.ModDoorBlock;
 import github.theworksofbh.buildersparadise.block.ModSlabBlock;
 import github.theworksofbh.buildersparadise.block.ModStairBlock;
 import github.theworksofbh.buildersparadise.items.ModItems;
-import net.minecraft.advancements.critereon.StatePropertiesPredicate;
+import net.minecraft.advancements.criterion.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;

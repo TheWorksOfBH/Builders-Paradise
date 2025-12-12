@@ -186,6 +186,8 @@ public class ModAustraliaLanguageProvider extends LanguageProvider {
             imAussieM8 = readjusted.replace("ize", "ise");
         } else if (readjusted.contains("gray")) {
             imAussieM8 = readjusted.replace("gray", "grey");
+        } else if (readjusted.contains("armor")) {
+            imAussieM8 = readjusted.replace("armor", "armour");
         } else {
             imAussieM8 = readjusted;
         }
@@ -240,5 +242,16 @@ public class ModAustraliaLanguageProvider extends LanguageProvider {
         this.add("item.buildersparadise.smithing_template.bronze_upgrade.ingredients", "Bronze Ingot");
         this.add("item.buildersparadise.smithing_template.bronze_upgrade.base_slot_description", "Add copper armour, weapon, or tool");
         this.add("item.buildersparadise.smithing_template.bronze_upgrade.additions_slot_description", "Add Bronze Ingot");
+        this.add("trim_material.buildersparadise.zinc", "Zinc Material");
+        this.add("trim_material.buildersparadise.silver", "Silver Material");
+        this.add("trim_material.buildersparadise.tin", "Tin Material");
+        this.add("trim_material.buildersparadise.tungsten", "Tungsten Material");
+        this.add("trim_material.buildersparadise.platinum", "Platinum Material");
+        this.add("trim_material.buildersparadise.lead", "Lead Material");
+        this.add("trim_material.buildersparadise.uranium", "Uranium Material");
+        this.add("trim_material.buildersparadise.bronze", "Bronze Material");
+        this.add("trim_material.buildersparadise.brass", "Brass Material");
+        this.add("trim_material.buildersparadise.steel", "Steel Material");
+        this.add("trim_material.buildersparadise.sculk", "Sculk Material");
     }
 }

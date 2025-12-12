@@ -1186,6 +1186,9 @@ public class CreativeInvConfig {
 
             tabData.insertAfter(Items.COPPER_SWORD.getDefaultInstance(), ModItems.BRONZE_SWORD.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(Items.COPPER_AXE.getDefaultInstance(), ModItems.BRONZE_AXE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.COPPER_SPEAR.getDefaultInstance(), ModItems.BRONZE_SPEAR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.COPPER_HORSE_ARMOR.getDefaultInstance(), ModItems.BRONZE_HORSE_ARMOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.COPPER_NAUTILUS_ARMOR.getDefaultInstance(), ModItems.BRONZE_NAUTILUS_ARMOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.insertAfter(Items.COPPER_BOOTS.getDefaultInstance(), ModItems.BRONZE_HELMET.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.BRONZE_HELMET.get().getDefaultInstance(), ModItems.BRONZE_CHESTPLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
