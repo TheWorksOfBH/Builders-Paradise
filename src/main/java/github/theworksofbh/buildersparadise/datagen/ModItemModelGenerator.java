@@ -31,66 +31,68 @@ public class ModItemModelGenerator extends ItemModelGenerators {
         super(itemModelOutput, modelOutput);
     }
 
-    public static final List<ModTrimMaterialData> MOD_TRIM_MATERIAL_MODELS = List.of(
-            new ModTrimMaterialData(MaterialAssetGroup.QUARTZ, TrimMaterials.QUARTZ),
-            new ModTrimMaterialData(MaterialAssetGroup.IRON, TrimMaterials.IRON),
-            new ModTrimMaterialData(MaterialAssetGroup.NETHERITE, TrimMaterials.NETHERITE),
-            new ModTrimMaterialData(MaterialAssetGroup.REDSTONE, TrimMaterials.REDSTONE),
-            new ModTrimMaterialData(MaterialAssetGroup.COPPER, TrimMaterials.COPPER),
-            new ModTrimMaterialData(MaterialAssetGroup.GOLD, TrimMaterials.GOLD),
-            new ModTrimMaterialData(MaterialAssetGroup.EMERALD, TrimMaterials.EMERALD),
-            new ModTrimMaterialData(MaterialAssetGroup.DIAMOND, TrimMaterials.DIAMOND),
-            new ModTrimMaterialData(MaterialAssetGroup.LAPIS, TrimMaterials.LAPIS),
-            new ModTrimMaterialData(MaterialAssetGroup.AMETHYST, TrimMaterials.AMETHYST),
-            new ModTrimMaterialData(MaterialAssetGroup.RESIN, TrimMaterials.RESIN),
-            new ModTrimMaterialData(ModMaterialAssetGroups.ZINC, ModTrimMaterials.ZINC),
-            new ModTrimMaterialData(ModMaterialAssetGroups.SILVER, ModTrimMaterials.SILVER),
-            new ModTrimMaterialData(ModMaterialAssetGroups.TIN, ModTrimMaterials.TIN),
-            new ModTrimMaterialData(ModMaterialAssetGroups.TUNGSTEN, ModTrimMaterials.TUNGSTEN),
-            new ModTrimMaterialData(ModMaterialAssetGroups.PLATINUM, ModTrimMaterials.PLATINUM),
-            new ModTrimMaterialData(ModMaterialAssetGroups.LEAD, ModTrimMaterials.LEAD),
-            new ModTrimMaterialData(ModMaterialAssetGroups.URANIUM, ModTrimMaterials.URANIUM),
-            new ModTrimMaterialData(ModMaterialAssetGroups.BRONZE, ModTrimMaterials.BRONZE),
-            new ModTrimMaterialData(ModMaterialAssetGroups.BRASS, ModTrimMaterials.BRASS),
-            new ModTrimMaterialData(ModMaterialAssetGroups.STEEL, ModTrimMaterials.STEEL),
-            new ModTrimMaterialData(ModMaterialAssetGroups.SCULK, ModTrimMaterials.SCULK)
-            );
+    public static final List<TrimMaterialData> MOD_TRIM_MATERIAL_MODELS = List.of(
+            new ItemModelGenerators.TrimMaterialData(MaterialAssetGroup.QUARTZ, TrimMaterials.QUARTZ),
+            new ItemModelGenerators.TrimMaterialData(MaterialAssetGroup.IRON, TrimMaterials.IRON),
+            new ItemModelGenerators.TrimMaterialData(MaterialAssetGroup.NETHERITE, TrimMaterials.NETHERITE),
+            new ItemModelGenerators.TrimMaterialData(MaterialAssetGroup.REDSTONE, TrimMaterials.REDSTONE),
+            new ItemModelGenerators.TrimMaterialData(MaterialAssetGroup.COPPER, TrimMaterials.COPPER),
+            new ItemModelGenerators.TrimMaterialData(MaterialAssetGroup.GOLD, TrimMaterials.GOLD),
+            new ItemModelGenerators.TrimMaterialData(MaterialAssetGroup.EMERALD, TrimMaterials.EMERALD),
+            new ItemModelGenerators.TrimMaterialData(MaterialAssetGroup.DIAMOND, TrimMaterials.DIAMOND),
+            new ItemModelGenerators.TrimMaterialData(MaterialAssetGroup.LAPIS, TrimMaterials.LAPIS),
+            new ItemModelGenerators.TrimMaterialData(MaterialAssetGroup.AMETHYST, TrimMaterials.AMETHYST),
+            new ItemModelGenerators.TrimMaterialData(MaterialAssetGroup.RESIN, TrimMaterials.RESIN),
+            new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.ZINC, ModTrimMaterials.ZINC),
+            new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.SILVER, ModTrimMaterials.SILVER),
+            new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.TIN, ModTrimMaterials.TIN),
+            new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.TUNGSTEN, ModTrimMaterials.TUNGSTEN),
+            new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.PLATINUM, ModTrimMaterials.PLATINUM),
+            new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.LEAD, ModTrimMaterials.LEAD),
+            new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.URANIUM, ModTrimMaterials.URANIUM),
+            new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.BRONZE, ModTrimMaterials.BRONZE),
+            new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.BRASS, ModTrimMaterials.BRASS),
+            new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.STEEL, ModTrimMaterials.STEEL),
+            new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.SCULK, ModTrimMaterials.SCULK)
+    );
 
-    public void generateCustomTrimmableItem(Item item, ResourceKey<EquipmentAsset> assetResourceKey, Identifier prefix, boolean dyeable) {
-        Identifier identifier = ModelLocationUtils.getModelLocation(item);
-        Identifier identifier1 = TextureMapping.getItemTexture(item);
-        Identifier identifier2 = TextureMapping.getItemTexture(item, "_overlay");
-        List<SelectItemModel.SwitchCase<ResourceKey<TrimMaterial>>> list = new ArrayList(MOD_TRIM_MATERIAL_MODELS.size());
+    @Override
+    public void generateTrimmableItem(Item item, ResourceKey<EquipmentAsset> equipmentAsset, Identifier trimBaseTexture, boolean hasOverlay) {
+        Identifier modelId = ModelLocationUtils.getModelLocation(item);
+        Identifier baseTexture = TextureMapping.getItemTexture(item);
+        Identifier overlayTexture = TextureMapping.getItemTexture(item, "_overlay");
 
-        for (ModTrimMaterialData moditemmodelgenerator$modtrimmaterialdata : MOD_TRIM_MATERIAL_MODELS) {
-            Identifier identifier3 = identifier.withSuffix("_" + moditemmodelgenerator$modtrimmaterialdata.assets().base().suffix() + "_trim");
-            String var10001 = moditemmodelgenerator$modtrimmaterialdata.assets().assetId(assetResourceKey).suffix();
-            Identifier identifier4 = prefix.withSuffix("_" + var10001);
-            ItemModel.Unbaked itemmodel$unbaked;
-            if (dyeable) {
-                this.generateLayeredItem(identifier3, identifier1, identifier2, identifier4);
-                itemmodel$unbaked = ItemModelUtils.tintedModel(identifier3, new ItemTintSource[]{new Dye(-6265536)});
+        List<SelectItemModel.SwitchCase<ResourceKey<TrimMaterial>>> cases = new ArrayList<>(MOD_TRIM_MATERIAL_MODELS.size());
+
+        for (TrimMaterialData trimData : MOD_TRIM_MATERIAL_MODELS) {
+            Identifier trimmedModelId = modelId.withSuffix("_" + trimData.assets().base().suffix() + "_trim");
+
+            Identifier materialId = trimData.materialKey().identifier();
+
+            String trimSuffix = trimData.assets().assetId(equipmentAsset).suffix();
+
+            Identifier layer1Texture = Identifier.withDefaultNamespace(
+                    trimBaseTexture.getPath() + "_" + trimSuffix);
+
+            ItemModel.Unbaked unbaked;
+            if (hasOverlay) {
+                this.generateLayeredItem(trimmedModelId, baseTexture, overlayTexture, layer1Texture);
+                unbaked = ItemModelUtils.tintedModel(trimmedModelId, new ItemTintSource[]{ new Dye(-6265536) });
             } else {
-                this.generateLayeredItem(identifier3, identifier1, identifier4);
-                itemmodel$unbaked = ItemModelUtils.plainModel(identifier3);
+                this.generateLayeredItem(trimmedModelId, baseTexture, layer1Texture);
+                unbaked = ItemModelUtils.plainModel(trimmedModelId);
             }
-
-            list.add(ItemModelUtils.when(moditemmodelgenerator$modtrimmaterialdata.materialKey, itemmodel$unbaked));
+            cases.add(ItemModelUtils.when(trimData.materialKey(), unbaked));
         }
-
-        ItemModel.Unbaked itemmodel$unbaked1;
-        if (dyeable) {
-            ModelTemplates.TWO_LAYERED_ITEM.create(identifier, TextureMapping.layered(identifier1, identifier2), this.modelOutput);
-            itemmodel$unbaked1 = ItemModelUtils.tintedModel(identifier, new ItemTintSource[]{new Dye(-6265536)});
+        ItemModel.Unbaked fallback;
+        if (hasOverlay) {
+            ModelTemplates.TWO_LAYERED_ITEM.create(modelId, TextureMapping.layered(baseTexture, overlayTexture), this.modelOutput);
+            fallback = ItemModelUtils.tintedModel(modelId, new ItemTintSource[]{ new Dye(-6265536) });
         } else {
-            ModelTemplates.FLAT_ITEM.create(identifier, TextureMapping.layer0(identifier1), this.modelOutput);
-            itemmodel$unbaked1 = ItemModelUtils.plainModel(identifier);
+            ModelTemplates.FLAT_ITEM.create(modelId, TextureMapping.layer0(baseTexture), this.modelOutput);
+            fallback = ItemModelUtils.plainModel(modelId);
         }
-
-        this.itemModelOutput.accept(item, ItemModelUtils.select(new TrimMaterialProperty(), itemmodel$unbaked1, list));
-    }
-
-    public static record ModTrimMaterialData(MaterialAssetGroup assets, ResourceKey<TrimMaterial> materialKey) {
+        this.itemModelOutput.accept(item, ItemModelUtils.select(new TrimMaterialProperty(), fallback, cases));
     }
 
     @Override
@@ -174,42 +176,42 @@ public class ModItemModelGenerator extends ItemModelGenerators {
         this.generateFlatItem(ModItems.BRONZE_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         this.generateFlatItem(ModItems.BRONZE_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         this.generateSpear(ModItems.BRONZE_SPEAR.get());
-        this.generateCustomTrimmableItem(ModItems.BRONZE_HELMET.get(), ModArmorMaterials.BRONZE_ASSETS, TRIM_PREFIX_HELMET, false);
-        this.generateCustomTrimmableItem(ModItems.BRONZE_CHESTPLATE.get(), ModArmorMaterials.BRONZE_ASSETS, TRIM_PREFIX_CHESTPLATE, false);
-        this.generateCustomTrimmableItem(ModItems.BRONZE_LEGGINGS.get(), ModArmorMaterials.BRONZE_ASSETS, TRIM_PREFIX_LEGGINGS, false);
-        this.generateCustomTrimmableItem(ModItems.BRONZE_BOOTS.get(), ModArmorMaterials.BRONZE_ASSETS, TRIM_PREFIX_BOOTS, false);
+        this.generateTrimmableItem(ModItems.BRONZE_HELMET.get(), ModArmorMaterials.BRONZE_ASSETS, TRIM_PREFIX_HELMET, false);
+        this.generateTrimmableItem(ModItems.BRONZE_CHESTPLATE.get(), ModArmorMaterials.BRONZE_ASSETS, TRIM_PREFIX_CHESTPLATE, false);
+        this.generateTrimmableItem(ModItems.BRONZE_LEGGINGS.get(), ModArmorMaterials.BRONZE_ASSETS, TRIM_PREFIX_LEGGINGS, false);
+        this.generateTrimmableItem(ModItems.BRONZE_BOOTS.get(), ModArmorMaterials.BRONZE_ASSETS, TRIM_PREFIX_BOOTS, false);
         this.generateFlatItem(ModItems.BRONZE_UPGRADE_SMITHING_TEMPLATE.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(ModItems.BRONZE_HORSE_ARMOR.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(ModItems.BRONZE_NAUTILUS_ARMOR.get(), ModelTemplates.FLAT_ITEM);
-        this.generateCustomTrimmableItem(Items.LEATHER_HELMET, EquipmentAssets.LEATHER, TRIM_PREFIX_HELMET, true);
-        this.generateCustomTrimmableItem(Items.LEATHER_CHESTPLATE, EquipmentAssets.LEATHER, TRIM_PREFIX_CHESTPLATE, true);
-        this.generateCustomTrimmableItem(Items.LEATHER_LEGGINGS, EquipmentAssets.LEATHER, TRIM_PREFIX_LEGGINGS, true);
-        this.generateCustomTrimmableItem(Items.LEATHER_BOOTS, EquipmentAssets.LEATHER, TRIM_PREFIX_BOOTS, true);
-        this.generateCustomTrimmableItem(Items.CHAINMAIL_HELMET, EquipmentAssets.CHAINMAIL, TRIM_PREFIX_HELMET, false);
-        this.generateCustomTrimmableItem(Items.CHAINMAIL_CHESTPLATE, EquipmentAssets.CHAINMAIL, TRIM_PREFIX_CHESTPLATE, false);
-        this.generateCustomTrimmableItem(Items.CHAINMAIL_LEGGINGS, EquipmentAssets.CHAINMAIL, TRIM_PREFIX_LEGGINGS, false);
-        this.generateCustomTrimmableItem(Items.CHAINMAIL_BOOTS, EquipmentAssets.CHAINMAIL, TRIM_PREFIX_BOOTS, false);
-        this.generateCustomTrimmableItem(Items.COPPER_HELMET, EquipmentAssets.COPPER, TRIM_PREFIX_HELMET, false);
-        this.generateCustomTrimmableItem(Items.COPPER_CHESTPLATE, EquipmentAssets.COPPER, TRIM_PREFIX_CHESTPLATE, false);
-        this.generateCustomTrimmableItem(Items.COPPER_LEGGINGS, EquipmentAssets.COPPER, TRIM_PREFIX_LEGGINGS, false);
-        this.generateCustomTrimmableItem(Items.COPPER_BOOTS, EquipmentAssets.COPPER, TRIM_PREFIX_BOOTS, false);
-        this.generateCustomTrimmableItem(Items.IRON_HELMET, EquipmentAssets.IRON, TRIM_PREFIX_HELMET, false);
-        this.generateCustomTrimmableItem(Items.IRON_CHESTPLATE, EquipmentAssets.IRON, TRIM_PREFIX_CHESTPLATE, false);
-        this.generateCustomTrimmableItem(Items.IRON_LEGGINGS, EquipmentAssets.IRON, TRIM_PREFIX_LEGGINGS, false);
-        this.generateCustomTrimmableItem(Items.IRON_BOOTS, EquipmentAssets.IRON, TRIM_PREFIX_BOOTS, false);
-        this.generateCustomTrimmableItem(Items.GOLDEN_HELMET, EquipmentAssets.GOLD, TRIM_PREFIX_HELMET, false);
-        this.generateCustomTrimmableItem(Items.GOLDEN_CHESTPLATE, EquipmentAssets.GOLD, TRIM_PREFIX_CHESTPLATE, false);
-        this.generateCustomTrimmableItem(Items.GOLDEN_LEGGINGS, EquipmentAssets.GOLD, TRIM_PREFIX_LEGGINGS, false);
-        this.generateCustomTrimmableItem(Items.GOLDEN_BOOTS, EquipmentAssets.GOLD, TRIM_PREFIX_BOOTS, false);
-        this.generateCustomTrimmableItem(Items.DIAMOND_HELMET, EquipmentAssets.DIAMOND, TRIM_PREFIX_HELMET, false);
-        this.generateCustomTrimmableItem(Items.DIAMOND_CHESTPLATE, EquipmentAssets.DIAMOND, TRIM_PREFIX_CHESTPLATE, false);
-        this.generateCustomTrimmableItem(Items.DIAMOND_LEGGINGS, EquipmentAssets.DIAMOND, TRIM_PREFIX_LEGGINGS, false);
-        this.generateCustomTrimmableItem(Items.DIAMOND_BOOTS, EquipmentAssets.DIAMOND, TRIM_PREFIX_BOOTS, false);
-        this.generateCustomTrimmableItem(Items.NETHERITE_HELMET, EquipmentAssets.NETHERITE, TRIM_PREFIX_HELMET, false);
-        this.generateCustomTrimmableItem(Items.NETHERITE_CHESTPLATE, EquipmentAssets.NETHERITE, TRIM_PREFIX_CHESTPLATE, false);
-        this.generateCustomTrimmableItem(Items.NETHERITE_LEGGINGS, EquipmentAssets.NETHERITE, TRIM_PREFIX_LEGGINGS, false);
-        this.generateCustomTrimmableItem(Items.NETHERITE_BOOTS, EquipmentAssets.NETHERITE, TRIM_PREFIX_BOOTS, false);
-
+        this.generateTrimmableItem(Items.TURTLE_HELMET, EquipmentAssets.TURTLE_SCUTE, TRIM_PREFIX_HELMET, false);
+        this.generateTrimmableItem(Items.LEATHER_HELMET, EquipmentAssets.LEATHER, TRIM_PREFIX_HELMET, true);
+        this.generateTrimmableItem(Items.LEATHER_CHESTPLATE, EquipmentAssets.LEATHER, TRIM_PREFIX_CHESTPLATE, true);
+        this.generateTrimmableItem(Items.LEATHER_LEGGINGS, EquipmentAssets.LEATHER, TRIM_PREFIX_LEGGINGS, true);
+        this.generateTrimmableItem(Items.LEATHER_BOOTS, EquipmentAssets.LEATHER, TRIM_PREFIX_BOOTS, true);
+        this.generateTrimmableItem(Items.COPPER_HELMET, EquipmentAssets.COPPER, TRIM_PREFIX_HELMET, false);
+        this.generateTrimmableItem(Items.COPPER_CHESTPLATE, EquipmentAssets.COPPER, TRIM_PREFIX_CHESTPLATE, false);
+        this.generateTrimmableItem(Items.COPPER_LEGGINGS, EquipmentAssets.COPPER, TRIM_PREFIX_LEGGINGS, false);
+        this.generateTrimmableItem(Items.COPPER_BOOTS, EquipmentAssets.COPPER, TRIM_PREFIX_BOOTS, false);
+        this.generateTrimmableItem(Items.CHAINMAIL_HELMET, EquipmentAssets.CHAINMAIL, TRIM_PREFIX_HELMET, false);
+        this.generateTrimmableItem(Items.CHAINMAIL_CHESTPLATE, EquipmentAssets.CHAINMAIL, TRIM_PREFIX_CHESTPLATE, false);
+        this.generateTrimmableItem(Items.CHAINMAIL_LEGGINGS, EquipmentAssets.CHAINMAIL, TRIM_PREFIX_LEGGINGS, false);
+        this.generateTrimmableItem(Items.CHAINMAIL_BOOTS, EquipmentAssets.CHAINMAIL, TRIM_PREFIX_BOOTS, false);
+        this.generateTrimmableItem(Items.IRON_HELMET, EquipmentAssets.IRON, TRIM_PREFIX_HELMET, false);
+        this.generateTrimmableItem(Items.IRON_CHESTPLATE, EquipmentAssets.IRON, TRIM_PREFIX_CHESTPLATE, false);
+        this.generateTrimmableItem(Items.IRON_LEGGINGS, EquipmentAssets.IRON, TRIM_PREFIX_LEGGINGS, false);
+        this.generateTrimmableItem(Items.IRON_BOOTS, EquipmentAssets.IRON, TRIM_PREFIX_BOOTS, false);
+        this.generateTrimmableItem(Items.DIAMOND_HELMET, EquipmentAssets.DIAMOND, TRIM_PREFIX_HELMET, false);
+        this.generateTrimmableItem(Items.DIAMOND_CHESTPLATE, EquipmentAssets.DIAMOND, TRIM_PREFIX_CHESTPLATE, false);
+        this.generateTrimmableItem(Items.DIAMOND_LEGGINGS, EquipmentAssets.DIAMOND, TRIM_PREFIX_LEGGINGS, false);
+        this.generateTrimmableItem(Items.DIAMOND_BOOTS, EquipmentAssets.DIAMOND, TRIM_PREFIX_BOOTS, false);
+        this.generateTrimmableItem(Items.GOLDEN_HELMET, EquipmentAssets.GOLD, TRIM_PREFIX_HELMET, false);
+        this.generateTrimmableItem(Items.GOLDEN_CHESTPLATE, EquipmentAssets.GOLD, TRIM_PREFIX_CHESTPLATE, false);
+        this.generateTrimmableItem(Items.GOLDEN_LEGGINGS, EquipmentAssets.GOLD, TRIM_PREFIX_LEGGINGS, false);
+        this.generateTrimmableItem(Items.GOLDEN_BOOTS, EquipmentAssets.GOLD, TRIM_PREFIX_BOOTS, false);
+        this.generateTrimmableItem(Items.NETHERITE_HELMET, EquipmentAssets.NETHERITE, TRIM_PREFIX_HELMET, false);
+        this.generateTrimmableItem(Items.NETHERITE_CHESTPLATE, EquipmentAssets.NETHERITE, TRIM_PREFIX_CHESTPLATE, false);
+        this.generateTrimmableItem(Items.NETHERITE_LEGGINGS, EquipmentAssets.NETHERITE, TRIM_PREFIX_LEGGINGS, false);
+        this.generateTrimmableItem(Items.NETHERITE_BOOTS, EquipmentAssets.NETHERITE, TRIM_PREFIX_BOOTS, false);
 
     }
 }

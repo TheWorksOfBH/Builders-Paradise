@@ -137,6 +137,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                     else if (block instanceof WallBlock) {
                         tag(BlockTags.WALLS).add(block);
                     }
+                    else if (block instanceof FenceBlock) {
+                        tag(BlockTags.FENCES).add(block);
+                    }
                     else if (block instanceof GrindstoneBlock) {
                         tag(ModBlockTags.GRINDSTONES).add(block);
                     } else if (block instanceof FurnaceBlock) {

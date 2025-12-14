@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "buildersparadise:calcite_bricks"
+          "name": "buildersparadise:calcite_brick_fence"
         }
       ],
       "rolls": 1.0

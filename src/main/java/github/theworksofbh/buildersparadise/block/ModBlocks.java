@@ -983,6 +983,167 @@ public class ModBlocks {
     public static final DeferredBlock<WallBlock> SCULK_BRICK_WALL = registerWallBlock("sculk_brick_wall", () -> SCULK_BRICKS.get());
     public static final DeferredBlock<Block> CHISELED_SCULK_BRICKS = registerBlockVariant("chiseled_sculk_bricks", () -> SCULK_BRICKS.get());
 
+    public static final DeferredBlock<FenceBlock> STONE_FENCE = registerFenceBlock("stone_fence", () -> Blocks.STONE);
+    public static final DeferredBlock<FenceBlock> COBBLESTONE_FENCE = registerFenceBlock("cobblestone_fence", () -> Blocks.COBBLESTONE);
+    public static final DeferredBlock<FenceBlock> MOSSY_COBBLESTONE_FENCE = registerFenceBlock("mossy_cobblestone_fence", () -> Blocks.MOSSY_COBBLESTONE);
+    public static final DeferredBlock<FenceBlock> SMOOTH_STONE_FENCE = registerFenceBlock("smooth_stone_fence", () -> Blocks.SMOOTH_STONE);
+    public static final DeferredBlock<FenceBlock> STONE_BRICK_FENCE = registerFenceBlock("stone_brick_fence", () -> Blocks.STONE_BRICKS);
+    public static final DeferredBlock<FenceBlock> MOSSY_STONE_BRICK_FENCE = registerFenceBlock("mossy_stone_brick_fence", () -> Blocks.MOSSY_STONE_BRICKS);
+    public static final DeferredBlock<FenceBlock> CRACKED_STONE_BRICK_FENCE = registerFenceBlock("cracked_stone_brick_fence", () -> Blocks.CRACKED_STONE_BRICKS);
+    public static final DeferredBlock<FenceBlock> STONE_TILE_FENCE = registerFenceBlock("stone_tile_fence", () -> STONE_TILES.get());
+    public static final DeferredBlock<FenceBlock> MOSSY_STONE_TILE_FENCE = registerFenceBlock("mossy_stone_tile_fence", () -> MOSSY_STONE_TILES.get());
+    public static final DeferredBlock<FenceBlock> CRACKED_STONE_TILE_FENCE = registerFenceBlock("cracked_stone_tile_fence", () -> CRACKED_STONE_TILES.get());
+
+    public static final DeferredBlock<FenceBlock> GRANITE_FENCE = registerFenceBlock("granite_fence", () -> Blocks.GRANITE);
+    public static final DeferredBlock<FenceBlock> POLISHED_GRANITE_FENCE = registerFenceBlock("polished_granite_fence", () -> Blocks.POLISHED_GRANITE);
+    public static final DeferredBlock<FenceBlock> POLISHED_GRANITE_BRICK_FENCE = registerFenceBlock("polished_granite_brick_fence", () -> POLISHED_GRANITE_BRICKS.get());
+
+    public static final DeferredBlock<FenceBlock> DIORITE_FENCE = registerFenceBlock("diorite_fence", () -> Blocks.DIORITE);
+    public static final DeferredBlock<FenceBlock> POLISHED_DIORITE_FENCE = registerFenceBlock("polished_diorite_fence", () -> Blocks.POLISHED_DIORITE);
+    public static final DeferredBlock<FenceBlock> POLISHED_DIORITE_BRICK_FENCE = registerFenceBlock("polished_diorite_brick_fence", () -> POLISHED_DIORITE_BRICKS.get());
+
+    public static final DeferredBlock<FenceBlock> ANDESITE_FENCE = registerFenceBlock("andesite_fence", () -> Blocks.ANDESITE);
+    public static final DeferredBlock<FenceBlock> POLISHED_ANDESITE_FENCE = registerFenceBlock("polished_andesite_fence", () -> Blocks.POLISHED_ANDESITE);
+    public static final DeferredBlock<FenceBlock> POLISHED_ANDESITE_BRICK_FENCE = registerFenceBlock("polished_andesite_brick_fence", () -> POLISHED_ANDESITE_BRICKS.get());
+
+    public static final DeferredBlock<FenceBlock> DEEPSLATE_FENCE = registerFenceBlock("deepslate_fence", () -> Blocks.DEEPSLATE);
+    public static final DeferredBlock<FenceBlock> COBBLED_DEEPSLATE_FENCE = registerFenceBlock("cobbled_deepslate_fence", () -> Blocks.COBBLED_DEEPSLATE);
+    public static final DeferredBlock<FenceBlock> POLISHED_DEEPSLATE_FENCE = registerFenceBlock("polished_deepslate_fence", () -> Blocks.POLISHED_DEEPSLATE);
+    public static final DeferredBlock<FenceBlock> DEEPSLATE_BRICK_FENCE = registerFenceBlock("deepslate_brick_fence", () -> Blocks.DEEPSLATE_BRICKS);
+    public static final DeferredBlock<FenceBlock> CRACKED_DEEPSLATE_BRICK_FENCE = registerFenceBlock("cracked_deepslate_brick_fence", () -> Blocks.CRACKED_DEEPSLATE_BRICKS);
+    public static final DeferredBlock<FenceBlock> DEEPSLATE_TILE_FENCE = registerFenceBlock("deepslate_tile_fence", () -> Blocks.DEEPSLATE_TILES);
+    public static final DeferredBlock<FenceBlock> CRACKED_DEEPSLATE_TILE_FENCE = registerFenceBlock("cracked_deepslate_tile_fence", () -> Blocks.CRACKED_DEEPSLATE_TILES);
+
+    public static final DeferredBlock<FenceBlock> TUFF_FENCE = registerFenceBlock("tuff_fence", () -> Blocks.TUFF);
+    public static final DeferredBlock<FenceBlock> POLISHED_TUFF_FENCE = registerFenceBlock("polished_tuff_fence", () -> Blocks.POLISHED_TUFF);
+    public static final DeferredBlock<FenceBlock> TUFF_BRICK_FENCE = registerFenceBlock("tuff_brick_fence", () -> Blocks.TUFF_BRICKS);
+
+    public static final DeferredBlock<FenceBlock> CALCITE_FENCE = registerFenceBlock("calcite_fence", () -> Blocks.CALCITE);
+    public static final DeferredBlock<FenceBlock> POLISHED_CALCITE_FENCE = registerFenceBlock("polished_calcite_fence", () -> POLISHED_CALCITE.get());
+    public static final DeferredBlock<FenceBlock> CALCITE_BRICK_FENCE = registerFenceBlock("calcite_brick_fence", () -> CALCITE_BRICKS.get());
+
+    public static final DeferredBlock<FenceBlock> DRIPSTONE_FENCE = registerFenceBlock("dripstone_fence", () -> Blocks.DRIPSTONE_BLOCK);
+    public static final DeferredBlock<FenceBlock> POLISHED_DRIPSTONE_FENCE = registerFenceBlock("polished_dripstone_fence", () -> POLISHED_DRIPSTONE.get());
+    public static final DeferredBlock<FenceBlock> DRIPSTONE_BRICK_FENCE = registerFenceBlock("dripstone_brick_fence", () -> DRIPSTONE_BRICKS.get());
+
+    public static final DeferredBlock<FenceBlock> BRICK_FENCE = registerFenceBlock("brick_fence", () -> Blocks.BRICKS);
+
+    public static final DeferredBlock<FenceBlock> PACKED_MUD_FENCE = registerFenceBlock("packed_mud_fence", () -> Blocks.PACKED_MUD);
+    public static final DeferredBlock<FenceBlock> MUD_BRICK_FENCE = registerFenceBlock("mud_brick_fence", () -> Blocks.MUD_BRICKS);
+
+    public static final DeferredBlock<FenceBlock> RESIN_FENCE = registerFenceBlock("resin_fence", () -> Blocks.RESIN_BLOCK);
+    public static final DeferredBlock<FenceBlock> RESIN_BRICK_FENCE = registerFenceBlock("resin_brick_fence", () -> Blocks.RESIN_BRICKS);
+
+    public static final DeferredBlock<FenceBlock> SANDSTONE_FENCE = registerFenceBlock("sandstone_fence", () -> Blocks.SANDSTONE);
+    public static final DeferredBlock<FenceBlock> CUT_SANDSTONE_FENCE = registerFenceBlock("cut_sandstone_fence", () -> Blocks.CUT_SANDSTONE);
+    public static final DeferredBlock<FenceBlock> SMOOTH_SANDSTONE_FENCE = registerFenceBlock("smooth_sandstone_fence", () -> Blocks.SMOOTH_SANDSTONE);
+
+    public static final DeferredBlock<FenceBlock> RED_SANDSTONE_FENCE = registerFenceBlock("red_sandstone_fence", () -> Blocks.RED_SANDSTONE);
+    public static final DeferredBlock<FenceBlock> CUT_RED_SANDSTONE_FENCE = registerFenceBlock("cut_red_sandstone_fence", () -> Blocks.CUT_RED_SANDSTONE);
+    public static final DeferredBlock<FenceBlock> SMOOTH_RED_SANDSTONE_FENCE = registerFenceBlock("smooth_red_sandstone_fence", () -> Blocks.SMOOTH_RED_SANDSTONE);
+
+    public static final DeferredBlock<FenceBlock> SOUL_SANDSTONE_FENCE = registerFenceBlock("soul_sandstone_fence", () -> SOUL_SANDSTONE.get());
+    public static final DeferredBlock<FenceBlock> CUT_SOUL_SANDSTONE_FENCE = registerFenceBlock("cut_soul_sandstone_fence", () -> CUT_SOUL_SANDSTONE.get());
+    public static final DeferredBlock<FenceBlock> SMOOTH_SOUL_SANDSTONE_FENCE = registerFenceBlock("smooth_soul_sandstone_fence", () -> SMOOTH_SOUL_SANDSTONE.get());
+
+    public static final DeferredBlock<FenceBlock> END_STONE_FENCE = registerFenceBlock("end_stone_fence", () -> Blocks.END_STONE);
+    public static final DeferredBlock<FenceBlock> END_STONE_BRICK_FENCE = registerFenceBlock("end_stone_brick_fence", () -> Blocks.END_STONE_BRICKS);
+
+    public static final DeferredBlock<FenceBlock> PURPUR_FENCE = registerFenceBlock("purpur_fence", () -> Blocks.PURPUR_BLOCK);
+
+    public static final DeferredBlock<FenceBlock> NETHERRACK_FENCE = registerFenceBlock("netherrack_fence", () -> Blocks.NETHERRACK);
+
+    public static final DeferredBlock<FenceBlock> CRACKED_NETHER_BRICK_FENCE = registerFenceBlock("cracked_nether_brick_fence", () -> Blocks.CRACKED_NETHER_BRICKS);
+    public static final DeferredBlock<FenceBlock> RED_NETHER_BRICK_FENCE = registerFenceBlock("red_nether_brick_fence", () -> Blocks.RED_NETHER_BRICKS);
+
+    public static final DeferredBlock<FenceBlock> BASALT_FENCE = registerFenceBlock("basalt_fence", () -> Blocks.BASALT);
+    public static final DeferredBlock<FenceBlock> POLISHED_BASALT_FENCE = registerFenceBlock("polished_basalt_fence", () -> Blocks.POLISHED_BASALT);
+    public static final DeferredBlock<FenceBlock> SMOOTH_BASALT_FENCE = registerFenceBlock("smooth_basalt_fence", () -> Blocks.SMOOTH_BASALT);
+    public static final DeferredBlock<FenceBlock> BASALT_BRICK_FENCE = registerFenceBlock("basalt_brick_fence", () -> BASALT_BRICKS.get());
+
+    public static final DeferredBlock<FenceBlock> PRISMARINE_FENCE = registerFenceBlock("prismarine_fence", () -> Blocks.PRISMARINE);
+    public static final DeferredBlock<FenceBlock> PRISMARINE_BRICK_FENCE = registerFenceBlock("prismarine_brick_fence", () -> Blocks.PRISMARINE_BRICKS);
+    public static final DeferredBlock<FenceBlock> DARK_PRISMARINE_FENCE = registerFenceBlock("dark_prismarine_fence", () -> Blocks.DARK_PRISMARINE);
+
+    public static final DeferredBlock<FenceBlock> ELDER_PRISMARINE_FENCE = registerFenceBlock("elder_prismarine_fence", () -> ELDER_PRISMARINE.get());
+    public static final DeferredBlock<FenceBlock> ELDER_PRISMARINE_BRICK_FENCE = registerFenceBlock("elder_prismarine_brick_fence", () -> ELDER_PRISMARINE_BRICKS.get());
+    public static final DeferredBlock<FenceBlock> DARK_ELDER_PRISMARINE_FENCE = registerFenceBlock("dark_elder_prismarine_fence", () -> DARK_ELDER_PRISMARINE.get());
+
+    public static final DeferredBlock<FenceBlock> BLACKSTONE_FENCE = registerFenceBlock("blackstone_fence", () -> Blocks.BLACKSTONE);
+    public static final DeferredBlock<FenceBlock> POLISHED_BLACKSTONE_FENCE = registerFenceBlock("polished_blackstone_fence", () -> Blocks.POLISHED_BLACKSTONE);
+    public static final DeferredBlock<FenceBlock> POLISHED_BLACKSTONE_BRICK_FENCE = registerFenceBlock("polished_blackstone_brick_fence", () -> Blocks.POLISHED_BLACKSTONE_BRICKS);
+    public static final DeferredBlock<FenceBlock> CRACKED_POLISHED_BLACKSTONE_BRICK_FENCE = registerFenceBlock("cracked_polished_blackstone_brick_fence", () -> Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS);
+
+    public static final DeferredBlock<FenceBlock> QUARTZ_FENCE = registerFenceBlock("quartz_fence", () -> Blocks.QUARTZ_BLOCK);
+    public static final DeferredBlock<FenceBlock> SMOOTH_QUARTZ_FENCE = registerFenceBlock("smooth_quartz_fence", () -> Blocks.SMOOTH_QUARTZ);
+    public static final DeferredBlock<FenceBlock> QUARTZ_BRICK_FENCE = registerFenceBlock("quartz_brick_fence", () -> Blocks.QUARTZ_BRICKS);
+
+    public static final DeferredBlock<FenceBlock> OBSIDIAN_FENCE = registerFenceBlock("obsidian_fence", () -> Blocks.OBSIDIAN);
+    public static final DeferredBlock<FenceBlock> OBSIDIAN_BRICK_FENCE = registerFenceBlock("obsidian_brick_fence", () -> OBSIDIAN_BRICKS.get());
+
+    public static final DeferredBlock<CryingObsidianFenceBlock> CRYING_OBSIDIAN_FENCE = registerCOFenceBlock("crying_obsidian_fence", () -> Blocks.CRYING_OBSIDIAN);
+    public static final DeferredBlock<CryingObsidianFenceBlock> CRYING_OBSIDIAN_BRICK_FENCE = registerCOFenceBlock("crying_obsidian_brick_fence", () -> CRYING_OBSIDIAN_BRICKS.get());
+
+    public static final DeferredBlock<FenceBlock> COAL_FENCE = registerFenceBlock("coal_fence", () -> Blocks.COAL_BLOCK);
+    public static final DeferredBlock<FenceBlock> COAL_BRICK_FENCE = registerFenceBlock("coal_brick_fence", () -> COAL_BRICKS.get());
+
+    public static final DeferredBlock<FenceBlock> CHARCOAL_FENCE = registerFenceBlock("charcoal_fence", () -> CHARCOAL_BLOCK.get());
+    public static final DeferredBlock<FenceBlock> CHARCOAL_BRICK_FENCE = registerFenceBlock("charcoal_brick_fence", () -> CHARCOAL_BRICKS.get());
+
+    public static final DeferredBlock<FenceBlock> LAPIS_FENCE = registerFenceBlock("lapis_fence", () -> Blocks.LAPIS_BLOCK);
+    public static final DeferredBlock<FenceBlock> SMOOTH_LAPIS_FENCE = registerFenceBlock("smooth_lapis_fence", () -> SMOOTH_LAPIS.get());
+    public static final DeferredBlock<FenceBlock> LAPIS_BRICK_FENCE = registerFenceBlock("lapis_brick_fence", () -> LAPIS_BRICKS.get());
+
+    public static final DeferredBlock<FenceBlock> SNOW_FENCE = registerFenceBlock("snow_fence", () -> Blocks.SNOW_BLOCK);
+    public static final DeferredBlock<FenceBlock> SNOW_BRICK_FENCE = registerFenceBlock("snow_brick_fence", () -> SNOW_BRICKS.get());
+
+    public static final DeferredBlock<IceFenceBlock> ICE_FENCE = registerIceFenceBlock("ice_fence", () -> Blocks.ICE);
+    public static final DeferredBlock<IceFenceBlock> ICE_BRICK_FENCE = registerIceFenceBlock("ice_brick_fence", () -> ICE_BRICKS.get());
+
+    public static final DeferredBlock<FenceBlock> PACKED_ICE_FENCE = registerFenceBlock("packed_ice_fence", () -> Blocks.PACKED_ICE);
+    public static final DeferredBlock<FenceBlock> PACKED_ICE_BRICK_FENCE = registerFenceBlock("packed_ice_brick_fence", () -> PACKED_ICE_BRICKS.get());
+
+    public static final DeferredBlock<FenceBlock> BLUE_ICE_FENCE = registerFenceBlock("blue_ice_fence", () -> Blocks.BLUE_ICE);
+    public static final DeferredBlock<FenceBlock> BLUE_ICE_BRICK_FENCE = registerFenceBlock("blue_ice_brick_fence", () -> BLUE_ICE_BRICKS.get());
+
+    public static final DeferredBlock<FenceBlock> SCULK_FENCE = registerFenceBlock("sculk_fence", () -> Blocks.SCULK);
+    public static final DeferredBlock<FenceBlock> SCULK_BRICK_FENCE = registerFenceBlock("sculk_brick_fence", () -> SCULK_BRICKS.get());
+
+    public static final DeferredBlock<FenceBlock> TERRACOTTA_FENCE = registerFenceBlock("terracotta_fence", () -> Blocks.TERRACOTTA);
+
+    public static final DeferredBlock<FenceBlock> WHITE_TERRACOTTA_FENCE = registerFenceBlock("white_terracotta_fence", () -> Blocks.WHITE_TERRACOTTA);
+    public static final DeferredBlock<FenceBlock> ORANGE_TERRACOTTA_FENCE = registerFenceBlock("orange_terracotta_fence", () -> Blocks.ORANGE_TERRACOTTA);
+    public static final DeferredBlock<FenceBlock> MAGENTA_TERRACOTTA_FENCE = registerFenceBlock("magenta_terracotta_fence", () -> Blocks.MAGENTA_TERRACOTTA);
+    public static final DeferredBlock<FenceBlock> LIGHT_BLUE_TERRACOTTA_FENCE = registerFenceBlock("light_blue_terracotta_fence", () -> Blocks.LIGHT_BLUE_TERRACOTTA);
+    public static final DeferredBlock<FenceBlock> YELLOW_TERRACOTTA_FENCE = registerFenceBlock("yellow_terracotta_fence", () -> Blocks.YELLOW_TERRACOTTA);
+    public static final DeferredBlock<FenceBlock> LIME_TERRACOTTA_FENCE = registerFenceBlock("lime_terracotta_fence", () -> Blocks.LIME_TERRACOTTA);
+    public static final DeferredBlock<FenceBlock> PINK_TERRACOTTA_FENCE = registerFenceBlock("pink_terracotta_fence", () -> Blocks.PINK_TERRACOTTA);
+    public static final DeferredBlock<FenceBlock> GRAY_TERRACOTTA_FENCE = registerFenceBlock("gray_terracotta_fence", () -> Blocks.GRAY_TERRACOTTA);
+    public static final DeferredBlock<FenceBlock> LIGHT_GRAY_TERRACOTTA_FENCE = registerFenceBlock("light_gray_terracotta_fence", () -> Blocks.LIGHT_GRAY_TERRACOTTA);
+    public static final DeferredBlock<FenceBlock> CYAN_TERRACOTTA_FENCE = registerFenceBlock("cyan_terracotta_fence", () -> Blocks.CYAN_TERRACOTTA);
+    public static final DeferredBlock<FenceBlock> PURPLE_TERRACOTTA_FENCE = registerFenceBlock("purple_terracotta_fence", () -> Blocks.PURPLE_TERRACOTTA);
+    public static final DeferredBlock<FenceBlock> BLUE_TERRACOTTA_FENCE = registerFenceBlock("blue_terracotta_fence", () -> Blocks.BLUE_TERRACOTTA);
+    public static final DeferredBlock<FenceBlock> BROWN_TERRACOTTA_FENCE = registerFenceBlock("brown_terracotta_fence", () -> Blocks.BROWN_TERRACOTTA);
+    public static final DeferredBlock<FenceBlock> GREEN_TERRACOTTA_FENCE = registerFenceBlock("green_terracotta_fence", () -> Blocks.GREEN_TERRACOTTA);
+    public static final DeferredBlock<FenceBlock> RED_TERRACOTTA_FENCE = registerFenceBlock("red_terracotta_fence", () -> Blocks.RED_TERRACOTTA);
+    public static final DeferredBlock<FenceBlock> BLACK_TERRACOTTA_FENCE = registerFenceBlock("black_terracotta_fence", () -> Blocks.BLACK_TERRACOTTA);
+
+    public static final DeferredBlock<FenceBlock> WHITE_CONCRETE_FENCE = registerFenceBlock("white_concrete_fence", () -> Blocks.WHITE_CONCRETE);
+    public static final DeferredBlock<FenceBlock> ORANGE_CONCRETE_FENCE = registerFenceBlock("orange_concrete_fence", () -> Blocks.ORANGE_CONCRETE);
+    public static final DeferredBlock<FenceBlock> MAGENTA_CONCRETE_FENCE = registerFenceBlock("magenta_concrete_fence", () -> Blocks.MAGENTA_CONCRETE);
+    public static final DeferredBlock<FenceBlock> LIGHT_BLUE_CONCRETE_FENCE = registerFenceBlock("light_blue_concrete_fence", () -> Blocks.LIGHT_BLUE_CONCRETE);
+    public static final DeferredBlock<FenceBlock> YELLOW_CONCRETE_FENCE = registerFenceBlock("yellow_concrete_fence", () -> Blocks.YELLOW_CONCRETE);
+    public static final DeferredBlock<FenceBlock> LIME_CONCRETE_FENCE = registerFenceBlock("lime_concrete_fence", () -> Blocks.LIME_CONCRETE);
+    public static final DeferredBlock<FenceBlock> PINK_CONCRETE_FENCE = registerFenceBlock("pink_concrete_fence", () -> Blocks.PINK_CONCRETE);
+    public static final DeferredBlock<FenceBlock> GRAY_CONCRETE_FENCE = registerFenceBlock("gray_concrete_fence", () -> Blocks.GRAY_CONCRETE);
+    public static final DeferredBlock<FenceBlock> LIGHT_GRAY_CONCRETE_FENCE = registerFenceBlock("light_gray_concrete_fence", () -> Blocks.LIGHT_GRAY_CONCRETE);
+    public static final DeferredBlock<FenceBlock> CYAN_CONCRETE_FENCE = registerFenceBlock("cyan_concrete_fence", () -> Blocks.CYAN_CONCRETE);
+    public static final DeferredBlock<FenceBlock> PURPLE_CONCRETE_FENCE = registerFenceBlock("purple_concrete_fence", () -> Blocks.PURPLE_CONCRETE);
+    public static final DeferredBlock<FenceBlock> BLUE_CONCRETE_FENCE = registerFenceBlock("blue_concrete_fence", () -> Blocks.BLUE_CONCRETE);
+    public static final DeferredBlock<FenceBlock> BROWN_CONCRETE_FENCE = registerFenceBlock("brown_concrete_fence", () -> Blocks.BROWN_CONCRETE);
+    public static final DeferredBlock<FenceBlock> GREEN_CONCRETE_FENCE = registerFenceBlock("green_concrete_fence", () -> Blocks.GREEN_CONCRETE);
+    public static final DeferredBlock<FenceBlock> RED_CONCRETE_FENCE = registerFenceBlock("red_concrete_fence", () -> Blocks.RED_CONCRETE);
+    public static final DeferredBlock<FenceBlock> BLACK_CONCRETE_FENCE = registerFenceBlock("black_concrete_fence", () -> Blocks.BLACK_CONCRETE);
 
     public static DeferredBlock<CraftingTableBlock> registerCraftingTable(String registryName) {
         if (registryName == "crimson_crafting_table" || registryName == "warped_crafting_table") {
@@ -2792,6 +2953,24 @@ public class ModBlocks {
         );
     }
 
+    private static DeferredBlock<IceFenceBlock> registerIceFenceBlock(String registryName, Supplier<Block> baseBlock) {
+        return BLOCKS.register(
+                registryName, () -> new IceFenceBlock(
+                        BlockBehaviour.Properties.ofFullCopy(
+                                baseBlock.get()
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        )
+                )
+        );
+    }
+
     private static DeferredBlock<IceSlabBlock> registerIceSlabBlock(String registryName, Supplier<Block> baseBlock) {
         return BLOCKS.register(
                 registryName, () -> new IceSlabBlock(
@@ -2902,6 +3081,24 @@ public class ModBlocks {
         );
     }
 
+    private static DeferredBlock<CryingObsidianFenceBlock> registerCOFenceBlock(String registryName, Supplier<Block> baseBlock) {
+        return BLOCKS.register(
+                registryName, () -> new CryingObsidianFenceBlock(
+                        BlockBehaviour.Properties.ofFullCopy(
+                                baseBlock.get()
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        )
+                )
+        );
+    }
+
     private static DeferredBlock<WallBlock> registerWallBlock(String registryName, Supplier<Block> baseBlock) {
         return BLOCKS.register(
                 registryName, () -> new WallBlock(
@@ -2942,6 +3139,24 @@ public class ModBlocks {
         return BLOCKS.register(
                 registryName, () -> new StairBlock(
                         baseBlock.get().defaultBlockState(),
+                        BlockBehaviour.Properties.ofFullCopy(
+                                baseBlock.get()
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        )
+                )
+        );
+    }
+
+    private static DeferredBlock<FenceBlock> registerFenceBlock(String registryName, Supplier<Block> baseBlock) {
+        return BLOCKS.register(
+                registryName, () -> new FenceBlock(
                         BlockBehaviour.Properties.ofFullCopy(
                                 baseBlock.get()
                         ).setId(

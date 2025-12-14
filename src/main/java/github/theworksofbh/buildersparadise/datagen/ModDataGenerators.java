@@ -50,5 +50,6 @@ public class ModDataGenerators {
 
         event.createProvider(ModEquipmentAssetProvider::new);
         event.createProvider(ModChestLootModifierProvider::new);
+        event.createProvider(ModAtlasProvider::new);
     }
 }

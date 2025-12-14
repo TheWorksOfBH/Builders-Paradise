@@ -189,7 +189,7 @@ public class ModUKLanguageProvider extends LanguageProvider {
         } else if (readjusted.contains("packed ice")) {
             briIsh = readjusted.replace("packed ice", "compressed ice");
         } else if (readjusted.contains("armor")) {
-            briIsh = readjusted.replace("armour", "armor");
+            briIsh = readjusted.replace("armor", "armour");
         } else {
             briIsh = readjusted;
         }

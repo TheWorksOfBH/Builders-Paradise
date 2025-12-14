@@ -1,6 +1,7 @@
 package github.theworksofbh.buildersparadise.datagen;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import github.theworksofbh.buildersparadise.BuildersParadise;
 import github.theworksofbh.buildersparadise.block.ModBlockFamilies;
 import github.theworksofbh.buildersparadise.block.ModBlocks;
@@ -14,10 +15,11 @@ import net.minecraft.advancements.criterion.PlayerTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.BlockFamily;
+import net.minecraft.data.BlockFamily.Variant;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.flag.FeatureFlagSet;
@@ -32,6 +34,7 @@ import net.neoforged.neoforge.common.conditions.NeoForgeConditions;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
@@ -44,8 +47,52 @@ public class ModRecipesProvider extends RecipeProvider {
     public static final ImmutableList<ItemLike> LEAD_SMELTABLES = ImmutableList.of(ModItems.LEAD_ORE.get(), ModItems.DEEPSLATE_LEAD_ORE.get(), ModItems.RAW_LEAD.get());
     public static final ImmutableList<ItemLike> URANIUM_SMELTABLES = ImmutableList.of(ModItems.URANIUM_ORE.get(), ModItems.DEEPSLATE_URANIUM_ORE.get(), ModItems.RAW_URANIUM.get());
 
+    @FunctionalInterface
+    interface ModFamilyRecipeProvider {
+        RecipeBuilder create(ModRecipesProvider var1, ItemLike var2, ItemLike var3);
+    }
+
     protected ModRecipesProvider(HolderLookup.Provider registries, RecipeOutput output) {
         super(registries, output);
+    }
+
+    private static final Map<Variant, ModFamilyRecipeProvider> SHAPE_BUILDERS = ImmutableMap.<Variant, ModFamilyRecipeProvider>builder()
+            .put(Variant.BUTTON, (ModFamilyRecipeProvider)(context, result, base) -> context.buttonBuilder(result, Ingredient.of(base)))
+            .put(Variant.CHISELED, (ModFamilyRecipeProvider)(context, result, base) -> context.chiseledBuilder(RecipeCategory.BUILDING_BLOCKS, result, Ingredient.of(base)))
+            .put(Variant.CUT, (ModFamilyRecipeProvider)(context, result, base) -> context.cutBuilder(RecipeCategory.BUILDING_BLOCKS, result, Ingredient.of(base)))
+            .put(Variant.DOOR, (ModFamilyRecipeProvider)(context, result, base) -> context.doorBuilder(result, Ingredient.of(base)))
+            .put(Variant.CUSTOM_FENCE, (ModFamilyRecipeProvider)(context, result, base) -> context.fenceBuilder(result, Ingredient.of(base)))
+            .put(Variant.FENCE, (ModFamilyRecipeProvider)(context, result, base) -> context.fenceBuilder(result, Ingredient.of(base)))
+            .put(Variant.CUSTOM_FENCE_GATE, (ModFamilyRecipeProvider)(context, result, base) -> context.fenceGateBuilder(result, Ingredient.of(base)))
+            .put(Variant.FENCE_GATE, (ModFamilyRecipeProvider)(context, result, base) -> context.fenceGateBuilder(result, Ingredient.of(base)))
+            .put(Variant.SIGN, (ModFamilyRecipeProvider)(context, result, base) -> context.signBuilder(result, Ingredient.of(base)))
+            .put(Variant.SLAB, (ModFamilyRecipeProvider)(context, result, base) -> context.slabBuilder(RecipeCategory.BUILDING_BLOCKS, result, Ingredient.of(base)))
+            .put(Variant.STAIRS, (ModFamilyRecipeProvider)(context, result, base) -> context.stairBuilder(result, Ingredient.of(base)))
+            .put(Variant.PRESSURE_PLATE, (ModFamilyRecipeProvider)(context, result, base) -> context.pressurePlateBuilder(RecipeCategory.REDSTONE, result, Ingredient.of(base)))
+            .put(Variant.POLISHED, (ModFamilyRecipeProvider)(context, result, base) -> context.polishedBuilder(RecipeCategory.BUILDING_BLOCKS, result, Ingredient.of(base)))
+            .put(Variant.TRAPDOOR, (ModFamilyRecipeProvider)(context, result, base) -> context.trapdoorBuilder(result, Ingredient.of(base)))
+            .put(Variant.WALL, (ModFamilyRecipeProvider)(context, result, base) -> context.wallBuilder(RecipeCategory.DECORATIONS, result, Ingredient.of(base)))
+            .build();
+
+
+    @Override
+    protected void generateRecipes(final BlockFamily family, final FeatureFlagSet flagSet) {
+        family.getVariants().forEach((variant, result) -> {
+            if (result.requiredFeatures().isSubsetOf(flagSet)) {
+                ModFamilyRecipeProvider recipeFunction = (ModFamilyRecipeProvider)SHAPE_BUILDERS.get(variant);
+                ItemLike base = this.getBaseBlock(family, variant);
+                if (recipeFunction != null) {
+                    RecipeBuilder builder = recipeFunction.create(this, result, base);
+                    family.getRecipeGroupPrefix().ifPresent(prefix -> builder.group(prefix + (variant == Variant.CUT ? "" : "_" + variant.getRecipeGroup())));
+                    builder.unlockedBy((String)family.getRecipeUnlockedBy().orElseGet(() -> getHasName(base)), this.has(base));
+                    builder.save(this.output);
+                }
+
+                if (variant == Variant.CRACKED) {
+                    this.smeltingResultFromBase(result, base);
+                }
+            }
+        });
     }
 
     protected void buildRecipes() {
@@ -383,10 +430,12 @@ public class ModRecipesProvider extends RecipeProvider {
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(Items.COBBLESTONE_SLAB), RecipeCategory.BUILDING_BLOCKS, Items.STONE_SLAB, 0.1F, 200).unlockedBy("has_cobblestone_slab", this.has(Items.COBBLESTONE_SLAB)).save(this.output, "stone_slab_smelting");
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(Items.COBBLESTONE_STAIRS), RecipeCategory.BUILDING_BLOCKS, Items.STONE_STAIRS, 0.1F, 200).unlockedBy("has_cobblestone_stairs", this.has(Items.COBBLESTONE_STAIRS)).save(this.output, "stone_stairs_smelting");
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(Items.COBBLESTONE_WALL), RecipeCategory.BUILDING_BLOCKS, ModItems.STONE_WALL.get(), 0.1F, 200).unlockedBy("has_cobblestone_wall", this.has(Items.COBBLESTONE_WALL)).save(this.output, "stone_wall_smelting");
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModItems.COBBLESTONE_FENCE.get()), RecipeCategory.BUILDING_BLOCKS, ModItems.STONE_FENCE.get(), 0.1F, 200).unlockedBy("has_cobblestone_fence", this.has(ModItems.COBBLESTONE_FENCE.get())).save(this.output, "stone_fence_smelting");
 
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(Items.COBBLED_DEEPSLATE_SLAB), RecipeCategory.BUILDING_BLOCKS, ModItems.DEEPSLATE_SLAB.get(), 0.1F, 200).unlockedBy("has_cobbled_deepslate_slab", this.has(Items.COBBLED_DEEPSLATE_SLAB)).save(this.output, "deepslate_slab_smelting");
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(Items.COBBLED_DEEPSLATE_STAIRS), RecipeCategory.BUILDING_BLOCKS, ModItems.DEEPSLATE_STAIRS.get(), 0.1F, 200).unlockedBy("has_cobbled_deepslate_stairs", this.has(Items.COBBLED_DEEPSLATE_STAIRS)).save(this.output, "deepslate_stairs_smelting");
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(Items.COBBLED_DEEPSLATE_WALL), RecipeCategory.BUILDING_BLOCKS, ModItems.DEEPSLATE_WALL.get(), 0.1F, 200).unlockedBy("has_cobbled_deepslate_wall", this.has(Items.COBBLED_DEEPSLATE_WALL)).save(this.output, "deepslate_wall_smelting");
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModItems.COBBLED_DEEPSLATE_FENCE.get()), RecipeCategory.BUILDING_BLOCKS, ModItems.DEEPSLATE_FENCE.get(), 0.1F, 200).unlockedBy("has_cobbled_deepslate_fence", this.has(ModItems.COBBLED_DEEPSLATE_FENCE.get())).save(this.output, "deepslate_fence_smelting");
 
         this.createSmithingTable(ModItems.OAK_SMITHING_TABLE, Items.OAK_PLANKS);
         this.createSmithingTable(ModItems.SPRUCE_SMITHING_TABLE, Items.SPRUCE_PLANKS);
@@ -1021,7 +1070,152 @@ public class ModRecipesProvider extends RecipeProvider {
         this.bronzeSmithing(Items.COPPER_SPEAR, RecipeCategory.TOOLS, ModItems.BRONZE_SPEAR.get());
         this.bronzeSmithing(Items.COPPER_HORSE_ARMOR, RecipeCategory.TOOLS, ModItems.BRONZE_HORSE_ARMOR.get());
         this.bronzeSmithing(Items.COPPER_NAUTILUS_ARMOR, RecipeCategory.TOOLS, ModItems.BRONZE_NAUTILUS_ARMOR.get());
+    }
 
+    @Override
+    protected RecipeBuilder fenceBuilder(ItemLike fence, Ingredient material) {
+        Item item;
+        if (fence.asItem().getDescriptionId().contains("stone")) {
+            if (fence.asItem().getDescriptionId().contains("sand")) {
+                if (fence.asItem().getDescriptionId().contains("red")){
+                    item = ModItems.RED_SANDSTONE_BATON.get();
+                } else if (fence.asItem().getDescriptionId().contains("soul")){
+                    item = ModItems.SOUL_SANDSTONE_BATON.get();
+                } else {
+                    item = ModItems.SANDSTONE_BATON.get();
+                }
+            } else if (fence.asItem().getDescriptionId().contains("end")) {
+                item = ModItems.END_STONE_BATON.get();
+            } else if (fence.asItem().getDescriptionId().contains("black")) {
+                item = ModItems.BLACKSTONE_BATON.get();
+            } else if (fence.asItem().getDescriptionId().contains("drip")) {
+                item = Items.POINTED_DRIPSTONE;
+            } else {
+                item = ModItems.STONE_BATON.get();
+            }
+        } else if (fence.asItem().getDescriptionId().contains("prismarine")) {
+            if (fence.asItem().getDescriptionId().contains("elder")) {
+                item = ModItems.ELDER_PRISMARINE_SHARD.get();
+            } else {
+                item = Items.PRISMARINE_SHARD;
+            }
+        } else if (fence.asItem().getDescriptionId().contains("resin")) {
+            item = Items.RESIN_CLUMP;
+        } else if (fence.asItem().getDescriptionId().contains("sculk")) {
+            item = Items.SCULK_VEIN;
+        } else if (fence.asItem().getDescriptionId().contains("quartz")) {
+            item = Items.QUARTZ;
+        } else if (fence.asItem().getDescriptionId().contains("lapis")) {
+            item = Items.LAPIS_LAZULI;
+        } else if (fence.asItem().getDescriptionId().contains("coal")) {
+            item = Items.COAL;
+        } else if (fence.asItem().getDescriptionId().contains("charcoal")) {
+            item = Items.CHARCOAL;
+        } else if (fence.asItem().getDescriptionId().contains("purpur")) {
+            item = Items.POPPED_CHORUS_FRUIT;
+        } else if (fence.asItem().getDescriptionId().contains("snow")) {
+            item = Items.SNOWBALL;
+        } else if (fence.asItem().getDescriptionId().contains("granite")) {
+            item = ModItems.GRANITE_BATON.get();
+        } else if (fence.asItem().getDescriptionId().contains("diorite")) {
+            item = ModItems.DIORITE_BATON.get();
+        } else if (fence.asItem().getDescriptionId().contains("andesite")) {
+            item = ModItems.ANDESITE_BATON.get();
+        } else if (fence.asItem().getDescriptionId().contains("tuff")) {
+            item = ModItems.TUFF_BATON.get();
+        } else if (fence.asItem().getDescriptionId().contains("obsidian")) {
+            item = ModItems.OBSIDIAN_BATON.get();
+        } else if (fence.asItem().getDescriptionId().contains("calcite")) {
+            item = ModItems.CALCITE_BATON.get();
+        } else if (fence.asItem().getDescriptionId().contains("mud")) {
+            item = ModItems.PACKED_MUD_BATON.get();
+        } else if (fence.asItem().getDescriptionId().contains("basalt")) {
+            item = ModItems.BASALT_BATON.get();
+        } else if (fence.asItem().getDescriptionId().contains("netherrack")) {
+            item = ModItems.NETHERRACK_BATON.get();
+        } else if (fence.asItem().getDescriptionId().contains("terracotta")) {
+            item = ModItems.TERRACOTTA_BATON.get();
+        } else if (fence.asItem().getDescriptionId().contains("concrete")) {
+            item = ModItems.CONCRETE_BATON.get();
+        } else if (fence.asItem().getDescriptionId().contains("ice")) {
+            item = ModItems.ICE_SHARD.get();
+        } else if (fence.asItem().getDescriptionId().contains("deepslate")) {
+            item = ModItems.DEEPSLATE_BATON.get();
+        } else if (fence.asItem().getDescriptionId().contains("brick")) {
+                if (fence.asItem().getDescriptionId().contains("stone")) {
+                    if (fence.asItem().getDescriptionId().contains("sand")) {
+                        if (fence.asItem().getDescriptionId().contains("red")){
+                            item = ModItems.RED_SANDSTONE_BATON.get();
+                        } else if (fence.asItem().getDescriptionId().contains("soul")){
+                            item = ModItems.SOUL_SANDSTONE_BATON.get();
+                        } else {
+                            item = ModItems.SANDSTONE_BATON.get();
+                        }
+                    } else if (fence.asItem().getDescriptionId().contains("end")) {
+                        item = ModItems.END_STONE_BATON.get();
+                    } else if (fence.asItem().getDescriptionId().contains("black")) {
+                        item = ModItems.BLACKSTONE_BATON.get();
+                    } else if (fence.asItem().getDescriptionId().contains("drip")) {
+                        item = Items.POINTED_DRIPSTONE;
+                    } else {
+                        item = ModItems.STONE_BATON.get();
+                    }
+                } else if (fence.asItem().getDescriptionId().contains("prismarine")) {
+                    if (fence.asItem().getDescriptionId().contains("elder")) {
+                        item = ModItems.ELDER_PRISMARINE_SHARD.get();
+                    } else {
+                        item = Items.PRISMARINE_SHARD;
+                    }
+                } else if (fence.asItem().getDescriptionId().contains("resin")) {
+                    item = Items.RESIN_BRICK;
+                } else if (fence.asItem().getDescriptionId().contains("sculk")) {
+                    item = ModItems.SCULK_BRICK.get();
+                } else if (fence.asItem().getDescriptionId().contains("quartz")) {
+                    item = Items.QUARTZ;
+                } else if (fence.asItem().getDescriptionId().contains("lapis")) {
+                    item = Items.LAPIS_LAZULI;
+                } else if (fence.asItem().getDescriptionId().contains("coal")) {
+                    item = Items.COAL;
+                } else if (fence.asItem().getDescriptionId().contains("charcoal")) {
+                    item = Items.CHARCOAL;
+                } else if (fence.asItem().getDescriptionId().contains("purpur")) {
+                    item = Items.POPPED_CHORUS_FRUIT;
+                } else if (fence.asItem().getDescriptionId().contains("snow")) {
+                    item = Items.SNOWBALL;
+                } else if (fence.asItem().getDescriptionId().contains("granite")) {
+                    item = ModItems.GRANITE_BATON.get();
+                } else if (fence.asItem().getDescriptionId().contains("diorite")) {
+                    item = ModItems.DIORITE_BATON.get();
+                } else if (fence.asItem().getDescriptionId().contains("andesite")) {
+                    item = ModItems.ANDESITE_BATON.get();
+                } else if (fence.asItem().getDescriptionId().contains("tuff")) {
+                    item = ModItems.TUFF_BATON.get();
+                } else if (fence.asItem().getDescriptionId().contains("obsidian")) {
+                    item = ModItems.OBSIDIAN_BATON.get();
+                } else if (fence.asItem().getDescriptionId().contains("calcite")) {
+                    item = ModItems.CALCITE_BATON.get();
+                } else if (fence.asItem().getDescriptionId().contains("mud")) {
+                    item = ModItems.PACKED_MUD_BATON.get();
+                } else if (fence.asItem().getDescriptionId().contains("basalt")) {
+                    item = ModItems.BASALT_BATON.get();
+                } else if (fence.asItem().getDescriptionId().contains("nether")) {
+                    item = Items.NETHER_BRICK;
+                } else if (fence.asItem().getDescriptionId().contains("terracotta")) {
+                    item = ModItems.TERRACOTTA_BATON.get();
+                } else if (fence.asItem().getDescriptionId().contains("concrete")) {
+                    item = ModItems.CONCRETE_BATON.get();
+                } else if (fence.asItem().getDescriptionId().contains("ice")) {
+                    item = ModItems.ICE_SHARD.get();
+                } else if (fence.asItem().getDescriptionId().contains("deepslate")) {
+                    item = ModItems.DEEPSLATE_BATON.get();
+                } else {
+                    item = Items.BRICK;
+                }
+        } else {
+            item = Items.STICK;
+        }
+
+        return this.shaped(RecipeCategory.DECORATIONS, fence, 6).define('W', material).define('#', item).pattern("W#W").pattern("W#W");
     }
 
     @Override
@@ -2193,4 +2387,6 @@ public class ModRecipesProvider extends RecipeProvider {
             return BuildersParadise.MODID + ":recipe_provider";
         }
     }
+
+
 }

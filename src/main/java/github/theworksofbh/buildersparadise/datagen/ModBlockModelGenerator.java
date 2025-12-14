@@ -75,22 +75,31 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
             mapping.put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(Blocks.SNOW, ""));
         } else {
             TexturedModel texturedModel = BlockModelGenerators.TEXTURED_MODELS.getOrDefault(fullBlock, TexturedModel.CUBE.get(fullBlock));
-            mapping = texturedModel.getMapping().put(TextureSlot.WALL, TextureMapping.getBlockTexture(fullBlock));
+            mapping = texturedModel.getMapping()
+                    .put(TextureSlot.WALL, TextureMapping.getBlockTexture(fullBlock))
+                    .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(fullBlock));
         }
         if (fullBlock == Blocks.BASALT || fullBlock == Blocks.POLISHED_BASALT || fullBlock == Blocks.QUARTZ_BLOCK) {
             mapping.put(TextureSlot.WALL, TextureMapping.getBlockTexture(fullBlock, "_side"));
+            mapping.put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(fullBlock, "_side"));
         } else if (fullBlock == Blocks.SMOOTH_SANDSTONE) {
             mapping.put(TextureSlot.WALL, TextureMapping.getBlockTexture(Blocks.SANDSTONE, "_top"));
+            mapping.put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(Blocks.SANDSTONE, "_top"));
         } else if (fullBlock == Blocks.SMOOTH_RED_SANDSTONE) {
             mapping.put(TextureSlot.WALL, TextureMapping.getBlockTexture(Blocks.RED_SANDSTONE, "_top"));
+            mapping.put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(Blocks.RED_SANDSTONE, "_top"));
         } else if (fullBlock == ModBlocks.SMOOTH_SOUL_SANDSTONE.get()) {
             mapping.put(TextureSlot.WALL, TextureMapping.getBlockTexture(ModBlocks.SOUL_SANDSTONE.get(), "_top"));
+            mapping.put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ModBlocks.SOUL_SANDSTONE.get(), "_top"));
         } else if (fullBlock == Blocks.SMOOTH_QUARTZ) {
             mapping.put(TextureSlot.WALL, TextureMapping.getBlockTexture(Blocks.QUARTZ_BLOCK, "_bottom"));
+            mapping.put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(Blocks.QUARTZ_BLOCK, "_bottom"));
         } else if (fullBlock == Blocks.SNOW_BLOCK) {
             mapping.put(TextureSlot.WALL, TextureMapping.getBlockTexture(Blocks.SNOW, ""));
+            mapping.put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(Blocks.SNOW, ""));
         } else {
             mapping.put(TextureSlot.WALL, TextureMapping.getBlockTexture(fullBlock, ""));
+            mapping.put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(fullBlock, ""));
         }
         var provider = new BlockFamilyProvider(mapping);
         try {

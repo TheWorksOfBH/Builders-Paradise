@@ -209,6 +209,18 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                     } else {
                         this.dropSelf(block);
                     }
+                } else if (block instanceof FenceBlock) {
+                    if (block == ModBlocks.STONE_FENCE.get()) {
+                        this.add(block, createSingleItemTableWithSilkTouch(block, ModItems.COBBLESTONE_FENCE.get()));
+                    } else if (block == ModBlocks.DEEPSLATE_FENCE.get()) {
+                        this.add(block, createSingleItemTableWithSilkTouch(block, ModItems.COBBLED_DEEPSLATE_FENCE.get()));
+                    } else if (block == ModBlocks.SNOW_FENCE.get()) {
+                        this.add(block, createSingleItemTableWithSilkTouch(block, Items.SNOWBALL));
+                    } else if (block == ModBlocks.ICE_FENCE.get() || block == ModBlocks.PACKED_ICE_FENCE.get() || block == ModBlocks.BLUE_ICE_FENCE.get()) {
+                        this.add(block, createSingleItemTableWithSilkTouch(block, ModItems.ICE_SHARD.get()));
+                    } else {
+                        this.dropSelf(block);
+                    }
                 } else if (block instanceof DoorBlock || block instanceof ModDoorBlock) {
                     this.add(block, createDoorTable(block));
                 } else if (block instanceof DropExperienceBlock) {
