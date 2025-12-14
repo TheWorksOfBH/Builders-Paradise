@@ -594,6 +594,132 @@ public class CreativeInvConfig {
             tabData.insertAfter(ModItems.SCULK_BRICK_SLAB.get().getDefaultInstance(), ModItems.SCULK_BRICK_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.SCULK_BRICK_WALL.get().getDefaultInstance(), ModItems.CHISELED_SCULK_BRICKS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
+            tabData.insertAfter(ModItems.STONE_WALL.get().getDefaultInstance(), ModItems.STONE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.COBBLESTONE_WALL.getDefaultInstance(), ModItems.COBBLESTONE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.MOSSY_COBBLESTONE_WALL.getDefaultInstance(), ModItems.MOSSY_COBBLESTONE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.SMOOTH_STONE_WALL.get().getDefaultInstance(), ModItems.SMOOTH_STONE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STONE_BRICK_WALL.getDefaultInstance(), ModItems.STONE_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.MOSSY_STONE_BRICK_WALL.getDefaultInstance(), ModItems.MOSSY_STONE_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CRACKED_STONE_BRICK_WALL.get().getDefaultInstance(), ModItems.CRACKED_STONE_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.STONE_TILE_WALL.get().getDefaultInstance(), ModItems.STONE_TILE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.MOSSY_STONE_TILE_WALL.get().getDefaultInstance(), ModItems.MOSSY_STONE_TILE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CRACKED_STONE_TILE_WALL.get().getDefaultInstance(), ModItems.CRACKED_STONE_TILE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(Items.GRANITE_WALL.getDefaultInstance(), ModItems.GRANITE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.POLISHED_GRANITE_WALL.get().getDefaultInstance(), ModItems.POLISHED_GRANITE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.POLISHED_GRANITE_BRICK_WALL.get().getDefaultInstance(), ModItems.POLISHED_GRANITE_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(Items.DIORITE_WALL.getDefaultInstance(), ModItems.DIORITE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.POLISHED_DIORITE_WALL.get().getDefaultInstance(), ModItems.POLISHED_DIORITE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.POLISHED_DIORITE_BRICK_WALL.get().getDefaultInstance(), ModItems.POLISHED_DIORITE_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(Items.ANDESITE_WALL.getDefaultInstance(), ModItems.ANDESITE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.POLISHED_ANDESITE_WALL.get().getDefaultInstance(), ModItems.POLISHED_ANDESITE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.POLISHED_ANDESITE_BRICK_WALL.get().getDefaultInstance(), ModItems.POLISHED_ANDESITE_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.DEEPSLATE_WALL.get().getDefaultInstance(), ModItems.DEEPSLATE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.COBBLED_DEEPSLATE_WALL.getDefaultInstance(), ModItems.COBBLED_DEEPSLATE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.POLISHED_DEEPSLATE_WALL.getDefaultInstance(), ModItems.POLISHED_DEEPSLATE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.DEEPSLATE_BRICK_WALL.getDefaultInstance(), ModItems.DEEPSLATE_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CRACKED_DEEPSLATE_BRICK_WALL.get().getDefaultInstance(), ModItems.CRACKED_DEEPSLATE_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.DEEPSLATE_TILE_WALL.getDefaultInstance(), ModItems.DEEPSLATE_TILE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CRACKED_DEEPSLATE_TILE_WALL.get().getDefaultInstance(), ModItems.CRACKED_DEEPSLATE_TILE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(Items.TUFF_WALL.getDefaultInstance(), ModItems.TUFF_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.POLISHED_TUFF_WALL.getDefaultInstance(), ModItems.POLISHED_TUFF_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.TUFF_BRICK_WALL.getDefaultInstance(), ModItems.TUFF_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.CALCITE_WALL.get().getDefaultInstance(), ModItems.CALCITE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.POLISHED_CALCITE_WALL.get().getDefaultInstance(), ModItems.POLISHED_CALCITE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CALCITE_BRICK_WALL.get().getDefaultInstance(), ModItems.CALCITE_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.DRIPSTONE_WALL.get().getDefaultInstance(), ModItems.DRIPSTONE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.POLISHED_DRIPSTONE_WALL.get().getDefaultInstance(), ModItems.POLISHED_DRIPSTONE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.DRIPSTONE_BRICK_WALL.get().getDefaultInstance(), ModItems.DRIPSTONE_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(Items.BRICK_WALL.getDefaultInstance(), ModItems.BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.PACKED_MUD_WALL.get().getDefaultInstance(), ModItems.PACKED_MUD_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.MUD_BRICK_WALL.getDefaultInstance(), ModItems.MUD_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.RESIN_WALL.get().getDefaultInstance(), ModItems.RESIN_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.RESIN_BRICK_WALL.getDefaultInstance(), ModItems.RESIN_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(Items.SANDSTONE_WALL.getDefaultInstance(), ModItems.SANDSTONE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CUT_SANDSTONE_WALL.get().getDefaultInstance(), ModItems.CUT_SANDSTONE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.SMOOTH_SANDSTONE_WALL.get().getDefaultInstance(), ModItems.SMOOTH_SANDSTONE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(Items.RED_SANDSTONE_WALL.getDefaultInstance(), ModItems.RED_SANDSTONE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CUT_RED_SANDSTONE_WALL.get().getDefaultInstance(), ModItems.CUT_RED_SANDSTONE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.SMOOTH_RED_SANDSTONE_WALL.get().getDefaultInstance(), ModItems.SMOOTH_RED_SANDSTONE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.SOUL_SANDSTONE_WALL.get().getDefaultInstance(), ModItems.SOUL_SANDSTONE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CUT_SOUL_SANDSTONE_WALL.get().getDefaultInstance(), ModItems.CUT_SOUL_SANDSTONE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.SMOOTH_SOUL_SANDSTONE_WALL.get().getDefaultInstance(), ModItems.SMOOTH_SOUL_SANDSTONE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.END_STONE_WALL.get().getDefaultInstance(), ModItems.END_STONE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.END_STONE_BRICK_WALL.getDefaultInstance(), ModItems.END_STONE_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.PURPUR_WALL.get().getDefaultInstance(), ModItems.PURPUR_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.NETHERRACK_WALL.get().getDefaultInstance(), ModItems.NETHERRACK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.CRACKED_NETHER_BRICK_WALL.get().getDefaultInstance(), ModItems.CRACKED_NETHER_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.RED_NETHER_BRICK_WALL.getDefaultInstance(), ModItems.RED_NETHER_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.BASALT_WALL.get().getDefaultInstance(), ModItems.BASALT_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.POLISHED_BASALT_WALL.get().getDefaultInstance(), ModItems.POLISHED_BASALT_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.SMOOTH_BASALT_WALL.get().getDefaultInstance(), ModItems.SMOOTH_BASALT_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BASALT_BRICK_WALL.get().getDefaultInstance(), ModItems.BASALT_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(Items.PRISMARINE_WALL.getDefaultInstance(), ModItems.PRISMARINE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.PRISMARINE_BRICK_WALL.get().getDefaultInstance(), ModItems.PRISMARINE_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.DARK_PRISMARINE_WALL.get().getDefaultInstance(), ModItems.DARK_PRISMARINE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.ELDER_PRISMARINE_WALL.get().getDefaultInstance(), ModItems.ELDER_PRISMARINE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.ELDER_PRISMARINE_BRICK_WALL.get().getDefaultInstance(), ModItems.ELDER_PRISMARINE_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.DARK_ELDER_PRISMARINE_WALL.get().getDefaultInstance(), ModItems.DARK_ELDER_PRISMARINE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(Items.BLACKSTONE_WALL.getDefaultInstance(), ModItems.BLACKSTONE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.POLISHED_BLACKSTONE_WALL.getDefaultInstance(), ModItems.POLISHED_BLACKSTONE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.POLISHED_BLACKSTONE_BRICK_WALL.getDefaultInstance(), ModItems.POLISHED_BLACKSTONE_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL.get().getDefaultInstance(), ModItems.CRACKED_POLISHED_BLACKSTONE_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.QUARTZ_WALL.get().getDefaultInstance(), ModItems.QUARTZ_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.QUARTZ_BRICK_WALL.get().getDefaultInstance(), ModItems.QUARTZ_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.SMOOTH_QUARTZ_WALL.get().getDefaultInstance(), ModItems.SMOOTH_QUARTZ_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.OBSIDIAN_WALL.get().getDefaultInstance(), ModItems.OBSIDIAN_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.OBSIDIAN_BRICK_WALL.get().getDefaultInstance(), ModItems.OBSIDIAN_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.CRYING_OBSIDIAN_WALL.get().getDefaultInstance(), ModItems.CRYING_OBSIDIAN_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CRYING_OBSIDIAN_BRICK_WALL.get().getDefaultInstance(), ModItems.CRYING_OBSIDIAN_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.COAL_WALL.get().getDefaultInstance(), ModItems.COAL_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.COAL_BRICK_WALL.get().getDefaultInstance(), ModItems.COAL_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.CHARCOAL_WALL.get().getDefaultInstance(), ModItems.CHARCOAL_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CHARCOAL_BRICK_WALL.get().getDefaultInstance(), ModItems.CHARCOAL_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.LAPIS_WALL.get().getDefaultInstance(), ModItems.LAPIS_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.LAPIS_BRICK_WALL.get().getDefaultInstance(), ModItems.LAPIS_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.SMOOTH_LAPIS_WALL.get().getDefaultInstance(), ModItems.SMOOTH_LAPIS_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.SNOW_WALL.get().getDefaultInstance(), ModItems.SNOW_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.SNOW_BRICK_WALL.get().getDefaultInstance(), ModItems.SNOW_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.ICE_WALL.get().getDefaultInstance(), ModItems.ICE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.ICE_BRICK_WALL.get().getDefaultInstance(), ModItems.ICE_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.PACKED_ICE_WALL.get().getDefaultInstance(), ModItems.PACKED_ICE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.PACKED_ICE_BRICK_WALL.get().getDefaultInstance(), ModItems.PACKED_ICE_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.BLUE_ICE_WALL.get().getDefaultInstance(), ModItems.BLUE_ICE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BLUE_ICE_BRICK_WALL.get().getDefaultInstance(), ModItems.BLUE_ICE_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.SCULK_WALL.get().getDefaultInstance(), ModItems.SCULK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.SCULK_BRICK_WALL.get().getDefaultInstance(), ModItems.SCULK_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
         } else if (tabData.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
             tabData.insertAfter(Items.TERRACOTTA.getDefaultInstance(), ModItems.TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.TERRACOTTA_STAIRS.get().getDefaultInstance(), ModItems.TERRACOTTA_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -726,6 +852,42 @@ public class CreativeInvConfig {
             tabData.insertAfter(Items.BLACK_CONCRETE.getDefaultInstance(), ModItems.BLACK_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.BLACK_CONCRETE_STAIRS.get().getDefaultInstance(), ModItems.BLACK_CONCRETE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.BLACK_CONCRETE_SLAB.get().getDefaultInstance(), ModItems.BLACK_CONCRETE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.TERRACOTTA_WALL.get().getDefaultInstance(), ModItems.TERRACOTTA_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.WHITE_TERRACOTTA_WALL.get().getDefaultInstance(), ModItems.WHITE_TERRACOTTA_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.ORANGE_TERRACOTTA_WALL.get().getDefaultInstance(), ModItems.ORANGE_TERRACOTTA_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.MAGENTA_TERRACOTTA_WALL.get().getDefaultInstance(), ModItems.MAGENTA_TERRACOTTA_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.LIGHT_BLUE_TERRACOTTA_WALL.get().getDefaultInstance(), ModItems.LIGHT_BLUE_TERRACOTTA_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.YELLOW_TERRACOTTA_WALL.get().getDefaultInstance(), ModItems.YELLOW_TERRACOTTA_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.LIME_TERRACOTTA_WALL.get().getDefaultInstance(), ModItems.LIME_TERRACOTTA_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.PINK_TERRACOTTA_WALL.get().getDefaultInstance(), ModItems.PINK_TERRACOTTA_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.GRAY_TERRACOTTA_WALL.get().getDefaultInstance(), ModItems.GRAY_TERRACOTTA_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.LIGHT_GRAY_TERRACOTTA_WALL.get().getDefaultInstance(), ModItems.LIGHT_GRAY_TERRACOTTA_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CYAN_TERRACOTTA_WALL.get().getDefaultInstance(), ModItems.CYAN_TERRACOTTA_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.PURPLE_TERRACOTTA_WALL.get().getDefaultInstance(), ModItems.PURPLE_TERRACOTTA_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BLUE_TERRACOTTA_WALL.get().getDefaultInstance(), ModItems.BLUE_TERRACOTTA_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BROWN_TERRACOTTA_WALL.get().getDefaultInstance(), ModItems.BROWN_TERRACOTTA_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.GREEN_TERRACOTTA_WALL.get().getDefaultInstance(), ModItems.GREEN_TERRACOTTA_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.RED_TERRACOTTA_WALL.get().getDefaultInstance(), ModItems.RED_TERRACOTTA_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BLACK_TERRACOTTA_WALL.get().getDefaultInstance(), ModItems.BLACK_TERRACOTTA_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.WHITE_CONCRETE_WALL.get().getDefaultInstance(), ModItems.WHITE_CONCRETE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.ORANGE_CONCRETE_WALL.get().getDefaultInstance(), ModItems.ORANGE_CONCRETE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.MAGENTA_CONCRETE_WALL.get().getDefaultInstance(), ModItems.MAGENTA_CONCRETE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.LIGHT_BLUE_CONCRETE_WALL.get().getDefaultInstance(), ModItems.LIGHT_BLUE_CONCRETE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.YELLOW_CONCRETE_WALL.get().getDefaultInstance(), ModItems.YELLOW_CONCRETE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.LIME_CONCRETE_WALL.get().getDefaultInstance(), ModItems.LIME_CONCRETE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.PINK_CONCRETE_WALL.get().getDefaultInstance(), ModItems.PINK_CONCRETE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.GRAY_CONCRETE_WALL.get().getDefaultInstance(), ModItems.GRAY_CONCRETE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.LIGHT_GRAY_CONCRETE_WALL.get().getDefaultInstance(), ModItems.LIGHT_GRAY_CONCRETE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CYAN_CONCRETE_WALL.get().getDefaultInstance(), ModItems.CYAN_CONCRETE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.PURPLE_CONCRETE_WALL.get().getDefaultInstance(), ModItems.PURPLE_CONCRETE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BLUE_CONCRETE_WALL.get().getDefaultInstance(), ModItems.BLUE_CONCRETE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BROWN_CONCRETE_WALL.get().getDefaultInstance(), ModItems.BROWN_CONCRETE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.GREEN_CONCRETE_WALL.get().getDefaultInstance(), ModItems.GREEN_CONCRETE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.RED_CONCRETE_WALL.get().getDefaultInstance(), ModItems.RED_CONCRETE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BLACK_CONCRETE_WALL.get().getDefaultInstance(), ModItems.BLACK_CONCRETE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
         } else if (tabData.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
             tabData.insertAfter(Items.HEAVY_WEIGHTED_PRESSURE_PLATE.getDefaultInstance(), ModItems.PLAYER_ONLY_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);

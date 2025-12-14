@@ -1127,8 +1127,8 @@ public class ModItems {
     public static final DeferredItem<BlockItem> TUFF_BRICK_FENCE = registerBlockItem("tuff_brick_fence", () -> ModBlocks.TUFF_BRICK_FENCE.get());
 
     public static final DeferredItem<BlockItem> CALCITE_FENCE = registerBlockItem("calcite_fence", () -> ModBlocks.CALCITE_FENCE.get());
-    public static final DeferredItem<BlockItem> POLISHED_CALCITE_FENCE = registerBlockItem("polished_calcite_fence", () -> ModBlocks.POLISHED_CALCITE.get());
-    public static final DeferredItem<BlockItem> CALCITE_BRICK_FENCE = registerBlockItem("calcite_brick_fence", () -> ModBlocks.CALCITE_BRICKS.get());
+    public static final DeferredItem<BlockItem> POLISHED_CALCITE_FENCE = registerBlockItem("polished_calcite_fence", () -> ModBlocks.POLISHED_CALCITE_FENCE.get());
+    public static final DeferredItem<BlockItem> CALCITE_BRICK_FENCE = registerBlockItem("calcite_brick_fence", () -> ModBlocks.CALCITE_BRICK_FENCE.get());
 
     public static final DeferredItem<BlockItem> DRIPSTONE_FENCE = registerBlockItem("dripstone_fence", () -> ModBlocks.DRIPSTONE_FENCE.get());
     public static final DeferredItem<BlockItem> POLISHED_DRIPSTONE_FENCE = registerBlockItem("polished_dripstone_fence", () -> ModBlocks.POLISHED_DRIPSTONE_FENCE.get());

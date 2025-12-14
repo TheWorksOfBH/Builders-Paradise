@@ -1,4 +1,4 @@
-// 1.21.11	2025-12-13T15:43:55.1004716	Tags for minecraft:block mod id buildersparadise
+// 1.21.11	2025-12-14T16:26:40.0825856	Tags for minecraft:block mod id buildersparadise
 c3f7a756d7ccf22a7da7cff6e5ad8fd9ad91c745 data/buildersparadise/tags/block/barrels.json
 fa2e6efe9aec18b5ebbc18e4e09692b840e8234a data/buildersparadise/tags/block/beehives.json
 87bee8e21dcadd81aabac2f926cc8a46f5a86fb3 data/buildersparadise/tags/block/blast_furnaces.json
@@ -25,18 +25,19 @@ ed5e446c738c098a481949b0fc88b00873306f94 data/buildersparadise/tags/block/observ
 6dbbdba5df7ee479365b59ab975e544859342387 data/buildersparadise/tags/block/trapped_chests.json
 649eeb0c1359ceec863ba926e35e876ea593d98f data/buildersparadise/tags/block/tungsten_ores.json
 42e8c3078cea443b95a2b08a5fa17d596a9916f7 data/buildersparadise/tags/block/uranium_ores.json
-ff22654e0cbbc3db714736f11088cbefe9d43263 data/buildersparadise/tags/block/wooden_chests.json
+176a7cd1ce16029f8723d3702f3bf53cf48b2c30 data/buildersparadise/tags/block/wooden_chests.json
 f7452224772ba3745f3594ee678d5a87b4262872 data/buildersparadise/tags/block/zinc.json
 327e60528375c6fd91c600b9b0a98c91361122c0 data/buildersparadise/tags/block/zinc_ores.json
 8ee3a1696bf261d55323cfe8356dc2e094a8b339 data/minecraft/tags/block/beacon_base_blocks.json
 06ad648cd74de19f9e9db0e74c556ddf2e953293 data/minecraft/tags/block/campfires.json
 26cfb32874ec99cbd62134a95f36be2925902501 data/minecraft/tags/block/doors.json
 3d261c75ed073dcab7eee648deae4158e11d30fb data/minecraft/tags/block/enchantment_power_provider.json
-ff22654e0cbbc3db714736f11088cbefe9d43263 data/minecraft/tags/block/guarded_by_piglins.json
-6cd3915a4e5efe6d25894d3ff52c261e828458f4 data/minecraft/tags/block/mineable/axe.json
-ecaa51c62555fa76d32a80aed35615c30c5365c8 data/minecraft/tags/block/mineable/hoe.json
-05e30e288e0b342bb65bed99847c62ffcd4679a9 data/minecraft/tags/block/mineable/pickaxe.json
-314dc58f9689887324a0c9b11acf3c4bc484067b data/minecraft/tags/block/mineable/shovel.json
+53961b873698ac58e3dd3e42c112566b492ed4ee data/minecraft/tags/block/fences.json
+176a7cd1ce16029f8723d3702f3bf53cf48b2c30 data/minecraft/tags/block/guarded_by_piglins.json
+a90d10630a120d0471d672788f2c451ff00fee4d data/minecraft/tags/block/mineable/axe.json
+c875d8217775bf625fcab7529b24d534171b097c data/minecraft/tags/block/mineable/hoe.json
+9c49d3abc4b8e5514d1d93b512d2dde7114006c2 data/minecraft/tags/block/mineable/pickaxe.json
+92a57c7320de552f267f165b51ddb199b963726d data/minecraft/tags/block/mineable/shovel.json
 6f5465e939d12829852e25dff9b4b54b4b74b7da data/minecraft/tags/block/needs_diamond_tool.json
 8fbd3b6db76ca473515769792d3c2b9aa3d32e08 data/minecraft/tags/block/needs_iron_tool.json
 1fc5c44c83c42b35131d265b0cf30342fb436d70 data/minecraft/tags/block/needs_stone_tool.json

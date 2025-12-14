@@ -1036,6 +1036,23 @@ public class ModRecipesProvider extends RecipeProvider {
         this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.WHITE_TERRACOTTA_WALL.get(), Items.WHITE_DYE);
         this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.YELLOW_TERRACOTTA_WALL.get(), Items.YELLOW_DYE);
 
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.BLACK_TERRACOTTA_FENCE.get(), Items.BLACK_DYE);
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.BLUE_TERRACOTTA_FENCE.get(), Items.BLUE_DYE);
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.BROWN_TERRACOTTA_FENCE.get(), Items.BROWN_DYE);
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.CYAN_TERRACOTTA_FENCE.get(), Items.CYAN_DYE);
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.GRAY_TERRACOTTA_FENCE.get(), Items.GRAY_DYE);
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.GREEN_TERRACOTTA_FENCE.get(), Items.GREEN_DYE);
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.LIGHT_BLUE_TERRACOTTA_FENCE.get(), Items.LIGHT_BLUE_DYE);
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.LIGHT_GRAY_TERRACOTTA_FENCE.get(), Items.LIGHT_GRAY_DYE);
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.LIME_TERRACOTTA_FENCE.get(), Items.LIME_DYE);
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.MAGENTA_TERRACOTTA_FENCE.get(), Items.MAGENTA_DYE);
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.ORANGE_TERRACOTTA_FENCE.get(), Items.ORANGE_DYE);
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.PINK_TERRACOTTA_FENCE.get(), Items.PINK_DYE);
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.PURPLE_TERRACOTTA_FENCE.get(), Items.PURPLE_DYE);
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.RED_TERRACOTTA_FENCE.get(), Items.RED_DYE);
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.WHITE_TERRACOTTA_FENCE.get(), Items.WHITE_DYE);
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.YELLOW_TERRACOTTA_FENCE.get(), Items.YELLOW_DYE);
+
         this.shapeless(RecipeCategory.BUILDING_BLOCKS, ModItems.MOSSY_STONE_TILES.get())
                 .requires(ModItems.STONE_TILES.get())
                 .requires(Items.VINE).group("mossy_stone_tiles")
@@ -1607,7 +1624,19 @@ public class ModRecipesProvider extends RecipeProvider {
                 .pattern("#X#")
                 .pattern("###")
                 .group("stained_terracotta_walls")
-                .unlockedBy("has_terracotta_walls", this.has(ModItems.TERRACOTTA_WALL.get()))
+                .unlockedBy("has_terracotta_wall", this.has(ModItems.TERRACOTTA_WALL.get()))
+                .save(this.output, getItemName(result) + "_dyeing");
+    }
+
+    protected void coloredTerracottaFenceFromTerracottaFenceAndDye(ItemLike result, ItemLike dye) {
+        this.shaped(RecipeCategory.BUILDING_BLOCKS, result, 8)
+                .define('#', ModItems.TERRACOTTA_FENCE.get())
+                .define('X', dye)
+                .pattern("###")
+                .pattern("#X#")
+                .pattern("###")
+                .group("stained_terracotta_fences")
+                .unlockedBy("has_terracotta_fence", this.has(ModItems.TERRACOTTA_FENCE.get()))
                 .save(this.output, getItemName(result) + "_dyeing");
     }
 

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "textures": {
+    "texture": "buildersparadise:block/blue_ice_bricks"
+  }
+}

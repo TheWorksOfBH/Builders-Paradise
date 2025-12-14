@@ -1343,16 +1343,17 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         ModBlockFamilies.getAllFamilies()
                 .filter(BlockFamily::shouldGenerateModel)
                 .forEach(
-                        p_386718_ ->
+                        family ->
                         {
-                            if (p_386718_.get(BlockFamily.Variant.CHISELED) == ModBlocks.CHISELED_SOUL_SANDSTONE.get()) {
-                                familyWithExistingFullBlock(p_386718_.getBaseBlock()).wall(ModBlocks.SOUL_SANDSTONE_WALL.get());
-                                familyWithExistingFullBlock(p_386718_.getBaseBlock()).slab(ModBlocks.SOUL_SANDSTONE_SLAB.get());
-                                familyWithExistingFullBlock(p_386718_.getBaseBlock()).stairs(ModBlocks.SOUL_SANDSTONE_STAIRS.get());
+                            if (family.get(BlockFamily.Variant.CHISELED) == ModBlocks.CHISELED_SOUL_SANDSTONE.get()) {
+                                familyWithExistingFullBlock(family.getBaseBlock()).wall(ModBlocks.SOUL_SANDSTONE_WALL.get());
+                                familyWithExistingFullBlock(family.getBaseBlock()).slab(ModBlocks.SOUL_SANDSTONE_SLAB.get());
+                                familyWithExistingFullBlock(family.getBaseBlock()).stairs(ModBlocks.SOUL_SANDSTONE_STAIRS.get());
+                                familyWithExistingFullBlock(family.getBaseBlock()).fence(ModBlocks.SOUL_SANDSTONE_FENCE.get());
                             } else {
-                                familyWithExistingFullBlock(p_386718_.getBaseBlock()).generateFor(p_386718_);
+                                familyWithExistingFullBlock(family.getBaseBlock()).generateFor(family);
                             }
-                            System.out.println(p_386718_);
+                            System.out.println(family);
                         }
                 );
     }

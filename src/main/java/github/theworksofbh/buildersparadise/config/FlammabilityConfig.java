@@ -11,21 +11,25 @@ public class FlammabilityConfig {
         fireBlock.setFlammable(ModBlocks.COAL_SLAB.get(), 5, 5);
         fireBlock.setFlammable(ModBlocks.COAL_STAIRS.get(), 5, 5);
         fireBlock.setFlammable(ModBlocks.COAL_WALL.get(), 5, 5);
+        fireBlock.setFlammable(ModBlocks.COAL_FENCE.get(), 5, 5);
 
         fireBlock.setFlammable(ModBlocks.CHARCOAL_BLOCK.get(), 5, 5);
         fireBlock.setFlammable(ModBlocks.CHARCOAL_SLAB.get(), 5, 5);
         fireBlock.setFlammable(ModBlocks.CHARCOAL_STAIRS.get(), 5, 5);
         fireBlock.setFlammable(ModBlocks.CHARCOAL_WALL.get(), 5, 5);
+        fireBlock.setFlammable(ModBlocks.CHARCOAL_FENCE.get(), 5, 5);
 
         fireBlock.setFlammable(ModBlocks.COAL_BRICKS.get(), 5, 5);
         fireBlock.setFlammable(ModBlocks.COAL_BRICK_SLAB.get(), 5, 5);
         fireBlock.setFlammable(ModBlocks.COAL_BRICK_STAIRS.get(), 5, 5);
         fireBlock.setFlammable(ModBlocks.COAL_BRICK_WALL.get(), 5, 5);
+        fireBlock.setFlammable(ModBlocks.COAL_BRICK_FENCE.get(), 5, 5);
 
         fireBlock.setFlammable(ModBlocks.CHARCOAL_BRICKS.get(), 5, 5);
         fireBlock.setFlammable(ModBlocks.CHARCOAL_BRICK_SLAB.get(), 5, 5);
         fireBlock.setFlammable(ModBlocks.CHARCOAL_BRICK_STAIRS.get(), 5, 5);
         fireBlock.setFlammable(ModBlocks.CHARCOAL_BRICK_WALL.get(), 5, 5);
+        fireBlock.setFlammable(ModBlocks.CHARCOAL_BRICK_FENCE.get(), 5, 5);
 
         fireBlock.setFlammable(ModBlocks.OAK_MOSAIC.get(), 5, 20);
         fireBlock.setFlammable(ModBlocks.SPRUCE_MOSAIC.get(), 5, 20);

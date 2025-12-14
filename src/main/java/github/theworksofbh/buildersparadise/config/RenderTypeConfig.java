@@ -104,6 +104,7 @@ public class RenderTypeConfig {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_SLAB.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_STAIRS.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_WALL.get(), ChunkSectionLayer.TRANSLUCENT);
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_FENCE.get(), ChunkSectionLayer.TRANSLUCENT);
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.EXPOSED_IRON_CHAIN.get(), ChunkSectionLayer.CUTOUT);
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.WEATHERED_IRON_CHAIN.get(), ChunkSectionLayer.CUTOUT);
@@ -117,6 +118,7 @@ public class RenderTypeConfig {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_BRICK_SLAB.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_BRICK_STAIRS.get(), ChunkSectionLayer.TRANSLUCENT);
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_BRICK_WALL.get(), ChunkSectionLayer.TRANSLUCENT);
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_BRICK_FENCE.get(), ChunkSectionLayer.TRANSLUCENT);
 
     }
 }
