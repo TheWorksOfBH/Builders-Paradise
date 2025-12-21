@@ -253,5 +253,28 @@ public class ModAustraliaLanguageProvider extends LanguageProvider {
         this.add("trim_material.buildersparadise.brass", "Brass Material");
         this.add("trim_material.buildersparadise.steel", "Steel Material");
         this.add("trim_material.buildersparadise.sculk", "Sculk Material");
+        this.add("jukebox_song.minecraft.creator", "Leif Chappelle - Creator");
+        this.add("jukebox_song.minecraft.creator_music_box", "Leif Chappelle - Creator (Music Box)");
+        this.add("jukebox_song.minecraft.otherside", "Leif Chappelle - otherside");
+        this.add("jukebox_song.minecraft.pigstep", "Leif Chappelle - Pigstep");
+        this.add("item.minecraft.music_disc_creator.desc", "Leif Chappelle - Creator");
+        this.add("item.minecraft.music_disc_creator_music_box.desc", "Leif Chappelle - Creator (Music Box)");
+        this.add("item.minecraft.music_disc_otherside.desc", "Leif Chappelle - otherside");
+        this.add("item.minecraft.music_disc_pigstep.desc", "Leif Chappelle - Pigstep");
+        this.add("music.game.ancestry", "Leif Chappelle - Ancestry");
+        this.add("music.game.deeper", "Leif Chappelle - Deeper");
+        this.add("music.game.eld_unknown", "Leif Chappelle - Eld Unknown");
+        this.add("music.game.endless", "Leif Chappelle - Endless");
+        this.add("music.game.infinite_amethyst", "Leif Chappelle - Infinite Amethyst");
+        this.add("music.game.left_to_bloom", "Leif Chappelle - Left to Bloom");
+        this.add("music.game.one_more_day", "Leif Chappelle - One More Day");
+        this.add("music.game.stand_tall", "Leif Chappelle - Stand Tall");
+        this.add("music.game.wending", "Leif Chappelle - Wending");
+        this.add("music.game.nether.crimson_forest.chrysopoeia", "Leif Chappelle - Chrysopoeia");
+        this.add("music.game.nether.nether_wastes.rubedo", "Leif Chappelle - Rubedo");
+        this.add("music.game.nether.soulsand_valley.so_below", "Leif Chappelle - So Below");
+        this.add("music.game.swamp.aerie", "Leif Chappelle - Aerie");
+        this.add("music.game.swamp.firebugs", "Leif Chappelle - Firebugs");
+        this.add("music.game.swamp.labyrinthine", "Leif Chappelle - Labyrinthine");
     }
 }

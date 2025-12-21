@@ -13,7 +13,11 @@
     "LoomMenuMixins",
     "MinecartChestMixins",
     "MinecartFurnaceMixins",
-    "SmithingMenuMixins"
+    "MineshaftCorridorMixins",
+    "MineShaftPieceMixins",
+    "SmithingMenuMixins",
+    "SplashManagerMixins",
+    "StructurePieceMixins"
   ],
   "client": [
 
