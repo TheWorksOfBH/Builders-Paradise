@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:netherite_ingot"
+        "recipe": "minecraft:netherite_ingot_from_nugget"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:netherite_ingot"
+      "minecraft:netherite_ingot_from_nugget"
     ]
   }
 }

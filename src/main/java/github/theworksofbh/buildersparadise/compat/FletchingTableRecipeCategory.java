@@ -22,17 +22,7 @@ public class FletchingTableRecipeCategory implements IRecipeCategory<FletchingRe
     public static final Identifier TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "textures/gui/container/fletching.png");
     public static final Identifier UID = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "fletching");
 
-    public static final IRecipeType<FletchingRecipe> FLETCHING_RECIPE_TYPE = new IRecipeType<FletchingRecipe>() {
-        @Override
-        public Identifier getUid() {
-            return UID;
-        }
-
-        @Override
-        public Class<? extends FletchingRecipe> getRecipeClass() {
-            return FletchingRecipe.class;
-        }
-    };
+    public static final IRecipeType<FletchingRecipe> FLETCHING_RECIPE_TYPE = IRecipeType.create(UID, FletchingRecipe.class);
 
     private final IDrawable background;
     private final IDrawable icon;

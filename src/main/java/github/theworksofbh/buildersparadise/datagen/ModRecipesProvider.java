@@ -128,7 +128,8 @@ public class ModRecipesProvider extends RecipeProvider {
                 .unlockedBy("has_elder_prismarine_crystals", this.has(ModItems.ELDER_PRISMARINE_CRYSTALS.get()))
                 .save(this.output);
 //        nineBlockStorageRecipes(RecipeCategory.MISC, ModItems.COPPER_NUGGET.get(), RecipeCategory.MISC, Items.COPPER_INGOT);
-        nineBlockStorageRecipes(RecipeCategory.MISC, ModItems.NETHERITE_NUGGET.get(), RecipeCategory.MISC, Items.NETHERITE_INGOT);
+        this.shapeless(RecipeCategory.MISC, ModItems.NETHERITE_NUGGET.get(), 9).requires(Items.NETHERITE_INGOT).unlockedBy(getHasName(Items.NETHERITE_INGOT), this.has(Items.NETHERITE_INGOT)).save(this.output);
+        this.shaped(RecipeCategory.MISC, Items.NETHERITE_INGOT).define('#', ModItems.NETHERITE_NUGGET.get()).pattern("###").pattern("###").pattern("###").unlockedBy(getHasName(ModItems.NETHERITE_NUGGET.get()), this.has(ModItems.NETHERITE_NUGGET.get())).save(this.output, "netherite_ingot_from_nugget");
         oreSmelting(ZINC_SMELTABLES, RecipeCategory.MISC, ModItems.ZINC_INGOT.get(), 1.0F, 200, "zinc_ingot");
         oreBlasting(ZINC_SMELTABLES, RecipeCategory.MISC, ModItems.ZINC_INGOT.get(), 1.0F, 200, "zinc_ingot");
         eightyOneBlockStorageRecipes(
