@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": "minecraft:sculk_vein",
+    "#": "buildersparadise:sculk_brick",
     "W": "buildersparadise:sculk_bricks"
   },
   "pattern": [

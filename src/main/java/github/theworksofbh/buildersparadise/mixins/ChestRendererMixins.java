@@ -7,21 +7,30 @@ import net.minecraft.client.renderer.blockentity.state.ChestRenderState;
 import net.minecraft.client.resources.model.Material;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.ChestBlock;
-import net.minecraft.world.level.block.TrappedChestBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.LidBlockEntity;
 import net.minecraft.world.level.block.state.properties.ChestType;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(ChestRenderer.class)
-public class ChestRendererMixins<T extends BlockEntity & LidBlockEntity> {
+public abstract class ChestRendererMixins<T extends BlockEntity & LidBlockEntity> {
 
+
+    @Final
+    @Shadow
+    private boolean xmasTextures;
+
+    @Unique
+    private boolean xmasTextures() {
+        return this.xmasTextures;
+    }
 
     @Unique
     private static Material getCustomChestPath(String path, boolean isTrapped, String part) {
@@ -33,19 +42,32 @@ public class ChestRendererMixins<T extends BlockEntity & LidBlockEntity> {
     }
 
     @Unique
-    private static Material determineCustomMaterial(ChestType type, boolean isTrapped, String path) {
-        if (isTrapped) {
+    private static Material getChristmasChestPath(String part) {
+        return new Material(Sheets.CHEST_SHEET, Identifier.withDefaultNamespace("entity/chest/christmas" + part));
+    }
+
+    @Unique
+    private Material determineCustomMaterial(ChestType type, boolean isTrapped, String path) {
+        if (xmasTextures()) {
             return switch (type) {
-                case LEFT -> getCustomChestPath(path, true, "_left");
-                case RIGHT -> getCustomChestPath(path, true, "_right");
-                case SINGLE -> getCustomChestPath(path, true, "");
+                case LEFT -> getChristmasChestPath("_left");
+                case RIGHT -> getChristmasChestPath("_right");
+                case SINGLE -> getChristmasChestPath("");
             };
         } else {
-            return switch (type) {
-                case LEFT -> getCustomChestPath(path, false, "_left");
-                case RIGHT -> getCustomChestPath(path, false, "_right");
-                case SINGLE -> getCustomChestPath(path, false, "");
-            };
+            if (isTrapped) {
+                return switch (type) {
+                    case LEFT -> getCustomChestPath(path, true, "_left");
+                    case RIGHT -> getCustomChestPath(path, true, "_right");
+                    case SINGLE -> getCustomChestPath(path, true, "");
+                };
+            } else {
+                return switch (type) {
+                    case LEFT -> getCustomChestPath(path, false, "_left");
+                    case RIGHT -> getCustomChestPath(path, false, "_right");
+                    case SINGLE -> getCustomChestPath(path, false, "");
+                };
+            }
         }
     }
 
@@ -56,7 +78,8 @@ public class ChestRendererMixins<T extends BlockEntity & LidBlockEntity> {
         if (!(block instanceof ChestBlock) && !(block instanceof TrappedChestBlock)) return;
 
         Identifier key = BuiltInRegistries.BLOCK.getKey(block);
-        if (key == null || !key.getNamespace().equals(BuildersParadise.MODID)) return;
+        if (key == null) return;
+        if (!key.getNamespace().equals(BuildersParadise.MODID)) return;
 
         boolean isTrapped = block instanceof TrappedChestBlock;
         ChestType type = blockEntity.getBlockState().getValue(ChestBlock.TYPE);

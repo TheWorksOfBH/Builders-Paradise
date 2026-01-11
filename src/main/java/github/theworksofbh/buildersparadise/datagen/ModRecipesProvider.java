@@ -1087,6 +1087,44 @@ public class ModRecipesProvider extends RecipeProvider {
         this.bronzeSmithing(Items.COPPER_SPEAR, RecipeCategory.TOOLS, ModItems.BRONZE_SPEAR.get());
         this.bronzeSmithing(Items.COPPER_HORSE_ARMOR, RecipeCategory.TOOLS, ModItems.BRONZE_HORSE_ARMOR.get());
         this.bronzeSmithing(Items.COPPER_NAUTILUS_ARMOR, RecipeCategory.TOOLS, ModItems.BRONZE_NAUTILUS_ARMOR.get());
+
+        this.flameTestTorch(ModItems.IRON_TORCH.get(), Items.IRON_NUGGET);
+        this.createLanterns(ModItems.IRON_FIRE_LANTERN.get(), Items.SOUL_LANTERN, Items.LANTERN, Items.IRON_NUGGET, Items.IRON_INGOT, ModItems.IRON_TORCH.get());
+
+        this.createLanterns(ModItems.COPPER_FIRE_LANTERN.get(), ModItems.COPPER_SOUL_LANTERN.get(), Items.COPPER_LANTERN.unaffected(), Items.COPPER_NUGGET, Items.COPPER_INGOT, Items.COPPER_TORCH);
+
+        this.createChain(ModItems.ZINC_CHAIN.get(), ModItems.ZINC_INGOT.get(), ModItems.ZINC_NUGGET.get());
+        this.createChain(ModItems.GOLD_CHAIN.get(), Items.GOLD_INGOT, Items.GOLD_NUGGET);
+        this.createChain(ModItems.NETHERITE_CHAIN.get(), Items.NETHERITE_INGOT, ModItems.NETHERITE_NUGGET.get());
+        this.createChain(ModItems.SILVER_CHAIN.get(), ModItems.SILVER_INGOT.get(), ModItems.SILVER_NUGGET.get());
+        this.createChain(ModItems.TIN_CHAIN.get(), ModItems.TIN_INGOT.get(), ModItems.TIN_NUGGET.get());
+        this.createChain(ModItems.TUNGSTEN_CHAIN.get(), ModItems.TUNGSTEN_INGOT.get(), ModItems.TUNGSTEN_NUGGET.get());
+        this.createChain(ModItems.PLATINUM_CHAIN.get(), ModItems.PLATINUM_INGOT.get(), ModItems.PLATINUM_NUGGET.get());
+        this.createChain(ModItems.LEAD_CHAIN.get(), ModItems.LEAD_INGOT.get(), ModItems.LEAD_NUGGET.get());
+        this.createChain(ModItems.URANIUM_CHAIN.get(), ModItems.URANIUM_INGOT.get(), ModItems.URANIUM_NUGGET.get());
+        this.createChain(ModItems.BRONZE_CHAIN.get(), ModItems.BRONZE_INGOT.get(), ModItems.BRONZE_NUGGET.get());
+        this.createChain(ModItems.BRASS_CHAIN.get(), ModItems.BRASS_INGOT.get(), ModItems.BRASS_NUGGET.get());
+        this.createChain(ModItems.STEEL_CHAIN.get(), ModItems.STEEL_INGOT.get(), ModItems.STEEL_NUGGET.get());
+
+        this.flameTestTorch(ModItems.ZINC_TORCH.get(), ModItems.ZINC_NUGGET.get());
+        this.flameTestTorch(ModItems.SILVER_TORCH.get(), ModItems.SILVER_NUGGET.get());
+        this.flameTestTorch(ModItems.TIN_TORCH.get(), ModItems.TIN_NUGGET.get());
+        this.flameTestTorch(ModItems.TUNGSTEN_TORCH.get(), ModItems.TUNGSTEN_NUGGET.get());
+        this.flameTestTorch(ModItems.PLATINUM_TORCH.get(), ModItems.PLATINUM_NUGGET.get());
+        this.flameTestTorch(ModItems.GOLD_TORCH.get(), Items.GOLD_NUGGET);
+        this.flameTestTorch(ModItems.LEAD_TORCH.get(), ModItems.LEAD_NUGGET.get());
+        this.flameTestTorch(ModItems.URANIUM_TORCH.get(), ModItems.URANIUM_NUGGET.get());
+    }
+
+    protected void createChain(ItemLike result, ItemLike ingot, ItemLike nugget) {
+        this.shaped(RecipeCategory.DECORATIONS, result)
+                .define('I', ingot)
+                .define('N', nugget)
+                .pattern("N")
+                .pattern("I")
+                .pattern("N")
+                .unlockedBy("has_" + getItemName(nugget), this.has(nugget))
+                .unlockedBy("has_" + getItemName(ingot), this.has(ingot)).save(this.output);
     }
 
     @Override
@@ -1116,9 +1154,9 @@ public class ModRecipesProvider extends RecipeProvider {
             } else {
                 item = Items.PRISMARINE_SHARD;
             }
-        } else if (fence.asItem().getDescriptionId().contains("resin")) {
+        } else if (fence.asItem().getDescriptionId().contains("resin") && !fence.asItem().getDescriptionId().contains("brick")) {
             item = Items.RESIN_CLUMP;
-        } else if (fence.asItem().getDescriptionId().contains("sculk")) {
+        } else if (fence.asItem().getDescriptionId().contains("sculk") && !fence.asItem().getDescriptionId().contains("brick")) {
             item = Items.SCULK_VEIN;
         } else if (fence.asItem().getDescriptionId().contains("quartz")) {
             item = Items.QUARTZ;
@@ -1382,7 +1420,7 @@ public class ModRecipesProvider extends RecipeProvider {
                 .pattern("PSP")
                 .unlockedBy("has_" + getItemName(woodPlanks), this.has(woodPlanks))
                 .unlockedBy("has_" + getItemName(woodSlabs), this.has(woodSlabs))
-                .save(this.output.withConditions(NeoForgeConditions.never()));
+                .save(this.output);
     }
 
     protected void createBookshelf(ItemLike bookshelf, ItemLike woodType) {
@@ -1648,6 +1686,59 @@ public class ModRecipesProvider extends RecipeProvider {
         SmithingTransformRecipeBuilder.smithing(Ingredient.of(ModItems.BRONZE_UPGRADE_SMITHING_TEMPLATE.get()), Ingredient.of(ingredientItem), this.tag(ModItemTags.BRONZE_TOOL_MATERIALS), category, resultItem).unlocks("has_bronze_ingot", this.has(ModItemTags.BRONZE_TOOL_MATERIALS)).save(this.output, getItemName(resultItem) + "_smithing");
     }
 
+    protected void flameTestTorch(Item result, ItemLike nugget) {
+        this.shaped(RecipeCategory.DECORATIONS, result, 4).define('X', Ingredient.of(new ItemLike[]{Items.COAL, Items.CHARCOAL})).define('#', Items.STICK).define('C', nugget).pattern("C").pattern("X").pattern("#").unlockedBy("has_" + getItemName(nugget), this.has(nugget)).save(this.output);
+    }
+
+    protected void createLanterns(ItemLike normal, ItemLike soul, ItemLike flameTest, ItemLike nugget, ItemLike ingot, ItemLike flameTestTorch) {
+        if (flameTest == Items.LANTERN) {
+            this.shaped(RecipeCategory.DECORATIONS, flameTest)
+                    .define('#', Items.TORCH)
+                    .define('X', nugget)
+                    .pattern("XXX")
+                    .pattern("X#X")
+                    .pattern("XXX")
+                    .unlockedBy("has_" + getItemName(nugget), this.has(nugget))
+                    .unlockedBy("has_" + getItemName(ingot), this.has(ingot)).save(this.output.withConditions(NeoForgeConditions.never()));
+
+            this.shaped(RecipeCategory.DECORATIONS, flameTest)
+                    .define('#', flameTestTorch)
+                    .define('X', nugget)
+                    .pattern("XXX")
+                    .pattern("X#X")
+                    .pattern("XXX")
+                    .unlockedBy("has_" + getItemName(nugget), this.has(nugget))
+                    .unlockedBy("has_" + getItemName(ingot), this.has(ingot)).save(this.output, "lantern_mod");
+        } else {
+            this.shaped(RecipeCategory.DECORATIONS, flameTest)
+                    .define('#', flameTestTorch)
+                    .define('X', nugget)
+                    .pattern("XXX")
+                    .pattern("X#X")
+                    .pattern("XXX")
+                    .unlockedBy("has_" + getItemName(nugget), this.has(nugget))
+                    .unlockedBy("has_" + getItemName(ingot), this.has(ingot)).save(this.output);
+        }
+
+        this.shaped(RecipeCategory.DECORATIONS, normal)
+                .define('#', Items.TORCH)
+                .define('X', nugget)
+                .pattern("XXX")
+                .pattern("X#X")
+                .pattern("XXX")
+                .unlockedBy("has_" + getItemName(nugget), this.has(nugget))
+                .unlockedBy("has_" + getItemName(ingot), this.has(ingot)).save(this.output);
+
+        this.shaped(RecipeCategory.DECORATIONS, soul)
+                .define('#', Items.SOUL_TORCH)
+                .define('X', nugget)
+                .pattern("XXX")
+                .pattern("X#X")
+                .pattern("XXX")
+                .unlockedBy("has_" + getItemName(nugget), this.has(nugget))
+                .unlockedBy("has_" + getItemName(ingot), this.has(ingot)).save(this.output);
+    }
+
     private void waxedBlocks() {
         createWaxedPressurePlateRecipe(ModItems.WAXED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get(), ModItems.MEDIUM_WEIGHTED_PRESSURE_PLATE.get(), "medium_weighted_pressure_plate");
         createWaxedPressurePlateRecipe(ModItems.WAXED_EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get(), ModItems.EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get(), "exposed_medium_weighted_pressure_plate");
@@ -1678,6 +1769,31 @@ public class ModRecipesProvider extends RecipeProvider {
         createWaxedBarsRecipe(ModItems.WAXED_EXPOSED_IRON_CHAIN.get(), ModItems.EXPOSED_IRON_CHAIN.get(), "exposed_iron_chain");
         createWaxedBarsRecipe(ModItems.WAXED_WEATHERED_IRON_CHAIN.get(), ModItems.WEATHERED_IRON_CHAIN.get(), "weathered_iron_chain");
         createWaxedBarsRecipe(ModItems.WAXED_RUSTED_IRON_CHAIN.get(), ModItems.RUSTED_IRON_CHAIN.get(), "rusted_iron_chain");
+
+        createWaxedBarsRecipe(ModItems.WAXED_IRON_LANTERN.get(), Items.LANTERN, "lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_EXPOSED_IRON_LANTERN.get(), ModItems.EXPOSED_IRON_LANTERN.get(), "exposed_iron_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_WEATHERED_IRON_LANTERN.get(), ModItems.WEATHERED_IRON_LANTERN.get(), "weathered_iron_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_RUSTED_IRON_LANTERN.get(), ModItems.RUSTED_IRON_LANTERN.get(), "rusted_iron_lantern");
+
+        createWaxedBarsRecipe(ModItems.WAXED_IRON_SOUL_LANTERN.get(), Items.SOUL_LANTERN, "soul_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_EXPOSED_IRON_SOUL_LANTERN.get(), ModItems.EXPOSED_IRON_SOUL_LANTERN.get(), "exposed_iron_soul_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_WEATHERED_IRON_SOUL_LANTERN.get(), ModItems.WEATHERED_IRON_SOUL_LANTERN.get(), "weathered_iron_soul_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_RUSTED_IRON_SOUL_LANTERN.get(), ModItems.RUSTED_IRON_SOUL_LANTERN.get(), "rusted_iron_soul_lantern");
+
+        createWaxedBarsRecipe(ModItems.WAXED_IRON_FIRE_LANTERN.get(), ModItems.IRON_FIRE_LANTERN.get(), "iron_fire_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_EXPOSED_IRON_FIRE_LANTERN.get(), ModItems.EXPOSED_IRON_FIRE_LANTERN.get(), "exposed_iron_fire_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_WEATHERED_IRON_FIRE_LANTERN.get(), ModItems.WEATHERED_IRON_FIRE_LANTERN.get(), "weathered_iron_fire_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_RUSTED_IRON_FIRE_LANTERN.get(), ModItems.RUSTED_IRON_FIRE_LANTERN.get(), "rusted_iron_fire_lantern");
+
+        createWaxedBarsRecipe(ModItems.WAXED_COPPER_SOUL_LANTERN.get(), ModItems.COPPER_SOUL_LANTERN.get(), "copper_soul_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_EXPOSED_COPPER_SOUL_LANTERN.get(), ModItems.EXPOSED_COPPER_SOUL_LANTERN.get(), "exposed_copper_soul_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_WEATHERED_COPPER_SOUL_LANTERN.get(), ModItems.WEATHERED_COPPER_SOUL_LANTERN.get(), "weathered_copper_soul_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_OXIDIZED_COPPER_SOUL_LANTERN.get(), ModItems.OXIDIZED_COPPER_SOUL_LANTERN.get(), "oxidized_copper_soul_lantern");
+
+        createWaxedBarsRecipe(ModItems.WAXED_COPPER_FIRE_LANTERN.get(), ModItems.COPPER_FIRE_LANTERN.get(), "copper_fire_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_EXPOSED_COPPER_FIRE_LANTERN.get(), ModItems.EXPOSED_COPPER_FIRE_LANTERN.get(), "exposed_copper_fire_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_WEATHERED_COPPER_FIRE_LANTERN.get(), ModItems.WEATHERED_COPPER_FIRE_LANTERN.get(), "weathered_copper_fire_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_OXIDIZED_COPPER_FIRE_LANTERN.get(), ModItems.OXIDIZED_COPPER_FIRE_LANTERN.get(), "oxidized_copper_fire_lantern");
 
         createWaxedPressurePlateRecipe(ModItems.WAXED_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), Items.HEAVY_WEIGHTED_PRESSURE_PLATE, "heavy_weighted_pressure_plate");
         createWaxedPressurePlateRecipe(ModItems.WAXED_EXPOSED_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModItems.EXPOSED_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), "exposed_heavy_weighted_pressure_plate");
@@ -1733,6 +1849,11 @@ public class ModRecipesProvider extends RecipeProvider {
         createWaxedBlock(ModItems.WAXED_EXPOSED_CUT_ZINC_STAIRS.get(), ModItems.EXPOSED_CUT_ZINC_STAIRS.get(), "exposed_cut_zinc_stairs");
         createWaxedBlock(ModItems.WAXED_WEATHERED_CUT_ZINC_STAIRS.get(), ModItems.WEATHERED_CUT_ZINC_STAIRS.get(), "weathered_cut_zinc_stairs");
         createWaxedBlock(ModItems.WAXED_CORRODED_CUT_ZINC_STAIRS.get(), ModItems.CORRODED_CUT_ZINC_STAIRS.get(), "corroded_cut_zinc_stairs");
+
+        createWaxedBarsRecipe(ModItems.WAXED_ZINC_CHAIN.get(), ModItems.ZINC_CHAIN.get(), "zinc_chain");
+        createWaxedBarsRecipe(ModItems.WAXED_EXPOSED_ZINC_CHAIN.get(), ModItems.EXPOSED_ZINC_CHAIN.get(), "exposed_zinc_chain");
+        createWaxedBarsRecipe(ModItems.WAXED_WEATHERED_ZINC_CHAIN.get(), ModItems.WEATHERED_ZINC_CHAIN.get(), "weathered_zinc_chain");
+        createWaxedBarsRecipe(ModItems.WAXED_CORRODED_ZINC_CHAIN.get(), ModItems.CORRODED_ZINC_CHAIN.get(), "corroded_zinc_chain");
     }
 
     private void stoneCuttingRecipes() {
@@ -2399,6 +2520,12 @@ public class ModRecipesProvider extends RecipeProvider {
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.SCULK_BRICK_STAIRS.get(), ModItems.SCULK_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.SCULK_BRICK_WALL.get(), ModItems.SCULK_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CHISELED_SCULK_BRICKS.get(), ModItems.SCULK_BRICKS.get());
+
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_AMETHYST.get(), Items.AMETHYST_BLOCK, 4);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_AMETHYST_STAIRS.get(), Items.AMETHYST_BLOCK, 4);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_AMETHYST_SLAB.get(), Items.AMETHYST_BLOCK, 8);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_AMETHYST_STAIRS.get(), ModItems.CUT_AMETHYST.get());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_AMETHYST_SLAB.get(), ModItems.CUT_AMETHYST.get(), 2);
     }
 
     public static class Runner extends RecipeProvider.Runner {

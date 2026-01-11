@@ -1,9 +1,4 @@
 {
-  "neoforge:conditions": [
-    {
-      "type": "neoforge:never"
-    }
-  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_mangrove_planks": {

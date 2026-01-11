@@ -99,6 +99,7 @@ public class ModBlockFamilies {
     public static final BlockFamily DIAMOND_BLOCK = familyBuilder(Blocks.DIAMOND_BLOCK).cut(ModBlocks.CUT_DIAMOND.get()).getFamily();
     public static final BlockFamily EMERALD_BLOCK = familyBuilder(Blocks.EMERALD_BLOCK).cut(ModBlocks.CUT_EMERALD.get()).getFamily();
     public static final BlockFamily NETHERITE_BLOCK = familyBuilder(Blocks.NETHERITE_BLOCK).cut(ModBlocks.CUT_NETHERITE.get()).getFamily();
+    public static final BlockFamily AMETHYST_BLOCK = familyBuilder(Blocks.AMETHYST_BLOCK).cut(ModBlocks.CUT_AMETHYST.get()).getFamily();
 
     public static final BlockFamily CUT_IRON = familyBuilder(ModBlocks.CUT_IRON.get()).stairs(ModBlocks.CUT_IRON_STAIRS.get()).slab(ModBlocks.CUT_IRON_SLAB.get()).getFamily();
     public static final BlockFamily EXPOSED_CUT_IRON = familyBuilder(ModBlocks.EXPOSED_CUT_IRON.get()).stairs(ModBlocks.EXPOSED_CUT_IRON_STAIRS.get()).slab(ModBlocks.EXPOSED_CUT_IRON_SLAB.get()).getFamily();
@@ -114,6 +115,7 @@ public class ModBlockFamilies {
     public static final BlockFamily CUT_DIAMOND = familyBuilder(ModBlocks.CUT_DIAMOND.get()).stairs(ModBlocks.CUT_DIAMOND_STAIRS.get()).slab(ModBlocks.CUT_DIAMOND_SLAB.get()).getFamily();
     public static final BlockFamily CUT_EMERALD = familyBuilder(ModBlocks.CUT_EMERALD.get()).stairs(ModBlocks.CUT_EMERALD_SLAB.get()).slab(ModBlocks.CUT_EMERALD_STAIRS.get()).getFamily();
     public static final BlockFamily CUT_NETHERITE = familyBuilder(ModBlocks.CUT_NETHERITE.get()).stairs(ModBlocks.CUT_NETHERITE_STAIRS.get()).slab(ModBlocks.CUT_NETHERITE_SLAB.get()).getFamily();
+    public static final BlockFamily CUT_AMETHYST = familyBuilder(ModBlocks.CUT_AMETHYST.get()).slab(ModBlocks.CUT_AMETHYST_SLAB.get()).stairs(ModBlocks.CUT_AMETHYST_STAIRS.get()).getFamily();
 
     public static final BlockFamily POLISHED_DRIPSTONE = familyBuilder(ModBlocks.POLISHED_DRIPSTONE.get()).stairs(ModBlocks.POLISHED_DRIPSTONE_STAIRS.get()).slab(ModBlocks.POLISHED_DRIPSTONE_SLAB.get()).wall(ModBlocks.POLISHED_DRIPSTONE_WALL.get()).polished(ModBlocks.DRIPSTONE_BRICKS.get()).fence(ModBlocks.POLISHED_DRIPSTONE_FENCE.get()).getFamily();
     public static final BlockFamily POLISHED_CALCITE = familyBuilder(ModBlocks.POLISHED_CALCITE.get()).stairs(ModBlocks.POLISHED_CALCITE_STAIRS.get()).slab(ModBlocks.POLISHED_CALCITE_SLAB.get()).wall(ModBlocks.POLISHED_CALCITE_WALL.get()).polished(ModBlocks.CALCITE_BRICKS.get()).fence(ModBlocks.POLISHED_CALCITE_FENCE.get()).getFamily();
@@ -265,5 +267,4 @@ public class ModBlockFamilies {
     public static final BlockFamily PACKED_ICE_BRICKS = familyBuilder(ModBlocks.PACKED_ICE_BRICKS.get()).slab(ModBlocks.PACKED_ICE_BRICK_SLAB.get()).stairs(ModBlocks.PACKED_ICE_BRICK_STAIRS.get()).wall(ModBlocks.PACKED_ICE_BRICK_WALL.get()).fence(ModBlocks.PACKED_ICE_BRICK_FENCE.get()).getFamily();
     public static final BlockFamily BLUE_ICE_BRICKS = familyBuilder(ModBlocks.BLUE_ICE_BRICKS.get()).slab(ModBlocks.BLUE_ICE_BRICK_SLAB.get()).stairs(ModBlocks.BLUE_ICE_BRICK_STAIRS.get()).wall(ModBlocks.BLUE_ICE_BRICK_WALL.get()).fence(ModBlocks.BLUE_ICE_BRICK_FENCE.get()).getFamily();
     public static final BlockFamily SCULK_BRICKS = familyBuilder(ModBlocks.SCULK_BRICKS.get()).slab(ModBlocks.SCULK_BRICK_SLAB.get()).stairs(ModBlocks.SCULK_BRICK_STAIRS.get()).wall(ModBlocks.SCULK_BRICK_WALL.get()).chiseled(ModBlocks.CHISELED_SCULK_BRICKS.get()).fence(ModBlocks.SCULK_BRICK_FENCE.get()).getFamily();
-
 }

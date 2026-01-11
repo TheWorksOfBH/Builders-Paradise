@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "buildersparadise:rusted_iron_lantern",
+    "minecraft:honeycomb"
+  ],
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:waxed_rusted_iron_lantern"
+  }
+}

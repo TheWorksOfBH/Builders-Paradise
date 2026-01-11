@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "buildersparadise:block/zinc_wall_torch"
+    },
+    "facing=north": {
+      "model": "buildersparadise:block/zinc_wall_torch",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "buildersparadise:block/zinc_wall_torch",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "buildersparadise:block/zinc_wall_torch",
+      "y": 180
+    }
+  }
+}

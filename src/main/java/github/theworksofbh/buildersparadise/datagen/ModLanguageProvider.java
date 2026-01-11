@@ -28,7 +28,15 @@ public class ModLanguageProvider extends LanguageProvider {
         );
 
         Set<Block> handMadeBlocks = Set.of(
-
+            ModBlocks.IRON_WALL_TORCH.get(),
+            ModBlocks.ZINC_WALL_TORCH.get(),
+            ModBlocks.SILVER_WALL_TORCH.get(),
+            ModBlocks.TIN_WALL_TORCH.get(),
+            ModBlocks.TUNGSTEN_WALL_TORCH.get(),
+            ModBlocks.PLATINUM_WALL_TORCH.get(),
+            ModBlocks.GOLD_WALL_TORCH.get(),
+            ModBlocks.LEAD_WALL_TORCH.get(),
+            ModBlocks.URANIUM_WALL_TORCH.get()
         );
 
         return Stream.concat(
@@ -262,6 +270,7 @@ public class ModLanguageProvider extends LanguageProvider {
         this.add("music.game.swamp.aerie", "Leif Chappelle - Aerie");
         this.add("music.game.swamp.firebugs", "Leif Chappelle - Firebugs");
         this.add("music.game.swamp.labyrinthine", "Leif Chappelle - Labyrinthine");
-
+        this.add("block.minecraft.lantern", "Iron Lantern");
+        this.add("block.minecraft.soul_lantern", "Iron Soul Lantern");
     }
 }

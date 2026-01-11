@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": "minecraft:resin_clump",
+    "#": "minecraft:resin_brick",
     "W": "minecraft:resin_bricks"
   },
   "pattern": [

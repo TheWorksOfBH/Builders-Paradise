@@ -33,6 +33,26 @@
     "buildersparadise:uranium_block",
     "buildersparadise:cut_uranium",
     "buildersparadise:brass_block",
-    "buildersparadise:cut_brass"
+    "buildersparadise:cut_brass",
+    "buildersparadise:zinc_chain",
+    "buildersparadise:exposed_zinc_chain",
+    "buildersparadise:weathered_zinc_chain",
+    "buildersparadise:corroded_zinc_chain",
+    "buildersparadise:waxed_zinc_chain",
+    "buildersparadise:waxed_exposed_zinc_chain",
+    "buildersparadise:waxed_weathered_zinc_chain",
+    "buildersparadise:waxed_corroded_zinc_chain",
+    "buildersparadise:gold_chain",
+    "buildersparadise:silver_chain",
+    "buildersparadise:uranium_chain",
+    "buildersparadise:brass_chain",
+    "buildersparadise:zinc_torch",
+    "buildersparadise:zinc_wall_torch",
+    "buildersparadise:silver_torch",
+    "buildersparadise:silver_wall_torch",
+    "buildersparadise:gold_torch",
+    "buildersparadise:gold_wall_torch",
+    "buildersparadise:uranium_torch",
+    "buildersparadise:uranium_wall_torch"
   ]
 }

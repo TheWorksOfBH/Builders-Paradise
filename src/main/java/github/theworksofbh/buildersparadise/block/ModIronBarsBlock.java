@@ -1,8 +1,11 @@
 package github.theworksofbh.buildersparadise.block;
 
+import github.theworksofbh.buildersparadise.tags.ModBlockTags;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.IronBarsBlock;
@@ -21,13 +24,29 @@ public class ModIronBarsBlock extends IronBarsBlock {
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         if (level.random.nextFloat() < BlockOxidationValues.IRON) {
-            if (state.is(Blocks.IRON_BARS)) {
-                level.setBlock(pos, ModBlocks.EXPOSED_IRON_BARS.get().withPropertiesOf(state), Block.UPDATE_ALL);
-            } else if (state.is(ModBlocks.EXPOSED_IRON_BARS.get())) {
-                level.setBlock(pos, ModBlocks.WEATHERED_IRON_BARS.get().withPropertiesOf(state), Block.UPDATE_ALL);
-            } else if (state.is(ModBlocks.WEATHERED_IRON_BARS.get())) {
-                level.setBlock(pos, ModBlocks.RUSTED_IRON_BARS.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            if (isGalvanized(level, pos)) {
+
+            } else {
+                if (state.is(Blocks.IRON_BARS)) {
+                    level.setBlock(pos, ModBlocks.EXPOSED_IRON_BARS.get().withPropertiesOf(state), Block.UPDATE_ALL);
+                } else if (state.is(ModBlocks.EXPOSED_IRON_BARS.get())) {
+                    level.setBlock(pos, ModBlocks.WEATHERED_IRON_BARS.get().withPropertiesOf(state), Block.UPDATE_ALL);
+                } else if (state.is(ModBlocks.WEATHERED_IRON_BARS.get())) {
+                    level.setBlock(pos, ModBlocks.RUSTED_IRON_BARS.get().withPropertiesOf(state), Block.UPDATE_ALL);
+                }
             }
         }
+    }
+
+    private static boolean isGalvanized(LevelReader levelReader, BlockPos blockPos) {
+        for (Direction direction : Direction.values()) {
+            BlockPos neighbourPos = blockPos.relative(direction);
+            BlockState neighbourState = levelReader.getBlockState(neighbourPos);
+
+            if (neighbourState.is(ModBlockTags.GALVANIZES_IRON)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

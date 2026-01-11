@@ -118,6 +118,12 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                             } else {
                                 tag(BlockTags.MINEABLE_WITH_HOE).add(block);
                             }
+                        } else if (block.getDescriptionId().contains("resin")) {
+                            if (block.getDescriptionId().contains("brick")) {
+                                tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
+                            } else {
+
+                            }
                         }
                     } else {
                         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
@@ -158,16 +164,22 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                         tag(ModBlockTags.OBSERVERS).add(block);
                     } else if (block instanceof CrafterBlock) {
                         tag(ModBlockTags.CRAFTERS).add(block);
-                    } else if (block.getDescriptionId().contains("iron") || block.getDescriptionId().contains("copper") || block.getDescriptionId().contains("lapis")|| block.getDescriptionId().contains("tin") || block.getDescriptionId().contains("lead") || block.getDescriptionId().contains("bronze") || block.getDescriptionId().contains("steel")) {
-                        tag(BlockTags.NEEDS_STONE_TOOL).add(block);
-                    } else if (block.getDescriptionId().contains("gold") || block.getDescriptionId().contains("diamond") || block.getDescriptionId().contains("emerald") || block.getDescriptionId().contains("zinc") || block.getDescriptionId().contains("silver") || block.getDescriptionId().contains("platinum") || block.getDescriptionId().contains("brass") || block.getDescriptionId().contains("uranium")) {
-                        tag(BlockTags.NEEDS_IRON_TOOL).add(block);
-                    } else if (block.getDescriptionId().contains("obsidian") || block.getDescriptionId().contains("netherite")) {
-                        tag(BlockTags.NEEDS_DIAMOND_TOOL).add(block);
-                    } else if (block.getDescriptionId().contains("tungsten")) {
-                        tag(Tags.Blocks.NEEDS_NETHERITE_TOOL).add(block);
+                    } else if (!block.getDescriptionId().contains("chain") || !block.getDescriptionId().contains("lantern")) {
+                        if (block.getDescriptionId().contains("iron") || block.getDescriptionId().contains("copper") || block.getDescriptionId().contains("lapis")|| block.getDescriptionId().contains("tin") || block.getDescriptionId().contains("lead") || block.getDescriptionId().contains("bronze") || block.getDescriptionId().contains("steel")) {
+                            tag(BlockTags.NEEDS_STONE_TOOL).add(block);
+                        } else if (block.getDescriptionId().contains("gold") || block.getDescriptionId().contains("diamond") || block.getDescriptionId().contains("emerald") || block.getDescriptionId().contains("zinc") || block.getDescriptionId().contains("silver") || block.getDescriptionId().contains("platinum") || block.getDescriptionId().contains("brass") || block.getDescriptionId().contains("uranium")) {
+                            tag(BlockTags.NEEDS_IRON_TOOL).add(block);
+                        } else if (block.getDescriptionId().contains("obsidian") || block.getDescriptionId().contains("netherite")) {
+                            tag(BlockTags.NEEDS_DIAMOND_TOOL).add(block);
+                        } else if (block.getDescriptionId().contains("tungsten")) {
+                            tag(Tags.Blocks.NEEDS_NETHERITE_TOOL).add(block);
+                        }
                     } else if (block instanceof ChainBlock) {
                         tag(BlockTags.CHAINS).add(block);
+                    } else if (block instanceof TorchBlock) {
+                        tag(BlockTags.WALL_POST_OVERRIDE).add(block);
+                    } else if (block instanceof LanternBlock) {
+                        tag(BlockTags.LANTERNS).add(block);
                     }
                 }
         );
@@ -184,5 +196,71 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
         tag(BlockTags.BEACON_BASE_BLOCKS).addTag(ModBlockTags.IRON).add(ModBlocks.BRONZE_BLOCK.get()).add(ModBlocks.SILVER_BLOCK.get()).add(ModBlocks.PLATINUM_BLOCK.get());
         tag(ModBlockTags.INCORRECT_FOR_BRONZE_TOOL).addTag(BlockTags.INCORRECT_FOR_COPPER_TOOL);
+
+        tag(ModBlockTags.GALVANIZES_IRON)
+                .add(ModBlocks.ZINC_BLOCK.get())
+                .add(ModBlocks.EXPOSED_ZINC.get())
+                .add(ModBlocks.WEATHERED_ZINC.get())
+                .add(ModBlocks.CORRODED_ZINC.get())
+                .add(ModBlocks.WAXED_ZINC_BLOCK.get())
+                .add(ModBlocks.WAXED_EXPOSED_ZINC.get())
+                .add(ModBlocks.WAXED_WEATHERED_ZINC.get())
+                .add(ModBlocks.WAXED_CORRODED_ZINC.get())
+                .add(ModBlocks.CUT_ZINC.get())
+                .add(ModBlocks.EXPOSED_CUT_ZINC.get())
+                .add(ModBlocks.WEATHERED_CUT_ZINC.get())
+                .add(ModBlocks.CORRODED_CUT_ZINC.get())
+                .add(ModBlocks.WAXED_CUT_ZINC.get())
+                .add(ModBlocks.WAXED_EXPOSED_CUT_ZINC.get())
+                .add(ModBlocks.WAXED_WEATHERED_CUT_ZINC.get())
+                .add(ModBlocks.WAXED_CORRODED_CUT_ZINC.get())
+                .add(ModBlocks.CUT_ZINC_SLAB.get())
+                .add(ModBlocks.EXPOSED_CUT_ZINC_SLAB.get())
+                .add(ModBlocks.WEATHERED_CUT_ZINC_SLAB.get())
+                .add(ModBlocks.CORRODED_CUT_ZINC_SLAB.get())
+                .add(ModBlocks.WAXED_CUT_ZINC_SLAB.get())
+                .add(ModBlocks.WAXED_EXPOSED_CUT_ZINC_SLAB.get())
+                .add(ModBlocks.WAXED_WEATHERED_CUT_ZINC_SLAB.get())
+                .add(ModBlocks.WAXED_CORRODED_CUT_ZINC_SLAB.get())
+                .add(ModBlocks.CUT_ZINC_STAIRS.get())
+                .add(ModBlocks.EXPOSED_CUT_ZINC_STAIRS.get())
+                .add(ModBlocks.WEATHERED_CUT_ZINC_STAIRS.get())
+                .add(ModBlocks.CORRODED_CUT_ZINC_STAIRS.get())
+                .add(ModBlocks.WAXED_CUT_ZINC_STAIRS.get())
+                .add(ModBlocks.WAXED_EXPOSED_CUT_ZINC_STAIRS.get())
+                .add(ModBlocks.WAXED_WEATHERED_CUT_ZINC_STAIRS.get())
+                .add(ModBlocks.WAXED_CORRODED_CUT_ZINC_STAIRS.get())
+                .add(ModBlocks.ZINC_DOOR.get())
+                .add(ModBlocks.EXPOSED_ZINC_DOOR.get())
+                .add(ModBlocks.WEATHERED_ZINC_DOOR.get())
+                .add(ModBlocks.CORRODED_ZINC_DOOR.get())
+                .add(ModBlocks.WAXED_ZINC_DOOR.get())
+                .add(ModBlocks.WAXED_EXPOSED_ZINC_DOOR.get())
+                .add(ModBlocks.WAXED_WEATHERED_ZINC_DOOR.get())
+                .add(ModBlocks.WAXED_CORRODED_ZINC_DOOR.get())
+                .add(ModBlocks.ZINC_TRAPDOOR.get())
+                .add(ModBlocks.EXPOSED_ZINC_TRAPDOOR.get())
+                .add(ModBlocks.WEATHERED_ZINC_TRAPDOOR.get())
+                .add(ModBlocks.CORRODED_ZINC_TRAPDOOR.get())
+                .add(ModBlocks.WAXED_ZINC_TRAPDOOR.get())
+                .add(ModBlocks.WAXED_EXPOSED_ZINC_TRAPDOOR.get())
+                .add(ModBlocks.WAXED_WEATHERED_ZINC_TRAPDOOR.get())
+                .add(ModBlocks.WAXED_CORRODED_ZINC_TRAPDOOR.get())
+                .add(ModBlocks.ZINC_CHAIN.get())
+                .add(ModBlocks.EXPOSED_ZINC_CHAIN.get())
+                .add(ModBlocks.WEATHERED_ZINC_CHAIN.get())
+                .add(ModBlocks.CORRODED_ZINC_CHAIN.get())
+                .add(ModBlocks.WAXED_ZINC_CHAIN.get())
+                .add(ModBlocks.WAXED_EXPOSED_ZINC_CHAIN.get())
+                .add(ModBlocks.WAXED_WEATHERED_ZINC_CHAIN.get())
+                .add(ModBlocks.WAXED_CORRODED_ZINC_CHAIN.get())
+                .add(ModBlocks.BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get())
+                .add(ModBlocks.EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get())
+                .add(ModBlocks.WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get())
+                .add(ModBlocks.CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get())
+                .add(ModBlocks.WAXED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get())
+                .add(ModBlocks.WAXED_EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get())
+                .add(ModBlocks.WAXED_WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get())
+                .add(ModBlocks.WAXED_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
     }
 }

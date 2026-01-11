@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "buildersparadise:weathered_iron_soul_lantern",
+    "minecraft:honeycomb"
+  ],
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:waxed_weathered_iron_soul_lantern"
+  }
+}

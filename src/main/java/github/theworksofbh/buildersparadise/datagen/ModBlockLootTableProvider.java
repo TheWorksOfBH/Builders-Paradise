@@ -10,7 +10,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -299,7 +298,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                     this.dropOther(block, ModItems.OAK_SOUL_CAMPFIRE.get());
                 } else if (block == Blocks.BEEHIVE) {
                     this.dropOther(block, ModItems.OAK_BEEHIVE.get());
-                } else if (block.getName().contains(Component.nullToEmpty("bookshelf")) && !block.getName().contains(Component.nullToEmpty("chiselled"))) {
+                } else if (block.getDescriptionId().contains("bookshelf") && !block.getDescriptionId().contains("chiselled")) {
                     if (block == Blocks.BOOKSHELF) {
                         this.add(block, LootTable.lootTable()
                                 .withPool(

@@ -49,21 +49,25 @@ public class ModDataMapProvider extends DataMapProvider {
         addToFurnaceFuels(ModItems.COAL_SLAB.get(), 8000);
         addToFurnaceFuels(ModItems.COAL_STAIRS.get(), 16000);
         addToFurnaceFuels(ModItems.COAL_WALL.get(), 16000);
+        addToFurnaceFuels(ModItems.COAL_FENCE.get(), 16000);
 
         addToFurnaceFuels(ModItems.CHARCOAL_BLOCK.get(), 16000);
         addToFurnaceFuels(ModItems.CHARCOAL_SLAB.get(), 8000);
         addToFurnaceFuels(ModItems.CHARCOAL_STAIRS.get(), 16000);
         addToFurnaceFuels(ModItems.CHARCOAL_WALL.get(), 16000);
+        addToFurnaceFuels(ModItems.CHARCOAL_FENCE.get(), 16000);
 
         addToFurnaceFuels(ModItems.COAL_BRICKS.get(), 16000);
         addToFurnaceFuels(ModItems.COAL_BRICK_SLAB.get(), 8000);
         addToFurnaceFuels(ModItems.COAL_BRICK_STAIRS.get(), 16000);
         addToFurnaceFuels(ModItems.COAL_BRICK_WALL.get(), 16000);
+        addToFurnaceFuels(ModItems.COAL_BRICK_FENCE.get(), 16000);
 
         addToFurnaceFuels(ModItems.CHARCOAL_BRICKS.get(), 16000);
         addToFurnaceFuels(ModItems.CHARCOAL_BRICK_SLAB.get(), 8000);
         addToFurnaceFuels(ModItems.CHARCOAL_BRICK_STAIRS.get(), 16000);
         addToFurnaceFuels(ModItems.CHARCOAL_BRICK_WALL.get(), 16000);
+        addToFurnaceFuels(ModItems.CHARCOAL_BRICK_FENCE.get(), 16000);
 
         addToFurnaceFuels(ModItems.URANIUM_INGOT.get(), 7200);
         addToFurnaceFuels(ModItems.URANIUM_NUGGET.get(), 800);
@@ -256,6 +260,26 @@ public class ModDataMapProvider extends DataMapProvider {
         addToOxidizables(ModBlocks.EXPOSED_IRON_CHAIN.get(), ModBlocks.WEATHERED_IRON_CHAIN.get());
         addToOxidizables(ModBlocks.WEATHERED_IRON_CHAIN.get(), ModBlocks.RUSTED_IRON_CHAIN.get());
 
+        addToOxidizables(Blocks.LANTERN, ModBlocks.EXPOSED_IRON_LANTERN.get());
+        addToOxidizables(ModBlocks.EXPOSED_IRON_LANTERN.get(), ModBlocks.WEATHERED_IRON_LANTERN.get());
+        addToOxidizables(ModBlocks.WEATHERED_IRON_LANTERN.get(), ModBlocks.RUSTED_IRON_LANTERN.get());
+
+        addToOxidizables(Blocks.SOUL_LANTERN, ModBlocks.EXPOSED_IRON_SOUL_LANTERN.get());
+        addToOxidizables(ModBlocks.EXPOSED_IRON_SOUL_LANTERN.get(), ModBlocks.WEATHERED_IRON_SOUL_LANTERN.get());
+        addToOxidizables(ModBlocks.WEATHERED_IRON_SOUL_LANTERN.get(), ModBlocks.RUSTED_IRON_SOUL_LANTERN.get());
+
+        addToOxidizables(ModBlocks.IRON_FIRE_LANTERN.get(), ModBlocks.EXPOSED_IRON_FIRE_LANTERN.get());
+        addToOxidizables(ModBlocks.EXPOSED_IRON_FIRE_LANTERN.get(), ModBlocks.WEATHERED_IRON_FIRE_LANTERN.get());
+        addToOxidizables(ModBlocks.WEATHERED_IRON_FIRE_LANTERN.get(), ModBlocks.RUSTED_IRON_FIRE_LANTERN.get());
+
+        addToOxidizables(ModBlocks.COPPER_SOUL_LANTERN.get(), ModBlocks.EXPOSED_COPPER_SOUL_LANTERN.get());
+        addToOxidizables(ModBlocks.EXPOSED_COPPER_SOUL_LANTERN.get(), ModBlocks.WEATHERED_COPPER_SOUL_LANTERN.get());
+        addToOxidizables(ModBlocks.WEATHERED_COPPER_SOUL_LANTERN.get(), ModBlocks.OXIDIZED_COPPER_SOUL_LANTERN.get());
+
+        addToOxidizables(ModBlocks.COPPER_FIRE_LANTERN.get(), ModBlocks.EXPOSED_COPPER_FIRE_LANTERN.get());
+        addToOxidizables(ModBlocks.EXPOSED_COPPER_FIRE_LANTERN.get(), ModBlocks.WEATHERED_COPPER_FIRE_LANTERN.get());
+        addToOxidizables(ModBlocks.WEATHERED_COPPER_FIRE_LANTERN.get(), ModBlocks.OXIDIZED_COPPER_FIRE_LANTERN.get());
+
         addToOxidizables(ModBlocks.ZINC_BLOCK.get(), ModBlocks.EXPOSED_ZINC.get());
         addToOxidizables(ModBlocks.EXPOSED_ZINC.get(), ModBlocks.WEATHERED_ZINC.get());
         addToOxidizables(ModBlocks.WEATHERED_ZINC.get(), ModBlocks.CORRODED_ZINC.get());
@@ -283,6 +307,10 @@ public class ModDataMapProvider extends DataMapProvider {
         addToOxidizables(ModBlocks.BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
         addToOxidizables(ModBlocks.EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
         addToOxidizables(ModBlocks.WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
+
+        addToOxidizables(ModBlocks.ZINC_CHAIN.get(), ModBlocks.EXPOSED_ZINC_CHAIN.get());
+        addToOxidizables(ModBlocks.EXPOSED_ZINC_CHAIN.get(), ModBlocks.WEATHERED_ZINC_CHAIN.get());
+        addToOxidizables(ModBlocks.WEATHERED_ZINC_CHAIN.get(), ModBlocks.CORRODED_ZINC_CHAIN.get());
 
         addToWaxables(ModBlocks.MEDIUM_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get());
         addToWaxables(ModBlocks.EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get());
@@ -318,6 +346,31 @@ public class ModDataMapProvider extends DataMapProvider {
         addToWaxables(ModBlocks.EXPOSED_IRON_CHAIN.get(), ModBlocks.WAXED_EXPOSED_IRON_CHAIN.get());
         addToWaxables(ModBlocks.WEATHERED_IRON_CHAIN.get(), ModBlocks.WAXED_WEATHERED_IRON_CHAIN.get());
         addToWaxables(ModBlocks.RUSTED_IRON_CHAIN.get(), ModBlocks.WAXED_RUSTED_IRON_CHAIN.get());
+
+        addToWaxables(Blocks.LANTERN, ModBlocks.WAXED_IRON_LANTERN.get());
+        addToWaxables(ModBlocks.EXPOSED_IRON_LANTERN.get(), ModBlocks.WAXED_EXPOSED_IRON_LANTERN.get());
+        addToWaxables(ModBlocks.WEATHERED_IRON_LANTERN.get(), ModBlocks.WAXED_WEATHERED_IRON_LANTERN.get());
+        addToWaxables(ModBlocks.RUSTED_IRON_LANTERN.get(), ModBlocks.WAXED_RUSTED_IRON_LANTERN.get());
+
+        addToWaxables(Blocks.SOUL_LANTERN, ModBlocks.WAXED_IRON_SOUL_LANTERN.get());
+        addToWaxables(ModBlocks.EXPOSED_IRON_SOUL_LANTERN.get(), ModBlocks.WAXED_EXPOSED_IRON_SOUL_LANTERN.get());
+        addToWaxables(ModBlocks.WEATHERED_IRON_SOUL_LANTERN.get(), ModBlocks.WAXED_WEATHERED_IRON_SOUL_LANTERN.get());
+        addToWaxables(ModBlocks.RUSTED_IRON_SOUL_LANTERN.get(), ModBlocks.WAXED_RUSTED_IRON_SOUL_LANTERN.get());
+
+        addToWaxables(ModBlocks.IRON_FIRE_LANTERN.get(), ModBlocks.WAXED_IRON_FIRE_LANTERN.get());
+        addToWaxables(ModBlocks.EXPOSED_IRON_FIRE_LANTERN.get(), ModBlocks.WAXED_EXPOSED_IRON_FIRE_LANTERN.get());
+        addToWaxables(ModBlocks.WEATHERED_IRON_FIRE_LANTERN.get(), ModBlocks.WAXED_WEATHERED_IRON_FIRE_LANTERN.get());
+        addToWaxables(ModBlocks.RUSTED_IRON_FIRE_LANTERN.get(), ModBlocks.WAXED_RUSTED_IRON_FIRE_LANTERN.get());
+
+        addToWaxables(ModBlocks.COPPER_SOUL_LANTERN.get(), ModBlocks.WAXED_COPPER_SOUL_LANTERN.get());
+        addToWaxables(ModBlocks.EXPOSED_COPPER_SOUL_LANTERN.get(), ModBlocks.WAXED_EXPOSED_COPPER_SOUL_LANTERN.get());
+        addToWaxables(ModBlocks.WEATHERED_COPPER_SOUL_LANTERN.get(), ModBlocks.WAXED_WEATHERED_COPPER_SOUL_LANTERN.get());
+        addToWaxables(ModBlocks.OXIDIZED_COPPER_SOUL_LANTERN.get(), ModBlocks.WAXED_OXIDIZED_COPPER_SOUL_LANTERN.get());
+
+        addToWaxables(ModBlocks.COPPER_FIRE_LANTERN.get(), ModBlocks.WAXED_COPPER_FIRE_LANTERN.get());
+        addToWaxables(ModBlocks.EXPOSED_COPPER_FIRE_LANTERN.get(), ModBlocks.WAXED_EXPOSED_COPPER_FIRE_LANTERN.get());
+        addToWaxables(ModBlocks.WEATHERED_COPPER_FIRE_LANTERN.get(), ModBlocks.WAXED_WEATHERED_COPPER_FIRE_LANTERN.get());
+        addToWaxables(ModBlocks.OXIDIZED_COPPER_FIRE_LANTERN.get(), ModBlocks.WAXED_OXIDIZED_COPPER_FIRE_LANTERN.get());
 
         addToWaxables(ModBlocks.CUT_IRON.get(), ModBlocks.WAXED_CUT_IRON.get());
         addToWaxables(ModBlocks.EXPOSED_CUT_IRON.get(), ModBlocks.WAXED_EXPOSED_CUT_IRON.get());
@@ -368,5 +421,10 @@ public class ModDataMapProvider extends DataMapProvider {
         addToWaxables(ModBlocks.EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
         addToWaxables(ModBlocks.WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
         addToWaxables(ModBlocks.CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
+
+        addToWaxables(ModBlocks.ZINC_CHAIN.get(), ModBlocks.WAXED_ZINC_CHAIN.get());
+        addToWaxables(ModBlocks.EXPOSED_ZINC_CHAIN.get(), ModBlocks.WAXED_EXPOSED_ZINC_CHAIN.get());
+        addToWaxables(ModBlocks.WEATHERED_ZINC_CHAIN.get(), ModBlocks.WAXED_WEATHERED_ZINC_CHAIN.get());
+        addToWaxables(ModBlocks.CORRODED_ZINC_CHAIN.get(), ModBlocks.WAXED_CORRODED_ZINC_CHAIN.get());
     }
 }

@@ -5,14 +5,14 @@ import github.theworksofbh.buildersparadise.block.ModBlocks;
 import github.theworksofbh.buildersparadise.entity.ModEntities;
 import github.theworksofbh.buildersparadise.fluids.ModFluids;
 import github.theworksofbh.buildersparadise.sounds.ModJukeboxSongs;
+import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.boat.AbstractBoat;
 import net.minecraft.world.entity.vehicle.minecart.AbstractMinecart;
 import net.minecraft.world.item.*;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.item.equipment.trim.TrimMaterial;
@@ -1252,9 +1252,89 @@ public class ModItems {
     public static final DeferredItem<BlockItem> GREEN_CONCRETE_FENCE = registerBlockItem("green_concrete_fence", () -> ModBlocks.GREEN_CONCRETE_FENCE.get());
     public static final DeferredItem<BlockItem> RED_CONCRETE_FENCE = registerBlockItem("red_concrete_fence", () -> ModBlocks.RED_CONCRETE_FENCE.get());
     public static final DeferredItem<BlockItem> BLACK_CONCRETE_FENCE = registerBlockItem("black_concrete_fence", () -> ModBlocks.BLACK_CONCRETE_FENCE.get());
-    
+
+    public static final DeferredItem<StandingAndWallBlockItem> IRON_TORCH = registerTorch("iron_torch", () -> ModBlocks.IRON_TORCH.get(), () -> ModBlocks.IRON_WALL_TORCH.get());
+
+    public static final DeferredItem<BlockItem> EXPOSED_IRON_LANTERN = registerBlockItem("exposed_iron_lantern", () -> ModBlocks.EXPOSED_IRON_LANTERN.get());
+    public static final DeferredItem<BlockItem> WEATHERED_IRON_LANTERN = registerBlockItem("weathered_iron_lantern", () -> ModBlocks.WEATHERED_IRON_LANTERN.get());
+    public static final DeferredItem<BlockItem> RUSTED_IRON_LANTERN = registerBlockItem("rusted_iron_lantern", () -> ModBlocks.RUSTED_IRON_LANTERN.get());
+    public static final DeferredItem<BlockItem> WAXED_IRON_LANTERN = registerBlockItem("waxed_iron_lantern", () -> ModBlocks.WAXED_IRON_LANTERN.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_IRON_LANTERN = registerBlockItem("waxed_exposed_iron_lantern", () -> ModBlocks.WAXED_EXPOSED_IRON_LANTERN.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_IRON_LANTERN = registerBlockItem("waxed_weathered_iron_lantern", () -> ModBlocks.WAXED_WEATHERED_IRON_LANTERN.get());
+    public static final DeferredItem<BlockItem> WAXED_RUSTED_IRON_LANTERN = registerBlockItem("waxed_rusted_iron_lantern", () -> ModBlocks.WAXED_RUSTED_IRON_LANTERN.get());
+
+    public static final DeferredItem<BlockItem> EXPOSED_IRON_SOUL_LANTERN = registerBlockItem("exposed_iron_soul_lantern", () -> ModBlocks.EXPOSED_IRON_SOUL_LANTERN.get());
+    public static final DeferredItem<BlockItem> WEATHERED_IRON_SOUL_LANTERN = registerBlockItem("weathered_iron_soul_lantern", () -> ModBlocks.WEATHERED_IRON_SOUL_LANTERN.get());
+    public static final DeferredItem<BlockItem> RUSTED_IRON_SOUL_LANTERN = registerBlockItem("rusted_iron_soul_lantern", () -> ModBlocks.RUSTED_IRON_SOUL_LANTERN.get());
+    public static final DeferredItem<BlockItem> WAXED_IRON_SOUL_LANTERN = registerBlockItem("waxed_iron_soul_lantern", () -> ModBlocks.WAXED_IRON_SOUL_LANTERN.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_IRON_SOUL_LANTERN = registerBlockItem("waxed_exposed_iron_soul_lantern", () -> ModBlocks.WAXED_EXPOSED_IRON_SOUL_LANTERN.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_IRON_SOUL_LANTERN = registerBlockItem("waxed_weathered_iron_soul_lantern", () -> ModBlocks.WAXED_WEATHERED_IRON_SOUL_LANTERN.get());
+    public static final DeferredItem<BlockItem> WAXED_RUSTED_IRON_SOUL_LANTERN = registerBlockItem("waxed_rusted_iron_soul_lantern", () -> ModBlocks.WAXED_RUSTED_IRON_SOUL_LANTERN.get());
+
+    public static final DeferredItem<BlockItem> IRON_FIRE_LANTERN = registerBlockItem("iron_fire_lantern", () -> ModBlocks.IRON_FIRE_LANTERN.get());
+    public static final DeferredItem<BlockItem> EXPOSED_IRON_FIRE_LANTERN = registerBlockItem("exposed_iron_fire_lantern", () -> ModBlocks.EXPOSED_IRON_FIRE_LANTERN.get());
+    public static final DeferredItem<BlockItem> WEATHERED_IRON_FIRE_LANTERN = registerBlockItem("weathered_iron_fire_lantern", () -> ModBlocks.WEATHERED_IRON_FIRE_LANTERN.get());
+    public static final DeferredItem<BlockItem> RUSTED_IRON_FIRE_LANTERN = registerBlockItem("rusted_iron_fire_lantern", () -> ModBlocks.RUSTED_IRON_FIRE_LANTERN.get());
+    public static final DeferredItem<BlockItem> WAXED_IRON_FIRE_LANTERN = registerBlockItem("waxed_iron_fire_lantern", () -> ModBlocks.WAXED_IRON_FIRE_LANTERN.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_IRON_FIRE_LANTERN = registerBlockItem("waxed_exposed_iron_fire_lantern", () -> ModBlocks.WAXED_EXPOSED_IRON_FIRE_LANTERN.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_IRON_FIRE_LANTERN = registerBlockItem("waxed_weathered_iron_fire_lantern", () -> ModBlocks.WAXED_WEATHERED_IRON_FIRE_LANTERN.get());
+    public static final DeferredItem<BlockItem> WAXED_RUSTED_IRON_FIRE_LANTERN = registerBlockItem("waxed_rusted_iron_fire_lantern", () -> ModBlocks.WAXED_RUSTED_IRON_FIRE_LANTERN.get());
+
+    public static final DeferredItem<BlockItem> COPPER_SOUL_LANTERN = registerBlockItem("copper_soul_lantern", () -> ModBlocks.COPPER_SOUL_LANTERN.get());
+    public static final DeferredItem<BlockItem> EXPOSED_COPPER_SOUL_LANTERN = registerBlockItem("exposed_copper_soul_lantern", () -> ModBlocks.EXPOSED_COPPER_SOUL_LANTERN.get());
+    public static final DeferredItem<BlockItem> WEATHERED_COPPER_SOUL_LANTERN = registerBlockItem("weathered_copper_soul_lantern", () -> ModBlocks.WEATHERED_COPPER_SOUL_LANTERN.get());
+    public static final DeferredItem<BlockItem> OXIDIZED_COPPER_SOUL_LANTERN = registerBlockItem("oxidized_copper_soul_lantern", () -> ModBlocks.OXIDIZED_COPPER_SOUL_LANTERN.get());
+    public static final DeferredItem<BlockItem> WAXED_COPPER_SOUL_LANTERN = registerBlockItem("waxed_copper_soul_lantern", () -> ModBlocks.WAXED_COPPER_SOUL_LANTERN.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_COPPER_SOUL_LANTERN = registerBlockItem("waxed_exposed_copper_soul_lantern", () -> ModBlocks.WAXED_EXPOSED_COPPER_SOUL_LANTERN.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_COPPER_SOUL_LANTERN = registerBlockItem("waxed_weathered_copper_soul_lantern", () -> ModBlocks.WAXED_WEATHERED_COPPER_SOUL_LANTERN.get());
+    public static final DeferredItem<BlockItem> WAXED_OXIDIZED_COPPER_SOUL_LANTERN = registerBlockItem("waxed_oxidized_copper_soul_lantern", () -> ModBlocks.WAXED_OXIDIZED_COPPER_SOUL_LANTERN.get());
+
+    public static final DeferredItem<BlockItem> COPPER_FIRE_LANTERN = registerBlockItem("copper_fire_lantern", () -> ModBlocks.COPPER_FIRE_LANTERN.get());
+    public static final DeferredItem<BlockItem> EXPOSED_COPPER_FIRE_LANTERN = registerBlockItem("exposed_copper_fire_lantern", () -> ModBlocks.EXPOSED_COPPER_FIRE_LANTERN.get());
+    public static final DeferredItem<BlockItem> WEATHERED_COPPER_FIRE_LANTERN = registerBlockItem("weathered_copper_fire_lantern", () -> ModBlocks.WEATHERED_COPPER_FIRE_LANTERN.get());
+    public static final DeferredItem<BlockItem> OXIDIZED_COPPER_FIRE_LANTERN = registerBlockItem("oxidized_copper_fire_lantern", () -> ModBlocks.OXIDIZED_COPPER_FIRE_LANTERN.get());
+    public static final DeferredItem<BlockItem> WAXED_COPPER_FIRE_LANTERN = registerBlockItem("waxed_copper_fire_lantern", () -> ModBlocks.WAXED_COPPER_FIRE_LANTERN.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_COPPER_FIRE_LANTERN = registerBlockItem("waxed_exposed_copper_fire_lantern", () -> ModBlocks.WAXED_EXPOSED_COPPER_FIRE_LANTERN.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_COPPER_FIRE_LANTERN = registerBlockItem("waxed_weathered_copper_fire_lantern", () -> ModBlocks.WAXED_WEATHERED_COPPER_FIRE_LANTERN.get());
+    public static final DeferredItem<BlockItem> WAXED_OXIDIZED_COPPER_FIRE_LANTERN = registerBlockItem("waxed_oxidized_copper_fire_lantern", () -> ModBlocks.WAXED_OXIDIZED_COPPER_FIRE_LANTERN.get());
+
+    public static final DeferredItem<BlockItem> ZINC_CHAIN = registerBlockItem("zinc_chain", () -> ModBlocks.ZINC_CHAIN.get());
+    public static final DeferredItem<BlockItem> EXPOSED_ZINC_CHAIN = registerBlockItem("exposed_zinc_chain", () -> ModBlocks.EXPOSED_ZINC_CHAIN.get());
+    public static final DeferredItem<BlockItem> WEATHERED_ZINC_CHAIN = registerBlockItem("weathered_zinc_chain", () -> ModBlocks.WEATHERED_ZINC_CHAIN.get());
+    public static final DeferredItem<BlockItem> CORRODED_ZINC_CHAIN = registerBlockItem("corroded_zinc_chain", () -> ModBlocks.CORRODED_ZINC_CHAIN.get());
+
+    public static final DeferredItem<BlockItem> WAXED_ZINC_CHAIN = registerBlockItem("waxed_zinc_chain", () -> ModBlocks.WAXED_ZINC_CHAIN.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_ZINC_CHAIN = registerBlockItem("waxed_exposed_zinc_chain", () -> ModBlocks.WAXED_EXPOSED_ZINC_CHAIN.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_ZINC_CHAIN = registerBlockItem("waxed_weathered_zinc_chain", () -> ModBlocks.WAXED_WEATHERED_ZINC_CHAIN.get());
+    public static final DeferredItem<BlockItem> WAXED_CORRODED_ZINC_CHAIN = registerBlockItem("waxed_corroded_zinc_chain", () -> ModBlocks.WAXED_CORRODED_ZINC_CHAIN.get());
+
+    public static final DeferredItem<BlockItem> GOLD_CHAIN = registerBlockItem("gold_chain", () -> ModBlocks.GOLD_CHAIN.get());
+    public static final DeferredItem<BlockItem> NETHERITE_CHAIN = registerBlockItem("netherite_chain", () -> ModBlocks.NETHERITE_CHAIN.get());
+    public static final DeferredItem<BlockItem> SILVER_CHAIN = registerBlockItem("silver_chain", () -> ModBlocks.SILVER_CHAIN.get());
+    public static final DeferredItem<BlockItem> TIN_CHAIN = registerBlockItem("tin_chain", () -> ModBlocks.TIN_CHAIN.get());
+    public static final DeferredItem<BlockItem> TUNGSTEN_CHAIN = registerBlockItem("tungsten_chain", () -> ModBlocks.TUNGSTEN_CHAIN.get());
+    public static final DeferredItem<BlockItem> PLATINUM_CHAIN = registerBlockItem("platinum_chain", () -> ModBlocks.PLATINUM_CHAIN.get());
+    public static final DeferredItem<BlockItem> LEAD_CHAIN = registerBlockItem("lead_chain", () -> ModBlocks.LEAD_CHAIN.get());
+    public static final DeferredItem<BlockItem> URANIUM_CHAIN = registerBlockItem("uranium_chain", () -> ModBlocks.URANIUM_CHAIN.get());
+    public static final DeferredItem<BlockItem> BRONZE_CHAIN = registerBlockItem("bronze_chain", () -> ModBlocks.BRONZE_CHAIN.get());
+    public static final DeferredItem<BlockItem> BRASS_CHAIN = registerBlockItem("brass_chain", () -> ModBlocks.BRASS_CHAIN.get());
+    public static final DeferredItem<BlockItem> STEEL_CHAIN = registerBlockItem("steel_chain", () -> ModBlocks.STEEL_CHAIN.get());
+
+    public static final DeferredItem<StandingAndWallBlockItem> ZINC_TORCH = registerTorch("zinc_torch", () -> ModBlocks.ZINC_TORCH.get(), () -> ModBlocks.ZINC_WALL_TORCH.get());
+    public static final DeferredItem<StandingAndWallBlockItem> SILVER_TORCH = registerTorch("silver_torch", () -> ModBlocks.SILVER_TORCH.get(), () -> ModBlocks.SILVER_WALL_TORCH.get());
+    public static final DeferredItem<StandingAndWallBlockItem> TIN_TORCH = registerTorch("tin_torch", () -> ModBlocks.TIN_TORCH.get(), () -> ModBlocks.TIN_WALL_TORCH.get());
+    public static final DeferredItem<StandingAndWallBlockItem> TUNGSTEN_TORCH = registerTorch("tungsten_torch", () -> ModBlocks.TUNGSTEN_TORCH.get(), () -> ModBlocks.TUNGSTEN_WALL_TORCH.get());
+    public static final DeferredItem<StandingAndWallBlockItem> PLATINUM_TORCH = registerTorch("platinum_torch", () -> ModBlocks.PLATINUM_TORCH.get(), () -> ModBlocks.PLATINUM_WALL_TORCH.get());
+    public static final DeferredItem<StandingAndWallBlockItem> GOLD_TORCH = registerTorch("gold_torch", () -> ModBlocks.GOLD_TORCH.get(), () -> ModBlocks.GOLD_WALL_TORCH.get());
+    public static final DeferredItem<StandingAndWallBlockItem> LEAD_TORCH = registerTorch("lead_torch", () -> ModBlocks.LEAD_TORCH.get(), () -> ModBlocks.LEAD_WALL_TORCH.get());
+    public static final DeferredItem<StandingAndWallBlockItem> URANIUM_TORCH = registerTorch("uranium_torch", () -> ModBlocks.URANIUM_TORCH.get(), () -> ModBlocks.URANIUM_WALL_TORCH.get());
+
+    public static final DeferredItem<BlockItem> CUT_AMETHYST = registerBlockItem("cut_amethyst", () -> ModBlocks.CUT_AMETHYST.get());
+    public static final DeferredItem<BlockItem> CUT_AMETHYST_SLAB = registerBlockItem("cut_amethyst_slab", () -> ModBlocks.CUT_AMETHYST_SLAB.get());
+    public static final DeferredItem<BlockItem> CUT_AMETHYST_STAIRS = registerBlockItem("cut_amethyst_stairs", () -> ModBlocks.CUT_AMETHYST_STAIRS.get());
+
     private static DeferredItem<Item> registerCustomItem(String registryName) {
-        if (registryName == "netherite_nugget") {
+        if (registryName.contains("netherite")) {
             return ITEMS.register(
                     registryName, () -> new Item(
                             new Item.Properties().setId(
@@ -1302,7 +1382,7 @@ public class ModItems {
     }
 
     private static DeferredItem<BlockItem> registerBlockItem(String registryName, Supplier<Block> block){
-        if (registryName == "netherite_door" | registryName == "netherite_trapdoor" | registryName == "player_only_pressure_plate" | registryName == "cut_netherite" | registryName == "cut_netherite_slab" | registryName == "cut_netherite_stairs") {
+        if (registryName.contains("netherite")) {
             return ITEMS.register(
                     registryName, () -> new BlockItem(
                             block.get(), new Item.Properties().setId(
@@ -1333,6 +1413,23 @@ public class ModItems {
         }
 
 
+    }
+
+    private static DeferredItem<StandingAndWallBlockItem> registerTorch(String registryName, Supplier<Block> groundBlock, Supplier<Block> wallBlock) {
+        return ITEMS.register(registryName, () -> new StandingAndWallBlockItem(
+                groundBlock.get(),
+                wallBlock.get(),
+                Direction.DOWN,
+                new Item.Properties().setId(
+                        ResourceKey.create(
+                                Registries.ITEM,
+                                Identifier.fromNamespaceAndPath(
+                                        BuildersParadise.MODID,
+                                        registryName
+                                )
+                        )
+                )
+        ));
     }
 
     private static DeferredItem<BucketItem> registerBucketItem(String registryName, Supplier<FlowingFluid> fluid){

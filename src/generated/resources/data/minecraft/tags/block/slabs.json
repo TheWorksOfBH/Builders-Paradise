@@ -126,6 +126,7 @@
     "buildersparadise:ice_brick_slab",
     "buildersparadise:packed_ice_brick_slab",
     "buildersparadise:blue_ice_brick_slab",
-    "buildersparadise:sculk_brick_slab"
+    "buildersparadise:sculk_brick_slab",
+    "buildersparadise:cut_amethyst_slab"
   ]
 }

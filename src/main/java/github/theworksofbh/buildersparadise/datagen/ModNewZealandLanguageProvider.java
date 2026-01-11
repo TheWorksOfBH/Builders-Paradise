@@ -10,7 +10,6 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
 import java.util.Set;
@@ -25,13 +24,19 @@ public class ModNewZealandLanguageProvider extends LanguageProvider {
 
     protected Iterable<Block> getKnownBlocks() {
         Set<Block> vanillaBlocksThatNeedNewTranslations = Set.of(
-                Blocks.CRAFTING_TABLE,
-                Blocks.CARTOGRAPHY_TABLE,
-                Blocks.FLETCHING_TABLE
+
         );
 
         Set<Block> handMadeBlocks = Set.of(
-
+                ModBlocks.IRON_WALL_TORCH.get(),
+                ModBlocks.ZINC_WALL_TORCH.get(),
+                ModBlocks.SILVER_WALL_TORCH.get(),
+                ModBlocks.TIN_WALL_TORCH.get(),
+                ModBlocks.TUNGSTEN_WALL_TORCH.get(),
+                ModBlocks.PLATINUM_WALL_TORCH.get(),
+                ModBlocks.GOLD_WALL_TORCH.get(),
+                ModBlocks.LEAD_WALL_TORCH.get(),
+                ModBlocks.URANIUM_WALL_TORCH.get()
         );
 
         return Stream.concat(
@@ -276,5 +281,7 @@ public class ModNewZealandLanguageProvider extends LanguageProvider {
         this.add("music.game.swamp.aerie", "Leif Chappelle - Aerie");
         this.add("music.game.swamp.firebugs", "Leif Chappelle - Firebugs");
         this.add("music.game.swamp.labyrinthine", "Leif Chappelle - Labyrinthine");
+        this.add("block.minecraft.lantern", "Iron Lantern");
+        this.add("block.minecraft.soul_lantern", "Iron Soul Lantern");
     }
 }

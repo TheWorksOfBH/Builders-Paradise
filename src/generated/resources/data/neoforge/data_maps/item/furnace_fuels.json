@@ -111,6 +111,9 @@
     "buildersparadise:charcoal_block": {
       "burn_time": 16000
     },
+    "buildersparadise:charcoal_brick_fence": {
+      "burn_time": 16000
+    },
     "buildersparadise:charcoal_brick_slab": {
       "burn_time": 8000
     },
@@ -121,6 +124,9 @@
       "burn_time": 16000
     },
     "buildersparadise:charcoal_bricks": {
+      "burn_time": 16000
+    },
+    "buildersparadise:charcoal_fence": {
       "burn_time": 16000
     },
     "buildersparadise:charcoal_slab": {
@@ -171,6 +177,9 @@
     "buildersparadise:cherry_trapped_chest": {
       "burn_time": 300
     },
+    "buildersparadise:coal_brick_fence": {
+      "burn_time": 16000
+    },
     "buildersparadise:coal_brick_slab": {
       "burn_time": 8000
     },
@@ -181,6 +190,9 @@
       "burn_time": 16000
     },
     "buildersparadise:coal_bricks": {
+      "burn_time": 16000
+    },
+    "buildersparadise:coal_fence": {
       "burn_time": 16000
     },
     "buildersparadise:coal_slab": {

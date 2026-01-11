@@ -3,6 +3,12 @@
     "buildersparadise:barely_heavy_weighted_pressure_plate": {
       "waxed": "buildersparadise:waxed_barely_heavy_weighted_pressure_plate"
     },
+    "buildersparadise:copper_fire_lantern": {
+      "waxed": "buildersparadise:waxed_copper_fire_lantern"
+    },
+    "buildersparadise:copper_soul_lantern": {
+      "waxed": "buildersparadise:waxed_copper_soul_lantern"
+    },
     "buildersparadise:corroded_barely_heavy_weighted_pressure_plate": {
       "waxed": "buildersparadise:waxed_corroded_barely_heavy_weighted_pressure_plate"
     },
@@ -17,6 +23,9 @@
     },
     "buildersparadise:corroded_zinc": {
       "waxed": "buildersparadise:waxed_corroded_zinc"
+    },
+    "buildersparadise:corroded_zinc_chain": {
+      "waxed": "buildersparadise:waxed_corroded_zinc_chain"
     },
     "buildersparadise:corroded_zinc_door": {
       "waxed": "buildersparadise:waxed_corroded_zinc_door"
@@ -44,6 +53,12 @@
     },
     "buildersparadise:exposed_barely_heavy_weighted_pressure_plate": {
       "waxed": "buildersparadise:waxed_exposed_barely_heavy_weighted_pressure_plate"
+    },
+    "buildersparadise:exposed_copper_fire_lantern": {
+      "waxed": "buildersparadise:waxed_exposed_copper_fire_lantern"
+    },
+    "buildersparadise:exposed_copper_soul_lantern": {
+      "waxed": "buildersparadise:waxed_exposed_copper_soul_lantern"
     },
     "buildersparadise:exposed_cut_iron": {
       "waxed": "buildersparadise:waxed_exposed_cut_iron"
@@ -78,6 +93,15 @@
     "buildersparadise:exposed_iron_door": {
       "waxed": "buildersparadise:waxed_exposed_iron_door"
     },
+    "buildersparadise:exposed_iron_fire_lantern": {
+      "waxed": "buildersparadise:waxed_exposed_iron_fire_lantern"
+    },
+    "buildersparadise:exposed_iron_lantern": {
+      "waxed": "buildersparadise:waxed_exposed_iron_lantern"
+    },
+    "buildersparadise:exposed_iron_soul_lantern": {
+      "waxed": "buildersparadise:waxed_exposed_iron_soul_lantern"
+    },
     "buildersparadise:exposed_iron_trapdoor": {
       "waxed": "buildersparadise:waxed_exposed_iron_trapdoor"
     },
@@ -87,14 +111,26 @@
     "buildersparadise:exposed_zinc": {
       "waxed": "buildersparadise:waxed_exposed_zinc"
     },
+    "buildersparadise:exposed_zinc_chain": {
+      "waxed": "buildersparadise:waxed_exposed_zinc_chain"
+    },
     "buildersparadise:exposed_zinc_door": {
       "waxed": "buildersparadise:waxed_exposed_zinc_door"
     },
     "buildersparadise:exposed_zinc_trapdoor": {
       "waxed": "buildersparadise:waxed_exposed_zinc_trapdoor"
     },
+    "buildersparadise:iron_fire_lantern": {
+      "waxed": "buildersparadise:waxed_iron_fire_lantern"
+    },
     "buildersparadise:medium_weighted_pressure_plate": {
       "waxed": "buildersparadise:waxed_medium_weighted_pressure_plate"
+    },
+    "buildersparadise:oxidized_copper_fire_lantern": {
+      "waxed": "buildersparadise:waxed_oxidized_copper_fire_lantern"
+    },
+    "buildersparadise:oxidized_copper_soul_lantern": {
+      "waxed": "buildersparadise:waxed_oxidized_copper_soul_lantern"
     },
     "buildersparadise:oxidized_medium_weighted_pressure_plate": {
       "waxed": "buildersparadise:waxed_oxidized_medium_weighted_pressure_plate"
@@ -123,11 +159,26 @@
     "buildersparadise:rusted_iron_door": {
       "waxed": "buildersparadise:waxed_rusted_iron_door"
     },
+    "buildersparadise:rusted_iron_fire_lantern": {
+      "waxed": "buildersparadise:waxed_rusted_iron_fire_lantern"
+    },
+    "buildersparadise:rusted_iron_lantern": {
+      "waxed": "buildersparadise:waxed_rusted_iron_lantern"
+    },
+    "buildersparadise:rusted_iron_soul_lantern": {
+      "waxed": "buildersparadise:waxed_rusted_iron_soul_lantern"
+    },
     "buildersparadise:rusted_iron_trapdoor": {
       "waxed": "buildersparadise:waxed_rusted_iron_trapdoor"
     },
     "buildersparadise:weathered_barely_heavy_weighted_pressure_plate": {
       "waxed": "buildersparadise:waxed_weathered_barely_heavy_weighted_pressure_plate"
+    },
+    "buildersparadise:weathered_copper_fire_lantern": {
+      "waxed": "buildersparadise:waxed_weathered_copper_fire_lantern"
+    },
+    "buildersparadise:weathered_copper_soul_lantern": {
+      "waxed": "buildersparadise:waxed_weathered_copper_soul_lantern"
     },
     "buildersparadise:weathered_cut_iron": {
       "waxed": "buildersparadise:waxed_weathered_cut_iron"
@@ -162,6 +213,15 @@
     "buildersparadise:weathered_iron_door": {
       "waxed": "buildersparadise:waxed_weathered_iron_door"
     },
+    "buildersparadise:weathered_iron_fire_lantern": {
+      "waxed": "buildersparadise:waxed_weathered_iron_fire_lantern"
+    },
+    "buildersparadise:weathered_iron_lantern": {
+      "waxed": "buildersparadise:waxed_weathered_iron_lantern"
+    },
+    "buildersparadise:weathered_iron_soul_lantern": {
+      "waxed": "buildersparadise:waxed_weathered_iron_soul_lantern"
+    },
     "buildersparadise:weathered_iron_trapdoor": {
       "waxed": "buildersparadise:waxed_weathered_iron_trapdoor"
     },
@@ -171,6 +231,9 @@
     "buildersparadise:weathered_zinc": {
       "waxed": "buildersparadise:waxed_weathered_zinc"
     },
+    "buildersparadise:weathered_zinc_chain": {
+      "waxed": "buildersparadise:waxed_weathered_zinc_chain"
+    },
     "buildersparadise:weathered_zinc_door": {
       "waxed": "buildersparadise:waxed_weathered_zinc_door"
     },
@@ -179,6 +242,9 @@
     },
     "buildersparadise:zinc_block": {
       "waxed": "buildersparadise:waxed_zinc_block"
+    },
+    "buildersparadise:zinc_chain": {
+      "waxed": "buildersparadise:waxed_zinc_chain"
     },
     "buildersparadise:zinc_door": {
       "waxed": "buildersparadise:waxed_zinc_door"
@@ -203,6 +269,12 @@
     },
     "minecraft:iron_trapdoor": {
       "waxed": "buildersparadise:waxed_iron_trapdoor"
+    },
+    "minecraft:lantern": {
+      "waxed": "buildersparadise:waxed_iron_lantern"
+    },
+    "minecraft:soul_lantern": {
+      "waxed": "buildersparadise:waxed_iron_soul_lantern"
     }
   }
 }

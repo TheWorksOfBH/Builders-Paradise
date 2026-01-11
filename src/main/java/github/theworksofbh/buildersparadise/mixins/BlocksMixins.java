@@ -60,4 +60,20 @@ public abstract class BlocksMixins {
         return properties.randomTicks();
     }
 
+    @Definition(id = "LANTERN", field = "Lnet/minecraft/world/level/block/Blocks;LANTERN:Lnet/minecraft/world/level/block/Block;")
+    @Definition(id = "register", method = "Lnet/minecraft/world/level/block/Blocks;register(Ljava/lang/String;Ljava/util/function/Function;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;")
+    @Expression("LANTERN = @(register(?, ?, ?))")
+    @ModifyArg(method = "<clinit>", at = @At("MIXINEXTRAS:EXPRESSION"))
+    private static BlockBehaviour.Properties modifyIronLanternProperties(BlockBehaviour.Properties properties) {
+        return properties.randomTicks();
+    }
+
+    @Definition(id = "SOUL_LANTERN", field = "Lnet/minecraft/world/level/block/Blocks;SOUL_LANTERN:Lnet/minecraft/world/level/block/Block;")
+    @Definition(id = "register", method = "Lnet/minecraft/world/level/block/Blocks;register(Ljava/lang/String;Ljava/util/function/Function;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;")
+    @Expression("SOUL_LANTERN = @(register(?, ?, ?))")
+    @ModifyArg(method = "<clinit>", at = @At("MIXINEXTRAS:EXPRESSION"))
+    private static BlockBehaviour.Properties modifyIronSoulLanternProperties(BlockBehaviour.Properties properties) {
+        return properties.randomTicks();
+    }
+
 }

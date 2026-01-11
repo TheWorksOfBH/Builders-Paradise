@@ -2,9 +2,11 @@ package github.theworksofbh.buildersparadise.block;
 
 import github.theworksofbh.buildersparadise.BuildersParadise;
 import github.theworksofbh.buildersparadise.fluids.ModFluids;
+import github.theworksofbh.buildersparadise.particles.ModParticles;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.*;
@@ -397,13 +399,13 @@ public class ModBlocks {
     public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_TUNGSTEN_ORE = registerDeepslateOreBlock("deepslate_tungsten_ore");
     public static final DeferredBlock<Block> RAW_TUNGSTEN_BLOCK = registerBlockVariant("raw_tungsten_block", () -> Blocks.RAW_GOLD_BLOCK);
 
-    public static final DeferredBlock<Block> TUNGSTEN_BLOCK = registerBlockVariant("tungsten_block", () -> Blocks.IRON_BLOCK);
+    public static final DeferredBlock<Block> TUNGSTEN_BLOCK = registerBlockVariant("tungsten_block", () -> Blocks.NETHERITE_BLOCK);
     public static final DeferredBlock<Block> CUT_TUNGSTEN = registerBlockVariant("cut_tungsten", () -> TUNGSTEN_BLOCK.get());
     public static final DeferredBlock<SlabBlock> CUT_TUNGSTEN_SLAB = registerSlabBlock("cut_tungsten_slab", () -> CUT_TUNGSTEN.get());
     public static final DeferredBlock<StairBlock> CUT_TUNGSTEN_STAIRS = registerStairBlock("cut_tungsten_stairs", () -> CUT_TUNGSTEN.get());
-    public static final DeferredBlock<DoorBlock> TUNGSTEN_DOOR = registerDoorBlock("tungsten_door", ModBlockSetTypes.TUNGSTEN, () -> Blocks.IRON_DOOR);
-    public static final DeferredBlock<TrapDoorBlock> TUNGSTEN_TRAPDOOR = registerTrapdoorBlock("tungsten_trapdoor", ModBlockSetTypes.TUNGSTEN, () -> Blocks.IRON_TRAPDOOR);
-    public static final DeferredBlock<WeightedPressurePlateBlock> EXTRAORDINARILY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerWeightedPressurePlate("extraordinarily_heavy_weighted_pressure_plate", 1500, ModBlockSetTypes.TUNGSTEN, () -> Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE);
+    public static final DeferredBlock<DoorBlock> TUNGSTEN_DOOR = registerDoorBlock("tungsten_door", ModBlockSetTypes.TUNGSTEN, () -> NETHERITE_DOOR.get());
+    public static final DeferredBlock<TrapDoorBlock> TUNGSTEN_TRAPDOOR = registerTrapdoorBlock("tungsten_trapdoor", ModBlockSetTypes.TUNGSTEN, () -> NETHERITE_TRAPDOOR.get());
+    public static final DeferredBlock<WeightedPressurePlateBlock> EXTRAORDINARILY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerWeightedPressurePlate("extraordinarily_heavy_weighted_pressure_plate", 1500, ModBlockSetTypes.TUNGSTEN, () -> PLAYER_ONLY_PRESSURE_PLATE.get());
 
     public static final DeferredBlock<DropExperienceBlock> PLATINUM_ORE = registerOreBlock("platinum_ore");
     public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_PLATINUM_ORE = registerDeepslateOreBlock("deepslate_platinum_ore");
@@ -1145,7 +1147,103 @@ public class ModBlocks {
     public static final DeferredBlock<FenceBlock> RED_CONCRETE_FENCE = registerFenceBlock("red_concrete_fence", () -> Blocks.RED_CONCRETE);
     public static final DeferredBlock<FenceBlock> BLACK_CONCRETE_FENCE = registerFenceBlock("black_concrete_fence", () -> Blocks.BLACK_CONCRETE);
 
-    public static DeferredBlock<CraftingTableBlock> registerCraftingTable(String registryName) {
+    public static final DeferredBlock<TorchBlock> IRON_TORCH = registerTorchBlock("iron_torch", () -> ModParticles.IRON_FIRE_FLAME.get());
+    public static final DeferredBlock<WallTorchBlock> IRON_WALL_TORCH = registerWallTorchBlock("iron_wall_torch", () -> ModParticles.IRON_FIRE_FLAME.get(), () -> IRON_TORCH.get());
+
+    public static final DeferredBlock<ModLanternBlock> EXPOSED_IRON_LANTERN = registerRustingLanternBlock("exposed_iron_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<ModLanternBlock> WEATHERED_IRON_LANTERN = registerRustingLanternBlock("weathered_iron_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<ModLanternBlock> RUSTED_IRON_LANTERN = registerRustingLanternBlock("rusted_iron_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_IRON_LANTERN = registerLanternBlock("waxed_iron_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_EXPOSED_IRON_LANTERN = registerLanternBlock("waxed_exposed_iron_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_WEATHERED_IRON_LANTERN = registerLanternBlock("waxed_weathered_iron_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_RUSTED_IRON_LANTERN = registerLanternBlock("waxed_rusted_iron_lantern", () -> Blocks.LANTERN);
+
+    public static final DeferredBlock<ModLanternBlock> EXPOSED_IRON_SOUL_LANTERN = registerRustingLanternBlock("exposed_iron_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<ModLanternBlock> WEATHERED_IRON_SOUL_LANTERN = registerRustingLanternBlock("weathered_iron_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<ModLanternBlock> RUSTED_IRON_SOUL_LANTERN = registerRustingLanternBlock("rusted_iron_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_IRON_SOUL_LANTERN = registerLanternBlock("waxed_iron_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_EXPOSED_IRON_SOUL_LANTERN = registerLanternBlock("waxed_exposed_iron_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_WEATHERED_IRON_SOUL_LANTERN = registerLanternBlock("waxed_weathered_iron_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_RUSTED_IRON_SOUL_LANTERN = registerLanternBlock("waxed_rusted_iron_soul_lantern", () -> Blocks.SOUL_LANTERN);
+
+    public static final DeferredBlock<ModLanternBlock> IRON_FIRE_LANTERN = registerRustingLanternBlock("iron_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<ModLanternBlock> EXPOSED_IRON_FIRE_LANTERN = registerRustingLanternBlock("exposed_iron_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<ModLanternBlock> WEATHERED_IRON_FIRE_LANTERN = registerRustingLanternBlock("weathered_iron_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<ModLanternBlock> RUSTED_IRON_FIRE_LANTERN = registerRustingLanternBlock("rusted_iron_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_IRON_FIRE_LANTERN = registerLanternBlock("waxed_iron_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_EXPOSED_IRON_FIRE_LANTERN = registerLanternBlock("waxed_exposed_iron_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_WEATHERED_IRON_FIRE_LANTERN = registerLanternBlock("waxed_weathered_iron_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_RUSTED_IRON_FIRE_LANTERN = registerLanternBlock("waxed_rusted_iron_fire_lantern", () -> Blocks.LANTERN);
+
+    public static final DeferredBlock<WeatheringLanternBlock> COPPER_SOUL_LANTERN = registerOxidizingLanternBlock("copper_soul_lantern", () -> Blocks.SOUL_LANTERN, WeatheringCopper.WeatherState.UNAFFECTED);
+    public static final DeferredBlock<WeatheringLanternBlock> EXPOSED_COPPER_SOUL_LANTERN = registerOxidizingLanternBlock("exposed_copper_soul_lantern", () -> Blocks.SOUL_LANTERN, WeatheringCopper.WeatherState.EXPOSED);
+    public static final DeferredBlock<WeatheringLanternBlock> WEATHERED_COPPER_SOUL_LANTERN = registerOxidizingLanternBlock("weathered_copper_soul_lantern", () -> Blocks.SOUL_LANTERN, WeatheringCopper.WeatherState.WEATHERED);
+    public static final DeferredBlock<WeatheringLanternBlock> OXIDIZED_COPPER_SOUL_LANTERN = registerOxidizingLanternBlock("oxidized_copper_soul_lantern", () -> Blocks.SOUL_LANTERN, WeatheringCopper.WeatherState.OXIDIZED);
+    public static final DeferredBlock<LanternBlock> WAXED_COPPER_SOUL_LANTERN = registerLanternBlock("waxed_copper_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_EXPOSED_COPPER_SOUL_LANTERN = registerLanternBlock("waxed_exposed_copper_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_WEATHERED_COPPER_SOUL_LANTERN = registerLanternBlock("waxed_weathered_copper_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_OXIDIZED_COPPER_SOUL_LANTERN = registerLanternBlock("waxed_oxidized_copper_soul_lantern", () -> Blocks.SOUL_LANTERN);
+
+    public static final DeferredBlock<WeatheringLanternBlock> COPPER_FIRE_LANTERN = registerOxidizingLanternBlock("copper_fire_lantern", () -> Blocks.LANTERN, WeatheringCopper.WeatherState.UNAFFECTED);
+    public static final DeferredBlock<WeatheringLanternBlock> EXPOSED_COPPER_FIRE_LANTERN = registerOxidizingLanternBlock("exposed_copper_fire_lantern", () -> Blocks.LANTERN, WeatheringCopper.WeatherState.EXPOSED);
+    public static final DeferredBlock<WeatheringLanternBlock> WEATHERED_COPPER_FIRE_LANTERN = registerOxidizingLanternBlock("weathered_copper_fire_lantern", () -> Blocks.LANTERN, WeatheringCopper.WeatherState.WEATHERED);
+    public static final DeferredBlock<WeatheringLanternBlock> OXIDIZED_COPPER_FIRE_LANTERN = registerOxidizingLanternBlock("oxidized_copper_fire_lantern", () -> Blocks.LANTERN, WeatheringCopper.WeatherState.OXIDIZED);
+    public static final DeferredBlock<LanternBlock> WAXED_COPPER_FIRE_LANTERN = registerLanternBlock("waxed_copper_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_EXPOSED_COPPER_FIRE_LANTERN = registerLanternBlock("waxed_exposed_copper_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_WEATHERED_COPPER_FIRE_LANTERN = registerLanternBlock("waxed_weathered_copper_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_OXIDIZED_COPPER_FIRE_LANTERN = registerLanternBlock("waxed_oxidized_copper_fire_lantern", () -> Blocks.LANTERN);
+
+    public static final DeferredBlock<ModChainBlock> ZINC_CHAIN = registerRustingChainBlock("zinc_chain", () -> Blocks.IRON_CHAIN);
+    public static final DeferredBlock<ModChainBlock> EXPOSED_ZINC_CHAIN = registerRustingChainBlock("exposed_zinc_chain", () -> Blocks.IRON_CHAIN);
+    public static final DeferredBlock<ModChainBlock> WEATHERED_ZINC_CHAIN = registerRustingChainBlock("weathered_zinc_chain", () -> Blocks.IRON_CHAIN);
+    public static final DeferredBlock<ModChainBlock> CORRODED_ZINC_CHAIN = registerRustingChainBlock("corroded_zinc_chain", () -> Blocks.IRON_CHAIN);
+
+    public static final DeferredBlock<ChainBlock> WAXED_ZINC_CHAIN = registerChainBlock("waxed_zinc_chain", () -> Blocks.IRON_CHAIN);
+    public static final DeferredBlock<ChainBlock> WAXED_EXPOSED_ZINC_CHAIN = registerChainBlock("waxed_exposed_zinc_chain", () -> Blocks.IRON_CHAIN);
+    public static final DeferredBlock<ChainBlock> WAXED_WEATHERED_ZINC_CHAIN = registerChainBlock("waxed_weathered_zinc_chain", () -> Blocks.IRON_CHAIN);
+    public static final DeferredBlock<ChainBlock> WAXED_CORRODED_ZINC_CHAIN = registerChainBlock("waxed_corroded_zinc_chain", () -> Blocks.IRON_CHAIN);
+
+    public static final DeferredBlock<ChainBlock> GOLD_CHAIN = registerChainBlock("gold_chain", () -> Blocks.IRON_CHAIN);
+    public static final DeferredBlock<ChainBlock> NETHERITE_CHAIN = registerChainBlock("netherite_chain", () -> Blocks.IRON_CHAIN);
+    public static final DeferredBlock<ChainBlock> SILVER_CHAIN = registerChainBlock("silver_chain", () -> Blocks.IRON_CHAIN);
+    public static final DeferredBlock<ChainBlock> TIN_CHAIN = registerChainBlock("tin_chain", () -> Blocks.IRON_CHAIN);
+    public static final DeferredBlock<ChainBlock> TUNGSTEN_CHAIN = registerChainBlock("tungsten_chain", () -> Blocks.IRON_CHAIN);
+    public static final DeferredBlock<ChainBlock> PLATINUM_CHAIN = registerChainBlock("platinum_chain", () -> Blocks.IRON_CHAIN);
+    public static final DeferredBlock<ChainBlock> LEAD_CHAIN = registerChainBlock("lead_chain", () -> Blocks.IRON_CHAIN);
+    public static final DeferredBlock<ChainBlock> URANIUM_CHAIN = registerChainBlock("uranium_chain", () -> Blocks.IRON_CHAIN);
+    public static final DeferredBlock<ChainBlock> BRONZE_CHAIN = registerChainBlock("bronze_chain", () -> Blocks.IRON_CHAIN);
+    public static final DeferredBlock<ChainBlock> BRASS_CHAIN = registerChainBlock("brass_chain", () -> Blocks.IRON_CHAIN);
+    public static final DeferredBlock<ChainBlock> STEEL_CHAIN = registerChainBlock("steel_chain", () -> Blocks.IRON_CHAIN);
+
+    public static final DeferredBlock<TorchBlock> ZINC_TORCH = registerTorchBlock("zinc_torch", () -> ModParticles.ZINC_FIRE_FLAME.get());
+    public static final DeferredBlock<WallTorchBlock> ZINC_WALL_TORCH = registerWallTorchBlock("zinc_wall_torch", () -> ModParticles.ZINC_FIRE_FLAME.get(), () -> ZINC_TORCH.get());
+
+    public static final DeferredBlock<TorchBlock> SILVER_TORCH = registerTorchBlock("silver_torch", () -> ModParticles.SILVER_FIRE_FLAME.get());
+    public static final DeferredBlock<WallTorchBlock> SILVER_WALL_TORCH = registerWallTorchBlock("silver_wall_torch", () -> ModParticles.SILVER_FIRE_FLAME.get(), () -> SILVER_TORCH.get());
+
+    public static final DeferredBlock<TorchBlock> TIN_TORCH = registerTorchBlock("tin_torch", () -> ModParticles.TIN_FIRE_FLAME.get());
+    public static final DeferredBlock<WallTorchBlock> TIN_WALL_TORCH = registerWallTorchBlock("tin_wall_torch", () -> ModParticles.TIN_FIRE_FLAME.get(), () -> TIN_TORCH.get());
+
+    public static final DeferredBlock<TorchBlock> TUNGSTEN_TORCH = registerTorchBlock("tungsten_torch", () -> ModParticles.TUNGSTEN_FIRE_FLAME.get());
+    public static final DeferredBlock<WallTorchBlock> TUNGSTEN_WALL_TORCH = registerWallTorchBlock("tungsten_wall_torch", () -> ModParticles.TUNGSTEN_FIRE_FLAME.get(), () -> TUNGSTEN_TORCH.get());
+
+    public static final DeferredBlock<TorchBlock> PLATINUM_TORCH = registerTorchBlock("platinum_torch", () -> ModParticles.PLATINUM_FIRE_FLAME.get());
+    public static final DeferredBlock<WallTorchBlock> PLATINUM_WALL_TORCH = registerWallTorchBlock("platinum_wall_torch", () -> ModParticles.PLATINUM_FIRE_FLAME.get(), () -> PLATINUM_TORCH.get());
+
+    public static final DeferredBlock<TorchBlock> GOLD_TORCH = registerTorchBlock("gold_torch", () -> ModParticles.GOLD_FIRE_FLAME.get());
+    public static final DeferredBlock<WallTorchBlock> GOLD_WALL_TORCH = registerWallTorchBlock("gold_wall_torch", () -> ModParticles.GOLD_FIRE_FLAME.get(), () -> GOLD_TORCH.get());
+
+    public static final DeferredBlock<TorchBlock> LEAD_TORCH = registerTorchBlock("lead_torch", () -> ModParticles.LEAD_FIRE_FLAME.get());
+    public static final DeferredBlock<WallTorchBlock> LEAD_WALL_TORCH = registerWallTorchBlock("lead_wall_torch", () -> ModParticles.LEAD_FIRE_FLAME.get(), () -> LEAD_TORCH.get());
+
+    public static final DeferredBlock<TorchBlock> URANIUM_TORCH = registerTorchBlock("uranium_torch", () -> ModParticles.URANIUM_FIRE_FLAME.get());
+    public static final DeferredBlock<WallTorchBlock> URANIUM_WALL_TORCH = registerWallTorchBlock("uranium_wall_torch", () -> ModParticles.URANIUM_FIRE_FLAME.get(), () -> URANIUM_TORCH.get());
+
+    public static final DeferredBlock<AmethystBlock> CUT_AMETHYST = registerAmethystBlock("cut_amethyst", () -> Blocks.AMETHYST_BLOCK);
+    public static final DeferredBlock<AmethystSlabBlock> CUT_AMETHYST_SLAB = registerAmethystSlabBlock("cut_amethyst_slab", () -> CUT_AMETHYST.get());
+    public static final DeferredBlock<AmethystStairBlock> CUT_AMETHYST_STAIRS = registerAmethystStairBlock("cut_amethyst_stairs", () -> CUT_AMETHYST.get());
+
+    private static DeferredBlock<CraftingTableBlock> registerCraftingTable(String registryName) {
         if (registryName == "crimson_crafting_table" || registryName == "warped_crafting_table") {
             return BLOCKS.register(
                     registryName, () -> new CraftingTableBlock(
@@ -1210,7 +1308,7 @@ public class ModBlocks {
 
     }
 
-    public static DeferredBlock<CartographyTableBlock> registerCartographyTable(String registryName) {
+    private static DeferredBlock<CartographyTableBlock> registerCartographyTable(String registryName) {
         if (registryName == "crimson_cartography_table" || registryName == "warped_cartography_table") {
             return BLOCKS.register(
                     registryName, () -> new CartographyTableBlock(
@@ -1275,7 +1373,7 @@ public class ModBlocks {
 
     }
 
-    public static DeferredBlock<FletchingTableBlock> registerFletchingTable(String registryName) {
+    private static DeferredBlock<FletchingTableBlock> registerFletchingTable(String registryName) {
         if (registryName == "crimson_fletching_table" || registryName == "warped_fletching_table") {
             return BLOCKS.register(
                     registryName, () -> new FletchingTableBlock(
@@ -1340,7 +1438,7 @@ public class ModBlocks {
 
     }
 
-    public static DeferredBlock<BeehiveBlock> registerBeehive(String registryName) {
+    private static DeferredBlock<BeehiveBlock> registerBeehive(String registryName) {
         if (registryName == "crimson_beehive" || registryName == "warped_beehive") {
             return BLOCKS.register(
                     registryName, () -> new BeehiveBlock(
@@ -1405,7 +1503,7 @@ public class ModBlocks {
 
     }
 
-    public static DeferredBlock<BarrelBlock> registerBarrel(String registryName) {
+    private static DeferredBlock<BarrelBlock> registerBarrel(String registryName) {
         if (registryName == "crimson_barrel" || registryName == "warped_barrel") {
             return BLOCKS.register(
                     registryName, () -> new BarrelBlock(
@@ -1470,7 +1568,7 @@ public class ModBlocks {
 
     }
 
-    public static DeferredBlock<LecternBlock> registerLectern(String registryName) {
+    private static DeferredBlock<LecternBlock> registerLectern(String registryName) {
         if (registryName == "crimson_lectern" || registryName == "warped_lectern") {
             return BLOCKS.register(
                     registryName, () -> new LecternBlock(
@@ -1535,7 +1633,7 @@ public class ModBlocks {
 
     }
 
-    public static DeferredBlock<ChestBlock> registerWoodenChest(String registryName) {
+    private static DeferredBlock<ChestBlock> registerWoodenChest(String registryName) {
         if (registryName == "crimson_chest" || registryName == "warped_chest") {
             return BLOCKS.register(
                     registryName, () -> new ChestBlock(
@@ -1612,7 +1710,7 @@ public class ModBlocks {
 
     }
 
-    public static DeferredBlock<TrappedChestBlock> registerTrappedChest(String registryName) {
+    private static DeferredBlock<TrappedChestBlock> registerTrappedChest(String registryName) {
         if (registryName == "crimson_trapped_chest" || registryName == "warped_trapped_chest") {
             return BLOCKS.register(
                     registryName, () -> new TrappedChestBlock(
@@ -1677,7 +1775,7 @@ public class ModBlocks {
 
     }
 
-    public static DeferredBlock<SmithingTableBlock> registerSmithingTable(String registryName) {
+    private static DeferredBlock<SmithingTableBlock> registerSmithingTable(String registryName) {
         if (registryName == "crimson_smithing_table" || registryName == "warped_smithing_table") {
             return BLOCKS.register(
                     registryName, () -> new SmithingTableBlock(
@@ -1742,7 +1840,7 @@ public class ModBlocks {
 
     }
 
-    public static DeferredBlock<Block> registerBookshelf(String registryName) {
+    private static DeferredBlock<Block> registerBookshelf(String registryName) {
         if (registryName == "crimson_bookshelf" || registryName == "warped_bookshelf") {
             return BLOCKS.register(
                     registryName, () -> new Block(
@@ -1807,7 +1905,7 @@ public class ModBlocks {
 
     }
 
-    public static DeferredBlock<CampfireBlock> registerCampfire(String registryName) {
+    private static DeferredBlock<CampfireBlock> registerCampfire(String registryName) {
         if (registryName == "crimson_campfire" || registryName == "warped_campfire") {
             return BLOCKS.register(
                     registryName, () -> new CampfireBlock(
@@ -1880,7 +1978,7 @@ public class ModBlocks {
 
     }
 
-    public static DeferredBlock<CampfireBlock> registerSoulCampfire(String registryName) {
+    private static DeferredBlock<CampfireBlock> registerSoulCampfire(String registryName) {
         if (registryName == "crimson_soul_campfire" || registryName == "warped_soul_campfire") {
             return BLOCKS.register(
                     registryName, () -> new CampfireBlock(
@@ -1953,7 +2051,7 @@ public class ModBlocks {
 
     }
 
-    public static DeferredBlock<GrindstoneBlock> registerGrindstone(String registryName) {
+    private static DeferredBlock<GrindstoneBlock> registerGrindstone(String registryName) {
         return BLOCKS.register(
                 registryName, () -> new GrindstoneBlock(
                         BlockBehaviour.Properties.ofFullCopy(Blocks.GRINDSTONE)
@@ -1970,7 +2068,7 @@ public class ModBlocks {
         );
     }
 
-    public static DeferredBlock<ChiseledBookShelfBlock> registerChiseledBookshelf(String registryName) {
+    private static DeferredBlock<ChiseledBookShelfBlock> registerChiseledBookshelf(String registryName) {
         return BLOCKS.register(
                 registryName, () -> new ChiseledBookShelfBlock(
                         BlockBehaviour.Properties.ofFullCopy(Blocks.CHISELED_BOOKSHELF)
@@ -1987,7 +2085,7 @@ public class ModBlocks {
         );
     }
 
-    public static DeferredBlock<CrafterBlock> registerCrafter(String registryName) {
+    private static DeferredBlock<CrafterBlock> registerCrafter(String registryName) {
         return BLOCKS.register(
                 registryName, () -> new CrafterBlock(
                         BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTER)
@@ -2004,7 +2102,7 @@ public class ModBlocks {
         );
     }
 
-    public static DeferredBlock<FurnaceBlock> registerFurnace(String registryName) {
+    private static DeferredBlock<FurnaceBlock> registerFurnace(String registryName) {
         if (registryName == "deepslate_furnace") {
             return BLOCKS.register(
                     registryName, () -> new FurnaceBlock(
@@ -2038,7 +2136,7 @@ public class ModBlocks {
         }
     }
 
-    public static DeferredBlock<DispenserBlock> registerDispenser(String registryName) {
+    private static DeferredBlock<DispenserBlock> registerDispenser(String registryName) {
         if (registryName == "deepslate_dispenser") {
             return BLOCKS.register(
                     registryName, () -> new DispenserBlock(
@@ -2072,7 +2170,7 @@ public class ModBlocks {
         }
     }
 
-    public static DeferredBlock<ObserverBlock> registerObserver(String registryName) {
+    private static DeferredBlock<ObserverBlock> registerObserver(String registryName) {
         if (registryName == "deepslate_observer") {
             return BLOCKS.register(
                     registryName, () -> new ObserverBlock(
@@ -2106,7 +2204,7 @@ public class ModBlocks {
         }
     }
 
-    public static DeferredBlock<DropperBlock> registerDropper(String registryName) {
+    private static DeferredBlock<DropperBlock> registerDropper(String registryName) {
         if (registryName == "deepslate_dropper") {
             return BLOCKS.register(
                     registryName, () -> new DropperBlock(
@@ -2140,7 +2238,7 @@ public class ModBlocks {
         }
     }
 
-    public static DeferredBlock<BrewingStandBlock> registerBrewingStand(String registryName) {
+    private static DeferredBlock<BrewingStandBlock> registerBrewingStand(String registryName) {
         if (registryName == "deepslate_brewing_stand") {
             return BLOCKS.register(
                     registryName, () -> new BrewingStandBlock(
@@ -2174,7 +2272,7 @@ public class ModBlocks {
         }
     }
 
-    public static DeferredBlock<SmokerBlock> registerSmoker(String registryName) {
+    private static DeferredBlock<SmokerBlock> registerSmoker(String registryName) {
         if (registryName.contains("deepslate")) {
             return BLOCKS.register(
                     registryName, () -> new SmokerBlock(
@@ -2208,7 +2306,7 @@ public class ModBlocks {
         }
     }
 
-    public static DeferredBlock<BlastFurnaceBlock> registerBlastFurnace(String registryName) {
+    private static DeferredBlock<BlastFurnaceBlock> registerBlastFurnace(String registryName) {
         if (registryName == "deepslate_blast_furnace") {
             return BLOCKS.register(
                     registryName, () -> new BlastFurnaceBlock(
@@ -2242,7 +2340,7 @@ public class ModBlocks {
         }
     }
 
-    public static DeferredBlock<NukeBlock> registerNuke(String registryName) {
+    private static DeferredBlock<NukeBlock> registerNuke(String registryName) {
         return BLOCKS.register(
                 registryName, () -> new NukeBlock(
                         BlockBehaviour.Properties.ofFullCopy(Blocks.TNT)
@@ -2259,7 +2357,7 @@ public class ModBlocks {
         );
     }
 
-    public static DeferredBlock<LoomBlock> registerLoom(String registryName) {
+    private static DeferredBlock<LoomBlock> registerLoom(String registryName) {
         if (registryName == "crimson_loom" || registryName == "warped_loom") {
             return BLOCKS.register(
                     registryName, () -> new LoomBlock(
@@ -2324,7 +2422,7 @@ public class ModBlocks {
 
     }
 
-    public static DeferredBlock<ModLiquidBlock> registerLiquid(String registryName, Supplier<FlowingFluid> fluid) {
+    private static DeferredBlock<ModLiquidBlock> registerLiquid(String registryName, Supplier<FlowingFluid> fluid) {
         return BLOCKS.register(
                 registryName, () -> new ModLiquidBlock(
                         fluid.get(),
@@ -2347,7 +2445,7 @@ public class ModBlocks {
         );
     }
 
-    public static DeferredBlock<WeatheringCopperPressurePlateBlock> registerOxidizingPressurePlate(String registryName, int maxWeight, BlockSetType type, WeatheringCopper.WeatherState weatherState, Supplier<Block> baseBlock) {
+    private static DeferredBlock<WeatheringCopperPressurePlateBlock> registerOxidizingPressurePlate(String registryName, int maxWeight, BlockSetType type, WeatheringCopper.WeatherState weatherState, Supplier<Block> baseBlock) {
         return BLOCKS.register(
                 registryName, () -> new WeatheringCopperPressurePlateBlock(
                         maxWeight,
@@ -2368,7 +2466,7 @@ public class ModBlocks {
         );
     }
 
-    public static DeferredBlock<ModPressurePlateBlock> registerRustingWeightedPressurePlate(String registryName, int maxWeight, BlockSetType type, Supplier<Block> baseBlock) {
+    private static DeferredBlock<ModPressurePlateBlock> registerRustingWeightedPressurePlate(String registryName, int maxWeight, BlockSetType type, Supplier<Block> baseBlock) {
         return BLOCKS.register(
                 registryName, () -> new ModPressurePlateBlock(
                         maxWeight,
@@ -2388,7 +2486,7 @@ public class ModBlocks {
         );
     }
 
-    public static DeferredBlock<ModTrapdoorBlock> registerRustingTrapdoorBlock(String registryName, BlockSetType type, Supplier<Block> baseBlock) {
+    private static DeferredBlock<ModTrapdoorBlock> registerRustingTrapdoorBlock(String registryName, BlockSetType type, Supplier<Block> baseBlock) {
         return BLOCKS.register(
                 registryName, () -> new ModTrapdoorBlock(
                         type,
@@ -2407,7 +2505,7 @@ public class ModBlocks {
         );
     }
 
-    public static DeferredBlock<ModIronBarsBlock> registerRustingBarsBlock(String registryName, Supplier<Block> baseBlock) {
+    private static DeferredBlock<ModIronBarsBlock> registerRustingBarsBlock(String registryName, Supplier<Block> baseBlock) {
         return BLOCKS.register(
                 registryName, () -> new ModIronBarsBlock(
                         BlockBehaviour.Properties.ofFullCopy(
@@ -2425,7 +2523,7 @@ public class ModBlocks {
         );
     }
 
-    public static DeferredBlock<IronBarsBlock> registerBarsBlock(String registryName, Supplier<Block> baseBlock) {
+    private static DeferredBlock<IronBarsBlock> registerBarsBlock(String registryName, Supplier<Block> baseBlock) {
         return BLOCKS.register(
                 registryName, () -> new IronBarsBlock(
                         BlockBehaviour.Properties.ofFullCopy(
@@ -2443,7 +2541,7 @@ public class ModBlocks {
         );
     }
 
-    public static DeferredBlock<ModDoorBlock> registerRustingDoorBlock(String registryName, BlockSetType type, Supplier<Block> baseBlock) {
+    private static DeferredBlock<ModDoorBlock> registerRustingDoorBlock(String registryName, BlockSetType type, Supplier<Block> baseBlock) {
         return BLOCKS.register(
                 registryName, () -> new ModDoorBlock(
                         type,
@@ -2462,7 +2560,7 @@ public class ModBlocks {
         );
     }
 
-    public static DeferredBlock<KeyOnlyDoorBlock> registerLockableDoorBlock(String registryName, BlockSetType type, Supplier<Block> baseBlock) {
+    private static DeferredBlock<KeyOnlyDoorBlock> registerLockableDoorBlock(String registryName, BlockSetType type, Supplier<Block> baseBlock) {
         return BLOCKS.register(
                 registryName, () -> new KeyOnlyDoorBlock(
                         type,
@@ -2481,7 +2579,7 @@ public class ModBlocks {
         );
     }
 
-    public static DeferredBlock<KeyOnlyTrapdoorBlock> registerLockableTrapdoorBlock(String registryName, BlockSetType type, Supplier<Block> baseBlock) {
+    private static DeferredBlock<KeyOnlyTrapdoorBlock> registerLockableTrapdoorBlock(String registryName, BlockSetType type, Supplier<Block> baseBlock) {
         return BLOCKS.register(
                 registryName, () -> new KeyOnlyTrapdoorBlock(
                         type,
@@ -2500,7 +2598,7 @@ public class ModBlocks {
         );
     }
 
-    public static DeferredBlock<DoorBlock> registerDoorBlock(String registryName, BlockSetType type, Supplier<Block> baseBlock) {
+    private static DeferredBlock<DoorBlock> registerDoorBlock(String registryName, BlockSetType type, Supplier<Block> baseBlock) {
         if (type == ModBlockSetTypes.TUNGSTEN) {
             return BLOCKS.register(
                     registryName, () -> new DoorBlock(
@@ -2541,7 +2639,7 @@ public class ModBlocks {
         }
     }
 
-    public static DeferredBlock<TrapDoorBlock> registerTrapdoorBlock(String registryName, BlockSetType type, Supplier<Block> baseBlock) {
+    private static DeferredBlock<TrapDoorBlock> registerTrapdoorBlock(String registryName, BlockSetType type, Supplier<Block> baseBlock) {
         if (type == ModBlockSetTypes.TUNGSTEN) {
             return BLOCKS.register(
                     registryName, () -> new TrapDoorBlock(
@@ -2582,7 +2680,7 @@ public class ModBlocks {
         }
     }
 
-    public static DeferredBlock<ModChainBlock> registerRustingChainBlock(String registryName, Supplier<Block> baseBlock) {
+    private static DeferredBlock<ModChainBlock> registerRustingChainBlock(String registryName, Supplier<Block> baseBlock) {
         return BLOCKS.register(
                 registryName, () -> new ModChainBlock(
                         BlockBehaviour.Properties.ofFullCopy(
@@ -2600,25 +2698,59 @@ public class ModBlocks {
         );
     }
 
-    public static DeferredBlock<ChainBlock> registerChainBlock(String registryName, Supplier<Block> baseBlock) {
-        return BLOCKS.register(
-                registryName, () -> new ChainBlock(
-                        BlockBehaviour.Properties.ofFullCopy(
-                                baseBlock.get()
-                        ).setId(
-                                ResourceKey.create(
-                                        Registries.BLOCK,
-                                        Identifier.fromNamespaceAndPath(
-                                                BuildersParadise.MODID,
-                                                registryName
-                                        )
-                                )
-                        )
-                )
-        );
+    private static DeferredBlock<ChainBlock> registerChainBlock(String registryName, Supplier<Block> baseBlock) {
+        if (registryName.contains("netherite")) {
+            return BLOCKS.register(
+                    registryName, () -> new ChainBlock(
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    baseBlock.get()
+                            ).setId(
+                                    ResourceKey.create(
+                                            Registries.BLOCK,
+                                            Identifier.fromNamespaceAndPath(
+                                                    BuildersParadise.MODID,
+                                                    registryName
+                                            )
+                                    )
+                            ).strength(50.0F, 1200.0F)
+                    )
+            );
+        } else if (registryName.contains("tungsten")) {
+            return BLOCKS.register(
+                    registryName, () -> new ChainBlock(
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    baseBlock.get()
+                            ).setId(
+                                    ResourceKey.create(
+                                            Registries.BLOCK,
+                                            Identifier.fromNamespaceAndPath(
+                                                    BuildersParadise.MODID,
+                                                    registryName
+                                            )
+                                    )
+                            ).strength(45.0F, 2000.0F)
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new ChainBlock(
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    baseBlock.get()
+                            ).setId(
+                                    ResourceKey.create(
+                                            Registries.BLOCK,
+                                            Identifier.fromNamespaceAndPath(
+                                                    BuildersParadise.MODID,
+                                                    registryName
+                                            )
+                                    )
+                            )
+                    )
+            );
+        }
     }
 
-    public static DeferredBlock<ModBlock> registerRustingBlock(String registryName, Supplier<Block> baseBlock) {
+    private static DeferredBlock<ModBlock> registerRustingBlock(String registryName, Supplier<Block> baseBlock) {
         return BLOCKS.register(
                 registryName, () -> new ModBlock(
                         BlockBehaviour.Properties.ofFullCopy(
@@ -2636,7 +2768,7 @@ public class ModBlocks {
         );
     }
 
-    public static DeferredBlock<ModSlabBlock> registerRustingSlabBlock(String registryName, Supplier<Block> baseBlock) {
+    private static DeferredBlock<ModSlabBlock> registerRustingSlabBlock(String registryName, Supplier<Block> baseBlock) {
         return BLOCKS.register(
                 registryName, () -> new ModSlabBlock(
                         BlockBehaviour.Properties.ofFullCopy(
@@ -2654,7 +2786,7 @@ public class ModBlocks {
         );
     }
 
-    public static DeferredBlock<ModStairBlock> registerRustingStairBlock(String registryName, Supplier<Block> baseBlock) {
+    private static DeferredBlock<ModStairBlock> registerRustingStairBlock(String registryName, Supplier<Block> baseBlock) {
         return BLOCKS.register(
                 registryName, () -> new ModStairBlock(
                         baseBlock.get().defaultBlockState(),
@@ -3008,6 +3140,61 @@ public class ModBlocks {
         );
     }
 
+    private static DeferredBlock<AmethystBlock> registerAmethystBlock(String registryName, Supplier<Block> baseBlock) {
+        return BLOCKS.register(
+                registryName, () -> new AmethystBlock(
+                        BlockBehaviour.Properties.ofFullCopy(
+                                baseBlock.get()
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        )
+                )
+        );
+    }
+
+    private static DeferredBlock<AmethystSlabBlock> registerAmethystSlabBlock(String registryName, Supplier<Block> baseBlock) {
+        return BLOCKS.register(
+                registryName, () -> new AmethystSlabBlock(
+                        BlockBehaviour.Properties.ofFullCopy(
+                                baseBlock.get()
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        )
+                )
+        );
+    }
+
+    private static DeferredBlock<AmethystStairBlock> registerAmethystStairBlock(String registryName, Supplier<Block> baseBlock) {
+        return BLOCKS.register(
+                registryName, () -> new AmethystStairBlock(
+                        baseBlock.get().defaultBlockState(),
+                        BlockBehaviour.Properties.ofFullCopy(
+                                baseBlock.get()
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        )
+                )
+        );
+    }
+
     private static DeferredBlock<CryingObsidianBlock> registerCOBlock(String registryName, Supplier<Block> baseBlock) {
         return BLOCKS.register(
                 registryName, () -> new CryingObsidianBlock(
@@ -3170,6 +3357,106 @@ public class ModBlocks {
                         )
                 )
         );
+    }
+
+    private static DeferredBlock<TorchBlock> registerTorchBlock(String registryName, Supplier<SimpleParticleType> particleType){
+        return BLOCKS.register(
+                registryName, () -> new TorchBlock(
+                        particleType.get(),
+                        BlockBehaviour.Properties.ofFullCopy(
+                                Blocks.TORCH
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        )
+                )
+        );
+    }
+
+    private static DeferredBlock<WallTorchBlock> registerWallTorchBlock(String registryName, Supplier<SimpleParticleType> particleType, Supplier<Block> groundTorch){
+        return BLOCKS.register(
+                registryName, () -> new WallTorchBlock(
+                        particleType.get(),
+                        wallVariant(groundTorch.get(), true).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        )
+                )
+        );
+    }
+
+    private static DeferredBlock<LanternBlock> registerLanternBlock(String registryName, Supplier<Block> baseBlock) {
+        return BLOCKS.register(
+                registryName, () -> new LanternBlock(
+                        BlockBehaviour.Properties.ofFullCopy(
+                                baseBlock.get()
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        )
+                )
+        );
+    }
+
+    private static DeferredBlock<ModLanternBlock> registerRustingLanternBlock(String registryName, Supplier<Block> baseBlock) {
+        return BLOCKS.register(
+                registryName, () -> new ModLanternBlock(
+                        BlockBehaviour.Properties.ofFullCopy(
+                                baseBlock.get()
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        )
+                )
+        );
+    }
+
+    private static DeferredBlock<WeatheringLanternBlock> registerOxidizingLanternBlock(String registryName, Supplier<Block> baseBlock, WeatheringCopper.WeatherState weatherState) {
+        return BLOCKS.register(
+                registryName, () -> new WeatheringLanternBlock(
+                        weatherState,
+                        BlockBehaviour.Properties.ofFullCopy(
+                                baseBlock.get()
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        )
+                )
+        );
+    }
+
+    private static BlockBehaviour.Properties wallVariant(Block baseBlock, boolean overrideDescription) {
+        BlockBehaviour.Properties blockbehaviour$properties = BlockBehaviour.Properties.ofFullCopy(Blocks.WALL_TORCH).overrideLootTable(baseBlock.getLootTable());
+        if (overrideDescription) {
+            blockbehaviour$properties = blockbehaviour$properties.overrideDescription(baseBlock.getDescriptionId());
+        }
+
+        return blockbehaviour$properties;
     }
 
     public static void register(IEventBus eventBus){

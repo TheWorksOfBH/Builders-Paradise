@@ -39,6 +39,7 @@ public final class ModBlockTags {
     public static final TagKey<Block> IRON = create("iron");
     public static final TagKey<Block> ZINC = create("zinc");
     public static final TagKey<Block> INCORRECT_FOR_BRONZE_TOOL = create("incorrect_for_bronze_tool");
+    public static final TagKey<Block> GALVANIZES_IRON = create("galvanizes_iron");
 
     private ModBlockTags() {
     }

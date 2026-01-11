@@ -10,7 +10,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.item.crafting.*;
+import net.minecraft.world.item.crafting.display.RecipeDisplay;
+import net.minecraft.world.item.crafting.display.SlotDisplay;
 import net.minecraft.world.level.Level;
+
+import java.util.List;
 
 public record FletchingRecipe(Ingredient arrow, Ingredient ingredient, ItemStack output) implements Recipe<FletchingRecipeInput> {
 
@@ -48,9 +52,17 @@ public record FletchingRecipe(Ingredient arrow, Ingredient ingredient, ItemStack
 
     @Override
     public RecipeBookCategory recipeBookCategory() {
-        return null;
+        return ModRecipeBookCategories.FLETCHING.get();
     }
 
+    @Override
+    public List<RecipeDisplay> display() {
+        return List.of(new FletchingRecipeDisplay(this.arrow().display(), this.ingredient().display(), this.resultDisplay(), new SlotDisplay.ItemSlotDisplay(Items.FLETCHING_TABLE)));
+    }
+
+    public SlotDisplay resultDisplay() {
+        return new SlotDisplay.ItemStackSlotDisplay(this.output());
+    }
 
     public static class Serializer implements RecipeSerializer<FletchingRecipe> {
         public static final MapCodec<FletchingRecipe> CODEC = RecordCodecBuilder.mapCodec(

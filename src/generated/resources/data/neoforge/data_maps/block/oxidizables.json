@@ -3,6 +3,12 @@
     "buildersparadise:barely_heavy_weighted_pressure_plate": {
       "next_oxidation_stage": "buildersparadise:exposed_barely_heavy_weighted_pressure_plate"
     },
+    "buildersparadise:copper_fire_lantern": {
+      "next_oxidation_stage": "buildersparadise:exposed_copper_fire_lantern"
+    },
+    "buildersparadise:copper_soul_lantern": {
+      "next_oxidation_stage": "buildersparadise:exposed_copper_soul_lantern"
+    },
     "buildersparadise:cut_iron": {
       "next_oxidation_stage": "buildersparadise:exposed_cut_iron"
     },
@@ -23,6 +29,12 @@
     },
     "buildersparadise:exposed_barely_heavy_weighted_pressure_plate": {
       "next_oxidation_stage": "buildersparadise:weathered_barely_heavy_weighted_pressure_plate"
+    },
+    "buildersparadise:exposed_copper_fire_lantern": {
+      "next_oxidation_stage": "buildersparadise:weathered_copper_fire_lantern"
+    },
+    "buildersparadise:exposed_copper_soul_lantern": {
+      "next_oxidation_stage": "buildersparadise:weathered_copper_soul_lantern"
     },
     "buildersparadise:exposed_cut_iron": {
       "next_oxidation_stage": "buildersparadise:weathered_cut_iron"
@@ -57,6 +69,15 @@
     "buildersparadise:exposed_iron_door": {
       "next_oxidation_stage": "buildersparadise:weathered_iron_door"
     },
+    "buildersparadise:exposed_iron_fire_lantern": {
+      "next_oxidation_stage": "buildersparadise:weathered_iron_fire_lantern"
+    },
+    "buildersparadise:exposed_iron_lantern": {
+      "next_oxidation_stage": "buildersparadise:weathered_iron_lantern"
+    },
+    "buildersparadise:exposed_iron_soul_lantern": {
+      "next_oxidation_stage": "buildersparadise:weathered_iron_soul_lantern"
+    },
     "buildersparadise:exposed_iron_trapdoor": {
       "next_oxidation_stage": "buildersparadise:weathered_iron_trapdoor"
     },
@@ -66,17 +87,29 @@
     "buildersparadise:exposed_zinc": {
       "next_oxidation_stage": "buildersparadise:weathered_zinc"
     },
+    "buildersparadise:exposed_zinc_chain": {
+      "next_oxidation_stage": "buildersparadise:weathered_zinc_chain"
+    },
     "buildersparadise:exposed_zinc_door": {
       "next_oxidation_stage": "buildersparadise:weathered_zinc_door"
     },
     "buildersparadise:exposed_zinc_trapdoor": {
       "next_oxidation_stage": "buildersparadise:weathered_zinc_trapdoor"
     },
+    "buildersparadise:iron_fire_lantern": {
+      "next_oxidation_stage": "buildersparadise:exposed_iron_fire_lantern"
+    },
     "buildersparadise:medium_weighted_pressure_plate": {
       "next_oxidation_stage": "buildersparadise:exposed_medium_weighted_pressure_plate"
     },
     "buildersparadise:weathered_barely_heavy_weighted_pressure_plate": {
       "next_oxidation_stage": "buildersparadise:corroded_barely_heavy_weighted_pressure_plate"
+    },
+    "buildersparadise:weathered_copper_fire_lantern": {
+      "next_oxidation_stage": "buildersparadise:oxidized_copper_fire_lantern"
+    },
+    "buildersparadise:weathered_copper_soul_lantern": {
+      "next_oxidation_stage": "buildersparadise:oxidized_copper_soul_lantern"
     },
     "buildersparadise:weathered_cut_iron": {
       "next_oxidation_stage": "buildersparadise:rusted_cut_iron"
@@ -111,6 +144,15 @@
     "buildersparadise:weathered_iron_door": {
       "next_oxidation_stage": "buildersparadise:rusted_iron_door"
     },
+    "buildersparadise:weathered_iron_fire_lantern": {
+      "next_oxidation_stage": "buildersparadise:rusted_iron_fire_lantern"
+    },
+    "buildersparadise:weathered_iron_lantern": {
+      "next_oxidation_stage": "buildersparadise:rusted_iron_lantern"
+    },
+    "buildersparadise:weathered_iron_soul_lantern": {
+      "next_oxidation_stage": "buildersparadise:rusted_iron_soul_lantern"
+    },
     "buildersparadise:weathered_iron_trapdoor": {
       "next_oxidation_stage": "buildersparadise:rusted_iron_trapdoor"
     },
@@ -120,6 +162,9 @@
     "buildersparadise:weathered_zinc": {
       "next_oxidation_stage": "buildersparadise:corroded_zinc"
     },
+    "buildersparadise:weathered_zinc_chain": {
+      "next_oxidation_stage": "buildersparadise:corroded_zinc_chain"
+    },
     "buildersparadise:weathered_zinc_door": {
       "next_oxidation_stage": "buildersparadise:corroded_zinc_door"
     },
@@ -128,6 +173,9 @@
     },
     "buildersparadise:zinc_block": {
       "next_oxidation_stage": "buildersparadise:exposed_zinc"
+    },
+    "buildersparadise:zinc_chain": {
+      "next_oxidation_stage": "buildersparadise:exposed_zinc_chain"
     },
     "buildersparadise:zinc_door": {
       "next_oxidation_stage": "buildersparadise:exposed_zinc_door"
@@ -152,6 +200,12 @@
     },
     "minecraft:iron_trapdoor": {
       "next_oxidation_stage": "buildersparadise:exposed_iron_trapdoor"
+    },
+    "minecraft:lantern": {
+      "next_oxidation_stage": "buildersparadise:exposed_iron_lantern"
+    },
+    "minecraft:soul_lantern": {
+      "next_oxidation_stage": "buildersparadise:exposed_iron_soul_lantern"
     }
   }
 }

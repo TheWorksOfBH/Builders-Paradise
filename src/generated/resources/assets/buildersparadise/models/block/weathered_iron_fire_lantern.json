@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_lantern",
+  "textures": {
+    "lantern": "buildersparadise:block/weathered_iron_fire_lantern"
+  }
+}

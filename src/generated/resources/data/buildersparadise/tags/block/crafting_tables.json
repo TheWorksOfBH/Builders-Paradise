@@ -1,7 +1,7 @@
 {
   "values": [
-    "minecraft:smithing_table",
     "minecraft:crafting_table",
+    "minecraft:smithing_table",
     "buildersparadise:spruce_crafting_table",
     "buildersparadise:birch_crafting_table",
     "buildersparadise:jungle_crafting_table",

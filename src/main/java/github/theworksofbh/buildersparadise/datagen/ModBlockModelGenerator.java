@@ -21,6 +21,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -800,6 +801,65 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.registerSimpleItemModel(ModItems.WAXED_IRON_CHAIN.get(), Identifier.withDefaultNamespace("item/iron_chain"));
     }
 
+    public void createWaxedIronLantern() {
+        MultiVariant standing = plainVariant(
+                ModelLocationUtils.getModelLocation(Blocks.LANTERN)
+        );
+
+        MultiVariant hanging = plainVariant(
+                ModelLocationUtils.getModelLocation(Blocks.LANTERN, "_hanging")
+        );
+
+        this.itemModelOutput.accept(
+                ModItems.WAXED_IRON_LANTERN.get(),
+                ItemModelUtils.plainModel(
+                        ModelLocationUtils.getModelLocation(Items.LANTERN)
+                )
+        );
+
+        this.blockStateOutput.accept(
+                MultiVariantGenerator.dispatch(ModBlocks.WAXED_IRON_LANTERN.get())
+                        .with(createBooleanModelDispatch(
+                                BlockStateProperties.HANGING,
+                                hanging,
+                                standing
+                        ))
+        );
+    }
+
+    public void createWaxedIronSoulLantern() {
+        MultiVariant standing = plainVariant(
+                ModelLocationUtils.getModelLocation(Blocks.SOUL_LANTERN)
+        );
+
+        MultiVariant hanging = plainVariant(
+                ModelLocationUtils.getModelLocation(Blocks.SOUL_LANTERN, "_hanging")
+        );
+
+        this.itemModelOutput.accept(
+                ModItems.WAXED_IRON_SOUL_LANTERN.get(),
+                ItemModelUtils.plainModel(
+                        ModelLocationUtils.getModelLocation(Items.SOUL_LANTERN)
+                )
+        );
+
+        this.blockStateOutput.accept(
+                MultiVariantGenerator.dispatch(ModBlocks.WAXED_IRON_SOUL_LANTERN.get())
+                        .with(createBooleanModelDispatch(
+                                BlockStateProperties.HANGING,
+                                hanging,
+                                standing
+                        ))
+        );
+    }
+
+    public void createCustomChain(Block chain) {
+        MultiVariant multivariant = plainVariant(TexturedModel.CHAIN.create(chain, this.modelOutput));
+        Identifier identifier = this.createFlatItemModel(chain.asItem());
+        this.createAxisAlignedPillarBlockCustomModel(chain, multivariant);
+        this.registerSimpleItemModel(chain.asItem(), identifier);
+    }
+
     @Override
     public void run() {
         this.createTrivialCube(ModBlocks.POLISHED_CALCITE.get());
@@ -848,7 +908,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createCustomPressurePlate(ModBlocks.PLAYER_ONLY_PRESSURE_PLATE.get(), Blocks.NETHERITE_BLOCK);
 
         this.createDoor(ModBlocks.NETHERITE_DOOR.get());
-        this.createTrapdoor(ModBlocks.NETHERITE_TRAPDOOR.get());
+        this.createOrientableTrapdoor(ModBlocks.NETHERITE_TRAPDOOR.get());
 
         this.createBarsBlock(ModBlocks.EXPOSED_IRON_BARS.get());
         this.createBarsBlock(ModBlocks.WEATHERED_IRON_BARS.get());
@@ -914,7 +974,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createTrivialCube(ModBlocks.TIN_BLOCK.get());
         this.createTrivialCube(ModBlocks.CUT_TIN.get());
         this.createDoor(ModBlocks.TIN_DOOR.get());
-        this.createTrapdoor(ModBlocks.TIN_TRAPDOOR.get());
+        this.createOrientableTrapdoor(ModBlocks.TIN_TRAPDOOR.get());
         this.createWeightedPressurePlate(ModBlocks.BARELY_LIGHT_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.TIN_BLOCK.get());
 
         this.createTrivialCube(ModBlocks.TUNGSTEN_ORE.get());
@@ -944,7 +1004,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createTrivialCube(ModBlocks.LEAD_BLOCK.get());
         this.createTrivialCube(ModBlocks.CUT_LEAD.get());
         this.createDoor(ModBlocks.LEAD_DOOR.get());
-        this.createTrapdoor(ModBlocks.LEAD_TRAPDOOR.get());
+        this.createOrientableTrapdoor(ModBlocks.LEAD_TRAPDOOR.get());
         this.createWeightedPressurePlate(ModBlocks.NOTICEABLY_HEAVY_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.LEAD_BLOCK.get());
 
         this.createTrivialCube(ModBlocks.URANIUM_ORE.get());
@@ -954,7 +1014,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createTrivialCube(ModBlocks.URANIUM_BLOCK.get());
         this.createTrivialCube(ModBlocks.CUT_URANIUM.get());
         this.createDoor(ModBlocks.URANIUM_DOOR.get());
-        this.createTrapdoor(ModBlocks.URANIUM_TRAPDOOR.get());
+        this.createOrientableTrapdoor(ModBlocks.URANIUM_TRAPDOOR.get());
         this.createWeightedPressurePlate(ModBlocks.NEGLIGIBLE_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.URANIUM_BLOCK.get());
 
         this.createTrivialCube(ModBlocks.ZINC_ORE.get());
@@ -1063,7 +1123,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createTrivialCube(ModBlocks.BRASS_BLOCK.get());
         this.createTrivialCube(ModBlocks.CUT_BRASS.get());
         this.createDoor(ModBlocks.BRASS_DOOR.get());
-        this.createTrapdoor(ModBlocks.BRASS_TRAPDOOR.get());
+        this.createOrientableTrapdoor(ModBlocks.BRASS_TRAPDOOR.get());
         this.createCustomPressurePlate(ModBlocks.HOSTILE_MOB_ONLY_PRESSURE_PLATE.get(), ModBlocks.BRASS_BLOCK.get());
 
         this.createTrivialCube(ModBlocks.STEEL_BLOCK.get());
@@ -1338,7 +1398,63 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createTrivialCube(ModBlocks.BLUE_ICE_BRICKS.get());
 
         this.createTrivialCube(ModBlocks.SCULK_BRICKS.get());
+        this.createTrivialCube(ModBlocks.CUT_AMETHYST.get());
 
+        this.createNormalTorch(ModBlocks.IRON_TORCH.get(), ModBlocks.IRON_WALL_TORCH.get());
+        this.createNormalTorch(ModBlocks.ZINC_TORCH.get(), ModBlocks.ZINC_WALL_TORCH.get());
+        this.createNormalTorch(ModBlocks.SILVER_TORCH.get(), ModBlocks.SILVER_WALL_TORCH.get());
+        this.createNormalTorch(ModBlocks.TIN_TORCH.get(), ModBlocks.TIN_WALL_TORCH.get());
+        this.createNormalTorch(ModBlocks.TUNGSTEN_TORCH.get(), ModBlocks.TUNGSTEN_WALL_TORCH.get());
+        this.createNormalTorch(ModBlocks.PLATINUM_TORCH.get(), ModBlocks.PLATINUM_WALL_TORCH.get());
+        this.createNormalTorch(ModBlocks.GOLD_TORCH.get(), ModBlocks.GOLD_WALL_TORCH.get());
+        this.createNormalTorch(ModBlocks.LEAD_TORCH.get(), ModBlocks.LEAD_WALL_TORCH.get());
+        this.createNormalTorch(ModBlocks.URANIUM_TORCH.get(), ModBlocks.URANIUM_WALL_TORCH.get());
+
+        this.createWaxedIronLantern();
+        this.createCopperLantern(ModBlocks.EXPOSED_IRON_LANTERN.get(), ModBlocks.WAXED_EXPOSED_IRON_LANTERN.get());
+        this.createCopperLantern(ModBlocks.WEATHERED_IRON_LANTERN.get(), ModBlocks.WAXED_WEATHERED_IRON_LANTERN.get());
+        this.createCopperLantern(ModBlocks.RUSTED_IRON_LANTERN.get(), ModBlocks.WAXED_RUSTED_IRON_LANTERN.get());
+
+        this.createWaxedIronSoulLantern();
+        this.createCopperLantern(ModBlocks.EXPOSED_IRON_SOUL_LANTERN.get(), ModBlocks.WAXED_EXPOSED_IRON_SOUL_LANTERN.get());
+        this.createCopperLantern(ModBlocks.WEATHERED_IRON_SOUL_LANTERN.get(), ModBlocks.WAXED_WEATHERED_IRON_SOUL_LANTERN.get());
+        this.createCopperLantern(ModBlocks.RUSTED_IRON_SOUL_LANTERN.get(), ModBlocks.WAXED_RUSTED_IRON_SOUL_LANTERN.get());
+
+        this.createCopperLantern(ModBlocks.IRON_FIRE_LANTERN.get(), ModBlocks.WAXED_IRON_FIRE_LANTERN.get());
+        this.createCopperLantern(ModBlocks.EXPOSED_IRON_FIRE_LANTERN.get(), ModBlocks.WAXED_EXPOSED_IRON_FIRE_LANTERN.get());
+        this.createCopperLantern(ModBlocks.WEATHERED_IRON_FIRE_LANTERN.get(), ModBlocks.WAXED_WEATHERED_IRON_FIRE_LANTERN.get());
+        this.createCopperLantern(ModBlocks.RUSTED_IRON_FIRE_LANTERN.get(), ModBlocks.WAXED_RUSTED_IRON_FIRE_LANTERN.get());
+
+        this.createCopperLantern(ModBlocks.COPPER_SOUL_LANTERN.get(), ModBlocks.WAXED_COPPER_SOUL_LANTERN.get());
+        this.createCopperLantern(ModBlocks.EXPOSED_COPPER_SOUL_LANTERN.get(), ModBlocks.WAXED_EXPOSED_COPPER_SOUL_LANTERN.get());
+        this.createCopperLantern(ModBlocks.WEATHERED_COPPER_SOUL_LANTERN.get(), ModBlocks.WAXED_WEATHERED_COPPER_SOUL_LANTERN.get());
+        this.createCopperLantern(ModBlocks.OXIDIZED_COPPER_SOUL_LANTERN.get(), ModBlocks.WAXED_OXIDIZED_COPPER_SOUL_LANTERN.get());
+
+        this.createCopperLantern(ModBlocks.COPPER_FIRE_LANTERN.get(), ModBlocks.WAXED_COPPER_FIRE_LANTERN.get());
+        this.createCopperLantern(ModBlocks.EXPOSED_COPPER_FIRE_LANTERN.get(), ModBlocks.WAXED_EXPOSED_COPPER_FIRE_LANTERN.get());
+        this.createCopperLantern(ModBlocks.WEATHERED_COPPER_FIRE_LANTERN.get(), ModBlocks.WAXED_WEATHERED_COPPER_FIRE_LANTERN.get());
+        this.createCopperLantern(ModBlocks.OXIDIZED_COPPER_FIRE_LANTERN.get(), ModBlocks.WAXED_OXIDIZED_COPPER_FIRE_LANTERN.get());
+
+        this.createCopperChain(ModBlocks.ZINC_CHAIN.get(), ModBlocks.WAXED_ZINC_CHAIN.get());
+        this.createCopperChain(ModBlocks.EXPOSED_ZINC_CHAIN.get(), ModBlocks.WAXED_EXPOSED_ZINC_CHAIN.get());
+        this.createCopperChain(ModBlocks.WEATHERED_ZINC_CHAIN.get(), ModBlocks.WAXED_WEATHERED_ZINC_CHAIN.get());
+        this.createCopperChain(ModBlocks.CORRODED_ZINC_CHAIN.get(), ModBlocks.WAXED_CORRODED_ZINC_CHAIN.get());
+        this.createCopperChainItem(ModItems.ZINC_CHAIN.get(), ModItems.WAXED_ZINC_CHAIN.get());
+        this.createCopperChainItem(ModItems.EXPOSED_ZINC_CHAIN.get(), ModItems.WAXED_EXPOSED_ZINC_CHAIN.get());
+        this.createCopperChainItem(ModItems.WEATHERED_ZINC_CHAIN.get(), ModItems.WAXED_WEATHERED_ZINC_CHAIN.get());
+        this.createCopperChainItem(ModItems.CORRODED_ZINC_CHAIN.get(), ModItems.WAXED_CORRODED_ZINC_CHAIN.get());
+
+        this.createCustomChain(ModBlocks.GOLD_CHAIN.get());
+        this.createCustomChain(ModBlocks.NETHERITE_CHAIN.get());
+        this.createCustomChain(ModBlocks.SILVER_CHAIN.get());
+        this.createCustomChain(ModBlocks.TIN_CHAIN.get());
+        this.createCustomChain(ModBlocks.TUNGSTEN_CHAIN.get());
+        this.createCustomChain(ModBlocks.PLATINUM_CHAIN.get());
+        this.createCustomChain(ModBlocks.LEAD_CHAIN.get());
+        this.createCustomChain(ModBlocks.URANIUM_CHAIN.get());
+        this.createCustomChain(ModBlocks.BRONZE_CHAIN.get());
+        this.createCustomChain(ModBlocks.BRASS_CHAIN.get());
+        this.createCustomChain(ModBlocks.STEEL_CHAIN.get());
 
         ModBlockFamilies.getAllFamilies()
                 .filter(BlockFamily::shouldGenerateModel)
