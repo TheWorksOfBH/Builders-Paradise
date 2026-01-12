@@ -46,6 +46,21 @@ public record FletchingRecipe(Ingredient arrow, Ingredient ingredient, ItemStack
     }
 
     @Override
+    public Ingredient arrow() {
+        return arrow;
+    }
+
+    @Override
+    public Ingredient ingredient() {
+        return ingredient;
+    }
+
+    @Override
+    public ItemStack output() {
+        return output;
+    }
+
+    @Override
     public PlacementInfo placementInfo() {
         return PlacementInfo.NOT_PLACEABLE;
     }

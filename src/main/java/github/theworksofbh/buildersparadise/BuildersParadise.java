@@ -42,7 +42,7 @@ import org.slf4j.Logger;
 public class BuildersParadise
 {
     public static final String MODID = "buildersparadise";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public BuildersParadise(IEventBus modEventBus, ModContainer modContainer)
     {
@@ -83,6 +83,7 @@ public class BuildersParadise
         NeoForge.EVENT_BUS.addListener(this::addNoteBlockInstruments);
         NeoForge.EVENT_BUS.addListener(this::omitFireOverlayInBoats);
         NeoForge.EVENT_BUS.addListener(this::addJeiCompat);
+        NeoForge.EVENT_BUS.addListener(this::syncDataPacks);
 
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -150,7 +151,11 @@ public class BuildersParadise
         ParticleConfig.registerParticleProviders(event);
     }
 
-    private void addJeiCompat(OnDatapackSyncEvent event) {
+    private void addJeiCompat(RecipesReceivedEvent event) {
+        JeiSyncConfig.addRecipeMapsToJEI(event);
+    }
+
+    private void syncDataPacks(OnDatapackSyncEvent event) {
         JeiSyncConfig.addRecipesToJEI(event);
     }
 

@@ -2,73 +2,55 @@ package github.theworksofbh.buildersparadise.compat;
 
 import github.theworksofbh.buildersparadise.BuildersParadise;
 import github.theworksofbh.buildersparadise.recipes.FletchingRecipe;
-import mezz.jei.api.constants.VanillaTypes;
+import github.theworksofbh.buildersparadise.recipes.ModRecipes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
-import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
-import mezz.jei.api.recipe.category.IRecipeCategory;
+import mezz.jei.api.recipe.types.IRecipeHolderType;
 import mezz.jei.api.recipe.types.IRecipeType;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import org.jspecify.annotations.Nullable;
+import net.minecraft.world.item.crafting.RecipeHolder;
 
-public class FletchingTableRecipeCategory implements IRecipeCategory<FletchingRecipe> {
+import java.util.function.Supplier;
+
+public class FletchingTableRecipeCategory extends RecipeHolderCategory<FletchingRecipe> {
     public static final Identifier TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "textures/gui/container/fletching.png");
-    public static final Identifier UID = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "fletching");
 
-    public static final IRecipeType<FletchingRecipe> FLETCHING_RECIPE_TYPE = IRecipeType.create(UID, FletchingRecipe.class);
+    public static final Supplier<IRecipeHolderType<FletchingRecipe>> FLETCHING_RECIPE_TYPE = IRecipeHolderType.createDeferred(ModRecipes.FLETCHING_RECIPE_TYPE::get);
 
-    private final IDrawable background;
-    private final IDrawable icon;
-    private int width = 176;
-    private int height = 85;
+    private final IGuiHelper guiHelper;
 
     public FletchingTableRecipeCategory(IGuiHelper guiHelper) {
-        this.background = guiHelper.createDrawable(TEXTURE, 0, 0, width, height);
-        this.icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(Items.FLETCHING_TABLE));
+        super(
+                FLETCHING_RECIPE_TYPE,
+                Component.translatable("container.fletching"),
+                guiHelper.createDrawable(TEXTURE, 38, 33, 102, 30),
+                guiHelper.createDrawableItemStack(new ItemStack(Items.FLETCHING_TABLE))
+        );
+        this.guiHelper = guiHelper;
     }
 
     @Override
-    public IRecipeType<FletchingRecipe> getRecipeType() {
-        return FLETCHING_RECIPE_TYPE;
+    public IRecipeType<RecipeHolder<FletchingRecipe>> getRecipeType() {
+        return FLETCHING_RECIPE_TYPE.get();
     }
 
     @Override
-    public Component getTitle() {
-        return Component.translatable("container.fletching");
+    public void setRecipe(IRecipeLayoutBuilder builder, RecipeHolder<FletchingRecipe> recipe, IFocusGroup focuses) {
+        FletchingRecipe fletchingRecipe = recipe.value();
+        builder.addSlot(RecipeIngredientRole.INPUT, 6, 6).add(fletchingRecipe.arrow());
+        builder.addSlot(RecipeIngredientRole.INPUT, 24, 6).add(fletchingRecipe.ingredient());
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 78, 6).add(fletchingRecipe.output());
     }
 
     @Override
-    public int getWidth() {
-        return this.width;
-    }
-
-    @Override
-    public int getHeight() {
-        return this.height;
-    }
-
-    @Override
-    public @Nullable IDrawable getIcon() {
-        return this.icon;
-    }
-
-    @Override
-    public void setRecipe(IRecipeLayoutBuilder builder, FletchingRecipe recipe, IFocusGroup focuses) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 44, 39).add(recipe.arrow()).setStandardSlotBackground();
-        builder.addSlot(RecipeIngredientRole.INPUT, 62, 39).add(recipe.ingredient()).setStandardSlotBackground();
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 39).add(recipe.output()).setOutputSlotBackground();
-    }
-
-    @Override
-    public void draw(FletchingRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
-        IRecipeCategory.super.draw(recipe, recipeSlotsView, guiGraphics, mouseX, mouseY);
-        background.draw(guiGraphics);
+    public void draw(RecipeHolder<FletchingRecipe> recipe, IRecipeSlotsView view, GuiGraphics graphics, double mouseX, double mouseY) {
+        super.draw(recipe, view, graphics, mouseX, mouseY);
     }
 }
