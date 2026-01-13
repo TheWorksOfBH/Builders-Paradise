@@ -1163,7 +1163,7 @@ public class ModRecipesProvider extends RecipeProvider {
             item = Items.QUARTZ;
         } else if (fence.asItem().getDescriptionId().contains("lapis")) {
             item = Items.LAPIS_LAZULI;
-        } else if (fence.asItem().getDescriptionId().contains("coal") && !fence.asItem().getDescriptionId().contains("char")) {
+        } else if (fence.asItem().getDescriptionId().contains("coal")) {
             item = Items.COAL;
         } else if (fence.asItem().getDescriptionId().contains("charcoal")) {
             item = Items.CHARCOAL;
@@ -1230,7 +1230,7 @@ public class ModRecipesProvider extends RecipeProvider {
                     item = Items.QUARTZ;
                 } else if (fence.asItem().getDescriptionId().contains("lapis")) {
                     item = Items.LAPIS_LAZULI;
-                } else if (fence.asItem().getDescriptionId().contains("coal") && !fence.asItem().getDescriptionId().contains("char")) {
+                } else if (fence.asItem().getDescriptionId().contains("coal")) {
                     item = Items.COAL;
                 } else if (fence.asItem().getDescriptionId().contains("charcoal")) {
                     item = Items.CHARCOAL;

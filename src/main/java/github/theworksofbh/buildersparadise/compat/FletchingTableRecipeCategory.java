@@ -44,7 +44,6 @@ public class FletchingTableRecipeCategory extends RecipeHolderCategory<Fletching
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, RecipeHolder<FletchingRecipe> recipe, IFocusGroup focuses) {
         FletchingRecipe fletchingRecipe = recipe.value();
-
         builder.addSlot(RecipeIngredientRole.INPUT, 6, 6).add(fletchingRecipe.arrow());
         builder.addSlot(RecipeIngredientRole.INPUT, 24, 6).add(fletchingRecipe.ingredient());
         builder.addSlot(RecipeIngredientRole.OUTPUT, 78, 6).add(fletchingRecipe.output());
