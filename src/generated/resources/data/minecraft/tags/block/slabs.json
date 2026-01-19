@@ -127,6 +127,15 @@
     "buildersparadise:packed_ice_brick_slab",
     "buildersparadise:blue_ice_brick_slab",
     "buildersparadise:sculk_brick_slab",
-    "buildersparadise:cut_amethyst_slab"
+    "buildersparadise:cut_amethyst_slab",
+    "buildersparadise:gabbro_slab",
+    "buildersparadise:polished_gabbro_slab",
+    "buildersparadise:gabbro_brick_slab",
+    "buildersparadise:rhyolite_slab",
+    "buildersparadise:polished_rhyolite_slab",
+    "buildersparadise:rhyolite_brick_slab",
+    "buildersparadise:pumice_slab",
+    "buildersparadise:polished_pumice_slab",
+    "buildersparadise:pumice_brick_slab"
   ]
 }

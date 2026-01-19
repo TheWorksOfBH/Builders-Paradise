@@ -12,7 +12,8 @@ public class ModRecipes {
     public static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS = DeferredRegister.create(Registries.RECIPE_SERIALIZER, BuildersParadise.MODID);
     public static final DeferredRegister<RecipeType<?>> RECIPE_TYPES = DeferredRegister.create(Registries.RECIPE_TYPE, BuildersParadise.MODID);
 
-    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<FletchingRecipe>> FLETCHING_RECIPE_SERIALIZER = SERIALIZERS.register("fletching", FletchingRecipe.Serializer::new);
+    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<BaseFletchingRecipe>> BASE_FLETCHING_RECIPE_SERIALIZER = SERIALIZERS.register("base_fletching", BaseFletchingRecipe.Serializer::new);
+    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<TippedFletchingRecipe>> TIPPED_FLETCHING_RECIPE_SERIALIZER = SERIALIZERS.register("tipped_fletching", TippedFletchingRecipe.Serializer::new);
     public static final DeferredHolder<RecipeType<?>, RecipeType<FletchingRecipe>> FLETCHING_RECIPE_TYPE = RECIPE_TYPES.register(
             "fletching", () -> new RecipeType<FletchingRecipe>() {
                 @Override

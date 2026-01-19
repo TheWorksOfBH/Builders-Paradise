@@ -13,6 +13,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
@@ -72,8 +73,15 @@ public class FletchingRecipeBuilder implements RecipeBuilder {
         Advancement.Builder advancementBuilder = recipeOutput.advancement().addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(resourceKey)).rewards(AdvancementRewards.Builder.recipe(resourceKey)).requirements(AdvancementRequirements.Strategy.OR);
         Objects.requireNonNull(advancementBuilder);
         this.criteria.forEach(advancementBuilder::addCriterion);
-        FletchingRecipe fletchingRecipe = new FletchingRecipe(this.arrow, this.ingredient, this.result);
-        recipeOutput.accept(resourceKey, fletchingRecipe, recipeOutput.advancement().addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(resourceKey)).rewards(AdvancementRewards.Builder.recipe(resourceKey)).requirements(AdvancementRequirements.Strategy.OR).build(resourceKey.identifier().withPrefix("recipes/" + this.category.getFolderName() + "/")));
+        FletchingRecipe fletchingRecipe;
+        if (Objects.equals(this.ingredient, Ingredient.of(Items.LINGERING_POTION))) {
+            fletchingRecipe = new TippedFletchingRecipe(this.arrow, this.ingredient, this.result);
+            recipeOutput.accept(resourceKey, fletchingRecipe, recipeOutput.advancement().addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(resourceKey)).rewards(AdvancementRewards.Builder.recipe(resourceKey)).requirements(AdvancementRequirements.Strategy.OR).build(resourceKey.identifier().withPrefix("recipes/" + this.category.getFolderName() + "/")));
+        } else {
+            fletchingRecipe = new BaseFletchingRecipe(this.arrow, this.ingredient, this.result);
+            recipeOutput.accept(resourceKey, fletchingRecipe, recipeOutput.advancement().addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(resourceKey)).rewards(AdvancementRewards.Builder.recipe(resourceKey)).requirements(AdvancementRequirements.Strategy.OR).build(resourceKey.identifier().withPrefix("recipes/" + this.category.getFolderName() + "/")));
+        }
+
     }
 
     private void ensureValid(ResourceKey<Recipe<?>> recipe) {

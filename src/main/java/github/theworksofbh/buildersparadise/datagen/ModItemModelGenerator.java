@@ -212,6 +212,11 @@ public class ModItemModelGenerator extends ItemModelGenerators {
         this.generateTrimmableItem(Items.NETHERITE_CHESTPLATE, EquipmentAssets.NETHERITE, TRIM_PREFIX_CHESTPLATE, false);
         this.generateTrimmableItem(Items.NETHERITE_LEGGINGS, EquipmentAssets.NETHERITE, TRIM_PREFIX_LEGGINGS, false);
         this.generateTrimmableItem(Items.NETHERITE_BOOTS, EquipmentAssets.NETHERITE, TRIM_PREFIX_BOOTS, false);
-
+        this.generateFlatItem(ModItems.EXPLOSIVE_ARROW.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.SHARPENED_ARROW.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.STREAMLINED_ARROW.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.GABBRO_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.generateFlatItem(ModItems.RHYOLITE_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.generateFlatItem(ModItems.PUMICE_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
     }
 }

@@ -1,0 +1,9 @@
+{
+  "type": "buildersparadise:base_fletching",
+  "arrow": "minecraft:arrow",
+  "ingredient": "minecraft:phantom_membrane",
+  "output": {
+    "count": 1,
+    "id": "buildersparadise:streamlined_arrow"
+  }
+}

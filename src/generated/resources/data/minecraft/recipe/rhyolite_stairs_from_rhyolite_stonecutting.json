@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:rhyolite",
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:rhyolite_stairs"
+  }
+}

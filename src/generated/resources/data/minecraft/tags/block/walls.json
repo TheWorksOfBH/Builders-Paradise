@@ -100,6 +100,15 @@
     "buildersparadise:ice_brick_wall",
     "buildersparadise:packed_ice_brick_wall",
     "buildersparadise:blue_ice_brick_wall",
-    "buildersparadise:sculk_brick_wall"
+    "buildersparadise:sculk_brick_wall",
+    "buildersparadise:gabbro_wall",
+    "buildersparadise:polished_gabbro_wall",
+    "buildersparadise:gabbro_brick_wall",
+    "buildersparadise:rhyolite_wall",
+    "buildersparadise:polished_rhyolite_wall",
+    "buildersparadise:rhyolite_brick_wall",
+    "buildersparadise:pumice_wall",
+    "buildersparadise:polished_pumice_wall",
+    "buildersparadise:pumice_brick_wall"
   ]
 }

@@ -1,9 +1,11 @@
 package github.theworksofbh.buildersparadise.gui;
 
 import github.theworksofbh.buildersparadise.block.FletchingTableBlock;
+import github.theworksofbh.buildersparadise.recipes.BaseFletchingRecipe;
 import github.theworksofbh.buildersparadise.recipes.FletchingRecipe;
 import github.theworksofbh.buildersparadise.recipes.FletchingRecipeInput;
 import github.theworksofbh.buildersparadise.recipes.ModRecipes;
+import github.theworksofbh.buildersparadise.tags.ModItemTags;
 import net.minecraft.network.protocol.game.ClientboundContainerSetSlotPacket;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -28,7 +30,7 @@ public class FletchingMenu extends AbstractContainerMenu {
     Runnable slotUpdateListener = () -> {
     };
     private final Level level;
-    private FletchingRecipe currentRecipe;
+    private BaseFletchingRecipe currentRecipe;
     long lastSoundTime;
     private final Player player;
 
@@ -81,7 +83,7 @@ public class FletchingMenu extends AbstractContainerMenu {
         this.addSlot(new Slot(inputContainer, INGREDIENT_SLOT, 62, 39) {
             @Override
             public boolean mayPlace(ItemStack stack) {
-                if (stack.getItem() instanceof LingeringPotionItem || stack.getItem() == Items.GLOWSTONE_DUST) {
+                if (stack.getItem() instanceof LingeringPotionItem || stack.is(ModItemTags.VIABLE_FLETCHING_INGREDIENTS)) {
                     return true;
                 } else {
                     return false;
@@ -118,7 +120,7 @@ public class FletchingMenu extends AbstractContainerMenu {
                     if (ingredientItem == Items.LINGERING_POTION) {
                         arrowStack.shrink(arrowStack.getCount());
                         ingredientStack.shrink(1);
-                    } else if (ingredientItem == Items.GLOWSTONE_DUST) {
+                    } else if (ingredientStack.is(ModItemTags.VIABLE_FLETCHING_INGREDIENTS)) {
                         arrowStack.shrink(1);
                         ingredientStack.shrink(1);
                     }
@@ -155,7 +157,7 @@ public class FletchingMenu extends AbstractContainerMenu {
                     if (!this.moveItemStackTo(stackInSlot, this.getArrowSlot().getSlotIndex(), this.getArrowSlot().getSlotIndex() + 1, false)) {
                         return ItemStack.EMPTY;
                     }
-                } else if (stackInSlot.getItem() instanceof LingeringPotionItem || stackInSlot.getItem() == Items.GLOWSTONE_DUST) {
+                } else if (stackInSlot.getItem() instanceof LingeringPotionItem || stackInSlot.is(ModItemTags.VIABLE_FLETCHING_INGREDIENTS)) {
                     if (!this.moveItemStackTo(stackInSlot, this.getIngredientSlot().getSlotIndex(), this.getIngredientSlot().getSlotIndex() + 1, false)) {
                         return ItemStack.EMPTY;
                     }

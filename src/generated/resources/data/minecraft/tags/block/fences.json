@@ -125,6 +125,15 @@
     "buildersparadise:brown_concrete_fence",
     "buildersparadise:green_concrete_fence",
     "buildersparadise:red_concrete_fence",
-    "buildersparadise:black_concrete_fence"
+    "buildersparadise:black_concrete_fence",
+    "buildersparadise:gabbro_fence",
+    "buildersparadise:polished_gabbro_fence",
+    "buildersparadise:gabbro_brick_fence",
+    "buildersparadise:rhyolite_fence",
+    "buildersparadise:polished_rhyolite_fence",
+    "buildersparadise:rhyolite_brick_fence",
+    "buildersparadise:pumice_fence",
+    "buildersparadise:polished_pumice_fence",
+    "buildersparadise:pumice_brick_fence"
   ]
 }

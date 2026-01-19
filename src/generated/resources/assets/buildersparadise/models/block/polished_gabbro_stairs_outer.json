@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "buildersparadise:block/polished_gabbro",
+    "side": "buildersparadise:block/polished_gabbro",
+    "top": "buildersparadise:block/polished_gabbro"
+  }
+}

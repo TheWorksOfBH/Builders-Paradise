@@ -33,7 +33,7 @@ public class RenderTypeConfig {
 
     public static void addModRenderTypes() {
         getKnownBlocks().forEach(block -> {
-                        if (block.getDescriptionId().contains("ice") || block.getDescriptionId().contains("nuclear_waste")) {
+                        if (block.getDescriptionId().contains("ice") && !block.getDescriptionId().contains("packed") && !block.getDescriptionId().contains("blue") && !block.getDescriptionId().contains("pum") || block.getDescriptionId().contains("nuclear_waste")) {
                             ItemBlockRenderTypes.setRenderLayer(block, ChunkSectionLayer.TRANSLUCENT);
                         } else {
                             ItemBlockRenderTypes.setRenderLayer(block, ChunkSectionLayer.CUTOUT);

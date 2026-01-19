@@ -37,6 +37,10 @@ public class ModEntities {
     public static final Supplier<EntityType<MinecartCustomChest>> CHERRY_CHEST_MINECART = register("cherry_chest_minecart", (customChestMinecart, level) -> new MinecartCustomChest(customChestMinecart, level, ModBlocks.CHERRY_CHEST.get(), ModItems.CHERRY_CHEST_MINECART.get()), MobCategory.MISC, 0.98F, 0.7F);
     public static final Supplier<EntityType<MinecartCustomChest>> BAMBOO_CHEST_MINECART = register("bamboo_chest_minecart", (customChestMinecart, level) -> new MinecartCustomChest(customChestMinecart, level, ModBlocks.BAMBOO_CHEST.get(), ModItems.BAMBOO_CHEST_MINECART.get()), MobCategory.MISC, 0.98F, 0.7F);
     public static final Supplier<EntityType<MinecartCustomChest>> PALE_OAK_CHEST_MINECART = register("pale_oak_chest_minecart", (customChestMinecart, level) -> new MinecartCustomChest(customChestMinecart, level, ModBlocks.PALE_OAK_CHEST.get(), ModItems.PALE_OAK_CHEST_MINECART.get()), MobCategory.MISC, 0.98F, 0.7F);
+    public static final Supplier<EntityType<ExplosiveArrow>> EXPLOSIVE_ARROW = register("explosive_arrow", ExplosiveArrow::new, MobCategory.MISC, 0.5F, 0.5F);
+    public static final Supplier<EntityType<SharpenedArrow>> SHARPENED_ARROW = register("sharpened_arrow", SharpenedArrow::new, MobCategory.MISC, 0.5F, 0.5F);
+    public static final Supplier<EntityType<StreamlinedArrow>> STREAMLINED_ARROW = register("streamlined_arrow", StreamlinedArrow::new, MobCategory.MISC, 0.5F, 0.5F);
+    public static final Supplier<EntityType<RisingBlockEntity>> RISING_BLOCK = register("rising_block", RisingBlockEntity::new, MobCategory.MISC, 0.98F, 0.98F);
 
     public static <T extends Entity> Supplier<EntityType<T>> register(String registryName, EntityFactory<T> entityFactory, MobCategory mobCategory, float width, float height) {
         return ENTITIES.register(

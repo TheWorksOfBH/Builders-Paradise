@@ -743,6 +743,61 @@ public class CreativeInvConfig {
             tabData.insertAfter(ModItems.SCULK_WALL.get().getDefaultInstance(), ModItems.SCULK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.SCULK_BRICK_WALL.get().getDefaultInstance(), ModItems.SCULK_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
+            tabData.insertAfter(Items.CHISELED_TUFF_BRICKS.getDefaultInstance(), ModItems.GABBRO.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.GABBRO.get().getDefaultInstance(), ModItems.GABBRO_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.GABBRO_STAIRS.get().getDefaultInstance(), ModItems.GABBRO_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.GABBRO_SLAB.get().getDefaultInstance(), ModItems.GABBRO_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.GABBRO_WALL.get().getDefaultInstance(), ModItems.GABBRO_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.GABBRO_FENCE.get().getDefaultInstance(), ModItems.POLISHED_GABBRO.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.POLISHED_GABBRO.get().getDefaultInstance(), ModItems.POLISHED_GABBRO_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.POLISHED_GABBRO_STAIRS.get().getDefaultInstance(), ModItems.POLISHED_GABBRO_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.POLISHED_GABBRO_SLAB.get().getDefaultInstance(), ModItems.POLISHED_GABBRO_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.POLISHED_GABBRO_WALL.get().getDefaultInstance(), ModItems.POLISHED_GABBRO_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.POLISHED_GABBRO_FENCE.get().getDefaultInstance(), ModItems.GABBRO_BRICKS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.GABBRO_BRICKS.get().getDefaultInstance(), ModItems.GABBRO_BRICK_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.GABBRO_BRICK_STAIRS.get().getDefaultInstance(), ModItems.GABBRO_BRICK_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.GABBRO_BRICK_SLAB.get().getDefaultInstance(), ModItems.GABBRO_BRICK_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.GABBRO_BRICK_WALL.get().getDefaultInstance(), ModItems.GABBRO_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.GABBRO_BRICK_FENCE.get().getDefaultInstance(), ModItems.RHYOLITE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.RHYOLITE.get().getDefaultInstance(), ModItems.RHYOLITE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.RHYOLITE_STAIRS.get().getDefaultInstance(), ModItems.RHYOLITE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.RHYOLITE_SLAB.get().getDefaultInstance(), ModItems.RHYOLITE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.RHYOLITE_WALL.get().getDefaultInstance(), ModItems.RHYOLITE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.RHYOLITE_FENCE.get().getDefaultInstance(), ModItems.POLISHED_RHYOLITE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.POLISHED_RHYOLITE.get().getDefaultInstance(), ModItems.POLISHED_RHYOLITE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.POLISHED_RHYOLITE_STAIRS.get().getDefaultInstance(), ModItems.POLISHED_RHYOLITE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.POLISHED_RHYOLITE_SLAB.get().getDefaultInstance(), ModItems.POLISHED_RHYOLITE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.POLISHED_RHYOLITE_WALL.get().getDefaultInstance(), ModItems.POLISHED_RHYOLITE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.POLISHED_RHYOLITE_FENCE.get().getDefaultInstance(), ModItems.RHYOLITE_BRICKS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.RHYOLITE_BRICKS.get().getDefaultInstance(), ModItems.RHYOLITE_BRICK_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.RHYOLITE_BRICK_STAIRS.get().getDefaultInstance(), ModItems.RHYOLITE_BRICK_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.RHYOLITE_BRICK_SLAB.get().getDefaultInstance(), ModItems.RHYOLITE_BRICK_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.RHYOLITE_BRICK_WALL.get().getDefaultInstance(), ModItems.RHYOLITE_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.BASALT_BRICK_FENCE.get().getDefaultInstance(), ModItems.PUMICE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.PUMICE.get().getDefaultInstance(), ModItems.PUMICE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.PUMICE_STAIRS.get().getDefaultInstance(), ModItems.PUMICE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.PUMICE_SLAB.get().getDefaultInstance(), ModItems.PUMICE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.PUMICE_WALL.get().getDefaultInstance(), ModItems.PUMICE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.PUMICE_FENCE.get().getDefaultInstance(), ModItems.POLISHED_PUMICE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.POLISHED_PUMICE.get().getDefaultInstance(), ModItems.POLISHED_PUMICE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.POLISHED_PUMICE_STAIRS.get().getDefaultInstance(), ModItems.POLISHED_PUMICE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.POLISHED_PUMICE_SLAB.get().getDefaultInstance(), ModItems.POLISHED_PUMICE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.POLISHED_PUMICE_WALL.get().getDefaultInstance(), ModItems.POLISHED_PUMICE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.POLISHED_PUMICE_FENCE.get().getDefaultInstance(), ModItems.PUMICE_BRICKS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.PUMICE_BRICKS.get().getDefaultInstance(), ModItems.PUMICE_BRICK_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.PUMICE_BRICK_STAIRS.get().getDefaultInstance(), ModItems.PUMICE_BRICK_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.PUMICE_BRICK_SLAB.get().getDefaultInstance(), ModItems.PUMICE_BRICK_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.PUMICE_BRICK_WALL.get().getDefaultInstance(), ModItems.PUMICE_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+
         } else if (tabData.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
             tabData.insertAfter(Items.TERRACOTTA.getDefaultInstance(), ModItems.TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.TERRACOTTA_STAIRS.get().getDefaultInstance(), ModItems.TERRACOTTA_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -969,6 +1024,9 @@ public class CreativeInvConfig {
         } else if (tabData.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             tabData.insertAfter(Items.PRISMARINE.getDefaultInstance(), ModItems.ELDER_PRISMARINE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(Items.SOUL_SAND.getDefaultInstance(), ModItems.SOUL_SANDSTONE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.TUFF.getDefaultInstance(), ModItems.RHYOLITE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.TUFF.getDefaultInstance(), ModItems.GABBRO.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.SMOOTH_BASALT.getDefaultInstance(), ModItems.PUMICE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.insertAfter(Items.RAW_COPPER_BLOCK.getDefaultInstance(), ModItems.RAW_ZINC_BLOCK.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(Items.DEEPSLATE_COPPER_ORE.getDefaultInstance(), ModItems.ZINC_ORE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -1354,14 +1412,17 @@ public class CreativeInvConfig {
             tabData.insertAfter(ModItems.DIORITE_BATON.get().getDefaultInstance(), ModItems.ANDESITE_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.ANDESITE_BATON.get().getDefaultInstance(), ModItems.DEEPSLATE_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.DEEPSLATE_BATON.get().getDefaultInstance(), ModItems.TUFF_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.TUFF_BATON.get().getDefaultInstance(), ModItems.CALCITE_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.TUFF_BATON.get().getDefaultInstance(), ModItems.GABBRO_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.GABBRO_BATON.get().getDefaultInstance(), ModItems.RHYOLITE_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.RHYOLITE_BATON.get().getDefaultInstance(), ModItems.CALCITE_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.CALCITE_BATON.get().getDefaultInstance(), ModItems.PACKED_MUD_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.PACKED_MUD_BATON.get().getDefaultInstance(), ModItems.SANDSTONE_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.SANDSTONE_BATON.get().getDefaultInstance(), ModItems.RED_SANDSTONE_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.RED_SANDSTONE_BATON.get().getDefaultInstance(), ModItems.SOUL_SANDSTONE_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.SOUL_SANDSTONE_BATON.get().getDefaultInstance(), ModItems.NETHERRACK_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.NETHERRACK_BATON.get().getDefaultInstance(), ModItems.BASALT_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.BASALT_BATON.get().getDefaultInstance(), ModItems.BLACKSTONE_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.BASALT_BATON.get().getDefaultInstance(), ModItems.PUMICE_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.PUMICE_BATON.get().getDefaultInstance(), ModItems.BLACKSTONE_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.BLACKSTONE_BATON.get().getDefaultInstance(), ModItems.END_STONE_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.END_STONE_BATON.get().getDefaultInstance(), ModItems.OBSIDIAN_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.OBSIDIAN_BATON.get().getDefaultInstance(), ModItems.TERRACOTTA_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -1440,6 +1501,9 @@ public class CreativeInvConfig {
 
         } else if (tabData.getTabKey() == CreativeModeTabs.COMBAT) {
             tabData.insertAfter(Items.TNT.getDefaultInstance(), ModItems.NUKE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.SPECTRAL_ARROW.getDefaultInstance(), ModItems.STREAMLINED_ARROW.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.SPECTRAL_ARROW.getDefaultInstance(), ModItems.SHARPENED_ARROW.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.SPECTRAL_ARROW.getDefaultInstance(), ModItems.EXPLOSIVE_ARROW.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.insertAfter(Items.COPPER_SWORD.getDefaultInstance(), ModItems.BRONZE_SWORD.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(Items.COPPER_AXE.getDefaultInstance(), ModItems.BRONZE_AXE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);

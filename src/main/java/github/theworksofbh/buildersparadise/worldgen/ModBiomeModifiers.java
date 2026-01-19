@@ -68,6 +68,30 @@ public class ModBiomeModifiers {
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.URANIUM_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));
+
+        context.register(ADD_GABBRO, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.GABBRO_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+
+        context.register(ADD_RHYOLITE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.RHYOLITE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+
+        context.register(ADD_PUMICE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_NETHER),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.PUMICE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+
+        context.register(ADD_SOUL_SANDSTONE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_NETHER),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.SOUL_SANDSTONE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
     }
 
     public static final ResourceKey<BiomeModifier> ADD_ZINC_ORES = registerKey("add_zinc_ores");
@@ -78,5 +102,9 @@ public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_PLATINUM_ORES = registerKey("add_platinum_ores");
     public static final ResourceKey<BiomeModifier> ADD_LEAD_ORES = registerKey("add_lead_ores");
     public static final ResourceKey<BiomeModifier> ADD_URANIUM_ORES = registerKey("add_uranium_ores");
+    public static final ResourceKey<BiomeModifier> ADD_GABBRO = registerKey("add_gabbro");
+    public static final ResourceKey<BiomeModifier> ADD_RHYOLITE = registerKey("add_rhyolite");
+    public static final ResourceKey<BiomeModifier> ADD_PUMICE = registerKey("add_pumice");
+    public static final ResourceKey<BiomeModifier> ADD_SOUL_SANDSTONE = registerKey("add_soul_sandstone");
 
 }

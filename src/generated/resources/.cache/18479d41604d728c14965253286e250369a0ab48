@@ -1,10 +1,12 @@
-// 1.21.11	2025-12-23T21:35:00.6544841	Tags for minecraft:item mod id buildersparadise
+// 1.21.11	2026-01-15T01:00:02.7537124	Tags for minecraft:item mod id buildersparadise
 48e9aade463ef2e664ff6fd1b73a70e2cd87b7d8 data/buildersparadise/tags/item/barrels.json
 c29e5ac914e914c7ff1ecfe43d740dc2d416071d data/buildersparadise/tags/item/bronze_tool_materials.json
 856b23050e5dcac13b005737768f98f74bf6884c data/buildersparadise/tags/item/chests.json
 c882f1fc924c7ace24f2ece6ec48f727ede793e9 data/buildersparadise/tags/item/concrete.json
 a85cbdb453d3706d010afa477d39de7fde7f35ef data/buildersparadise/tags/item/droppers.json
 2c2e69dbf5efb2152e5f55c5b115869d2a389d54 data/buildersparadise/tags/item/repairs_bronze_armor.json
+b8b6806fc11a36ea010811c29af700562d52661d data/buildersparadise/tags/item/viable_fletching_ingredients.json
+d303637672c3d2c48b4e5ee72788a511b40805cd data/minecraft/tags/item/arrows.json
 1a38feabcaf1be26c9ce818e34c5b05dd62f150b data/minecraft/tags/item/beacon_payment_items.json
 4c95070c55de4219fd6363612dd1d9209c4327a9 data/minecraft/tags/item/piglin_loved.json
 aab0fbb99aaea8c3f26b3c0c8c26e6c80c5cc9f9 data/minecraft/tags/item/trimmable_armor.json

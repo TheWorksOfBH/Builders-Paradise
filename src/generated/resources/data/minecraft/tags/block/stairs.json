@@ -130,6 +130,15 @@
     "buildersparadise:packed_ice_brick_stairs",
     "buildersparadise:blue_ice_brick_stairs",
     "buildersparadise:sculk_brick_stairs",
-    "buildersparadise:cut_amethyst_stairs"
+    "buildersparadise:cut_amethyst_stairs",
+    "buildersparadise:gabbro_stairs",
+    "buildersparadise:polished_gabbro_stairs",
+    "buildersparadise:gabbro_brick_stairs",
+    "buildersparadise:rhyolite_stairs",
+    "buildersparadise:polished_rhyolite_stairs",
+    "buildersparadise:rhyolite_brick_stairs",
+    "buildersparadise:pumice_stairs",
+    "buildersparadise:polished_pumice_stairs",
+    "buildersparadise:pumice_brick_stairs"
   ]
 }

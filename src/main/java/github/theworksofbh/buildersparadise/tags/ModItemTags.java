@@ -14,6 +14,7 @@ public class ModItemTags {
     public static final TagKey<Item> CONCRETE = create("concrete");
     public static final TagKey<Item> BRONZE_TOOL_MATERIALS = create("bronze_tool_materials");
     public static final TagKey<Item> REPAIRS_BRONZE_ARMOR = create("repairs_bronze_armor");
+    public static final TagKey<Item> VIABLE_FLETCHING_INGREDIENTS = create("viable_fletching_ingredients");
 
     private ModItemTags() {
     }

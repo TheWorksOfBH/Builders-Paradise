@@ -1243,6 +1243,60 @@ public class ModBlocks {
     public static final DeferredBlock<AmethystSlabBlock> CUT_AMETHYST_SLAB = registerAmethystSlabBlock("cut_amethyst_slab", () -> CUT_AMETHYST.get());
     public static final DeferredBlock<AmethystStairBlock> CUT_AMETHYST_STAIRS = registerAmethystStairBlock("cut_amethyst_stairs", () -> CUT_AMETHYST.get());
 
+    public static final DeferredBlock<Block> GABBRO = registerBlockVariant("gabbro", () -> Blocks.TUFF);
+    public static final DeferredBlock<SlabBlock> GABBRO_SLAB = registerSlabBlock("gabbro_slab", () -> GABBRO.get());
+    public static final DeferredBlock<StairBlock> GABBRO_STAIRS = registerStairBlock("gabbro_stairs", () -> GABBRO.get());
+    public static final DeferredBlock<WallBlock> GABBRO_WALL = registerWallBlock("gabbro_wall", () -> GABBRO.get());
+    public static final DeferredBlock<FenceBlock> GABBRO_FENCE = registerFenceBlock("gabbro_fence", () -> GABBRO.get());
+
+    public static final DeferredBlock<Block> POLISHED_GABBRO = registerBlockVariant("polished_gabbro", () -> Blocks.POLISHED_TUFF);
+    public static final DeferredBlock<SlabBlock> POLISHED_GABBRO_SLAB = registerSlabBlock("polished_gabbro_slab", () -> POLISHED_GABBRO.get());
+    public static final DeferredBlock<StairBlock> POLISHED_GABBRO_STAIRS = registerStairBlock("polished_gabbro_stairs", () -> POLISHED_GABBRO.get());
+    public static final DeferredBlock<WallBlock> POLISHED_GABBRO_WALL = registerWallBlock("polished_gabbro_wall", () -> POLISHED_GABBRO.get());
+    public static final DeferredBlock<FenceBlock> POLISHED_GABBRO_FENCE = registerFenceBlock("polished_gabbro_fence", () -> POLISHED_GABBRO.get());
+
+    public static final DeferredBlock<Block> GABBRO_BRICKS = registerBlockVariant("gabbro_bricks", () -> Blocks.TUFF_BRICKS);
+    public static final DeferredBlock<SlabBlock> GABBRO_BRICK_SLAB = registerSlabBlock("gabbro_brick_slab", () -> GABBRO_BRICKS.get());
+    public static final DeferredBlock<StairBlock> GABBRO_BRICK_STAIRS = registerStairBlock("gabbro_brick_stairs", () -> GABBRO_BRICKS.get());
+    public static final DeferredBlock<WallBlock> GABBRO_BRICK_WALL = registerWallBlock("gabbro_brick_wall", () -> GABBRO_BRICKS.get());
+    public static final DeferredBlock<FenceBlock> GABBRO_BRICK_FENCE = registerFenceBlock("gabbro_brick_fence", () -> GABBRO_BRICKS.get());
+
+    public static final DeferredBlock<Block> RHYOLITE = registerBlockVariant("rhyolite", () -> Blocks.TUFF);
+    public static final DeferredBlock<SlabBlock> RHYOLITE_SLAB = registerSlabBlock("rhyolite_slab", () -> RHYOLITE.get());
+    public static final DeferredBlock<StairBlock> RHYOLITE_STAIRS = registerStairBlock("rhyolite_stairs", () -> RHYOLITE.get());
+    public static final DeferredBlock<WallBlock> RHYOLITE_WALL = registerWallBlock("rhyolite_wall", () -> RHYOLITE.get());
+    public static final DeferredBlock<FenceBlock> RHYOLITE_FENCE = registerFenceBlock("rhyolite_fence", () -> RHYOLITE.get());
+
+    public static final DeferredBlock<Block> POLISHED_RHYOLITE = registerBlockVariant("polished_rhyolite", () -> Blocks.POLISHED_TUFF);
+    public static final DeferredBlock<SlabBlock> POLISHED_RHYOLITE_SLAB = registerSlabBlock("polished_rhyolite_slab", () -> POLISHED_RHYOLITE.get());
+    public static final DeferredBlock<StairBlock> POLISHED_RHYOLITE_STAIRS = registerStairBlock("polished_rhyolite_stairs", () -> POLISHED_RHYOLITE.get());
+    public static final DeferredBlock<WallBlock> POLISHED_RHYOLITE_WALL = registerWallBlock("polished_rhyolite_wall", () -> POLISHED_RHYOLITE.get());
+    public static final DeferredBlock<FenceBlock> POLISHED_RHYOLITE_FENCE = registerFenceBlock("polished_rhyolite_fence", () -> POLISHED_RHYOLITE.get());
+
+    public static final DeferredBlock<Block> RHYOLITE_BRICKS = registerBlockVariant("rhyolite_bricks", () -> Blocks.TUFF_BRICKS);
+    public static final DeferredBlock<SlabBlock> RHYOLITE_BRICK_SLAB = registerSlabBlock("rhyolite_brick_slab", () -> RHYOLITE_BRICKS.get());
+    public static final DeferredBlock<StairBlock> RHYOLITE_BRICK_STAIRS = registerStairBlock("rhyolite_brick_stairs", () -> RHYOLITE_BRICKS.get());
+    public static final DeferredBlock<WallBlock> RHYOLITE_BRICK_WALL = registerWallBlock("rhyolite_brick_wall", () -> RHYOLITE_BRICKS.get());
+    public static final DeferredBlock<FenceBlock> RHYOLITE_BRICK_FENCE = registerFenceBlock("rhyolite_brick_fence", () -> RHYOLITE_BRICKS.get());
+
+    public static final DeferredBlock<PumiceBlock> PUMICE = registerPumiceBlock("pumice", () -> Blocks.BASALT);
+    public static final DeferredBlock<PumiceSlabBlock> PUMICE_SLAB = registerPumiceSlabBlock("pumice_slab", () -> PUMICE.get());
+    public static final DeferredBlock<PumiceStairBlock> PUMICE_STAIRS = registerPumiceStairBlock("pumice_stairs", () -> PUMICE.get());
+    public static final DeferredBlock<PumiceWallBlock> PUMICE_WALL = registerPumiceWallBlock("pumice_wall", () -> PUMICE.get());
+    public static final DeferredBlock<PumiceFenceBlock> PUMICE_FENCE = registerPumiceFenceBlock("pumice_fence", () -> PUMICE.get());
+
+    public static final DeferredBlock<PumiceBlock> POLISHED_PUMICE = registerPumiceBlock("polished_pumice", () -> PUMICE.get());
+    public static final DeferredBlock<PumiceSlabBlock> POLISHED_PUMICE_SLAB = registerPumiceSlabBlock("polished_pumice_slab", () -> POLISHED_PUMICE.get());
+    public static final DeferredBlock<PumiceStairBlock> POLISHED_PUMICE_STAIRS = registerPumiceStairBlock("polished_pumice_stairs", () -> POLISHED_PUMICE.get());
+    public static final DeferredBlock<PumiceWallBlock> POLISHED_PUMICE_WALL = registerPumiceWallBlock("polished_pumice_wall", () -> POLISHED_PUMICE.get());
+    public static final DeferredBlock<PumiceFenceBlock> POLISHED_PUMICE_FENCE = registerPumiceFenceBlock("polished_pumice_fence", () -> POLISHED_PUMICE.get());
+
+    public static final DeferredBlock<PumiceBlock> PUMICE_BRICKS = registerPumiceBlock("pumice_bricks", () -> POLISHED_PUMICE.get());
+    public static final DeferredBlock<PumiceSlabBlock> PUMICE_BRICK_SLAB = registerPumiceSlabBlock("pumice_brick_slab", () -> PUMICE_BRICKS.get());
+    public static final DeferredBlock<PumiceStairBlock> PUMICE_BRICK_STAIRS = registerPumiceStairBlock("pumice_brick_stairs", () -> PUMICE_BRICKS.get());
+    public static final DeferredBlock<PumiceWallBlock> PUMICE_BRICK_WALL = registerPumiceWallBlock("pumice_brick_wall", () -> PUMICE_BRICKS.get());
+    public static final DeferredBlock<PumiceFenceBlock> PUMICE_BRICK_FENCE = registerPumiceFenceBlock("pumice_brick_fence", () -> PUMICE_BRICKS.get());
+
     private static DeferredBlock<CraftingTableBlock> registerCraftingTable(String registryName) {
         if (registryName == "crimson_crafting_table" || registryName == "warped_crafting_table") {
             return BLOCKS.register(
@@ -3271,6 +3325,97 @@ public class ModBlocks {
     private static DeferredBlock<CryingObsidianFenceBlock> registerCOFenceBlock(String registryName, Supplier<Block> baseBlock) {
         return BLOCKS.register(
                 registryName, () -> new CryingObsidianFenceBlock(
+                        BlockBehaviour.Properties.ofFullCopy(
+                                baseBlock.get()
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        )
+                )
+        );
+    }
+
+    private static DeferredBlock<PumiceBlock> registerPumiceBlock(String registryName, Supplier<Block> baseBlock) {
+        return BLOCKS.register(
+                registryName, () -> new PumiceBlock(
+                        BlockBehaviour.Properties.ofFullCopy(
+                                baseBlock.get()
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        )
+                )
+        );
+    }
+
+    private static DeferredBlock<PumiceSlabBlock> registerPumiceSlabBlock(String registryName, Supplier<Block> baseBlock) {
+        return BLOCKS.register(
+                registryName, () -> new PumiceSlabBlock(
+                        BlockBehaviour.Properties.ofFullCopy(
+                                baseBlock.get()
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        )
+                )
+        );
+    }
+
+    private static DeferredBlock<PumiceStairBlock> registerPumiceStairBlock(String registryName, Supplier<Block> baseBlock) {
+        return BLOCKS.register(
+                registryName, () -> new PumiceStairBlock(
+                        baseBlock.get().defaultBlockState(),
+                        BlockBehaviour.Properties.ofFullCopy(
+                                baseBlock.get()
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        )
+                )
+        );
+    }
+
+    private static DeferredBlock<PumiceWallBlock> registerPumiceWallBlock(String registryName, Supplier<Block> baseBlock) {
+        return BLOCKS.register(
+                registryName, () -> new PumiceWallBlock(
+                        BlockBehaviour.Properties.ofFullCopy(
+                                baseBlock.get()
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        )
+                )
+        );
+    }
+
+    private static DeferredBlock<PumiceFenceBlock> registerPumiceFenceBlock(String registryName, Supplier<Block> baseBlock) {
+        return BLOCKS.register(
+                registryName, () -> new PumiceFenceBlock(
                         BlockBehaviour.Properties.ofFullCopy(
                                 baseBlock.get()
                         ).setId(

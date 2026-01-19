@@ -2,10 +2,10 @@ package github.theworksofbh.buildersparadise.config;
 
 import github.theworksofbh.buildersparadise.entity.ModEntities;
 import github.theworksofbh.buildersparadise.model_layers.ModModelLayers;
-import net.minecraft.client.renderer.entity.BoatRenderer;
-import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.client.renderer.entity.MinecartRenderer;
-import net.minecraft.client.renderer.entity.TntRenderer;
+import github.theworksofbh.buildersparadise.renderers.ExplosiveArrowRenderer;
+import github.theworksofbh.buildersparadise.renderers.SharpenedArrowRenderer;
+import github.theworksofbh.buildersparadise.renderers.StreamlinedArrowRenderer;
+import net.minecraft.client.renderer.entity.*;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 
 public class EntityRendererConfig {
@@ -29,6 +29,10 @@ public class EntityRendererConfig {
             EntityRenderers.register(ModEntities.CHERRY_CHEST_MINECART.get(), (context) -> new MinecartRenderer(context, ModModelLayers.CHERRY_CHEST_MINECART));
             EntityRenderers.register(ModEntities.BAMBOO_CHEST_MINECART.get(), (context) -> new MinecartRenderer(context, ModModelLayers.BAMBOO_CHEST_MINECART));
             EntityRenderers.register(ModEntities.PALE_OAK_CHEST_MINECART.get(), (context) -> new MinecartRenderer(context, ModModelLayers.PALE_OAK_CHEST_MINECART));
+            EntityRenderers.register(ModEntities.EXPLOSIVE_ARROW.get(), ExplosiveArrowRenderer::new);
+            EntityRenderers.register(ModEntities.SHARPENED_ARROW.get(), SharpenedArrowRenderer::new);
+            EntityRenderers.register(ModEntities.STREAMLINED_ARROW.get(), StreamlinedArrowRenderer::new);
+            EntityRenderers.register(ModEntities.RISING_BLOCK.get(), FallingBlockRenderer::new);
         });
     }
 }

@@ -167,6 +167,7 @@ public class BuildersParadise
         {
             RenderTypeConfig.addModRenderTypes();
             FlammabilityConfig.createFlammableBlocks();
+            DispenserConfig.addItemsToDispenser();
         }
     }
 }

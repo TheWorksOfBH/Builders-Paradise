@@ -1333,6 +1333,68 @@ public class ModItems {
     public static final DeferredItem<BlockItem> CUT_AMETHYST_SLAB = registerBlockItem("cut_amethyst_slab", () -> ModBlocks.CUT_AMETHYST_SLAB.get());
     public static final DeferredItem<BlockItem> CUT_AMETHYST_STAIRS = registerBlockItem("cut_amethyst_stairs", () -> ModBlocks.CUT_AMETHYST_STAIRS.get());
 
+    public static final DeferredItem<ExplosiveArrowItem> EXPLOSIVE_ARROW = registerExplosiveArrowItem("explosive_arrow");
+    public static final DeferredItem<SharpenedArrowItem> SHARPENED_ARROW = registerSharpenedArrowItem("sharpened_arrow");
+    public static final DeferredItem<StreamlinedArrowItem> STREAMLINED_ARROW = registerStreamlinedArrowItem("streamlined_arrow");
+
+    public static final DeferredItem<BlockItem> GABBRO = registerBlockItem("gabbro", () -> ModBlocks.GABBRO.get());
+    public static final DeferredItem<BlockItem> GABBRO_SLAB = registerBlockItem("gabbro_slab", () -> ModBlocks.GABBRO_SLAB.get());
+    public static final DeferredItem<BlockItem> GABBRO_STAIRS = registerBlockItem("gabbro_stairs", () -> ModBlocks.GABBRO_STAIRS.get());
+    public static final DeferredItem<BlockItem> GABBRO_WALL = registerBlockItem("gabbro_wall", () -> ModBlocks.GABBRO_WALL.get());
+    public static final DeferredItem<BlockItem> GABBRO_FENCE = registerBlockItem("gabbro_fence", () -> ModBlocks.GABBRO_FENCE.get());
+
+    public static final DeferredItem<BlockItem> POLISHED_GABBRO = registerBlockItem("polished_gabbro", () -> ModBlocks.POLISHED_GABBRO.get());
+    public static final DeferredItem<BlockItem> POLISHED_GABBRO_SLAB = registerBlockItem("polished_gabbro_slab", () -> ModBlocks.POLISHED_GABBRO_SLAB.get());
+    public static final DeferredItem<BlockItem> POLISHED_GABBRO_STAIRS = registerBlockItem("polished_gabbro_stairs", () -> ModBlocks.POLISHED_GABBRO_STAIRS.get());
+    public static final DeferredItem<BlockItem> POLISHED_GABBRO_WALL = registerBlockItem("polished_gabbro_wall", () -> ModBlocks.POLISHED_GABBRO_WALL.get());
+    public static final DeferredItem<BlockItem> POLISHED_GABBRO_FENCE = registerBlockItem("polished_gabbro_fence", () -> ModBlocks.POLISHED_GABBRO_FENCE.get());
+
+    public static final DeferredItem<BlockItem> GABBRO_BRICKS = registerBlockItem("gabbro_bricks", () -> ModBlocks.GABBRO_BRICKS.get());
+    public static final DeferredItem<BlockItem> GABBRO_BRICK_SLAB = registerBlockItem("gabbro_brick_slab", () -> ModBlocks.GABBRO_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> GABBRO_BRICK_STAIRS = registerBlockItem("gabbro_brick_stairs", () -> ModBlocks.GABBRO_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> GABBRO_BRICK_WALL = registerBlockItem("gabbro_brick_wall", () -> ModBlocks.GABBRO_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> GABBRO_BRICK_FENCE = registerBlockItem("gabbro_brick_fence", () -> ModBlocks.GABBRO_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> RHYOLITE = registerBlockItem("rhyolite", () -> ModBlocks.RHYOLITE.get());
+    public static final DeferredItem<BlockItem> RHYOLITE_SLAB = registerBlockItem("rhyolite_slab", () -> ModBlocks.RHYOLITE_SLAB.get());
+    public static final DeferredItem<BlockItem> RHYOLITE_STAIRS = registerBlockItem("rhyolite_stairs", () -> ModBlocks.RHYOLITE_STAIRS.get());
+    public static final DeferredItem<BlockItem> RHYOLITE_WALL = registerBlockItem("rhyolite_wall", () -> ModBlocks.RHYOLITE_WALL.get());
+    public static final DeferredItem<BlockItem> RHYOLITE_FENCE = registerBlockItem("rhyolite_fence", () -> ModBlocks.RHYOLITE_FENCE.get());
+
+    public static final DeferredItem<BlockItem> POLISHED_RHYOLITE = registerBlockItem("polished_rhyolite", () -> ModBlocks.POLISHED_RHYOLITE.get());
+    public static final DeferredItem<BlockItem> POLISHED_RHYOLITE_SLAB = registerBlockItem("polished_rhyolite_slab", () -> ModBlocks.POLISHED_RHYOLITE_SLAB.get());
+    public static final DeferredItem<BlockItem> POLISHED_RHYOLITE_STAIRS = registerBlockItem("polished_rhyolite_stairs", () -> ModBlocks.POLISHED_RHYOLITE_STAIRS.get());
+    public static final DeferredItem<BlockItem> POLISHED_RHYOLITE_WALL = registerBlockItem("polished_rhyolite_wall", () -> ModBlocks.POLISHED_RHYOLITE_WALL.get());
+    public static final DeferredItem<BlockItem> POLISHED_RHYOLITE_FENCE = registerBlockItem("polished_rhyolite_fence", () -> ModBlocks.POLISHED_RHYOLITE_FENCE.get());
+
+    public static final DeferredItem<BlockItem> RHYOLITE_BRICKS = registerBlockItem("rhyolite_bricks", () -> ModBlocks.RHYOLITE_BRICKS.get());
+    public static final DeferredItem<BlockItem> RHYOLITE_BRICK_SLAB = registerBlockItem("rhyolite_brick_slab", () -> ModBlocks.RHYOLITE_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> RHYOLITE_BRICK_STAIRS = registerBlockItem("rhyolite_brick_stairs", () -> ModBlocks.RHYOLITE_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> RHYOLITE_BRICK_WALL = registerBlockItem("rhyolite_brick_wall", () -> ModBlocks.RHYOLITE_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> RHYOLITE_BRICK_FENCE = registerBlockItem("rhyolite_brick_fence", () -> ModBlocks.RHYOLITE_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> PUMICE = registerBlockItem("pumice", () -> ModBlocks.PUMICE.get());
+    public static final DeferredItem<BlockItem> PUMICE_SLAB = registerBlockItem("pumice_slab", () -> ModBlocks.PUMICE_SLAB.get());
+    public static final DeferredItem<BlockItem> PUMICE_STAIRS = registerBlockItem("pumice_stairs", () -> ModBlocks.PUMICE_STAIRS.get());
+    public static final DeferredItem<BlockItem> PUMICE_WALL = registerBlockItem("pumice_wall", () -> ModBlocks.PUMICE_WALL.get());
+    public static final DeferredItem<BlockItem> PUMICE_FENCE = registerBlockItem("pumice_fence", () -> ModBlocks.PUMICE_FENCE.get());
+
+    public static final DeferredItem<BlockItem> POLISHED_PUMICE = registerBlockItem("polished_pumice", () -> ModBlocks.POLISHED_PUMICE.get());
+    public static final DeferredItem<BlockItem> POLISHED_PUMICE_SLAB = registerBlockItem("polished_pumice_slab", () -> ModBlocks.POLISHED_PUMICE_SLAB.get());
+    public static final DeferredItem<BlockItem> POLISHED_PUMICE_STAIRS = registerBlockItem("polished_pumice_stairs", () -> ModBlocks.POLISHED_PUMICE_STAIRS.get());
+    public static final DeferredItem<BlockItem> POLISHED_PUMICE_WALL = registerBlockItem("polished_pumice_wall", () -> ModBlocks.POLISHED_PUMICE_WALL.get());
+    public static final DeferredItem<BlockItem> POLISHED_PUMICE_FENCE = registerBlockItem("polished_pumice_fence", () -> ModBlocks.POLISHED_PUMICE_FENCE.get());
+
+    public static final DeferredItem<BlockItem> PUMICE_BRICKS = registerBlockItem("pumice_bricks", () -> ModBlocks.PUMICE_BRICKS.get());
+    public static final DeferredItem<BlockItem> PUMICE_BRICK_SLAB = registerBlockItem("pumice_brick_slab", () -> ModBlocks.PUMICE_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> PUMICE_BRICK_STAIRS = registerBlockItem("pumice_brick_stairs", () -> ModBlocks.PUMICE_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> PUMICE_BRICK_WALL = registerBlockItem("pumice_brick_wall", () -> ModBlocks.PUMICE_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> PUMICE_BRICK_FENCE = registerBlockItem("pumice_brick_fence", () -> ModBlocks.PUMICE_BRICK_FENCE.get());
+
+    public static final DeferredItem<Item> GABBRO_BATON = registerCustomItem("gabbro_baton");
+    public static final DeferredItem<Item> RHYOLITE_BATON = registerCustomItem("rhyolite_baton");
+    public static final DeferredItem<Item> PUMICE_BATON = registerCustomItem("pumice_baton");
+
     private static DeferredItem<Item> registerCustomItem(String registryName) {
         if (registryName.contains("netherite")) {
             return ITEMS.register(
@@ -1452,6 +1514,48 @@ public class ModItems {
     private static DeferredItem<Item> registerMusicDisc(String registryName, ResourceKey<JukeboxSong> jukeboxSong){
         return ITEMS.register(registryName, () -> new Item(
                 new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON).jukeboxPlayable(jukeboxSong).setId(
+                        ResourceKey.create(
+                                Registries.ITEM,
+                                Identifier.fromNamespaceAndPath(
+                                        BuildersParadise.MODID,
+                                        registryName
+                                )
+                        )
+                )
+        ));
+    }
+
+    private static DeferredItem<ExplosiveArrowItem> registerExplosiveArrowItem(String registryName) {
+        return ITEMS.register(registryName, () -> new ExplosiveArrowItem(
+                new Item.Properties().setId(
+                        ResourceKey.create(
+                                Registries.ITEM,
+                                Identifier.fromNamespaceAndPath(
+                                        BuildersParadise.MODID,
+                                        registryName
+                                )
+                        )
+                )
+        ));
+    }
+
+    private static DeferredItem<SharpenedArrowItem> registerSharpenedArrowItem(String registryName) {
+        return ITEMS.register(registryName, () -> new SharpenedArrowItem(
+                new Item.Properties().setId(
+                        ResourceKey.create(
+                                Registries.ITEM,
+                                Identifier.fromNamespaceAndPath(
+                                        BuildersParadise.MODID,
+                                        registryName
+                                )
+                        )
+                )
+        ));
+    }
+
+    private static DeferredItem<StreamlinedArrowItem> registerStreamlinedArrowItem(String registryName) {
+        return ITEMS.register(registryName, () -> new StreamlinedArrowItem(
+                new Item.Properties().setId(
                         ResourceKey.create(
                                 Registries.ITEM,
                                 Identifier.fromNamespaceAndPath(

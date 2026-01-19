@@ -7,10 +7,12 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 
@@ -28,6 +30,7 @@ public class ModConfiguredFeatures {
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
+        RuleTest netherrackReplaceables = new BlockMatchTest(Blocks.NETHERRACK);
 
         List<OreConfiguration.TargetBlockState> zincOres = List.of(
                 OreConfiguration.target(stoneReplaceables, ModBlocks.ZINC_ORE.get().defaultBlockState()),
@@ -64,6 +67,22 @@ public class ModConfiguredFeatures {
                 OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_URANIUM_ORE.get().defaultBlockState())
         );
 
+        List<OreConfiguration.TargetBlockState> gabbro = List.of(
+                OreConfiguration.target(deepslateReplaceables, ModBlocks.GABBRO.get().defaultBlockState())
+        );
+
+        List<OreConfiguration.TargetBlockState> rhyolite = List.of(
+                OreConfiguration.target(deepslateReplaceables, ModBlocks.RHYOLITE.get().defaultBlockState())
+        );
+
+        List<OreConfiguration.TargetBlockState> pumice = List.of(
+                OreConfiguration.target(netherrackReplaceables, ModBlocks.PUMICE.get().defaultBlockState())
+        );
+
+        List<OreConfiguration.TargetBlockState> soulSandstone = List.of(
+                OreConfiguration.target(netherrackReplaceables, ModBlocks.SOUL_SANDSTONE.get().defaultBlockState())
+        );
+
         register(context, ZINC_ORE_KEY, Feature.ORE, new OreConfiguration(zincOres, 8));
         register(context, SILVER_ORE_KEY, Feature.ORE, new OreConfiguration(silverOres, 8));
         register(context, TIN_ORE_KEY, Feature.ORE, new OreConfiguration(tinOres, 9));
@@ -72,6 +91,10 @@ public class ModConfiguredFeatures {
         register(context, PLATINUM_ORE_KEY, Feature.ORE, new OreConfiguration(platinumOres, 8));
         register(context, LEAD_ORE_KEY, Feature.ORE, new OreConfiguration(leadOres, 9));
         register(context, URANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(uraniumOres, 9));
+        register(context, GABBRO_KEY, Feature.ORE, new OreConfiguration(gabbro, 64));
+        register(context, RHYOLITE_KEY, Feature.ORE, new OreConfiguration(rhyolite, 64));
+        register(context, PUMICE_KEY, Feature.ORE, new OreConfiguration(pumice, 33));
+        register(context, SOUL_SANDSTONE_KEY, Feature.ORE, new OreConfiguration(soulSandstone, 33));
 
     }
 
@@ -83,5 +106,10 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> PLATINUM_ORE_KEY = registerKey("platinum_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> LEAD_ORE_KEY = registerKey("lead_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> URANIUM_ORE_KEY = registerKey("uranium_ore");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> GABBRO_KEY = registerKey("gabbro");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> RHYOLITE_KEY = registerKey("rhyolite");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PUMICE_KEY = registerKey("pumice");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SOUL_SANDSTONE_KEY = registerKey("soul_sandstone");
 
 }

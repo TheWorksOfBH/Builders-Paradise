@@ -1,5 +1,5 @@
 {
-  "type": "buildersparadise:fletching",
+  "type": "buildersparadise:tipped_fletching",
   "arrow": "minecraft:arrow",
   "ingredient": "minecraft:lingering_potion",
   "output": {

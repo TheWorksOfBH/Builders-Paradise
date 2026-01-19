@@ -1456,6 +1456,18 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createCustomChain(ModBlocks.BRASS_CHAIN.get());
         this.createCustomChain(ModBlocks.STEEL_CHAIN.get());
 
+        this.createTrivialCube(ModBlocks.GABBRO.get());
+        this.createTrivialCube(ModBlocks.POLISHED_GABBRO.get());
+        this.createTrivialCube(ModBlocks.GABBRO_BRICKS.get());
+
+        this.createTrivialCube(ModBlocks.RHYOLITE.get());
+        this.createTrivialCube(ModBlocks.POLISHED_RHYOLITE.get());
+        this.createTrivialCube(ModBlocks.RHYOLITE_BRICKS.get());
+
+        this.createTrivialCube(ModBlocks.PUMICE.get());
+        this.createTrivialCube(ModBlocks.POLISHED_PUMICE.get());
+        this.createTrivialCube(ModBlocks.PUMICE_BRICKS.get());
+
         ModBlockFamilies.getAllFamilies()
                 .filter(BlockFamily::shouldGenerateModel)
                 .forEach(
