@@ -1,5 +1,6 @@
 package github.theworksofbh.buildersparadise.datagen;
 
+import biomesoplenty.api.block.BOPBlocks;
 import com.mojang.datafixers.util.Pair;
 import github.theworksofbh.buildersparadise.block.ModBlockFamilies;
 import github.theworksofbh.buildersparadise.block.ModBlocks;
@@ -69,6 +70,51 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
             mapping.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(ModBlocks.SOUL_SANDSTONE.get(), "_top"));
             mapping.put(TextureSlot.TOP, TextureMapping.getBlockTexture(ModBlocks.SOUL_SANDSTONE.get(), "_top"));
             mapping.put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(ModBlocks.SOUL_SANDSTONE.get(), "_top"));
+        } else if (fullBlock == BOPBlocks.WHITE_SANDSTONE) {
+            mapping = TexturedModel.CUBE_TOP_BOTTOM.get(ModBlocks.SOUL_SANDSTONE.get()).getMapping();
+            mapping.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(BOPBlocks.WHITE_SANDSTONE, ""));
+            mapping.put(TextureSlot.TOP, TextureMapping.getBlockTexture(BOPBlocks.WHITE_SANDSTONE, "_top"));
+            mapping.put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(BOPBlocks.WHITE_SANDSTONE, "_bottom"));
+        } else if (fullBlock == BOPBlocks.CUT_WHITE_SANDSTONE) {
+            mapping = TexturedModel.COLUMN.get(ModBlocks.CUT_SOUL_SANDSTONE.get()).getMapping();
+            mapping.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(BOPBlocks.CUT_WHITE_SANDSTONE, ""));
+            mapping.put(TextureSlot.TOP, TextureMapping.getBlockTexture(BOPBlocks.WHITE_SANDSTONE, "_top"));
+            mapping.put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(BOPBlocks.WHITE_SANDSTONE, "_top"));
+        } else if (fullBlock == BOPBlocks.SMOOTH_WHITE_SANDSTONE) {
+            mapping = TexturedModel.CUBE.get(ModBlocks.CUT_SOUL_SANDSTONE.get()).getMapping();
+            mapping.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(BOPBlocks.WHITE_SANDSTONE, "_top"));
+            mapping.put(TextureSlot.TOP, TextureMapping.getBlockTexture(BOPBlocks.WHITE_SANDSTONE, "_top"));
+            mapping.put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(BOPBlocks.WHITE_SANDSTONE, "_top"));
+        } else if (fullBlock == BOPBlocks.BLACK_SANDSTONE) {
+            mapping = TexturedModel.CUBE_TOP_BOTTOM.get(ModBlocks.SOUL_SANDSTONE.get()).getMapping();
+            mapping.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(BOPBlocks.BLACK_SANDSTONE, ""));
+            mapping.put(TextureSlot.TOP, TextureMapping.getBlockTexture(BOPBlocks.BLACK_SANDSTONE, "_top"));
+            mapping.put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(BOPBlocks.BLACK_SANDSTONE, "_bottom"));
+        } else if (fullBlock == BOPBlocks.CUT_BLACK_SANDSTONE) {
+            mapping = TexturedModel.COLUMN.get(ModBlocks.CUT_SOUL_SANDSTONE.get()).getMapping();
+            mapping.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(BOPBlocks.CUT_BLACK_SANDSTONE, ""));
+            mapping.put(TextureSlot.TOP, TextureMapping.getBlockTexture(BOPBlocks.BLACK_SANDSTONE, "_top"));
+            mapping.put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(BOPBlocks.BLACK_SANDSTONE, "_top"));
+        } else if (fullBlock == BOPBlocks.SMOOTH_BLACK_SANDSTONE) {
+            mapping = TexturedModel.CUBE.get(ModBlocks.CUT_SOUL_SANDSTONE.get()).getMapping();
+            mapping.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(BOPBlocks.BLACK_SANDSTONE, "_top"));
+            mapping.put(TextureSlot.TOP, TextureMapping.getBlockTexture(BOPBlocks.BLACK_SANDSTONE, "_top"));
+            mapping.put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(BOPBlocks.BLACK_SANDSTONE, "_top"));
+        } else if (fullBlock == BOPBlocks.ORANGE_SANDSTONE) {
+            mapping = TexturedModel.CUBE_TOP_BOTTOM.get(ModBlocks.SOUL_SANDSTONE.get()).getMapping();
+            mapping.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(BOPBlocks.ORANGE_SANDSTONE, ""));
+            mapping.put(TextureSlot.TOP, TextureMapping.getBlockTexture(BOPBlocks.ORANGE_SANDSTONE, "_top"));
+            mapping.put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(BOPBlocks.ORANGE_SANDSTONE, "_bottom"));
+        } else if (fullBlock == BOPBlocks.CUT_ORANGE_SANDSTONE) {
+            mapping = TexturedModel.COLUMN.get(ModBlocks.CUT_SOUL_SANDSTONE.get()).getMapping();
+            mapping.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(BOPBlocks.CUT_ORANGE_SANDSTONE, ""));
+            mapping.put(TextureSlot.TOP, TextureMapping.getBlockTexture(BOPBlocks.ORANGE_SANDSTONE, "_top"));
+            mapping.put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(BOPBlocks.ORANGE_SANDSTONE, "_top"));
+        } else if (fullBlock == BOPBlocks.SMOOTH_ORANGE_SANDSTONE) {
+            mapping = TexturedModel.CUBE.get(ModBlocks.CUT_SOUL_SANDSTONE.get()).getMapping();
+            mapping.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(BOPBlocks.ORANGE_SANDSTONE, "_top"));
+            mapping.put(TextureSlot.TOP, TextureMapping.getBlockTexture(BOPBlocks.ORANGE_SANDSTONE, "_top"));
+            mapping.put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(BOPBlocks.ORANGE_SANDSTONE, "_top"));
         } else if (fullBlock == Blocks.SNOW_BLOCK) {
             mapping = TexturedModel.CUBE.get(Blocks.SNOW).getMapping();
             mapping.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(Blocks.SNOW, ""));
@@ -92,6 +138,15 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         } else if (fullBlock == ModBlocks.SMOOTH_SOUL_SANDSTONE.get()) {
             mapping.put(TextureSlot.WALL, TextureMapping.getBlockTexture(ModBlocks.SOUL_SANDSTONE.get(), "_top"));
             mapping.put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ModBlocks.SOUL_SANDSTONE.get(), "_top"));
+        } else if (fullBlock == BOPBlocks.SMOOTH_WHITE_SANDSTONE) {
+            mapping.put(TextureSlot.WALL, TextureMapping.getBlockTexture(BOPBlocks.WHITE_SANDSTONE, "_top"));
+            mapping.put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(BOPBlocks.WHITE_SANDSTONE, "_top"));
+        } else if (fullBlock == BOPBlocks.SMOOTH_BLACK_SANDSTONE) {
+            mapping.put(TextureSlot.WALL, TextureMapping.getBlockTexture(BOPBlocks.BLACK_SANDSTONE, "_top"));
+            mapping.put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(BOPBlocks.BLACK_SANDSTONE, "_top"));
+        } else if (fullBlock == BOPBlocks.SMOOTH_ORANGE_SANDSTONE) {
+            mapping.put(TextureSlot.WALL, TextureMapping.getBlockTexture(BOPBlocks.ORANGE_SANDSTONE, "_top"));
+            mapping.put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(BOPBlocks.ORANGE_SANDSTONE, "_top"));
         } else if (fullBlock == Blocks.SMOOTH_QUARTZ) {
             mapping.put(TextureSlot.WALL, TextureMapping.getBlockTexture(Blocks.QUARTZ_BLOCK, "_bottom"));
             mapping.put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(Blocks.QUARTZ_BLOCK, "_bottom"));

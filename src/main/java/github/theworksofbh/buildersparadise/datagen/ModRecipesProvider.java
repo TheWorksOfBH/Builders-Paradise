@@ -2637,17 +2637,17 @@ public class ModRecipesProvider extends RecipeProvider {
 
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_WHITE_SANDSTONE_STAIRS.get(), BOPItems.CUT_WHITE_SANDSTONE);
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.CUT_WHITE_SANDSTONE_WALL.get(), BOPItems.CUT_WHITE_SANDSTONE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_WHITE_SANDSTONE_WALL.get(), BOPItems.WHITE_SANDSTONE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_WHITE_SANDSTONE_STAIRS.get(), BOPItems.WHITE_SANDSTONE);
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.CUT_WHITE_SANDSTONE_WALL.get(), BOPItems.WHITE_SANDSTONE);
 
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_BLACK_SANDSTONE_STAIRS.get(), BOPItems.CUT_BLACK_SANDSTONE);
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.CUT_BLACK_SANDSTONE_WALL.get(), BOPItems.CUT_BLACK_SANDSTONE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_BLACK_SANDSTONE_WALL.get(), BOPItems.BLACK_SANDSTONE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_BLACK_SANDSTONE_STAIRS.get(), BOPItems.BLACK_SANDSTONE);
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.CUT_BLACK_SANDSTONE_WALL.get(), BOPItems.BLACK_SANDSTONE);
 
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_ORANGE_SANDSTONE_STAIRS.get(), BOPItems.CUT_ORANGE_SANDSTONE);
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.CUT_ORANGE_SANDSTONE_WALL.get(), BOPItems.CUT_ORANGE_SANDSTONE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_ORANGE_SANDSTONE_WALL.get(), BOPItems.ORANGE_SANDSTONE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_ORANGE_SANDSTONE_STAIRS.get(), BOPItems.ORANGE_SANDSTONE);
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.CUT_ORANGE_SANDSTONE_WALL.get(), BOPItems.ORANGE_SANDSTONE);
     }
 

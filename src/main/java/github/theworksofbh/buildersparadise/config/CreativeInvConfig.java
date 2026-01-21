@@ -1,6 +1,8 @@
 package github.theworksofbh.buildersparadise.config;
 
+import biomesoplenty.api.item.BOPItems;
 import github.theworksofbh.buildersparadise.BuildersParadise;
+import github.theworksofbh.buildersparadise.compat.bop.CompatModItems;
 import github.theworksofbh.buildersparadise.items.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.CreativeModeTab;
@@ -1516,6 +1518,18 @@ public class CreativeInvConfig {
             tabData.insertAfter(ModItems.BRONZE_CHESTPLATE.get().getDefaultInstance(), ModItems.BRONZE_LEGGINGS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.BRONZE_LEGGINGS.get().getDefaultInstance(), ModItems.BRONZE_BOOTS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
+        } else if (tabData.getTabKey().identifier().getNamespace().contains("biomesoplenty")) {
+            tabData.insertAfter(BOPItems.CUT_WHITE_SANDSTONE.getDefaultInstance(), CompatModItems.CUT_WHITE_SANDSTONE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.CUT_WHITE_SANDSTONE_SLAB.getDefaultInstance(), CompatModItems.CUT_WHITE_SANDSTONE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.SMOOTH_WHITE_SANDSTONE_SLAB.getDefaultInstance(), CompatModItems.SMOOTH_WHITE_SANDSTONE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(BOPItems.CUT_BLACK_SANDSTONE.getDefaultInstance(), CompatModItems.CUT_BLACK_SANDSTONE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.CUT_BLACK_SANDSTONE_SLAB.getDefaultInstance(), CompatModItems.CUT_BLACK_SANDSTONE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.SMOOTH_BLACK_SANDSTONE_SLAB.getDefaultInstance(), CompatModItems.SMOOTH_BLACK_SANDSTONE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(BOPItems.CUT_ORANGE_SANDSTONE.getDefaultInstance(), CompatModItems.CUT_ORANGE_SANDSTONE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.CUT_ORANGE_SANDSTONE_SLAB.getDefaultInstance(), CompatModItems.CUT_ORANGE_SANDSTONE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.SMOOTH_ORANGE_SANDSTONE_SLAB.getDefaultInstance(), CompatModItems.SMOOTH_ORANGE_SANDSTONE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
     }
 

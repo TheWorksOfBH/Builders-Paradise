@@ -139,6 +139,9 @@
     "buildersparadise:rhyolite_brick_stairs",
     "buildersparadise:pumice_stairs",
     "buildersparadise:polished_pumice_stairs",
-    "buildersparadise:pumice_brick_stairs"
+    "buildersparadise:pumice_brick_stairs",
+    "buildersparadise:cut_white_sandstone_stairs",
+    "buildersparadise:cut_black_sandstone_stairs",
+    "buildersparadise:cut_orange_sandstone_stairs"
   ]
 }
