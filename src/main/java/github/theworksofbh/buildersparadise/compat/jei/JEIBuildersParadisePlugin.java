@@ -1,4 +1,4 @@
-package github.theworksofbh.buildersparadise.compat;
+package github.theworksofbh.buildersparadise.compat.jei;
 
 import github.theworksofbh.buildersparadise.BuildersParadise;
 import github.theworksofbh.buildersparadise.gui.FletchingMenu;

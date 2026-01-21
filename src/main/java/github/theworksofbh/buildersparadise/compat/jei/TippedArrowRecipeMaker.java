@@ -1,4 +1,4 @@
-package github.theworksofbh.buildersparadise.compat;
+package github.theworksofbh.buildersparadise.compat.jei;
 
 import github.theworksofbh.buildersparadise.recipes.FletchingRecipe;
 import github.theworksofbh.buildersparadise.recipes.TippedFletchingRecipe;

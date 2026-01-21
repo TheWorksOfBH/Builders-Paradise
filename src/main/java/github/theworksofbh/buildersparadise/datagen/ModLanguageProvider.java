@@ -2,6 +2,8 @@ package github.theworksofbh.buildersparadise.datagen;
 
 import github.theworksofbh.buildersparadise.BuildersParadise;
 import github.theworksofbh.buildersparadise.block.ModBlocks;
+import github.theworksofbh.buildersparadise.compat.bop.CompatModBlocks;
+import github.theworksofbh.buildersparadise.compat.bop.CompatModItems;
 import github.theworksofbh.buildersparadise.effect.ModEffects;
 import github.theworksofbh.buildersparadise.entity.ModEntities;
 import github.theworksofbh.buildersparadise.items.ModItems;
@@ -28,21 +30,22 @@ public class ModLanguageProvider extends LanguageProvider {
         );
 
         Set<Block> handMadeBlocks = Set.of(
-            ModBlocks.IRON_WALL_TORCH.get(),
-            ModBlocks.ZINC_WALL_TORCH.get(),
-            ModBlocks.SILVER_WALL_TORCH.get(),
-            ModBlocks.TIN_WALL_TORCH.get(),
-            ModBlocks.TUNGSTEN_WALL_TORCH.get(),
-            ModBlocks.PLATINUM_WALL_TORCH.get(),
-            ModBlocks.GOLD_WALL_TORCH.get(),
-            ModBlocks.LEAD_WALL_TORCH.get(),
-            ModBlocks.URANIUM_WALL_TORCH.get()
+                ModBlocks.IRON_WALL_TORCH.get(),
+                ModBlocks.ZINC_WALL_TORCH.get(),
+                ModBlocks.SILVER_WALL_TORCH.get(),
+                ModBlocks.TIN_WALL_TORCH.get(),
+                ModBlocks.TUNGSTEN_WALL_TORCH.get(),
+                ModBlocks.PLATINUM_WALL_TORCH.get(),
+                ModBlocks.GOLD_WALL_TORCH.get(),
+                ModBlocks.LEAD_WALL_TORCH.get(),
+                ModBlocks.URANIUM_WALL_TORCH.get()
         );
 
         return Stream.concat(
                 vanillaBlocksThatNeedNewTranslations.stream(),
-                ModBlocks.BLOCKS.getEntries().stream().map(
-                        Supplier::get
+                Stream.concat(
+                        ModBlocks.BLOCKS.getEntries().stream().map(Supplier::get),
+                        CompatModBlocks.BOP_BLOCKS.getEntries().stream().map(Supplier::get)
                 )
         ).filter(
                 (Predicate.not(handMadeBlocks::contains))
@@ -59,8 +62,9 @@ public class ModLanguageProvider extends LanguageProvider {
 
         return Stream.concat(
                 vanillaItemsThatNeedNewTranslations.stream(),
-                ModItems.ITEMS.getEntries().stream().map(
-                        Supplier::get
+                Stream.concat(
+                        ModItems.ITEMS.getEntries().stream().map(Supplier::get),
+                        CompatModItems.BOP_ITEMS.getEntries().stream().map(Supplier::get)
                 )
         ).filter(
                 (Predicate.not(handMadeItems::contains))

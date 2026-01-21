@@ -1,6 +1,8 @@
 package github.theworksofbh.buildersparadise.block;
 
+import biomesoplenty.api.block.BOPBlocks;
 import com.google.common.collect.Maps;
+import github.theworksofbh.buildersparadise.compat.bop.CompatModBlocks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.world.level.block.Block;
@@ -278,5 +280,16 @@ public class ModBlockFamilies {
     public static final BlockFamily PUMICE = familyBuilder(ModBlocks.PUMICE.get()).polished(ModBlocks.POLISHED_PUMICE.get()).stairs(ModBlocks.PUMICE_STAIRS.get()).slab(ModBlocks.PUMICE_SLAB.get()).wall(ModBlocks.PUMICE_WALL.get()).fence(ModBlocks.PUMICE_FENCE.get()).getFamily();
     public static final BlockFamily POLISHED_PUMICE = familyBuilder(ModBlocks.POLISHED_PUMICE.get()).stairs(ModBlocks.POLISHED_PUMICE_STAIRS.get()).slab(ModBlocks.POLISHED_PUMICE_SLAB.get()).wall(ModBlocks.POLISHED_PUMICE_WALL.get()).polished(ModBlocks.PUMICE_BRICKS.get()).fence(ModBlocks.POLISHED_PUMICE_FENCE.get()).getFamily();
     public static final BlockFamily PUMICE_BRICKS = familyBuilder(ModBlocks.PUMICE_BRICKS.get()).stairs(ModBlocks.PUMICE_BRICK_STAIRS.get()).slab(ModBlocks.PUMICE_BRICK_SLAB.get()).wall(ModBlocks.PUMICE_BRICK_WALL.get()).fence(ModBlocks.PUMICE_BRICK_FENCE.get()).getFamily();
+
+    // BOP //
+
+    public static final BlockFamily CUT_WHITE_SANDSTONE = familyBuilder(BOPBlocks.CUT_WHITE_SANDSTONE).stairs(CompatModBlocks.CUT_WHITE_SANDSTONE_STAIRS.get()).wall(CompatModBlocks.CUT_WHITE_SANDSTONE_WALL.get()).getFamily();
+    public static final BlockFamily SMOOTH_WHITE_SANDSTONE = familyBuilder(BOPBlocks.SMOOTH_WHITE_SANDSTONE).wall(CompatModBlocks.SMOOTH_WHITE_SANDSTONE_WALL.get()).getFamily();
+
+    public static final BlockFamily CUT_BLACK_SANDSTONE = familyBuilder(BOPBlocks.CUT_BLACK_SANDSTONE).stairs(CompatModBlocks.CUT_BLACK_SANDSTONE_STAIRS.get()).wall(CompatModBlocks.CUT_BLACK_SANDSTONE_WALL.get()).getFamily();
+    public static final BlockFamily SMOOTH_BLACK_SANDSTONE = familyBuilder(BOPBlocks.SMOOTH_BLACK_SANDSTONE).wall(CompatModBlocks.SMOOTH_BLACK_SANDSTONE_WALL.get()).getFamily();
+
+    public static final BlockFamily CUT_ORANGE_SANDSTONE = familyBuilder(BOPBlocks.CUT_ORANGE_SANDSTONE).stairs(CompatModBlocks.CUT_ORANGE_SANDSTONE_STAIRS.get()).wall(CompatModBlocks.CUT_ORANGE_SANDSTONE_WALL.get()).getFamily();
+    public static final BlockFamily SMOOTH_ORANGE_SANDSTONE = familyBuilder(BOPBlocks.SMOOTH_ORANGE_SANDSTONE).wall(CompatModBlocks.SMOOTH_ORANGE_SANDSTONE_WALL.get()).getFamily();
 
 }

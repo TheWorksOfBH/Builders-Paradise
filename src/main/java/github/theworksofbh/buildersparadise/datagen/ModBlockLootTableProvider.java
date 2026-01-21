@@ -4,6 +4,7 @@ import github.theworksofbh.buildersparadise.block.ModBlocks;
 import github.theworksofbh.buildersparadise.block.ModDoorBlock;
 import github.theworksofbh.buildersparadise.block.ModSlabBlock;
 import github.theworksofbh.buildersparadise.block.ModStairBlock;
+import github.theworksofbh.buildersparadise.compat.bop.CompatModBlocks;
 import github.theworksofbh.buildersparadise.items.ModItems;
 import net.minecraft.advancements.criterion.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
@@ -78,8 +79,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
         return Stream.concat(
                 vanillaBlocksThatNeedNewLootTables.stream(),
-                ModBlocks.BLOCKS.getEntries().stream().map(
-                        Supplier::get
+                Stream.concat(
+                        ModBlocks.BLOCKS.getEntries().stream().map(Supplier::get),
+                        CompatModBlocks.BOP_BLOCKS.getEntries().stream().map(Supplier::get)
                 )
         ).filter(
                 (Predicate.not(handMadeBlocks::contains))

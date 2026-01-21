@@ -1,4 +1,4 @@
-package github.theworksofbh.buildersparadise.compat;
+package github.theworksofbh.buildersparadise.compat.jei;
 
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;

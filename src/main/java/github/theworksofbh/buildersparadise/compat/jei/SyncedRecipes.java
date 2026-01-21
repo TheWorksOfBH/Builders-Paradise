@@ -1,4 +1,4 @@
-package github.theworksofbh.buildersparadise.compat;
+package github.theworksofbh.buildersparadise.compat.jei;
 
 import net.minecraft.world.item.crafting.RecipeMap;
 

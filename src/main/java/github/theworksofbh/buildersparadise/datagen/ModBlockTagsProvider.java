@@ -2,6 +2,7 @@ package github.theworksofbh.buildersparadise.datagen;
 
 import github.theworksofbh.buildersparadise.BuildersParadise;
 import github.theworksofbh.buildersparadise.block.*;
+import github.theworksofbh.buildersparadise.compat.bop.CompatModBlocks;
 import github.theworksofbh.buildersparadise.tags.ModBlockTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -52,8 +53,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
         return Stream.concat(
                 vanillaBlocksThatNeedNewTags.stream(),
-                ModBlocks.BLOCKS.getEntries().stream().map(
-                        Supplier::get
+                Stream.concat(
+                        ModBlocks.BLOCKS.getEntries().stream().map(Supplier::get),
+                        CompatModBlocks.BOP_BLOCKS.getEntries().stream().map(Supplier::get)
                 )
         ).filter(
                 (Predicate.not(handMadeBlocks::contains))

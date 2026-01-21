@@ -1,10 +1,12 @@
 package github.theworksofbh.buildersparadise.datagen;
 
+import biomesoplenty.api.item.BOPItems;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import github.theworksofbh.buildersparadise.BuildersParadise;
 import github.theworksofbh.buildersparadise.block.ModBlockFamilies;
 import github.theworksofbh.buildersparadise.block.ModBlocks;
+import github.theworksofbh.buildersparadise.compat.bop.CompatModItems;
 import github.theworksofbh.buildersparadise.items.ModItems;
 import github.theworksofbh.buildersparadise.recipes.FletchingRecipeBuilder;
 import github.theworksofbh.buildersparadise.tags.ModItemTags;
@@ -2626,6 +2628,27 @@ public class ModRecipesProvider extends RecipeProvider {
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PUMICE_BRICK_SLAB.get(), ModItems.PUMICE_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PUMICE_BRICK_STAIRS.get(), ModItems.PUMICE_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.PUMICE_BRICK_WALL.get(), ModItems.PUMICE_BRICKS.get());
+
+        // BOP //
+
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.SMOOTH_WHITE_SANDSTONE_WALL.get(), BOPItems.SMOOTH_WHITE_SANDSTONE);
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.SMOOTH_BLACK_SANDSTONE_WALL.get(), BOPItems.SMOOTH_BLACK_SANDSTONE);
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.SMOOTH_ORANGE_SANDSTONE_WALL.get(), BOPItems.SMOOTH_ORANGE_SANDSTONE);
+
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_WHITE_SANDSTONE_STAIRS.get(), BOPItems.CUT_WHITE_SANDSTONE);
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.CUT_WHITE_SANDSTONE_WALL.get(), BOPItems.CUT_WHITE_SANDSTONE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_WHITE_SANDSTONE_WALL.get(), BOPItems.WHITE_SANDSTONE);
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.CUT_WHITE_SANDSTONE_WALL.get(), BOPItems.WHITE_SANDSTONE);
+
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_BLACK_SANDSTONE_STAIRS.get(), BOPItems.CUT_BLACK_SANDSTONE);
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.CUT_BLACK_SANDSTONE_WALL.get(), BOPItems.CUT_BLACK_SANDSTONE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_BLACK_SANDSTONE_WALL.get(), BOPItems.BLACK_SANDSTONE);
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.CUT_BLACK_SANDSTONE_WALL.get(), BOPItems.BLACK_SANDSTONE);
+
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_ORANGE_SANDSTONE_STAIRS.get(), BOPItems.CUT_ORANGE_SANDSTONE);
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.CUT_ORANGE_SANDSTONE_WALL.get(), BOPItems.CUT_ORANGE_SANDSTONE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_ORANGE_SANDSTONE_WALL.get(), BOPItems.ORANGE_SANDSTONE);
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.CUT_ORANGE_SANDSTONE_WALL.get(), BOPItems.ORANGE_SANDSTONE);
     }
 
     public static class Runner extends RecipeProvider.Runner {

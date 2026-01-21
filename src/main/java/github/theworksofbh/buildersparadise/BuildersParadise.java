@@ -56,6 +56,8 @@ public class BuildersParadise
         ModLootModifiers.register(modEventBus);
         ModEffects.register(modEventBus);
 
+        BOPConfig.registerBOPCompats(modEventBus);
+
         ModFluids.register(modEventBus);
         ModFluidTypes.register(modEventBus);
         ModSoundEvents.register(modEventBus);

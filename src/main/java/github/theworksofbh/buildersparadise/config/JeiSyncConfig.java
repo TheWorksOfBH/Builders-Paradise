@@ -1,6 +1,6 @@
 package github.theworksofbh.buildersparadise.config;
 
-import github.theworksofbh.buildersparadise.compat.SyncedRecipes;
+import github.theworksofbh.buildersparadise.compat.jei.SyncedRecipes;
 import github.theworksofbh.buildersparadise.recipes.ModRecipes;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.client.event.RecipesReceivedEvent;
