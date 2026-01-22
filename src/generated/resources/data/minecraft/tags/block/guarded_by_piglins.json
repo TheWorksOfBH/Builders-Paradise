@@ -1,7 +1,7 @@
 {
   "values": [
-    "minecraft:trapped_chest",
     "minecraft:chest",
+    "minecraft:trapped_chest",
     "buildersparadise:spruce_chest",
     "buildersparadise:birch_chest",
     "buildersparadise:jungle_chest",

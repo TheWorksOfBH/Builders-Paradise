@@ -1,4 +1,4 @@
-// 1.21.11	2026-01-21T18:22:43.8848967	Loot Tables
+// 1.21.11	2026-01-21T20:21:45.5161268	Loot Tables
 0579d33941d7982974f1387f3def9bcabde5df78 data/buildersparadise/loot_table/blocks/acacia_barrel.json
 1ae5ea6e5435d1526192f6cba22816b1aaac4ff0 data/buildersparadise/loot_table/blocks/acacia_beehive.json
 5ede1225612422dc7087d3cedd58029ef98b6e63 data/buildersparadise/loot_table/blocks/acacia_blackstone_smoker.json
@@ -111,6 +111,9 @@ bfc8521185d48e4088b16fd297e0f6c8cc3c6333 data/buildersparadise/loot_table/blocks
 318fa64c3e91b3aaae4f5575186ad325a42de6e8 data/buildersparadise/loot_table/blocks/brass_door.json
 71a1451054c4945f67bfc5a58a47a5f6db83c15e data/buildersparadise/loot_table/blocks/brass_trapdoor.json
 d23763610e8a45498bb0008bce58db75296d386d data/buildersparadise/loot_table/blocks/brick_fence.json
+7e2d2846056556370cf8509a0bd421bb440a7525 data/buildersparadise/loot_table/blocks/brimstone_slab.json
+b4551bc337be931e597cc314dbb9b2f599d95a47 data/buildersparadise/loot_table/blocks/brimstone_stairs.json
+ce251fa8ebd64db907cb130b3dc4fa942ee21557 data/buildersparadise/loot_table/blocks/brimstone_wall.json
 4db3621a6cbe2cf0fbe85a558fd22c4cc0ba9c70 data/buildersparadise/loot_table/blocks/bronze_block.json
 c0fa435f11570e7fbc9b2b46575c071102175512 data/buildersparadise/loot_table/blocks/bronze_chain.json
 2cfac5e7a9064ca43658303404d0e9ac12ff3ec3 data/buildersparadise/loot_table/blocks/bronze_door.json

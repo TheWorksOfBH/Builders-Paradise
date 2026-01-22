@@ -1132,6 +1132,16 @@ public class ModRecipesProvider extends RecipeProvider {
         this.fletching(ModItems.EXPLOSIVE_ARROW.get(), Items.ARROW, Items.GUNPOWDER);
         this.fletching(ModItems.SHARPENED_ARROW.get(), Items.ARROW, Items.FLINT);
         this.fletching(ModItems.STREAMLINED_ARROW.get(), Items.ARROW, Items.PHANTOM_MEMBRANE);
+
+        this.slabBuilder(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SOUL_SANDSTONE_SLAB.get(), Ingredient.of(new ItemLike[]{ModBlocks.SOUL_SANDSTONE.get(), ModBlocks.CHISELED_SOUL_SANDSTONE.get()}))
+                .unlockedBy("has_soul_sandstone", this.has(ModBlocks.SOUL_SANDSTONE.get()))
+                .unlockedBy("has_chiseled_soul_sandstone", this.has(ModBlocks.CHISELED_SOUL_SANDSTONE.get()))
+                .save(this.output, "soul_sandstone_slab_alt");
+
+        this.stairBuilder(ModBlocks.SOUL_SANDSTONE_STAIRS.get(), Ingredient.of(new ItemLike[]{ModBlocks.SOUL_SANDSTONE.get(), ModBlocks.CHISELED_SOUL_SANDSTONE.get()}))
+                .unlockedBy("has_soul_sandstone", this.has(ModBlocks.SOUL_SANDSTONE.get()))
+                .unlockedBy("has_chiseled_soul_sandstone", this.has(ModBlocks.CHISELED_SOUL_SANDSTONE.get()))
+                .save(this.output, "soul_sandstone_stairs_alt");
     }
 
     protected void createChain(ItemLike result, ItemLike ingot, ItemLike nugget) {
@@ -2649,6 +2659,10 @@ public class ModRecipesProvider extends RecipeProvider {
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.CUT_ORANGE_SANDSTONE_WALL.get(), BOPItems.CUT_ORANGE_SANDSTONE);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_ORANGE_SANDSTONE_STAIRS.get(), BOPItems.ORANGE_SANDSTONE);
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.CUT_ORANGE_SANDSTONE_WALL.get(), BOPItems.ORANGE_SANDSTONE);
+
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.BRIMSTONE_SLAB.get(), BOPItems.BRIMSTONE, 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.BRIMSTONE_STAIRS.get(), BOPItems.BRIMSTONE);
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.BRIMSTONE_WALL.get(), BOPItems.BRIMSTONE);
     }
 
     public static class Runner extends RecipeProvider.Runner {

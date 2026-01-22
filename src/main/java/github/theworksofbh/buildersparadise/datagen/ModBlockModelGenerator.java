@@ -4,8 +4,11 @@ import biomesoplenty.api.block.BOPBlocks;
 import com.mojang.datafixers.util.Pair;
 import github.theworksofbh.buildersparadise.block.ModBlockFamilies;
 import github.theworksofbh.buildersparadise.block.ModBlocks;
-import github.theworksofbh.buildersparadise.renderers.ModChestSpecialRenderers;
+import github.theworksofbh.buildersparadise.compat.bop.ThermalCalciteSlabBlock;
+import github.theworksofbh.buildersparadise.compat.bop.ThermalCalciteStairBlock;
+import github.theworksofbh.buildersparadise.compat.bop.ThermalCalciteWallBlock;
 import github.theworksofbh.buildersparadise.items.ModItems;
+import github.theworksofbh.buildersparadise.renderers.ModChestSpecialRenderers;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelOutput;
 import net.minecraft.client.data.models.MultiVariant;
@@ -24,9 +27,7 @@ import net.minecraft.data.BlockFamily;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.properties.AttachFace;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.*;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;
@@ -915,6 +916,139 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.registerSimpleItemModel(chain.asItem(), identifier);
     }
 
+    private static String suffixForDistance(int distance) {
+        return distance == 1 ? "" : "_" + distance;
+    }
+
+    private static final int[] THERMAL_DISTANCES = {1, 2, 3, 4, 5};
+
+    public static BlockModelDefinitionGenerator createThermalSlab(Block block, MultiVariant bottom, MultiVariant top, MultiVariant doubleVariants, int distanceFromWater) {
+        return MultiVariantGenerator.dispatch(block)
+                .with(PropertyDispatch.initial(BlockStateProperties.SLAB_TYPE, ThermalCalciteSlabBlock.DISTANCE)
+                        .select(SlabType.BOTTOM, distanceFromWater, bottom)
+                        .select(SlabType.TOP, distanceFromWater, top)
+                        .select(SlabType.DOUBLE, distanceFromWater, doubleVariants));
+    }
+
+    public void thermalSlab(Block slab, Block fullBlock) {
+        for (int distance : THERMAL_DISTANCES) {
+            String suffix = suffixForDistance(distance);
+
+            TextureMapping textureMapping = TextureMapping.cube(TextureMapping.getBlockTexture(fullBlock, suffix));
+
+            Identifier bottomModel = ModelTemplates.SLAB_BOTTOM.createWithSuffix(slab, suffix, textureMapping, modelOutput);
+            Identifier topModel = ModelTemplates.SLAB_TOP.createWithSuffix(slab, suffix, textureMapping, modelOutput);
+            Identifier doubleVariant = ModelLocationUtils.getModelLocation(fullBlock);
+
+            blockStateOutput.accept(createThermalSlab(slab, plainVariant(bottomModel), plainVariant(topModel), plainVariant(doubleVariant), distance));
+        }
+
+        registerThermalInventoryModel(fullBlock, slab, ModelTemplates.SLAB_BOTTOM);
+    }
+
+    public static BlockModelDefinitionGenerator createThermalStairs(Block block, MultiVariant inner, MultiVariant straight, MultiVariant outer, int distanceFromWater) {
+        return MultiVariantGenerator.dispatch(block)
+                .with(PropertyDispatch.initial(BlockStateProperties.HORIZONTAL_FACING, BlockStateProperties.HALF, BlockStateProperties.STAIRS_SHAPE, ThermalCalciteStairBlock.DISTANCE)
+                        .select(Direction.EAST, Half.BOTTOM, StairsShape.STRAIGHT, distanceFromWater, straight)
+                        .select(Direction.WEST, Half.BOTTOM, StairsShape.STRAIGHT, distanceFromWater, straight.with(Y_ROT_180).with(UV_LOCK))
+                        .select(Direction.SOUTH, Half.BOTTOM, StairsShape.STRAIGHT, distanceFromWater, straight.with(Y_ROT_90).with(UV_LOCK))
+                        .select(Direction.NORTH, Half.BOTTOM, StairsShape.STRAIGHT, distanceFromWater, straight.with(Y_ROT_270).with(UV_LOCK))
+                        .select(Direction.EAST, Half.BOTTOM, StairsShape.OUTER_RIGHT, distanceFromWater, outer)
+                        .select(Direction.WEST, Half.BOTTOM, StairsShape.OUTER_RIGHT, distanceFromWater, outer.with(Y_ROT_180).with(UV_LOCK))
+                        .select(Direction.SOUTH, Half.BOTTOM, StairsShape.OUTER_RIGHT, distanceFromWater, outer.with(Y_ROT_90).with(UV_LOCK))
+                        .select(Direction.NORTH, Half.BOTTOM, StairsShape.OUTER_RIGHT, distanceFromWater, outer.with(Y_ROT_270).with(UV_LOCK))
+                        .select(Direction.EAST, Half.BOTTOM, StairsShape.OUTER_LEFT, distanceFromWater, outer.with(Y_ROT_270).with(UV_LOCK))
+                        .select(Direction.WEST, Half.BOTTOM, StairsShape.OUTER_LEFT, distanceFromWater, outer.with(Y_ROT_90).with(UV_LOCK))
+                        .select(Direction.SOUTH, Half.BOTTOM, StairsShape.OUTER_LEFT, distanceFromWater, outer)
+                        .select(Direction.NORTH, Half.BOTTOM, StairsShape.OUTER_LEFT, distanceFromWater, outer.with(Y_ROT_180).with(UV_LOCK))
+                        .select(Direction.EAST, Half.BOTTOM, StairsShape.INNER_RIGHT, distanceFromWater, inner)
+                        .select(Direction.WEST, Half.BOTTOM, StairsShape.INNER_RIGHT, distanceFromWater, inner.with(Y_ROT_180).with(UV_LOCK))
+                        .select(Direction.SOUTH, Half.BOTTOM, StairsShape.INNER_RIGHT, distanceFromWater, inner.with(Y_ROT_90).with(UV_LOCK))
+                        .select(Direction.NORTH, Half.BOTTOM, StairsShape.INNER_RIGHT, distanceFromWater, inner.with(Y_ROT_270).with(UV_LOCK))
+                        .select(Direction.EAST, Half.BOTTOM, StairsShape.INNER_LEFT, distanceFromWater, inner.with(Y_ROT_270).with(UV_LOCK))
+                        .select(Direction.WEST, Half.BOTTOM, StairsShape.INNER_LEFT, distanceFromWater, inner.with(Y_ROT_90).with(UV_LOCK))
+                        .select(Direction.SOUTH, Half.BOTTOM, StairsShape.INNER_LEFT, distanceFromWater, inner)
+                        .select(Direction.NORTH, Half.BOTTOM, StairsShape.INNER_LEFT, distanceFromWater, inner.with(Y_ROT_180).with(UV_LOCK))
+                        .select(Direction.EAST, Half.TOP, StairsShape.STRAIGHT, distanceFromWater, straight.with(X_ROT_180).with(UV_LOCK))
+                        .select(Direction.WEST, Half.TOP, StairsShape.STRAIGHT, distanceFromWater, straight.with(X_ROT_180).with(Y_ROT_180).with(UV_LOCK))
+                        .select(Direction.SOUTH, Half.TOP, StairsShape.STRAIGHT, distanceFromWater, straight.with(X_ROT_180).with(Y_ROT_90).with(UV_LOCK))
+                        .select(Direction.NORTH, Half.TOP, StairsShape.STRAIGHT, distanceFromWater, straight.with(X_ROT_180).with(Y_ROT_270).with(UV_LOCK))
+                        .select(Direction.EAST, Half.TOP, StairsShape.OUTER_RIGHT, distanceFromWater, outer.with(X_ROT_180).with(Y_ROT_90).with(UV_LOCK))
+                        .select(Direction.WEST, Half.TOP, StairsShape.OUTER_RIGHT, distanceFromWater, outer.with(X_ROT_180).with(Y_ROT_270).with(UV_LOCK))
+                        .select(Direction.SOUTH, Half.TOP, StairsShape.OUTER_RIGHT, distanceFromWater, outer.with(X_ROT_180).with(Y_ROT_180).with(UV_LOCK))
+                        .select(Direction.NORTH, Half.TOP, StairsShape.OUTER_RIGHT, distanceFromWater, outer.with(X_ROT_180).with(UV_LOCK))
+                        .select(Direction.EAST, Half.TOP, StairsShape.OUTER_LEFT, distanceFromWater, outer.with(X_ROT_180).with(UV_LOCK))
+                        .select(Direction.WEST, Half.TOP, StairsShape.OUTER_LEFT, distanceFromWater, outer.with(X_ROT_180).with(Y_ROT_180).with(UV_LOCK))
+                        .select(Direction.SOUTH, Half.TOP, StairsShape.OUTER_LEFT, distanceFromWater, outer.with(X_ROT_180).with(Y_ROT_90).with(UV_LOCK))
+                        .select(Direction.NORTH, Half.TOP, StairsShape.OUTER_LEFT, distanceFromWater, outer.with(X_ROT_180).with(Y_ROT_270).with(UV_LOCK))
+                        .select(Direction.EAST, Half.TOP, StairsShape.INNER_RIGHT, distanceFromWater, inner.with(X_ROT_180).with(Y_ROT_90).with(UV_LOCK))
+                        .select(Direction.WEST, Half.TOP, StairsShape.INNER_RIGHT, distanceFromWater, inner.with(X_ROT_180).with(Y_ROT_270).with(UV_LOCK))
+                        .select(Direction.SOUTH, Half.TOP, StairsShape.INNER_RIGHT, distanceFromWater, inner.with(X_ROT_180).with(Y_ROT_180).with(UV_LOCK))
+                        .select(Direction.NORTH, Half.TOP, StairsShape.INNER_RIGHT, distanceFromWater, inner.with(X_ROT_180).with(UV_LOCK))
+                        .select(Direction.EAST, Half.TOP, StairsShape.INNER_LEFT, distanceFromWater, inner.with(X_ROT_180).with(UV_LOCK))
+                        .select(Direction.WEST, Half.TOP, StairsShape.INNER_LEFT, distanceFromWater, inner.with(X_ROT_180).with(Y_ROT_180).with(UV_LOCK))
+                        .select(Direction.SOUTH, Half.TOP, StairsShape.INNER_LEFT, distanceFromWater, inner.with(X_ROT_180).with(Y_ROT_90).with(UV_LOCK))
+                        .select(Direction.NORTH, Half.TOP, StairsShape.INNER_LEFT, distanceFromWater, inner.with(X_ROT_180).with(Y_ROT_270).with(UV_LOCK)));
+    }
+
+    public void thermalStairs(Block stairs, Block fullBlock) {
+        for (int distance : THERMAL_DISTANCES) {
+            String suffix = suffixForDistance(distance);
+
+            TextureMapping textureMapping = TextureMapping.cube(TextureMapping.getBlockTexture(fullBlock, suffix));
+
+            Identifier inner = ModelTemplates.STAIRS_INNER.createWithSuffix(stairs, suffix, textureMapping, modelOutput);
+            Identifier straight = ModelTemplates.STAIRS_STRAIGHT.createWithSuffix(stairs, suffix, textureMapping, modelOutput);
+            Identifier outer = ModelTemplates.STAIRS_OUTER.createWithSuffix(stairs, suffix, textureMapping, modelOutput);
+
+            blockStateOutput.accept(createThermalStairs(stairs, plainVariant(inner), plainVariant(straight), plainVariant(outer), distance));
+        }
+
+        registerThermalInventoryModel(fullBlock, stairs, ModelTemplates.STAIRS_STRAIGHT);
+    }
+
+    public static BlockModelDefinitionGenerator createThermalWall(Block block, MultiVariant post, MultiVariant lowSide, MultiVariant tallSide, int distanceFromWater) {
+        return MultiPartGenerator.multiPart(block)
+                .with(condition().term(BlockStateProperties.UP, true).term(ThermalCalciteWallBlock.DISTANCE, distanceFromWater), post)
+                .with(condition().term(BlockStateProperties.NORTH_WALL, WallSide.LOW).term(ThermalCalciteWallBlock.DISTANCE, distanceFromWater), lowSide.with(UV_LOCK))
+                .with(condition().term(BlockStateProperties.EAST_WALL, WallSide.LOW).term(ThermalCalciteWallBlock.DISTANCE, distanceFromWater), lowSide.with(Y_ROT_90).with(UV_LOCK))
+                .with(condition().term(BlockStateProperties.SOUTH_WALL, WallSide.LOW).term(ThermalCalciteWallBlock.DISTANCE, distanceFromWater), lowSide.with(Y_ROT_180).with(UV_LOCK))
+                .with(condition().term(BlockStateProperties.WEST_WALL, WallSide.LOW).term(ThermalCalciteWallBlock.DISTANCE, distanceFromWater), lowSide.with(Y_ROT_270).with(UV_LOCK))
+                .with(condition().term(BlockStateProperties.NORTH_WALL, WallSide.TALL).term(ThermalCalciteWallBlock.DISTANCE, distanceFromWater), tallSide.with(UV_LOCK))
+                .with(condition().term(BlockStateProperties.EAST_WALL, WallSide.TALL).term(ThermalCalciteWallBlock.DISTANCE, distanceFromWater), tallSide.with(Y_ROT_90).with(UV_LOCK))
+                .with(condition().term(BlockStateProperties.SOUTH_WALL, WallSide.TALL).term(ThermalCalciteWallBlock.DISTANCE, distanceFromWater), tallSide.with(Y_ROT_180).with(UV_LOCK))
+                .with(condition().term(BlockStateProperties.WEST_WALL, WallSide.TALL).term(ThermalCalciteWallBlock.DISTANCE, distanceFromWater), tallSide.with(Y_ROT_270).with(UV_LOCK));
+    }
+
+    public void thermalWall(Block wall, Block fullBlock) {
+        for (int distance : THERMAL_DISTANCES) {
+            String suffix = suffixForDistance(distance);
+
+            TextureMapping textureMapping = TextureMapping.cube(TextureMapping.getBlockTexture(fullBlock, suffix));
+
+            Identifier post = ModelTemplates.WALL_POST.createWithSuffix(wall, suffix, textureMapping, modelOutput);
+            Identifier lowSide = ModelTemplates.WALL_LOW_SIDE.createWithSuffix(wall, suffix, textureMapping, modelOutput);
+            Identifier tallSide = ModelTemplates.WALL_TALL_SIDE.createWithSuffix(wall, suffix, textureMapping, modelOutput);
+
+            blockStateOutput.accept(createThermalWall(wall, plainVariant(post), plainVariant(lowSide), plainVariant(tallSide), distance));
+        }
+
+        registerThermalInventoryModel(fullBlock, wall, ModelTemplates.WALL_INVENTORY);
+    }
+
+    private void registerThermalInventoryModel(Block baseBlock, Block block, ModelTemplate modelTemplate) {
+         Identifier inventory = TexturedModel.createDefault(
+                 invBlock -> new TextureMapping()
+                        .put(TextureSlot.TOP, TextureMapping.getBlockTexture(baseBlock, "_1"))
+                        .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(baseBlock, "_5"))
+                        .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(baseBlock, "_inventory"))
+                        .put(TextureSlot.WALL, TextureMapping.getBlockTexture(baseBlock, "_inventory")), modelTemplate).createWithSuffix(block, "_inventory", modelOutput);
+
+        registerSimpleItemModel(block, inventory);
+    }
+
+
+
     @Override
     public void run() {
         this.createTrivialCube(ModBlocks.POLISHED_CALCITE.get());
@@ -1533,6 +1667,10 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
                                 familyWithExistingFullBlock(family.getBaseBlock()).slab(ModBlocks.SOUL_SANDSTONE_SLAB.get());
                                 familyWithExistingFullBlock(family.getBaseBlock()).stairs(ModBlocks.SOUL_SANDSTONE_STAIRS.get());
                                 familyWithExistingFullBlock(family.getBaseBlock()).fence(ModBlocks.SOUL_SANDSTONE_FENCE.get());
+                            } else if (family.getBaseBlock().getDescriptionId().contains("thermal")) {
+                                thermalSlab(family.get(BlockFamily.Variant.SLAB), family.getBaseBlock());
+                                thermalStairs(family.get(BlockFamily.Variant.STAIRS), family.getBaseBlock());
+                                thermalWall(family.get(BlockFamily.Variant.WALL), family.getBaseBlock());
                             } else {
                                 familyWithExistingFullBlock(family.getBaseBlock()).generateFor(family);
                             }

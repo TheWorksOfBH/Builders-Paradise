@@ -292,4 +292,6 @@ public class ModBlockFamilies {
     public static final BlockFamily CUT_ORANGE_SANDSTONE = familyBuilder(BOPBlocks.CUT_ORANGE_SANDSTONE).stairs(CompatModBlocks.CUT_ORANGE_SANDSTONE_STAIRS.get()).wall(CompatModBlocks.CUT_ORANGE_SANDSTONE_WALL.get()).getFamily();
     public static final BlockFamily SMOOTH_ORANGE_SANDSTONE = familyBuilder(BOPBlocks.SMOOTH_ORANGE_SANDSTONE).wall(CompatModBlocks.SMOOTH_ORANGE_SANDSTONE_WALL.get()).getFamily();
 
+    public static final BlockFamily BRIMSTONE = familyBuilder(BOPBlocks.BRIMSTONE).slab(CompatModBlocks.BRIMSTONE_SLAB.get()).stairs(CompatModBlocks.BRIMSTONE_STAIRS.get()).wall(CompatModBlocks.BRIMSTONE_WALL.get()).getFamily();
+    public static final BlockFamily THERMAL_CALCITE = familyBuilder(BOPBlocks.THERMAL_CALCITE).slab(CompatModBlocks.THERMAL_CALCITE_SLAB.get()).stairs(CompatModBlocks.THERMAL_CALCITE_STAIRS.get()).wall(CompatModBlocks.THERMAL_CALCITE_WALL.get()).getFamily();
 }

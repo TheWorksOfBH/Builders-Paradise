@@ -28,6 +28,14 @@ public class CompatModItems {
     public static final DeferredItem<BlockItem> CUT_ORANGE_SANDSTONE_WALL = registerBlockItem("cut_orange_sandstone_wall", () -> CompatModBlocks.CUT_ORANGE_SANDSTONE_WALL.get());
     public static final DeferredItem<BlockItem> SMOOTH_ORANGE_SANDSTONE_WALL = registerBlockItem("smooth_orange_sandstone_wall", () -> CompatModBlocks.SMOOTH_ORANGE_SANDSTONE_WALL.get());
 
+    public static final DeferredItem<BlockItem> BRIMSTONE_SLAB = registerBlockItem("brimstone_slab", () -> CompatModBlocks.BRIMSTONE_SLAB.get());
+    public static final DeferredItem<BlockItem> BRIMSTONE_STAIRS = registerBlockItem("brimstone_stairs", () -> CompatModBlocks.BRIMSTONE_STAIRS.get());
+    public static final DeferredItem<BlockItem> BRIMSTONE_WALL = registerBlockItem("brimstone_wall", () -> CompatModBlocks.BRIMSTONE_WALL.get());
+
+    public static final DeferredItem<BlockItem> THERMAL_CALCITE_SLAB = registerBlockItem("thermal_calcite_slab", () -> CompatModBlocks.THERMAL_CALCITE_SLAB.get());
+    public static final DeferredItem<BlockItem> THERMAL_CALCITE_STAIRS = registerBlockItem("thermal_calcite_stairs", () -> CompatModBlocks.THERMAL_CALCITE_STAIRS.get());
+    public static final DeferredItem<BlockItem> THERMAL_CALCITE_WALL = registerBlockItem("thermal_calcite_wall", () -> CompatModBlocks.THERMAL_CALCITE_WALL.get());
+
     private static DeferredItem<Item> registerCustomItem(String registryName) {
         return BOP_ITEMS.register(
                 registryName, () -> new Item(

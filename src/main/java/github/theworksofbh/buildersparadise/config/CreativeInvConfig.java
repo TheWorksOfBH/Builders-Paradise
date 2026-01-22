@@ -1519,6 +1519,61 @@ public class CreativeInvConfig {
             tabData.insertAfter(ModItems.BRONZE_LEGGINGS.get().getDefaultInstance(), ModItems.BRONZE_BOOTS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
         } else if (tabData.getTabKey().identifier().getNamespace().contains("biomesoplenty")) {
+            tabData.remove(BOPItems.WHITE_SANDSTONE_STAIRS.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(BOPItems.WHITE_SANDSTONE_SLAB.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(BOPItems.WHITE_SANDSTONE_WALL.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(BOPItems.SMOOTH_WHITE_SANDSTONE_STAIRS.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(BOPItems.SMOOTH_WHITE_SANDSTONE_SLAB.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(BOPItems.CUT_WHITE_SANDSTONE_SLAB.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(BOPItems.CHISELED_WHITE_SANDSTONE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.remove(BOPItems.BLACK_SANDSTONE_STAIRS.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(BOPItems.BLACK_SANDSTONE_SLAB.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(BOPItems.BLACK_SANDSTONE_WALL.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(BOPItems.SMOOTH_BLACK_SANDSTONE_STAIRS.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(BOPItems.SMOOTH_BLACK_SANDSTONE_SLAB.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(BOPItems.CUT_BLACK_SANDSTONE_SLAB.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(BOPItems.CHISELED_BLACK_SANDSTONE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.remove(BOPItems.ORANGE_SANDSTONE_STAIRS.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(BOPItems.ORANGE_SANDSTONE_SLAB.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(BOPItems.ORANGE_SANDSTONE_WALL.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(BOPItems.SMOOTH_ORANGE_SANDSTONE_STAIRS.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(BOPItems.SMOOTH_ORANGE_SANDSTONE_SLAB.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(BOPItems.CUT_ORANGE_SANDSTONE_SLAB.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(BOPItems.CHISELED_ORANGE_SANDSTONE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.remove(BOPItems.BRIMSTONE_BRICK_SLAB.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.BRIMSTONE_BRICK_STAIRS.getDefaultInstance(), BOPItems.BRIMSTONE_BRICK_SLAB.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(BOPItems.BRIMSTONE.getDefaultInstance(), CompatModItems.BRIMSTONE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.BRIMSTONE.getDefaultInstance(), CompatModItems.BRIMSTONE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.BRIMSTONE.getDefaultInstance(), CompatModItems.BRIMSTONE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(BOPItems.WHITE_SANDSTONE.getDefaultInstance(), BOPItems.CHISELED_WHITE_SANDSTONE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.WHITE_SANDSTONE.getDefaultInstance(), BOPItems.WHITE_SANDSTONE_WALL.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.WHITE_SANDSTONE.getDefaultInstance(), BOPItems.WHITE_SANDSTONE_SLAB.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.WHITE_SANDSTONE.getDefaultInstance(), BOPItems.WHITE_SANDSTONE_STAIRS.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.CUT_WHITE_SANDSTONE.getDefaultInstance(), BOPItems.CUT_WHITE_SANDSTONE_SLAB.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.SMOOTH_WHITE_SANDSTONE.getDefaultInstance(), BOPItems.SMOOTH_WHITE_SANDSTONE_SLAB.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.SMOOTH_WHITE_SANDSTONE.getDefaultInstance(), BOPItems.SMOOTH_WHITE_SANDSTONE_STAIRS.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(BOPItems.BLACK_SANDSTONE.getDefaultInstance(), BOPItems.CHISELED_BLACK_SANDSTONE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.BLACK_SANDSTONE.getDefaultInstance(), BOPItems.BLACK_SANDSTONE_WALL.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.BLACK_SANDSTONE.getDefaultInstance(), BOPItems.BLACK_SANDSTONE_SLAB.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.BLACK_SANDSTONE.getDefaultInstance(), BOPItems.BLACK_SANDSTONE_STAIRS.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.CUT_BLACK_SANDSTONE.getDefaultInstance(), BOPItems.CUT_BLACK_SANDSTONE_SLAB.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.SMOOTH_BLACK_SANDSTONE.getDefaultInstance(), BOPItems.SMOOTH_BLACK_SANDSTONE_SLAB.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.SMOOTH_BLACK_SANDSTONE.getDefaultInstance(), BOPItems.SMOOTH_BLACK_SANDSTONE_STAIRS.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(BOPItems.ORANGE_SANDSTONE.getDefaultInstance(), BOPItems.CHISELED_ORANGE_SANDSTONE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.ORANGE_SANDSTONE.getDefaultInstance(), BOPItems.ORANGE_SANDSTONE_WALL.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.ORANGE_SANDSTONE.getDefaultInstance(), BOPItems.ORANGE_SANDSTONE_SLAB.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.ORANGE_SANDSTONE.getDefaultInstance(), BOPItems.ORANGE_SANDSTONE_STAIRS.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.CUT_ORANGE_SANDSTONE.getDefaultInstance(), BOPItems.CUT_ORANGE_SANDSTONE_SLAB.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.SMOOTH_ORANGE_SANDSTONE.getDefaultInstance(), BOPItems.SMOOTH_ORANGE_SANDSTONE_SLAB.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(BOPItems.SMOOTH_ORANGE_SANDSTONE.getDefaultInstance(), BOPItems.SMOOTH_ORANGE_SANDSTONE_STAIRS.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
             tabData.insertAfter(BOPItems.CUT_WHITE_SANDSTONE.getDefaultInstance(), CompatModItems.CUT_WHITE_SANDSTONE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(BOPItems.CUT_WHITE_SANDSTONE_SLAB.getDefaultInstance(), CompatModItems.CUT_WHITE_SANDSTONE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(BOPItems.SMOOTH_WHITE_SANDSTONE_SLAB.getDefaultInstance(), CompatModItems.SMOOTH_WHITE_SANDSTONE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
