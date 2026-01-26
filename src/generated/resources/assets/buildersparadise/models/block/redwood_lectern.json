@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/lectern",
+  "textures": {
+    "base": "buildersparadise:block/redwood_lectern_base",
+    "bottom": "biomesoplenty:block/redwood_planks",
+    "front": "buildersparadise:block/redwood_lectern_front",
+    "particle": "buildersparadise:block/redwood_lectern_sides",
+    "sides": "buildersparadise:block/redwood_lectern_sides",
+    "top": "buildersparadise:block/redwood_lectern_top"
+  }
+}

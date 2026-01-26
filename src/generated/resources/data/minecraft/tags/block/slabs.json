@@ -137,6 +137,24 @@
     "buildersparadise:pumice_slab",
     "buildersparadise:polished_pumice_slab",
     "buildersparadise:pumice_brick_slab",
-    "buildersparadise:brimstone_slab"
+    "buildersparadise:brimstone_slab",
+    "buildersparadise:thermal_calcite_slab",
+    "buildersparadise:polished_thermal_calcite_slab",
+    "buildersparadise:thermal_calcite_brick_slab",
+    "buildersparadise:cut_rose_quartz_slab",
+    "buildersparadise:dead_mosaic_slab",
+    "buildersparadise:empyreal_mosaic_slab",
+    "buildersparadise:fir_mosaic_slab",
+    "buildersparadise:hellbark_mosaic_slab",
+    "buildersparadise:jacaranda_mosaic_slab",
+    "buildersparadise:magic_mosaic_slab",
+    "buildersparadise:mahogany_mosaic_slab",
+    "buildersparadise:maple_mosaic_slab",
+    "buildersparadise:palm_mosaic_slab",
+    "buildersparadise:pine_mosaic_slab",
+    "buildersparadise:redwood_mosaic_slab",
+    "buildersparadise:umbran_mosaic_slab",
+    "buildersparadise:willow_mosaic_slab",
+    "buildersparadise:origin_oak_mosaic_slab"
   ]
 }

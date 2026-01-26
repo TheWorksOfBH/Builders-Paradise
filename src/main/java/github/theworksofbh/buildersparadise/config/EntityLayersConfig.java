@@ -3,6 +3,7 @@ package github.theworksofbh.buildersparadise.config;
 import github.theworksofbh.buildersparadise.model_layers.ModModelLayers;
 import net.minecraft.client.model.object.boat.BoatModel;
 import net.minecraft.client.model.object.cart.MinecartModel;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 
 public class EntityLayersConfig {
@@ -25,5 +26,21 @@ public class EntityLayersConfig {
         event.registerLayerDefinition(ModModelLayers.BAMBOO_CHEST_MINECART, MinecartModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.PALE_OAK_CHEST_MINECART, MinecartModel::createBodyLayer);
 
+        if (ModList.get().isLoaded("biomesoplenty")) {
+            event.registerLayerDefinition(ModModelLayers.DEAD_CHEST_MINECART, MinecartModel::createBodyLayer);
+            event.registerLayerDefinition(ModModelLayers.EMPYREAL_CHEST_MINECART, MinecartModel::createBodyLayer);
+            event.registerLayerDefinition(ModModelLayers.FIR_CHEST_MINECART, MinecartModel::createBodyLayer);
+            event.registerLayerDefinition(ModModelLayers.HELLBARK_CHEST_MINECART, MinecartModel::createBodyLayer);
+            event.registerLayerDefinition(ModModelLayers.JACARANDA_CHEST_MINECART, MinecartModel::createBodyLayer);
+            event.registerLayerDefinition(ModModelLayers.MAGIC_CHEST_MINECART, MinecartModel::createBodyLayer);
+            event.registerLayerDefinition(ModModelLayers.MAHOGANY_CHEST_MINECART, MinecartModel::createBodyLayer);
+            event.registerLayerDefinition(ModModelLayers.MAPLE_CHEST_MINECART, MinecartModel::createBodyLayer);
+            event.registerLayerDefinition(ModModelLayers.PALM_CHEST_MINECART, MinecartModel::createBodyLayer);
+            event.registerLayerDefinition(ModModelLayers.PINE_CHEST_MINECART, MinecartModel::createBodyLayer);
+            event.registerLayerDefinition(ModModelLayers.REDWOOD_CHEST_MINECART, MinecartModel::createBodyLayer);
+            event.registerLayerDefinition(ModModelLayers.UMBRAN_CHEST_MINECART, MinecartModel::createBodyLayer);
+            event.registerLayerDefinition(ModModelLayers.WILLOW_CHEST_MINECART, MinecartModel::createBodyLayer);
+            event.registerLayerDefinition(ModModelLayers.ORIGIN_OAK_CHEST_MINECART, MinecartModel::createBodyLayer);
+        }
     }
 }

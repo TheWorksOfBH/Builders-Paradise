@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blackstone_dropper": {
+      "conditions": {
+        "items": [
+          {
+            "items": "buildersparadise:blackstone_dropper"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_deepslate_dropper": {
+      "conditions": {
+        "items": [
+          {
+            "items": "buildersparadise:deepslate_dropper"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_stone_dropper": {
+      "conditions": {
+        "items": [
+          {
+            "items": "buildersparadise:stone_dropper"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "buildersparadise:maple_crafter"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_stone_dropper",
+      "has_blackstone_dropper",
+      "has_deepslate_dropper"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "buildersparadise:maple_crafter"
+    ]
+  }
+}

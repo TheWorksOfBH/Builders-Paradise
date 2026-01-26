@@ -11,6 +11,19 @@
     "buildersparadise:mangrove_crafter",
     "buildersparadise:cherry_crafter",
     "buildersparadise:bamboo_crafter",
-    "buildersparadise:pale_oak_crafter"
+    "buildersparadise:pale_oak_crafter",
+    "buildersparadise:dead_crafter",
+    "buildersparadise:empyreal_crafter",
+    "buildersparadise:fir_crafter",
+    "buildersparadise:hellbark_crafter",
+    "buildersparadise:jacaranda_crafter",
+    "buildersparadise:magic_crafter",
+    "buildersparadise:mahogany_crafter",
+    "buildersparadise:maple_crafter",
+    "buildersparadise:palm_crafter",
+    "buildersparadise:pine_crafter",
+    "buildersparadise:redwood_crafter",
+    "buildersparadise:umbran_crafter",
+    "buildersparadise:willow_crafter"
   ]
 }

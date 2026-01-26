@@ -2394,23 +2394,6 @@ public class ModBlocks {
         }
     }
 
-    private static DeferredBlock<NukeBlock> registerNuke(String registryName) {
-        return BLOCKS.register(
-                registryName, () -> new NukeBlock(
-                        BlockBehaviour.Properties.ofFullCopy(Blocks.TNT)
-                                .setId(
-                                        ResourceKey.create(
-                                                Registries.BLOCK,
-                                                Identifier.fromNamespaceAndPath(
-                                                        BuildersParadise.MODID,
-                                                        registryName
-                                                )
-                                        )
-                                )
-                )
-        );
-    }
-
     private static DeferredBlock<LoomBlock> registerLoom(String registryName) {
         if (registryName == "crimson_loom" || registryName == "warped_loom") {
             return BLOCKS.register(
@@ -2474,6 +2457,23 @@ public class ModBlocks {
             );
         }
 
+    }
+
+    private static DeferredBlock<NukeBlock> registerNuke(String registryName) {
+        return BLOCKS.register(
+                registryName, () -> new NukeBlock(
+                        BlockBehaviour.Properties.ofFullCopy(Blocks.TNT)
+                                .setId(
+                                        ResourceKey.create(
+                                                Registries.BLOCK,
+                                                Identifier.fromNamespaceAndPath(
+                                                        BuildersParadise.MODID,
+                                                        registryName
+                                                )
+                                        )
+                                )
+                )
+        );
     }
 
     private static DeferredBlock<ModLiquidBlock> registerLiquid(String registryName, Supplier<FlowingFluid> fluid) {

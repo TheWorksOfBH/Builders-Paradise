@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/campfire_off",
+  "textures": {
+    "log": "buildersparadise:block/hellbark_campfire_log",
+    "particle": "buildersparadise:block/hellbark_campfire_log"
+  }
+}

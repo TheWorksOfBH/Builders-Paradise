@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "buildersparadise:block/palm_barrel_bottom",
+    "side": "buildersparadise:block/palm_barrel_side",
+    "top": "buildersparadise:block/palm_barrel_top_open"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "buildersparadise:redwood_chest",
+    "minecraft:minecart"
+  ],
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:redwood_chest_minecart"
+  }
+}

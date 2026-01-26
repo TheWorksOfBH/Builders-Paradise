@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "buildersparadise:block/dead_beehive_end",
+    "front": "buildersparadise:block/dead_beehive_front",
+    "particle": "buildersparadise:block/dead_beehive_side",
+    "side": "buildersparadise:block/dead_beehive_side",
+    "top": "buildersparadise:block/dead_beehive_end"
+  }
+}

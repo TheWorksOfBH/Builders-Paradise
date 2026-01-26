@@ -1,5 +1,6 @@
 package github.theworksofbh.buildersparadise.datagen;
 
+import github.theworksofbh.buildersparadise.compat.bop.CompatModItems;
 import github.theworksofbh.buildersparadise.items.ModArmorMaterials;
 import github.theworksofbh.buildersparadise.items.ModItems;
 import github.theworksofbh.buildersparadise.items.ModMaterialAssetGroups;
@@ -218,5 +219,23 @@ public class ModItemModelGenerator extends ItemModelGenerators {
         this.generateFlatItem(ModItems.GABBRO_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         this.generateFlatItem(ModItems.RHYOLITE_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         this.generateFlatItem(ModItems.PUMICE_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.generateFlatItem(CompatModItems.DEAD_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(CompatModItems.EMPYREAL_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(CompatModItems.FIR_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(CompatModItems.HELLBARK_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(CompatModItems.JACARANDA_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(CompatModItems.MAGIC_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(CompatModItems.MAHOGANY_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(CompatModItems.MAPLE_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(CompatModItems.PALM_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(CompatModItems.PINE_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(CompatModItems.REDWOOD_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(CompatModItems.UMBRAN_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(CompatModItems.WILLOW_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(CompatModItems.ORIGIN_OAK_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(CompatModItems.WHITE_SANDSTONE_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.generateFlatItem(CompatModItems.BLACK_SANDSTONE_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.generateFlatItem(CompatModItems.ORANGE_SANDSTONE_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.generateFlatItem(CompatModItems.BRIMSTONE_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
     }
 }

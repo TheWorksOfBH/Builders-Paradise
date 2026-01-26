@@ -56,8 +56,6 @@ public class BuildersParadise
         ModLootModifiers.register(modEventBus);
         ModEffects.register(modEventBus);
 
-        BOPConfig.registerBOPCompats(modEventBus);
-
         ModFluids.register(modEventBus);
         ModFluidTypes.register(modEventBus);
         ModSoundEvents.register(modEventBus);
@@ -67,6 +65,8 @@ public class BuildersParadise
         ModRecipes.register(modEventBus);
         ModRecipeDisplays.register(modEventBus);
         ModRecipeBookCategories.register(modEventBus);
+
+        BOPConfig.registerBOPCompats(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
 
@@ -91,8 +91,7 @@ public class BuildersParadise
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
+    private void commonSetup(final FMLCommonSetupEvent event) {
 
     }
 

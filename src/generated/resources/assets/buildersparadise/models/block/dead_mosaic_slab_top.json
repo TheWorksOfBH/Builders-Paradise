@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "buildersparadise:block/dead_mosaic",
+    "side": "buildersparadise:block/dead_mosaic",
+    "top": "buildersparadise:block/dead_mosaic"
+  }
+}

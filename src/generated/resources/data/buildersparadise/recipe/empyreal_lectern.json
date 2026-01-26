@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "B": "buildersparadise:empyreal_bookshelf",
+    "S": "biomesoplenty:empyreal_slab"
+  },
+  "pattern": [
+    "SSS",
+    " B ",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:empyreal_lectern"
+  }
+}

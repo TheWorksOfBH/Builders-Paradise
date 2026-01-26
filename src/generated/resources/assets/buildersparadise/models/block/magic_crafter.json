@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/crafter",
+  "textures": {
+    "bottom": "minecraft:block/crafter_bottom",
+    "east": "buildersparadise:block/magic_crafter_east",
+    "north": "buildersparadise:block/magic_crafter_north",
+    "particle": "buildersparadise:block/magic_crafter_north",
+    "south": "buildersparadise:block/magic_crafter_south",
+    "top": "minecraft:block/crafter_top",
+    "west": "buildersparadise:block/magic_crafter_west"
+  }
+}

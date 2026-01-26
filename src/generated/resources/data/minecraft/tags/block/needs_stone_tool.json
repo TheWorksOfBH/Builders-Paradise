@@ -112,6 +112,20 @@
     "buildersparadise:platinum_torch",
     "buildersparadise:platinum_wall_torch",
     "buildersparadise:lead_torch",
-    "buildersparadise:lead_wall_torch"
+    "buildersparadise:lead_wall_torch",
+    "buildersparadise:dead_crafting_table",
+    "buildersparadise:empyreal_crafting_table",
+    "buildersparadise:fir_crafting_table",
+    "buildersparadise:hellbark_crafting_table",
+    "buildersparadise:jacaranda_crafting_table",
+    "buildersparadise:magic_crafting_table",
+    "buildersparadise:mahogany_crafting_table",
+    "buildersparadise:maple_crafting_table",
+    "buildersparadise:palm_crafting_table",
+    "buildersparadise:pine_crafting_table",
+    "buildersparadise:redwood_crafting_table",
+    "buildersparadise:umbran_crafting_table",
+    "buildersparadise:willow_crafting_table",
+    "buildersparadise:origin_oak_crafting_table"
   ]
 }

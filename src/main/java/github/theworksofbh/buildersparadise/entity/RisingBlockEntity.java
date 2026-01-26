@@ -40,7 +40,7 @@ public class RisingBlockEntity extends FallingBlockEntity {
         if (level().isClientSide()) return;
 
         BlockPos pos = this.blockPosition();
-        boolean waterAbove = level().getFluidState(pos.above()).is(Fluids.WATER);
+        boolean waterAbove = level().getFluidState(pos.above()).is(Fluids.WATER) || level().getFluidState(pos.above()).is(Fluids.FLOWING_WATER);
 
         Vec3 motion = this.getDeltaMovement();
 

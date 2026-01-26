@@ -23,6 +23,22 @@ public class ModModelLayers {
     public static final ModelLayerLocation BAMBOO_CHEST_MINECART = register("bamboo_chest_minecart");
     public static final ModelLayerLocation PALE_OAK_CHEST_MINECART = register("pale_oak_chest_minecart");
 
+    // BOP
+
+    public static final ModelLayerLocation DEAD_CHEST_MINECART = register("dead_chest_minecart");
+    public static final ModelLayerLocation EMPYREAL_CHEST_MINECART = register("empyreal_chest_minecart");
+    public static final ModelLayerLocation FIR_CHEST_MINECART = register("fir_chest_minecart");
+    public static final ModelLayerLocation HELLBARK_CHEST_MINECART = register("hellbark_chest_minecart");
+    public static final ModelLayerLocation JACARANDA_CHEST_MINECART = register("jacaranda_chest_minecart");
+    public static final ModelLayerLocation MAGIC_CHEST_MINECART = register("magic_chest_minecart");
+    public static final ModelLayerLocation MAHOGANY_CHEST_MINECART = register("mahogany_chest_minecart");
+    public static final ModelLayerLocation MAPLE_CHEST_MINECART = register("maple_chest_minecart");
+    public static final ModelLayerLocation PALM_CHEST_MINECART = register("palm_chest_minecart");
+    public static final ModelLayerLocation PINE_CHEST_MINECART = register("pine_chest_minecart");
+    public static final ModelLayerLocation REDWOOD_CHEST_MINECART = register("redwood_chest_minecart");
+    public static final ModelLayerLocation UMBRAN_CHEST_MINECART = register("umbran_chest_minecart");
+    public static final ModelLayerLocation WILLOW_CHEST_MINECART = register("willow_chest_minecart");
+    public static final ModelLayerLocation ORIGIN_OAK_CHEST_MINECART = register("origin_oak_chest_minecart");
 
     private static ModelLayerLocation register(String name) {
         return register(name, "main");

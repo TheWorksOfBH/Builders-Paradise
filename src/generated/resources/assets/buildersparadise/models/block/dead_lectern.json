@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/lectern",
+  "textures": {
+    "base": "buildersparadise:block/dead_lectern_base",
+    "bottom": "biomesoplenty:block/dead_planks",
+    "front": "buildersparadise:block/dead_lectern_front",
+    "particle": "buildersparadise:block/dead_lectern_sides",
+    "sides": "buildersparadise:block/dead_lectern_sides",
+    "top": "buildersparadise:block/dead_lectern_top"
+  }
+}

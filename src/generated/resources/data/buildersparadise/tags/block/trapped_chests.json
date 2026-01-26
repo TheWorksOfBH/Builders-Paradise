@@ -11,6 +11,20 @@
     "buildersparadise:mangrove_trapped_chest",
     "buildersparadise:cherry_trapped_chest",
     "buildersparadise:bamboo_trapped_chest",
-    "buildersparadise:pale_oak_trapped_chest"
+    "buildersparadise:pale_oak_trapped_chest",
+    "buildersparadise:dead_trapped_chest",
+    "buildersparadise:empyreal_trapped_chest",
+    "buildersparadise:fir_trapped_chest",
+    "buildersparadise:hellbark_trapped_chest",
+    "buildersparadise:jacaranda_trapped_chest",
+    "buildersparadise:magic_trapped_chest",
+    "buildersparadise:mahogany_trapped_chest",
+    "buildersparadise:maple_trapped_chest",
+    "buildersparadise:palm_trapped_chest",
+    "buildersparadise:pine_trapped_chest",
+    "buildersparadise:redwood_trapped_chest",
+    "buildersparadise:umbran_trapped_chest",
+    "buildersparadise:willow_trapped_chest",
+    "buildersparadise:origin_oak_trapped_chest"
   ]
 }

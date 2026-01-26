@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "buildersparadise:empyreal_chest",
+    "minecraft:minecart"
+  ],
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:empyreal_chest_minecart"
+  }
+}

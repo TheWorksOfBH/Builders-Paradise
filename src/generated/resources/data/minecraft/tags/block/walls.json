@@ -116,6 +116,9 @@
     "buildersparadise:smooth_black_sandstone_wall",
     "buildersparadise:cut_orange_sandstone_wall",
     "buildersparadise:smooth_orange_sandstone_wall",
-    "buildersparadise:brimstone_wall"
+    "buildersparadise:brimstone_wall",
+    "buildersparadise:thermal_calcite_wall",
+    "buildersparadise:polished_thermal_calcite_wall",
+    "buildersparadise:thermal_calcite_brick_wall"
   ]
 }

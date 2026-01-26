@@ -134,6 +134,20 @@
     "buildersparadise:rhyolite_brick_fence",
     "buildersparadise:pumice_fence",
     "buildersparadise:polished_pumice_fence",
-    "buildersparadise:pumice_brick_fence"
+    "buildersparadise:pumice_brick_fence",
+    "buildersparadise:white_sandstone_fence",
+    "buildersparadise:cut_white_sandstone_fence",
+    "buildersparadise:smooth_white_sandstone_fence",
+    "buildersparadise:black_sandstone_fence",
+    "buildersparadise:cut_black_sandstone_fence",
+    "buildersparadise:smooth_black_sandstone_fence",
+    "buildersparadise:orange_sandstone_fence",
+    "buildersparadise:cut_orange_sandstone_fence",
+    "buildersparadise:smooth_orange_sandstone_fence",
+    "buildersparadise:brimstone_fence",
+    "buildersparadise:brimstone_brick_fence",
+    "buildersparadise:thermal_calcite_fence",
+    "buildersparadise:polished_thermal_calcite_fence",
+    "buildersparadise:thermal_calcite_brick_fence"
   ]
 }

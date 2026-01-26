@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/jacaranda_mosaic_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/jacaranda_mosaic"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/jacaranda_mosaic_slab_top"
+    }
+  }
+}

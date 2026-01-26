@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "buildersparadise:block/mahogany_mosaic",
+    "side": "buildersparadise:block/mahogany_mosaic",
+    "top": "buildersparadise:block/mahogany_mosaic"
+  }
+}

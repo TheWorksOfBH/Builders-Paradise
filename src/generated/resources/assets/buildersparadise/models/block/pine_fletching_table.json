@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "biomesoplenty:block/pine_planks",
+    "east": "buildersparadise:block/pine_fletching_table_side",
+    "north": "buildersparadise:block/pine_fletching_table_front",
+    "particle": "buildersparadise:block/pine_fletching_table_front",
+    "south": "buildersparadise:block/pine_fletching_table_front",
+    "up": "buildersparadise:block/pine_fletching_table_top",
+    "west": "buildersparadise:block/pine_fletching_table_side"
+  }
+}

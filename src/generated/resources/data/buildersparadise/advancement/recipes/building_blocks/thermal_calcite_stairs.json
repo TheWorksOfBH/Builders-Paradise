@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "buildersparadise:thermal_calcite_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_thermal_calcite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "biomesoplenty:thermal_calcite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_thermal_calcite"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "buildersparadise:thermal_calcite_stairs"
+    ]
+  }
+}

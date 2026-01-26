@@ -1,6 +1,7 @@
 package github.theworksofbh.buildersparadise.compat.bop;
 
 import biomesoplenty.api.block.BOPBlocks;
+import biomesoplenty.block.ThermalCalciteBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -23,6 +24,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
@@ -30,7 +32,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import java.util.OptionalInt;
 
 public class ThermalCalciteWallBlock extends WallBlock {
-    public static final IntegerProperty DISTANCE = IntegerProperty.create("distance", 1, 5);
+    public static final IntegerProperty DISTANCE = ThermalCalciteBlock.DISTANCE;
 
     public ThermalCalciteWallBlock(Properties properties) {
         super(properties);
@@ -77,12 +79,22 @@ public class ThermalCalciteWallBlock extends WallBlock {
     @Override
     protected BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess tickAccess, BlockPos pos, Direction facing, BlockPos facingPos, BlockState facingState, RandomSource random)
     {
-        int i = getDistanceAt(facingState) + 1;
-        if (i != 1 || state.getValue(DISTANCE) != i) {
-            tickAccess.scheduleTick(pos, this, 1);
+        if (state.getValue(WATERLOGGED)) {
+            tickAccess.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
 
-        return state;
+        BlockState updated =
+                facing == Direction.DOWN
+                        ? super.updateShape(state, level, tickAccess, pos, facing, facingPos, facingState, random)
+                        : facing == Direction.UP
+                        ? this.topUpdate(level, state, facingPos, facingState)
+                        : this.sideUpdate(level, pos, state, facingPos, facingState, facing);
+
+        return withUpdatedDistance(updated, (LevelAccessor) level, pos);
+    }
+
+    protected BlockState withUpdatedDistance(BlockState state, LevelAccessor level, BlockPos pos) {
+        return updateDistance(state, level, pos);
     }
 
     private static BlockState updateDistance(BlockState p_54436_, LevelAccessor p_54437_, BlockPos p_54438_) {
@@ -113,13 +125,15 @@ public class ThermalCalciteWallBlock extends WallBlock {
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> p_54447_) {
-        p_54447_.add(DISTANCE);
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(new Property[]{UP, NORTH, EAST, WEST, SOUTH, WATERLOGGED, DISTANCE});
     }
 
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext p_54424_) {
-        BlockState blockstate = this.defaultBlockState();
-        return updateDistance(blockstate, p_54424_.getLevel(), p_54424_.getClickedPos());
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        BlockState base = super.getStateForPlacement(context);
+        if (base == null) return null;
+
+        return updateDistance(base, context.getLevel(), context.getClickedPos());
     }
 }

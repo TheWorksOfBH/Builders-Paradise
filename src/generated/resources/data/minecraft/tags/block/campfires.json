@@ -1,7 +1,7 @@
 {
   "values": [
-    "minecraft:campfire",
     "minecraft:soul_campfire",
+    "minecraft:campfire",
     "buildersparadise:spruce_campfire",
     "buildersparadise:birch_campfire",
     "buildersparadise:jungle_campfire",
@@ -23,6 +23,32 @@
     "buildersparadise:mangrove_soul_campfire",
     "buildersparadise:cherry_soul_campfire",
     "buildersparadise:bamboo_soul_campfire",
-    "buildersparadise:pale_oak_soul_campfire"
+    "buildersparadise:pale_oak_soul_campfire",
+    "buildersparadise:dead_campfire",
+    "buildersparadise:dead_soul_campfire",
+    "buildersparadise:empyreal_campfire",
+    "buildersparadise:empyreal_soul_campfire",
+    "buildersparadise:fir_campfire",
+    "buildersparadise:fir_soul_campfire",
+    "buildersparadise:hellbark_campfire",
+    "buildersparadise:hellbark_soul_campfire",
+    "buildersparadise:jacaranda_campfire",
+    "buildersparadise:jacaranda_soul_campfire",
+    "buildersparadise:magic_campfire",
+    "buildersparadise:magic_soul_campfire",
+    "buildersparadise:mahogany_campfire",
+    "buildersparadise:mahogany_soul_campfire",
+    "buildersparadise:maple_campfire",
+    "buildersparadise:maple_soul_campfire",
+    "buildersparadise:palm_campfire",
+    "buildersparadise:palm_soul_campfire",
+    "buildersparadise:pine_campfire",
+    "buildersparadise:pine_soul_campfire",
+    "buildersparadise:redwood_campfire",
+    "buildersparadise:redwood_soul_campfire",
+    "buildersparadise:umbran_campfire",
+    "buildersparadise:umbran_soul_campfire",
+    "buildersparadise:willow_campfire",
+    "buildersparadise:willow_soul_campfire"
   ]
 }

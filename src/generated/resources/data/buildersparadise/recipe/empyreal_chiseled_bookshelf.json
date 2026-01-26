@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "biomesoplenty:empyreal_planks",
+    "X": "biomesoplenty:empyreal_slab"
+  },
+  "pattern": [
+    "###",
+    "XXX",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:empyreal_chiseled_bookshelf"
+  }
+}

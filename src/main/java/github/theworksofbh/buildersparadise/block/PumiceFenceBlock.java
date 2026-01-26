@@ -23,7 +23,7 @@ public class PumiceFenceBlock extends FenceBlock {
 
         if (level.isClientSide()) return;
 
-        if (level.getFluidState(pos.above()).is(Fluids.WATER)) {
+        if (level.getFluidState(pos.above()).is(Fluids.WATER) || level.getFluidState(pos.above()).is(Fluids.FLOWING_WATER)) {
             spawnEntity(level, pos, state);
         }
     }
@@ -55,7 +55,7 @@ public class PumiceFenceBlock extends FenceBlock {
         super.neighborChanged(state, level, pos, neighborBlock, orientation, movedByPiston);
 
         if (level.isClientSide()) return;
-        if (!level.getFluidState(pos.above()).is(Fluids.WATER)) return;
+        if (!level.getFluidState(pos.above()).is(Fluids.WATER) || level.getFluidState(pos.above()).is(Fluids.FLOWING_WATER)) return;
         spawnEntity(level, pos, state);
     }
 

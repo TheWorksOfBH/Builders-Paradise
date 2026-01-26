@@ -1,6 +1,7 @@
 package github.theworksofbh.buildersparadise.datagen;
 
 import biomesoplenty.api.item.BOPItems;
+import biomesoplenty.init.ModTags;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import github.theworksofbh.buildersparadise.BuildersParadise;
@@ -1142,6 +1143,263 @@ public class ModRecipesProvider extends RecipeProvider {
                 .unlockedBy("has_soul_sandstone", this.has(ModBlocks.SOUL_SANDSTONE.get()))
                 .unlockedBy("has_chiseled_soul_sandstone", this.has(ModBlocks.CHISELED_SOUL_SANDSTONE.get()))
                 .save(this.output, "soul_sandstone_stairs_alt");
+
+        this.createCraftingTable(CompatModItems.DEAD_CRAFTING_TABLE.get(), BOPItems.DEAD_PLANKS);
+        this.createCartographyTable(CompatModItems.DEAD_CARTOGRAPHY_TABLE.get(), BOPItems.DEAD_PLANKS);
+        this.createFletchingTable(CompatModItems.DEAD_FLETCHING_TABLE.get(), BOPItems.DEAD_PLANKS);
+        this.createBeehive(CompatModItems.DEAD_BEEHIVE.get(), BOPItems.DEAD_PLANKS);
+        this.createBarrel(CompatModItems.DEAD_BARREL.get(), BOPItems.DEAD_PLANKS, BOPItems.DEAD_SLAB);
+        this.createLectern(CompatModItems.DEAD_LECTERN.get(), CompatModItems.DEAD_BOOKSHELF.get(), BOPItems.DEAD_SLAB);
+        this.createSmithingTable(CompatModItems.DEAD_SMITHING_TABLE.get(), BOPItems.DEAD_PLANKS);
+        this.createBookshelf(CompatModItems.DEAD_BOOKSHELF.get(), BOPItems.DEAD_PLANKS);
+        this.createCampfires(CompatModItems.DEAD_CAMPFIRE.get(), CompatModItems.DEAD_SOUL_CAMPFIRE.get(), ModTags.Items.DEAD_LOGS);
+        this.createGrindstone(CompatModItems.DEAD_GRINDSTONE.get(), BOPItems.DEAD_PLANKS);
+        this.createChiseledBookshelf(CompatModItems.DEAD_CHISELED_BOOKSHELF.get(), BOPItems.DEAD_PLANKS, BOPItems.DEAD_SLAB);
+        this.createCrafter(CompatModItems.DEAD_CRAFTER.get(), CompatModItems.DEAD_CRAFTING_TABLE.get());
+        this.createSmoker(CompatModItems.DEAD_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.DEAD_LOG, "stone_furnace");
+        this.createSmoker(CompatModItems.DEAD_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.DEAD_LOG, "blackstone_furnace");
+        this.createSmoker(CompatModItems.DEAD_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.DEAD_LOG, "deepslate_furnace");
+        this.createLoom(CompatModItems.DEAD_LOOM.get(), BOPItems.DEAD_PLANKS);
+        this.createChests(CompatModItems.DEAD_CHEST.get(), CompatModItems.DEAD_TRAPPED_CHEST.get(), BOPItems.DEAD_PLANKS);
+        this.createMinecart(CompatModItems.DEAD_CHEST_MINECART.get(), CompatModItems.DEAD_CHEST.get());
+
+        this.createCraftingTable(CompatModItems.EMPYREAL_CRAFTING_TABLE.get(), BOPItems.EMPYREAL_PLANKS);
+        this.createCartographyTable(CompatModItems.EMPYREAL_CARTOGRAPHY_TABLE.get(), BOPItems.EMPYREAL_PLANKS);
+        this.createFletchingTable(CompatModItems.EMPYREAL_FLETCHING_TABLE.get(), BOPItems.EMPYREAL_PLANKS);
+        this.createBeehive(CompatModItems.EMPYREAL_BEEHIVE.get(), BOPItems.EMPYREAL_PLANKS);
+        this.createBarrel(CompatModItems.EMPYREAL_BARREL.get(), BOPItems.EMPYREAL_PLANKS, BOPItems.EMPYREAL_SLAB);
+        this.createLectern(CompatModItems.EMPYREAL_LECTERN.get(), CompatModItems.EMPYREAL_BOOKSHELF.get(), BOPItems.EMPYREAL_SLAB);
+        this.createSmithingTable(CompatModItems.EMPYREAL_SMITHING_TABLE.get(), BOPItems.EMPYREAL_PLANKS);
+        this.createBookshelf(CompatModItems.EMPYREAL_BOOKSHELF.get(), BOPItems.EMPYREAL_PLANKS);
+        this.createCampfires(CompatModItems.EMPYREAL_CAMPFIRE.get(), CompatModItems.EMPYREAL_SOUL_CAMPFIRE.get(), ModTags.Items.EMPYREAL_LOGS);
+        this.createGrindstone(CompatModItems.EMPYREAL_GRINDSTONE.get(), BOPItems.EMPYREAL_PLANKS);
+        this.createChiseledBookshelf(CompatModItems.EMPYREAL_CHISELED_BOOKSHELF.get(), BOPItems.EMPYREAL_PLANKS, BOPItems.EMPYREAL_SLAB);
+        this.createCrafter(CompatModItems.EMPYREAL_CRAFTER.get(), CompatModItems.EMPYREAL_CRAFTING_TABLE.get());
+        this.createSmoker(CompatModItems.EMPYREAL_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.EMPYREAL_LOG, "stone_furnace");
+        this.createSmoker(CompatModItems.EMPYREAL_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.EMPYREAL_LOG, "blackstone_furnace");
+        this.createSmoker(CompatModItems.EMPYREAL_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.EMPYREAL_LOG, "deepslate_furnace");
+        this.createLoom(CompatModItems.EMPYREAL_LOOM.get(), BOPItems.EMPYREAL_PLANKS);
+        this.createChests(CompatModItems.EMPYREAL_CHEST.get(), CompatModItems.EMPYREAL_TRAPPED_CHEST.get(), BOPItems.EMPYREAL_PLANKS);
+        this.createMinecart(CompatModItems.EMPYREAL_CHEST_MINECART.get(), CompatModItems.EMPYREAL_CHEST.get());
+
+        this.createCraftingTable(CompatModItems.FIR_CRAFTING_TABLE.get(), BOPItems.FIR_PLANKS);
+        this.createCartographyTable(CompatModItems.FIR_CARTOGRAPHY_TABLE.get(), BOPItems.FIR_PLANKS);
+        this.createFletchingTable(CompatModItems.FIR_FLETCHING_TABLE.get(), BOPItems.FIR_PLANKS);
+        this.createBeehive(CompatModItems.FIR_BEEHIVE.get(), BOPItems.FIR_PLANKS);
+        this.createBarrel(CompatModItems.FIR_BARREL.get(), BOPItems.FIR_PLANKS, BOPItems.FIR_SLAB);
+        this.createLectern(CompatModItems.FIR_LECTERN.get(), CompatModItems.FIR_BOOKSHELF.get(), BOPItems.FIR_SLAB);
+        this.createSmithingTable(CompatModItems.FIR_SMITHING_TABLE.get(), BOPItems.FIR_PLANKS);
+        this.createBookshelf(CompatModItems.FIR_BOOKSHELF.get(), BOPItems.FIR_PLANKS);
+        this.createCampfires(CompatModItems.FIR_CAMPFIRE.get(), CompatModItems.FIR_SOUL_CAMPFIRE.get(), ModTags.Items.FIR_LOGS);
+        this.createGrindstone(CompatModItems.FIR_GRINDSTONE.get(), BOPItems.FIR_PLANKS);
+        this.createChiseledBookshelf(CompatModItems.FIR_CHISELED_BOOKSHELF.get(), BOPItems.FIR_PLANKS, BOPItems.FIR_SLAB);
+        this.createCrafter(CompatModItems.FIR_CRAFTER.get(), CompatModItems.FIR_CRAFTING_TABLE.get());
+        this.createSmoker(CompatModItems.FIR_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.FIR_LOG, "stone_furnace");
+        this.createSmoker(CompatModItems.FIR_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.FIR_LOG, "blackstone_furnace");
+        this.createSmoker(CompatModItems.FIR_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.FIR_LOG, "deepslate_furnace");
+        this.createLoom(CompatModItems.FIR_LOOM.get(), BOPItems.FIR_PLANKS);
+        this.createChests(CompatModItems.FIR_CHEST.get(), CompatModItems.FIR_TRAPPED_CHEST.get(), BOPItems.FIR_PLANKS);
+        this.createMinecart(CompatModItems.FIR_CHEST_MINECART.get(), CompatModItems.FIR_CHEST.get());
+
+        this.createCraftingTable(CompatModItems.HELLBARK_CRAFTING_TABLE.get(), BOPItems.HELLBARK_PLANKS);
+        this.createCartographyTable(CompatModItems.HELLBARK_CARTOGRAPHY_TABLE.get(), BOPItems.HELLBARK_PLANKS);
+        this.createFletchingTable(CompatModItems.HELLBARK_FLETCHING_TABLE.get(), BOPItems.HELLBARK_PLANKS);
+        this.createBeehive(CompatModItems.HELLBARK_BEEHIVE.get(), BOPItems.HELLBARK_PLANKS);
+        this.createBarrel(CompatModItems.HELLBARK_BARREL.get(), BOPItems.HELLBARK_PLANKS, BOPItems.HELLBARK_SLAB);
+        this.createLectern(CompatModItems.HELLBARK_LECTERN.get(), CompatModItems.HELLBARK_BOOKSHELF.get(), BOPItems.HELLBARK_SLAB);
+        this.createSmithingTable(CompatModItems.HELLBARK_SMITHING_TABLE.get(), BOPItems.HELLBARK_PLANKS);
+        this.createBookshelf(CompatModItems.HELLBARK_BOOKSHELF.get(), BOPItems.HELLBARK_PLANKS);
+        this.createCampfires(CompatModItems.HELLBARK_CAMPFIRE.get(), CompatModItems.HELLBARK_SOUL_CAMPFIRE.get(), ModTags.Items.HELLBARK_LOGS);
+        this.createGrindstone(CompatModItems.HELLBARK_GRINDSTONE.get(), BOPItems.HELLBARK_PLANKS);
+        this.createChiseledBookshelf(CompatModItems.HELLBARK_CHISELED_BOOKSHELF.get(), BOPItems.HELLBARK_PLANKS, BOPItems.HELLBARK_SLAB);
+        this.createCrafter(CompatModItems.HELLBARK_CRAFTER.get(), CompatModItems.HELLBARK_CRAFTING_TABLE.get());
+        this.createSmoker(CompatModItems.HELLBARK_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.HELLBARK_LOG, "stone_furnace");
+        this.createSmoker(CompatModItems.HELLBARK_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.HELLBARK_LOG, "blackstone_furnace");
+        this.createSmoker(CompatModItems.HELLBARK_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.HELLBARK_LOG, "deepslate_furnace");
+        this.createLoom(CompatModItems.HELLBARK_LOOM.get(), BOPItems.HELLBARK_PLANKS);
+        this.createChests(CompatModItems.HELLBARK_CHEST.get(), CompatModItems.HELLBARK_TRAPPED_CHEST.get(), BOPItems.HELLBARK_PLANKS);
+        this.createMinecart(CompatModItems.HELLBARK_CHEST_MINECART.get(), CompatModItems.HELLBARK_CHEST.get());
+
+        this.createCraftingTable(CompatModItems.JACARANDA_CRAFTING_TABLE.get(), BOPItems.JACARANDA_PLANKS);
+        this.createCartographyTable(CompatModItems.JACARANDA_CARTOGRAPHY_TABLE.get(), BOPItems.JACARANDA_PLANKS);
+        this.createFletchingTable(CompatModItems.JACARANDA_FLETCHING_TABLE.get(), BOPItems.JACARANDA_PLANKS);
+        this.createBeehive(CompatModItems.JACARANDA_BEEHIVE.get(), BOPItems.JACARANDA_PLANKS);
+        this.createBarrel(CompatModItems.JACARANDA_BARREL.get(), BOPItems.JACARANDA_PLANKS, BOPItems.JACARANDA_SLAB);
+        this.createLectern(CompatModItems.JACARANDA_LECTERN.get(), CompatModItems.JACARANDA_BOOKSHELF.get(), BOPItems.JACARANDA_SLAB);
+        this.createSmithingTable(CompatModItems.JACARANDA_SMITHING_TABLE.get(), BOPItems.JACARANDA_PLANKS);
+        this.createBookshelf(CompatModItems.JACARANDA_BOOKSHELF.get(), BOPItems.JACARANDA_PLANKS);
+        this.createCampfires(CompatModItems.JACARANDA_CAMPFIRE.get(), CompatModItems.JACARANDA_SOUL_CAMPFIRE.get(), ModTags.Items.JACARANDA_LOGS);
+        this.createGrindstone(CompatModItems.JACARANDA_GRINDSTONE.get(), BOPItems.JACARANDA_PLANKS);
+        this.createChiseledBookshelf(CompatModItems.JACARANDA_CHISELED_BOOKSHELF.get(), BOPItems.JACARANDA_PLANKS, BOPItems.JACARANDA_SLAB);
+        this.createCrafter(CompatModItems.JACARANDA_CRAFTER.get(), CompatModItems.JACARANDA_CRAFTING_TABLE.get());
+        this.createSmoker(CompatModItems.JACARANDA_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.JACARANDA_LOG, "stone_furnace");
+        this.createSmoker(CompatModItems.JACARANDA_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.JACARANDA_LOG, "blackstone_furnace");
+        this.createSmoker(CompatModItems.JACARANDA_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.JACARANDA_LOG, "deepslate_furnace");
+        this.createLoom(CompatModItems.JACARANDA_LOOM.get(), BOPItems.JACARANDA_PLANKS);
+        this.createChests(CompatModItems.JACARANDA_CHEST.get(), CompatModItems.JACARANDA_TRAPPED_CHEST.get(), BOPItems.JACARANDA_PLANKS);
+        this.createMinecart(CompatModItems.JACARANDA_CHEST_MINECART.get(), CompatModItems.JACARANDA_CHEST.get());
+
+        this.createCraftingTable(CompatModItems.MAGIC_CRAFTING_TABLE.get(), BOPItems.MAGIC_PLANKS);
+        this.createCartographyTable(CompatModItems.MAGIC_CARTOGRAPHY_TABLE.get(), BOPItems.MAGIC_PLANKS);
+        this.createFletchingTable(CompatModItems.MAGIC_FLETCHING_TABLE.get(), BOPItems.MAGIC_PLANKS);
+        this.createBeehive(CompatModItems.MAGIC_BEEHIVE.get(), BOPItems.MAGIC_PLANKS);
+        this.createBarrel(CompatModItems.MAGIC_BARREL.get(), BOPItems.MAGIC_PLANKS, BOPItems.MAGIC_SLAB);
+        this.createLectern(CompatModItems.MAGIC_LECTERN.get(), CompatModItems.MAGIC_BOOKSHELF.get(), BOPItems.MAGIC_SLAB);
+        this.createSmithingTable(CompatModItems.MAGIC_SMITHING_TABLE.get(), BOPItems.MAGIC_PLANKS);
+        this.createBookshelf(CompatModItems.MAGIC_BOOKSHELF.get(), BOPItems.MAGIC_PLANKS);
+        this.createCampfires(CompatModItems.MAGIC_CAMPFIRE.get(), CompatModItems.MAGIC_SOUL_CAMPFIRE.get(), ModTags.Items.MAGIC_LOGS);
+        this.createGrindstone(CompatModItems.MAGIC_GRINDSTONE.get(), BOPItems.MAGIC_PLANKS);
+        this.createChiseledBookshelf(CompatModItems.MAGIC_CHISELED_BOOKSHELF.get(), BOPItems.MAGIC_PLANKS, BOPItems.MAGIC_SLAB);
+        this.createCrafter(CompatModItems.MAGIC_CRAFTER.get(), CompatModItems.MAGIC_CRAFTING_TABLE.get());
+        this.createSmoker(CompatModItems.MAGIC_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.MAGIC_LOG, "stone_furnace");
+        this.createSmoker(CompatModItems.MAGIC_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.MAGIC_LOG, "blackstone_furnace");
+        this.createSmoker(CompatModItems.MAGIC_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.MAGIC_LOG, "deepslate_furnace");
+        this.createLoom(CompatModItems.MAGIC_LOOM.get(), BOPItems.MAGIC_PLANKS);
+        this.createChests(CompatModItems.MAGIC_CHEST.get(), CompatModItems.MAGIC_TRAPPED_CHEST.get(), BOPItems.MAGIC_PLANKS);
+        this.createMinecart(CompatModItems.MAGIC_CHEST_MINECART.get(), CompatModItems.MAGIC_CHEST.get());
+
+        this.createCraftingTable(CompatModItems.MAHOGANY_CRAFTING_TABLE.get(), BOPItems.MAHOGANY_PLANKS);
+        this.createCartographyTable(CompatModItems.MAHOGANY_CARTOGRAPHY_TABLE.get(), BOPItems.MAHOGANY_PLANKS);
+        this.createFletchingTable(CompatModItems.MAHOGANY_FLETCHING_TABLE.get(), BOPItems.MAHOGANY_PLANKS);
+        this.createBeehive(CompatModItems.MAHOGANY_BEEHIVE.get(), BOPItems.MAHOGANY_PLANKS);
+        this.createBarrel(CompatModItems.MAHOGANY_BARREL.get(), BOPItems.MAHOGANY_PLANKS, BOPItems.MAHOGANY_SLAB);
+        this.createLectern(CompatModItems.MAHOGANY_LECTERN.get(), CompatModItems.MAHOGANY_BOOKSHELF.get(), BOPItems.MAHOGANY_SLAB);
+        this.createSmithingTable(CompatModItems.MAHOGANY_SMITHING_TABLE.get(), BOPItems.MAHOGANY_PLANKS);
+        this.createBookshelf(CompatModItems.MAHOGANY_BOOKSHELF.get(), BOPItems.MAHOGANY_PLANKS);
+        this.createCampfires(CompatModItems.MAHOGANY_CAMPFIRE.get(), CompatModItems.MAHOGANY_SOUL_CAMPFIRE.get(), ModTags.Items.MAHOGANY_LOGS);
+        this.createGrindstone(CompatModItems.MAHOGANY_GRINDSTONE.get(), BOPItems.MAHOGANY_PLANKS);
+        this.createChiseledBookshelf(CompatModItems.MAHOGANY_CHISELED_BOOKSHELF.get(), BOPItems.MAHOGANY_PLANKS, BOPItems.MAHOGANY_SLAB);
+        this.createCrafter(CompatModItems.MAHOGANY_CRAFTER.get(), CompatModItems.MAHOGANY_CRAFTING_TABLE.get());
+        this.createSmoker(CompatModItems.MAHOGANY_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.MAHOGANY_LOG, "stone_furnace");
+        this.createSmoker(CompatModItems.MAHOGANY_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.MAHOGANY_LOG, "blackstone_furnace");
+        this.createSmoker(CompatModItems.MAHOGANY_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.MAHOGANY_LOG, "deepslate_furnace");
+        this.createLoom(CompatModItems.MAHOGANY_LOOM.get(), BOPItems.MAHOGANY_PLANKS);
+        this.createChests(CompatModItems.MAHOGANY_CHEST.get(), CompatModItems.MAHOGANY_TRAPPED_CHEST.get(), BOPItems.MAHOGANY_PLANKS);
+        this.createMinecart(CompatModItems.MAHOGANY_CHEST_MINECART.get(), CompatModItems.MAHOGANY_CHEST.get());
+
+        this.createCraftingTable(CompatModItems.MAPLE_CRAFTING_TABLE.get(), BOPItems.MAPLE_PLANKS);
+        this.createCartographyTable(CompatModItems.MAPLE_CARTOGRAPHY_TABLE.get(), BOPItems.MAPLE_PLANKS);
+        this.createFletchingTable(CompatModItems.MAPLE_FLETCHING_TABLE.get(), BOPItems.MAPLE_PLANKS);
+        this.createBeehive(CompatModItems.MAPLE_BEEHIVE.get(), BOPItems.MAPLE_PLANKS);
+        this.createBarrel(CompatModItems.MAPLE_BARREL.get(), BOPItems.MAPLE_PLANKS, BOPItems.MAPLE_SLAB);
+        this.createLectern(CompatModItems.MAPLE_LECTERN.get(), CompatModItems.MAPLE_BOOKSHELF.get(), BOPItems.MAPLE_SLAB);
+        this.createSmithingTable(CompatModItems.MAPLE_SMITHING_TABLE.get(), BOPItems.MAPLE_PLANKS);
+        this.createBookshelf(CompatModItems.MAPLE_BOOKSHELF.get(), BOPItems.MAPLE_PLANKS);
+        this.createCampfires(CompatModItems.MAPLE_CAMPFIRE.get(), CompatModItems.MAPLE_SOUL_CAMPFIRE.get(), ModTags.Items.MAPLE_LOGS);
+        this.createGrindstone(CompatModItems.MAPLE_GRINDSTONE.get(), BOPItems.MAPLE_PLANKS);
+        this.createChiseledBookshelf(CompatModItems.MAPLE_CHISELED_BOOKSHELF.get(), BOPItems.MAPLE_PLANKS, BOPItems.MAPLE_SLAB);
+        this.createCrafter(CompatModItems.MAPLE_CRAFTER.get(), CompatModItems.MAPLE_CRAFTING_TABLE.get());
+        this.createSmoker(CompatModItems.MAPLE_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.MAPLE_LOG, "stone_furnace");
+        this.createSmoker(CompatModItems.MAPLE_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.MAPLE_LOG, "blackstone_furnace");
+        this.createSmoker(CompatModItems.MAPLE_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.MAPLE_LOG, "deepslate_furnace");
+        this.createLoom(CompatModItems.MAPLE_LOOM.get(), BOPItems.MAPLE_PLANKS);
+        this.createChests(CompatModItems.MAPLE_CHEST.get(), CompatModItems.MAPLE_TRAPPED_CHEST.get(), BOPItems.MAPLE_PLANKS);
+        this.createMinecart(CompatModItems.MAPLE_CHEST_MINECART.get(), CompatModItems.MAPLE_CHEST.get());
+
+        this.createCraftingTable(CompatModItems.PALM_CRAFTING_TABLE.get(), BOPItems.PALM_PLANKS);
+        this.createCartographyTable(CompatModItems.PALM_CARTOGRAPHY_TABLE.get(), BOPItems.PALM_PLANKS);
+        this.createFletchingTable(CompatModItems.PALM_FLETCHING_TABLE.get(), BOPItems.PALM_PLANKS);
+        this.createBeehive(CompatModItems.PALM_BEEHIVE.get(), BOPItems.PALM_PLANKS);
+        this.createBarrel(CompatModItems.PALM_BARREL.get(), BOPItems.PALM_PLANKS, BOPItems.PALM_SLAB);
+        this.createLectern(CompatModItems.PALM_LECTERN.get(), CompatModItems.PALM_BOOKSHELF.get(), BOPItems.PALM_SLAB);
+        this.createSmithingTable(CompatModItems.PALM_SMITHING_TABLE.get(), BOPItems.PALM_PLANKS);
+        this.createBookshelf(CompatModItems.PALM_BOOKSHELF.get(), BOPItems.PALM_PLANKS);
+        this.createCampfires(CompatModItems.PALM_CAMPFIRE.get(), CompatModItems.PALM_SOUL_CAMPFIRE.get(), ModTags.Items.PALM_LOGS);
+        this.createGrindstone(CompatModItems.PALM_GRINDSTONE.get(), BOPItems.PALM_PLANKS);
+        this.createChiseledBookshelf(CompatModItems.PALM_CHISELED_BOOKSHELF.get(), BOPItems.PALM_PLANKS, BOPItems.PALM_SLAB);
+        this.createCrafter(CompatModItems.PALM_CRAFTER.get(), CompatModItems.PALM_CRAFTING_TABLE.get());
+        this.createSmoker(CompatModItems.PALM_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.PALM_LOG, "stone_furnace");
+        this.createSmoker(CompatModItems.PALM_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.PALM_LOG, "blackstone_furnace");
+        this.createSmoker(CompatModItems.PALM_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.PALM_LOG, "deepslate_furnace");
+        this.createLoom(CompatModItems.PALM_LOOM.get(), BOPItems.PALM_PLANKS);
+        this.createChests(CompatModItems.PALM_CHEST.get(), CompatModItems.PALM_TRAPPED_CHEST.get(), BOPItems.PALM_PLANKS);
+        this.createMinecart(CompatModItems.PALM_CHEST_MINECART.get(), CompatModItems.PALM_CHEST.get());
+
+        this.createCraftingTable(CompatModItems.PINE_CRAFTING_TABLE.get(), BOPItems.PINE_PLANKS);
+        this.createCartographyTable(CompatModItems.PINE_CARTOGRAPHY_TABLE.get(), BOPItems.PINE_PLANKS);
+        this.createFletchingTable(CompatModItems.PINE_FLETCHING_TABLE.get(), BOPItems.PINE_PLANKS);
+        this.createBeehive(CompatModItems.PINE_BEEHIVE.get(), BOPItems.PINE_PLANKS);
+        this.createBarrel(CompatModItems.PINE_BARREL.get(), BOPItems.PINE_PLANKS, BOPItems.PINE_SLAB);
+        this.createLectern(CompatModItems.PINE_LECTERN.get(), CompatModItems.PINE_BOOKSHELF.get(), BOPItems.PINE_SLAB);
+        this.createSmithingTable(CompatModItems.PINE_SMITHING_TABLE.get(), BOPItems.PINE_PLANKS);
+        this.createBookshelf(CompatModItems.PINE_BOOKSHELF.get(), BOPItems.PINE_PLANKS);
+        this.createCampfires(CompatModItems.PINE_CAMPFIRE.get(), CompatModItems.PINE_SOUL_CAMPFIRE.get(), ModTags.Items.PINE_LOGS);
+        this.createGrindstone(CompatModItems.PINE_GRINDSTONE.get(), BOPItems.PINE_PLANKS);
+        this.createChiseledBookshelf(CompatModItems.PINE_CHISELED_BOOKSHELF.get(), BOPItems.PINE_PLANKS, BOPItems.PINE_SLAB);
+        this.createCrafter(CompatModItems.PINE_CRAFTER.get(), CompatModItems.PINE_CRAFTING_TABLE.get());
+        this.createSmoker(CompatModItems.PINE_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.PINE_LOG, "stone_furnace");
+        this.createSmoker(CompatModItems.PINE_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.PINE_LOG, "blackstone_furnace");
+        this.createSmoker(CompatModItems.PINE_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.PINE_LOG, "deepslate_furnace");
+        this.createLoom(CompatModItems.PINE_LOOM.get(), BOPItems.PINE_PLANKS);
+        this.createChests(CompatModItems.PINE_CHEST.get(), CompatModItems.PINE_TRAPPED_CHEST.get(), BOPItems.PINE_PLANKS);
+        this.createMinecart(CompatModItems.PINE_CHEST_MINECART.get(), CompatModItems.PINE_CHEST.get());
+
+        this.createCraftingTable(CompatModItems.REDWOOD_CRAFTING_TABLE.get(), BOPItems.REDWOOD_PLANKS);
+        this.createCartographyTable(CompatModItems.REDWOOD_CARTOGRAPHY_TABLE.get(), BOPItems.REDWOOD_PLANKS);
+        this.createFletchingTable(CompatModItems.REDWOOD_FLETCHING_TABLE.get(), BOPItems.REDWOOD_PLANKS);
+        this.createBeehive(CompatModItems.REDWOOD_BEEHIVE.get(), BOPItems.REDWOOD_PLANKS);
+        this.createBarrel(CompatModItems.REDWOOD_BARREL.get(), BOPItems.REDWOOD_PLANKS, BOPItems.REDWOOD_SLAB);
+        this.createLectern(CompatModItems.REDWOOD_LECTERN.get(), CompatModItems.REDWOOD_BOOKSHELF.get(), BOPItems.REDWOOD_SLAB);
+        this.createSmithingTable(CompatModItems.REDWOOD_SMITHING_TABLE.get(), BOPItems.REDWOOD_PLANKS);
+        this.createBookshelf(CompatModItems.REDWOOD_BOOKSHELF.get(), BOPItems.REDWOOD_PLANKS);
+        this.createCampfires(CompatModItems.REDWOOD_CAMPFIRE.get(), CompatModItems.REDWOOD_SOUL_CAMPFIRE.get(), ModTags.Items.REDWOOD_LOGS);
+        this.createGrindstone(CompatModItems.REDWOOD_GRINDSTONE.get(), BOPItems.REDWOOD_PLANKS);
+        this.createChiseledBookshelf(CompatModItems.REDWOOD_CHISELED_BOOKSHELF.get(), BOPItems.REDWOOD_PLANKS, BOPItems.REDWOOD_SLAB);
+        this.createCrafter(CompatModItems.REDWOOD_CRAFTER.get(), CompatModItems.REDWOOD_CRAFTING_TABLE.get());
+        this.createSmoker(CompatModItems.REDWOOD_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.REDWOOD_LOG, "stone_furnace");
+        this.createSmoker(CompatModItems.REDWOOD_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.REDWOOD_LOG, "blackstone_furnace");
+        this.createSmoker(CompatModItems.REDWOOD_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.REDWOOD_LOG, "deepslate_furnace");
+        this.createLoom(CompatModItems.REDWOOD_LOOM.get(), BOPItems.REDWOOD_PLANKS);
+        this.createChests(CompatModItems.REDWOOD_CHEST.get(), CompatModItems.REDWOOD_TRAPPED_CHEST.get(), BOPItems.REDWOOD_PLANKS);
+        this.createMinecart(CompatModItems.REDWOOD_CHEST_MINECART.get(), CompatModItems.REDWOOD_CHEST.get());
+
+        this.createCraftingTable(CompatModItems.UMBRAN_CRAFTING_TABLE.get(), BOPItems.UMBRAN_PLANKS);
+        this.createCartographyTable(CompatModItems.UMBRAN_CARTOGRAPHY_TABLE.get(), BOPItems.UMBRAN_PLANKS);
+        this.createFletchingTable(CompatModItems.UMBRAN_FLETCHING_TABLE.get(), BOPItems.UMBRAN_PLANKS);
+        this.createBeehive(CompatModItems.UMBRAN_BEEHIVE.get(), BOPItems.UMBRAN_PLANKS);
+        this.createBarrel(CompatModItems.UMBRAN_BARREL.get(), BOPItems.UMBRAN_PLANKS, BOPItems.UMBRAN_SLAB);
+        this.createLectern(CompatModItems.UMBRAN_LECTERN.get(), CompatModItems.UMBRAN_BOOKSHELF.get(), BOPItems.UMBRAN_SLAB);
+        this.createSmithingTable(CompatModItems.UMBRAN_SMITHING_TABLE.get(), BOPItems.UMBRAN_PLANKS);
+        this.createBookshelf(CompatModItems.UMBRAN_BOOKSHELF.get(), BOPItems.UMBRAN_PLANKS);
+        this.createCampfires(CompatModItems.UMBRAN_CAMPFIRE.get(), CompatModItems.UMBRAN_SOUL_CAMPFIRE.get(), ModTags.Items.UMBRAN_LOGS);
+        this.createGrindstone(CompatModItems.UMBRAN_GRINDSTONE.get(), BOPItems.UMBRAN_PLANKS);
+        this.createChiseledBookshelf(CompatModItems.UMBRAN_CHISELED_BOOKSHELF.get(), BOPItems.UMBRAN_PLANKS, BOPItems.UMBRAN_SLAB);
+        this.createCrafter(CompatModItems.UMBRAN_CRAFTER.get(), CompatModItems.UMBRAN_CRAFTING_TABLE.get());
+        this.createSmoker(CompatModItems.UMBRAN_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.UMBRAN_LOG, "stone_furnace");
+        this.createSmoker(CompatModItems.UMBRAN_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.UMBRAN_LOG, "blackstone_furnace");
+        this.createSmoker(CompatModItems.UMBRAN_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.UMBRAN_LOG, "deepslate_furnace");
+        this.createLoom(CompatModItems.UMBRAN_LOOM.get(), BOPItems.UMBRAN_PLANKS);
+        this.createChests(CompatModItems.UMBRAN_CHEST.get(), CompatModItems.UMBRAN_TRAPPED_CHEST.get(), BOPItems.UMBRAN_PLANKS);
+        this.createMinecart(CompatModItems.UMBRAN_CHEST_MINECART.get(), CompatModItems.UMBRAN_CHEST.get());
+
+        this.createCraftingTable(CompatModItems.WILLOW_CRAFTING_TABLE.get(), BOPItems.WILLOW_PLANKS);
+        this.createCartographyTable(CompatModItems.WILLOW_CARTOGRAPHY_TABLE.get(), BOPItems.WILLOW_PLANKS);
+        this.createFletchingTable(CompatModItems.WILLOW_FLETCHING_TABLE.get(), BOPItems.WILLOW_PLANKS);
+        this.createBeehive(CompatModItems.WILLOW_BEEHIVE.get(), BOPItems.WILLOW_PLANKS);
+        this.createBarrel(CompatModItems.WILLOW_BARREL.get(), BOPItems.WILLOW_PLANKS, BOPItems.WILLOW_SLAB);
+        this.createLectern(CompatModItems.WILLOW_LECTERN.get(), CompatModItems.WILLOW_BOOKSHELF.get(), BOPItems.WILLOW_SLAB);
+        this.createSmithingTable(CompatModItems.WILLOW_SMITHING_TABLE.get(), BOPItems.WILLOW_PLANKS);
+        this.createBookshelf(CompatModItems.WILLOW_BOOKSHELF.get(), BOPItems.WILLOW_PLANKS);
+        this.createCampfires(CompatModItems.WILLOW_CAMPFIRE.get(), CompatModItems.WILLOW_SOUL_CAMPFIRE.get(), ModTags.Items.WILLOW_LOGS);
+        this.createGrindstone(CompatModItems.WILLOW_GRINDSTONE.get(), BOPItems.WILLOW_PLANKS);
+        this.createChiseledBookshelf(CompatModItems.WILLOW_CHISELED_BOOKSHELF.get(), BOPItems.WILLOW_PLANKS, BOPItems.WILLOW_SLAB);
+        this.createCrafter(CompatModItems.WILLOW_CRAFTER.get(), CompatModItems.WILLOW_CRAFTING_TABLE.get());
+        this.createSmoker(CompatModItems.WILLOW_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.WILLOW_LOG, "stone_furnace");
+        this.createSmoker(CompatModItems.WILLOW_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.WILLOW_LOG, "blackstone_furnace");
+        this.createSmoker(CompatModItems.WILLOW_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.WILLOW_LOG, "deepslate_furnace");
+        this.createLoom(CompatModItems.WILLOW_LOOM.get(), BOPItems.WILLOW_PLANKS);
+        this.createChests(CompatModItems.WILLOW_CHEST.get(), CompatModItems.WILLOW_TRAPPED_CHEST.get(), BOPItems.WILLOW_PLANKS);
+        this.createMinecart(CompatModItems.WILLOW_CHEST_MINECART.get(), CompatModItems.WILLOW_CHEST.get());
+
+        this.createCraftingTable(CompatModItems.ORIGIN_OAK_CRAFTING_TABLE.get(), BOPItems.ORIGIN_OAK_PLANKS);
+        this.createBookshelf(CompatModItems.ORIGIN_OAK_BOOKSHELF.get(), BOPItems.ORIGIN_OAK_PLANKS);
+        this.createChests(CompatModItems.ORIGIN_OAK_CHEST.get(), CompatModItems.ORIGIN_OAK_TRAPPED_CHEST.get(), BOPItems.ORIGIN_OAK_PLANKS);
+        this.createMinecart(CompatModItems.ORIGIN_OAK_CHEST_MINECART.get(), CompatModItems.ORIGIN_OAK_CHEST.get());
+
+        this.createBaton(CompatModItems.WHITE_SANDSTONE_BATON.get(), BOPItems.WHITE_SANDSTONE, "white_sandstone");
+        this.createBaton(CompatModItems.BLACK_SANDSTONE_BATON.get(), BOPItems.BLACK_SANDSTONE, "black_sandstone");
+        this.createBaton(CompatModItems.ORANGE_SANDSTONE_BATON.get(), BOPItems.ORANGE_SANDSTONE, "orange_sandstone");
+        this.createBaton(CompatModItems.BRIMSTONE_BATON.get(), BOPItems.BRIMSTONE, "brimstone");
     }
 
     protected void createChain(ItemLike result, ItemLike ingot, ItemLike nugget) {
@@ -1164,6 +1422,12 @@ public class ModRecipesProvider extends RecipeProvider {
                     item = ModItems.RED_SANDSTONE_BATON.get();
                 } else if (fence.asItem().getDescriptionId().contains("soul")){
                     item = ModItems.SOUL_SANDSTONE_BATON.get();
+                } else if (fence.asItem().getDescriptionId().contains("white")){
+                    item = CompatModItems.WHITE_SANDSTONE_BATON.get();
+                } else if (fence.asItem().getDescriptionId().contains("black")){
+                    item = CompatModItems.BLACK_SANDSTONE_BATON.get();
+                } else if (fence.asItem().getDescriptionId().contains("orange")){
+                    item = CompatModItems.ORANGE_SANDSTONE_BATON.get();
                 } else {
                     item = ModItems.SANDSTONE_BATON.get();
                 }
@@ -1171,6 +1435,8 @@ public class ModRecipesProvider extends RecipeProvider {
                 item = ModItems.END_STONE_BATON.get();
             } else if (fence.asItem().getDescriptionId().contains("black")) {
                 item = ModItems.BLACKSTONE_BATON.get();
+            } else if (fence.asItem().getDescriptionId().contains("brim")) {
+                item = CompatModItems.BRIMSTONE_BATON.get();
             } else if (fence.asItem().getDescriptionId().contains("drip")) {
                 item = Items.POINTED_DRIPSTONE;
             } else {
@@ -1237,6 +1503,12 @@ public class ModRecipesProvider extends RecipeProvider {
                             item = ModItems.RED_SANDSTONE_BATON.get();
                         } else if (fence.asItem().getDescriptionId().contains("soul")){
                             item = ModItems.SOUL_SANDSTONE_BATON.get();
+                        } else if (fence.asItem().getDescriptionId().contains("white")){
+                            item = CompatModItems.WHITE_SANDSTONE_BATON.get();
+                        } else if (fence.asItem().getDescriptionId().contains("black")){
+                            item = CompatModItems.BLACK_SANDSTONE_BATON.get();
+                        } else if (fence.asItem().getDescriptionId().contains("orange")){
+                            item = CompatModItems.ORANGE_SANDSTONE_BATON.get();
                         } else {
                             item = ModItems.SANDSTONE_BATON.get();
                         }
@@ -1244,6 +1516,8 @@ public class ModRecipesProvider extends RecipeProvider {
                         item = ModItems.END_STONE_BATON.get();
                     } else if (fence.asItem().getDescriptionId().contains("black")) {
                         item = ModItems.BLACKSTONE_BATON.get();
+                    } else if (fence.asItem().getDescriptionId().contains("brim")) {
+                        item = CompatModItems.BRIMSTONE_BATON.get();
                     } else if (fence.asItem().getDescriptionId().contains("drip")) {
                         item = Items.POINTED_DRIPSTONE;
                     } else {
@@ -2663,6 +2937,36 @@ public class ModRecipesProvider extends RecipeProvider {
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.BRIMSTONE_SLAB.get(), BOPItems.BRIMSTONE, 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.BRIMSTONE_STAIRS.get(), BOPItems.BRIMSTONE);
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.BRIMSTONE_WALL.get(), BOPItems.BRIMSTONE);
+
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.THERMAL_CALCITE_SLAB.get(), BOPItems.THERMAL_CALCITE, 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.THERMAL_CALCITE_STAIRS.get(), BOPItems.THERMAL_CALCITE);
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.THERMAL_CALCITE_WALL.get(), BOPItems.THERMAL_CALCITE);
+
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.POLISHED_THERMAL_CALCITE_SLAB.get(), BOPItems.THERMAL_CALCITE, 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.POLISHED_THERMAL_CALCITE_STAIRS.get(), BOPItems.THERMAL_CALCITE);
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.POLISHED_THERMAL_CALCITE_WALL.get(), BOPItems.THERMAL_CALCITE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.POLISHED_THERMAL_CALCITE.get(), BOPItems.THERMAL_CALCITE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.POLISHED_THERMAL_CALCITE_SLAB.get(), CompatModItems.POLISHED_THERMAL_CALCITE.get(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.POLISHED_THERMAL_CALCITE_STAIRS.get(), CompatModItems.POLISHED_THERMAL_CALCITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.POLISHED_THERMAL_CALCITE_WALL.get(), CompatModItems.POLISHED_THERMAL_CALCITE.get());
+
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.THERMAL_CALCITE_BRICK_SLAB.get(), BOPItems.THERMAL_CALCITE, 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.THERMAL_CALCITE_BRICK_STAIRS.get(), BOPItems.THERMAL_CALCITE);
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.THERMAL_CALCITE_BRICK_WALL.get(), BOPItems.THERMAL_CALCITE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.THERMAL_CALCITE_BRICKS.get(), BOPItems.THERMAL_CALCITE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.THERMAL_CALCITE_BRICK_SLAB.get(), CompatModItems.POLISHED_THERMAL_CALCITE.get(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.THERMAL_CALCITE_BRICK_STAIRS.get(), CompatModItems.POLISHED_THERMAL_CALCITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.THERMAL_CALCITE_BRICK_WALL.get(), CompatModItems.POLISHED_THERMAL_CALCITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.THERMAL_CALCITE_BRICKS.get(), CompatModItems.POLISHED_THERMAL_CALCITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.THERMAL_CALCITE_BRICK_SLAB.get(), CompatModItems.THERMAL_CALCITE_BRICKS.get(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.THERMAL_CALCITE_BRICK_STAIRS.get(), CompatModItems.THERMAL_CALCITE_BRICKS.get());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.THERMAL_CALCITE_BRICK_WALL.get(), CompatModItems.THERMAL_CALCITE_BRICKS.get());
+
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_ROSE_QUARTZ.get(), BOPItems.ROSE_QUARTZ_BLOCK, 4);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_ROSE_QUARTZ_STAIRS.get(), BOPItems.ROSE_QUARTZ_BLOCK, 4);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_ROSE_QUARTZ_SLAB.get(), BOPItems.ROSE_QUARTZ_BLOCK, 8);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_ROSE_QUARTZ_STAIRS.get(), CompatModItems.CUT_ROSE_QUARTZ.get());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_ROSE_QUARTZ_SLAB.get(), CompatModItems.CUT_ROSE_QUARTZ.get(), 2);
     }
 
     public static class Runner extends RecipeProvider.Runner {

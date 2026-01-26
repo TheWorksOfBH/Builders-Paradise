@@ -143,6 +143,24 @@
     "buildersparadise:cut_white_sandstone_stairs",
     "buildersparadise:cut_black_sandstone_stairs",
     "buildersparadise:cut_orange_sandstone_stairs",
-    "buildersparadise:brimstone_stairs"
+    "buildersparadise:brimstone_stairs",
+    "buildersparadise:thermal_calcite_stairs",
+    "buildersparadise:polished_thermal_calcite_stairs",
+    "buildersparadise:thermal_calcite_brick_stairs",
+    "buildersparadise:cut_rose_quartz_stairs",
+    "buildersparadise:dead_mosaic_stairs",
+    "buildersparadise:empyreal_mosaic_stairs",
+    "buildersparadise:fir_mosaic_stairs",
+    "buildersparadise:hellbark_mosaic_stairs",
+    "buildersparadise:jacaranda_mosaic_stairs",
+    "buildersparadise:magic_mosaic_stairs",
+    "buildersparadise:mahogany_mosaic_stairs",
+    "buildersparadise:maple_mosaic_stairs",
+    "buildersparadise:palm_mosaic_stairs",
+    "buildersparadise:pine_mosaic_stairs",
+    "buildersparadise:redwood_mosaic_stairs",
+    "buildersparadise:umbran_mosaic_stairs",
+    "buildersparadise:willow_mosaic_stairs",
+    "buildersparadise:origin_oak_mosaic_stairs"
   ]
 }

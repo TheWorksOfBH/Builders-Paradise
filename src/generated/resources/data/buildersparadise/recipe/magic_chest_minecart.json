@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "buildersparadise:magic_chest",
+    "minecraft:minecart"
+  ],
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:magic_chest_minecart"
+  }
+}

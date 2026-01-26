@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "biomesoplenty:block/jacaranda_planks",
+    "east": "buildersparadise:block/jacaranda_cartography_table_side3",
+    "north": "buildersparadise:block/jacaranda_cartography_table_side3",
+    "particle": "buildersparadise:block/jacaranda_cartography_table_side3",
+    "south": "buildersparadise:block/jacaranda_cartography_table_side1",
+    "up": "buildersparadise:block/jacaranda_cartography_table_top",
+    "west": "buildersparadise:block/jacaranda_cartography_table_side2"
+  }
+}

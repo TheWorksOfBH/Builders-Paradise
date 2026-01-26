@@ -11,6 +11,19 @@
     "buildersparadise:mangrove_cartography_table",
     "buildersparadise:cherry_cartography_table",
     "buildersparadise:bamboo_cartography_table",
-    "buildersparadise:pale_oak_cartography_table"
+    "buildersparadise:pale_oak_cartography_table",
+    "buildersparadise:dead_cartography_table",
+    "buildersparadise:empyreal_cartography_table",
+    "buildersparadise:fir_cartography_table",
+    "buildersparadise:hellbark_cartography_table",
+    "buildersparadise:jacaranda_cartography_table",
+    "buildersparadise:magic_cartography_table",
+    "buildersparadise:mahogany_cartography_table",
+    "buildersparadise:maple_cartography_table",
+    "buildersparadise:palm_cartography_table",
+    "buildersparadise:pine_cartography_table",
+    "buildersparadise:redwood_cartography_table",
+    "buildersparadise:umbran_cartography_table",
+    "buildersparadise:willow_cartography_table"
   ]
 }

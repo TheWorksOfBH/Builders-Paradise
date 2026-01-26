@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:cut_rose_quartz",
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:cut_rose_quartz_stairs"
+  }
+}

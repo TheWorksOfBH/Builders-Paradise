@@ -45,6 +45,19 @@ public class ModChestSpecialRenderers extends ChestSpecialRenderer {
     public static final Identifier CHERRY_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "cherry_chest/normal");
     public static final Identifier BAMBOO_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "bamboo_chest/normal");
     public static final Identifier PALE_OAK_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "pale_oak_chest/normal");
+    public static final Identifier DEAD_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "dead_chest/normal");
+    public static final Identifier EMPYREAL_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "empyreal_chest/normal");
+    public static final Identifier FIR_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "fir_chest/normal");
+    public static final Identifier HELLBARK_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "hellbark_chest/normal");
+    public static final Identifier JACARANDA_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "jacaranda_chest/normal");
+    public static final Identifier MAGIC_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "magic_chest/normal");
+    public static final Identifier MAHOGANY_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "mahogany_chest/normal");
+    public static final Identifier MAPLE_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "maple_chest/normal");
+    public static final Identifier PALM_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "palm_chest/normal");
+    public static final Identifier PINE_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "pine_chest/normal");
+    public static final Identifier REDWOOD_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "redwood_chest/normal");
+    public static final Identifier UMBRAN_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "umbran_chest/normal");
+    public static final Identifier WILLOW_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "willow_chest/normal");
 
     public static final Identifier SPRUCE_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "spruce_chest/trapped");
     public static final Identifier BIRCH_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "birch_chest/trapped");
@@ -57,6 +70,19 @@ public class ModChestSpecialRenderers extends ChestSpecialRenderer {
     public static final Identifier CHERRY_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "cherry_chest/trapped");
     public static final Identifier BAMBOO_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "bamboo_chest/trapped");
     public static final Identifier PALE_OAK_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "pale_oak_chest/trapped");
+    public static final Identifier DEAD_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "dead_chest/trapped");
+    public static final Identifier EMPYREAL_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "empyreal_chest/trapped");
+    public static final Identifier FIR_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "fir_chest/trapped");
+    public static final Identifier HELLBARK_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "hellbark_chest/trapped");
+    public static final Identifier JACARANDA_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "jacaranda_chest/trapped");
+    public static final Identifier MAGIC_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "magic_chest/trapped");
+    public static final Identifier MAHOGANY_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "mahogany_chest/trapped");
+    public static final Identifier MAPLE_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "maple_chest/trapped");
+    public static final Identifier PALM_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "palm_chest/trapped");
+    public static final Identifier PINE_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "pine_chest/trapped");
+    public static final Identifier REDWOOD_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "redwood_chest/trapped");
+    public static final Identifier UMBRAN_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "umbran_chest/trapped");
+    public static final Identifier WILLOW_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "willow_chest/trapped");
 
     public void submit(ItemDisplayContext itemDisplayContext, PoseStack poseStack, SubmitNodeCollector p_440053_, int p_440465_, int p_440260_, boolean p_439501_, int p_451677_) {
         p_440053_.submitModel(this.model, this.openness, poseStack, this.material.renderType(RenderTypes::entitySolid), p_440465_, p_440260_, -1, this.materials.get(this.material), p_451677_, (ModelFeatureRenderer.CrumblingOverlay)null);
