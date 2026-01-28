@@ -32,7 +32,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import java.util.OptionalInt;
 
 public class ThermalCalciteBlock extends Block {
-    public static final IntegerProperty DISTANCE = IntegerProperty.create("distance", 1, 5);
+    public static final IntegerProperty DISTANCE = biomesoplenty.block.ThermalCalciteBlock.DISTANCE;
 
     public ThermalCalciteBlock(Properties properties)
     {
