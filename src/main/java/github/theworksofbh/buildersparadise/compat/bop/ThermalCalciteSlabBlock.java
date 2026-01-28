@@ -1,7 +1,6 @@
 package github.theworksofbh.buildersparadise.compat.bop;
 
 import biomesoplenty.api.block.BOPBlocks;
-import biomesoplenty.block.ThermalCalciteBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;

@@ -1,7 +1,6 @@
 package github.theworksofbh.buildersparadise.config;
 
 import github.theworksofbh.buildersparadise.block.ModBlocks;
-import github.theworksofbh.buildersparadise.compat.bop.CompatModBlocks;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.world.level.block.Block;
@@ -24,13 +23,12 @@ public class RenderTypeConfig {
 
         return Stream.concat(
                 vanillaBlocksThatNeedNewLootTables.stream(),
-                Stream.concat(
-                        ModBlocks.BLOCKS.getEntries().stream().map(Supplier::get),
-                        CompatModBlocks.BOP_BLOCKS.getEntries().stream().map(Supplier::get)
-                )
+                ModBlocks.BLOCKS.getEntries().stream().map(Supplier::get)
         ).filter(
                 (Predicate.not(handMadeBlocks::contains))
         ).toList();
+
+
     }
 
     public static void addModRenderTypes() {

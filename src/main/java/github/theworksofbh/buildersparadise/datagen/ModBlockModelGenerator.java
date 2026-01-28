@@ -36,6 +36,7 @@ import java.util.Optional;
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
+import java.util.stream.Stream;
 
 public class ModBlockModelGenerator extends BlockModelGenerators {
 
@@ -2364,7 +2365,8 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
 
         this.createOriginOakChests();
 
-        ModBlockFamilies.getAllFamilies()
+
+        Stream.concat(ModBlockFamilies.getAllFamilies(), CompatModBlockFamilies.getAllFamilies())
                 .filter(BlockFamily::shouldGenerateModel)
                 .forEach(
                         family ->

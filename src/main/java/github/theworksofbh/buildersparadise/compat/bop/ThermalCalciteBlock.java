@@ -22,22 +22,22 @@ import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.IceBlock;
 import net.minecraft.world.level.block.MagmaBlock;
-import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 
 import java.util.OptionalInt;
 
-public class ThermalCalciteStairBlock extends StairBlock {
-    public static final IntegerProperty DISTANCE = ThermalCalciteBlock.DISTANCE;
+public class ThermalCalciteBlock extends Block {
+    public static final IntegerProperty DISTANCE = IntegerProperty.create("distance", 1, 5);
 
-    public ThermalCalciteStairBlock(BlockState baseState, Properties properties) {
-        super(baseState, properties);
+    public ThermalCalciteBlock(Properties properties)
+    {
+        super(properties);
+        this.registerDefaultState(this.stateDefinition.any().setValue(DISTANCE, Integer.valueOf(5)));
     }
 
     @Override
@@ -81,20 +81,12 @@ public class ThermalCalciteStairBlock extends StairBlock {
     @Override
     protected BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess tickAccess, BlockPos pos, Direction facing, BlockPos facingPos, BlockState facingState, RandomSource random)
     {
-        if (state.getValue(WATERLOGGED)) {
-            tickAccess.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+        int i = getDistanceAt(facingState) + 1;
+        if (i != 1 || state.getValue(DISTANCE) != i) {
+            tickAccess.scheduleTick(pos, this, 1);
         }
 
-        BlockState updated =
-                facing.getAxis().isHorizontal()
-                        ? state.setValue(SHAPE, getStairsShape(state, level, pos))
-                        : super.updateShape(state, level, tickAccess, pos, facing, facingPos, facingState, random);
-
-        return withUpdatedDistance(updated, (LevelAccessor) level, pos);
-    }
-
-    protected BlockState withUpdatedDistance(BlockState state, LevelAccessor level, BlockPos pos) {
-        return updateDistance(state, level, pos);
+        return state;
     }
 
     private static BlockState updateDistance(BlockState p_54436_, LevelAccessor p_54437_, BlockPos p_54438_) {
@@ -125,15 +117,13 @@ public class ThermalCalciteStairBlock extends StairBlock {
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(new Property[]{FACING, HALF, SHAPE, WATERLOGGED, DISTANCE});
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> p_54447_) {
+        p_54447_.add(DISTANCE);
     }
 
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext context) {
-        BlockState base = super.getStateForPlacement(context);
-        if (base == null) return null;
-
-        return updateDistance(base, context.getLevel(), context.getClickedPos());
+    public BlockState getStateForPlacement(BlockPlaceContext p_54424_) {
+        BlockState blockstate = this.defaultBlockState();
+        return updateDistance(blockstate, p_54424_.getLevel(), p_54424_.getClickedPos());
     }
 }

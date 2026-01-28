@@ -7,6 +7,7 @@ import com.google.common.collect.ImmutableMap;
 import github.theworksofbh.buildersparadise.BuildersParadise;
 import github.theworksofbh.buildersparadise.block.ModBlockFamilies;
 import github.theworksofbh.buildersparadise.block.ModBlocks;
+import github.theworksofbh.buildersparadise.compat.bop.CompatModBlockFamilies;
 import github.theworksofbh.buildersparadise.compat.bop.CompatModItems;
 import github.theworksofbh.buildersparadise.items.ModItems;
 import github.theworksofbh.buildersparadise.recipes.FletchingRecipeBuilder;
@@ -40,6 +41,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
+import java.util.stream.Stream;
 
 public class ModRecipesProvider extends RecipeProvider {
     public static final ImmutableList<ItemLike> ZINC_SMELTABLES = ImmutableList.of(ModItems.ZINC_ORE.get(), ModItems.DEEPSLATE_ZINC_ORE.get(), ModItems.RAW_ZINC.get());
@@ -1617,7 +1619,7 @@ public class ModRecipesProvider extends RecipeProvider {
 
     @Override
     protected void generateForEnabledBlockFamilies(FeatureFlagSet enabledFeatures) {
-        ModBlockFamilies.getAllFamilies()
+        Stream.concat(ModBlockFamilies.getAllFamilies(), CompatModBlockFamilies.getAllFamilies())
                 .filter(
                         BlockFamily::shouldGenerateRecipe
                 ).forEach((p_359455_) -> this.generateRecipes(p_359455_, enabledFeatures));

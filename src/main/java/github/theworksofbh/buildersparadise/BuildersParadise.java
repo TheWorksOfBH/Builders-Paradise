@@ -2,6 +2,10 @@ package github.theworksofbh.buildersparadise;
 
 import com.mojang.logging.LogUtils;
 import github.theworksofbh.buildersparadise.block.ModBlocks;
+import github.theworksofbh.buildersparadise.compat.bop.CompatModBlocks;
+import github.theworksofbh.buildersparadise.compat.bop.CompatModEntities;
+import github.theworksofbh.buildersparadise.compat.bop.CompatModItems;
+import github.theworksofbh.buildersparadise.compat.bop.config.*;
 import github.theworksofbh.buildersparadise.config.*;
 import github.theworksofbh.buildersparadise.datagen.ModDataGenerators;
 import github.theworksofbh.buildersparadise.effect.ModEffects;
@@ -21,6 +25,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
@@ -52,9 +57,14 @@ public class BuildersParadise
         ModBlocks.register(modEventBus);
         ModEntities.register(modEventBus);
         ModItems.register(modEventBus);
-        CreativeInvConfig.register(modEventBus);
         ModLootModifiers.register(modEventBus);
         ModEffects.register(modEventBus);
+
+        if (ModList.get().isLoaded("biomesoplenty")) {
+            CompatModBlocks.register(modEventBus);
+            CompatModItems.register(modEventBus);
+            CompatModEntities.register(modEventBus);
+        }
 
         ModFluids.register(modEventBus);
         ModFluidTypes.register(modEventBus);
@@ -65,8 +75,6 @@ public class BuildersParadise
         ModRecipes.register(modEventBus);
         ModRecipeDisplays.register(modEventBus);
         ModRecipeBookCategories.register(modEventBus);
-
-        BOPConfig.registerBOPCompats(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
 
@@ -98,6 +106,9 @@ public class BuildersParadise
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         CreativeInvConfig.addModItemsToVanillaTabs(event);
+        if (ModList.get().isLoaded("biomesoplenty")) {
+            BOPCreativeInvConfig.addModItemsToVanillaTabs(event);
+        }
     }
 
     @SubscribeEvent
@@ -107,6 +118,10 @@ public class BuildersParadise
 
     private void addPOIBlocks(ExtendPoiTypesEvent event) {
         POIConfig.addModBlocksToVanillaPOIs(event);
+        if (ModList.get().isLoaded("biomesoplenty")) {
+            BOPPOIConfig.addModBlocksToBOPPois(event);
+        }
+
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -118,6 +133,9 @@ public class BuildersParadise
 
     private void addBlockEntities(BlockEntityTypeAddBlocksEvent event){
         BlockEntityConfig.addModdedBlocksToVanillaBlockEntities(event);
+        if (ModList.get().isLoaded("biomesoplenty")) {
+            BOPBlockEntityConfig.addModdedBlocksToVanillaBlockEntities(event);
+        }
     }
 
     private void addGuiScreens(RegisterMenuScreensEvent event) {
@@ -130,6 +148,9 @@ public class BuildersParadise
 
     private void addEntityRenderers(FMLClientSetupEvent event) {
         EntityRendererConfig.addEntityRenderers(event);
+        if (ModList.get().isLoaded("biomesoplenty")) {
+            BOPEntityRendererConfig.addEntityRenderers(event);
+        }
     }
 
     private void addEntityLayerRenderers(EntityRenderersEvent.RegisterLayerDefinitions event) {
@@ -146,6 +167,9 @@ public class BuildersParadise
 
     private void addBlockEntityRenderers(RegisterSpecialBlockModelRendererEvent event){
         BlockEntityModelRendersConfig.registerBlockEntities(event);
+        if (ModList.get().isLoaded("biomesoplenty")) {
+            BOPBlockEntityModelRendersConfig.registerBlockEntities(event);
+        }
     }
 
     private void addParticles(RegisterParticleProvidersEvent event){
@@ -169,6 +193,10 @@ public class BuildersParadise
             RenderTypeConfig.addModRenderTypes();
             FlammabilityConfig.createFlammableBlocks();
             DispenserConfig.addItemsToDispenser();
+            if (ModList.get().isLoaded("biomesoplenty")) {
+                BOPRenderTypeConfig.addModRenderTypes();
+                BOPFlammabilityConfig.createFlammableBlocks();
+            }
         }
     }
 }

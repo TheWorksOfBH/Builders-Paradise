@@ -1,7 +1,6 @@
 package github.theworksofbh.buildersparadise.compat.bop;
 
 import biomesoplenty.api.block.BOPBlocks;
-import biomesoplenty.block.ThermalCalciteBlock;
 import github.theworksofbh.buildersparadise.BuildersParadise;
 import github.theworksofbh.buildersparadise.block.AmethystSlabBlock;
 import github.theworksofbh.buildersparadise.block.AmethystStairBlock;
