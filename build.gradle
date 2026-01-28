@@ -33,6 +33,10 @@ repositories {
         name = "Forge Maven"
         url = 'https://maven.minecraftforge.net/'
     }
+    maven {
+        name = "CaffeineMC"
+        url = "https://maven.caffeinemc.net/releases" // or /snapshots
+    }
 }
 
 base {
@@ -146,6 +150,13 @@ dependencies {
     compileOnly("com.github.glitchfiend:TerraBlender-neoforge:${minecraft_version}-${terrablender_version}")
     compileOnly("com.github.glitchfiend:GlitchCore-neoforge:${minecraft_version}-${glitchcore_version}")
     compileOnly("com.github.glitchfiend:BiomesOPlenty-neoforge:${minecraft_version}-${bop_version}")
+
+    localRuntime("net.caffeinemc:sodium-neoforge:${sodium_version}+mc${minecraft_version}")
+    compileOnly("net.caffeinemc:sodium-neoforge:${sodium_version}+mc${minecraft_version}")
+    localRuntime("net.caffeinemc:sodium-neoforge-api:${sodium_version}+mc${minecraft_version}")
+    compileOnly("net.caffeinemc:sodium-neoforge-api:${sodium_version}+mc${minecraft_version}")
+    localRuntime("net.caffeinemc:sodium-neoforge-mod:${sodium_version}+mc${minecraft_version}")
+    compileOnly("net.caffeinemc:sodium-neoforge-mod:${sodium_version}+mc${minecraft_version}")
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
