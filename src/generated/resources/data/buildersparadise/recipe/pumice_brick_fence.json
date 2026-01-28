@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": "buildersparadise:ice_shard",
+    "#": "buildersparadise:pumice_baton",
     "W": "buildersparadise:pumice_bricks"
   },
   "pattern": [

@@ -1488,7 +1488,7 @@ public class ModRecipesProvider extends RecipeProvider {
             item = ModItems.TERRACOTTA_BATON.get();
         } else if (fence.asItem().getDescriptionId().contains("concrete")) {
             item = ModItems.CONCRETE_BATON.get();
-        } else if (fence.asItem().getDescriptionId().contains("ice")) {
+        } else if (fence.asItem().getDescriptionId().contains("ice") && !fence.asItem().getDescriptionId().contains("pum")) {
             item = ModItems.ICE_SHARD.get();
         } else if (fence.asItem().getDescriptionId().contains("deepslate")) {
             item = ModItems.DEEPSLATE_BATON.get();
@@ -1569,7 +1569,7 @@ public class ModRecipesProvider extends RecipeProvider {
                     item = ModItems.TERRACOTTA_BATON.get();
                 } else if (fence.asItem().getDescriptionId().contains("concrete")) {
                     item = ModItems.CONCRETE_BATON.get();
-                } else if (fence.asItem().getDescriptionId().contains("ice")) {
+                } else if (fence.asItem().getDescriptionId().contains("ice") && !fence.asItem().getDescriptionId().contains("pum")) {
                     item = ModItems.ICE_SHARD.get();
                 } else if (fence.asItem().getDescriptionId().contains("deepslate")) {
                     item = ModItems.DEEPSLATE_BATON.get();

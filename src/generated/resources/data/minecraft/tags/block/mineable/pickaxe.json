@@ -1,14 +1,14 @@
 {
   "values": [
     "minecraft:crafter",
-    "minecraft:smoker",
-    "minecraft:dropper",
-    "minecraft:observer",
     "minecraft:dispenser",
-    "minecraft:grindstone",
     "minecraft:furnace",
     "minecraft:brewing_stand",
     "minecraft:blast_furnace",
+    "minecraft:dropper",
+    "minecraft:observer",
+    "minecraft:smoker",
+    "minecraft:grindstone",
     "buildersparadise:polished_granite_wall",
     "buildersparadise:polished_diorite_wall",
     "buildersparadise:polished_andesite_wall",
