@@ -1,6 +1,5 @@
 {
   "values": [
-    "minecraft:crafting_table",
     "buildersparadise:cut_iron",
     "buildersparadise:exposed_iron",
     "buildersparadise:weathered_iron",
@@ -42,17 +41,6 @@
     "buildersparadise:cut_bronze",
     "buildersparadise:steel_block",
     "buildersparadise:cut_steel",
-    "buildersparadise:spruce_crafting_table",
-    "buildersparadise:birch_crafting_table",
-    "buildersparadise:jungle_crafting_table",
-    "buildersparadise:acacia_crafting_table",
-    "buildersparadise:dark_oak_crafting_table",
-    "buildersparadise:crimson_crafting_table",
-    "buildersparadise:warped_crafting_table",
-    "buildersparadise:mangrove_crafting_table",
-    "buildersparadise:cherry_crafting_table",
-    "buildersparadise:bamboo_crafting_table",
-    "buildersparadise:pale_oak_crafting_table",
     "buildersparadise:exposed_iron_chain",
     "buildersparadise:weathered_iron_chain",
     "buildersparadise:rusted_iron_chain",
@@ -112,20 +100,6 @@
     "buildersparadise:platinum_torch",
     "buildersparadise:platinum_wall_torch",
     "buildersparadise:lead_torch",
-    "buildersparadise:lead_wall_torch",
-    "buildersparadise:dead_crafting_table",
-    "buildersparadise:empyreal_crafting_table",
-    "buildersparadise:fir_crafting_table",
-    "buildersparadise:hellbark_crafting_table",
-    "buildersparadise:jacaranda_crafting_table",
-    "buildersparadise:magic_crafting_table",
-    "buildersparadise:mahogany_crafting_table",
-    "buildersparadise:maple_crafting_table",
-    "buildersparadise:palm_crafting_table",
-    "buildersparadise:pine_crafting_table",
-    "buildersparadise:redwood_crafting_table",
-    "buildersparadise:umbran_crafting_table",
-    "buildersparadise:willow_crafting_table",
-    "buildersparadise:origin_oak_crafting_table"
+    "buildersparadise:lead_wall_torch"
   ]
 }

@@ -53,10 +53,24 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
         return Stream.concat(
                 vanillaBlocksThatNeedNewTags.stream(),
-                Stream.concat(
-                        ModBlocks.BLOCKS.getEntries().stream().map(Supplier::get),
-                        CompatModBlocks.BOP_BLOCKS.getEntries().stream().map(Supplier::get)
-                )
+                ModBlocks.BLOCKS.getEntries().stream().map(Supplier::get)
+        ).filter(
+                (Predicate.not(handMadeBlocks::contains))
+        ).toList();
+    }
+
+    protected Iterable<Block> getBOPBlocks() {
+        Set<Block> vanillaBlocksThatNeedNewTags = Set.of(
+
+        );
+
+        Set<Block> handMadeBlocks = Set.of(
+
+        );
+
+        return Stream.concat(
+                vanillaBlocksThatNeedNewTags.stream(),
+                CompatModBlocks.BOP_BLOCKS.getEntries().stream().map(Supplier::get)
         ).filter(
                 (Predicate.not(handMadeBlocks::contains))
         ).toList();
@@ -167,7 +181,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                     } else if (block instanceof CrafterBlock) {
                         tag(ModBlockTags.CRAFTERS).add(block);
                     } else if (!block.getDescriptionId().contains("chain") || !block.getDescriptionId().contains("lantern")) {
-                        if (block.getDescriptionId().contains("iron") || block.getDescriptionId().contains("copper") || block.getDescriptionId().contains("lapis")|| block.getDescriptionId().contains("tin") || block.getDescriptionId().contains("lead") || block.getDescriptionId().contains("bronze") || block.getDescriptionId().contains("steel")) {
+                        if (block.getDescriptionId().contains("iron") || block.getDescriptionId().contains("copper") || block.getDescriptionId().contains("lapis")|| block.getDescriptionId().contains("tin") && !block.getDescriptionId().contains("crafting") || block.getDescriptionId().contains("lead") || block.getDescriptionId().contains("bronze") || block.getDescriptionId().contains("steel")) {
                             tag(BlockTags.NEEDS_STONE_TOOL).add(block);
                         } else if (block.getDescriptionId().contains("gold") || block.getDescriptionId().contains("diamond") || block.getDescriptionId().contains("emerald") || block.getDescriptionId().contains("zinc") || block.getDescriptionId().contains("silver") || block.getDescriptionId().contains("platinum") || block.getDescriptionId().contains("brass") || block.getDescriptionId().contains("uranium")) {
                             tag(BlockTags.NEEDS_IRON_TOOL).add(block);
@@ -182,6 +196,128 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                         tag(BlockTags.WALL_POST_OVERRIDE).add(block);
                     } else if (block instanceof LanternBlock) {
                         tag(BlockTags.LANTERNS).add(block);
+                    }
+                }
+        );
+
+        getBOPBlocks().forEach(
+                block -> {
+                    if ((block instanceof BasePressurePlateBlock) || block.getDescriptionId().contains("mosaic") || block.getDescriptionId().contains("oak") || block.getDescriptionId().contains("dead") || block.getDescriptionId().contains("empyreal") || block.getDescriptionId().contains("fir") || block.getDescriptionId().contains("jacaranda") || block.getDescriptionId().contains("magic") || block.getDescriptionId().contains("mahogany") || block.getDescriptionId().contains("maple") || block.getDescriptionId().contains("palm") || block.getDescriptionId().contains("pine") || block.getDescriptionId().contains("redwood") || block.getDescriptionId().contains("umbran") || block.getDescriptionId().contains("willow") || (block instanceof CraftingTableBlock) || (block instanceof ChestBlock) || (block instanceof BarrelBlock) || (block instanceof CampfireBlock) || (block instanceof CartographyTableBlock) || (block instanceof BeehiveBlock) || (block instanceof ChiseledBookShelfBlock) || (block instanceof SmithingTableBlock) || (block instanceof LoomBlock) || block.getDescriptionId().contains("bookshelf") || block.getDescriptionId().contains("snow") || block.getDescriptionId().contains("resin") || block.getDescriptionId().contains("sculk")) {
+                        if (block instanceof BasePressurePlateBlock) {
+                            tag(BlockTags.PRESSURE_PLATES).addOptional(block);
+                        } else if (block instanceof CraftingTableBlock) {
+                            tag(ModBlockTags.CRAFTING_TABLES).addOptional(block);
+                            tag(BlockTags.MINEABLE_WITH_AXE).addOptional(block);
+                        } else if (block instanceof CartographyTableBlock) {
+                            tag(ModBlockTags.CARTOGRAPHY_TABLES).addOptional(block);
+                            tag(BlockTags.MINEABLE_WITH_AXE).addOptional(block);
+                        } else if (block instanceof FletchingTableBlock) {
+                            tag(ModBlockTags.FLETCHING_TABLES).addOptional(block);
+                            tag(BlockTags.MINEABLE_WITH_AXE).addOptional(block);
+                        } else if (block instanceof SmithingTableBlock) {
+                            tag(ModBlockTags.SMITHING_TABLES).addOptional(block);
+                            tag(BlockTags.MINEABLE_WITH_AXE).addOptional(block);
+                        } else if (block instanceof LoomBlock) {
+                            tag(ModBlockTags.LOOMS).addOptional(block);
+                            tag(BlockTags.MINEABLE_WITH_AXE).addOptional(block);
+                        } else if (block instanceof CampfireBlock) {
+                            tag(BlockTags.CAMPFIRES).addOptional(block);
+                            tag(BlockTags.MINEABLE_WITH_AXE).addOptional(block);
+                        } else if (block instanceof BeehiveBlock) {
+                            tag(ModBlockTags.BEEHIVES).addOptional(block);
+                            tag(BlockTags.MINEABLE_WITH_AXE).addOptional(block);
+                        } else if (block.getDescriptionId().contains("bookshelf") && !block.getDescriptionId().contains("chiseled")) {
+                            tag(BlockTags.ENCHANTMENT_POWER_PROVIDER).addOptional(block);
+                            tag(ModBlockTags.BOOKSHELVES).addOptional(block);
+                            tag(BlockTags.MINEABLE_WITH_AXE).addOptional(block);
+                        } else if (block instanceof ChiseledBookShelfBlock) {
+                            tag(ModBlockTags.CHISELED_BOOKSHELVES).addOptional(block);
+                            tag(BlockTags.MINEABLE_WITH_AXE).addOptional(block);
+                        } else if (block instanceof LecternBlock) {
+                            tag(ModBlockTags.LECTERNS).addOptional(block);
+                            tag(BlockTags.MINEABLE_WITH_AXE).addOptional(block);
+                        } else if (block instanceof BarrelBlock) {
+                            tag(ModBlockTags.BARRELS).addOptional(block);
+                            tag(BlockTags.MINEABLE_WITH_AXE).addOptional(block);
+                        } else if (block instanceof ChestBlock || block instanceof TrappedChestBlock) {
+                            tag(BlockTags.GUARDED_BY_PIGLINS).addOptional(block);
+                            tag(ModBlockTags.WOODEN_CHESTS).addOptional(block);
+                            if (block instanceof TrappedChestBlock){
+                                tag(ModBlockTags.TRAPPED_CHESTS).addOptional(block);
+                            }
+                            tag(BlockTags.MINEABLE_WITH_AXE).addOptional(block);
+                        } else if (block.getDescriptionId().contains("mosaic")) {
+                            tag(BlockTags.MINEABLE_WITH_AXE).addOptional(block);
+                        } else if (block.getDescriptionId().contains("snow")) {
+                            tag(BlockTags.MINEABLE_WITH_SHOVEL).addOptional(block);
+                        } else if (block.getDescriptionId().contains("sculk")) {
+                            if (block.getDescriptionId().contains("brick")) {
+                                tag(BlockTags.MINEABLE_WITH_PICKAXE).addOptional(block);
+                            } else {
+                                tag(BlockTags.MINEABLE_WITH_HOE).addOptional(block);
+                            }
+                        } else if (block.getDescriptionId().contains("resin")) {
+                            if (block.getDescriptionId().contains("brick")) {
+                                tag(BlockTags.MINEABLE_WITH_PICKAXE).addOptional(block);
+                            } else {
+
+                            }
+                        }
+                    } else {
+                        tag(BlockTags.MINEABLE_WITH_PICKAXE).addOptional(block);
+                    }
+                    if (block instanceof SlabBlock){
+                        tag(BlockTags.SLABS).addOptional(block);
+                    }
+                    else if (block instanceof StairBlock) {
+                        tag(BlockTags.STAIRS).addOptional(block);
+                    }
+                    else if (block instanceof DoorBlock) {
+                        tag(BlockTags.DOORS).addOptional(block);
+                    }
+                    else if (block instanceof TrapDoorBlock) {
+                        tag(BlockTags.TRAPDOORS).addOptional(block);
+                    }
+                    else if (block instanceof WallBlock) {
+                        tag(BlockTags.WALLS).addOptional(block);
+                    }
+                    else if (block instanceof FenceBlock) {
+                        tag(BlockTags.FENCES).addOptional(block);
+                    }
+                    else if (block instanceof GrindstoneBlock) {
+                        tag(ModBlockTags.GRINDSTONES).addOptional(block);
+                    } else if (block instanceof FurnaceBlock) {
+                        tag(ModBlockTags.FURNACES).addOptional(block);
+                    } else if (block instanceof SmokerBlock) {
+                        tag(ModBlockTags.SMOKERS).addOptional(block);
+                    } else if (block instanceof BlastFurnaceBlock) {
+                        tag(ModBlockTags.BLAST_FURNACES).addOptional(block);
+                    } else if (block instanceof BrewingStandBlock) {
+                        tag(ModBlockTags.BREWING_STANDS).addOptional(block);
+                    } else if (block instanceof DispenserBlock) {
+                        tag(ModBlockTags.DISPENSERS).addOptional(block);
+                    } else if (block instanceof DropperBlock) {
+                        tag(ModBlockTags.DROPPERS).addOptional(block);
+                    } else if (block instanceof ObserverBlock) {
+                        tag(ModBlockTags.OBSERVERS).addOptional(block);
+                    } else if (block instanceof CrafterBlock) {
+                        tag(ModBlockTags.CRAFTERS).addOptional(block);
+                    } else if (!block.getDescriptionId().contains("chain") || !block.getDescriptionId().contains("lantern")) {
+                        if (block.getDescriptionId().contains("iron") || block.getDescriptionId().contains("copper") || block.getDescriptionId().contains("lapis")|| block.getDescriptionId().contains("tin") && !block.getDescriptionId().contains("crafting") || block.getDescriptionId().contains("lead") || block.getDescriptionId().contains("bronze") || block.getDescriptionId().contains("steel")) {
+                            tag(BlockTags.NEEDS_STONE_TOOL).addOptional(block);
+                        } else if (block.getDescriptionId().contains("gold") || block.getDescriptionId().contains("diamond") || block.getDescriptionId().contains("emerald") || block.getDescriptionId().contains("zinc") || block.getDescriptionId().contains("silver") || block.getDescriptionId().contains("platinum") || block.getDescriptionId().contains("brass") || block.getDescriptionId().contains("uranium")) {
+                            tag(BlockTags.NEEDS_IRON_TOOL).addOptional(block);
+                        } else if (block.getDescriptionId().contains("obsidian") || block.getDescriptionId().contains("netherite")) {
+                            tag(BlockTags.NEEDS_DIAMOND_TOOL).addOptional(block);
+                        } else if (block.getDescriptionId().contains("tungsten")) {
+                            tag(Tags.Blocks.NEEDS_NETHERITE_TOOL).addOptional(block);
+                        }
+                    } else if (block instanceof ChainBlock) {
+                        tag(BlockTags.CHAINS).addOptional(block);
+                    } else if (block instanceof TorchBlock) {
+                        tag(BlockTags.WALL_POST_OVERRIDE).addOptional(block);
+                    } else if (block instanceof LanternBlock) {
+                        tag(BlockTags.LANTERNS).addOptional(block);
                     }
                 }
         );

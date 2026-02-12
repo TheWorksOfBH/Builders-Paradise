@@ -12,18 +12,57 @@
     "buildersparadise:cherry_beehive",
     "buildersparadise:bamboo_beehive",
     "buildersparadise:pale_oak_beehive",
-    "buildersparadise:dead_beehive",
-    "buildersparadise:empyreal_beehive",
-    "buildersparadise:fir_beehive",
-    "buildersparadise:hellbark_beehive",
-    "buildersparadise:jacaranda_beehive",
-    "buildersparadise:magic_beehive",
-    "buildersparadise:mahogany_beehive",
-    "buildersparadise:maple_beehive",
-    "buildersparadise:palm_beehive",
-    "buildersparadise:pine_beehive",
-    "buildersparadise:redwood_beehive",
-    "buildersparadise:umbran_beehive",
-    "buildersparadise:willow_beehive"
+    {
+      "id": "buildersparadise:dead_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_beehive",
+      "required": false
+    }
   ]
 }

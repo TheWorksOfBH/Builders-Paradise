@@ -12,19 +12,61 @@
     "buildersparadise:cherry_bookshelf",
     "buildersparadise:bamboo_bookshelf",
     "buildersparadise:pale_oak_bookshelf",
-    "buildersparadise:dead_bookshelf",
-    "buildersparadise:empyreal_bookshelf",
-    "buildersparadise:fir_bookshelf",
-    "buildersparadise:hellbark_bookshelf",
-    "buildersparadise:jacaranda_bookshelf",
-    "buildersparadise:magic_bookshelf",
-    "buildersparadise:mahogany_bookshelf",
-    "buildersparadise:maple_bookshelf",
-    "buildersparadise:palm_bookshelf",
-    "buildersparadise:pine_bookshelf",
-    "buildersparadise:redwood_bookshelf",
-    "buildersparadise:umbran_bookshelf",
-    "buildersparadise:willow_bookshelf",
-    "buildersparadise:origin_oak_bookshelf"
+    {
+      "id": "buildersparadise:dead_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:origin_oak_bookshelf",
+      "required": false
+    }
   ]
 }

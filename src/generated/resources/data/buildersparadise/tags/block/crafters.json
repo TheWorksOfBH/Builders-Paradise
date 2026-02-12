@@ -12,18 +12,57 @@
     "buildersparadise:cherry_crafter",
     "buildersparadise:bamboo_crafter",
     "buildersparadise:pale_oak_crafter",
-    "buildersparadise:dead_crafter",
-    "buildersparadise:empyreal_crafter",
-    "buildersparadise:fir_crafter",
-    "buildersparadise:hellbark_crafter",
-    "buildersparadise:jacaranda_crafter",
-    "buildersparadise:magic_crafter",
-    "buildersparadise:mahogany_crafter",
-    "buildersparadise:maple_crafter",
-    "buildersparadise:palm_crafter",
-    "buildersparadise:pine_crafter",
-    "buildersparadise:redwood_crafter",
-    "buildersparadise:umbran_crafter",
-    "buildersparadise:willow_crafter"
+    {
+      "id": "buildersparadise:dead_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_crafter",
+      "required": false
+    }
   ]
 }

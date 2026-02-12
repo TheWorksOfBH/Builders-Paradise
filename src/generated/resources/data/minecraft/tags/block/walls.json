@@ -110,15 +110,45 @@
     "buildersparadise:pumice_wall",
     "buildersparadise:polished_pumice_wall",
     "buildersparadise:pumice_brick_wall",
-    "buildersparadise:cut_white_sandstone_wall",
-    "buildersparadise:smooth_white_sandstone_wall",
-    "buildersparadise:cut_black_sandstone_wall",
-    "buildersparadise:smooth_black_sandstone_wall",
-    "buildersparadise:cut_orange_sandstone_wall",
-    "buildersparadise:smooth_orange_sandstone_wall",
-    "buildersparadise:brimstone_wall",
-    "buildersparadise:thermal_calcite_wall",
-    "buildersparadise:polished_thermal_calcite_wall",
-    "buildersparadise:thermal_calcite_brick_wall"
+    {
+      "id": "buildersparadise:cut_white_sandstone_wall",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:smooth_white_sandstone_wall",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:cut_black_sandstone_wall",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:smooth_black_sandstone_wall",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:cut_orange_sandstone_wall",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:smooth_orange_sandstone_wall",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:brimstone_wall",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:thermal_calcite_wall",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:polished_thermal_calcite_wall",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:thermal_calcite_brick_wall",
+      "required": false
+    }
   ]
 }

@@ -12,18 +12,57 @@
     "buildersparadise:cherry_chiseled_bookshelf",
     "buildersparadise:bamboo_chiseled_bookshelf",
     "buildersparadise:pale_oak_chiseled_bookshelf",
-    "buildersparadise:dead_chiseled_bookshelf",
-    "buildersparadise:empyreal_chiseled_bookshelf",
-    "buildersparadise:fir_chiseled_bookshelf",
-    "buildersparadise:hellbark_chiseled_bookshelf",
-    "buildersparadise:jacaranda_chiseled_bookshelf",
-    "buildersparadise:magic_chiseled_bookshelf",
-    "buildersparadise:mahogany_chiseled_bookshelf",
-    "buildersparadise:maple_chiseled_bookshelf",
-    "buildersparadise:palm_chiseled_bookshelf",
-    "buildersparadise:pine_chiseled_bookshelf",
-    "buildersparadise:redwood_chiseled_bookshelf",
-    "buildersparadise:umbran_chiseled_bookshelf",
-    "buildersparadise:willow_chiseled_bookshelf"
+    {
+      "id": "buildersparadise:dead_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_chiseled_bookshelf",
+      "required": false
+    }
   ]
 }

@@ -1,17 +1,17 @@
 {
   "values": [
-    "minecraft:barrel",
-    "minecraft:beehive",
-    "minecraft:campfire",
-    "minecraft:trapped_chest",
     "minecraft:chest",
-    "minecraft:soul_campfire",
-    "minecraft:crafting_table",
+    "minecraft:smithing_table",
     "minecraft:chiseled_bookshelf",
     "minecraft:loom",
-    "minecraft:smithing_table",
     "minecraft:bookshelf",
     "minecraft:cartography_table",
+    "minecraft:trapped_chest",
+    "minecraft:campfire",
+    "minecraft:beehive",
+    "minecraft:barrel",
+    "minecraft:soul_campfire",
+    "minecraft:crafting_table",
     "buildersparadise:spruce_crafting_table",
     "buildersparadise:birch_crafting_table",
     "buildersparadise:jungle_crafting_table",
@@ -200,207 +200,909 @@
     "buildersparadise:pale_oak_mosaic",
     "buildersparadise:pale_oak_mosaic_slab",
     "buildersparadise:pale_oak_mosaic_stairs",
-    "buildersparadise:dead_mosaic",
-    "buildersparadise:dead_mosaic_slab",
-    "buildersparadise:dead_mosaic_stairs",
-    "buildersparadise:dead_crafting_table",
-    "buildersparadise:dead_cartography_table",
-    "buildersparadise:dead_beehive",
-    "buildersparadise:dead_barrel",
-    "buildersparadise:dead_smithing_table",
-    "buildersparadise:dead_bookshelf",
-    "buildersparadise:dead_campfire",
-    "buildersparadise:dead_soul_campfire",
-    "buildersparadise:dead_chiseled_bookshelf",
-    "buildersparadise:dead_loom",
-    "buildersparadise:dead_chest",
-    "buildersparadise:dead_trapped_chest",
-    "buildersparadise:empyreal_mosaic",
-    "buildersparadise:empyreal_mosaic_slab",
-    "buildersparadise:empyreal_mosaic_stairs",
-    "buildersparadise:empyreal_crafting_table",
-    "buildersparadise:empyreal_cartography_table",
-    "buildersparadise:empyreal_beehive",
-    "buildersparadise:empyreal_barrel",
-    "buildersparadise:empyreal_smithing_table",
-    "buildersparadise:empyreal_bookshelf",
-    "buildersparadise:empyreal_campfire",
-    "buildersparadise:empyreal_soul_campfire",
-    "buildersparadise:empyreal_chiseled_bookshelf",
-    "buildersparadise:empyreal_loom",
-    "buildersparadise:empyreal_chest",
-    "buildersparadise:empyreal_trapped_chest",
-    "buildersparadise:fir_mosaic",
-    "buildersparadise:fir_mosaic_slab",
-    "buildersparadise:fir_mosaic_stairs",
-    "buildersparadise:fir_crafting_table",
-    "buildersparadise:fir_cartography_table",
-    "buildersparadise:fir_beehive",
-    "buildersparadise:fir_barrel",
-    "buildersparadise:fir_smithing_table",
-    "buildersparadise:fir_bookshelf",
-    "buildersparadise:fir_campfire",
-    "buildersparadise:fir_soul_campfire",
-    "buildersparadise:fir_chiseled_bookshelf",
-    "buildersparadise:fir_loom",
-    "buildersparadise:fir_chest",
-    "buildersparadise:fir_trapped_chest",
-    "buildersparadise:hellbark_mosaic",
-    "buildersparadise:hellbark_mosaic_slab",
-    "buildersparadise:hellbark_mosaic_stairs",
-    "buildersparadise:hellbark_crafting_table",
-    "buildersparadise:hellbark_cartography_table",
-    "buildersparadise:hellbark_beehive",
-    "buildersparadise:hellbark_barrel",
-    "buildersparadise:hellbark_smithing_table",
-    "buildersparadise:hellbark_bookshelf",
-    "buildersparadise:hellbark_campfire",
-    "buildersparadise:hellbark_soul_campfire",
-    "buildersparadise:hellbark_chiseled_bookshelf",
-    "buildersparadise:hellbark_loom",
-    "buildersparadise:hellbark_chest",
-    "buildersparadise:hellbark_trapped_chest",
-    "buildersparadise:jacaranda_mosaic",
-    "buildersparadise:jacaranda_mosaic_slab",
-    "buildersparadise:jacaranda_mosaic_stairs",
-    "buildersparadise:jacaranda_crafting_table",
-    "buildersparadise:jacaranda_cartography_table",
-    "buildersparadise:jacaranda_beehive",
-    "buildersparadise:jacaranda_barrel",
-    "buildersparadise:jacaranda_smithing_table",
-    "buildersparadise:jacaranda_bookshelf",
-    "buildersparadise:jacaranda_campfire",
-    "buildersparadise:jacaranda_soul_campfire",
-    "buildersparadise:jacaranda_chiseled_bookshelf",
-    "buildersparadise:jacaranda_loom",
-    "buildersparadise:jacaranda_chest",
-    "buildersparadise:jacaranda_trapped_chest",
-    "buildersparadise:magic_mosaic",
-    "buildersparadise:magic_mosaic_slab",
-    "buildersparadise:magic_mosaic_stairs",
-    "buildersparadise:magic_crafting_table",
-    "buildersparadise:magic_cartography_table",
-    "buildersparadise:magic_beehive",
-    "buildersparadise:magic_barrel",
-    "buildersparadise:magic_smithing_table",
-    "buildersparadise:magic_bookshelf",
-    "buildersparadise:magic_campfire",
-    "buildersparadise:magic_soul_campfire",
-    "buildersparadise:magic_chiseled_bookshelf",
-    "buildersparadise:magic_loom",
-    "buildersparadise:magic_chest",
-    "buildersparadise:magic_trapped_chest",
-    "buildersparadise:mahogany_mosaic",
-    "buildersparadise:mahogany_mosaic_slab",
-    "buildersparadise:mahogany_mosaic_stairs",
-    "buildersparadise:mahogany_crafting_table",
-    "buildersparadise:mahogany_cartography_table",
-    "buildersparadise:mahogany_beehive",
-    "buildersparadise:mahogany_barrel",
-    "buildersparadise:mahogany_smithing_table",
-    "buildersparadise:mahogany_bookshelf",
-    "buildersparadise:mahogany_campfire",
-    "buildersparadise:mahogany_soul_campfire",
-    "buildersparadise:mahogany_chiseled_bookshelf",
-    "buildersparadise:mahogany_loom",
-    "buildersparadise:mahogany_chest",
-    "buildersparadise:mahogany_trapped_chest",
-    "buildersparadise:maple_mosaic",
-    "buildersparadise:maple_mosaic_slab",
-    "buildersparadise:maple_mosaic_stairs",
-    "buildersparadise:maple_crafting_table",
-    "buildersparadise:maple_cartography_table",
-    "buildersparadise:maple_beehive",
-    "buildersparadise:maple_barrel",
-    "buildersparadise:maple_smithing_table",
-    "buildersparadise:maple_bookshelf",
-    "buildersparadise:maple_campfire",
-    "buildersparadise:maple_soul_campfire",
-    "buildersparadise:maple_chiseled_bookshelf",
-    "buildersparadise:maple_loom",
-    "buildersparadise:maple_chest",
-    "buildersparadise:maple_trapped_chest",
-    "buildersparadise:palm_mosaic",
-    "buildersparadise:palm_mosaic_slab",
-    "buildersparadise:palm_mosaic_stairs",
-    "buildersparadise:palm_crafting_table",
-    "buildersparadise:palm_cartography_table",
-    "buildersparadise:palm_beehive",
-    "buildersparadise:palm_barrel",
-    "buildersparadise:palm_smithing_table",
-    "buildersparadise:palm_bookshelf",
-    "buildersparadise:palm_campfire",
-    "buildersparadise:palm_soul_campfire",
-    "buildersparadise:palm_chiseled_bookshelf",
-    "buildersparadise:palm_loom",
-    "buildersparadise:palm_chest",
-    "buildersparadise:palm_trapped_chest",
-    "buildersparadise:pine_mosaic",
-    "buildersparadise:pine_mosaic_slab",
-    "buildersparadise:pine_mosaic_stairs",
-    "buildersparadise:pine_crafting_table",
-    "buildersparadise:pine_cartography_table",
-    "buildersparadise:pine_beehive",
-    "buildersparadise:pine_barrel",
-    "buildersparadise:pine_smithing_table",
-    "buildersparadise:pine_bookshelf",
-    "buildersparadise:pine_campfire",
-    "buildersparadise:pine_soul_campfire",
-    "buildersparadise:pine_chiseled_bookshelf",
-    "buildersparadise:pine_loom",
-    "buildersparadise:pine_chest",
-    "buildersparadise:pine_trapped_chest",
-    "buildersparadise:redwood_mosaic",
-    "buildersparadise:redwood_mosaic_slab",
-    "buildersparadise:redwood_mosaic_stairs",
-    "buildersparadise:redwood_crafting_table",
-    "buildersparadise:redwood_cartography_table",
-    "buildersparadise:redwood_beehive",
-    "buildersparadise:redwood_barrel",
-    "buildersparadise:redwood_smithing_table",
-    "buildersparadise:redwood_bookshelf",
-    "buildersparadise:redwood_campfire",
-    "buildersparadise:redwood_soul_campfire",
-    "buildersparadise:redwood_chiseled_bookshelf",
-    "buildersparadise:redwood_loom",
-    "buildersparadise:redwood_chest",
-    "buildersparadise:redwood_trapped_chest",
-    "buildersparadise:umbran_mosaic",
-    "buildersparadise:umbran_mosaic_slab",
-    "buildersparadise:umbran_mosaic_stairs",
-    "buildersparadise:umbran_crafting_table",
-    "buildersparadise:umbran_cartography_table",
-    "buildersparadise:umbran_beehive",
-    "buildersparadise:umbran_barrel",
-    "buildersparadise:umbran_smithing_table",
-    "buildersparadise:umbran_bookshelf",
-    "buildersparadise:umbran_campfire",
-    "buildersparadise:umbran_soul_campfire",
-    "buildersparadise:umbran_chiseled_bookshelf",
-    "buildersparadise:umbran_loom",
-    "buildersparadise:umbran_chest",
-    "buildersparadise:umbran_trapped_chest",
-    "buildersparadise:willow_mosaic",
-    "buildersparadise:willow_mosaic_slab",
-    "buildersparadise:willow_mosaic_stairs",
-    "buildersparadise:willow_crafting_table",
-    "buildersparadise:willow_cartography_table",
-    "buildersparadise:willow_beehive",
-    "buildersparadise:willow_barrel",
-    "buildersparadise:willow_smithing_table",
-    "buildersparadise:willow_bookshelf",
-    "buildersparadise:willow_campfire",
-    "buildersparadise:willow_soul_campfire",
-    "buildersparadise:willow_chiseled_bookshelf",
-    "buildersparadise:willow_loom",
-    "buildersparadise:willow_chest",
-    "buildersparadise:willow_trapped_chest",
-    "buildersparadise:origin_oak_mosaic",
-    "buildersparadise:origin_oak_mosaic_slab",
-    "buildersparadise:origin_oak_mosaic_stairs",
-    "buildersparadise:origin_oak_crafting_table",
-    "buildersparadise:origin_oak_bookshelf",
-    "buildersparadise:origin_oak_chest",
-    "buildersparadise:origin_oak_trapped_chest"
+    {
+      "id": "buildersparadise:dead_mosaic",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_mosaic_slab",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_mosaic_stairs",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_cartography_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_fletching_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_soul_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_trapped_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_mosaic",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_mosaic_slab",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_mosaic_stairs",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_cartography_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_fletching_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_soul_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_trapped_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_mosaic",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_mosaic_slab",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_mosaic_stairs",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_cartography_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_fletching_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_soul_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_trapped_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_mosaic",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_mosaic_slab",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_mosaic_stairs",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_cartography_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_soul_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_trapped_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_mosaic",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_mosaic_slab",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_mosaic_stairs",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_cartography_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_fletching_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_soul_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_trapped_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_mosaic",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_mosaic_slab",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_mosaic_stairs",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_cartography_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_fletching_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_soul_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_trapped_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_mosaic",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_mosaic_slab",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_mosaic_stairs",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_cartography_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_fletching_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_soul_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_trapped_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_mosaic",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_mosaic_slab",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_mosaic_stairs",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_cartography_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_fletching_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_soul_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_trapped_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_mosaic",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_mosaic_slab",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_mosaic_stairs",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_cartography_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_fletching_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_soul_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_trapped_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_mosaic",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_mosaic_slab",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_mosaic_stairs",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_cartography_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_fletching_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_soul_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_trapped_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_mosaic",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_mosaic_slab",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_mosaic_stairs",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_cartography_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_fletching_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_soul_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_trapped_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_mosaic",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_mosaic_slab",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_mosaic_stairs",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_cartography_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_fletching_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_soul_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_trapped_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_mosaic",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_mosaic_slab",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_mosaic_stairs",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_cartography_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_fletching_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_beehive",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_soul_campfire",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_chiseled_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_trapped_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:origin_oak_mosaic",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:origin_oak_mosaic_slab",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:origin_oak_mosaic_stairs",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:origin_oak_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:origin_oak_bookshelf",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:origin_oak_chest",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:origin_oak_trapped_chest",
+      "required": false
+    }
   ]
 }

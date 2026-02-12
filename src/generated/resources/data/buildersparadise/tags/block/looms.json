@@ -12,18 +12,57 @@
     "buildersparadise:cherry_loom",
     "buildersparadise:bamboo_loom",
     "buildersparadise:pale_oak_loom",
-    "buildersparadise:dead_loom",
-    "buildersparadise:empyreal_loom",
-    "buildersparadise:fir_loom",
-    "buildersparadise:hellbark_loom",
-    "buildersparadise:jacaranda_loom",
-    "buildersparadise:magic_loom",
-    "buildersparadise:mahogany_loom",
-    "buildersparadise:maple_loom",
-    "buildersparadise:palm_loom",
-    "buildersparadise:pine_loom",
-    "buildersparadise:redwood_loom",
-    "buildersparadise:umbran_loom",
-    "buildersparadise:willow_loom"
+    {
+      "id": "buildersparadise:dead_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_loom",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_loom",
+      "required": false
+    }
   ]
 }

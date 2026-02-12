@@ -1,7 +1,7 @@
 {
   "values": [
-    "minecraft:crafting_table",
     "minecraft:smithing_table",
+    "minecraft:crafting_table",
     "buildersparadise:spruce_crafting_table",
     "buildersparadise:birch_crafting_table",
     "buildersparadise:jungle_crafting_table",
@@ -24,32 +24,113 @@
     "buildersparadise:cherry_smithing_table",
     "buildersparadise:bamboo_smithing_table",
     "buildersparadise:pale_oak_smithing_table",
-    "buildersparadise:dead_crafting_table",
-    "buildersparadise:dead_smithing_table",
-    "buildersparadise:empyreal_crafting_table",
-    "buildersparadise:empyreal_smithing_table",
-    "buildersparadise:fir_crafting_table",
-    "buildersparadise:fir_smithing_table",
-    "buildersparadise:hellbark_crafting_table",
-    "buildersparadise:hellbark_smithing_table",
-    "buildersparadise:jacaranda_crafting_table",
-    "buildersparadise:jacaranda_smithing_table",
-    "buildersparadise:magic_crafting_table",
-    "buildersparadise:magic_smithing_table",
-    "buildersparadise:mahogany_crafting_table",
-    "buildersparadise:mahogany_smithing_table",
-    "buildersparadise:maple_crafting_table",
-    "buildersparadise:maple_smithing_table",
-    "buildersparadise:palm_crafting_table",
-    "buildersparadise:palm_smithing_table",
-    "buildersparadise:pine_crafting_table",
-    "buildersparadise:pine_smithing_table",
-    "buildersparadise:redwood_crafting_table",
-    "buildersparadise:redwood_smithing_table",
-    "buildersparadise:umbran_crafting_table",
-    "buildersparadise:umbran_smithing_table",
-    "buildersparadise:willow_crafting_table",
-    "buildersparadise:willow_smithing_table",
-    "buildersparadise:origin_oak_crafting_table"
+    {
+      "id": "buildersparadise:dead_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_crafting_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_smithing_table",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:origin_oak_crafting_table",
+      "required": false
+    }
   ]
 }

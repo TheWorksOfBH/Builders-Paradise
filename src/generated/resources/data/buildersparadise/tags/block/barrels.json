@@ -12,18 +12,57 @@
     "buildersparadise:cherry_barrel",
     "buildersparadise:bamboo_barrel",
     "buildersparadise:pale_oak_barrel",
-    "buildersparadise:dead_barrel",
-    "buildersparadise:empyreal_barrel",
-    "buildersparadise:fir_barrel",
-    "buildersparadise:hellbark_barrel",
-    "buildersparadise:jacaranda_barrel",
-    "buildersparadise:magic_barrel",
-    "buildersparadise:mahogany_barrel",
-    "buildersparadise:maple_barrel",
-    "buildersparadise:palm_barrel",
-    "buildersparadise:pine_barrel",
-    "buildersparadise:redwood_barrel",
-    "buildersparadise:umbran_barrel",
-    "buildersparadise:willow_barrel"
+    {
+      "id": "buildersparadise:dead_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_barrel",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_barrel",
+      "required": false
+    }
   ]
 }
