@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_orientable_trapdoor_top",
+  "ambientocclusion": true,
+  "textures": {
+    "texture": "buildersparadise:block/magenta_stained_glass_trapdoor"
+  }
+}

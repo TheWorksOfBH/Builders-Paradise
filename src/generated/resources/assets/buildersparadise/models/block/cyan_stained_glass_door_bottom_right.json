@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "ambientocclusion": true,
+  "textures": {
+    "bottom": "buildersparadise:block/cyan_stained_glass_door_bottom",
+    "top": "buildersparadise:block/cyan_stained_glass_door_top"
+  }
+}

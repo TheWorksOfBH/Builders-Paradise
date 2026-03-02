@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "buildersparadise:block/gray_concrete_bricks",
+    "side": "buildersparadise:block/gray_concrete_bricks",
+    "top": "buildersparadise:block/gray_concrete_bricks"
+  }
+}

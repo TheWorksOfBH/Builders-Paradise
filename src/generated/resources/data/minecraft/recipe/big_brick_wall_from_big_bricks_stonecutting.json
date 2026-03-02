@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:big_bricks",
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:big_brick_wall"
+  }
+}

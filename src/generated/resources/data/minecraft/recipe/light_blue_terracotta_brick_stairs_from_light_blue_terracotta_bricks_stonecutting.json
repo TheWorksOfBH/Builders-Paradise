@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:light_blue_terracotta_bricks",
+  "result": {
+    "count": 1,
+    "id": "buildersparadise:light_blue_terracotta_brick_stairs"
+  }
+}

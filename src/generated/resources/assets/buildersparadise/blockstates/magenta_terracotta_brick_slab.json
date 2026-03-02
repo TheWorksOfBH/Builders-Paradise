@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/magenta_terracotta_brick_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/magenta_terracotta_bricks"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/magenta_terracotta_brick_slab_top"
+    }
+  }
+}
