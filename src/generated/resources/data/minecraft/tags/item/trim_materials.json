@@ -10,6 +10,14 @@
     "buildersparadise:bronze_ingot",
     "buildersparadise:brass_ingot",
     "buildersparadise:steel_ingot",
-    "buildersparadise:sculk_brick"
+    "buildersparadise:sculk_brick",
+    {
+      "id": "biomesoplenty:rose_quartz_chunk",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:glowworm_silk",
+      "required": false
+    }
   ]
 }

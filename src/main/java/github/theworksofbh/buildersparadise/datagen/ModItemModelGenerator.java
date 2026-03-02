@@ -1,6 +1,8 @@
 package github.theworksofbh.buildersparadise.datagen;
 
 import github.theworksofbh.buildersparadise.compat.bop.CompatModItems;
+import github.theworksofbh.buildersparadise.compat.bop.CompatModMaterialAssetGroups;
+import github.theworksofbh.buildersparadise.compat.bop.CompatModTrimMaterials;
 import github.theworksofbh.buildersparadise.items.ModArmorMaterials;
 import github.theworksofbh.buildersparadise.items.ModItems;
 import github.theworksofbh.buildersparadise.items.ModMaterialAssetGroups;
@@ -54,7 +56,9 @@ public class ModItemModelGenerator extends ItemModelGenerators {
             new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.BRONZE, ModTrimMaterials.BRONZE),
             new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.BRASS, ModTrimMaterials.BRASS),
             new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.STEEL, ModTrimMaterials.STEEL),
-            new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.SCULK, ModTrimMaterials.SCULK)
+            new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.SCULK, ModTrimMaterials.SCULK),
+            new ItemModelGenerators.TrimMaterialData(CompatModMaterialAssetGroups.ROSE_QUARTZ, CompatModTrimMaterials.ROSE_QUARTZ),
+            new ItemModelGenerators.TrimMaterialData(CompatModMaterialAssetGroups.GLOWWORM_SILK, CompatModTrimMaterials.GLOWWORM_SILK)
     );
 
     @Override

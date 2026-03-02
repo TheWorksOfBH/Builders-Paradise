@@ -162,6 +162,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                     else if (block instanceof FenceBlock) {
                         tag(BlockTags.FENCES).add(block);
                     }
+                    else if (block instanceof IronBarsBlock || block instanceof ModIronBarsBlock) {
+                        tag(BlockTags.BARS).add(block);
+                    }
                     else if (block instanceof GrindstoneBlock) {
                         tag(ModBlockTags.GRINDSTONES).add(block);
                     } else if (block instanceof FurnaceBlock) {
@@ -284,6 +287,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                     else if (block instanceof FenceBlock) {
                         tag(BlockTags.FENCES).addOptional(block);
                     }
+                    else if (block instanceof IronBarsBlock || block instanceof ModIronBarsBlock) {
+                        tag(BlockTags.BARS).addOptional(block);
+                    }
                     else if (block instanceof GrindstoneBlock) {
                         tag(ModBlockTags.GRINDSTONES).addOptional(block);
                     } else if (block instanceof FurnaceBlock) {
@@ -405,6 +411,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(Blocks.GLASS)
                 .add(Blocks.GLASS_PANE)
                 .add(Blocks.TINTED_GLASS)
+                .add(ModBlocks.TINTED_GLASS_PANE.get())
                 .add(Blocks.WHITE_STAINED_GLASS)
                 .add(Blocks.ORANGE_STAINED_GLASS)
                 .add(Blocks.MAGENTA_STAINED_GLASS)
@@ -437,6 +444,24 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(Blocks.GREEN_STAINED_GLASS_PANE)
                 .add(Blocks.RED_STAINED_GLASS_PANE)
                 .add(Blocks.BLACK_STAINED_GLASS_PANE)
+                .add(Blocks.POINTED_DRIPSTONE)
+                .add(Blocks.VINE)
+                .add(Blocks.SHORT_GRASS)
+                .add(Blocks.TALL_GRASS)
+                .add(Blocks.SHORT_DRY_GRASS)
+                .add(Blocks.TALL_DRY_GRASS)
+                .add(Blocks.DEAD_BUSH)
+                .add(Blocks.BUSH)
+                .add(Blocks.SWEET_BERRY_BUSH)
+                .add(Blocks.GLOW_LICHEN)
+                .add(Blocks.CAVE_VINES)
+                .add(Blocks.CAVE_VINES_PLANT)
+                .add(Blocks.WEEPING_VINES)
+                .add(Blocks.WEEPING_VINES_PLANT)
+                .add(Blocks.TWISTING_VINES)
+                .add(Blocks.TWISTING_VINES_PLANT)
+                .addTags(BlockTags.SAPLINGS)
+                .addTags(BlockTags.FLOWERS)
                 .addTags(BlockTags.FLOWER_POTS)
                 .addTags(BlockTags.LEAVES);
     }

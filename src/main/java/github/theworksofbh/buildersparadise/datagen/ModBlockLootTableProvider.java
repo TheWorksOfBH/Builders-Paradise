@@ -1,9 +1,6 @@
 package github.theworksofbh.buildersparadise.datagen;
 
-import github.theworksofbh.buildersparadise.block.ModBlocks;
-import github.theworksofbh.buildersparadise.block.ModDoorBlock;
-import github.theworksofbh.buildersparadise.block.ModSlabBlock;
-import github.theworksofbh.buildersparadise.block.ModStairBlock;
+import github.theworksofbh.buildersparadise.block.*;
 import github.theworksofbh.buildersparadise.compat.bop.CompatModBlocks;
 import github.theworksofbh.buildersparadise.items.ModItems;
 import net.minecraft.advancements.criterion.StatePropertiesPredicate;
@@ -17,6 +14,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -26,6 +24,7 @@ import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.CopyComponentsFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
@@ -171,6 +170,19 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 );
     }
 
+    protected LootTable.Builder createGlassDoorLootTable(Block block) {
+        return LootTable.lootTable().withPool(
+                this.applyExplosionCondition(
+                        block, LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                                .add(
+                                        LootItem.lootTableItem(block)
+                                                .when(this.hasSilkTouch())
+                                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(net.minecraft.advancements.criterion.StatePropertiesPredicate.Builder.properties()
+                                                                .hasProperty(DoorBlock.HALF, DoubleBlockHalf.LOWER))))));
+
+    }
+
     protected void generate(){
         getKnownBlocks().forEach(
             block -> {
@@ -179,10 +191,34 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                         this.add(block, createSilkTouchSlabItemTable(block, Items.COBBLESTONE_SLAB));
                     } else if (block == ModBlocks.DEEPSLATE_SLAB.get()) {
                         this.add(block, createSilkTouchSlabItemTable(block, Items.COBBLED_DEEPSLATE_SLAB));
-                    } else if (block == ModBlocks.SNOW_SLAB.get()) {
+                    } else if (block == ModBlocks.SNOW_SLAB.get() || block == ModBlocks.SNOW_BRICK_SLAB.get()) {
                         this.add(block, createColdSlabItemTable(block, Items.SNOWBALL));
-                    } else if (block == ModBlocks.ICE_SLAB.get() || block == ModBlocks.PACKED_ICE_SLAB.get() || block == ModBlocks.BLUE_ICE_SLAB.get()) {
+                    } else if (block == ModBlocks.ICE_SLAB.get() || block == ModBlocks.PACKED_ICE_SLAB.get() || block == ModBlocks.BLUE_ICE_SLAB.get() || block == ModBlocks.ICE_BRICK_SLAB.get() || block == ModBlocks.PACKED_ICE_BRICK_SLAB.get() || block == ModBlocks.BLUE_ICE_BRICK_SLAB.get()) {
                         this.add(block, createColdSlabItemTable(block, ModItems.ICE_SHARD.get()));
+                    } else if (block == ModBlocks.GILDED_BLACKSTONE_SLAB.get()) {
+                        this.add(block, this.createSilkTouchDispatchTable(block,
+                                this.applyExplosionCondition(block, (LootItem.lootTableItem(Items.GOLD_NUGGET).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 5.0F)))
+                                        .when(
+                                                BonusLevelTableCondition.bonusLevelFlatChance(
+                                                        this.registries.lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.FORTUNE),
+                                                        new float[]{0.1F, 0.14285715F, 0.25F, 1.0F})
+                                        )
+                                ).otherwise(
+                                        LootItem.lootTableItem(block)
+                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))
+                                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                                        .hasProperty(SlabBlock.TYPE, SlabType.DOUBLE))))
+                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))
+                                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                                        .hasProperty(SlabBlock.TYPE, SlabType.BOTTOM))))
+                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))
+                                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                                        .hasProperty(SlabBlock.TYPE, SlabType.TOP))))
+                                ))));
+
                     } else {
                         this.add(block, createSlabItemTable(block));
                     }
@@ -191,10 +227,12 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                         this.add(block, createSingleItemTableWithSilkTouch(block, Items.COBBLESTONE_STAIRS));
                     } else if (block == ModBlocks.DEEPSLATE_STAIRS.get()) {
                         this.add(block, createSingleItemTableWithSilkTouch(block, Items.COBBLED_DEEPSLATE_STAIRS));
-                    } else if (block == ModBlocks.SNOW_STAIRS.get()) {
+                    } else if (block == ModBlocks.SNOW_STAIRS.get() || block == ModBlocks.SNOW_BRICK_STAIRS.get()) {
                         this.add(block, createSingleItemTableWithSilkTouch(block, Items.SNOWBALL, ConstantValue.exactly(3.0F)));
-                    } else if (block == ModBlocks.ICE_STAIRS.get() || block == ModBlocks.PACKED_ICE_STAIRS.get() || block == ModBlocks.BLUE_ICE_STAIRS.get()) {
+                    } else if (block == ModBlocks.ICE_STAIRS.get() || block == ModBlocks.PACKED_ICE_STAIRS.get() || block == ModBlocks.BLUE_ICE_STAIRS.get() || block == ModBlocks.ICE_BRICK_STAIRS.get() || block == ModBlocks.PACKED_ICE_BRICK_STAIRS.get() || block == ModBlocks.BLUE_ICE_BRICK_STAIRS.get()) {
                         this.add(block, createSingleItemTableWithSilkTouch(block, ModItems.ICE_SHARD.get(), ConstantValue.exactly(3.0F)));
+                    } else if (block == ModBlocks.GILDED_BLACKSTONE_STAIRS.get()) {
+                        this.add(block, (block1) -> this.createSilkTouchDispatchTable(block1, this.applyExplosionCondition(block1, (LootItem.lootTableItem(Items.GOLD_NUGGET).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 5.0F))).when(BonusLevelTableCondition.bonusLevelFlatChance(this.registries.lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.FORTUNE), new float[]{0.1F, 0.14285715F, 0.25F, 1.0F}))).otherwise(LootItem.lootTableItem(block1)))));
                     } else  {
                         this.dropSelf(block);
                     }
@@ -203,10 +241,12 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                         this.add(block, createSingleItemTableWithSilkTouch(block, Items.COBBLESTONE_WALL));
                     } else if (block == ModBlocks.DEEPSLATE_WALL.get()) {
                         this.add(block, createSingleItemTableWithSilkTouch(block, Items.COBBLED_DEEPSLATE_WALL));
-                    } else if (block == ModBlocks.SNOW_WALL.get()) {
+                    } else if (block == ModBlocks.SNOW_WALL.get() || block == ModBlocks.SNOW_BRICK_WALL.get()) {
                         this.add(block, createSingleItemTableWithSilkTouch(block, Items.SNOWBALL));
-                    } else if (block == ModBlocks.ICE_WALL.get() || block == ModBlocks.PACKED_ICE_WALL.get() || block == ModBlocks.BLUE_ICE_WALL.get()) {
+                    } else if (block == ModBlocks.ICE_WALL.get() || block == ModBlocks.PACKED_ICE_WALL.get() || block == ModBlocks.BLUE_ICE_WALL.get() || block == ModBlocks.ICE_BRICK_WALL.get() || block == ModBlocks.PACKED_ICE_BRICK_WALL.get() || block == ModBlocks.BLUE_ICE_BRICK_WALL.get()) {
                         this.add(block, createSingleItemTableWithSilkTouch(block, ModItems.ICE_SHARD.get()));
+                    } else if (block == ModBlocks.GILDED_BLACKSTONE_WALL.get()) {
+                        this.add(block, (block1) -> this.createSilkTouchDispatchTable(block1, this.applyExplosionCondition(block1, (LootItem.lootTableItem(Items.GOLD_NUGGET).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 5.0F))).when(BonusLevelTableCondition.bonusLevelFlatChance(this.registries.lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.FORTUNE), new float[]{0.1F, 0.14285715F, 0.25F, 1.0F}))).otherwise(LootItem.lootTableItem(block1)))));
                     } else {
                         this.dropSelf(block);
                     }
@@ -215,15 +255,27 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                         this.add(block, createSingleItemTableWithSilkTouch(block, ModItems.COBBLESTONE_FENCE.get()));
                     } else if (block == ModBlocks.DEEPSLATE_FENCE.get()) {
                         this.add(block, createSingleItemTableWithSilkTouch(block, ModItems.COBBLED_DEEPSLATE_FENCE.get()));
-                    } else if (block == ModBlocks.SNOW_FENCE.get()) {
+                    } else if (block == ModBlocks.SNOW_FENCE.get() || block == ModBlocks.SNOW_BRICK_FENCE.get()) {
                         this.add(block, createSingleItemTableWithSilkTouch(block, Items.SNOWBALL));
-                    } else if (block == ModBlocks.ICE_FENCE.get() || block == ModBlocks.PACKED_ICE_FENCE.get() || block == ModBlocks.BLUE_ICE_FENCE.get()) {
+                    } else if (block == ModBlocks.ICE_FENCE.get() || block == ModBlocks.PACKED_ICE_FENCE.get() || block == ModBlocks.BLUE_ICE_FENCE.get() || block == ModBlocks.ICE_BRICK_FENCE.get() || block == ModBlocks.PACKED_ICE_BRICK_FENCE.get() || block == ModBlocks.BLUE_ICE_BRICK_FENCE.get()) {
                         this.add(block, createSingleItemTableWithSilkTouch(block, ModItems.ICE_SHARD.get()));
+                    } else if (block == ModBlocks.GILDED_BLACKSTONE_FENCE.get()) {
+                        this.add(block, (block1) -> this.createSilkTouchDispatchTable(block1, this.applyExplosionCondition(block1, (LootItem.lootTableItem(Items.GOLD_NUGGET).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 5.0F))).when(BonusLevelTableCondition.bonusLevelFlatChance(this.registries.lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.FORTUNE), new float[]{0.1F, 0.14285715F, 0.25F, 1.0F}))).otherwise(LootItem.lootTableItem(block1)))));
                     } else {
                         this.dropSelf(block);
                     }
                 } else if (block instanceof DoorBlock || block instanceof ModDoorBlock) {
-                    this.add(block, createDoorTable(block));
+                    if (block.getDescriptionId().contains("glass") && !block.getDescriptionId().contains("tinted")) {
+                        this.add(block, createGlassDoorLootTable(block));
+                    } else {
+                        this.add(block, createDoorTable(block));
+                    }
+                } else if (block instanceof TrapDoorBlock || block instanceof ModTrapdoorBlock) {
+                    if (block instanceof TransparentTrapdoorBlock || block instanceof StainedTrapdoorBlock) {
+                        this.dropWhenSilkTouch(block);
+                    } else {
+                        this.dropSelf(block);
+                    }
                 } else if (block instanceof DropExperienceBlock) {
                     if (block == ModBlocks.ZINC_ORE.get() || block == ModBlocks.DEEPSLATE_ZINC_ORE.get()) {
                         this.add(block, createOreDrop(block, ModItems.RAW_ZINC.get()));
@@ -294,10 +346,34 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                     } else {
                         this.add(block, createNameableBlockEntityTable(block));
                     }
-                } else if (block == Blocks.CAMPFIRE) {
-                    this.dropOther(block, ModItems.OAK_CAMPFIRE.get());
-                } else if (block == Blocks.SOUL_CAMPFIRE) {
-                    this.dropOther(block, ModItems.OAK_SOUL_CAMPFIRE.get());
+                } else if (block instanceof CampfireBlock) {
+                    if (block.getDescriptionId().contains("soul")) {
+                        if (block == Blocks.SOUL_CAMPFIRE) {
+                            this.add(block, LootTable.lootTable()
+                                    .withPool(
+                                            LootPool.lootPool()
+                                                    .setRolls(ConstantValue.exactly(1.0F))
+                                                    .add(
+                                                            (LootItem.lootTableItem(ModItems.OAK_SOUL_CAMPFIRE.get())
+                                                                    .when(this.hasSilkTouch()))
+                                                                    .otherwise(this.applyExplosionCondition(block, LootItem.lootTableItem(Items.SOUL_SOIL).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))))));
+                        } else {
+                            this.add(block, (campfire) -> this.createSilkTouchDispatchTable(campfire, (LootPoolEntryContainer.Builder)this.applyExplosionCondition(campfire, LootItem.lootTableItem(Items.SOUL_SOIL).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))));
+                        }
+                    } else {
+                        if (block == Blocks.CAMPFIRE) {
+                            this.add(block, LootTable.lootTable()
+                                    .withPool(
+                                            LootPool.lootPool()
+                                                    .setRolls(ConstantValue.exactly(1.0F))
+                                                    .add(
+                                                            (LootItem.lootTableItem(ModItems.OAK_CAMPFIRE.get())
+                                                                    .when(this.hasSilkTouch()))
+                                                                    .otherwise(this.applyExplosionCondition(block, LootItem.lootTableItem(Items.CHARCOAL).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))))));
+                        } else {
+                            this.add(block, (campfire) -> this.createSilkTouchDispatchTable(campfire, (LootPoolEntryContainer.Builder)this.applyExplosionCondition(campfire, LootItem.lootTableItem(Items.CHARCOAL).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))));
+                        }
+                    }
                 } else if (block == Blocks.BEEHIVE) {
                     this.dropOther(block, ModItems.OAK_BEEHIVE.get());
                 } else if (block.getDescriptionId().contains("bookshelf") && !block.getDescriptionId().contains("chiselled")) {
@@ -415,7 +491,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                     } else {
                         this.add(block, createNameableBlockEntityTable(block));
                     }
-                } else if (block.getDescriptionId().contains("ice")) {
+                } else if (block.getDescriptionId().contains("ice") && !block.getDescriptionId().contains("pum")) {
                     this.add(block, createSingleItemTableWithSilkTouch(block, ModItems.ICE_SHARD.get(), ConstantValue.exactly(4.0F)));
                 } else {
                     this.dropSelf(block);

@@ -7,6 +7,7 @@ import github.theworksofbh.buildersparadise.block.ModBlockFamilies;
 import github.theworksofbh.buildersparadise.block.ModBlocks;
 import github.theworksofbh.buildersparadise.compat.bop.*;
 import github.theworksofbh.buildersparadise.items.ModItems;
+import github.theworksofbh.buildersparadise.model_layers.ModModelTemplates;
 import github.theworksofbh.buildersparadise.renderers.ModChestSpecialRenderers;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelOutput;
@@ -24,6 +25,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.*;
@@ -56,6 +58,11 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
             mapping.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(Blocks.SMOOTH_STONE_SLAB, "_side"));
             mapping.put(TextureSlot.TOP, TextureMapping.getBlockTexture(Blocks.SMOOTH_STONE, ""));
             mapping.put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(Blocks.SMOOTH_STONE, ""));
+        } else if (fullBlock == ModBlocks.SMOOTH_DEEPSLATE.get()) {
+            mapping = TexturedModel.CUBE.get(ModBlocks.SMOOTH_DEEPSLATE.get()).getMapping();
+            mapping.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(ModBlocks.SMOOTH_DEEPSLATE_SLAB.get(), "_side"));
+            mapping.put(TextureSlot.TOP, TextureMapping.getBlockTexture(ModBlocks.SMOOTH_DEEPSLATE.get(), ""));
+            mapping.put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(ModBlocks.SMOOTH_DEEPSLATE.get(), ""));
         } else if (fullBlock == ModBlocks.SOUL_SANDSTONE.get()) {
             mapping = TexturedModel.CUBE_TOP_BOTTOM.get(ModBlocks.SOUL_SANDSTONE.get()).getMapping();
             mapping.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(ModBlocks.SOUL_SANDSTONE.get(), ""));
@@ -1509,6 +1516,50 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         registerSimpleItemModel(CompatModBlocks.ORIGIN_OAK_TRAPPED_CHEST.get(), chestSingleTrapped);
     }
 
+    public void createSmoothDeepslateSlab() {
+        TextureMapping texturemapping = TextureMapping.cube(ModBlocks.SMOOTH_DEEPSLATE.get());
+        TextureMapping texturemapping1 = TextureMapping.column(TextureMapping.getBlockTexture(ModBlocks.SMOOTH_DEEPSLATE_SLAB.get(), "_side"), texturemapping.get(TextureSlot.TOP));
+        MultiVariant multivariant = plainVariant(ModelTemplates.SLAB_BOTTOM.create(ModBlocks.SMOOTH_DEEPSLATE_SLAB.get(), texturemapping1, this.modelOutput));
+        MultiVariant multivariant1 = plainVariant(ModelTemplates.SLAB_TOP.create(ModBlocks.SMOOTH_DEEPSLATE_SLAB.get(), texturemapping1, this.modelOutput));
+        MultiVariant multivariant2 = plainVariant(ModelTemplates.CUBE_COLUMN.createWithOverride(ModBlocks.SMOOTH_DEEPSLATE_SLAB.get(), "_double", texturemapping1, this.modelOutput));
+        this.blockStateOutput.accept(createSlab(ModBlocks.SMOOTH_DEEPSLATE_SLAB.get(), multivariant, multivariant1, multivariant2));
+    }
+
+    public void createTintedGlassPane(Block glassBlock, Block paneBlock) {
+        TextureMapping texturemapping = TextureMapping.pane(glassBlock, paneBlock);
+        MultiVariant multivariant = plainVariant(ModModelTemplates.TINTED_GLASS_PANE_POST.create(paneBlock, texturemapping, this.modelOutput));
+        MultiVariant multivariant1 = plainVariant(ModModelTemplates.TINTED_GLASS_PANE_SIDE.create(paneBlock, texturemapping, this.modelOutput));
+        MultiVariant multivariant2 = plainVariant(ModModelTemplates.TINTED_GLASS_PANE_SIDE_ALT.create(paneBlock, texturemapping, this.modelOutput));
+        MultiVariant multivariant3 = plainVariant(ModModelTemplates.TINTED_GLASS_PANE_NOSIDE.create(paneBlock, texturemapping, this.modelOutput));
+        MultiVariant multivariant4 = plainVariant(ModModelTemplates.TINTED_GLASS_PANE_NOSIDE_ALT.create(paneBlock, texturemapping, this.modelOutput));
+        Item item = paneBlock.asItem();
+        this.registerSimpleItemModel(item, this.createFlatItemModelWithBlockTexture(item, glassBlock));
+        this.blockStateOutput.accept(MultiPartGenerator.multiPart(paneBlock).with(multivariant).with(condition().term(BlockStateProperties.NORTH, true), multivariant1).with(condition().term(BlockStateProperties.EAST, true), multivariant1.with(Y_ROT_90)).with(condition().term(BlockStateProperties.SOUTH, true), multivariant2).with(condition().term(BlockStateProperties.WEST, true), multivariant2.with(Y_ROT_90)).with(condition().term(BlockStateProperties.NORTH, false), multivariant3).with(condition().term(BlockStateProperties.EAST, false), multivariant4).with(condition().term(BlockStateProperties.SOUTH, false), multivariant4.with(Y_ROT_90)).with(condition().term(BlockStateProperties.WEST, false), multivariant3.with(Y_ROT_270)));
+    }
+
+    public void createTintedDoor(Block doorBlock) {
+        TextureMapping texturemapping = TextureMapping.door(doorBlock);
+        MultiVariant multivariant = plainVariant(ModModelTemplates.TINTED_DOOR_BOTTOM_LEFT.create(doorBlock, texturemapping, this.modelOutput));
+        MultiVariant multivariant1 = plainVariant(ModModelTemplates.TINTED_DOOR_BOTTOM_LEFT_OPEN.create(doorBlock, texturemapping, this.modelOutput));
+        MultiVariant multivariant2 = plainVariant(ModModelTemplates.TINTED_DOOR_BOTTOM_RIGHT.create(doorBlock, texturemapping, this.modelOutput));
+        MultiVariant multivariant3 = plainVariant(ModModelTemplates.TINTED_DOOR_BOTTOM_RIGHT_OPEN.create(doorBlock, texturemapping, this.modelOutput));
+        MultiVariant multivariant4 = plainVariant(ModModelTemplates.TINTED_DOOR_TOP_LEFT.create(doorBlock, texturemapping, this.modelOutput));
+        MultiVariant multivariant5 = plainVariant(ModModelTemplates.TINTED_DOOR_TOP_LEFT_OPEN.create(doorBlock, texturemapping, this.modelOutput));
+        MultiVariant multivariant6 = plainVariant(ModModelTemplates.TINTED_DOOR_TOP_RIGHT.create(doorBlock, texturemapping, this.modelOutput));
+        MultiVariant multivariant7 = plainVariant(ModModelTemplates.TINTED_DOOR_TOP_RIGHT_OPEN.create(doorBlock, texturemapping, this.modelOutput));
+        this.registerSimpleFlatItemModel(doorBlock.asItem());
+        this.blockStateOutput.accept(createDoor(doorBlock, multivariant, multivariant1, multivariant2, multivariant3, multivariant4, multivariant5, multivariant6, multivariant7));
+    }
+
+    public void createTintedOrientableTrapdoor(Block orientableTrapdoorBlock) {
+        TextureMapping texturemapping = TextureMapping.defaultTexture(orientableTrapdoorBlock);
+        MultiVariant multivariant = plainVariant(ModModelTemplates.TINTED_ORIENTABLE_TRAPDOOR_TOP.create(orientableTrapdoorBlock, texturemapping, this.modelOutput));
+        Identifier identifier = ModModelTemplates.TINTED_ORIENTABLE_TRAPDOOR_BOTTOM.create(orientableTrapdoorBlock, texturemapping, this.modelOutput);
+        MultiVariant multivariant1 = plainVariant(ModModelTemplates.TINTED_ORIENTABLE_TRAPDOOR_OPEN.create(orientableTrapdoorBlock, texturemapping, this.modelOutput));
+        this.blockStateOutput.accept(createOrientableTrapdoor(orientableTrapdoorBlock, multivariant, plainVariant(identifier), multivariant1));
+        this.registerSimpleItemModel(orientableTrapdoorBlock, identifier);
+    }
+
     @Override
     public void run() {
         this.createTrivialCube(ModBlocks.POLISHED_CALCITE.get());
@@ -2365,6 +2416,47 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
 
         this.createOriginOakChests();
 
+        this.createTrivialCube(ModBlocks.POLISHED_STONE.get());
+        this.createTrivialCube(ModBlocks.SMOOTH_DEEPSLATE.get());
+        this.createTrivialCube(ModBlocks.NETHERRACK_BRICKS.get());
+        this.createTrivialCube(ModBlocks.TERRACOTTA_BRICKS.get());
+        this.createTrivialCube(ModBlocks.BIG_BRICKS.get());
+
+        this.createTrivialCube(ModBlocks.WHITE_TERRACOTTA_BRICKS.get());
+        this.createTrivialCube(ModBlocks.ORANGE_TERRACOTTA_BRICKS.get());
+        this.createTrivialCube(ModBlocks.MAGENTA_TERRACOTTA_BRICKS.get());
+        this.createTrivialCube(ModBlocks.LIGHT_BLUE_TERRACOTTA_BRICKS.get());
+        this.createTrivialCube(ModBlocks.YELLOW_TERRACOTTA_BRICKS.get());
+        this.createTrivialCube(ModBlocks.LIME_TERRACOTTA_BRICKS.get());
+        this.createTrivialCube(ModBlocks.PINK_TERRACOTTA_BRICKS.get());
+        this.createTrivialCube(ModBlocks.GRAY_TERRACOTTA_BRICKS.get());
+        this.createTrivialCube(ModBlocks.LIGHT_GRAY_TERRACOTTA_BRICKS.get());
+        this.createTrivialCube(ModBlocks.CYAN_TERRACOTTA_BRICKS.get());
+        this.createTrivialCube(ModBlocks.PURPLE_TERRACOTTA_BRICKS.get());
+        this.createTrivialCube(ModBlocks.BLUE_TERRACOTTA_BRICKS.get());
+        this.createTrivialCube(ModBlocks.BROWN_TERRACOTTA_BRICKS.get());
+        this.createTrivialCube(ModBlocks.GREEN_TERRACOTTA_BRICKS.get());
+        this.createTrivialCube(ModBlocks.RED_TERRACOTTA_BRICKS.get());
+        this.createTrivialCube(ModBlocks.BLACK_TERRACOTTA_BRICKS.get());
+
+        this.createTrivialCube(ModBlocks.WHITE_CONCRETE_BRICKS.get());
+        this.createTrivialCube(ModBlocks.ORANGE_CONCRETE_BRICKS.get());
+        this.createTrivialCube(ModBlocks.MAGENTA_CONCRETE_BRICKS.get());
+        this.createTrivialCube(ModBlocks.LIGHT_BLUE_CONCRETE_BRICKS.get());
+        this.createTrivialCube(ModBlocks.YELLOW_CONCRETE_BRICKS.get());
+        this.createTrivialCube(ModBlocks.LIME_CONCRETE_BRICKS.get());
+        this.createTrivialCube(ModBlocks.PINK_CONCRETE_BRICKS.get());
+        this.createTrivialCube(ModBlocks.GRAY_CONCRETE_BRICKS.get());
+        this.createTrivialCube(ModBlocks.LIGHT_GRAY_CONCRETE_BRICKS.get());
+        this.createTrivialCube(ModBlocks.CYAN_CONCRETE_BRICKS.get());
+        this.createTrivialCube(ModBlocks.PURPLE_CONCRETE_BRICKS.get());
+        this.createTrivialCube(ModBlocks.BLUE_CONCRETE_BRICKS.get());
+        this.createTrivialCube(ModBlocks.BROWN_CONCRETE_BRICKS.get());
+        this.createTrivialCube(ModBlocks.GREEN_CONCRETE_BRICKS.get());
+        this.createTrivialCube(ModBlocks.RED_CONCRETE_BRICKS.get());
+        this.createTrivialCube(ModBlocks.BLACK_CONCRETE_BRICKS.get());
+
+        this.createTintedGlassPane(Blocks.TINTED_GLASS, ModBlocks.TINTED_GLASS_PANE.get());
 
         Stream.concat(ModBlockFamilies.getAllFamilies(), CompatModBlockFamilies.getAllFamilies())
                 .filter(BlockFamily::shouldGenerateModel)
@@ -2381,6 +2473,14 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
                                 thermalStairs(family.get(BlockFamily.Variant.STAIRS), family.getBaseBlock());
                                 thermalWall(family.get(BlockFamily.Variant.WALL), family.getBaseBlock());
                                 thermalFence(family.get(BlockFamily.Variant.FENCE), family.getBaseBlock());
+                            } else if (family.getBaseBlock() == ModBlocks.SMOOTH_DEEPSLATE.get()) {
+                                familyWithExistingFullBlock(family.getBaseBlock()).wall(ModBlocks.SMOOTH_DEEPSLATE_WALL.get());
+                                createSmoothDeepslateSlab();
+                                familyWithExistingFullBlock(family.getBaseBlock()).stairs(ModBlocks.SMOOTH_DEEPSLATE_STAIRS.get());
+                                familyWithExistingFullBlock(family.getBaseBlock()).fence(ModBlocks.SMOOTH_DEEPSLATE_FENCE.get());
+                            } else if (family.getBaseBlock() == Blocks.TINTED_GLASS || family.getBaseBlock().getDescriptionId().contains("stained")) {
+                                createTintedDoor(family.get(BlockFamily.Variant.DOOR));
+                                createTintedOrientableTrapdoor(family.get(BlockFamily.Variant.TRAPDOOR));
                             } else {
                                 familyWithExistingFullBlock(family.getBaseBlock()).generateFor(family);
                             }

@@ -5,27 +5,122 @@
       "bonus_rolls": 0.0,
       "entries": [
         {
-          "type": "minecraft:item",
-          "functions": [
+          "type": "minecraft:alternatives",
+          "children": [
             {
-              "add": false,
+              "type": "minecraft:item",
               "conditions": [
                 {
-                  "block": "buildersparadise:blue_ice_brick_slab",
-                  "condition": "minecraft:block_state_property",
-                  "properties": {
-                    "type": "double"
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "minecraft:silk_touch",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
                   }
                 }
               ],
-              "count": 2.0,
-              "function": "minecraft:set_count"
+              "functions": [
+                {
+                  "add": false,
+                  "conditions": [
+                    {
+                      "block": "buildersparadise:blue_ice_brick_slab",
+                      "condition": "minecraft:block_state_property",
+                      "properties": {
+                        "type": "double"
+                      }
+                    }
+                  ],
+                  "count": 2.0,
+                  "function": "minecraft:set_count"
+                },
+                {
+                  "add": false,
+                  "conditions": [
+                    {
+                      "block": "buildersparadise:blue_ice_brick_slab",
+                      "condition": "minecraft:block_state_property",
+                      "properties": {
+                        "type": "bottom"
+                      }
+                    }
+                  ],
+                  "count": 1.0,
+                  "function": "minecraft:set_count"
+                },
+                {
+                  "add": false,
+                  "conditions": [
+                    {
+                      "block": "buildersparadise:blue_ice_brick_slab",
+                      "condition": "minecraft:block_state_property",
+                      "properties": {
+                        "type": "top"
+                      }
+                    }
+                  ],
+                  "count": 1.0,
+                  "function": "minecraft:set_count"
+                }
+              ],
+              "name": "buildersparadise:blue_ice_brick_slab"
             },
             {
-              "function": "minecraft:explosion_decay"
+              "type": "minecraft:item",
+              "functions": [
+                {
+                  "add": false,
+                  "conditions": [
+                    {
+                      "block": "buildersparadise:blue_ice_brick_slab",
+                      "condition": "minecraft:block_state_property",
+                      "properties": {
+                        "type": "double"
+                      }
+                    }
+                  ],
+                  "count": 4.0,
+                  "function": "minecraft:set_count"
+                },
+                {
+                  "add": false,
+                  "conditions": [
+                    {
+                      "block": "buildersparadise:blue_ice_brick_slab",
+                      "condition": "minecraft:block_state_property",
+                      "properties": {
+                        "type": "bottom"
+                      }
+                    }
+                  ],
+                  "count": 2.0,
+                  "function": "minecraft:set_count"
+                },
+                {
+                  "add": false,
+                  "conditions": [
+                    {
+                      "block": "buildersparadise:blue_ice_brick_slab",
+                      "condition": "minecraft:block_state_property",
+                      "properties": {
+                        "type": "top"
+                      }
+                    }
+                  ],
+                  "count": 2.0,
+                  "function": "minecraft:set_count"
+                }
+              ],
+              "name": "buildersparadise:ice_shard"
             }
-          ],
-          "name": "buildersparadise:blue_ice_brick_slab"
+          ]
         }
       ],
       "rolls": 1.0

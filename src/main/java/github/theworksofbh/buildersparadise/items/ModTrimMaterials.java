@@ -1,6 +1,7 @@
 package github.theworksofbh.buildersparadise.items;
 
 import github.theworksofbh.buildersparadise.BuildersParadise;
+import github.theworksofbh.buildersparadise.compat.bop.CompatModTrimMaterials;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.network.chat.Component;
@@ -45,5 +46,7 @@ public class ModTrimMaterials {
         register(context, BRASS, Style.EMPTY.withColor(14930086), ModMaterialAssetGroups.BRASS);
         register(context, STEEL, Style.EMPTY.withColor(4671303), ModMaterialAssetGroups.STEEL);
         register(context, SCULK, Style.EMPTY.withColor(11813), ModMaterialAssetGroups.SCULK);
+
+        CompatModTrimMaterials.bootstrap(context);
     }
 }

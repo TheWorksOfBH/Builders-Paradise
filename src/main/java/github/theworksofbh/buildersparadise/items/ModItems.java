@@ -1395,6 +1395,276 @@ public class ModItems {
     public static final DeferredItem<Item> RHYOLITE_BATON = registerCustomItem("rhyolite_baton");
     public static final DeferredItem<Item> PUMICE_BATON = registerCustomItem("pumice_baton");
 
+    public static final DeferredItem<BlockItem> POLISHED_STONE = registerBlockItem("polished_stone", () -> ModBlocks.POLISHED_STONE.get());
+    public static final DeferredItem<BlockItem> POLISHED_STONE_SLAB = registerBlockItem("polished_stone_slab", () -> ModBlocks.POLISHED_STONE_SLAB.get());
+    public static final DeferredItem<BlockItem> POLISHED_STONE_STAIRS = registerBlockItem("polished_stone_stairs", () -> ModBlocks.POLISHED_STONE_STAIRS.get());
+    public static final DeferredItem<BlockItem> POLISHED_STONE_WALL = registerBlockItem("polished_stone_wall", () -> ModBlocks.POLISHED_STONE_WALL.get());
+    public static final DeferredItem<BlockItem> POLISHED_STONE_FENCE = registerBlockItem("polished_stone_fence", () -> ModBlocks.POLISHED_STONE_FENCE.get());
+
+    public static final DeferredItem<BlockItem> SMOOTH_DEEPSLATE = registerBlockItem("smooth_deepslate", () -> ModBlocks.SMOOTH_DEEPSLATE.get());
+    public static final DeferredItem<BlockItem> SMOOTH_DEEPSLATE_SLAB = registerBlockItem("smooth_deepslate_slab", () -> ModBlocks.SMOOTH_DEEPSLATE_SLAB.get());
+    public static final DeferredItem<BlockItem> SMOOTH_DEEPSLATE_STAIRS = registerBlockItem("smooth_deepslate_stairs", () -> ModBlocks.SMOOTH_DEEPSLATE_STAIRS.get());
+    public static final DeferredItem<BlockItem> SMOOTH_DEEPSLATE_WALL = registerBlockItem("smooth_deepslate_wall", () -> ModBlocks.SMOOTH_DEEPSLATE_WALL.get());
+    public static final DeferredItem<BlockItem> SMOOTH_DEEPSLATE_FENCE = registerBlockItem("smooth_deepslate_fence", () -> ModBlocks.SMOOTH_DEEPSLATE_FENCE.get());
+
+    public static final DeferredItem<BlockItem> NETHERRACK_BRICKS = registerBlockItem("netherrack_bricks", () -> ModBlocks.NETHERRACK_BRICKS.get());
+    public static final DeferredItem<BlockItem> NETHERRACK_BRICK_SLAB = registerBlockItem("netherrack_brick_slab", () -> ModBlocks.NETHERRACK_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> NETHERRACK_BRICK_STAIRS = registerBlockItem("netherrack_brick_stairs", () -> ModBlocks.NETHERRACK_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> NETHERRACK_BRICK_WALL = registerBlockItem("netherrack_brick_wall", () -> ModBlocks.NETHERRACK_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> NETHERRACK_BRICK_FENCE = registerBlockItem("netherrack_brick_fence", () -> ModBlocks.NETHERRACK_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> TERRACOTTA_BRICKS = registerBlockItem("terracotta_bricks", () -> ModBlocks.TERRACOTTA_BRICKS.get());
+    public static final DeferredItem<BlockItem> TERRACOTTA_BRICK_SLAB = registerBlockItem("terracotta_brick_slab", () -> ModBlocks.TERRACOTTA_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> TERRACOTTA_BRICK_STAIRS = registerBlockItem("terracotta_brick_stairs", () -> ModBlocks.TERRACOTTA_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> TERRACOTTA_BRICK_WALL = registerBlockItem("terracotta_brick_wall", () -> ModBlocks.TERRACOTTA_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> TERRACOTTA_BRICK_FENCE = registerBlockItem("terracotta_brick_fence", () -> ModBlocks.TERRACOTTA_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> WHITE_TERRACOTTA_BRICKS = registerBlockItem("white_terracotta_bricks", () -> ModBlocks.WHITE_TERRACOTTA_BRICKS.get());
+    public static final DeferredItem<BlockItem> WHITE_TERRACOTTA_BRICK_SLAB = registerBlockItem("white_terracotta_brick_slab", () -> ModBlocks.WHITE_TERRACOTTA_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> WHITE_TERRACOTTA_BRICK_STAIRS = registerBlockItem("white_terracotta_brick_stairs", () -> ModBlocks.WHITE_TERRACOTTA_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> WHITE_TERRACOTTA_BRICK_WALL = registerBlockItem("white_terracotta_brick_wall", () -> ModBlocks.WHITE_TERRACOTTA_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> WHITE_TERRACOTTA_BRICK_FENCE = registerBlockItem("white_terracotta_brick_fence", () -> ModBlocks.WHITE_TERRACOTTA_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> ORANGE_TERRACOTTA_BRICKS = registerBlockItem("orange_terracotta_bricks", () -> ModBlocks.ORANGE_TERRACOTTA_BRICKS.get());
+    public static final DeferredItem<BlockItem> ORANGE_TERRACOTTA_BRICK_SLAB = registerBlockItem("orange_terracotta_brick_slab", () -> ModBlocks.ORANGE_TERRACOTTA_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> ORANGE_TERRACOTTA_BRICK_STAIRS = registerBlockItem("orange_terracotta_brick_stairs", () -> ModBlocks.ORANGE_TERRACOTTA_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> ORANGE_TERRACOTTA_BRICK_WALL = registerBlockItem("orange_terracotta_brick_wall", () -> ModBlocks.ORANGE_TERRACOTTA_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> ORANGE_TERRACOTTA_BRICK_FENCE = registerBlockItem("orange_terracotta_brick_fence", () -> ModBlocks.ORANGE_TERRACOTTA_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> MAGENTA_TERRACOTTA_BRICKS = registerBlockItem("magenta_terracotta_bricks", () -> ModBlocks.MAGENTA_TERRACOTTA_BRICKS.get());
+    public static final DeferredItem<BlockItem> MAGENTA_TERRACOTTA_BRICK_SLAB = registerBlockItem("magenta_terracotta_brick_slab", () -> ModBlocks.MAGENTA_TERRACOTTA_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> MAGENTA_TERRACOTTA_BRICK_STAIRS = registerBlockItem("magenta_terracotta_brick_stairs", () -> ModBlocks.MAGENTA_TERRACOTTA_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> MAGENTA_TERRACOTTA_BRICK_WALL = registerBlockItem("magenta_terracotta_brick_wall", () -> ModBlocks.MAGENTA_TERRACOTTA_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> MAGENTA_TERRACOTTA_BRICK_FENCE = registerBlockItem("magenta_terracotta_brick_fence", () -> ModBlocks.MAGENTA_TERRACOTTA_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> LIGHT_BLUE_TERRACOTTA_BRICKS = registerBlockItem("light_blue_terracotta_bricks", () -> ModBlocks.LIGHT_BLUE_TERRACOTTA_BRICKS.get());
+    public static final DeferredItem<BlockItem> LIGHT_BLUE_TERRACOTTA_BRICK_SLAB = registerBlockItem("light_blue_terracotta_brick_slab", () -> ModBlocks.LIGHT_BLUE_TERRACOTTA_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> LIGHT_BLUE_TERRACOTTA_BRICK_STAIRS = registerBlockItem("light_blue_terracotta_brick_stairs", () -> ModBlocks.LIGHT_BLUE_TERRACOTTA_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> LIGHT_BLUE_TERRACOTTA_BRICK_WALL = registerBlockItem("light_blue_terracotta_brick_wall", () -> ModBlocks.LIGHT_BLUE_TERRACOTTA_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> LIGHT_BLUE_TERRACOTTA_BRICK_FENCE = registerBlockItem("light_blue_terracotta_brick_fence", () -> ModBlocks.LIGHT_BLUE_TERRACOTTA_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> YELLOW_TERRACOTTA_BRICKS = registerBlockItem("yellow_terracotta_bricks", () -> ModBlocks.YELLOW_TERRACOTTA_BRICKS.get());
+    public static final DeferredItem<BlockItem> YELLOW_TERRACOTTA_BRICK_SLAB = registerBlockItem("yellow_terracotta_brick_slab", () -> ModBlocks.YELLOW_TERRACOTTA_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> YELLOW_TERRACOTTA_BRICK_STAIRS = registerBlockItem("yellow_terracotta_brick_stairs", () -> ModBlocks.YELLOW_TERRACOTTA_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> YELLOW_TERRACOTTA_BRICK_WALL = registerBlockItem("yellow_terracotta_brick_wall", () -> ModBlocks.YELLOW_TERRACOTTA_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> YELLOW_TERRACOTTA_BRICK_FENCE = registerBlockItem("yellow_terracotta_brick_fence", () -> ModBlocks.YELLOW_TERRACOTTA_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> LIME_TERRACOTTA_BRICKS = registerBlockItem("lime_terracotta_bricks", () -> ModBlocks.LIME_TERRACOTTA_BRICKS.get());
+    public static final DeferredItem<BlockItem> LIME_TERRACOTTA_BRICK_SLAB = registerBlockItem("lime_terracotta_brick_slab", () -> ModBlocks.LIME_TERRACOTTA_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> LIME_TERRACOTTA_BRICK_STAIRS = registerBlockItem("lime_terracotta_brick_stairs", () -> ModBlocks.LIME_TERRACOTTA_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> LIME_TERRACOTTA_BRICK_WALL = registerBlockItem("lime_terracotta_brick_wall", () -> ModBlocks.LIME_TERRACOTTA_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> LIME_TERRACOTTA_BRICK_FENCE = registerBlockItem("lime_terracotta_brick_fence", () -> ModBlocks.LIME_TERRACOTTA_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> PINK_TERRACOTTA_BRICKS = registerBlockItem("pink_terracotta_bricks", () -> ModBlocks.PINK_TERRACOTTA_BRICKS.get());
+    public static final DeferredItem<BlockItem> PINK_TERRACOTTA_BRICK_SLAB = registerBlockItem("pink_terracotta_brick_slab", () -> ModBlocks.PINK_TERRACOTTA_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> PINK_TERRACOTTA_BRICK_STAIRS = registerBlockItem("pink_terracotta_brick_stairs", () -> ModBlocks.PINK_TERRACOTTA_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> PINK_TERRACOTTA_BRICK_WALL = registerBlockItem("pink_terracotta_brick_wall", () -> ModBlocks.PINK_TERRACOTTA_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> PINK_TERRACOTTA_BRICK_FENCE = registerBlockItem("pink_terracotta_brick_fence", () -> ModBlocks.PINK_TERRACOTTA_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> GRAY_TERRACOTTA_BRICKS = registerBlockItem("gray_terracotta_bricks", () -> ModBlocks.GRAY_TERRACOTTA_BRICKS.get());
+    public static final DeferredItem<BlockItem> GRAY_TERRACOTTA_BRICK_SLAB = registerBlockItem("gray_terracotta_brick_slab", () -> ModBlocks.GRAY_TERRACOTTA_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> GRAY_TERRACOTTA_BRICK_STAIRS = registerBlockItem("gray_terracotta_brick_stairs", () -> ModBlocks.GRAY_TERRACOTTA_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> GRAY_TERRACOTTA_BRICK_WALL = registerBlockItem("gray_terracotta_brick_wall", () -> ModBlocks.GRAY_TERRACOTTA_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> GRAY_TERRACOTTA_BRICK_FENCE = registerBlockItem("gray_terracotta_brick_fence", () -> ModBlocks.GRAY_TERRACOTTA_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> LIGHT_GRAY_TERRACOTTA_BRICKS = registerBlockItem("light_gray_terracotta_bricks", () -> ModBlocks.LIGHT_GRAY_TERRACOTTA_BRICKS.get());
+    public static final DeferredItem<BlockItem> LIGHT_GRAY_TERRACOTTA_BRICK_SLAB = registerBlockItem("light_gray_terracotta_brick_slab", () -> ModBlocks.LIGHT_GRAY_TERRACOTTA_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> LIGHT_GRAY_TERRACOTTA_BRICK_STAIRS = registerBlockItem("light_gray_terracotta_brick_stairs", () -> ModBlocks.LIGHT_GRAY_TERRACOTTA_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> LIGHT_GRAY_TERRACOTTA_BRICK_WALL = registerBlockItem("light_gray_terracotta_brick_wall", () -> ModBlocks.LIGHT_GRAY_TERRACOTTA_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> LIGHT_GRAY_TERRACOTTA_BRICK_FENCE = registerBlockItem("light_gray_terracotta_brick_fence", () -> ModBlocks.LIGHT_GRAY_TERRACOTTA_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> CYAN_TERRACOTTA_BRICKS = registerBlockItem("cyan_terracotta_bricks", () -> ModBlocks.CYAN_TERRACOTTA_BRICKS.get());
+    public static final DeferredItem<BlockItem> CYAN_TERRACOTTA_BRICK_SLAB = registerBlockItem("cyan_terracotta_brick_slab", () -> ModBlocks.CYAN_TERRACOTTA_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> CYAN_TERRACOTTA_BRICK_STAIRS = registerBlockItem("cyan_terracotta_brick_stairs", () -> ModBlocks.CYAN_TERRACOTTA_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> CYAN_TERRACOTTA_BRICK_WALL = registerBlockItem("cyan_terracotta_brick_wall", () -> ModBlocks.CYAN_TERRACOTTA_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> CYAN_TERRACOTTA_BRICK_FENCE = registerBlockItem("cyan_terracotta_brick_fence", () -> ModBlocks.CYAN_TERRACOTTA_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> PURPLE_TERRACOTTA_BRICKS = registerBlockItem("purple_terracotta_bricks", () -> ModBlocks.PURPLE_TERRACOTTA_BRICKS.get());
+    public static final DeferredItem<BlockItem> PURPLE_TERRACOTTA_BRICK_SLAB = registerBlockItem("purple_terracotta_brick_slab", () -> ModBlocks.PURPLE_TERRACOTTA_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> PURPLE_TERRACOTTA_BRICK_STAIRS = registerBlockItem("purple_terracotta_brick_stairs", () -> ModBlocks.PURPLE_TERRACOTTA_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> PURPLE_TERRACOTTA_BRICK_WALL = registerBlockItem("purple_terracotta_brick_wall", () -> ModBlocks.PURPLE_TERRACOTTA_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> PURPLE_TERRACOTTA_BRICK_FENCE = registerBlockItem("purple_terracotta_brick_fence", () -> ModBlocks.PURPLE_TERRACOTTA_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> BLUE_TERRACOTTA_BRICKS = registerBlockItem("blue_terracotta_bricks", () -> ModBlocks.BLUE_TERRACOTTA_BRICKS.get());
+    public static final DeferredItem<BlockItem> BLUE_TERRACOTTA_BRICK_SLAB = registerBlockItem("blue_terracotta_brick_slab", () -> ModBlocks.BLUE_TERRACOTTA_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> BLUE_TERRACOTTA_BRICK_STAIRS = registerBlockItem("blue_terracotta_brick_stairs", () -> ModBlocks.BLUE_TERRACOTTA_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> BLUE_TERRACOTTA_BRICK_WALL = registerBlockItem("blue_terracotta_brick_wall", () -> ModBlocks.BLUE_TERRACOTTA_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> BLUE_TERRACOTTA_BRICK_FENCE = registerBlockItem("blue_terracotta_brick_fence", () -> ModBlocks.BLUE_TERRACOTTA_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> BROWN_TERRACOTTA_BRICKS = registerBlockItem("brown_terracotta_bricks", () -> ModBlocks.BROWN_TERRACOTTA_BRICKS.get());
+    public static final DeferredItem<BlockItem> BROWN_TERRACOTTA_BRICK_SLAB = registerBlockItem("brown_terracotta_brick_slab", () -> ModBlocks.BROWN_TERRACOTTA_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> BROWN_TERRACOTTA_BRICK_STAIRS = registerBlockItem("brown_terracotta_brick_stairs", () -> ModBlocks.BROWN_TERRACOTTA_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> BROWN_TERRACOTTA_BRICK_WALL = registerBlockItem("brown_terracotta_brick_wall", () -> ModBlocks.BROWN_TERRACOTTA_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> BROWN_TERRACOTTA_BRICK_FENCE = registerBlockItem("brown_terracotta_brick_fence", () -> ModBlocks.BROWN_TERRACOTTA_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> GREEN_TERRACOTTA_BRICKS = registerBlockItem("green_terracotta_bricks", () -> ModBlocks.GREEN_TERRACOTTA_BRICKS.get());
+    public static final DeferredItem<BlockItem> GREEN_TERRACOTTA_BRICK_SLAB = registerBlockItem("green_terracotta_brick_slab", () -> ModBlocks.GREEN_TERRACOTTA_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> GREEN_TERRACOTTA_BRICK_STAIRS = registerBlockItem("green_terracotta_brick_stairs", () -> ModBlocks.GREEN_TERRACOTTA_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> GREEN_TERRACOTTA_BRICK_WALL = registerBlockItem("green_terracotta_brick_wall", () -> ModBlocks.GREEN_TERRACOTTA_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> GREEN_TERRACOTTA_BRICK_FENCE = registerBlockItem("green_terracotta_brick_fence", () -> ModBlocks.GREEN_TERRACOTTA_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> RED_TERRACOTTA_BRICKS = registerBlockItem("red_terracotta_bricks", () -> ModBlocks.RED_TERRACOTTA_BRICKS.get());
+    public static final DeferredItem<BlockItem> RED_TERRACOTTA_BRICK_SLAB = registerBlockItem("red_terracotta_brick_slab", () -> ModBlocks.RED_TERRACOTTA_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> RED_TERRACOTTA_BRICK_STAIRS = registerBlockItem("red_terracotta_brick_stairs", () -> ModBlocks.RED_TERRACOTTA_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> RED_TERRACOTTA_BRICK_WALL = registerBlockItem("red_terracotta_brick_wall", () -> ModBlocks.RED_TERRACOTTA_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> RED_TERRACOTTA_BRICK_FENCE = registerBlockItem("red_terracotta_brick_fence", () -> ModBlocks.RED_TERRACOTTA_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> BLACK_TERRACOTTA_BRICKS = registerBlockItem("black_terracotta_bricks", () -> ModBlocks.BLACK_TERRACOTTA_BRICKS.get());
+    public static final DeferredItem<BlockItem> BLACK_TERRACOTTA_BRICK_SLAB = registerBlockItem("black_terracotta_brick_slab", () -> ModBlocks.BLACK_TERRACOTTA_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> BLACK_TERRACOTTA_BRICK_STAIRS = registerBlockItem("black_terracotta_brick_stairs", () -> ModBlocks.BLACK_TERRACOTTA_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> BLACK_TERRACOTTA_BRICK_WALL = registerBlockItem("black_terracotta_brick_wall", () -> ModBlocks.BLACK_TERRACOTTA_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> BLACK_TERRACOTTA_BRICK_FENCE = registerBlockItem("black_terracotta_brick_fence", () -> ModBlocks.BLACK_TERRACOTTA_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> BIG_BRICKS = registerBlockItem("big_bricks", () -> ModBlocks.BIG_BRICKS.get());
+    public static final DeferredItem<BlockItem> BIG_BRICK_SLAB = registerBlockItem("big_brick_slab", () -> ModBlocks.BIG_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> BIG_BRICK_STAIRS = registerBlockItem("big_brick_stairs", () -> ModBlocks.BIG_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> BIG_BRICK_WALL = registerBlockItem("big_brick_wall", () -> ModBlocks.BIG_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> BIG_BRICK_FENCE = registerBlockItem("big_brick_fence", () -> ModBlocks.BIG_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> WHITE_CONCRETE_BRICKS = registerBlockItem("white_concrete_bricks", () -> ModBlocks.WHITE_CONCRETE_BRICKS.get());
+    public static final DeferredItem<BlockItem> WHITE_CONCRETE_BRICK_SLAB = registerBlockItem("white_concrete_brick_slab", () -> ModBlocks.WHITE_CONCRETE_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> WHITE_CONCRETE_BRICK_STAIRS = registerBlockItem("white_concrete_brick_stairs", () -> ModBlocks.WHITE_CONCRETE_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> WHITE_CONCRETE_BRICK_WALL = registerBlockItem("white_concrete_brick_wall", () -> ModBlocks.WHITE_CONCRETE_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> WHITE_CONCRETE_BRICK_FENCE = registerBlockItem("white_concrete_brick_fence", () -> ModBlocks.WHITE_CONCRETE_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> ORANGE_CONCRETE_BRICKS = registerBlockItem("orange_concrete_bricks", () -> ModBlocks.ORANGE_CONCRETE_BRICKS.get());
+    public static final DeferredItem<BlockItem> ORANGE_CONCRETE_BRICK_SLAB = registerBlockItem("orange_concrete_brick_slab", () -> ModBlocks.ORANGE_CONCRETE_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> ORANGE_CONCRETE_BRICK_STAIRS = registerBlockItem("orange_concrete_brick_stairs", () -> ModBlocks.ORANGE_CONCRETE_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> ORANGE_CONCRETE_BRICK_WALL = registerBlockItem("orange_concrete_brick_wall", () -> ModBlocks.ORANGE_CONCRETE_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> ORANGE_CONCRETE_BRICK_FENCE = registerBlockItem("orange_concrete_brick_fence", () -> ModBlocks.ORANGE_CONCRETE_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> MAGENTA_CONCRETE_BRICKS = registerBlockItem("magenta_concrete_bricks", () -> ModBlocks.MAGENTA_CONCRETE_BRICKS.get());
+    public static final DeferredItem<BlockItem> MAGENTA_CONCRETE_BRICK_SLAB = registerBlockItem("magenta_concrete_brick_slab", () -> ModBlocks.MAGENTA_CONCRETE_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> MAGENTA_CONCRETE_BRICK_STAIRS = registerBlockItem("magenta_concrete_brick_stairs", () -> ModBlocks.MAGENTA_CONCRETE_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> MAGENTA_CONCRETE_BRICK_WALL = registerBlockItem("magenta_concrete_brick_wall", () -> ModBlocks.MAGENTA_CONCRETE_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> MAGENTA_CONCRETE_BRICK_FENCE = registerBlockItem("magenta_concrete_brick_fence", () -> ModBlocks.MAGENTA_CONCRETE_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> LIGHT_BLUE_CONCRETE_BRICKS = registerBlockItem("light_blue_concrete_bricks", () -> ModBlocks.LIGHT_BLUE_CONCRETE_BRICKS.get());
+    public static final DeferredItem<BlockItem> LIGHT_BLUE_CONCRETE_BRICK_SLAB = registerBlockItem("light_blue_concrete_brick_slab", () -> ModBlocks.LIGHT_BLUE_CONCRETE_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> LIGHT_BLUE_CONCRETE_BRICK_STAIRS = registerBlockItem("light_blue_concrete_brick_stairs", () -> ModBlocks.LIGHT_BLUE_CONCRETE_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> LIGHT_BLUE_CONCRETE_BRICK_WALL = registerBlockItem("light_blue_concrete_brick_wall", () -> ModBlocks.LIGHT_BLUE_CONCRETE_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> LIGHT_BLUE_CONCRETE_BRICK_FENCE = registerBlockItem("light_blue_concrete_brick_fence", () -> ModBlocks.LIGHT_BLUE_CONCRETE_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> YELLOW_CONCRETE_BRICKS = registerBlockItem("yellow_concrete_bricks", () -> ModBlocks.YELLOW_CONCRETE_BRICKS.get());
+    public static final DeferredItem<BlockItem> YELLOW_CONCRETE_BRICK_SLAB = registerBlockItem("yellow_concrete_brick_slab", () -> ModBlocks.YELLOW_CONCRETE_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> YELLOW_CONCRETE_BRICK_STAIRS = registerBlockItem("yellow_concrete_brick_stairs", () -> ModBlocks.YELLOW_CONCRETE_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> YELLOW_CONCRETE_BRICK_WALL = registerBlockItem("yellow_concrete_brick_wall", () -> ModBlocks.YELLOW_CONCRETE_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> YELLOW_CONCRETE_BRICK_FENCE = registerBlockItem("yellow_concrete_brick_fence", () -> ModBlocks.YELLOW_CONCRETE_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> LIME_CONCRETE_BRICKS = registerBlockItem("lime_concrete_bricks", () -> ModBlocks.LIME_CONCRETE_BRICKS.get());
+    public static final DeferredItem<BlockItem> LIME_CONCRETE_BRICK_SLAB = registerBlockItem("lime_concrete_brick_slab", () -> ModBlocks.LIME_CONCRETE_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> LIME_CONCRETE_BRICK_STAIRS = registerBlockItem("lime_concrete_brick_stairs", () -> ModBlocks.LIME_CONCRETE_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> LIME_CONCRETE_BRICK_WALL = registerBlockItem("lime_concrete_brick_wall", () -> ModBlocks.LIME_CONCRETE_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> LIME_CONCRETE_BRICK_FENCE = registerBlockItem("lime_concrete_brick_fence", () -> ModBlocks.LIME_CONCRETE_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> PINK_CONCRETE_BRICKS = registerBlockItem("pink_concrete_bricks", () -> ModBlocks.PINK_CONCRETE_BRICKS.get());
+    public static final DeferredItem<BlockItem> PINK_CONCRETE_BRICK_SLAB = registerBlockItem("pink_concrete_brick_slab", () -> ModBlocks.PINK_CONCRETE_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> PINK_CONCRETE_BRICK_STAIRS = registerBlockItem("pink_concrete_brick_stairs", () -> ModBlocks.PINK_CONCRETE_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> PINK_CONCRETE_BRICK_WALL = registerBlockItem("pink_concrete_brick_wall", () -> ModBlocks.PINK_CONCRETE_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> PINK_CONCRETE_BRICK_FENCE = registerBlockItem("pink_concrete_brick_fence", () -> ModBlocks.PINK_CONCRETE_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> GRAY_CONCRETE_BRICKS = registerBlockItem("gray_concrete_bricks", () -> ModBlocks.GRAY_CONCRETE_BRICKS.get());
+    public static final DeferredItem<BlockItem> GRAY_CONCRETE_BRICK_SLAB = registerBlockItem("gray_concrete_brick_slab", () -> ModBlocks.GRAY_CONCRETE_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> GRAY_CONCRETE_BRICK_STAIRS = registerBlockItem("gray_concrete_brick_stairs", () -> ModBlocks.GRAY_CONCRETE_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> GRAY_CONCRETE_BRICK_WALL = registerBlockItem("gray_concrete_brick_wall", () -> ModBlocks.GRAY_CONCRETE_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> GRAY_CONCRETE_BRICK_FENCE = registerBlockItem("gray_concrete_brick_fence", () -> ModBlocks.GRAY_CONCRETE_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> LIGHT_GRAY_CONCRETE_BRICKS = registerBlockItem("light_gray_concrete_bricks", () -> ModBlocks.LIGHT_GRAY_CONCRETE_BRICKS.get());
+    public static final DeferredItem<BlockItem> LIGHT_GRAY_CONCRETE_BRICK_SLAB = registerBlockItem("light_gray_concrete_brick_slab", () -> ModBlocks.LIGHT_GRAY_CONCRETE_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> LIGHT_GRAY_CONCRETE_BRICK_STAIRS = registerBlockItem("light_gray_concrete_brick_stairs", () -> ModBlocks.LIGHT_GRAY_CONCRETE_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> LIGHT_GRAY_CONCRETE_BRICK_WALL = registerBlockItem("light_gray_concrete_brick_wall", () -> ModBlocks.LIGHT_GRAY_CONCRETE_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> LIGHT_GRAY_CONCRETE_BRICK_FENCE = registerBlockItem("light_gray_concrete_brick_fence", () -> ModBlocks.LIGHT_GRAY_CONCRETE_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> CYAN_CONCRETE_BRICKS = registerBlockItem("cyan_concrete_bricks", () -> ModBlocks.CYAN_CONCRETE_BRICKS.get());
+    public static final DeferredItem<BlockItem> CYAN_CONCRETE_BRICK_SLAB = registerBlockItem("cyan_concrete_brick_slab", () -> ModBlocks.CYAN_CONCRETE_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> CYAN_CONCRETE_BRICK_STAIRS = registerBlockItem("cyan_concrete_brick_stairs", () -> ModBlocks.CYAN_CONCRETE_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> CYAN_CONCRETE_BRICK_WALL = registerBlockItem("cyan_concrete_brick_wall", () -> ModBlocks.CYAN_CONCRETE_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> CYAN_CONCRETE_BRICK_FENCE = registerBlockItem("cyan_concrete_brick_fence", () -> ModBlocks.CYAN_CONCRETE_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> PURPLE_CONCRETE_BRICKS = registerBlockItem("purple_concrete_bricks", () -> ModBlocks.PURPLE_CONCRETE_BRICKS.get());
+    public static final DeferredItem<BlockItem> PURPLE_CONCRETE_BRICK_SLAB = registerBlockItem("purple_concrete_brick_slab", () -> ModBlocks.PURPLE_CONCRETE_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> PURPLE_CONCRETE_BRICK_STAIRS = registerBlockItem("purple_concrete_brick_stairs", () -> ModBlocks.PURPLE_CONCRETE_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> PURPLE_CONCRETE_BRICK_WALL = registerBlockItem("purple_concrete_brick_wall", () -> ModBlocks.PURPLE_CONCRETE_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> PURPLE_CONCRETE_BRICK_FENCE = registerBlockItem("purple_concrete_brick_fence", () -> ModBlocks.PURPLE_CONCRETE_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> BLUE_CONCRETE_BRICKS = registerBlockItem("blue_concrete_bricks", () -> ModBlocks.BLUE_CONCRETE_BRICKS.get());
+    public static final DeferredItem<BlockItem> BLUE_CONCRETE_BRICK_SLAB = registerBlockItem("blue_concrete_brick_slab", () -> ModBlocks.BLUE_CONCRETE_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> BLUE_CONCRETE_BRICK_STAIRS = registerBlockItem("blue_concrete_brick_stairs", () -> ModBlocks.BLUE_CONCRETE_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> BLUE_CONCRETE_BRICK_WALL = registerBlockItem("blue_concrete_brick_wall", () -> ModBlocks.BLUE_CONCRETE_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> BLUE_CONCRETE_BRICK_FENCE = registerBlockItem("blue_concrete_brick_fence", () -> ModBlocks.BLUE_CONCRETE_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> BROWN_CONCRETE_BRICKS = registerBlockItem("brown_concrete_bricks", () -> ModBlocks.BROWN_CONCRETE_BRICKS.get());
+    public static final DeferredItem<BlockItem> BROWN_CONCRETE_BRICK_SLAB = registerBlockItem("brown_concrete_brick_slab", () -> ModBlocks.BROWN_CONCRETE_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> BROWN_CONCRETE_BRICK_STAIRS = registerBlockItem("brown_concrete_brick_stairs", () -> ModBlocks.BROWN_CONCRETE_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> BROWN_CONCRETE_BRICK_WALL = registerBlockItem("brown_concrete_brick_wall", () -> ModBlocks.BROWN_CONCRETE_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> BROWN_CONCRETE_BRICK_FENCE = registerBlockItem("brown_concrete_brick_fence", () -> ModBlocks.BROWN_CONCRETE_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> GREEN_CONCRETE_BRICKS = registerBlockItem("green_concrete_bricks", () -> ModBlocks.GREEN_CONCRETE_BRICKS.get());
+    public static final DeferredItem<BlockItem> GREEN_CONCRETE_BRICK_SLAB = registerBlockItem("green_concrete_brick_slab", () -> ModBlocks.GREEN_CONCRETE_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> GREEN_CONCRETE_BRICK_STAIRS = registerBlockItem("green_concrete_brick_stairs", () -> ModBlocks.GREEN_CONCRETE_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> GREEN_CONCRETE_BRICK_WALL = registerBlockItem("green_concrete_brick_wall", () -> ModBlocks.GREEN_CONCRETE_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> GREEN_CONCRETE_BRICK_FENCE = registerBlockItem("green_concrete_brick_fence", () -> ModBlocks.GREEN_CONCRETE_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> RED_CONCRETE_BRICKS = registerBlockItem("red_concrete_bricks", () -> ModBlocks.RED_CONCRETE_BRICKS.get());
+    public static final DeferredItem<BlockItem> RED_CONCRETE_BRICK_SLAB = registerBlockItem("red_concrete_brick_slab", () -> ModBlocks.RED_CONCRETE_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> RED_CONCRETE_BRICK_STAIRS = registerBlockItem("red_concrete_brick_stairs", () -> ModBlocks.RED_CONCRETE_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> RED_CONCRETE_BRICK_WALL = registerBlockItem("red_concrete_brick_wall", () -> ModBlocks.RED_CONCRETE_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> RED_CONCRETE_BRICK_FENCE = registerBlockItem("red_concrete_brick_fence", () -> ModBlocks.RED_CONCRETE_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> BLACK_CONCRETE_BRICKS = registerBlockItem("black_concrete_bricks", () -> ModBlocks.BLACK_CONCRETE_BRICKS.get());
+    public static final DeferredItem<BlockItem> BLACK_CONCRETE_BRICK_SLAB = registerBlockItem("black_concrete_brick_slab", () -> ModBlocks.BLACK_CONCRETE_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> BLACK_CONCRETE_BRICK_STAIRS = registerBlockItem("black_concrete_brick_stairs", () -> ModBlocks.BLACK_CONCRETE_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> BLACK_CONCRETE_BRICK_WALL = registerBlockItem("black_concrete_brick_wall", () -> ModBlocks.BLACK_CONCRETE_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> BLACK_CONCRETE_BRICK_FENCE = registerBlockItem("black_concrete_brick_fence", () -> ModBlocks.BLACK_CONCRETE_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> GILDED_BLACKSTONE_SLAB = registerBlockItem("gilded_blackstone_slab", () -> ModBlocks.GILDED_BLACKSTONE_SLAB.get());
+    public static final DeferredItem<BlockItem> GILDED_BLACKSTONE_STAIRS = registerBlockItem("gilded_blackstone_stairs", () -> ModBlocks.GILDED_BLACKSTONE_STAIRS.get());
+    public static final DeferredItem<BlockItem> GILDED_BLACKSTONE_WALL = registerBlockItem("gilded_blackstone_wall", () -> ModBlocks.GILDED_BLACKSTONE_WALL.get());
+    public static final DeferredItem<BlockItem> GILDED_BLACKSTONE_FENCE = registerBlockItem("gilded_blackstone_fence", () -> ModBlocks.GILDED_BLACKSTONE_FENCE.get());
+
+    public static final DeferredItem<BlockItem> TINTED_GLASS_PANE = registerBlockItem("tinted_glass_pane", () -> ModBlocks.TINTED_GLASS_PANE.get());
+
+    public static final DeferredItem<BlockItem> GLASS_DOOR = registerBlockItem("glass_door", () -> ModBlocks.GLASS_DOOR.get());
+    public static final DeferredItem<BlockItem> TINTED_GLASS_DOOR = registerBlockItem("tinted_glass_door", () -> ModBlocks.TINTED_GLASS_DOOR.get());
+
+    public static final DeferredItem<BlockItem> WHITE_STAINED_GLASS_DOOR = registerBlockItem("white_stained_glass_door", () -> ModBlocks.WHITE_STAINED_GLASS_DOOR.get());
+    public static final DeferredItem<BlockItem> ORANGE_STAINED_GLASS_DOOR = registerBlockItem("orange_stained_glass_door", () -> ModBlocks.ORANGE_STAINED_GLASS_DOOR.get());
+    public static final DeferredItem<BlockItem> MAGENTA_STAINED_GLASS_DOOR = registerBlockItem("magenta_stained_glass_door", () -> ModBlocks.MAGENTA_STAINED_GLASS_DOOR.get());
+    public static final DeferredItem<BlockItem> LIGHT_BLUE_STAINED_GLASS_DOOR = registerBlockItem("light_blue_stained_glass_door", () -> ModBlocks.LIGHT_BLUE_STAINED_GLASS_DOOR.get());
+    public static final DeferredItem<BlockItem> YELLOW_STAINED_GLASS_DOOR = registerBlockItem("yellow_stained_glass_door", () -> ModBlocks.YELLOW_STAINED_GLASS_DOOR.get());
+    public static final DeferredItem<BlockItem> LIME_STAINED_GLASS_DOOR = registerBlockItem("lime_stained_glass_door", () -> ModBlocks.LIME_STAINED_GLASS_DOOR.get());
+    public static final DeferredItem<BlockItem> PINK_STAINED_GLASS_DOOR = registerBlockItem("pink_stained_glass_door", () -> ModBlocks.PINK_STAINED_GLASS_DOOR.get());
+    public static final DeferredItem<BlockItem> GRAY_STAINED_GLASS_DOOR = registerBlockItem("gray_stained_glass_door", () -> ModBlocks.GRAY_STAINED_GLASS_DOOR.get());
+    public static final DeferredItem<BlockItem> LIGHT_GRAY_STAINED_GLASS_DOOR = registerBlockItem("light_gray_stained_glass_door", () -> ModBlocks.LIGHT_GRAY_STAINED_GLASS_DOOR.get());
+    public static final DeferredItem<BlockItem> CYAN_STAINED_GLASS_DOOR = registerBlockItem("cyan_stained_glass_door", () -> ModBlocks.CYAN_STAINED_GLASS_DOOR.get());
+    public static final DeferredItem<BlockItem> PURPLE_STAINED_GLASS_DOOR = registerBlockItem("purple_stained_glass_door", () -> ModBlocks.PURPLE_STAINED_GLASS_DOOR.get());
+    public static final DeferredItem<BlockItem> BLUE_STAINED_GLASS_DOOR = registerBlockItem("blue_stained_glass_door", () -> ModBlocks.BLUE_STAINED_GLASS_DOOR.get());
+    public static final DeferredItem<BlockItem> BROWN_STAINED_GLASS_DOOR = registerBlockItem("brown_stained_glass_door", () -> ModBlocks.BROWN_STAINED_GLASS_DOOR.get());
+    public static final DeferredItem<BlockItem> GREEN_STAINED_GLASS_DOOR = registerBlockItem("green_stained_glass_door", () -> ModBlocks.GREEN_STAINED_GLASS_DOOR.get());
+    public static final DeferredItem<BlockItem> RED_STAINED_GLASS_DOOR = registerBlockItem("red_stained_glass_door", () -> ModBlocks.RED_STAINED_GLASS_DOOR.get());
+    public static final DeferredItem<BlockItem> BLACK_STAINED_GLASS_DOOR = registerBlockItem("black_stained_glass_door", () -> ModBlocks.BLACK_STAINED_GLASS_DOOR.get());
+
+    public static final DeferredItem<BlockItem> GLASS_TRAPDOOR = registerBlockItem("glass_trapdoor", () -> ModBlocks.GLASS_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> TINTED_GLASS_TRAPDOOR = registerBlockItem("tinted_glass_trapdoor", () -> ModBlocks.TINTED_GLASS_TRAPDOOR.get());
+
+    public static final DeferredItem<BlockItem> WHITE_STAINED_GLASS_TRAPDOOR = registerBlockItem("white_stained_glass_trapdoor", () -> ModBlocks.WHITE_STAINED_GLASS_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> ORANGE_STAINED_GLASS_TRAPDOOR = registerBlockItem("orange_stained_glass_trapdoor", () -> ModBlocks.ORANGE_STAINED_GLASS_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> MAGENTA_STAINED_GLASS_TRAPDOOR = registerBlockItem("magenta_stained_glass_trapdoor", () -> ModBlocks.MAGENTA_STAINED_GLASS_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> LIGHT_BLUE_STAINED_GLASS_TRAPDOOR = registerBlockItem("light_blue_stained_glass_trapdoor", () -> ModBlocks.LIGHT_BLUE_STAINED_GLASS_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> YELLOW_STAINED_GLASS_TRAPDOOR = registerBlockItem("yellow_stained_glass_trapdoor", () -> ModBlocks.YELLOW_STAINED_GLASS_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> LIME_STAINED_GLASS_TRAPDOOR = registerBlockItem("lime_stained_glass_trapdoor", () -> ModBlocks.LIME_STAINED_GLASS_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> PINK_STAINED_GLASS_TRAPDOOR = registerBlockItem("pink_stained_glass_trapdoor", () -> ModBlocks.PINK_STAINED_GLASS_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> GRAY_STAINED_GLASS_TRAPDOOR = registerBlockItem("gray_stained_glass_trapdoor", () -> ModBlocks.GRAY_STAINED_GLASS_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> LIGHT_GRAY_STAINED_GLASS_TRAPDOOR = registerBlockItem("light_gray_stained_glass_trapdoor", () -> ModBlocks.LIGHT_GRAY_STAINED_GLASS_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> CYAN_STAINED_GLASS_TRAPDOOR = registerBlockItem("cyan_stained_glass_trapdoor", () -> ModBlocks.CYAN_STAINED_GLASS_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> PURPLE_STAINED_GLASS_TRAPDOOR = registerBlockItem("purple_stained_glass_trapdoor", () -> ModBlocks.PURPLE_STAINED_GLASS_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> BLUE_STAINED_GLASS_TRAPDOOR = registerBlockItem("blue_stained_glass_trapdoor", () -> ModBlocks.BLUE_STAINED_GLASS_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> BROWN_STAINED_GLASS_TRAPDOOR = registerBlockItem("brown_stained_glass_trapdoor", () -> ModBlocks.BROWN_STAINED_GLASS_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> GREEN_STAINED_GLASS_TRAPDOOR = registerBlockItem("green_stained_glass_trapdoor", () -> ModBlocks.GREEN_STAINED_GLASS_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> RED_STAINED_GLASS_TRAPDOOR = registerBlockItem("red_stained_glass_trapdoor", () -> ModBlocks.RED_STAINED_GLASS_TRAPDOOR.get());
+    public static final DeferredItem<BlockItem> BLACK_STAINED_GLASS_TRAPDOOR = registerBlockItem("black_stained_glass_trapdoor", () -> ModBlocks.BLACK_STAINED_GLASS_TRAPDOOR.get());
+
+
     private static DeferredItem<Item> registerCustomItem(String registryName) {
         if (registryName.contains("netherite")) {
             return ITEMS.register(
