@@ -6,7 +6,6 @@
   "group": "silver_ingot",
   "ingredient": "buildersparadise:raw_silver",
   "result": {
-    "count": 1,
     "id": "buildersparadise:silver_ingot"
   }
 }

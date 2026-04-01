@@ -11,58 +11,6 @@
     "buildersparadise:mangrove_beehive",
     "buildersparadise:cherry_beehive",
     "buildersparadise:bamboo_beehive",
-    "buildersparadise:pale_oak_beehive",
-    {
-      "id": "buildersparadise:dead_beehive",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:empyreal_beehive",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:fir_beehive",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:hellbark_beehive",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:jacaranda_beehive",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:magic_beehive",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:mahogany_beehive",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:maple_beehive",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:palm_beehive",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:pine_beehive",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:redwood_beehive",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:umbran_beehive",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:willow_beehive",
-      "required": false
-    }
+    "buildersparadise:pale_oak_beehive"
   ]
 }

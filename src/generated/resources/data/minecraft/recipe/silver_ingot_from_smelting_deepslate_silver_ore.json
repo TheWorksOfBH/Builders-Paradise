@@ -6,7 +6,6 @@
   "group": "silver_ingot",
   "ingredient": "buildersparadise:deepslate_silver_ore",
   "result": {
-    "count": 1,
     "id": "buildersparadise:silver_ingot"
   }
 }

@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "buildersparadise:polished_stone",
   "result": {
-    "count": 1,
     "id": "buildersparadise:stone_tile_stairs"
   }
 }

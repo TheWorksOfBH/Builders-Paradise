@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "buildersparadise:packed_ice_bricks",
   "result": {
-    "count": 1,
     "id": "buildersparadise:packed_ice_brick_wall"
   }
 }

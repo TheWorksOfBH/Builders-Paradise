@@ -46,7 +46,7 @@ public class NukeBlock extends TntBlock {
     public void wasExploded(ServerLevel p_364953_, BlockPos p_57442_, Explosion p_57443_) {
         PrimedNuke primedNuke = new PrimedNuke(p_364953_, (double)p_57442_.getX() + (double)0.5F, (double)p_57442_.getY(), (double)p_57442_.getZ() + (double)0.5F, p_57443_.getIndirectSourceEntity());
         int i = primedNuke.getFuse();
-        primedNuke.setFuse((short)(p_364953_.random.nextInt(i / 4) + i / 8));
+        primedNuke.setFuse((short)(p_364953_.getRandom().nextInt(i / 4) + i / 8));
         p_364953_.addFreshEntity(primedNuke);
     }
 

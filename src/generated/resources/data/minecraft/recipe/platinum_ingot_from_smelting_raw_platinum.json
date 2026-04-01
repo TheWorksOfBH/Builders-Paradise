@@ -6,7 +6,6 @@
   "group": "platinum_ingot",
   "ingredient": "buildersparadise:raw_platinum",
   "result": {
-    "count": 1,
     "id": "buildersparadise:platinum_ingot"
   }
 }

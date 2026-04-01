@@ -23,7 +23,7 @@ public class ModSlabBlock extends SlabBlock {
 
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        if (level.random.nextFloat() < BlockOxidationValues.IRON) {
+        if (level.getRandom().nextFloat() < BlockOxidationValues.IRON) {
             if (isGalvanized(level, pos)) {
 
             } else {
@@ -35,7 +35,7 @@ public class ModSlabBlock extends SlabBlock {
                     level.setBlock(pos, ModBlocks.RUSTED_CUT_IRON_SLAB.get().withPropertiesOf(state), Block.UPDATE_ALL);
                 }
             }
-        } else if (level.random.nextFloat() < BlockOxidationValues.ZINC) {
+        } else if (level.getRandom().nextFloat() < BlockOxidationValues.ZINC) {
             if (state.is(ModBlocks.CUT_ZINC_SLAB.get())) {
                 level.setBlock(pos, ModBlocks.EXPOSED_CUT_ZINC_SLAB.get().withPropertiesOf(state), Block.UPDATE_ALL);
             } else if (state.is(ModBlocks.EXPOSED_CUT_ZINC_SLAB.get())) {

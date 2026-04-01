@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:snow_block",
   "result": {
-    "count": 1,
     "id": "buildersparadise:snow_brick_wall"
   }
 }

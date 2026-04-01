@@ -11,58 +11,6 @@
     "buildersparadise:mangrove_loom",
     "buildersparadise:cherry_loom",
     "buildersparadise:bamboo_loom",
-    "buildersparadise:pale_oak_loom",
-    {
-      "id": "buildersparadise:dead_loom",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:empyreal_loom",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:fir_loom",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:hellbark_loom",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:jacaranda_loom",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:magic_loom",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:mahogany_loom",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:maple_loom",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:palm_loom",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:pine_loom",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:redwood_loom",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:umbran_loom",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:willow_loom",
-      "required": false
-    }
+    "buildersparadise:pale_oak_loom"
   ]
 }

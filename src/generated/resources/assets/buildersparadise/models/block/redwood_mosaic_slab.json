@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "buildersparadise:block/redwood_mosaic",
-    "side": "buildersparadise:block/redwood_mosaic",
-    "top": "buildersparadise:block/redwood_mosaic"
-  }
-}

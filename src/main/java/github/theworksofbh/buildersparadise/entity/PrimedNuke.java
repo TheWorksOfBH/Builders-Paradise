@@ -57,7 +57,7 @@ public class PrimedNuke extends PrimedTnt {
     public PrimedNuke(Level level, double x, double y, double z, @Nullable LivingEntity owner) {
         this(ModEntities.NUKE.get(), level);
         this.setPos(x, y, z);
-        double d0 = level.random.nextDouble() * (double)((float)Math.PI * 2F);
+        double d0 = level.getRandom().nextDouble() * (double)((float)Math.PI * 2F);
         this.setDeltaMovement(-Math.sin(d0) * 0.02, (double)0.2F, -Math.cos(d0) * 0.02);
         this.setFuse(80);
         this.xo = x;
@@ -192,7 +192,7 @@ public class PrimedNuke extends PrimedTnt {
                 this.explode();
             }
         } else {
-            this.updateInWaterStateAndDoFluidPushing();
+            this.updateFluidInteraction();
             if (this.level().isClientSide()) {
                 this.level().addParticle(ParticleTypes.SMOKE, this.getX(), this.getY() + (double)0.5F, this.getZ(), (double)0.0F, (double)0.0F, (double)0.0F);
             }

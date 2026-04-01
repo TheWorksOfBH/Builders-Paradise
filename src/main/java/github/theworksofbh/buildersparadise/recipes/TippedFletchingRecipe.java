@@ -2,11 +2,11 @@ package github.theworksofbh.buildersparadise.recipes;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.item.crafting.*;
@@ -20,9 +20,9 @@ import java.util.List;
 public class TippedFletchingRecipe extends BaseFletchingRecipe {
     final Ingredient arrow;
     final Ingredient ingredient;
-    final ItemStack output;
+    final ItemStackTemplate output;
 
-    public TippedFletchingRecipe(Ingredient arrow, Ingredient ingredient, ItemStack output) {
+    public TippedFletchingRecipe(Ingredient arrow, Ingredient ingredient, ItemStackTemplate output) {
         super(arrow, ingredient, output);
         this.arrow = arrow;
         this.ingredient = ingredient;
@@ -36,7 +36,7 @@ public class TippedFletchingRecipe extends BaseFletchingRecipe {
     }
 
     @Override
-    public ItemStack assemble(FletchingRecipeInput fletchingRecipeInput, HolderLookup.Provider provider) {
+    public ItemStack assemble(FletchingRecipeInput fletchingRecipeInput) {
         ItemStack itemStack = fletchingRecipeInput.getItem(1);
         ItemStack itemStack1 = new ItemStack(Items.TIPPED_ARROW, fletchingRecipeInput.getItem(0).getCount());
         itemStack1.set(DataComponents.POTION_CONTENTS, (PotionContents) itemStack.get(DataComponents.POTION_CONTENTS));
@@ -64,7 +64,7 @@ public class TippedFletchingRecipe extends BaseFletchingRecipe {
     }
 
     @Override
-    public ItemStack output() {
+    public ItemStackTemplate output() {
         return output;
     }
 
@@ -87,29 +87,19 @@ public class TippedFletchingRecipe extends BaseFletchingRecipe {
         return new SlotDisplay.ItemStackSlotDisplay(this.output());
     }
 
-    public static class Serializer implements RecipeSerializer<TippedFletchingRecipe> {
-        public static final MapCodec<TippedFletchingRecipe> CODEC = RecordCodecBuilder.mapCodec(
-                fletchingRecipeInstance -> fletchingRecipeInstance.group(
-                Ingredient.CODEC.fieldOf("arrow").forGetter(TippedFletchingRecipe::arrow),
-                Ingredient.CODEC.fieldOf("ingredient").forGetter(TippedFletchingRecipe::ingredient),
-                ItemStack.CODEC.fieldOf("output").forGetter(TippedFletchingRecipe::output)
-        ).apply(fletchingRecipeInstance, TippedFletchingRecipe::new));
+    public static final MapCodec<TippedFletchingRecipe> CODEC = RecordCodecBuilder.mapCodec(
+            fletchingRecipeInstance -> fletchingRecipeInstance.group(
+                    Ingredient.CODEC.fieldOf("arrow").forGetter(TippedFletchingRecipe::arrow),
+                    Ingredient.CODEC.fieldOf("ingredient").forGetter(TippedFletchingRecipe::ingredient),
+                    ItemStackTemplate.CODEC.fieldOf("output").forGetter(TippedFletchingRecipe::output)
+            ).apply(fletchingRecipeInstance, TippedFletchingRecipe::new));
 
-        public static final StreamCodec<RegistryFriendlyByteBuf, TippedFletchingRecipe> STREAM_CODEC = StreamCodec.composite(
-                Ingredient.CONTENTS_STREAM_CODEC, TippedFletchingRecipe::arrow,
-                Ingredient.CONTENTS_STREAM_CODEC, TippedFletchingRecipe::ingredient,
-                ItemStack.STREAM_CODEC, TippedFletchingRecipe::output,
-                TippedFletchingRecipe::new
-        );
+    public static final StreamCodec<RegistryFriendlyByteBuf, TippedFletchingRecipe> STREAM_CODEC = StreamCodec.composite(
+            Ingredient.CONTENTS_STREAM_CODEC, TippedFletchingRecipe::arrow,
+            Ingredient.CONTENTS_STREAM_CODEC, TippedFletchingRecipe::ingredient,
+            ItemStackTemplate.STREAM_CODEC, TippedFletchingRecipe::output,
+            TippedFletchingRecipe::new
+    );
 
-        @Override
-        public MapCodec<TippedFletchingRecipe> codec() {
-            return CODEC;
-        }
-
-        @Override
-        public StreamCodec<RegistryFriendlyByteBuf, TippedFletchingRecipe> streamCodec() {
-            return STREAM_CODEC;
-        }
-    }
+    public static final RecipeSerializer<TippedFletchingRecipe> SERIALIZER = new RecipeSerializer<>(CODEC, STREAM_CODEC);
 }

@@ -23,7 +23,7 @@ public class ModChainBlock extends ChainBlock {
 
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        if (level.random.nextFloat() < BlockOxidationValues.IRON) {
+        if (level.getRandom().nextFloat() < BlockOxidationValues.IRON) {
             if (isGalvanized(level, pos)) {
 
             } else {
@@ -35,7 +35,7 @@ public class ModChainBlock extends ChainBlock {
                     level.setBlock(pos, ModBlocks.RUSTED_IRON_CHAIN.get().withPropertiesOf(state), Block.UPDATE_ALL);
                 }
             }
-        } else if (level.random.nextFloat() < BlockOxidationValues.ZINC) {
+        } else if (level.getRandom().nextFloat() < BlockOxidationValues.ZINC) {
             if (state.is(ModBlocks.ZINC_CHAIN.get())) {
                 level.setBlock(pos, ModBlocks.EXPOSED_ZINC_CHAIN.get().withPropertiesOf(state), Block.UPDATE_ALL);
             } else if (state.is(ModBlocks.EXPOSED_ZINC_CHAIN.get())) {

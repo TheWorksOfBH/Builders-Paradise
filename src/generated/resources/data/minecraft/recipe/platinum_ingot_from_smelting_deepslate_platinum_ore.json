@@ -6,7 +6,6 @@
   "group": "platinum_ingot",
   "ingredient": "buildersparadise:deepslate_platinum_ore",
   "result": {
-    "count": 1,
     "id": "buildersparadise:platinum_ingot"
   }
 }

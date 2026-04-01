@@ -11,54 +11,6 @@
     "buildersparadise:mangrove_fletching_table",
     "buildersparadise:cherry_fletching_table",
     "buildersparadise:bamboo_fletching_table",
-    "buildersparadise:pale_oak_fletching_table",
-    {
-      "id": "buildersparadise:dead_fletching_table",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:empyreal_fletching_table",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:fir_fletching_table",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:jacaranda_fletching_table",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:magic_fletching_table",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:mahogany_fletching_table",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:maple_fletching_table",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:palm_fletching_table",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:pine_fletching_table",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:redwood_fletching_table",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:umbran_fletching_table",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:willow_fletching_table",
-      "required": false
-    }
+    "buildersparadise:pale_oak_fletching_table"
   ]
 }

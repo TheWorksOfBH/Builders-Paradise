@@ -1,43 +1,42 @@
 package github.theworksofbh.buildersparadise.config;
 
+import com.mojang.blaze3d.vertex.PoseStack;
+import github.theworksofbh.buildersparadise.BuildersParadise;
 import github.theworksofbh.buildersparadise.fluids.ModFluidTypes;
+import github.theworksofbh.buildersparadise.fluids.ModFluids;
 import net.minecraft.client.Camera;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.block.FluidModel;
 import net.minecraft.client.renderer.fog.FogData;
 import net.minecraft.client.renderer.fog.environment.FogEnvironment;
+import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.resources.Identifier;
+import net.neoforged.neoforge.client.event.RegisterFluidModelsEvent;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
-import org.jetbrains.annotations.Nullable;
 import org.joml.Vector4f;
+
+import javax.annotation.Nullable;
 
 public class FluidTypeConfig {
 
     public static void addFluidTypes(RegisterClientExtensionsEvent event) {
         event.registerFluidType(new IClientFluidTypeExtensions() {
             @Override
-            public Identifier getStillTexture() {
-                return ModFluidTypes.NUCLEAR_WASTE_TYPE.get().getStillTexture();
-            }
-
-            @Override
-            public Identifier getFlowingTexture() {
-                return ModFluidTypes.NUCLEAR_WASTE_TYPE.get().getFlowingTexture();
-            }
-
-            @Override
-            public @Nullable Identifier getOverlayTexture() {
+            public @Nullable Identifier getRenderOverlayTexture(Minecraft mc) {
                 return null;
             }
 
             @Override
-            public int getTintColor() {
-                return ModFluidTypes.NUCLEAR_WASTE_TYPE.get().getTintColor();
+            public void renderOverlay(Minecraft mc, PoseStack poseStack, MultiBufferSource buffers) {
+                IClientFluidTypeExtensions.super.renderOverlay(mc, poseStack, buffers);
             }
 
             @Override
-            public Vector4f modifyFogColor(Camera camera, float partialTick, ClientLevel level, int renderDistance, float darkenWorldAmount, Vector4f fluidFogColor) {
-                return ModFluidTypes.NUCLEAR_WASTE_TYPE.get().getFogColor();
+            public void modifyFogColor(Camera camera, float partialTick, ClientLevel level, int renderDistance, float darkenWorldAmount, Vector4f fluidFogColor) {
+                fluidFogColor.set(ModFluidTypes.NUCLEAR_WASTE_TYPE.get().getFogColor());
             }
 
             @Override
@@ -48,5 +47,19 @@ public class FluidTypeConfig {
                 fogData.renderDistanceEnd = renderDistance;
             }
         }, ModFluidTypes.NUCLEAR_WASTE_TYPE.get());
+    }
+
+    public static void addFluidModels(RegisterFluidModelsEvent event) {
+        FluidModel.Unbaked nuclearFluidModel = new FluidModel.Unbaked(
+                new Material(
+                        Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "block/nuclear_waste_still")
+                ),
+                new Material(
+                        Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "block/nuclear_waste_flow")
+                ),
+                null, null
+        );
+
+        event.register(nuclearFluidModel, ModFluids.NUCLEAR_WASTE, ModFluids.FLOWING_NUCLEAR_WASTE);
     }
 }

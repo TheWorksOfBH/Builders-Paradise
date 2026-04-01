@@ -24,7 +24,7 @@ public class ModStairBlock extends StairBlock {
 
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        if (level.random.nextFloat() < BlockOxidationValues.IRON) {
+        if (level.getRandom().nextFloat() < BlockOxidationValues.IRON) {
             if (isGalvanized(level, pos)) {
 
             } else {
@@ -36,7 +36,7 @@ public class ModStairBlock extends StairBlock {
                     level.setBlock(pos, ModBlocks.RUSTED_CUT_IRON_STAIRS.get().withPropertiesOf(state), Block.UPDATE_ALL);
                 }
             }
-        } else if (level.random.nextFloat() < BlockOxidationValues.ZINC) {
+        } else if (level.getRandom().nextFloat() < BlockOxidationValues.ZINC) {
             if (state.is(ModBlocks.CUT_ZINC_STAIRS.get())) {
                 level.setBlock(pos, ModBlocks.EXPOSED_CUT_ZINC_STAIRS.get().withPropertiesOf(state), Block.UPDATE_ALL);
             } else if (state.is(ModBlocks.EXPOSED_CUT_ZINC_STAIRS.get())) {

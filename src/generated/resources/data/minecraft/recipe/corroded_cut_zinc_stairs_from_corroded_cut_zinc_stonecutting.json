@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "buildersparadise:corroded_cut_zinc",
   "result": {
-    "count": 1,
     "id": "buildersparadise:corroded_cut_zinc_stairs"
   }
 }

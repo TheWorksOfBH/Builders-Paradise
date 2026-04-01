@@ -23,7 +23,7 @@ public class ModIronBarsBlock extends IronBarsBlock {
 
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        if (level.random.nextFloat() < BlockOxidationValues.IRON) {
+        if (level.getRandom().nextFloat() < BlockOxidationValues.IRON) {
             if (isGalvanized(level, pos)) {
 
             } else {

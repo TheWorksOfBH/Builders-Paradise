@@ -6,7 +6,6 @@
   "group": "uranium_ingot",
   "ingredient": "buildersparadise:deepslate_uranium_ore",
   "result": {
-    "count": 1,
     "id": "buildersparadise:uranium_ingot"
   }
 }

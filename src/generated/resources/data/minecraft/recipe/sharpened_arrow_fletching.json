@@ -3,7 +3,6 @@
   "arrow": "minecraft:arrow",
   "ingredient": "minecraft:flint",
   "output": {
-    "count": 1,
     "id": "buildersparadise:sharpened_arrow"
   }
 }

@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "buildersparadise:gabbro",
   "result": {
-    "count": 1,
     "id": "buildersparadise:gabbro_stairs"
   }
 }

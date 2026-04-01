@@ -11,14 +11,14 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 
 public class AmethystSlabBlock extends SlabBlock {
-    public AmethystSlabBlock(Properties p_56359_) {
-        super(p_56359_);
+    public AmethystSlabBlock(Properties properties) {
+        super(properties);
     }
 
-    protected void onProjectileHit(Level p_152001_, BlockState p_152002_, BlockHitResult p_152003_, Projectile p_152004_) {
-        if (!p_152001_.isClientSide()) {
-            BlockPos blockpos = p_152003_.getBlockPos();
-            p_152001_.playSound((Entity)null, blockpos, SoundEvents.AMETHYST_BLOCK_CHIME, SoundSource.BLOCKS, 1.0F, 0.5F + p_152001_.random.nextFloat() * 1.2F);
+    protected void onProjectileHit(Level level, BlockState blockState, BlockHitResult hitResult, Projectile projectile) {
+        if (!level.isClientSide()) {
+            BlockPos blockpos = hitResult.getBlockPos();
+            level.playSound((Entity)null, blockpos, SoundEvents.AMETHYST_BLOCK_CHIME, SoundSource.BLOCKS, 1.0F, 0.5F + level.getRandom().nextFloat() * 1.2F);
         }
 
     }

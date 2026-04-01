@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "buildersparadise:cut_netherite",
   "result": {
-    "count": 1,
     "id": "buildersparadise:cut_netherite_stairs"
   }
 }

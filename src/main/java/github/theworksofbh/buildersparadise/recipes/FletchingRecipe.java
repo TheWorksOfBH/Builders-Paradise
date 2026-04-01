@@ -1,6 +1,6 @@
 package github.theworksofbh.buildersparadise.recipes;
 
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
@@ -21,5 +21,5 @@ public interface FletchingRecipe extends Recipe<FletchingRecipeInput> {
 
     Ingredient arrow();
     Ingredient ingredient();
-    ItemStack output();
+    ItemStackTemplate output();
 }

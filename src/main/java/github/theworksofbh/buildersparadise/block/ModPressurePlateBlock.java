@@ -25,7 +25,7 @@ public class ModPressurePlateBlock extends WeightedPressurePlateBlock {
 
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        if (level.random.nextFloat() < BlockOxidationValues.IRON) {
+        if (level.getRandom().nextFloat() < BlockOxidationValues.IRON) {
             if (isGalvanized(level, pos)) {
 
             } else {
@@ -37,7 +37,7 @@ public class ModPressurePlateBlock extends WeightedPressurePlateBlock {
                     level.setBlock(pos, ModBlocks.RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().withPropertiesOf(state), Block.UPDATE_ALL);
                 }
             }
-        } else if (level.random.nextFloat() < BlockOxidationValues.ZINC) {
+        } else if (level.getRandom().nextFloat() < BlockOxidationValues.ZINC) {
             if (state.is(ModBlocks.BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get())) {
                 level.setBlock(pos, ModBlocks.EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().withPropertiesOf(state), Block.UPDATE_ALL);
             } else if (state.is(ModBlocks.EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get())) {

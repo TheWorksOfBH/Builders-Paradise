@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "buildersparadise:rhyolite_bricks",
   "result": {
-    "count": 1,
     "id": "buildersparadise:rhyolite_brick_wall"
   }
 }

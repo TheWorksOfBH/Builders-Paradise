@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/orientable_with_bottom",
-  "textures": {
-    "bottom": "buildersparadise:block/palm_loom_bottom",
-    "front": "buildersparadise:block/palm_loom_front",
-    "side": "buildersparadise:block/palm_loom_side",
-    "top": "buildersparadise:block/palm_loom_top"
-  }
-}

@@ -2,34 +2,33 @@ package github.theworksofbh.buildersparadise.config;
 
 import github.theworksofbh.buildersparadise.block.ModBlocks;
 import github.theworksofbh.buildersparadise.renderers.ModChestSpecialRenderers;
-import net.minecraft.client.renderer.special.ChestSpecialRenderer;
-import net.neoforged.neoforge.client.event.RegisterSpecialBlockModelRendererEvent;
+import net.minecraft.client.renderer.block.BuiltInBlockModels;
+import net.neoforged.neoforge.client.event.RegisterBlockModelsEvent;
 
 public class BlockEntityModelRendersConfig {
-    public static void registerBlockEntities(RegisterSpecialBlockModelRendererEvent event) {
-        event.register(ModBlocks.SPRUCE_CHEST.get(), new ChestSpecialRenderer.Unbaked(ModChestSpecialRenderers.SPRUCE_CHEST_TEXTURE));
-        event.register(ModBlocks.BIRCH_CHEST.get(), new ChestSpecialRenderer.Unbaked(ModChestSpecialRenderers.BIRCH_CHEST_TEXTURE));
-        event.register(ModBlocks.JUNGLE_CHEST.get(), new ChestSpecialRenderer.Unbaked(ModChestSpecialRenderers.JUNGLE_CHEST_TEXTURE));
-        event.register(ModBlocks.ACACIA_CHEST.get(), new ChestSpecialRenderer.Unbaked(ModChestSpecialRenderers.ACACIA_CHEST_TEXTURE));
-        event.register(ModBlocks.DARK_OAK_CHEST.get(), new ChestSpecialRenderer.Unbaked(ModChestSpecialRenderers.DARK_OAK_CHEST_TEXTURE));
-        event.register(ModBlocks.CRIMSON_CHEST.get(), new ChestSpecialRenderer.Unbaked(ModChestSpecialRenderers.CRIMSON_CHEST_TEXTURE));
-        event.register(ModBlocks.WARPED_CHEST.get(), new ChestSpecialRenderer.Unbaked(ModChestSpecialRenderers.WARPED_CHEST_TEXTURE));
-        event.register(ModBlocks.MANGROVE_CHEST.get(), new ChestSpecialRenderer.Unbaked(ModChestSpecialRenderers.MANGROVE_CHEST_TEXTURE));
-        event.register(ModBlocks.CHERRY_CHEST.get(), new ChestSpecialRenderer.Unbaked(ModChestSpecialRenderers.CHERRY_CHEST_TEXTURE));
-        event.register(ModBlocks.BAMBOO_CHEST.get(), new ChestSpecialRenderer.Unbaked(ModChestSpecialRenderers.BAMBOO_CHEST_TEXTURE));
-        event.register(ModBlocks.PALE_OAK_CHEST.get(), new ChestSpecialRenderer.Unbaked(ModChestSpecialRenderers.PALE_OAK_CHEST_TEXTURE));
-        
-        event.register(ModBlocks.SPRUCE_TRAPPED_CHEST.get(), new ChestSpecialRenderer.Unbaked(ModChestSpecialRenderers.SPRUCE_TRAPPED_CHEST_TEXTURE));
-        event.register(ModBlocks.BIRCH_TRAPPED_CHEST.get(), new ChestSpecialRenderer.Unbaked(ModChestSpecialRenderers.BIRCH_TRAPPED_CHEST_TEXTURE));
-        event.register(ModBlocks.JUNGLE_TRAPPED_CHEST.get(), new ChestSpecialRenderer.Unbaked(ModChestSpecialRenderers.JUNGLE_TRAPPED_CHEST_TEXTURE));
-        event.register(ModBlocks.ACACIA_TRAPPED_CHEST.get(), new ChestSpecialRenderer.Unbaked(ModChestSpecialRenderers.ACACIA_TRAPPED_CHEST_TEXTURE));
-        event.register(ModBlocks.DARK_OAK_TRAPPED_CHEST.get(), new ChestSpecialRenderer.Unbaked(ModChestSpecialRenderers.DARK_OAK_TRAPPED_CHEST_TEXTURE));
-        event.register(ModBlocks.CRIMSON_TRAPPED_CHEST.get(), new ChestSpecialRenderer.Unbaked(ModChestSpecialRenderers.CRIMSON_TRAPPED_CHEST_TEXTURE));
-        event.register(ModBlocks.WARPED_TRAPPED_CHEST.get(), new ChestSpecialRenderer.Unbaked(ModChestSpecialRenderers.WARPED_TRAPPED_CHEST_TEXTURE));
-        event.register(ModBlocks.MANGROVE_TRAPPED_CHEST.get(), new ChestSpecialRenderer.Unbaked(ModChestSpecialRenderers.MANGROVE_TRAPPED_CHEST_TEXTURE));
-        event.register(ModBlocks.CHERRY_TRAPPED_CHEST.get(), new ChestSpecialRenderer.Unbaked(ModChestSpecialRenderers.CHERRY_TRAPPED_CHEST_TEXTURE));
-        event.register(ModBlocks.BAMBOO_TRAPPED_CHEST.get(), new ChestSpecialRenderer.Unbaked(ModChestSpecialRenderers.BAMBOO_TRAPPED_CHEST_TEXTURE));
-        event.register(ModBlocks.PALE_OAK_TRAPPED_CHEST.get(), new ChestSpecialRenderer.Unbaked(ModChestSpecialRenderers.PALE_OAK_TRAPPED_CHEST_TEXTURE));
+    public static void registerBlockEntities(RegisterBlockModelsEvent event) {
+        event.register(BuiltInBlockModels.createXmasChest(ModChestSpecialRenderers.SPRUCE_CHEST_TEXTURE), ModBlocks.SPRUCE_CHEST.get());
+        event.register(BuiltInBlockModels.createXmasChest(ModChestSpecialRenderers.BIRCH_CHEST_TEXTURE), ModBlocks.BIRCH_CHEST.get());
+        event.register(BuiltInBlockModels.createXmasChest(ModChestSpecialRenderers.JUNGLE_CHEST_TEXTURE), ModBlocks.JUNGLE_CHEST.get());
+        event.register(BuiltInBlockModels.createXmasChest(ModChestSpecialRenderers.ACACIA_CHEST_TEXTURE), ModBlocks.ACACIA_CHEST.get());
+        event.register(BuiltInBlockModels.createXmasChest(ModChestSpecialRenderers.DARK_OAK_CHEST_TEXTURE), ModBlocks.DARK_OAK_CHEST.get());
+        event.register(BuiltInBlockModels.createXmasChest(ModChestSpecialRenderers.CRIMSON_CHEST_TEXTURE), ModBlocks.CRIMSON_CHEST.get());
+        event.register(BuiltInBlockModels.createXmasChest(ModChestSpecialRenderers.WARPED_CHEST_TEXTURE), ModBlocks.WARPED_CHEST.get());
+        event.register(BuiltInBlockModels.createXmasChest(ModChestSpecialRenderers.MANGROVE_CHEST_TEXTURE), ModBlocks.MANGROVE_CHEST.get());
+        event.register(BuiltInBlockModels.createXmasChest(ModChestSpecialRenderers.CHERRY_CHEST_TEXTURE), ModBlocks.CHERRY_CHEST.get());
+        event.register(BuiltInBlockModels.createXmasChest(ModChestSpecialRenderers.BAMBOO_CHEST_TEXTURE), ModBlocks.BAMBOO_CHEST.get());
+        event.register(BuiltInBlockModels.createXmasChest(ModChestSpecialRenderers.PALE_OAK_CHEST_TEXTURE), ModBlocks.PALE_OAK_CHEST.get());
 
+        event.register(BuiltInBlockModels.createXmasChest(ModChestSpecialRenderers.SPRUCE_TRAPPED_CHEST_TEXTURE), ModBlocks.SPRUCE_TRAPPED_CHEST.get());
+        event.register(BuiltInBlockModels.createXmasChest(ModChestSpecialRenderers.BIRCH_TRAPPED_CHEST_TEXTURE), ModBlocks.BIRCH_TRAPPED_CHEST.get());
+        event.register(BuiltInBlockModels.createXmasChest(ModChestSpecialRenderers.JUNGLE_TRAPPED_CHEST_TEXTURE), ModBlocks.JUNGLE_TRAPPED_CHEST.get());
+        event.register(BuiltInBlockModels.createXmasChest(ModChestSpecialRenderers.ACACIA_TRAPPED_CHEST_TEXTURE), ModBlocks.ACACIA_TRAPPED_CHEST.get());
+        event.register(BuiltInBlockModels.createXmasChest(ModChestSpecialRenderers.DARK_OAK_TRAPPED_CHEST_TEXTURE), ModBlocks.DARK_OAK_TRAPPED_CHEST.get());
+        event.register(BuiltInBlockModels.createXmasChest(ModChestSpecialRenderers.CRIMSON_TRAPPED_CHEST_TEXTURE), ModBlocks.CRIMSON_TRAPPED_CHEST.get());
+        event.register(BuiltInBlockModels.createXmasChest(ModChestSpecialRenderers.WARPED_TRAPPED_CHEST_TEXTURE), ModBlocks.WARPED_TRAPPED_CHEST.get());
+        event.register(BuiltInBlockModels.createXmasChest(ModChestSpecialRenderers.MANGROVE_TRAPPED_CHEST_TEXTURE), ModBlocks.MANGROVE_TRAPPED_CHEST.get());
+        event.register(BuiltInBlockModels.createXmasChest(ModChestSpecialRenderers.CHERRY_TRAPPED_CHEST_TEXTURE), ModBlocks.CHERRY_TRAPPED_CHEST.get());
+        event.register(BuiltInBlockModels.createXmasChest(ModChestSpecialRenderers.BAMBOO_TRAPPED_CHEST_TEXTURE), ModBlocks.BAMBOO_TRAPPED_CHEST.get());
+        event.register(BuiltInBlockModels.createXmasChest(ModChestSpecialRenderers.PALE_OAK_TRAPPED_CHEST_TEXTURE), ModBlocks.PALE_OAK_TRAPPED_CHEST.get());
     }
 }

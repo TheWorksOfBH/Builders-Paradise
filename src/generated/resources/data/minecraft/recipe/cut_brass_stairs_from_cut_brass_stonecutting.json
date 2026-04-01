@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "buildersparadise:cut_brass",
   "result": {
-    "count": 1,
     "id": "buildersparadise:cut_brass_stairs"
   }
 }

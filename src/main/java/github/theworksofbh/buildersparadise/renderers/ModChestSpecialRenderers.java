@@ -5,110 +5,121 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import github.theworksofbh.buildersparadise.BuildersParadise;
-import net.minecraft.client.model.geom.ModelLayers;
+import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.object.chest.ChestModel;
+import net.minecraft.client.renderer.MultiblockChestResources;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.SubmitNodeCollector;
+import net.minecraft.client.renderer.blockentity.ChestRenderer;
 import net.minecraft.client.renderer.feature.ModelFeatureRenderer;
-import net.minecraft.client.renderer.rendertype.RenderTypes;
 import net.minecraft.client.renderer.special.ChestSpecialRenderer;
+import net.minecraft.client.renderer.special.NoDataSpecialModelRenderer;
 import net.minecraft.client.renderer.special.SpecialModelRenderer;
-import net.minecraft.client.resources.model.Material;
-import net.minecraft.client.resources.model.MaterialSet;
+import net.minecraft.client.resources.model.sprite.SpriteGetter;
+import net.minecraft.client.resources.model.sprite.SpriteId;
 import net.minecraft.resources.Identifier;
-import net.minecraft.world.item.ItemDisplayContext;
+import net.minecraft.world.level.block.state.properties.ChestType;
 import org.joml.Vector3fc;
 
 import java.util.function.Consumer;
 
 public class ModChestSpecialRenderers extends ChestSpecialRenderer {
-    public ModChestSpecialRenderers(MaterialSet p_434968_, ChestModel p_386863_, Material p_388350_, float p_386750_) {
-        super(p_434968_, p_386863_, p_388350_, p_386750_);
-        this.materials = p_434968_;
-        this.model = p_386863_;
-        this.material = p_388350_;
-        this.openness = p_386750_;
-    }
-    private final MaterialSet materials;
+    private final SpriteGetter sprites;
     private final ChestModel model;
-    private final Material material;
+    private final SpriteId sprite;
     private final float openness;
 
-    public static final Identifier SPRUCE_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "spruce_chest/normal");
-    public static final Identifier BIRCH_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "birch_chest/normal");
-    public static final Identifier JUNGLE_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "jungle_chest/normal");
-    public static final Identifier ACACIA_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "acacia_chest/normal");
-    public static final Identifier DARK_OAK_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "dark_oak_chest/normal");
-    public static final Identifier CRIMSON_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "crimson_chest/normal");
-    public static final Identifier WARPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "warped_chest/normal");
-    public static final Identifier MANGROVE_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "mangrove_chest/normal");
-    public static final Identifier CHERRY_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "cherry_chest/normal");
-    public static final Identifier BAMBOO_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "bamboo_chest/normal");
-    public static final Identifier PALE_OAK_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "pale_oak_chest/normal");
-    public static final Identifier DEAD_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "dead_chest/normal");
-    public static final Identifier EMPYREAL_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "empyreal_chest/normal");
-    public static final Identifier FIR_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "fir_chest/normal");
-    public static final Identifier HELLBARK_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "hellbark_chest/normal");
-    public static final Identifier JACARANDA_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "jacaranda_chest/normal");
-    public static final Identifier MAGIC_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "magic_chest/normal");
-    public static final Identifier MAHOGANY_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "mahogany_chest/normal");
-    public static final Identifier MAPLE_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "maple_chest/normal");
-    public static final Identifier PALM_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "palm_chest/normal");
-    public static final Identifier PINE_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "pine_chest/normal");
-    public static final Identifier REDWOOD_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "redwood_chest/normal");
-    public static final Identifier UMBRAN_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "umbran_chest/normal");
-    public static final Identifier WILLOW_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "willow_chest/normal");
+    public ModChestSpecialRenderers(SpriteGetter sprites, ChestModel model, SpriteId sprite, float openness) {
+        super(sprites, model, sprite, openness);
+        this.sprites = sprites;
+        this.model = model;
+        this.sprite = sprite;
+        this.openness = openness;
+    }
 
-    public static final Identifier SPRUCE_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "spruce_chest/trapped");
-    public static final Identifier BIRCH_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "birch_chest/trapped");
-    public static final Identifier JUNGLE_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "jungle_chest/trapped");
-    public static final Identifier ACACIA_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "acacia_chest/trapped");
-    public static final Identifier DARK_OAK_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "dark_oak_chest/trapped");
-    public static final Identifier CRIMSON_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "crimson_chest/trapped");
-    public static final Identifier WARPED_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "warped_chest/trapped");
-    public static final Identifier MANGROVE_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "mangrove_chest/trapped");
-    public static final Identifier CHERRY_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "cherry_chest/trapped");
-    public static final Identifier BAMBOO_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "bamboo_chest/trapped");
-    public static final Identifier PALE_OAK_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "pale_oak_chest/trapped");
-    public static final Identifier DEAD_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "dead_chest/trapped");
-    public static final Identifier EMPYREAL_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "empyreal_chest/trapped");
-    public static final Identifier FIR_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "fir_chest/trapped");
-    public static final Identifier HELLBARK_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "hellbark_chest/trapped");
-    public static final Identifier JACARANDA_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "jacaranda_chest/trapped");
-    public static final Identifier MAGIC_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "magic_chest/trapped");
-    public static final Identifier MAHOGANY_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "mahogany_chest/trapped");
-    public static final Identifier MAPLE_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "maple_chest/trapped");
-    public static final Identifier PALM_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "palm_chest/trapped");
-    public static final Identifier PINE_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "pine_chest/trapped");
-    public static final Identifier REDWOOD_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "redwood_chest/trapped");
-    public static final Identifier UMBRAN_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "umbran_chest/trapped");
-    public static final Identifier WILLOW_TRAPPED_CHEST_TEXTURE = Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "willow_chest/trapped");
+    public static final MultiblockChestResources<Identifier> SPRUCE_CHEST_TEXTURE = createDefaultTextures("spruce_chest/normal");
+    public static final MultiblockChestResources<Identifier> BIRCH_CHEST_TEXTURE = createDefaultTextures("birch_chest/normal");
+    public static final MultiblockChestResources<Identifier> JUNGLE_CHEST_TEXTURE = createDefaultTextures("jungle_chest/normal");
+    public static final MultiblockChestResources<Identifier> ACACIA_CHEST_TEXTURE = createDefaultTextures("acacia_chest/normal");
+    public static final MultiblockChestResources<Identifier> DARK_OAK_CHEST_TEXTURE = createDefaultTextures("dark_oak_chest/normal");
+    public static final MultiblockChestResources<Identifier> CRIMSON_CHEST_TEXTURE = createDefaultTextures("crimson_chest/normal");
+    public static final MultiblockChestResources<Identifier> WARPED_CHEST_TEXTURE = createDefaultTextures("warped_chest/normal");
+    public static final MultiblockChestResources<Identifier> MANGROVE_CHEST_TEXTURE = createDefaultTextures("mangrove_chest/normal");
+    public static final MultiblockChestResources<Identifier> CHERRY_CHEST_TEXTURE = createDefaultTextures("cherry_chest/normal");
+    public static final MultiblockChestResources<Identifier> BAMBOO_CHEST_TEXTURE = createDefaultTextures("bamboo_chest/normal");
+    public static final MultiblockChestResources<Identifier> PALE_OAK_CHEST_TEXTURE = createDefaultTextures("pale_oak_chest/normal");
+    public static final MultiblockChestResources<Identifier> DEAD_CHEST_TEXTURE = createDefaultTextures("dead_chest/normal");
+    public static final MultiblockChestResources<Identifier> EMPYREAL_CHEST_TEXTURE = createDefaultTextures("empyreal_chest/normal");
+    public static final MultiblockChestResources<Identifier> FIR_CHEST_TEXTURE = createDefaultTextures("fir_chest/normal");
+    public static final MultiblockChestResources<Identifier> HELLBARK_CHEST_TEXTURE = createDefaultTextures("hellbark_chest/normal");
+    public static final MultiblockChestResources<Identifier> JACARANDA_CHEST_TEXTURE = createDefaultTextures("jacaranda_chest/normal");
+    public static final MultiblockChestResources<Identifier> MAGIC_CHEST_TEXTURE = createDefaultTextures("magic_chest/normal");
+    public static final MultiblockChestResources<Identifier> MAHOGANY_CHEST_TEXTURE = createDefaultTextures("mahogany_chest/normal");
+    public static final MultiblockChestResources<Identifier> MAPLE_CHEST_TEXTURE = createDefaultTextures("maple_chest/normal");
+    public static final MultiblockChestResources<Identifier> PALM_CHEST_TEXTURE = createDefaultTextures("palm_chest/normal");
+    public static final MultiblockChestResources<Identifier> PINE_CHEST_TEXTURE = createDefaultTextures("pine_chest/normal");
+    public static final MultiblockChestResources<Identifier> REDWOOD_CHEST_TEXTURE = createDefaultTextures("redwood_chest/normal");
+    public static final MultiblockChestResources<Identifier> UMBRAN_CHEST_TEXTURE = createDefaultTextures("umbran_chest/normal");
+    public static final MultiblockChestResources<Identifier> WILLOW_CHEST_TEXTURE = createDefaultTextures("willow_chest/normal");
 
-    public void submit(ItemDisplayContext itemDisplayContext, PoseStack poseStack, SubmitNodeCollector p_440053_, int p_440465_, int p_440260_, boolean p_439501_, int p_451677_) {
-        p_440053_.submitModel(this.model, this.openness, poseStack, this.material.renderType(RenderTypes::entitySolid), p_440465_, p_440260_, -1, this.materials.get(this.material), p_451677_, (ModelFeatureRenderer.CrumblingOverlay)null);
+    public static final MultiblockChestResources<Identifier> SPRUCE_TRAPPED_CHEST_TEXTURE = createDefaultTextures("spruce_chest/trapped");
+    public static final MultiblockChestResources<Identifier> BIRCH_TRAPPED_CHEST_TEXTURE = createDefaultTextures("birch_chest/trapped");
+    public static final MultiblockChestResources<Identifier> JUNGLE_TRAPPED_CHEST_TEXTURE = createDefaultTextures("jungle_chest/trapped");
+    public static final MultiblockChestResources<Identifier> ACACIA_TRAPPED_CHEST_TEXTURE = createDefaultTextures("acacia_chest/trapped");
+    public static final MultiblockChestResources<Identifier> DARK_OAK_TRAPPED_CHEST_TEXTURE = createDefaultTextures("dark_oak_chest/trapped");
+    public static final MultiblockChestResources<Identifier> CRIMSON_TRAPPED_CHEST_TEXTURE = createDefaultTextures("crimson_chest/trapped");
+    public static final MultiblockChestResources<Identifier> WARPED_TRAPPED_CHEST_TEXTURE = createDefaultTextures("warped_chest/trapped");
+    public static final MultiblockChestResources<Identifier> MANGROVE_TRAPPED_CHEST_TEXTURE = createDefaultTextures("mangrove_chest/trapped");
+    public static final MultiblockChestResources<Identifier> CHERRY_TRAPPED_CHEST_TEXTURE = createDefaultTextures("cherry_chest/trapped");
+    public static final MultiblockChestResources<Identifier> BAMBOO_TRAPPED_CHEST_TEXTURE = createDefaultTextures("bamboo_chest/trapped");
+    public static final MultiblockChestResources<Identifier> PALE_OAK_TRAPPED_CHEST_TEXTURE = createDefaultTextures("pale_oak_chest/trapped");
+    public static final MultiblockChestResources<Identifier> DEAD_TRAPPED_CHEST_TEXTURE = createDefaultTextures("dead_chest/trapped");
+    public static final MultiblockChestResources<Identifier> EMPYREAL_TRAPPED_CHEST_TEXTURE = createDefaultTextures("empyreal_chest/trapped");
+    public static final MultiblockChestResources<Identifier> FIR_TRAPPED_CHEST_TEXTURE = createDefaultTextures("fir_chest/trapped");
+    public static final MultiblockChestResources<Identifier> HELLBARK_TRAPPED_CHEST_TEXTURE = createDefaultTextures("hellbark_chest/trapped");
+    public static final MultiblockChestResources<Identifier> JACARANDA_TRAPPED_CHEST_TEXTURE = createDefaultTextures("jacaranda_chest/trapped");
+    public static final MultiblockChestResources<Identifier> MAGIC_TRAPPED_CHEST_TEXTURE = createDefaultTextures("magic_chest/trapped");
+    public static final MultiblockChestResources<Identifier> MAHOGANY_TRAPPED_CHEST_TEXTURE = createDefaultTextures("mahogany_chest/trapped");
+    public static final MultiblockChestResources<Identifier> MAPLE_TRAPPED_CHEST_TEXTURE = createDefaultTextures("maple_chest/trapped");
+    public static final MultiblockChestResources<Identifier> PALM_TRAPPED_CHEST_TEXTURE = createDefaultTextures("palm_chest/trapped");
+    public static final MultiblockChestResources<Identifier> PINE_TRAPPED_CHEST_TEXTURE = createDefaultTextures("pine_chest/trapped");
+    public static final MultiblockChestResources<Identifier> REDWOOD_TRAPPED_CHEST_TEXTURE = createDefaultTextures("redwood_chest/trapped");
+    public static final MultiblockChestResources<Identifier> UMBRAN_TRAPPED_CHEST_TEXTURE = createDefaultTextures("umbran_chest/trapped");
+    public static final MultiblockChestResources<Identifier> WILLOW_TRAPPED_CHEST_TEXTURE = createDefaultTextures("willow_chest/trapped");
+
+    public void submit(PoseStack poseStack, SubmitNodeCollector submitNodeCollector, int lightCoords, int overlayCoords, boolean hasFoil, int outlineColor) {
+        submitNodeCollector.submitModel(this.model, this.openness, poseStack, lightCoords, overlayCoords, -1, this.sprite, this.sprites, outlineColor, (ModelFeatureRenderer.CrumblingOverlay)null);
     }
 
     public void getExtents(Consumer<Vector3fc> output) {
-        PoseStack posestack = new PoseStack();
+        PoseStack poseStack = new PoseStack();
         this.model.setupAnim(this.openness);
-        this.model.root().getExtentsForGui(posestack, output);
+        this.model.root().getExtentsForGui(poseStack, output);
     }
 
-    public static record Unbaked(Identifier texture, float openness) implements SpecialModelRenderer.Unbaked {
-        public static final MapCodec<ModChestSpecialRenderers.Unbaked> MAP_CODEC = RecordCodecBuilder.mapCodec((p_388545_) -> p_388545_.group(Identifier.CODEC.fieldOf("texture").forGetter(ModChestSpecialRenderers.Unbaked::texture), Codec.FLOAT.optionalFieldOf("openness", 0.0F).forGetter(ModChestSpecialRenderers.Unbaked::openness)).apply(p_388545_, ModChestSpecialRenderers.Unbaked::new));
+    public static record Unbaked(Identifier texture, float openness, ChestType chestType) implements NoDataSpecialModelRenderer.Unbaked {
+        public static final MapCodec<ChestSpecialRenderer.Unbaked> MAP_CODEC = RecordCodecBuilder.mapCodec((i) -> i.group(Identifier.CODEC.fieldOf("texture").forGetter(ChestSpecialRenderer.Unbaked::texture), Codec.FLOAT.optionalFieldOf("openness", 0.0F).forGetter(ChestSpecialRenderer.Unbaked::openness), ChestType.CODEC.optionalFieldOf("chest_type", ChestType.SINGLE).forGetter(ChestSpecialRenderer.Unbaked::chestType)).apply(i, ChestSpecialRenderer.Unbaked::new));
 
-        public Unbaked(Identifier p_387139_) {
-            this(p_387139_, 0.0F);
+        public Unbaked(Identifier texture, ChestType chestType) {
+            this(texture, 0.0F, chestType);
         }
 
-        public MapCodec<ModChestSpecialRenderers.Unbaked> type() {
+        public Unbaked(Identifier texture) {
+            this(texture, 0.0F, ChestType.SINGLE);
+        }
+
+        public MapCodec<ChestSpecialRenderer.Unbaked> type() {
             return MAP_CODEC;
         }
 
-        public SpecialModelRenderer<?> bake(SpecialModelRenderer.BakingContext p_434841_) {
-            ChestModel chestmodel = new ChestModel(p_434841_.entityModelSet().bakeLayer(ModelLayers.CHEST));
-            Material material = Sheets.CHEST_MAPPER.apply(this.texture);
-            return new ModChestSpecialRenderers(p_434841_.materials(), chestmodel, material, this.openness);
+        public ChestSpecialRenderer bake(SpecialModelRenderer.BakingContext context) {
+            ChestModel model = new ChestModel(context.entityModelSet().bakeLayer((ModelLayerLocation) ChestRenderer.LAYERS.select(this.chestType)));
+            SpriteId fullTexture = Sheets.CHEST_MAPPER.apply(this.texture);
+            return new ChestSpecialRenderer(context.sprites(), model, fullTexture, this.openness);
         }
+    }
+
+    private static MultiblockChestResources<Identifier> createDefaultTextures(String prefix) {
+        return new MultiblockChestResources(Identifier.fromNamespaceAndPath(BuildersParadise.MODID, prefix), Identifier.fromNamespaceAndPath(BuildersParadise.MODID, prefix + "_left"), Identifier.fromNamespaceAndPath(BuildersParadise.MODID, prefix + "_right"));
     }
 }

@@ -3,7 +3,6 @@
   "arrow": "minecraft:arrow",
   "ingredient": "minecraft:glowstone_dust",
   "output": {
-    "count": 1,
     "id": "minecraft:spectral_arrow"
   }
 }

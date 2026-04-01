@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "buildersparadise:pumice",
   "result": {
-    "count": 1,
     "id": "buildersparadise:pumice_bricks"
   }
 }

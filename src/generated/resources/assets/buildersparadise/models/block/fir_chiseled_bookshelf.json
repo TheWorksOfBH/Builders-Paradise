@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/chiseled_bookshelf",
-  "textures": {
-    "particle": "buildersparadise:block/fir_chiseled_bookshelf_top",
-    "side": "buildersparadise:block/fir_chiseled_bookshelf_side",
-    "top": "buildersparadise:block/fir_chiseled_bookshelf_top"
-  }
-}

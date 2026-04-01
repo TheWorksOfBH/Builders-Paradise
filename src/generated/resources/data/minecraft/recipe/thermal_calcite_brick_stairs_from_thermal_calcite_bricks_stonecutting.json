@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:thermal_calcite_bricks",
-  "result": {
-    "count": 1,
-    "id": "buildersparadise:thermal_calcite_brick_stairs"
-  }
-}

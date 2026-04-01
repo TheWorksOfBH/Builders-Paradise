@@ -6,7 +6,6 @@
   "group": "zinc_ingot",
   "ingredient": "buildersparadise:zinc_ore",
   "result": {
-    "count": 1,
     "id": "buildersparadise:zinc_ingot"
   }
 }

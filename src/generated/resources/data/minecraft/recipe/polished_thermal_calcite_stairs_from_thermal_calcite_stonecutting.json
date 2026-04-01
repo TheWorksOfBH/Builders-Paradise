@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "biomesoplenty:thermal_calcite",
-  "result": {
-    "count": 1,
-    "id": "buildersparadise:polished_thermal_calcite_stairs"
-  }
-}

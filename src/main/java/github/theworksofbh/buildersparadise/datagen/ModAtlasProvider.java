@@ -1,15 +1,12 @@
 package github.theworksofbh.buildersparadise.datagen;
 
-import biomesoplenty.api.BOPAPI;
 import github.theworksofbh.buildersparadise.BuildersParadise;
-import github.theworksofbh.buildersparadise.compat.bop.CompatModMaterialAssetGroups;
-import github.theworksofbh.buildersparadise.compat.bop.CompatModTrimMaterials;
 import github.theworksofbh.buildersparadise.items.ModMaterialAssetGroups;
 import github.theworksofbh.buildersparadise.items.ModTrimMaterials;
 import net.minecraft.client.data.AtlasProvider;
 import net.minecraft.client.data.models.ItemModelGenerators;
-import net.minecraft.client.renderer.MaterialMapper;
 import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.SpriteMapper;
 import net.minecraft.client.renderer.texture.atlas.SpriteSource;
 import net.minecraft.client.renderer.texture.atlas.SpriteSources;
 import net.minecraft.client.renderer.texture.atlas.sources.DirectoryLister;
@@ -50,11 +47,6 @@ public class ModAtlasProvider extends AtlasProvider {
             new ModTrimMaterialData(ModMaterialAssetGroups.SCULK, ModTrimMaterials.SCULK)
     );
 
-    public static final List<ModTrimMaterialData> BOP_TRIM_MATERIAL_MODELS = List.of(
-            new ModTrimMaterialData(CompatModMaterialAssetGroups.ROSE_QUARTZ, CompatModTrimMaterials.ROSE_QUARTZ),
-            new ModTrimMaterialData(CompatModMaterialAssetGroups.GLOWWORM_SILK, CompatModTrimMaterials.GLOWWORM_SILK)
-    );
-
     public ModAtlasProvider(PackOutput output) {
         super(output);
         this.pathProvider = output.createPathProvider(PackOutput.Target.RESOURCE_PACK, "atlases");
@@ -82,7 +74,7 @@ public class ModAtlasProvider extends AtlasProvider {
         return list;
     }
 
-    private static SpriteSource forMapper(MaterialMapper mapper) {
+    private static SpriteSource forMapper(SpriteMapper mapper) {
         return new DirectoryLister(mapper.prefix(), mapper.prefix() + "/");
     }
 
@@ -104,21 +96,11 @@ public class ModAtlasProvider extends AtlasProvider {
                 .flatMap(p_400261_ -> Stream.concat(Stream.of(p_400261_.base()), p_400261_.overrides().values().stream()))
                 .sorted(Comparator.comparing(MaterialAssetGroup.AssetInfo::suffix));
     }
-    private static Stream<MaterialAssetGroup.AssetInfo> extractBOPMaterialAssets() {
-        return BOP_TRIM_MATERIAL_MODELS
-                .stream()
-                .map(ModTrimMaterialData::assets)
-                .flatMap(p_400261_ -> Stream.concat(Stream.of(p_400261_.base()), p_400261_.overrides().values().stream()))
-                .sorted(Comparator.comparing(MaterialAssetGroup.AssetInfo::suffix));
-    }
 
     private static final Map<String, Identifier> TRIM_PALETTE_VALUES =
             Stream.concat(
                             extractAllMaterialAssets().map(info -> Map.entry("minecraft", info)),
-                            Stream.concat(
-                                    extractModMaterialAssets().map(info -> Map.entry(BuildersParadise.MODID, info)),
-                                    extractBOPMaterialAssets().map(info -> Map.entry(BOPAPI.MOD_ID, info))
-                            )
+                            extractModMaterialAssets().map(info -> Map.entry(BuildersParadise.MODID, info))
                     )
                     .collect(Collectors.toMap(
                             e -> e.getValue().suffix(),

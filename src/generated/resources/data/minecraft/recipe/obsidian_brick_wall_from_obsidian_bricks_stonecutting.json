@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "buildersparadise:obsidian_bricks",
   "result": {
-    "count": 1,
     "id": "buildersparadise:obsidian_brick_wall"
   }
 }

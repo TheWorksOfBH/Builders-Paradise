@@ -1,8 +1,5 @@
 package github.theworksofbh.buildersparadise.datagen;
 
-import github.theworksofbh.buildersparadise.compat.bop.CompatModItems;
-import github.theworksofbh.buildersparadise.compat.bop.CompatModMaterialAssetGroups;
-import github.theworksofbh.buildersparadise.compat.bop.CompatModTrimMaterials;
 import github.theworksofbh.buildersparadise.items.ModArmorMaterials;
 import github.theworksofbh.buildersparadise.items.ModItems;
 import github.theworksofbh.buildersparadise.items.ModMaterialAssetGroups;
@@ -15,6 +12,7 @@ import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.renderer.item.ItemModel;
 import net.minecraft.client.renderer.item.SelectItemModel;
 import net.minecraft.client.renderer.item.properties.select.TrimMaterialProperty;
+import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
@@ -56,16 +54,14 @@ public class ModItemModelGenerator extends ItemModelGenerators {
             new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.BRONZE, ModTrimMaterials.BRONZE),
             new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.BRASS, ModTrimMaterials.BRASS),
             new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.STEEL, ModTrimMaterials.STEEL),
-            new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.SCULK, ModTrimMaterials.SCULK),
-            new ItemModelGenerators.TrimMaterialData(CompatModMaterialAssetGroups.ROSE_QUARTZ, CompatModTrimMaterials.ROSE_QUARTZ),
-            new ItemModelGenerators.TrimMaterialData(CompatModMaterialAssetGroups.GLOWWORM_SILK, CompatModTrimMaterials.GLOWWORM_SILK)
+            new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.SCULK, ModTrimMaterials.SCULK)
     );
 
     @Override
     public void generateTrimmableItem(Item item, ResourceKey<EquipmentAsset> equipmentAsset, Identifier trimBaseTexture, boolean hasOverlay) {
         Identifier modelId = ModelLocationUtils.getModelLocation(item);
-        Identifier baseTexture = TextureMapping.getItemTexture(item);
-        Identifier overlayTexture = TextureMapping.getItemTexture(item, "_overlay");
+        Material baseTexture = TextureMapping.getItemTexture(item);
+        Material overlayTexture = TextureMapping.getItemTexture(item, "_overlay");
 
         List<SelectItemModel.SwitchCase<ResourceKey<TrimMaterial>>> cases = new ArrayList<>(MOD_TRIM_MATERIAL_MODELS.size());
 
@@ -76,8 +72,7 @@ public class ModItemModelGenerator extends ItemModelGenerators {
 
             String trimSuffix = trimData.assets().assetId(equipmentAsset).suffix();
 
-            Identifier layer1Texture = Identifier.withDefaultNamespace(
-                    trimBaseTexture.getPath() + "_" + trimSuffix);
+            Material layer1Texture = new Material(trimBaseTexture.withSuffix("_" + trimSuffix));
 
             ItemModel.Unbaked unbaked;
             if (hasOverlay) {
@@ -104,7 +99,6 @@ public class ModItemModelGenerator extends ItemModelGenerators {
     public void run() {
         this.generateFlatItem(ModItems.ELDER_PRISMARINE_SHARD.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(ModItems.ELDER_PRISMARINE_CRYSTALS.get(), ModelTemplates.FLAT_ITEM);
-//        this.generateFlatItem(ModItems.COPPER_NUGGET.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(ModItems.NETHERITE_NUGGET.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(ModItems.RAW_ZINC.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(ModItems.ZINC_INGOT.get(), ModelTemplates.FLAT_ITEM);
@@ -223,23 +217,5 @@ public class ModItemModelGenerator extends ItemModelGenerators {
         this.generateFlatItem(ModItems.GABBRO_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         this.generateFlatItem(ModItems.RHYOLITE_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         this.generateFlatItem(ModItems.PUMICE_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        this.generateFlatItem(CompatModItems.DEAD_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.EMPYREAL_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.FIR_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.HELLBARK_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.JACARANDA_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.MAGIC_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.MAHOGANY_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.MAPLE_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.PALM_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.PINE_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.REDWOOD_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.UMBRAN_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.WILLOW_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.ORIGIN_OAK_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.WHITE_SANDSTONE_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        this.generateFlatItem(CompatModItems.BLACK_SANDSTONE_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        this.generateFlatItem(CompatModItems.ORANGE_SANDSTONE_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        this.generateFlatItem(CompatModItems.BRIMSTONE_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
     }
 }

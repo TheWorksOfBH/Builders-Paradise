@@ -6,7 +6,6 @@
   "group": "lead_ingot",
   "ingredient": "buildersparadise:lead_ore",
   "result": {
-    "count": 1,
     "id": "buildersparadise:lead_ingot"
   }
 }

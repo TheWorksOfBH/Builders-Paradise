@@ -155,20 +155,6 @@
           "model": "minecraft:item/iron_leggings_sculk_trim"
         },
         "when": "buildersparadise:sculk"
-      },
-      {
-        "model": {
-          "type": "minecraft:model",
-          "model": "minecraft:item/iron_leggings_rose_quartz_trim"
-        },
-        "when": "biomesoplenty:rose_quartz"
-      },
-      {
-        "model": {
-          "type": "minecraft:model",
-          "model": "minecraft:item/iron_leggings_glowworm_silk_trim"
-        },
-        "when": "biomesoplenty:glowworm_silk"
       }
     ],
     "fallback": {

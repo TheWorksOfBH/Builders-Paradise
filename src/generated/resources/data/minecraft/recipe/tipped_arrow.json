@@ -4,6 +4,12 @@
       "type": "neoforge:never"
     }
   ],
-  "type": "minecraft:crafting_special_tippedarrow",
-  "category": "misc"
+  "type": "minecraft:crafting_imbue",
+  "category": "misc",
+  "material": "minecraft:arrow",
+  "result": {
+    "count": 8,
+    "id": "minecraft:tipped_arrow"
+  },
+  "source": "minecraft:lingering_potion"
 }

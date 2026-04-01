@@ -26,25 +26,25 @@ public class IceFenceBlock extends FenceBlock {
         return Blocks.WATER.defaultBlockState();
     }
 
-    public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity te, ItemStack stack) {
-        super.playerDestroy(level, player, pos, state, te, stack);
-        if (!EnchantmentHelper.hasTag(stack, EnchantmentTags.PREVENTS_ICE_MELTING)) {
+    public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack destroyedWith) {
+        super.playerDestroy(level, player, pos, state, blockEntity, destroyedWith);
+        if (!EnchantmentHelper.hasTag(destroyedWith, EnchantmentTags.PREVENTS_ICE_MELTING)) {
             if ((Boolean)level.environmentAttributes().getValue(EnvironmentAttributes.WATER_EVAPORATES, pos)) {
                 level.removeBlock(pos, false);
                 return;
             }
 
-            BlockState blockstate = level.getBlockState(pos.below());
-            if (blockstate.blocksMotion() || blockstate.liquid()) {
+            BlockState belowState = level.getBlockState(pos.below());
+            if (belowState.blocksMotion() || belowState.liquid()) {
                 level.setBlockAndUpdate(pos, meltsInto());
             }
         }
 
     }
 
-    protected void randomTick(BlockState p_221355_, ServerLevel p_221356_, BlockPos p_221357_, RandomSource p_221358_) {
-        if (p_221356_.getBrightness(LightLayer.BLOCK, p_221357_) > 11 - p_221355_.getLightBlock()) {
-            this.melt(p_221355_, p_221356_, p_221357_);
+    protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        if (level.getBrightness(LightLayer.BLOCK, pos) > 11 - state.getLightDampening()) {
+            this.melt(state, level, pos);
         }
 
     }

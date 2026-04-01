@@ -14,7 +14,8 @@ public class TintedDoorBlock extends TransparentDoorBlock {
     }
 
     @Override
-    protected int getLightBlock(BlockState p_154828_) {
+    protected int getLightDampening(BlockState state) {
         return 15;
     }
+
 }

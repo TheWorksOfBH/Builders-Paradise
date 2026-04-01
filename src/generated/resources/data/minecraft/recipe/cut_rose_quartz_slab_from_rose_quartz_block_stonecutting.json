@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "biomesoplenty:rose_quartz_block",
-  "result": {
-    "count": 8,
-    "id": "buildersparadise:cut_rose_quartz_slab"
-  }
-}

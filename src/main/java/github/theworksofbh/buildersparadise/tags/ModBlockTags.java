@@ -41,6 +41,8 @@ public final class ModBlockTags {
     public static final TagKey<Block> INCORRECT_FOR_BRONZE_TOOL = create("incorrect_for_bronze_tool");
     public static final TagKey<Block> GALVANIZES_IRON = create("galvanizes_iron");
     public static final TagKey<Block> SHATTERABLE_BY_SHARPENED_ARROW = create("shatterable_by_sharpened_arrow");
+    public static final TagKey<Block> GLASS_DOORS = create("glass_doors");
+    public static final TagKey<Block> GLASS_TRAPDOORS = create("glass_trapdoors");
 
     private ModBlockTags() {
     }

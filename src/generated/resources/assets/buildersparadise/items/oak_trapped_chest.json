@@ -23,7 +23,7 @@
       "base": "minecraft:item/trapped_chest",
       "model": {
         "type": "minecraft:chest",
-        "texture": "minecraft:normal"
+        "texture": "minecraft:trapped"
       }
     },
     "pattern": "MM-dd",

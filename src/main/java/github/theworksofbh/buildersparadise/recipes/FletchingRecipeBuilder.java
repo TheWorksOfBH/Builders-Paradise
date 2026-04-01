@@ -9,10 +9,9 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
@@ -28,13 +27,13 @@ public class FletchingRecipeBuilder implements RecipeBuilder {
     private final RecipeCategory category;
     private final Ingredient arrow;
     private final Ingredient ingredient;
-    private final ItemStack result;
+    private final ItemStackTemplate result;
     private final Map<String, Criterion<?>> criteria = new LinkedHashMap();
 
     public FletchingRecipeBuilder(Ingredient arrow, Ingredient ingredient, ItemLike result, int count, RecipeCategory category) {
         this.arrow = arrow;
         this.ingredient = ingredient;
-        this.result = new ItemStack(result.asItem(), count);
+        this.result = new ItemStackTemplate(result.asItem(), count);
         this.category = category;
     }
 
@@ -53,8 +52,8 @@ public class FletchingRecipeBuilder implements RecipeBuilder {
     }
 
     @Override
-    public Item getResult() {
-        return null;
+    public ResourceKey<Recipe<?>> defaultId() {
+        return RecipeBuilder.getDefaultRecipeId(this.result);
     }
 
     @Override

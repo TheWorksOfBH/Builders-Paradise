@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "buildersparadise:block/thermal_calcite_bricks_5",
-    "side": "buildersparadise:block/thermal_calcite_bricks_inventory",
-    "top": "buildersparadise:block/thermal_calcite_bricks"
-  }
-}

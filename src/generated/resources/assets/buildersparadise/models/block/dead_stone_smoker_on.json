@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/orientable_with_bottom",
-  "textures": {
-    "bottom": "buildersparadise:block/dead_stone_smoker_bottom",
-    "front": "buildersparadise:block/dead_stone_smoker_front_on",
-    "side": "buildersparadise:block/dead_stone_smoker_side",
-    "top": "buildersparadise:block/dead_stone_smoker_top"
-  }
-}

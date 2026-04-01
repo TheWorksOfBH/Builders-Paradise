@@ -4,7 +4,7 @@ import github.theworksofbh.buildersparadise.BuildersParadise;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.ChestRenderer;
 import net.minecraft.client.renderer.blockentity.state.ChestRenderState;
-import net.minecraft.client.resources.model.Material;
+import net.minecraft.client.resources.model.sprite.SpriteId;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
@@ -35,21 +35,21 @@ public abstract class ChestRendererMixins<T extends BlockEntity & LidBlockEntity
     }
 
     @Unique
-    private static Material getCustomChestPath(String path, boolean isTrapped, String part) {
+    private static SpriteId getCustomChestPath(String path, boolean isTrapped, String part) {
         if (isTrapped) {
-            return new Material(Sheets.CHEST_SHEET, Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "entity/chest" + path + "/trapped" + part));
+            return new SpriteId(Sheets.CHEST_SHEET, Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "entity/chest" + path + "/trapped" + part));
         } else {
-            return new Material(Sheets.CHEST_SHEET, Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "entity/chest" + path + "/normal" + part));
+            return new SpriteId(Sheets.CHEST_SHEET, Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "entity/chest" + path + "/normal" + part));
         }
     }
 
     @Unique
-    private static Material getChristmasChestPath(String part) {
-        return new Material(Sheets.CHEST_SHEET, Identifier.withDefaultNamespace("entity/chest/christmas" + part));
+    private static SpriteId getChristmasChestPath(String part) {
+        return new SpriteId(Sheets.CHEST_SHEET, Identifier.withDefaultNamespace("entity/chest/christmas" + part));
     }
 
     @Unique
-    private Material determineCustomMaterial(ChestType type, boolean isTrapped, String path) {
+    private SpriteId determineCustomSprite(ChestType type, boolean isTrapped, String path) {
         if (xmasTextures()) {
             return switch (type) {
                 case LEFT -> getChristmasChestPath("_left");
@@ -73,24 +73,25 @@ public abstract class ChestRendererMixins<T extends BlockEntity & LidBlockEntity
         }
     }
 
-    @Inject(method = "getCustomMaterial", at = @At("HEAD"), cancellable = true)
-    private void getModdedChestMaterial(T blockEntity, ChestRenderState renderState, CallbackInfoReturnable<Material> cir) {
+    @Inject(method = "getCustomSprite", at = @At("HEAD"), cancellable = true)
+    private void getCustomChestSprite(T blockEntity, ChestRenderState renderState, CallbackInfoReturnable<SpriteId> cir) {
         Block block = blockEntity.getBlockState().getBlock();
 
         if (!(block instanceof ChestBlock) && !(block instanceof TrappedChestBlock)) return;
 
         Identifier key = BuiltInRegistries.BLOCK.getKey(block);
-        if (key == null) return;
-        if (!key.getNamespace().equals(BuildersParadise.MODID)) return;
+        if (key == null || !key.getNamespace().equals(BuildersParadise.MODID)) return;
 
         boolean isTrapped = block instanceof TrappedChestBlock;
         ChestType type = blockEntity.getBlockState().getValue(ChestBlock.TYPE);
-        String rawPath = key.getPath().replace("trapped_", "");
-        String path = "/" + rawPath;
 
-        Material mat = determineCustomMaterial(type, isTrapped, path);
-        if (mat != null) {
-            cir.setReturnValue(mat);
+        String rawPath = key.getPath().replace("trapped_", "");
+        String path = rawPath;
+
+        SpriteId sprite = determineCustomSprite(type, isTrapped, path);
+
+        if (sprite != null) {
+            cir.setReturnValue(sprite);
         }
     }
 }

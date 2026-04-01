@@ -1,6 +1,5 @@
 package github.theworksofbh.buildersparadise.datagen;
 
-import biomesoplenty.api.item.BOPItems;
 import github.theworksofbh.buildersparadise.BuildersParadise;
 import github.theworksofbh.buildersparadise.items.ModItems;
 import github.theworksofbh.buildersparadise.tags.ModItemTags;
@@ -29,9 +28,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ModItemTags.BRONZE_TOOL_MATERIALS).add(ModItems.BRONZE_INGOT.get());
         tag(ModItemTags.REPAIRS_BRONZE_ARMOR).addTag(ModItemTags.BRONZE_TOOL_MATERIALS);
         tag(ModItemTags.BARRELS).add(ModItems.OAK_BARREL.get()).add(ModItems.SPRUCE_BARREL.get()).add(ModItems.BIRCH_BARREL.get()).add(ModItems.JUNGLE_BARREL.get()).add(ModItems.ACACIA_BARREL.get()).add(ModItems.DARK_OAK_BARREL.get()).add(ModItems.CRIMSON_BARREL.get()).add(ModItems.WARPED_BARREL.get()).add(ModItems.MANGROVE_BARREL.get()).add(ModItems.CHERRY_BARREL.get()).add(ModItems.BAMBOO_BARREL.get()).add(ModItems.PALE_OAK_BARREL.get());
-        tag(ItemTags.TRIM_MATERIALS).add(ModItems.ZINC_INGOT.get()).add(ModItems.SILVER_INGOT.get()).add(ModItems.TIN_INGOT.get()).add(ModItems.TUNGSTEN_INGOT.get()).add(ModItems.LEAD_INGOT.get()).add(ModItems.PLATINUM_INGOT.get()).add(ModItems.URANIUM_INGOT.get()).add(ModItems.BRONZE_INGOT.get()).add(ModItems.BRASS_INGOT.get()).add(ModItems.STEEL_INGOT.get()).add(ModItems.SCULK_BRICK.get()).addOptional(BOPItems.ROSE_QUARTZ_CHUNK).addOptional(BOPItems.GLOWWORM_SILK);
+        tag(ItemTags.TRIM_MATERIALS).add(ModItems.ZINC_INGOT.get()).add(ModItems.SILVER_INGOT.get()).add(ModItems.TIN_INGOT.get()).add(ModItems.TUNGSTEN_INGOT.get()).add(ModItems.LEAD_INGOT.get()).add(ModItems.PLATINUM_INGOT.get()).add(ModItems.URANIUM_INGOT.get()).add(ModItems.BRONZE_INGOT.get()).add(ModItems.BRASS_INGOT.get()).add(ModItems.STEEL_INGOT.get()).add(ModItems.SCULK_BRICK.get());
         tag(ItemTags.TRIMMABLE_ARMOR).add(ModItems.BRONZE_HELMET.get()).add(ModItems.BRONZE_CHESTPLATE.get()).add(ModItems.BRONZE_LEGGINGS.get()).add(ModItems.BRONZE_BOOTS.get());
         tag(ModItemTags.VIABLE_FLETCHING_INGREDIENTS).add(Items.FLINT).add(Items.GLOWSTONE_DUST).add(Items.GUNPOWDER).add(Items.PHANTOM_MEMBRANE);
         tag(ItemTags.ARROWS).add(ModItems.EXPLOSIVE_ARROW.get()).add(ModItems.SHARPENED_ARROW.get()).add(ModItems.STREAMLINED_ARROW.get());
+        tag(ItemTags.METAL_NUGGETS).add(ModItems.ZINC_NUGGET.get()).add(ModItems.SILVER_NUGGET.get()).add(ModItems.TIN_NUGGET.get()).add(ModItems.TUNGSTEN_NUGGET.get()).add(ModItems.PLATINUM_NUGGET.get()).add(ModItems.LEAD_NUGGET.get()).add(ModItems.URANIUM_NUGGET.get()).add(ModItems.NETHERITE_NUGGET.get()).add(ModItems.BRONZE_NUGGET.get()).add(ModItems.BRASS_NUGGET.get()).add(ModItems.STEEL_NUGGET.get());
     }
 }

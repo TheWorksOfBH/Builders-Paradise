@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "buildersparadise:coal_bricks",
   "result": {
-    "count": 1,
     "id": "buildersparadise:coal_brick_wall"
   }
 }

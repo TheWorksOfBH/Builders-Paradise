@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "buildersparadise:magenta_terracotta_bricks",
   "result": {
-    "count": 1,
     "id": "buildersparadise:magenta_terracotta_brick_wall"
   }
 }

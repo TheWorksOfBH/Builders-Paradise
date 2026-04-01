@@ -1,14 +1,14 @@
 {
   "values": [
-    "minecraft:grindstone",
-    "minecraft:brewing_stand",
-    "minecraft:furnace",
-    "minecraft:dispenser",
-    "minecraft:crafter",
     "minecraft:dropper",
     "minecraft:blast_furnace",
     "minecraft:smoker",
+    "minecraft:furnace",
+    "minecraft:dispenser",
     "minecraft:observer",
+    "minecraft:crafter",
+    "minecraft:grindstone",
+    "minecraft:brewing_stand",
     "buildersparadise:polished_granite_wall",
     "buildersparadise:polished_diorite_wall",
     "buildersparadise:polished_andesite_wall",
@@ -988,194 +988,6 @@
     "buildersparadise:brown_stained_glass_trapdoor",
     "buildersparadise:green_stained_glass_trapdoor",
     "buildersparadise:red_stained_glass_trapdoor",
-    "buildersparadise:black_stained_glass_trapdoor",
-    {
-      "id": "buildersparadise:cut_white_sandstone_stairs",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:cut_white_sandstone_wall",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:smooth_white_sandstone_wall",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:cut_black_sandstone_stairs",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:cut_black_sandstone_wall",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:smooth_black_sandstone_wall",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:cut_orange_sandstone_stairs",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:cut_orange_sandstone_wall",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:smooth_orange_sandstone_wall",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:brimstone_slab",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:brimstone_stairs",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:brimstone_wall",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:thermal_calcite_slab",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:thermal_calcite_stairs",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:thermal_calcite_wall",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:polished_thermal_calcite",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:polished_thermal_calcite_slab",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:polished_thermal_calcite_stairs",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:polished_thermal_calcite_wall",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:thermal_calcite_bricks",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:thermal_calcite_brick_slab",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:thermal_calcite_brick_stairs",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:thermal_calcite_brick_wall",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:cut_rose_quartz",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:cut_rose_quartz_slab",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:cut_rose_quartz_stairs",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:hellbark_fletching_table",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:hellbark_lectern",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:hellbark_grindstone",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:hellbark_crafter",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:hellbark_stone_smoker",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:hellbark_blackstone_smoker",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:hellbark_deepslate_smoker",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:white_sandstone_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:cut_white_sandstone_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:smooth_white_sandstone_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:black_sandstone_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:cut_black_sandstone_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:smooth_black_sandstone_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:orange_sandstone_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:cut_orange_sandstone_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:smooth_orange_sandstone_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:brimstone_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:brimstone_brick_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:thermal_calcite_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:polished_thermal_calcite_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:thermal_calcite_brick_fence",
-      "required": false
-    }
+    "buildersparadise:black_stained_glass_trapdoor"
   ]
 }

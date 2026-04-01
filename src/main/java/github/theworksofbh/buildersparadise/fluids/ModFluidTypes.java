@@ -15,7 +15,26 @@ import org.joml.Vector4f;
 public class ModFluidTypes {
     public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(NeoForgeRegistries.Keys.FLUID_TYPES, BuildersParadise.MODID);
 
-    public static final DeferredHolder<FluidType, BaseFluidType> NUCLEAR_WASTE_TYPE = register("nuclear_waste_fluid", FluidType.Properties.create().viscosity(1000).lightLevel(15).canConvertToSource(true).motionScale(0.1).sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL_LAVA).sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY_LAVA).pathType(PathType.LAVA).temperature(700).motionScale(0.00001F).isWaterLike(false).density(1000), Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "block/nuclear_waste_flow"), Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "block/nuclear_waste_still"), 1.0F, 0.0F, 1.0F, 0.0F);
+    public static final DeferredHolder<FluidType, BaseFluidType> NUCLEAR_WASTE_TYPE = register(
+            "nuclear_waste_fluid",
+            FluidType.Properties.create()
+                    .viscosity(1000)
+                    .lightLevel(15)
+                    .canConvertToSource(true)
+                    .motionScale(0.1)
+                    .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL_LAVA)
+                    .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY_LAVA)
+                    .pathType(PathType.LAVA)
+                    .temperature(700)
+                    .motionScale(0.00001F)
+                    .isWaterLike(false)
+                    .density(1000),
+            Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "block/nuclear_waste_still"),
+            Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "block/nuclear_waste_flow"),
+            1.0F,
+            0.0F,
+            1.0F,
+            0.0F);
 
     private static DeferredHolder<FluidType, BaseFluidType> register(String registryName, FluidType.Properties properties, Identifier stillLoc, Identifier flowingLoc, float alpha, float red, float green, float blue) {
         return FLUID_TYPES.register(registryName,

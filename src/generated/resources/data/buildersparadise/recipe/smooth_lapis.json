@@ -5,7 +5,6 @@
   "experience": 0.1,
   "ingredient": "minecraft:lapis_block",
   "result": {
-    "count": 1,
     "id": "buildersparadise:smooth_lapis"
   }
 }

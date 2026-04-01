@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "buildersparadise:rusted_cut_iron",
   "result": {
-    "count": 1,
     "id": "buildersparadise:rusted_cut_iron_stairs"
   }
 }

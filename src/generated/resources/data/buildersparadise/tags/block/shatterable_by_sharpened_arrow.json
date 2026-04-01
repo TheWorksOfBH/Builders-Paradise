@@ -55,6 +55,8 @@
     "#minecraft:saplings",
     "#minecraft:flowers",
     "#minecraft:flower_pots",
-    "#minecraft:leaves"
+    "#minecraft:leaves",
+    "#buildersparadise:glass_doors",
+    "#buildersparadise:glass_trapdoors"
   ]
 }
