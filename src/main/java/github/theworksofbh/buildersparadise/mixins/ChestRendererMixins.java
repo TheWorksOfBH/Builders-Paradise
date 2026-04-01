@@ -37,9 +37,9 @@ public abstract class ChestRendererMixins<T extends BlockEntity & LidBlockEntity
     @Unique
     private static SpriteId getCustomChestPath(String path, boolean isTrapped, String part) {
         if (isTrapped) {
-            return new SpriteId(Sheets.CHEST_SHEET, Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "entity/chest" + path + "/trapped" + part));
+            return new SpriteId(Sheets.CHEST_SHEET, Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "entity/chest/" + path + "/trapped" + part));
         } else {
-            return new SpriteId(Sheets.CHEST_SHEET, Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "entity/chest" + path + "/normal" + part));
+            return new SpriteId(Sheets.CHEST_SHEET, Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "entity/chest/" + path + "/normal" + part));
         }
     }
 
@@ -77,13 +77,16 @@ public abstract class ChestRendererMixins<T extends BlockEntity & LidBlockEntity
     private void getCustomChestSprite(T blockEntity, ChestRenderState renderState, CallbackInfoReturnable<SpriteId> cir) {
         Block block = blockEntity.getBlockState().getBlock();
 
-        if (!(block instanceof ChestBlock) && !(block instanceof TrappedChestBlock)) return;
+        if (!(block instanceof ChestBlock)) return;
 
         Identifier key = BuiltInRegistries.BLOCK.getKey(block);
         if (key == null || !key.getNamespace().equals(BuildersParadise.MODID)) return;
 
         boolean isTrapped = block instanceof TrappedChestBlock;
-        ChestType type = blockEntity.getBlockState().getValue(ChestBlock.TYPE);
+
+        ChestType type = blockEntity.getBlockState().hasProperty(ChestBlock.TYPE)
+                ? blockEntity.getBlockState().getValue(ChestBlock.TYPE)
+                : ChestType.SINGLE;
 
         String rawPath = key.getPath().replace("trapped_", "");
         String path = rawPath;
@@ -92,6 +95,7 @@ public abstract class ChestRendererMixins<T extends BlockEntity & LidBlockEntity
 
         if (sprite != null) {
             cir.setReturnValue(sprite);
+            cir.cancel();
         }
     }
 }
