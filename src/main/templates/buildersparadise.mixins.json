@@ -3,6 +3,8 @@
   "package": "github.theworksofbh.buildersparadise.mixins",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "BannerDuplicateRecipeMixins",
+    "BannerPatternLayersMixins",
     "BlockBehaviourMixins",
     "BlocksMixins",
     "CartographyTableMenuMixins",
@@ -11,13 +13,17 @@
     "CraftingMenuMixins",
     "GrindstoneMenuMixins",
     "LoomMenuMixins",
+    "LoomScreenMixins",
     "MinecartChestMixins",
     "MinecartFurnaceMixins",
     "MineshaftCorridorMixins",
     "MineShaftPieceMixins",
     "SmithingMenuMixins",
     "SplashManagerMixins",
-    "StructurePieceMixins"
+    "StructurePieceMixins",
+    "compat.SodiumConfigLoaderForgeMixin",
+    "compat.SodiumDefaultShaderInterfaceMixin",
+    "compat.SodiumShaderChunkRendererMixin"
   ],
   "client": [
 

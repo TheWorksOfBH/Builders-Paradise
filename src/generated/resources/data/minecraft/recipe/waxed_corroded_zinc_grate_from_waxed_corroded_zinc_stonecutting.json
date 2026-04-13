@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:waxed_corroded_zinc",
+  "result": {
+    "count": 4,
+    "id": "buildersparadise:waxed_corroded_zinc_grate"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_corroded_zinc": {
+      "conditions": {
+        "items": [
+          {
+            "items": "buildersparadise:corroded_zinc"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "buildersparadise:corroded_zinc_bulb"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_corroded_zinc"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "buildersparadise:corroded_zinc_bulb"
+    ]
+  }
+}

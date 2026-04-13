@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "rusted_iron_bulb",
+  "key": {
+    "B": "minecraft:blaze_rod",
+    "C": "buildersparadise:rusted_iron",
+    "R": "minecraft:redstone"
+  },
+  "pattern": [
+    " C ",
+    "CBC",
+    " R "
+  ],
+  "result": {
+    "count": 4,
+    "id": "buildersparadise:rusted_iron_bulb"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "values": [
+    "buildersparadise:tin_block",
+    "buildersparadise:cut_tin",
+    "buildersparadise:cut_tin_slab",
+    "buildersparadise:cut_tin_stairs",
+    "buildersparadise:lead_block",
+    "buildersparadise:cut_lead",
+    "buildersparadise:cut_lead_slab",
+    "buildersparadise:cut_lead_stairs",
+    "buildersparadise:bronze_block",
+    "buildersparadise:cut_bronze",
+    "buildersparadise:cut_bronze_slab",
+    "buildersparadise:cut_bronze_stairs",
+    "buildersparadise:brass_block",
+    "buildersparadise:cut_brass",
+    "buildersparadise:cut_brass_slab",
+    "buildersparadise:cut_brass_stairs"
+  ]
+}

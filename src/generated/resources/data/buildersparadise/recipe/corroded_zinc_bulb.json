@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "corroded_zinc_bulb",
+  "key": {
+    "B": "minecraft:blaze_rod",
+    "C": "buildersparadise:corroded_zinc",
+    "R": "minecraft:redstone"
+  },
+  "pattern": [
+    " C ",
+    "CBC",
+    " R "
+  ],
+  "result": {
+    "count": 4,
+    "id": "buildersparadise:corroded_zinc_bulb"
+  }
+}

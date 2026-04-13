@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "rusted_iron_grate",
+  "key": {
+    "M": "buildersparadise:rusted_iron"
+  },
+  "pattern": [
+    " M ",
+    "M M",
+    " M "
+  ],
+  "result": {
+    "count": 4,
+    "id": "buildersparadise:rusted_iron_grate"
+  }
+}

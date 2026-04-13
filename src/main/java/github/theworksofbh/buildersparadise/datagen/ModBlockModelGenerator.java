@@ -1563,16 +1563,87 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
 
         this.createTintedGlassPane(Blocks.TINTED_GLASS, ModBlocks.TINTED_GLASS_PANE.get());
 
+        this.createRotatedPillarWithHorizontalVariant(ModBlocks.LAPIS_PILLAR.get(), TexturedModel.COLUMN_ALT, TexturedModel.COLUMN_HORIZONTAL_ALT);
+
+        this.createTrivialBlock(ModBlocks.CHISELED_LAPIS.get(), TexturedModel.COLUMN.updateTexture(
+                (mapping) -> mapping.put(TextureSlot.END, TextureMapping.getBlockTexture(ModBlocks.CHISELED_LAPIS.get(), "_top"))
+                        .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(ModBlocks.CHISELED_LAPIS.get()))
+                        .put(TextureSlot.TOP, TextureMapping.getBlockTexture(ModBlocks.CHISELED_LAPIS.get(), "_top"))
+                        .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(ModBlocks.CHISELED_LAPIS.get(), "_top"))
+        ));
+
+        this.createTrivialCube(ModBlocks.IRON_GRATE.get());
+        this.createTrivialCube(ModBlocks.EXPOSED_IRON_GRATE.get());
+        this.createTrivialCube(ModBlocks.WEATHERED_IRON_GRATE.get());
+        this.createTrivialCube(ModBlocks.RUSTED_IRON_GRATE.get());
+        this.copyModel(ModBlocks.IRON_GRATE.get(), ModBlocks.WAXED_IRON_GRATE.get());
+        this.copyModel(ModBlocks.EXPOSED_IRON_GRATE.get(), ModBlocks.WAXED_EXPOSED_IRON_GRATE.get());
+        this.copyModel(ModBlocks.WEATHERED_IRON_GRATE.get(), ModBlocks.WAXED_WEATHERED_IRON_GRATE.get());
+        this.copyModel(ModBlocks.RUSTED_IRON_GRATE.get(), ModBlocks.WAXED_RUSTED_IRON_GRATE.get());
+
+        this.createTrivialCube(ModBlocks.ZINC_GRATE.get());
+        this.createTrivialCube(ModBlocks.EXPOSED_ZINC_GRATE.get());
+        this.createTrivialCube(ModBlocks.WEATHERED_ZINC_GRATE.get());
+        this.createTrivialCube(ModBlocks.CORRODED_ZINC_GRATE.get());
+        this.copyModel(ModBlocks.ZINC_GRATE.get(), ModBlocks.WAXED_ZINC_GRATE.get());
+        this.copyModel(ModBlocks.EXPOSED_ZINC_GRATE.get(), ModBlocks.WAXED_EXPOSED_ZINC_GRATE.get());
+        this.copyModel(ModBlocks.WEATHERED_ZINC_GRATE.get(), ModBlocks.WAXED_WEATHERED_ZINC_GRATE.get());
+        this.copyModel(ModBlocks.CORRODED_ZINC_GRATE.get(), ModBlocks.WAXED_CORRODED_ZINC_GRATE.get());
+
+        this.createTrivialCube(ModBlocks.SILVER_GRATE.get());
+        this.createTrivialCube(ModBlocks.TIN_GRATE.get());
+        this.createTrivialCube(ModBlocks.TUNGSTEN_GRATE.get());
+        this.createTrivialCube(ModBlocks.PLATINUM_GRATE.get());
+        this.createTrivialCube(ModBlocks.GOLD_GRATE.get());
+        this.createTrivialCube(ModBlocks.LEAD_GRATE.get());
+        this.createTrivialCube(ModBlocks.URANIUM_GRATE.get());
+
+        this.createTrivialCube(ModBlocks.NETHERITE_GRATE.get());
+        this.createTrivialCube(ModBlocks.BRONZE_GRATE.get());
+        this.createTrivialCube(ModBlocks.BRASS_GRATE.get());
+        this.createTrivialCube(ModBlocks.STEEL_GRATE.get());
+
+        this.createCopperBulb(ModBlocks.IRON_BULB.get());
+        this.createCopperBulb(ModBlocks.EXPOSED_IRON_BULB.get());
+        this.createCopperBulb(ModBlocks.WEATHERED_IRON_BULB.get());
+        this.createCopperBulb(ModBlocks.RUSTED_IRON_BULB.get());
+        this.copyCopperBulbModel(ModBlocks.IRON_BULB.get(), ModBlocks.WAXED_IRON_BULB.get());
+        this.copyCopperBulbModel(ModBlocks.EXPOSED_IRON_BULB.get(), ModBlocks.WAXED_EXPOSED_IRON_BULB.get());
+        this.copyCopperBulbModel(ModBlocks.WEATHERED_IRON_BULB.get(), ModBlocks.WAXED_WEATHERED_IRON_BULB.get());
+        this.copyCopperBulbModel(ModBlocks.RUSTED_IRON_BULB.get(), ModBlocks.WAXED_RUSTED_IRON_BULB.get());
+
+        this.createCopperBulb(ModBlocks.ZINC_BULB.get());
+        this.createCopperBulb(ModBlocks.EXPOSED_ZINC_BULB.get());
+        this.createCopperBulb(ModBlocks.WEATHERED_ZINC_BULB.get());
+        this.createCopperBulb(ModBlocks.CORRODED_ZINC_BULB.get());
+        this.copyCopperBulbModel(ModBlocks.ZINC_BULB.get(), ModBlocks.WAXED_ZINC_BULB.get());
+        this.copyCopperBulbModel(ModBlocks.EXPOSED_ZINC_BULB.get(), ModBlocks.WAXED_EXPOSED_ZINC_BULB.get());
+        this.copyCopperBulbModel(ModBlocks.WEATHERED_ZINC_BULB.get(), ModBlocks.WAXED_WEATHERED_ZINC_BULB.get());
+        this.copyCopperBulbModel(ModBlocks.CORRODED_ZINC_BULB.get(), ModBlocks.WAXED_CORRODED_ZINC_BULB.get());
+
+        this.createCopperBulb(ModBlocks.SILVER_BULB.get());
+        this.createCopperBulb(ModBlocks.TIN_BULB.get());
+        this.createCopperBulb(ModBlocks.TUNGSTEN_BULB.get());
+        this.createCopperBulb(ModBlocks.PLATINUM_BULB.get());
+        this.createCopperBulb(ModBlocks.GOLD_BULB.get());
+        this.createCopperBulb(ModBlocks.LEAD_BULB.get());
+        this.createCopperBulb(ModBlocks.URANIUM_BULB.get());
+
+        this.createCopperBulb(ModBlocks.NETHERITE_BULB.get());
+        this.createCopperBulb(ModBlocks.BRONZE_BULB.get());
+        this.createCopperBulb(ModBlocks.BRASS_BULB.get());
+        this.createCopperBulb(ModBlocks.STEEL_BULB.get());
+
         ModBlockFamilies.getAllFamilies()
                 .filter(BlockFamily::shouldGenerateModel)
                 .forEach(
                         family ->
                         {
-                            if (family.get(BlockFamily.Variant.CHISELED) == ModBlocks.CHISELED_SOUL_SANDSTONE.get()) {
-                                familyWithExistingFullBlock(family.getBaseBlock()).wall(ModBlocks.SOUL_SANDSTONE_WALL.get());
-                                familyWithExistingFullBlock(family.getBaseBlock()).slab(ModBlocks.SOUL_SANDSTONE_SLAB.get());
-                                familyWithExistingFullBlock(family.getBaseBlock()).stairs(ModBlocks.SOUL_SANDSTONE_STAIRS.get());
-                                familyWithExistingFullBlock(family.getBaseBlock()).fence(ModBlocks.SOUL_SANDSTONE_FENCE.get());
+                            if (family.get(BlockFamily.Variant.CHISELED) == ModBlocks.CHISELED_SOUL_SANDSTONE.get() || family.get(BlockFamily.Variant.CHISELED) == ModBlocks.CHISELED_LAPIS.get()) {
+                                familyWithExistingFullBlock(family.getBaseBlock()).wall(family.get(BlockFamily.Variant.WALL));
+                                familyWithExistingFullBlock(family.getBaseBlock()).slab(family.get(BlockFamily.Variant.SLAB));
+                                familyWithExistingFullBlock(family.getBaseBlock()).stairs(family.get(BlockFamily.Variant.STAIRS));
+                                familyWithExistingFullBlock(family.getBaseBlock()).fence(family.get(BlockFamily.Variant.FENCE));
                             } else if (family.getBaseBlock() == ModBlocks.SMOOTH_DEEPSLATE.get()) {
                                 familyWithExistingFullBlock(family.getBaseBlock()).wall(ModBlocks.SMOOTH_DEEPSLATE_WALL.get());
                                 createSmoothDeepslateSlab();

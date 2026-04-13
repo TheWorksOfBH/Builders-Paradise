@@ -5,10 +5,13 @@ import github.theworksofbh.buildersparadise.block.ModBlocks;
 import github.theworksofbh.buildersparadise.entity.ModEntities;
 import github.theworksofbh.buildersparadise.fluids.ModFluids;
 import github.theworksofbh.buildersparadise.sounds.ModJukeboxSongs;
+import github.theworksofbh.buildersparadise.tags.ModBannerPatternTags;
 import net.minecraft.core.Direction;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.boat.AbstractBoat;
 import net.minecraft.world.entity.vehicle.minecart.AbstractMinecart;
@@ -18,6 +21,7 @@ import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.item.equipment.trim.TrimMaterial;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.BannerPattern;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -1664,6 +1668,85 @@ public class ModItems {
     public static final DeferredItem<BlockItem> RED_STAINED_GLASS_TRAPDOOR = registerBlockItem("red_stained_glass_trapdoor", () -> ModBlocks.RED_STAINED_GLASS_TRAPDOOR.get());
     public static final DeferredItem<BlockItem> BLACK_STAINED_GLASS_TRAPDOOR = registerBlockItem("black_stained_glass_trapdoor", () -> ModBlocks.BLACK_STAINED_GLASS_TRAPDOOR.get());
 
+    public static final DeferredItem<BlockItem> CHISELED_PRISMARINE = registerBlockItem("chiseled_prismarine", () -> ModBlocks.CHISELED_PRISMARINE.get());
+    public static final DeferredItem<BlockItem> CHISELED_PRISMARINE_BRICKS = registerBlockItem("chiseled_prismarine_bricks", () -> ModBlocks.CHISELED_PRISMARINE_BRICKS.get());
+
+    public static final DeferredItem<BlockItem> CHISELED_ELDER_PRISMARINE = registerBlockItem("chiseled_elder_prismarine", () -> ModBlocks.CHISELED_ELDER_PRISMARINE.get());
+    public static final DeferredItem<BlockItem> CHISELED_ELDER_PRISMARINE_BRICKS = registerBlockItem("chiseled_elder_prismarine_bricks", () -> ModBlocks.CHISELED_ELDER_PRISMARINE_BRICKS.get());
+
+    public static final DeferredItem<Item> HEART_BANNER_PATTERN = registerBannerTemplate("heart_banner_pattern", ModBannerPatternTags.PATTERN_ITEM_HEART);
+    public static final DeferredItem<Item> DIAMOND_BANNER_PATTERN = registerBannerTemplate("diamond_banner_pattern", ModBannerPatternTags.PATTERN_ITEM_DIAMOND);
+    public static final DeferredItem<Item> SPADE_BANNER_PATTERN = registerBannerTemplate("spade_banner_pattern", ModBannerPatternTags.PATTERN_ITEM_SPADE);
+    public static final DeferredItem<Item> CLUB_BANNER_PATTERN = registerBannerTemplate("club_banner_pattern", ModBannerPatternTags.PATTERN_ITEM_CLUB);
+
+    public static final DeferredItem<BlockItem> LAPIS_PILLAR = registerBlockItem("lapis_pillar", () -> ModBlocks.LAPIS_PILLAR.get());
+    public static final DeferredItem<BlockItem> CHISELED_LAPIS = registerBlockItem("chiseled_lapis", () -> ModBlocks.CHISELED_LAPIS.get());
+
+    public static final DeferredItem<BlockItem> IRON_GRATE = registerBlockItem("iron_grate", () -> ModBlocks.IRON_GRATE.get());
+    public static final DeferredItem<BlockItem> EXPOSED_IRON_GRATE = registerBlockItem("exposed_iron_grate", () -> ModBlocks.EXPOSED_IRON_GRATE.get());
+    public static final DeferredItem<BlockItem> WEATHERED_IRON_GRATE = registerBlockItem("weathered_iron_grate", () -> ModBlocks.WEATHERED_IRON_GRATE.get());
+    public static final DeferredItem<BlockItem> RUSTED_IRON_GRATE = registerBlockItem("rusted_iron_grate", () -> ModBlocks.RUSTED_IRON_GRATE.get());
+
+    public static final DeferredItem<BlockItem> WAXED_IRON_GRATE = registerBlockItem("waxed_iron_grate", () -> ModBlocks.WAXED_IRON_GRATE.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_IRON_GRATE = registerBlockItem("waxed_exposed_iron_grate", () -> ModBlocks.WAXED_EXPOSED_IRON_GRATE.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_IRON_GRATE = registerBlockItem("waxed_weathered_iron_grate", () -> ModBlocks.WAXED_WEATHERED_IRON_GRATE.get());
+    public static final DeferredItem<BlockItem> WAXED_RUSTED_IRON_GRATE = registerBlockItem("waxed_rusted_iron_grate", () -> ModBlocks.WAXED_RUSTED_IRON_GRATE.get());
+
+    public static final DeferredItem<BlockItem> ZINC_GRATE = registerBlockItem("zinc_grate", () -> ModBlocks.ZINC_GRATE.get());
+    public static final DeferredItem<BlockItem> EXPOSED_ZINC_GRATE = registerBlockItem("exposed_zinc_grate", () -> ModBlocks.EXPOSED_ZINC_GRATE.get());
+    public static final DeferredItem<BlockItem> WEATHERED_ZINC_GRATE = registerBlockItem("weathered_zinc_grate", () -> ModBlocks.WEATHERED_ZINC_GRATE.get());
+    public static final DeferredItem<BlockItem> CORRODED_ZINC_GRATE = registerBlockItem("corroded_zinc_grate", () -> ModBlocks.CORRODED_ZINC_GRATE.get());
+
+    public static final DeferredItem<BlockItem> WAXED_ZINC_GRATE = registerBlockItem("waxed_zinc_grate", () -> ModBlocks.WAXED_ZINC_GRATE.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_ZINC_GRATE = registerBlockItem("waxed_exposed_zinc_grate", () -> ModBlocks.WAXED_EXPOSED_ZINC_GRATE.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_ZINC_GRATE = registerBlockItem("waxed_weathered_zinc_grate", () -> ModBlocks.WAXED_WEATHERED_ZINC_GRATE.get());
+    public static final DeferredItem<BlockItem> WAXED_CORRODED_ZINC_GRATE = registerBlockItem("waxed_corroded_zinc_grate", () -> ModBlocks.WAXED_CORRODED_ZINC_GRATE.get());
+
+    public static final DeferredItem<BlockItem> SILVER_GRATE = registerBlockItem("silver_grate", () -> ModBlocks.SILVER_GRATE.get());
+    public static final DeferredItem<BlockItem> TIN_GRATE = registerBlockItem("tin_grate", () -> ModBlocks.TIN_GRATE.get());
+    public static final DeferredItem<BlockItem> TUNGSTEN_GRATE = registerBlockItem("tungsten_grate", () -> ModBlocks.TUNGSTEN_GRATE.get());
+    public static final DeferredItem<BlockItem> PLATINUM_GRATE = registerBlockItem("platinum_grate", () -> ModBlocks.PLATINUM_GRATE.get());
+    public static final DeferredItem<BlockItem> GOLD_GRATE = registerBlockItem("gold_grate", () -> ModBlocks.GOLD_GRATE.get());
+    public static final DeferredItem<BlockItem> LEAD_GRATE = registerBlockItem("lead_grate", () -> ModBlocks.LEAD_GRATE.get());
+    public static final DeferredItem<BlockItem> URANIUM_GRATE = registerBlockItem("uranium_grate", () -> ModBlocks.URANIUM_GRATE.get());
+
+    public static final DeferredItem<BlockItem> NETHERITE_GRATE = registerBlockItem("netherite_grate", () -> ModBlocks.NETHERITE_GRATE.get());
+    public static final DeferredItem<BlockItem> BRONZE_GRATE = registerBlockItem("bronze_grate", () -> ModBlocks.BRONZE_GRATE.get());
+    public static final DeferredItem<BlockItem> BRASS_GRATE = registerBlockItem("brass_grate", () -> ModBlocks.BRASS_GRATE.get());
+    public static final DeferredItem<BlockItem> STEEL_GRATE = registerBlockItem("steel_grate", () -> ModBlocks.STEEL_GRATE.get());
+
+    public static final DeferredItem<BlockItem> IRON_BULB = registerBlockItem("iron_bulb", () -> ModBlocks.IRON_BULB.get());
+    public static final DeferredItem<BlockItem> EXPOSED_IRON_BULB = registerBlockItem("exposed_iron_bulb", () -> ModBlocks.EXPOSED_IRON_BULB.get());
+    public static final DeferredItem<BlockItem> WEATHERED_IRON_BULB = registerBlockItem("weathered_iron_bulb", () -> ModBlocks.WEATHERED_IRON_BULB.get());
+    public static final DeferredItem<BlockItem> RUSTED_IRON_BULB = registerBlockItem("rusted_iron_bulb", () -> ModBlocks.RUSTED_IRON_BULB.get());
+
+    public static final DeferredItem<BlockItem> WAXED_IRON_BULB = registerBlockItem("waxed_iron_bulb", () -> ModBlocks.WAXED_IRON_BULB.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_IRON_BULB = registerBlockItem("waxed_exposed_iron_bulb", () -> ModBlocks.WAXED_EXPOSED_IRON_BULB.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_IRON_BULB = registerBlockItem("waxed_weathered_iron_bulb", () -> ModBlocks.WAXED_WEATHERED_IRON_BULB.get());
+    public static final DeferredItem<BlockItem> WAXED_RUSTED_IRON_BULB = registerBlockItem("waxed_rusted_iron_bulb", () -> ModBlocks.WAXED_RUSTED_IRON_BULB.get());
+
+    public static final DeferredItem<BlockItem> ZINC_BULB = registerBlockItem("zinc_bulb", () -> ModBlocks.ZINC_BULB.get());
+    public static final DeferredItem<BlockItem> EXPOSED_ZINC_BULB = registerBlockItem("exposed_zinc_bulb", () -> ModBlocks.EXPOSED_ZINC_BULB.get());
+    public static final DeferredItem<BlockItem> WEATHERED_ZINC_BULB = registerBlockItem("weathered_zinc_bulb", () -> ModBlocks.WEATHERED_ZINC_BULB.get());
+    public static final DeferredItem<BlockItem> CORRODED_ZINC_BULB = registerBlockItem("corroded_zinc_bulb", () -> ModBlocks.CORRODED_ZINC_BULB.get());
+
+    public static final DeferredItem<BlockItem> WAXED_ZINC_BULB = registerBlockItem("waxed_zinc_bulb", () -> ModBlocks.WAXED_ZINC_BULB.get());
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_ZINC_BULB = registerBlockItem("waxed_exposed_zinc_bulb", () -> ModBlocks.WAXED_EXPOSED_ZINC_BULB.get());
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_ZINC_BULB = registerBlockItem("waxed_weathered_zinc_bulb", () -> ModBlocks.WAXED_WEATHERED_ZINC_BULB.get());
+    public static final DeferredItem<BlockItem> WAXED_CORRODED_ZINC_BULB = registerBlockItem("waxed_corroded_zinc_bulb", () -> ModBlocks.WAXED_CORRODED_ZINC_BULB.get());
+
+    public static final DeferredItem<BlockItem> SILVER_BULB = registerBlockItem("silver_bulb", () -> ModBlocks.SILVER_BULB.get());
+    public static final DeferredItem<BlockItem> TIN_BULB = registerBlockItem("tin_bulb", () -> ModBlocks.TIN_BULB.get());
+    public static final DeferredItem<BlockItem> TUNGSTEN_BULB = registerBlockItem("tungsten_bulb", () -> ModBlocks.TUNGSTEN_BULB.get());
+    public static final DeferredItem<BlockItem> PLATINUM_BULB = registerBlockItem("platinum_bulb", () -> ModBlocks.PLATINUM_BULB.get());
+    public static final DeferredItem<BlockItem> GOLD_BULB = registerBlockItem("gold_bulb", () -> ModBlocks.GOLD_BULB.get());
+    public static final DeferredItem<BlockItem> LEAD_BULB = registerBlockItem("lead_bulb", () -> ModBlocks.LEAD_BULB.get());
+    public static final DeferredItem<BlockItem> URANIUM_BULB = registerBlockItem("uranium_bulb", () -> ModBlocks.URANIUM_BULB.get());
+
+    public static final DeferredItem<BlockItem> NETHERITE_BULB = registerBlockItem("netherite_bulb", () -> ModBlocks.NETHERITE_BULB.get());
+    public static final DeferredItem<BlockItem> BRONZE_BULB = registerBlockItem("bronze_bulb", () -> ModBlocks.BRONZE_BULB.get());
+    public static final DeferredItem<BlockItem> BRASS_BULB = registerBlockItem("brass_bulb", () -> ModBlocks.BRASS_BULB.get());
+    public static final DeferredItem<BlockItem> STEEL_BULB = registerBlockItem("steel_bulb", () -> ModBlocks.STEEL_BULB.get());
 
     private static DeferredItem<Item> registerCustomItem(String registryName) {
         if (registryName.contains("netherite")) {
@@ -1790,6 +1873,23 @@ public class ModItems {
                                         BuildersParadise.MODID,
                                         registryName
                                 )
+                        )
+                )
+        ));
+    }
+
+    private static DeferredItem<Item> registerBannerTemplate(String registryName, TagKey<BannerPattern> tag){
+        return ITEMS.register(registryName, () -> new Item(
+                new Item.Properties().stacksTo(1)
+                        .delayedComponent(
+                                DataComponents.PROVIDES_BANNER_PATTERNS, (context) -> context.getOrThrow(tag)
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.ITEM,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
                         )
                 )
         ));

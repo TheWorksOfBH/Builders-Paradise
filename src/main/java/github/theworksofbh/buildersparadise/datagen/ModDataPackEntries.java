@@ -1,6 +1,7 @@
 package github.theworksofbh.buildersparadise.datagen;
 
 import github.theworksofbh.buildersparadise.BuildersParadise;
+import github.theworksofbh.buildersparadise.block.ModBannerPatterns;
 import github.theworksofbh.buildersparadise.damage.ModDamageTypes;
 import github.theworksofbh.buildersparadise.items.ModTrimMaterials;
 import github.theworksofbh.buildersparadise.sounds.ModJukeboxSongs;
@@ -24,7 +25,8 @@ public class ModDataPackEntries extends DatapackBuiltinEntriesProvider {
             .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap)
             .add(Registries.DAMAGE_TYPE, ModDamageTypes::bootstrap)
             .add(Registries.JUKEBOX_SONG, ModJukeboxSongs::bootstrap)
-            .add(Registries.TRIM_MATERIAL, ModTrimMaterials::bootstrap);
+            .add(Registries.TRIM_MATERIAL, ModTrimMaterials::bootstrap)
+            .add(Registries.BANNER_PATTERN, ModBannerPatterns::bootstrap);
 
     public ModDataPackEntries(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries, BUILDER, Set.of(BuildersParadise.MODID));

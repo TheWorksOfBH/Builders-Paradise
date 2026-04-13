@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "waxed_exposed_iron_bulb",
+  "key": {
+    "B": "minecraft:blaze_rod",
+    "C": "buildersparadise:waxed_exposed_iron",
+    "R": "minecraft:redstone"
+  },
+  "pattern": [
+    " C ",
+    "CBC",
+    " R "
+  ],
+  "result": {
+    "count": 4,
+    "id": "buildersparadise:waxed_exposed_iron_bulb"
+  }
+}

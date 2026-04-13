@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:paper",
+    "minecraft:creaking_heart"
+  ],
+  "result": {
+    "id": "buildersparadise:heart_banner_pattern"
+  }
+}

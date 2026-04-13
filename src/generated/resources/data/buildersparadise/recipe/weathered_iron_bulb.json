@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "weathered_iron_bulb",
+  "key": {
+    "B": "minecraft:blaze_rod",
+    "C": "buildersparadise:weathered_iron",
+    "R": "minecraft:redstone"
+  },
+  "pattern": [
+    " C ",
+    "CBC",
+    " R "
+  ],
+  "result": {
+    "count": 4,
+    "id": "buildersparadise:weathered_iron_bulb"
+  }
+}

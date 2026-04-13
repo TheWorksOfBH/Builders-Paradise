@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "buildersparadise:item/club_banner_pattern"
+  }
+}

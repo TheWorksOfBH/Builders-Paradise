@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:weathered_iron_grate_waxing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_weathered_iron_grate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "buildersparadise:weathered_iron_grate"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_weathered_iron_grate"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:weathered_iron_grate_waxing"
+    ]
+  }
+}

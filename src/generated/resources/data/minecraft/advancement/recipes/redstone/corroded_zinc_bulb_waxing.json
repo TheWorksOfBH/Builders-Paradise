@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_corroded_zinc_bulb": {
+      "conditions": {
+        "items": [
+          {
+            "items": "buildersparadise:corroded_zinc_bulb"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:corroded_zinc_bulb_waxing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_corroded_zinc_bulb"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:corroded_zinc_bulb_waxing"
+    ]
+  }
+}

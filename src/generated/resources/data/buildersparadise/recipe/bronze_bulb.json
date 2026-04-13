@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "bronze_bulb",
+  "key": {
+    "B": "minecraft:blaze_rod",
+    "C": "buildersparadise:bronze_block",
+    "R": "minecraft:redstone"
+  },
+  "pattern": [
+    " C ",
+    "CBC",
+    " R "
+  ],
+  "result": {
+    "count": 4,
+    "id": "buildersparadise:bronze_bulb"
+  }
+}

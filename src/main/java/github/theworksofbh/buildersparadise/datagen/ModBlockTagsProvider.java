@@ -264,7 +264,23 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.WAXED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get())
                 .add(ModBlocks.WAXED_EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get())
                 .add(ModBlocks.WAXED_WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get())
-                .add(ModBlocks.WAXED_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
+                .add(ModBlocks.WAXED_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get())
+                .add(ModBlocks.ZINC_GRATE.get())
+                .add(ModBlocks.EXPOSED_ZINC_GRATE.get())
+                .add(ModBlocks.WEATHERED_ZINC_GRATE.get())
+                .add(ModBlocks.CORRODED_ZINC_GRATE.get())
+                .add(ModBlocks.WAXED_ZINC_GRATE.get())
+                .add(ModBlocks.WAXED_EXPOSED_ZINC_GRATE.get())
+                .add(ModBlocks.WAXED_WEATHERED_ZINC_GRATE.get())
+                .add(ModBlocks.WAXED_CORRODED_ZINC_GRATE.get())
+                .add(ModBlocks.ZINC_BULB.get())
+                .add(ModBlocks.EXPOSED_ZINC_BULB.get())
+                .add(ModBlocks.WEATHERED_ZINC_BULB.get())
+                .add(ModBlocks.CORRODED_ZINC_BULB.get())
+                .add(ModBlocks.WAXED_ZINC_BULB.get())
+                .add(ModBlocks.WAXED_EXPOSED_ZINC_BULB.get())
+                .add(ModBlocks.WAXED_WEATHERED_ZINC_BULB.get())
+                .add(ModBlocks.WAXED_CORRODED_ZINC_BULB.get());
 
         tag(ModBlockTags.GLASS_DOORS)
                 .add(ModBlocks.GLASS_DOOR.get())
@@ -365,5 +381,23 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .addTags(BlockTags.LEAVES)
                 .addTags(ModBlockTags.GLASS_DOORS)
                 .addTags(ModBlockTags.GLASS_TRAPDOORS);
+
+        tag(ModBlockTags.TROMBONE_NOTE_BLOCK_SOUNDS)
+                .add(ModBlocks.TIN_BLOCK.get())
+                .add(ModBlocks.CUT_TIN.get())
+                .add(ModBlocks.CUT_TIN_SLAB.get())
+                .add(ModBlocks.CUT_TIN_STAIRS.get())
+                .add(ModBlocks.LEAD_BLOCK.get())
+                .add(ModBlocks.CUT_LEAD.get())
+                .add(ModBlocks.CUT_LEAD_SLAB.get())
+                .add(ModBlocks.CUT_LEAD_STAIRS.get())
+                .add(ModBlocks.BRONZE_BLOCK.get())
+                .add(ModBlocks.CUT_BRONZE.get())
+                .add(ModBlocks.CUT_BRONZE_SLAB.get())
+                .add(ModBlocks.CUT_BRONZE_STAIRS.get())
+                .add(ModBlocks.BRASS_BLOCK.get())
+                .add(ModBlocks.CUT_BRASS.get())
+                .add(ModBlocks.CUT_BRASS_SLAB.get())
+                .add(ModBlocks.CUT_BRASS_STAIRS.get());
     }
 }

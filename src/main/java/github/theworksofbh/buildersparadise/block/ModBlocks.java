@@ -13,7 +13,9 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
@@ -21,6 +23,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
+import java.util.function.ToIntFunction;
 
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(BuildersParadise.MODID);
@@ -1566,6 +1569,81 @@ public class ModBlocks {
     public static final DeferredBlock<StainedTrapdoorBlock> GREEN_STAINED_GLASS_TRAPDOOR = registerStainedTrapdoorBlock("green_stained_glass_trapdoor", ModBlockSetTypes.STAINED_GLASS, DyeColor.GREEN, () -> Blocks.GREEN_STAINED_GLASS);
     public static final DeferredBlock<StainedTrapdoorBlock> RED_STAINED_GLASS_TRAPDOOR = registerStainedTrapdoorBlock("red_stained_glass_trapdoor", ModBlockSetTypes.STAINED_GLASS, DyeColor.RED, () -> Blocks.RED_STAINED_GLASS);
     public static final DeferredBlock<StainedTrapdoorBlock> BLACK_STAINED_GLASS_TRAPDOOR = registerStainedTrapdoorBlock("black_stained_glass_trapdoor", ModBlockSetTypes.STAINED_GLASS, DyeColor.BLACK, () -> Blocks.BLACK_STAINED_GLASS);
+
+    public static final DeferredBlock<Block> CHISELED_PRISMARINE = registerBlockVariant("chiseled_prismarine", () -> Blocks.PRISMARINE);
+    public static final DeferredBlock<Block> CHISELED_PRISMARINE_BRICKS = registerBlockVariant("chiseled_prismarine_bricks", () -> Blocks.PRISMARINE_BRICKS);
+
+    public static final DeferredBlock<Block> CHISELED_ELDER_PRISMARINE = registerBlockVariant("chiseled_elder_prismarine", () -> ELDER_PRISMARINE.get());
+    public static final DeferredBlock<Block> CHISELED_ELDER_PRISMARINE_BRICKS = registerBlockVariant("chiseled_elder_prismarine_bricks", () -> ELDER_PRISMARINE_BRICKS.get());
+
+    public static final DeferredBlock<RotatedPillarBlock> LAPIS_PILLAR = registerPillarBlock("lapis_pillar", () -> Blocks.LAPIS_BLOCK);
+    public static final DeferredBlock<Block> CHISELED_LAPIS = registerBlockVariant("chiseled_lapis", () -> Blocks.LAPIS_BLOCK);
+
+    public static final DeferredBlock<ModGrateBlock> IRON_GRATE = registerRustingGrateBlock("iron_grate", () -> Blocks.IRON_BLOCK);
+    public static final DeferredBlock<ModGrateBlock> EXPOSED_IRON_GRATE = registerRustingGrateBlock("exposed_iron_grate", () -> EXPOSED_IRON.get());
+    public static final DeferredBlock<ModGrateBlock> WEATHERED_IRON_GRATE = registerRustingGrateBlock("weathered_iron_grate", () -> WEATHERED_IRON.get());
+    public static final DeferredBlock<ModGrateBlock> RUSTED_IRON_GRATE = registerRustingGrateBlock("rusted_iron_grate", () -> RUSTED_IRON.get());
+
+    public static final DeferredBlock<WaterloggedTransparentBlock> WAXED_IRON_GRATE = registerGrateBlock("waxed_iron_grate", () -> WAXED_IRON_BLOCK.get());
+    public static final DeferredBlock<WaterloggedTransparentBlock> WAXED_EXPOSED_IRON_GRATE = registerGrateBlock("waxed_exposed_iron_grate", () -> WAXED_EXPOSED_IRON.get());
+    public static final DeferredBlock<WaterloggedTransparentBlock> WAXED_WEATHERED_IRON_GRATE = registerGrateBlock("waxed_weathered_iron_grate", () -> WAXED_WEATHERED_IRON.get());
+    public static final DeferredBlock<WaterloggedTransparentBlock> WAXED_RUSTED_IRON_GRATE = registerGrateBlock("waxed_rusted_iron_grate", () -> WAXED_RUSTED_IRON.get());
+
+    public static final DeferredBlock<ModGrateBlock> ZINC_GRATE = registerRustingGrateBlock("zinc_grate", () -> ZINC_BLOCK.get());
+    public static final DeferredBlock<ModGrateBlock> EXPOSED_ZINC_GRATE = registerRustingGrateBlock("exposed_zinc_grate", () -> EXPOSED_ZINC.get());
+    public static final DeferredBlock<ModGrateBlock> WEATHERED_ZINC_GRATE = registerRustingGrateBlock("weathered_zinc_grate", () -> WEATHERED_ZINC.get());
+    public static final DeferredBlock<ModGrateBlock> CORRODED_ZINC_GRATE = registerRustingGrateBlock("corroded_zinc_grate", () -> CORRODED_ZINC.get());
+
+    public static final DeferredBlock<WaterloggedTransparentBlock> WAXED_ZINC_GRATE = registerGrateBlock("waxed_zinc_grate", () -> WAXED_ZINC_BLOCK.get());
+    public static final DeferredBlock<WaterloggedTransparentBlock> WAXED_EXPOSED_ZINC_GRATE = registerGrateBlock("waxed_exposed_zinc_grate", () -> WAXED_EXPOSED_ZINC.get());
+    public static final DeferredBlock<WaterloggedTransparentBlock> WAXED_WEATHERED_ZINC_GRATE = registerGrateBlock("waxed_weathered_zinc_grate", () -> WAXED_WEATHERED_ZINC.get());
+    public static final DeferredBlock<WaterloggedTransparentBlock> WAXED_CORRODED_ZINC_GRATE = registerGrateBlock("waxed_corroded_zinc_grate", () -> WAXED_CORRODED_ZINC.get());
+
+    public static final DeferredBlock<WaterloggedTransparentBlock> SILVER_GRATE = registerGrateBlock("silver_grate", () -> SILVER_BLOCK.get());
+    public static final DeferredBlock<WaterloggedTransparentBlock> TIN_GRATE = registerGrateBlock("tin_grate", () -> TIN_BLOCK.get());
+    public static final DeferredBlock<WaterloggedTransparentBlock> TUNGSTEN_GRATE = registerGrateBlock("tungsten_grate", () -> TUNGSTEN_BLOCK.get());
+    public static final DeferredBlock<WaterloggedTransparentBlock> PLATINUM_GRATE = registerGrateBlock("platinum_grate", () -> PLATINUM_BLOCK.get());
+    public static final DeferredBlock<WaterloggedTransparentBlock> GOLD_GRATE = registerGrateBlock("gold_grate", () -> Blocks.GOLD_BLOCK);
+    public static final DeferredBlock<WaterloggedTransparentBlock> LEAD_GRATE = registerGrateBlock("lead_grate", () -> LEAD_BLOCK.get());
+    public static final DeferredBlock<WaterloggedTransparentBlock> URANIUM_GRATE = registerGrateBlock("uranium_grate", () -> URANIUM_BLOCK.get());
+
+    public static final DeferredBlock<WaterloggedTransparentBlock> NETHERITE_GRATE = registerGrateBlock("netherite_grate", () -> Blocks.NETHERITE_BLOCK);
+    public static final DeferredBlock<WaterloggedTransparentBlock> BRONZE_GRATE = registerGrateBlock("bronze_grate", () -> BRONZE_BLOCK.get());
+    public static final DeferredBlock<WaterloggedTransparentBlock> BRASS_GRATE = registerGrateBlock("brass_grate", () -> BRASS_BLOCK.get());
+    public static final DeferredBlock<WaterloggedTransparentBlock> STEEL_GRATE = registerGrateBlock("steel_grate", () -> STEEL_BLOCK.get());
+
+    public static final DeferredBlock<ModBulbBlock> IRON_BULB = registerRustingBulbBlock("iron_bulb", () -> Blocks.IRON_BLOCK);
+    public static final DeferredBlock<ModBulbBlock> EXPOSED_IRON_BULB = registerRustingBulbBlock("exposed_iron_bulb", () -> EXPOSED_IRON.get());
+    public static final DeferredBlock<ModBulbBlock> WEATHERED_IRON_BULB = registerRustingBulbBlock("weathered_iron_bulb", () -> WEATHERED_IRON.get());
+    public static final DeferredBlock<ModBulbBlock> RUSTED_IRON_BULB = registerRustingBulbBlock("rusted_iron_bulb", () -> RUSTED_IRON.get());
+
+    public static final DeferredBlock<CopperBulbBlock> WAXED_IRON_BULB = registerBulbBlock("waxed_iron_bulb", () -> WAXED_IRON_BLOCK.get());
+    public static final DeferredBlock<CopperBulbBlock> WAXED_EXPOSED_IRON_BULB = registerBulbBlock("waxed_exposed_iron_bulb", () -> WAXED_EXPOSED_IRON.get());
+    public static final DeferredBlock<CopperBulbBlock> WAXED_WEATHERED_IRON_BULB = registerBulbBlock("waxed_weathered_iron_bulb", () -> WAXED_WEATHERED_IRON.get());
+    public static final DeferredBlock<CopperBulbBlock> WAXED_RUSTED_IRON_BULB = registerBulbBlock("waxed_rusted_iron_bulb", () -> WAXED_RUSTED_IRON.get());
+
+    public static final DeferredBlock<ModBulbBlock> ZINC_BULB = registerRustingBulbBlock("zinc_bulb", () -> ZINC_BLOCK.get());
+    public static final DeferredBlock<ModBulbBlock> EXPOSED_ZINC_BULB = registerRustingBulbBlock("exposed_zinc_bulb", () -> EXPOSED_ZINC.get());
+    public static final DeferredBlock<ModBulbBlock> WEATHERED_ZINC_BULB = registerRustingBulbBlock("weathered_zinc_bulb", () -> WEATHERED_ZINC.get());
+    public static final DeferredBlock<ModBulbBlock> CORRODED_ZINC_BULB = registerRustingBulbBlock("corroded_zinc_bulb", () -> CORRODED_ZINC.get());
+
+    public static final DeferredBlock<CopperBulbBlock> WAXED_ZINC_BULB = registerBulbBlock("waxed_zinc_bulb", () -> WAXED_ZINC_BLOCK.get());
+    public static final DeferredBlock<CopperBulbBlock> WAXED_EXPOSED_ZINC_BULB = registerBulbBlock("waxed_exposed_zinc_bulb", () -> WAXED_EXPOSED_ZINC.get());
+    public static final DeferredBlock<CopperBulbBlock> WAXED_WEATHERED_ZINC_BULB = registerBulbBlock("waxed_weathered_zinc_bulb", () -> WAXED_WEATHERED_ZINC.get());
+    public static final DeferredBlock<CopperBulbBlock> WAXED_CORRODED_ZINC_BULB = registerBulbBlock("waxed_corroded_zinc_bulb", () -> WAXED_CORRODED_ZINC.get());
+
+    public static final DeferredBlock<CopperBulbBlock> SILVER_BULB = registerBulbBlock("silver_bulb", () -> SILVER_BLOCK.get());
+    public static final DeferredBlock<CopperBulbBlock> TIN_BULB = registerBulbBlock("tin_bulb", () -> TIN_BLOCK.get());
+    public static final DeferredBlock<CopperBulbBlock> TUNGSTEN_BULB = registerBulbBlock("tungsten_bulb", () -> TUNGSTEN_BLOCK.get());
+    public static final DeferredBlock<CopperBulbBlock> PLATINUM_BULB = registerBulbBlock("platinum_bulb", () -> PLATINUM_BLOCK.get());
+    public static final DeferredBlock<CopperBulbBlock> GOLD_BULB = registerBulbBlock("gold_bulb", () -> Blocks.GOLD_BLOCK);
+    public static final DeferredBlock<CopperBulbBlock> LEAD_BULB = registerBulbBlock("lead_bulb", () -> LEAD_BLOCK.get());
+    public static final DeferredBlock<CopperBulbBlock> URANIUM_BULB = registerBulbBlock("uranium_bulb", () -> URANIUM_BLOCK.get());
+
+    public static final DeferredBlock<CopperBulbBlock> NETHERITE_BULB = registerBulbBlock("netherite_bulb", () -> Blocks.NETHERITE_BLOCK);
+    public static final DeferredBlock<CopperBulbBlock> BRONZE_BULB = registerBulbBlock("bronze_bulb", () -> BRONZE_BLOCK.get());
+    public static final DeferredBlock<CopperBulbBlock> BRASS_BULB = registerBulbBlock("brass_bulb", () -> BRASS_BLOCK.get());
+    public static final DeferredBlock<CopperBulbBlock> STEEL_BULB = registerBulbBlock("steel_bulb", () -> STEEL_BLOCK.get());
 
     private static DeferredBlock<CraftingTableBlock> registerCraftingTable(String registryName) {
         if (registryName == "crimson_crafting_table" || registryName == "warped_crafting_table") {
@@ -3908,6 +3986,196 @@ public class ModBlocks {
         );
     }
 
+    private static DeferredBlock<RotatedPillarBlock> registerPillarBlock(String registryName, Supplier<Block> baseBlock) {
+        return BLOCKS.register(
+                registryName, () -> new RotatedPillarBlock(
+                        BlockBehaviour.Properties.ofFullCopy(
+                                baseBlock.get()
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        )
+                )
+        );
+    }
+
+    private static DeferredBlock<ModGrateBlock> registerRustingGrateBlock(String registryName, Supplier<Block> baseBlock) {
+        return BLOCKS.register(
+                registryName, () -> new ModGrateBlock(
+                        BlockBehaviour.Properties.ofFullCopy(
+                                baseBlock.get()
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        ).sound(SoundType.COPPER_GRATE).noOcclusion()
+                )
+        );
+    }
+
+    private static DeferredBlock<WaterloggedTransparentBlock> registerGrateBlock(String registryName, Supplier<Block> baseBlock) {
+        return BLOCKS.register(
+                registryName, () -> new WaterloggedTransparentBlock(
+                        BlockBehaviour.Properties.ofFullCopy(
+                                baseBlock.get()
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        ).sound(SoundType.COPPER_GRATE).noOcclusion()
+                )
+        );
+    }
+
+    private static DeferredBlock<ModBulbBlock> registerRustingBulbBlock(String registryName, Supplier<Block> baseBlock) {
+        if (registryName.contains("exposed")) {
+            return BLOCKS.register(
+                    registryName, () -> new ModBulbBlock(
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    baseBlock.get()
+                            ).setId(
+                                    ResourceKey.create(
+                                            Registries.BLOCK,
+                                            Identifier.fromNamespaceAndPath(
+                                                    BuildersParadise.MODID,
+                                                    registryName
+                                            )
+                                    )
+                            ).sound(SoundType.COPPER_BULB).lightLevel(litBlockEmission(12))
+                    )
+            );
+        } else if (registryName.contains("weathered")) {
+            return BLOCKS.register(
+                    registryName, () -> new ModBulbBlock(
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    baseBlock.get()
+                            ).setId(
+                                    ResourceKey.create(
+                                            Registries.BLOCK,
+                                            Identifier.fromNamespaceAndPath(
+                                                    BuildersParadise.MODID,
+                                                    registryName
+                                            )
+                                    )
+                            ).sound(SoundType.COPPER_BULB).lightLevel(litBlockEmission(8))
+                    )
+            );
+        } else if (registryName.contains("rusted") || registryName.contains("corroded")) {
+            return BLOCKS.register(
+                    registryName, () -> new ModBulbBlock(
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    baseBlock.get()
+                            ).setId(
+                                    ResourceKey.create(
+                                            Registries.BLOCK,
+                                            Identifier.fromNamespaceAndPath(
+                                                    BuildersParadise.MODID,
+                                                    registryName
+                                            )
+                                    )
+                            ).sound(SoundType.COPPER_BULB).lightLevel(litBlockEmission(4))
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new ModBulbBlock(
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    baseBlock.get()
+                            ).setId(
+                                    ResourceKey.create(
+                                            Registries.BLOCK,
+                                            Identifier.fromNamespaceAndPath(
+                                                    BuildersParadise.MODID,
+                                                    registryName
+                                            )
+                                    )
+                            ).sound(SoundType.COPPER_BULB).lightLevel(litBlockEmission(15))
+                    )
+            );
+        }
+    }
+
+    private static DeferredBlock<CopperBulbBlock> registerBulbBlock(String registryName, Supplier<Block> baseBlock) {
+        if (registryName.contains("exposed")) {
+            return BLOCKS.register(
+                    registryName, () -> new CopperBulbBlock(
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    baseBlock.get()
+                            ).setId(
+                                    ResourceKey.create(
+                                            Registries.BLOCK,
+                                            Identifier.fromNamespaceAndPath(
+                                                    BuildersParadise.MODID,
+                                                    registryName
+                                            )
+                                    )
+                            ).sound(SoundType.COPPER_BULB).lightLevel(litBlockEmission(12))
+                    )
+            );
+        } else if (registryName.contains("weathered")) {
+            return BLOCKS.register(
+                    registryName, () -> new CopperBulbBlock(
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    baseBlock.get()
+                            ).setId(
+                                    ResourceKey.create(
+                                            Registries.BLOCK,
+                                            Identifier.fromNamespaceAndPath(
+                                                    BuildersParadise.MODID,
+                                                    registryName
+                                            )
+                                    )
+                            ).sound(SoundType.COPPER_BULB).lightLevel(litBlockEmission(8))
+                    )
+            );
+        } else if (registryName.contains("rusted") || registryName.contains("corroded")) {
+            return BLOCKS.register(
+                    registryName, () -> new CopperBulbBlock(
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    baseBlock.get()
+                            ).setId(
+                                    ResourceKey.create(
+                                            Registries.BLOCK,
+                                            Identifier.fromNamespaceAndPath(
+                                                    BuildersParadise.MODID,
+                                                    registryName
+                                            )
+                                    )
+                            ).sound(SoundType.COPPER_BULB).lightLevel(litBlockEmission(4))
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new CopperBulbBlock(
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    baseBlock.get()
+                            ).setId(
+                                    ResourceKey.create(
+                                            Registries.BLOCK,
+                                            Identifier.fromNamespaceAndPath(
+                                                    BuildersParadise.MODID,
+                                                    registryName
+                                            )
+                                    )
+                            ).sound(SoundType.COPPER_BULB).lightLevel(litBlockEmission(15))
+                    )
+            );
+        }
+    }
+
     private static DeferredBlock<TorchBlock> registerTorchBlock(String registryName, Supplier<SimpleParticleType> particleType){
         return BLOCKS.register(
                 registryName, () -> new TorchBlock(
@@ -4006,6 +4274,10 @@ public class ModBlocks {
         }
 
         return blockbehaviour$properties;
+    }
+
+    private static ToIntFunction<BlockState> litBlockEmission(int lightEmission) {
+        return (state) -> (Boolean)state.getValue(BlockStateProperties.LIT) ? lightEmission : 0;
     }
 
     public static void register(IEventBus eventBus){

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "bronze_grate",
+  "key": {
+    "M": "buildersparadise:bronze_block"
+  },
+  "pattern": [
+    " M ",
+    "M M",
+    " M "
+  ],
+  "result": {
+    "count": 4,
+    "id": "buildersparadise:bronze_grate"
+  }
+}

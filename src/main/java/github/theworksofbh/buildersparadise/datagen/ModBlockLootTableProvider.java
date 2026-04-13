@@ -489,6 +489,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                     }
                 } else if (block.getDescriptionId().contains("ice") && !block.getDescriptionId().contains("pum")) {
                     this.add(block, createSingleItemTableWithSilkTouch(block, ModItems.ICE_SHARD.get(), ConstantValue.exactly(4.0F)));
+                } else if (block.getDescriptionId().contains("snow") && block.getDescriptionId().contains("bricks")) {
+                    this.add(block, this.createSingleItemTableWithSilkTouch(block, Items.SNOWBALL, ConstantValue.exactly(4.0F)));
                 } else {
                     this.dropSelf(block);
                 }

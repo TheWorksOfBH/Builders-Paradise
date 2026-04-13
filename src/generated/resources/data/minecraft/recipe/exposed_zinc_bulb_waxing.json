@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "buildersparadise:exposed_zinc_bulb",
+    "minecraft:honeycomb"
+  ],
+  "result": {
+    "id": "buildersparadise:waxed_exposed_zinc_bulb"
+  }
+}

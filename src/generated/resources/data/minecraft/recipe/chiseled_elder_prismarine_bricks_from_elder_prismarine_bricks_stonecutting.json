@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:elder_prismarine_bricks",
+  "result": {
+    "id": "buildersparadise:chiseled_elder_prismarine_bricks"
+  }
+}

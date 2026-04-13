@@ -40,7 +40,7 @@ public class ModDataGenerators {
 
         event.createProvider(ModRecipesProvider.Runner::new);
 
-        event.createProvider(ModDataPackEntries::new);
+        event.createDatapackRegistryObjects(ModDataPackEntries.BUILDER);
 
         event.createProvider(ModDamageTypeTagsProvider::new);
 
@@ -52,5 +52,8 @@ public class ModDataGenerators {
         event.createProvider(ModChestLootModifierProvider::new);
         event.createProvider(ModAtlasProvider::new);
         event.createProvider(ModParticleDescriptionProvider::new);
+
+        event.createProvider(ModBannerPatternTagsProvider::new);
+
     }
 }

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:paper",
+    "minecraft:diamond"
+  ],
+  "result": {
+    "id": "buildersparadise:diamond_banner_pattern"
+  }
+}

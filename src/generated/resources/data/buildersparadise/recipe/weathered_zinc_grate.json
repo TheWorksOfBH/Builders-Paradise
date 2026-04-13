@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "weathered_zinc_grate",
+  "key": {
+    "M": "buildersparadise:weathered_zinc"
+  },
+  "pattern": [
+    " M ",
+    "M M",
+    " M "
+  ],
+  "result": {
+    "count": 4,
+    "id": "buildersparadise:weathered_zinc_grate"
+  }
+}

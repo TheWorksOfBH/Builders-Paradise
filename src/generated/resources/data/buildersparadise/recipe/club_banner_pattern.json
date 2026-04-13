@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:paper",
+    "buildersparadise:stone_baton"
+  ],
+  "result": {
+    "id": "buildersparadise:club_banner_pattern"
+  }
+}

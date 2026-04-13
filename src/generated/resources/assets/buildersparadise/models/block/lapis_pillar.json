@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "buildersparadise:block/lapis_pillar_top",
+    "side": "buildersparadise:block/lapis_pillar"
+  }
+}

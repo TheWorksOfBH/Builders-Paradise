@@ -43,6 +43,7 @@ public final class ModBlockTags {
     public static final TagKey<Block> SHATTERABLE_BY_SHARPENED_ARROW = create("shatterable_by_sharpened_arrow");
     public static final TagKey<Block> GLASS_DOORS = create("glass_doors");
     public static final TagKey<Block> GLASS_TRAPDOORS = create("glass_trapdoors");
+    public static final TagKey<Block> TROMBONE_NOTE_BLOCK_SOUNDS = create("trombone_note_block_sounds");
 
     private ModBlockTags() {
     }

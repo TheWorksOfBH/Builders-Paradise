@@ -3,6 +3,8 @@
     "buildersparadise:cut_netherite",
     "buildersparadise:obsidian_bricks",
     "buildersparadise:crying_obsidian_bricks",
-    "buildersparadise:netherite_chain"
+    "buildersparadise:netherite_chain",
+    "buildersparadise:netherite_grate",
+    "buildersparadise:netherite_bulb"
   ]
 }

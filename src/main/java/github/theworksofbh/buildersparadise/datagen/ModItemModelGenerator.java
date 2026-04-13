@@ -217,5 +217,9 @@ public class ModItemModelGenerator extends ItemModelGenerators {
         this.generateFlatItem(ModItems.GABBRO_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         this.generateFlatItem(ModItems.RHYOLITE_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         this.generateFlatItem(ModItems.PUMICE_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.generateFlatItem(ModItems.HEART_BANNER_PATTERN.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.DIAMOND_BANNER_PATTERN.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.SPADE_BANNER_PATTERN.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.CLUB_BANNER_PATTERN.get(), ModelTemplates.FLAT_ITEM);
     }
 }

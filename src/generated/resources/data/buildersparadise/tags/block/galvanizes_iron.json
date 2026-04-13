@@ -63,6 +63,22 @@
     "buildersparadise:waxed_barely_heavy_weighted_pressure_plate",
     "buildersparadise:waxed_exposed_barely_heavy_weighted_pressure_plate",
     "buildersparadise:waxed_weathered_barely_heavy_weighted_pressure_plate",
-    "buildersparadise:waxed_corroded_barely_heavy_weighted_pressure_plate"
+    "buildersparadise:waxed_corroded_barely_heavy_weighted_pressure_plate",
+    "buildersparadise:zinc_grate",
+    "buildersparadise:exposed_zinc_grate",
+    "buildersparadise:weathered_zinc_grate",
+    "buildersparadise:corroded_zinc_grate",
+    "buildersparadise:waxed_zinc_grate",
+    "buildersparadise:waxed_exposed_zinc_grate",
+    "buildersparadise:waxed_weathered_zinc_grate",
+    "buildersparadise:waxed_corroded_zinc_grate",
+    "buildersparadise:zinc_bulb",
+    "buildersparadise:exposed_zinc_bulb",
+    "buildersparadise:weathered_zinc_bulb",
+    "buildersparadise:corroded_zinc_bulb",
+    "buildersparadise:waxed_zinc_bulb",
+    "buildersparadise:waxed_exposed_zinc_bulb",
+    "buildersparadise:waxed_weathered_zinc_bulb",
+    "buildersparadise:waxed_corroded_zinc_bulb"
   ]
 }

@@ -260,6 +260,14 @@ public class ModDataMapProvider extends DataMapProvider {
         addToOxidizables(ModBlocks.EXPOSED_IRON_CHAIN.get(), ModBlocks.WEATHERED_IRON_CHAIN.get());
         addToOxidizables(ModBlocks.WEATHERED_IRON_CHAIN.get(), ModBlocks.RUSTED_IRON_CHAIN.get());
 
+        addToOxidizables(ModBlocks.IRON_GRATE.get(), ModBlocks.EXPOSED_IRON_GRATE.get());
+        addToOxidizables(ModBlocks.EXPOSED_IRON_GRATE.get(), ModBlocks.WEATHERED_IRON_GRATE.get());
+        addToOxidizables(ModBlocks.WEATHERED_IRON_GRATE.get(), ModBlocks.RUSTED_IRON_GRATE.get());
+
+        addToOxidizables(ModBlocks.IRON_BULB.get(), ModBlocks.EXPOSED_IRON_BULB.get());
+        addToOxidizables(ModBlocks.EXPOSED_IRON_BULB.get(), ModBlocks.WEATHERED_IRON_BULB.get());
+        addToOxidizables(ModBlocks.WEATHERED_IRON_BULB.get(), ModBlocks.RUSTED_IRON_BULB.get());
+
         addToOxidizables(Blocks.LANTERN, ModBlocks.EXPOSED_IRON_LANTERN.get());
         addToOxidizables(ModBlocks.EXPOSED_IRON_LANTERN.get(), ModBlocks.WEATHERED_IRON_LANTERN.get());
         addToOxidizables(ModBlocks.WEATHERED_IRON_LANTERN.get(), ModBlocks.RUSTED_IRON_LANTERN.get());
@@ -312,6 +320,14 @@ public class ModDataMapProvider extends DataMapProvider {
         addToOxidizables(ModBlocks.EXPOSED_ZINC_CHAIN.get(), ModBlocks.WEATHERED_ZINC_CHAIN.get());
         addToOxidizables(ModBlocks.WEATHERED_ZINC_CHAIN.get(), ModBlocks.CORRODED_ZINC_CHAIN.get());
 
+        addToOxidizables(ModBlocks.ZINC_GRATE.get(), ModBlocks.EXPOSED_ZINC_GRATE.get());
+        addToOxidizables(ModBlocks.EXPOSED_ZINC_GRATE.get(), ModBlocks.WEATHERED_ZINC_GRATE.get());
+        addToOxidizables(ModBlocks.WEATHERED_ZINC_GRATE.get(), ModBlocks.CORRODED_ZINC_GRATE.get());
+
+        addToOxidizables(ModBlocks.ZINC_BULB.get(), ModBlocks.EXPOSED_ZINC_BULB.get());
+        addToOxidizables(ModBlocks.EXPOSED_ZINC_BULB.get(), ModBlocks.WEATHERED_ZINC_BULB.get());
+        addToOxidizables(ModBlocks.WEATHERED_ZINC_BULB.get(), ModBlocks.CORRODED_ZINC_BULB.get());
+
         addToWaxables(ModBlocks.MEDIUM_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get());
         addToWaxables(ModBlocks.EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get());
         addToWaxables(ModBlocks.WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get());
@@ -346,6 +362,16 @@ public class ModDataMapProvider extends DataMapProvider {
         addToWaxables(ModBlocks.EXPOSED_IRON_CHAIN.get(), ModBlocks.WAXED_EXPOSED_IRON_CHAIN.get());
         addToWaxables(ModBlocks.WEATHERED_IRON_CHAIN.get(), ModBlocks.WAXED_WEATHERED_IRON_CHAIN.get());
         addToWaxables(ModBlocks.RUSTED_IRON_CHAIN.get(), ModBlocks.WAXED_RUSTED_IRON_CHAIN.get());
+
+        addToWaxables(ModBlocks.IRON_GRATE.get(), ModBlocks.WAXED_IRON_GRATE.get());
+        addToWaxables(ModBlocks.EXPOSED_IRON_GRATE.get(), ModBlocks.WAXED_EXPOSED_IRON_GRATE.get());
+        addToWaxables(ModBlocks.WEATHERED_IRON_GRATE.get(), ModBlocks.WAXED_WEATHERED_IRON_GRATE.get());
+        addToWaxables(ModBlocks.RUSTED_IRON_GRATE.get(), ModBlocks.WAXED_RUSTED_IRON_GRATE.get());
+
+        addToWaxables(ModBlocks.IRON_BULB.get(), ModBlocks.WAXED_IRON_BULB.get());
+        addToWaxables(ModBlocks.EXPOSED_IRON_BULB.get(), ModBlocks.WAXED_EXPOSED_IRON_BULB.get());
+        addToWaxables(ModBlocks.WEATHERED_IRON_BULB.get(), ModBlocks.WAXED_WEATHERED_IRON_BULB.get());
+        addToWaxables(ModBlocks.RUSTED_IRON_BULB.get(), ModBlocks.WAXED_RUSTED_IRON_BULB.get());
 
         addToWaxables(Blocks.LANTERN, ModBlocks.WAXED_IRON_LANTERN.get());
         addToWaxables(ModBlocks.EXPOSED_IRON_LANTERN.get(), ModBlocks.WAXED_EXPOSED_IRON_LANTERN.get());
@@ -426,5 +452,15 @@ public class ModDataMapProvider extends DataMapProvider {
         addToWaxables(ModBlocks.EXPOSED_ZINC_CHAIN.get(), ModBlocks.WAXED_EXPOSED_ZINC_CHAIN.get());
         addToWaxables(ModBlocks.WEATHERED_ZINC_CHAIN.get(), ModBlocks.WAXED_WEATHERED_ZINC_CHAIN.get());
         addToWaxables(ModBlocks.CORRODED_ZINC_CHAIN.get(), ModBlocks.WAXED_CORRODED_ZINC_CHAIN.get());
+
+        addToWaxables(ModBlocks.ZINC_GRATE.get(), ModBlocks.WAXED_ZINC_GRATE.get());
+        addToWaxables(ModBlocks.EXPOSED_ZINC_GRATE.get(), ModBlocks.WAXED_EXPOSED_ZINC_GRATE.get());
+        addToWaxables(ModBlocks.WEATHERED_ZINC_GRATE.get(), ModBlocks.WAXED_WEATHERED_ZINC_GRATE.get());
+        addToWaxables(ModBlocks.CORRODED_ZINC_GRATE.get(), ModBlocks.WAXED_CORRODED_ZINC_GRATE.get());
+
+        addToWaxables(ModBlocks.ZINC_BULB.get(), ModBlocks.WAXED_ZINC_BULB.get());
+        addToWaxables(ModBlocks.EXPOSED_ZINC_BULB.get(), ModBlocks.WAXED_EXPOSED_ZINC_BULB.get());
+        addToWaxables(ModBlocks.WEATHERED_ZINC_BULB.get(), ModBlocks.WAXED_WEATHERED_ZINC_BULB.get());
+        addToWaxables(ModBlocks.CORRODED_ZINC_BULB.get(), ModBlocks.WAXED_CORRODED_ZINC_BULB.get());
     }
 }

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "buildersparadise:weathered_iron_bulb"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_weathered_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": "buildersparadise:weathered_iron"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_weathered_iron"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "buildersparadise:weathered_iron_bulb"
+    ]
+  }
+}

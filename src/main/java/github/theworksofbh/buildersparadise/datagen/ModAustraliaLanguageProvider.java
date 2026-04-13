@@ -12,6 +12,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
@@ -213,6 +215,109 @@ public class ModAustraliaLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        Map<String, String> bannerColorNames = new HashMap<>();
+
+        bannerColorNames.put("white", "White");
+        bannerColorNames.put("orange", "Orange");
+        bannerColorNames.put("magenta", "Magenta");
+        bannerColorNames.put("light_blue", "Blue");
+        bannerColorNames.put("yellow", "Yellow");
+        bannerColorNames.put("lime", "Lime");
+        bannerColorNames.put("pink", "Pink");
+        bannerColorNames.put("gray", "Grey");
+        bannerColorNames.put("light_gray", "Light Grey");
+        bannerColorNames.put("cyan", "Cyan");
+        bannerColorNames.put("purple", "Purple");
+        bannerColorNames.put("blue", "Blue");
+        bannerColorNames.put("brown", "Brown");
+        bannerColorNames.put("green", "Green");
+        bannerColorNames.put("red", "Red");
+        bannerColorNames.put("black", "Black");
+
+        Map<Integer, String> patternNames = new HashMap<>();
+
+        patternNames.put(0, "Quarter Chief");
+        patternNames.put(1, "Quarter Base");
+        patternNames.put(2, "Sixth Chief");
+        patternNames.put(3, "Sixth Base");
+        patternNames.put(4, "Quarter Pale Dexter");
+        patternNames.put(5, "Quarter Pale Sinister");
+        patternNames.put(6, "Sixth Pale Dexter");
+        patternNames.put(7, "Sixth Pale Sinister");
+        patternNames.put(8, "Chief Sinister Quadrant");
+        patternNames.put(9, "Chief Dexter Quadrant");
+        patternNames.put(10, "Base Sinister Quadrant");
+        patternNames.put(11, "Base Dexter Quadrant");
+        patternNames.put(12, "Offset Cross");
+        patternNames.put(13, "Inverted Offset Cross");
+        patternNames.put(14, "Per Saltire");
+        patternNames.put(15, "Inverted Per Saltire");
+        patternNames.put(16, "Long Chevron");
+        patternNames.put(17, "Inverted Long Chevron");
+        patternNames.put(18, "Barry");
+        patternNames.put(19, "Bendy Dexter");
+        patternNames.put(20, "Bendy Sinister");
+        patternNames.put(21, "Checkerboard");
+        patternNames.put(22, "Inverted Checkerboard");
+        patternNames.put(23, "Rhombus");
+        patternNames.put(24, "Majuscule Outlined Pentagram");
+        patternNames.put(25, "Majuscule Full Pentagram");
+        patternNames.put(26, "Majuscule Outlined Hexagram");
+        patternNames.put(27, "Majuscule Full Hexagram");
+        patternNames.put(28, "Miniscule Outlined Pentagram");
+        patternNames.put(29, "Miniscule Full Pentagram");
+        patternNames.put(30, "Miniscule Outlined Hexagram");
+        patternNames.put(31, "Miniscule Full Hexagram");
+        patternNames.put(32, "Chief Canton Pentagram");
+        patternNames.put(33, "Chief Sinister Canton Pentagram");
+        patternNames.put(34, "Chief Dexter Canton Pentagram");
+        patternNames.put(35, "Base Canton Pentagram");
+        patternNames.put(36, "Base Sinister Canton Pentagram");
+        patternNames.put(37, "Base Dexter Canton Pentagram");
+        patternNames.put(38, "Heart");
+        patternNames.put(39, "Diamond");
+        patternNames.put(40, "Chief Canton Hexagram");
+        patternNames.put(41, "Chief Sinister Canton Hexagram");
+        patternNames.put(42, "Chief Dexter Canton Hexagram");
+        patternNames.put(43, "Base Canton Hexagram");
+        patternNames.put(44, "Base Sinister Canton Hexagram");
+        patternNames.put(45, "Base Dexter Canton Hexagram");
+        patternNames.put(46, "Spade");
+        patternNames.put(47, "Club");
+        patternNames.put(48, "Chief Sinister Per Bend");
+        patternNames.put(49, "Chief Dexter Per Bend");
+        patternNames.put(50, "Base Sinister Per Bend");
+        patternNames.put(51, "Base Dexter Per Bend");
+        patternNames.put(52, "Chief Per Pale");
+        patternNames.put(53, "Base Per Pale");
+        patternNames.put(54, "Sinister Per Fess");
+        patternNames.put(55, "Dexter Per Fess");
+
+        for (Map.Entry<Integer, String> patternEntry : patternNames.entrySet()) {
+            int patternIndex = patternEntry.getKey();
+            String patternDisplayName = patternEntry.getValue();
+
+            String patternId = "pattern_" + patternIndex;
+
+            String patternTranslationKey = "block.minecraft.banner." + patternId;
+
+            String patternTranslationValue = patternDisplayName;
+
+            this.add(patternTranslationKey, patternTranslationValue);
+
+            for (Map.Entry<String, String> colorEntry : bannerColorNames.entrySet()) {
+                String colorId = colorEntry.getKey();
+                String colorDisplayName = colorEntry.getValue();
+
+                String translationKey = "block.minecraft.banner." + patternId + "." + colorId;
+
+                String translationValue = colorDisplayName + " " + patternDisplayName;
+
+                this.add(translationKey, translationValue);
+            }
+        }
+
+
         getKnownBlocks().forEach(
                 block -> {
                     this.add(block, formatString(block.getDescriptionId()));

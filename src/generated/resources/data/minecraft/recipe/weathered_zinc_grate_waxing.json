@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "buildersparadise:weathered_zinc_grate",
+    "minecraft:honeycomb"
+  ],
+  "result": {
+    "id": "buildersparadise:waxed_weathered_zinc_grate"
+  }
+}

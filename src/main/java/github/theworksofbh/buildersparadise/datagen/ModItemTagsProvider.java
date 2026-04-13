@@ -33,5 +33,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ModItemTags.VIABLE_FLETCHING_INGREDIENTS).add(Items.FLINT).add(Items.GLOWSTONE_DUST).add(Items.GUNPOWDER).add(Items.PHANTOM_MEMBRANE);
         tag(ItemTags.ARROWS).add(ModItems.EXPLOSIVE_ARROW.get()).add(ModItems.SHARPENED_ARROW.get()).add(ModItems.STREAMLINED_ARROW.get());
         tag(ItemTags.METAL_NUGGETS).add(ModItems.ZINC_NUGGET.get()).add(ModItems.SILVER_NUGGET.get()).add(ModItems.TIN_NUGGET.get()).add(ModItems.TUNGSTEN_NUGGET.get()).add(ModItems.PLATINUM_NUGGET.get()).add(ModItems.LEAD_NUGGET.get()).add(ModItems.URANIUM_NUGGET.get()).add(ModItems.NETHERITE_NUGGET.get()).add(ModItems.BRONZE_NUGGET.get()).add(ModItems.BRASS_NUGGET.get()).add(ModItems.STEEL_NUGGET.get());
+        tag(ItemTags.LOOM_PATTERNS).add(ModItems.HEART_BANNER_PATTERN.get()).add(ModItems.DIAMOND_BANNER_PATTERN.get()).add(ModItems.SPADE_BANNER_PATTERN.get()).add(ModItems.CLUB_BANNER_PATTERN.get());
     }
 }

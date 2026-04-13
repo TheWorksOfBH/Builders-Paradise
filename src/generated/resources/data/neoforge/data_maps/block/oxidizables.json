@@ -63,6 +63,9 @@
     "buildersparadise:exposed_iron_bars": {
       "next_oxidation_stage": "buildersparadise:weathered_iron_bars"
     },
+    "buildersparadise:exposed_iron_bulb": {
+      "next_oxidation_stage": "buildersparadise:weathered_iron_bulb"
+    },
     "buildersparadise:exposed_iron_chain": {
       "next_oxidation_stage": "buildersparadise:weathered_iron_chain"
     },
@@ -71,6 +74,9 @@
     },
     "buildersparadise:exposed_iron_fire_lantern": {
       "next_oxidation_stage": "buildersparadise:weathered_iron_fire_lantern"
+    },
+    "buildersparadise:exposed_iron_grate": {
+      "next_oxidation_stage": "buildersparadise:weathered_iron_grate"
     },
     "buildersparadise:exposed_iron_lantern": {
       "next_oxidation_stage": "buildersparadise:weathered_iron_lantern"
@@ -87,17 +93,29 @@
     "buildersparadise:exposed_zinc": {
       "next_oxidation_stage": "buildersparadise:weathered_zinc"
     },
+    "buildersparadise:exposed_zinc_bulb": {
+      "next_oxidation_stage": "buildersparadise:weathered_zinc_bulb"
+    },
     "buildersparadise:exposed_zinc_chain": {
       "next_oxidation_stage": "buildersparadise:weathered_zinc_chain"
     },
     "buildersparadise:exposed_zinc_door": {
       "next_oxidation_stage": "buildersparadise:weathered_zinc_door"
     },
+    "buildersparadise:exposed_zinc_grate": {
+      "next_oxidation_stage": "buildersparadise:weathered_zinc_grate"
+    },
     "buildersparadise:exposed_zinc_trapdoor": {
       "next_oxidation_stage": "buildersparadise:weathered_zinc_trapdoor"
     },
+    "buildersparadise:iron_bulb": {
+      "next_oxidation_stage": "buildersparadise:exposed_iron_bulb"
+    },
     "buildersparadise:iron_fire_lantern": {
       "next_oxidation_stage": "buildersparadise:exposed_iron_fire_lantern"
+    },
+    "buildersparadise:iron_grate": {
+      "next_oxidation_stage": "buildersparadise:exposed_iron_grate"
     },
     "buildersparadise:medium_weighted_pressure_plate": {
       "next_oxidation_stage": "buildersparadise:exposed_medium_weighted_pressure_plate"
@@ -138,6 +156,9 @@
     "buildersparadise:weathered_iron_bars": {
       "next_oxidation_stage": "buildersparadise:rusted_iron_bars"
     },
+    "buildersparadise:weathered_iron_bulb": {
+      "next_oxidation_stage": "buildersparadise:rusted_iron_bulb"
+    },
     "buildersparadise:weathered_iron_chain": {
       "next_oxidation_stage": "buildersparadise:rusted_iron_chain"
     },
@@ -146,6 +167,9 @@
     },
     "buildersparadise:weathered_iron_fire_lantern": {
       "next_oxidation_stage": "buildersparadise:rusted_iron_fire_lantern"
+    },
+    "buildersparadise:weathered_iron_grate": {
+      "next_oxidation_stage": "buildersparadise:rusted_iron_grate"
     },
     "buildersparadise:weathered_iron_lantern": {
       "next_oxidation_stage": "buildersparadise:rusted_iron_lantern"
@@ -162,11 +186,17 @@
     "buildersparadise:weathered_zinc": {
       "next_oxidation_stage": "buildersparadise:corroded_zinc"
     },
+    "buildersparadise:weathered_zinc_bulb": {
+      "next_oxidation_stage": "buildersparadise:corroded_zinc_bulb"
+    },
     "buildersparadise:weathered_zinc_chain": {
       "next_oxidation_stage": "buildersparadise:corroded_zinc_chain"
     },
     "buildersparadise:weathered_zinc_door": {
       "next_oxidation_stage": "buildersparadise:corroded_zinc_door"
+    },
+    "buildersparadise:weathered_zinc_grate": {
+      "next_oxidation_stage": "buildersparadise:corroded_zinc_grate"
     },
     "buildersparadise:weathered_zinc_trapdoor": {
       "next_oxidation_stage": "buildersparadise:corroded_zinc_trapdoor"
@@ -174,11 +204,17 @@
     "buildersparadise:zinc_block": {
       "next_oxidation_stage": "buildersparadise:exposed_zinc"
     },
+    "buildersparadise:zinc_bulb": {
+      "next_oxidation_stage": "buildersparadise:exposed_zinc_bulb"
+    },
     "buildersparadise:zinc_chain": {
       "next_oxidation_stage": "buildersparadise:exposed_zinc_chain"
     },
     "buildersparadise:zinc_door": {
       "next_oxidation_stage": "buildersparadise:exposed_zinc_door"
+    },
+    "buildersparadise:zinc_grate": {
+      "next_oxidation_stage": "buildersparadise:exposed_zinc_grate"
     },
     "buildersparadise:zinc_trapdoor": {
       "next_oxidation_stage": "buildersparadise:exposed_zinc_trapdoor"

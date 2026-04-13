@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "netherite_bulb",
+  "key": {
+    "B": "minecraft:blaze_rod",
+    "C": "minecraft:netherite_block",
+    "R": "minecraft:redstone"
+  },
+  "pattern": [
+    " C ",
+    "CBC",
+    " R "
+  ],
+  "result": {
+    "count": 4,
+    "id": "buildersparadise:netherite_bulb"
+  }
+}

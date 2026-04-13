@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:paper",
+    "minecraft:wooden_shovel"
+  ],
+  "result": {
+    "id": "buildersparadise:spade_banner_pattern"
+  }
+}

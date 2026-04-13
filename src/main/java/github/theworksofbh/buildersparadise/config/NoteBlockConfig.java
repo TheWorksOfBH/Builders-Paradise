@@ -1,7 +1,7 @@
 package github.theworksofbh.buildersparadise.config;
 
-import github.theworksofbh.buildersparadise.block.ModBlocks;
 import github.theworksofbh.buildersparadise.sounds.ModSoundEvents;
+import github.theworksofbh.buildersparadise.tags.ModBlockTags;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.ParticleEngine;
 import net.minecraft.core.BlockPos;
@@ -14,7 +14,7 @@ import net.neoforged.neoforge.event.level.NoteBlockEvent;
 
 public class NoteBlockConfig {
     public static void brassBlockNoteBlock(NoteBlockEvent.Play event){
-        if (event.getLevel().getBlockState(event.getPos().below()).is(ModBlocks.BRASS_BLOCK.get()) || event.getLevel().getBlockState(event.getPos().below()).is(ModBlocks.CUT_BRASS.get()) || event.getLevel().getBlockState(event.getPos().below()).is(ModBlocks.CUT_BRASS_SLAB.get()) || event.getLevel().getBlockState(event.getPos().below()).is(ModBlocks.CUT_BRASS_STAIRS.get())) {
+        if (event.getLevel().getBlockState(event.getPos().below()).is(ModBlockTags.TROMBONE_NOTE_BLOCK_SOUNDS)) {
             event.setCanceled(true);
 
             Level level = (Level) event.getLevel();
