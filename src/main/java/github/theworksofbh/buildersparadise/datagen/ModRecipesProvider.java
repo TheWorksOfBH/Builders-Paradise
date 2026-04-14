@@ -1742,7 +1742,7 @@ public class ModRecipesProvider extends RecipeProvider {
         this.shaped(ingotCategory, ingot).define('#', nugget).pattern("###").pattern("###").pattern("###").group(ingotGroup).unlockedBy(getHasName(nugget), this.has(nugget)).save(this.output, ResourceKey.create(Registries.RECIPE, Identifier.parse(ingotName)));
 
         this.shapeless(ingotCategory, ingot, 9).requires(block).group(ingotGroup).unlockedBy(getHasName(block), this.has(block)).save(this.output, ResourceKey.create(Registries.RECIPE, Identifier.parse(ingotName + "_b")));
-        this.shaped(blockCategory, block).define('#', ingot).pattern("###").pattern("###").pattern("###").group(blockGroup).unlockedBy(getHasName(ingot), this.has(block)).save(this.output, ResourceKey.create(Registries.RECIPE, Identifier.parse(blockName)));
+        this.shaped(blockCategory, block).define('#', ingot).pattern("###").pattern("###").pattern("###").group(blockGroup).unlockedBy(getHasName(ingot), this.has(ingot)).save(this.output, ResourceKey.create(Registries.RECIPE, Identifier.parse(blockName)));
     }
 
     protected void createCraftingTable(ItemLike craftingTable, ItemLike planks){

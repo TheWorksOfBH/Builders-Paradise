@@ -151,22 +151,31 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                     }
                     else if (block instanceof GrindstoneBlock) {
                         tag(ModBlockTags.GRINDSTONES).add(block);
+                        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
                     } else if (block instanceof FurnaceBlock) {
                         tag(ModBlockTags.FURNACES).add(block);
+                        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
                     } else if (block instanceof SmokerBlock) {
                         tag(ModBlockTags.SMOKERS).add(block);
+                        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
                     } else if (block instanceof BlastFurnaceBlock) {
                         tag(ModBlockTags.BLAST_FURNACES).add(block);
+                        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
                     } else if (block instanceof BrewingStandBlock) {
                         tag(ModBlockTags.BREWING_STANDS).add(block);
+                        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
                     } else if (block instanceof DispenserBlock) {
                         tag(ModBlockTags.DISPENSERS).add(block);
+                        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
                     } else if (block instanceof DropperBlock) {
                         tag(ModBlockTags.DROPPERS).add(block);
+                        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
                     } else if (block instanceof ObserverBlock) {
                         tag(ModBlockTags.OBSERVERS).add(block);
+                        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
                     } else if (block instanceof CrafterBlock) {
                         tag(ModBlockTags.CRAFTERS).add(block);
+                        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
                     } else if (!block.getDescriptionId().contains("chain") || !block.getDescriptionId().contains("lantern")) {
                         if (block.getDescriptionId().contains("iron") || block.getDescriptionId().contains("copper") || block.getDescriptionId().contains("lapis")|| block.getDescriptionId().contains("tin") && !block.getDescriptionId().contains("crafting") || block.getDescriptionId().contains("lead") || block.getDescriptionId().contains("bronze") || block.getDescriptionId().contains("steel")) {
                             tag(BlockTags.NEEDS_STONE_TOOL).add(block);
