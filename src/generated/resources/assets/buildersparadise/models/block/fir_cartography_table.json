@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "biomesoplenty:block/fir_planks",
+    "east": "buildersparadise:block/fir_cartography_table_side3",
+    "north": "buildersparadise:block/fir_cartography_table_side3",
+    "particle": "buildersparadise:block/fir_cartography_table_side3",
+    "south": "buildersparadise:block/fir_cartography_table_side1",
+    "up": "buildersparadise:block/fir_cartography_table_top",
+    "west": "buildersparadise:block/fir_cartography_table_side2"
+  }
+}

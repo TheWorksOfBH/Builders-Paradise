@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "biomesoplenty:mahogany_log",
+    "X": "buildersparadise:blackstone_furnace"
+  },
+  "pattern": [
+    " # ",
+    "#X#",
+    " # "
+  ],
+  "result": {
+    "id": "buildersparadise:mahogany_blackstone_smoker"
+  }
+}

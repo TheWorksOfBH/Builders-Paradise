@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "buildersparadise:jacaranda_chest",
+    "minecraft:minecart"
+  ],
+  "result": {
+    "id": "buildersparadise:jacaranda_chest_minecart"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/crafter",
+  "textures": {
+    "bottom": "minecraft:block/crafter_bottom",
+    "east": "buildersparadise:block/fir_crafter_east_triggered",
+    "north": "buildersparadise:block/fir_crafter_north",
+    "particle": "buildersparadise:block/fir_crafter_north",
+    "south": "buildersparadise:block/fir_crafter_south_triggered",
+    "top": "minecraft:block/crafter_top_triggered",
+    "west": "buildersparadise:block/fir_crafter_west_triggered"
+  }
+}

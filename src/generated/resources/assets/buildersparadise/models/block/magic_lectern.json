@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/lectern",
+  "textures": {
+    "base": "buildersparadise:block/magic_lectern_base",
+    "bottom": "biomesoplenty:block/magic_planks",
+    "front": "buildersparadise:block/magic_lectern_front",
+    "particle": "buildersparadise:block/magic_lectern_sides",
+    "sides": "buildersparadise:block/magic_lectern_sides",
+    "top": "buildersparadise:block/magic_lectern_top"
+  }
+}

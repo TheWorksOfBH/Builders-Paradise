@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": "biomesoplenty:dead_planks",
+    "S": "biomesoplenty:dead_slab"
+  },
+  "pattern": [
+    "PSP",
+    "P P",
+    "PSP"
+  ],
+  "result": {
+    "id": "buildersparadise:dead_barrel"
+  }
+}

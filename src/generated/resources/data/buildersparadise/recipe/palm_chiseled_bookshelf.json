@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "biomesoplenty:palm_planks",
+    "X": "biomesoplenty:palm_slab"
+  },
+  "pattern": [
+    "###",
+    "XXX",
+    "###"
+  ],
+  "result": {
+    "id": "buildersparadise:palm_chiseled_bookshelf"
+  }
+}

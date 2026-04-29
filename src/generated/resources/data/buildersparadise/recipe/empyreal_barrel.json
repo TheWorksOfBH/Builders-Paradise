@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": "biomesoplenty:empyreal_planks",
+    "S": "biomesoplenty:empyreal_slab"
+  },
+  "pattern": [
+    "PSP",
+    "P P",
+    "PSP"
+  ],
+  "result": {
+    "id": "buildersparadise:empyreal_barrel"
+  }
+}

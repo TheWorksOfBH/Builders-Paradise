@@ -22,6 +22,7 @@ public class ModModelLayers {
     public static final ModelLayerLocation CHERRY_CHEST_MINECART = register("cherry_chest_minecart");
     public static final ModelLayerLocation BAMBOO_CHEST_MINECART = register("bamboo_chest_minecart");
     public static final ModelLayerLocation PALE_OAK_CHEST_MINECART = register("pale_oak_chest_minecart");
+    public static final ModelLayerLocation BOAT_LAVA_PATCH = register("boat", "lava_patch");
 
     // BOP
 

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "buildersparadise:umbran_chest",
+    "minecraft:minecart"
+  ],
+  "result": {
+    "id": "buildersparadise:umbran_chest_minecart"
+  }
+}

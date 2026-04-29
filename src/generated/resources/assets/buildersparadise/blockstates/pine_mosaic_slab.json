@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/pine_mosaic_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/pine_mosaic"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/pine_mosaic_slab_top"
+    }
+  }
+}

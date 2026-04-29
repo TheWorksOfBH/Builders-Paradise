@@ -1,5 +1,6 @@
 package github.theworksofbh.buildersparadise.datagen;
 
+import biomesoplenty.api.item.BOPItems;
 import github.theworksofbh.buildersparadise.BuildersParadise;
 import github.theworksofbh.buildersparadise.items.ModItems;
 import github.theworksofbh.buildersparadise.tags.ModItemTags;
@@ -20,7 +21,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        tag(ItemTags.PIGLIN_LOVED).add(ModItems.GOLD_DOOR.get()).add(ModItems.GOLD_TRAPDOOR.get()).add(ModItems.CUT_GOLD.get()).add(ModItems.CUT_GOLD_SLAB.get()).add(ModItems.CUT_GOLD_STAIRS.get()).add(ModItems.GOLD_CHAIN.get());
+        tag(ItemTags.PIGLIN_LOVED).add(ModItems.GOLD_DOOR.get()).add(ModItems.GOLD_TRAPDOOR.get()).add(ModItems.CUT_GOLD.get()).add(ModItems.CUT_GOLD_SLAB.get()).add(ModItems.CUT_GOLD_STAIRS.get()).add(ModItems.GOLD_CHAIN.get()).add(ModItems.GOLD_BULB.get()).add(ModItems.GOLD_GRATE.get()).add(ModItems.GOLD_TORCH.get()).add(ModItems.GILDED_BLACKSTONE_STAIRS.get()).add(ModItems.GILDED_BLACKSTONE_SLAB.get()).add(ModItems.GILDED_BLACKSTONE_WALL.get()).add(ModItems.GILDED_BLACKSTONE_FENCE.get());
         tag(ModItemTags.CHESTS).add(ModItems.OAK_CHEST.get()).add(ModItems.SPRUCE_CHEST.get()).add(ModItems.BIRCH_CHEST.get()).add(ModItems.JUNGLE_CHEST.get()).add(ModItems.ACACIA_CHEST.get()).add(ModItems.DARK_OAK_CHEST.get()).add(ModItems.CRIMSON_CHEST.get()).add(ModItems.WARPED_CHEST.get()).add(ModItems.MANGROVE_CHEST.get()).add(ModItems.CHERRY_CHEST.get()).add(ModItems.BAMBOO_CHEST.get()).add(ModItems.PALE_OAK_CHEST.get());
         tag(ModItemTags.DROPPERS).add(ModItems.STONE_DROPPER.get()).add(ModItems.BLACKSTONE_DROPPER.get()).add(ModItems.DEEPSLATE_DROPPER.get());
         tag(ModItemTags.CONCRETE).add(Items.WHITE_CONCRETE).add(Items.ORANGE_CONCRETE).add(Items.MAGENTA_CONCRETE).add(Items.LIGHT_BLUE_CONCRETE).add(Items.YELLOW_CONCRETE).add(Items.LIME_CONCRETE).add(Items.PINK_CONCRETE).add(Items.GRAY_CONCRETE).add(Items.LIGHT_GRAY_CONCRETE).add(Items.CYAN_CONCRETE).add(Items.PURPLE_CONCRETE).add(Items.BLUE_CONCRETE).add(Items.BROWN_CONCRETE).add(Items.GREEN_CONCRETE).add(Items.RED_CONCRETE).add(Items.BLACK_CONCRETE);
@@ -28,7 +29,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ModItemTags.BRONZE_TOOL_MATERIALS).add(ModItems.BRONZE_INGOT.get());
         tag(ModItemTags.REPAIRS_BRONZE_ARMOR).addTag(ModItemTags.BRONZE_TOOL_MATERIALS);
         tag(ModItemTags.BARRELS).add(ModItems.OAK_BARREL.get()).add(ModItems.SPRUCE_BARREL.get()).add(ModItems.BIRCH_BARREL.get()).add(ModItems.JUNGLE_BARREL.get()).add(ModItems.ACACIA_BARREL.get()).add(ModItems.DARK_OAK_BARREL.get()).add(ModItems.CRIMSON_BARREL.get()).add(ModItems.WARPED_BARREL.get()).add(ModItems.MANGROVE_BARREL.get()).add(ModItems.CHERRY_BARREL.get()).add(ModItems.BAMBOO_BARREL.get()).add(ModItems.PALE_OAK_BARREL.get());
-        tag(ItemTags.TRIM_MATERIALS).add(ModItems.ZINC_INGOT.get()).add(ModItems.SILVER_INGOT.get()).add(ModItems.TIN_INGOT.get()).add(ModItems.TUNGSTEN_INGOT.get()).add(ModItems.LEAD_INGOT.get()).add(ModItems.PLATINUM_INGOT.get()).add(ModItems.URANIUM_INGOT.get()).add(ModItems.BRONZE_INGOT.get()).add(ModItems.BRASS_INGOT.get()).add(ModItems.STEEL_INGOT.get()).add(ModItems.SCULK_BRICK.get());
+        tag(ItemTags.TRIM_MATERIALS).add(ModItems.ZINC_INGOT.get()).add(ModItems.SILVER_INGOT.get()).add(ModItems.TIN_INGOT.get()).add(ModItems.TUNGSTEN_INGOT.get()).add(ModItems.LEAD_INGOT.get()).add(ModItems.PLATINUM_INGOT.get()).add(ModItems.URANIUM_INGOT.get()).add(ModItems.BRONZE_INGOT.get()).add(ModItems.BRASS_INGOT.get()).add(ModItems.STEEL_INGOT.get()).add(ModItems.SCULK_BRICK.get()).addOptional(BOPItems.ROSE_QUARTZ_CHUNK).addOptional(BOPItems.GLOWWORM_SILK);
         tag(ItemTags.TRIMMABLE_ARMOR).add(ModItems.BRONZE_HELMET.get()).add(ModItems.BRONZE_CHESTPLATE.get()).add(ModItems.BRONZE_LEGGINGS.get()).add(ModItems.BRONZE_BOOTS.get());
         tag(ModItemTags.VIABLE_FLETCHING_INGREDIENTS).add(Items.FLINT).add(Items.GLOWSTONE_DUST).add(Items.GUNPOWDER).add(Items.PHANTOM_MEMBRANE);
         tag(ItemTags.ARROWS).add(ModItems.EXPLOSIVE_ARROW.get()).add(ModItems.SHARPENED_ARROW.get()).add(ModItems.STREAMLINED_ARROW.get());

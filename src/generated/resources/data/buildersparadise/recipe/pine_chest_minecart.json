@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "buildersparadise:pine_chest",
+    "minecraft:minecart"
+  ],
+  "result": {
+    "id": "buildersparadise:pine_chest_minecart"
+  }
+}

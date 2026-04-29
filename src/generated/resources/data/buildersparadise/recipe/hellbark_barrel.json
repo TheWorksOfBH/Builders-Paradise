@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": "biomesoplenty:hellbark_planks",
+    "S": "biomesoplenty:hellbark_slab"
+  },
+  "pattern": [
+    "PSP",
+    "P P",
+    "PSP"
+  ],
+  "result": {
+    "id": "buildersparadise:hellbark_barrel"
+  }
+}

@@ -1,0 +1,1029 @@
+{
+  "variants": {
+    "distance=1,facing=east,half=bottom,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=1,facing=east,half=bottom,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_inner"
+    },
+    "distance=1,facing=east,half=bottom,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=1,facing=east,half=bottom,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_outer"
+    },
+    "distance=1,facing=east,half=bottom,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs"
+    },
+    "distance=1,facing=east,half=top,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=1,facing=east,half=top,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=1,facing=east,half=top,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=1,facing=east,half=top,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=1,facing=east,half=top,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=1,facing=north,half=bottom,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=1,facing=north,half=bottom,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=1,facing=north,half=bottom,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=1,facing=north,half=bottom,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=1,facing=north,half=bottom,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=1,facing=north,half=top,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=1,facing=north,half=top,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=1,facing=north,half=top,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=1,facing=north,half=top,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=1,facing=north,half=top,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=1,facing=south,half=bottom,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_inner"
+    },
+    "distance=1,facing=south,half=bottom,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=1,facing=south,half=bottom,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_outer"
+    },
+    "distance=1,facing=south,half=bottom,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=1,facing=south,half=bottom,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=1,facing=south,half=top,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=1,facing=south,half=top,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=1,facing=south,half=top,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=1,facing=south,half=top,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=1,facing=south,half=top,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=1,facing=west,half=bottom,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=1,facing=west,half=bottom,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=1,facing=west,half=bottom,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=1,facing=west,half=bottom,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=1,facing=west,half=bottom,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=1,facing=west,half=top,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=1,facing=west,half=top,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=1,facing=west,half=top,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=1,facing=west,half=top,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=1,facing=west,half=top,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=2,facing=east,half=bottom,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=2,facing=east,half=bottom,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_inner"
+    },
+    "distance=2,facing=east,half=bottom,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=2,facing=east,half=bottom,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_outer"
+    },
+    "distance=2,facing=east,half=bottom,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2"
+    },
+    "distance=2,facing=east,half=top,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=2,facing=east,half=top,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=2,facing=east,half=top,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=2,facing=east,half=top,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=2,facing=east,half=top,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=2,facing=north,half=bottom,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=2,facing=north,half=bottom,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=2,facing=north,half=bottom,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=2,facing=north,half=bottom,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=2,facing=north,half=bottom,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=2,facing=north,half=top,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=2,facing=north,half=top,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=2,facing=north,half=top,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=2,facing=north,half=top,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=2,facing=north,half=top,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=2,facing=south,half=bottom,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_inner"
+    },
+    "distance=2,facing=south,half=bottom,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=2,facing=south,half=bottom,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_outer"
+    },
+    "distance=2,facing=south,half=bottom,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=2,facing=south,half=bottom,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=2,facing=south,half=top,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=2,facing=south,half=top,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=2,facing=south,half=top,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=2,facing=south,half=top,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=2,facing=south,half=top,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=2,facing=west,half=bottom,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=2,facing=west,half=bottom,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=2,facing=west,half=bottom,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=2,facing=west,half=bottom,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=2,facing=west,half=bottom,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=2,facing=west,half=top,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=2,facing=west,half=top,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=2,facing=west,half=top,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=2,facing=west,half=top,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=2,facing=west,half=top,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_2",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=3,facing=east,half=bottom,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=3,facing=east,half=bottom,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_inner"
+    },
+    "distance=3,facing=east,half=bottom,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=3,facing=east,half=bottom,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_outer"
+    },
+    "distance=3,facing=east,half=bottom,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3"
+    },
+    "distance=3,facing=east,half=top,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=3,facing=east,half=top,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=3,facing=east,half=top,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=3,facing=east,half=top,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=3,facing=east,half=top,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=3,facing=north,half=bottom,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=3,facing=north,half=bottom,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=3,facing=north,half=bottom,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=3,facing=north,half=bottom,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=3,facing=north,half=bottom,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=3,facing=north,half=top,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=3,facing=north,half=top,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=3,facing=north,half=top,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=3,facing=north,half=top,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=3,facing=north,half=top,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=3,facing=south,half=bottom,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_inner"
+    },
+    "distance=3,facing=south,half=bottom,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=3,facing=south,half=bottom,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_outer"
+    },
+    "distance=3,facing=south,half=bottom,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=3,facing=south,half=bottom,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=3,facing=south,half=top,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=3,facing=south,half=top,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=3,facing=south,half=top,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=3,facing=south,half=top,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=3,facing=south,half=top,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=3,facing=west,half=bottom,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=3,facing=west,half=bottom,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=3,facing=west,half=bottom,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=3,facing=west,half=bottom,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=3,facing=west,half=bottom,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=3,facing=west,half=top,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=3,facing=west,half=top,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=3,facing=west,half=top,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=3,facing=west,half=top,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=3,facing=west,half=top,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_3",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=4,facing=east,half=bottom,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=4,facing=east,half=bottom,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_inner"
+    },
+    "distance=4,facing=east,half=bottom,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=4,facing=east,half=bottom,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_outer"
+    },
+    "distance=4,facing=east,half=bottom,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4"
+    },
+    "distance=4,facing=east,half=top,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=4,facing=east,half=top,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=4,facing=east,half=top,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=4,facing=east,half=top,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=4,facing=east,half=top,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=4,facing=north,half=bottom,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=4,facing=north,half=bottom,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=4,facing=north,half=bottom,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=4,facing=north,half=bottom,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=4,facing=north,half=bottom,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=4,facing=north,half=top,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=4,facing=north,half=top,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=4,facing=north,half=top,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=4,facing=north,half=top,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=4,facing=north,half=top,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=4,facing=south,half=bottom,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_inner"
+    },
+    "distance=4,facing=south,half=bottom,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=4,facing=south,half=bottom,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_outer"
+    },
+    "distance=4,facing=south,half=bottom,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=4,facing=south,half=bottom,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=4,facing=south,half=top,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=4,facing=south,half=top,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=4,facing=south,half=top,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=4,facing=south,half=top,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=4,facing=south,half=top,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=4,facing=west,half=bottom,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=4,facing=west,half=bottom,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=4,facing=west,half=bottom,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=4,facing=west,half=bottom,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=4,facing=west,half=bottom,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=4,facing=west,half=top,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=4,facing=west,half=top,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=4,facing=west,half=top,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=4,facing=west,half=top,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=4,facing=west,half=top,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_4",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=5,facing=east,half=bottom,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=5,facing=east,half=bottom,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_inner"
+    },
+    "distance=5,facing=east,half=bottom,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=5,facing=east,half=bottom,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_outer"
+    },
+    "distance=5,facing=east,half=bottom,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5"
+    },
+    "distance=5,facing=east,half=top,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=5,facing=east,half=top,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=5,facing=east,half=top,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=5,facing=east,half=top,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=5,facing=east,half=top,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=5,facing=north,half=bottom,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=5,facing=north,half=bottom,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=5,facing=north,half=bottom,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=5,facing=north,half=bottom,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=5,facing=north,half=bottom,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5",
+      "uvlock": true,
+      "y": 270
+    },
+    "distance=5,facing=north,half=top,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=5,facing=north,half=top,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=5,facing=north,half=top,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=5,facing=north,half=top,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "distance=5,facing=north,half=top,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=5,facing=south,half=bottom,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_inner"
+    },
+    "distance=5,facing=south,half=bottom,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=5,facing=south,half=bottom,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_outer"
+    },
+    "distance=5,facing=south,half=bottom,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=5,facing=south,half=bottom,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=5,facing=south,half=top,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=5,facing=south,half=top,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=5,facing=south,half=top,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=5,facing=south,half=top,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=5,facing=south,half=top,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "distance=5,facing=west,half=bottom,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=5,facing=west,half=bottom,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=5,facing=west,half=bottom,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "distance=5,facing=west,half=bottom,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=5,facing=west,half=bottom,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5",
+      "uvlock": true,
+      "y": 180
+    },
+    "distance=5,facing=west,half=top,shape=inner_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=5,facing=west,half=top,shape=inner_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=5,facing=west,half=top,shape=outer_left": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "distance=5,facing=west,half=top,shape=outer_right": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "distance=5,facing=west,half=top,shape=straight": {
+      "model": "buildersparadise:block/thermal_calcite_stairs_5",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    }
+  }
+}

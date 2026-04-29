@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "buildersparadise:willow_chest",
+    "minecraft:minecart"
+  ],
+  "result": {
+    "id": "buildersparadise:willow_chest_minecart"
+  }
+}

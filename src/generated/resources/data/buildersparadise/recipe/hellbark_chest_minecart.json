@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "buildersparadise:hellbark_chest",
+    "minecraft:minecart"
+  ],
+  "result": {
+    "id": "buildersparadise:hellbark_chest_minecart"
+  }
+}

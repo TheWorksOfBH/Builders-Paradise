@@ -1,0 +1,259 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_post"
+      },
+      "when": {
+        "distance": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_side",
+        "uvlock": true
+      },
+      "when": {
+        "distance": "1",
+        "north": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_side",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "distance": "1",
+        "east": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_side",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "distance": "1",
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_side",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "distance": "1",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_2_post"
+      },
+      "when": {
+        "distance": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_2_side",
+        "uvlock": true
+      },
+      "when": {
+        "distance": "2",
+        "north": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_2_side",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "distance": "2",
+        "east": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_2_side",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "distance": "2",
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_2_side",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "distance": "2",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_3_post"
+      },
+      "when": {
+        "distance": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_3_side",
+        "uvlock": true
+      },
+      "when": {
+        "distance": "3",
+        "north": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_3_side",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "distance": "3",
+        "east": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_3_side",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "distance": "3",
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_3_side",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "distance": "3",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_4_post"
+      },
+      "when": {
+        "distance": "4"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_4_side",
+        "uvlock": true
+      },
+      "when": {
+        "distance": "4",
+        "north": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_4_side",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "distance": "4",
+        "east": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_4_side",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "distance": "4",
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_4_side",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "distance": "4",
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_5_post"
+      },
+      "when": {
+        "distance": "5"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_5_side",
+        "uvlock": true
+      },
+      "when": {
+        "distance": "5",
+        "north": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_5_side",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "distance": "5",
+        "east": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_5_side",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "distance": "5",
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "buildersparadise:block/polished_thermal_calcite_fence_5_side",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "distance": "5",
+        "west": "true"
+      }
+    }
+  ]
+}

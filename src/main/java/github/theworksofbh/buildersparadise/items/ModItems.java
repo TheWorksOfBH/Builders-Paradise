@@ -1797,7 +1797,7 @@ public class ModItems {
     }
 
     private static DeferredItem<BlockItem> registerBlockItem(String registryName, Supplier<Block> block){
-        if (registryName.contains("netherite")) {
+        if (registryName.contains("netherite") || registryName.contains("player_only")) {
             return ITEMS.register(
                     registryName, () -> new BlockItem(
                             block.get(), new Item.Properties().setId(

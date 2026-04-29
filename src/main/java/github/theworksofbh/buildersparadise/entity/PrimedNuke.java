@@ -32,8 +32,8 @@ public class PrimedNuke extends PrimedTnt {
     private EntityReference<LivingEntity> owner;
     private boolean usedPortal;
     final List<BlockPos> sources = new ArrayList<>();
+    private BlockState state;
     private static final BlockState DEFAULT_BLOCK_STATE = ModBlocks.NUKE.get().defaultBlockState();
-
 
 
     private static final ExplosionDamageCalculator USED_PORTAL_DAMAGE_CALCULATOR = new ExplosionDamageCalculator() {
@@ -54,7 +54,7 @@ public class PrimedNuke extends PrimedTnt {
         this.blocksBuilding = true;
     }
 
-    public PrimedNuke(Level level, double x, double y, double z, @Nullable LivingEntity owner) {
+    public PrimedNuke(Level level, double x, double y, double z, @Nullable LivingEntity owner, BlockState state) {
         this(ModEntities.NUKE.get(), level);
         this.setPos(x, y, z);
         double d0 = level.getRandom().nextDouble() * (double)((float)Math.PI * 2F);
@@ -64,20 +64,22 @@ public class PrimedNuke extends PrimedTnt {
         this.yo = y;
         this.zo = z;
         this.owner = EntityReference.of(owner);
+        this.state = state;
+        this.entityData.set(DATA_BLOCK_STATE_ID, state);
     }
 
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         super.defineSynchedData(builder);
         builder.define(DATA_FUSE_ID, 80);
-        builder.define(DATA_BLOCK_STATE_ID, ModBlocks.NUKE.get().withPropertiesOf(this.level().getBlockState(BlockPos.containing(this.getX(), this.getY(), this.getZ()))));
+        builder.define(DATA_BLOCK_STATE_ID, DEFAULT_BLOCK_STATE);
     }
 
     @Override
     protected void addAdditionalSaveData(ValueOutput p_421712_) {
         super.addAdditionalSaveData(p_421712_);
         p_421712_.putShort("fuse", (short)this.getFuse());
-        p_421712_.store("block_state", BlockState.CODEC, this.getBlockState());
+        p_421712_.store("block_state", BlockState.CODEC, this.state);
         if (this.explosionPower != 4.0F) {
             p_421712_.putFloat("explosion_power", this.explosionPower);
         }

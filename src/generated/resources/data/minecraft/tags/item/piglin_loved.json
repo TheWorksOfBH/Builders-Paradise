@@ -5,6 +5,13 @@
     "buildersparadise:cut_gold",
     "buildersparadise:cut_gold_slab",
     "buildersparadise:cut_gold_stairs",
-    "buildersparadise:gold_chain"
+    "buildersparadise:gold_chain",
+    "buildersparadise:gold_bulb",
+    "buildersparadise:gold_grate",
+    "buildersparadise:gold_torch",
+    "buildersparadise:gilded_blackstone_stairs",
+    "buildersparadise:gilded_blackstone_slab",
+    "buildersparadise:gilded_blackstone_wall",
+    "buildersparadise:gilded_blackstone_fence"
   ]
 }

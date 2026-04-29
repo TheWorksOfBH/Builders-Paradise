@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "biomesoplenty:mahogany_planks",
+    "X": "biomesoplenty:mahogany_slab"
+  },
+  "pattern": [
+    "###",
+    "XXX",
+    "###"
+  ],
+  "result": {
+    "id": "buildersparadise:mahogany_chiseled_bookshelf"
+  }
+}

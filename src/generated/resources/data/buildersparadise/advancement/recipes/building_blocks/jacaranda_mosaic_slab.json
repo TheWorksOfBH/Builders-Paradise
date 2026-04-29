@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_jacaranda_mosaic": {
+      "conditions": {
+        "items": [
+          {
+            "items": "buildersparadise:jacaranda_mosaic"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "buildersparadise:jacaranda_mosaic_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_jacaranda_mosaic"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "buildersparadise:jacaranda_mosaic_slab"
+    ]
+  }
+}

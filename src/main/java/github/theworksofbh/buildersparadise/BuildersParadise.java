@@ -2,6 +2,10 @@ package github.theworksofbh.buildersparadise;
 
 import com.mojang.logging.LogUtils;
 import github.theworksofbh.buildersparadise.block.ModBlocks;
+import github.theworksofbh.buildersparadise.compat.bop.CompatModBlocks;
+import github.theworksofbh.buildersparadise.compat.bop.CompatModEntities;
+import github.theworksofbh.buildersparadise.compat.bop.CompatModItems;
+import github.theworksofbh.buildersparadise.compat.bop.config.*;
 import github.theworksofbh.buildersparadise.config.*;
 import github.theworksofbh.buildersparadise.datagen.ModDataGenerators;
 import github.theworksofbh.buildersparadise.effect.ModEffects;
@@ -57,9 +61,9 @@ public class BuildersParadise
         ModEffects.register(modEventBus);
 
         if (ModList.get().isLoaded("biomesoplenty")) {
-//            CompatModBlocks.register(modEventBus);
-//            CompatModItems.register(modEventBus);
-//            CompatModEntities.register(modEventBus);
+            CompatModBlocks.register(modEventBus);
+            CompatModItems.register(modEventBus);
+            CompatModEntities.register(modEventBus);
         }
 
         ModFluids.register(modEventBus);
@@ -104,7 +108,7 @@ public class BuildersParadise
     {
         CreativeInvConfig.addModItemsToVanillaTabs(event);
         if (ModList.get().isLoaded("biomesoplenty")) {
-//            BOPCreativeInvConfig.addModItemsToVanillaTabs(event);
+            BOPCreativeInvConfig.addModItemsToVanillaTabs(event);
         }
     }
 
@@ -116,7 +120,7 @@ public class BuildersParadise
     private void addPOIBlocks(ExtendPoiTypesEvent event) {
         POIConfig.addModBlocksToVanillaPOIs(event);
         if (ModList.get().isLoaded("biomesoplenty")) {
-//            BOPPOIConfig.addModBlocksToBOPPois(event);
+            BOPPOIConfig.addModBlocksToBOPPois(event);
         }
 
     }
@@ -131,7 +135,7 @@ public class BuildersParadise
     private void addBlockEntities(BlockEntityTypeAddBlocksEvent event){
         BlockEntityConfig.addModdedBlocksToVanillaBlockEntities(event);
         if (ModList.get().isLoaded("biomesoplenty")) {
-//            BOPBlockEntityConfig.addModdedBlocksToVanillaBlockEntities(event);
+            BOPBlockEntityConfig.addModdedBlocksToVanillaBlockEntities(event);
         }
     }
 
@@ -146,7 +150,7 @@ public class BuildersParadise
     private void addEntityRenderers(FMLClientSetupEvent event) {
         EntityRendererConfig.addEntityRenderers(event);
         if (ModList.get().isLoaded("biomesoplenty")) {
-//            BOPEntityRendererConfig.addEntityRenderers(event);
+            BOPEntityRendererConfig.addEntityRenderers(event);
         }
     }
 
@@ -165,7 +169,7 @@ public class BuildersParadise
     private void addBlockEntityRenderers(RegisterBlockModelsEvent event){
         BlockEntityModelRendersConfig.registerBlockEntities(event);
         if (ModList.get().isLoaded("biomesoplenty")) {
-//            BOPBlockEntityModelRendersConfig.registerBlockEntities(event);
+            BOPBlockEntityModelRendersConfig.registerBlockEntities(event);
         }
     }
 
@@ -191,11 +195,10 @@ public class BuildersParadise
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-//            RenderTypeConfig.addModRenderTypes();
             FlammabilityConfig.createFlammableBlocks();
             DispenserConfig.addItemsToDispenser();
             if (ModList.get().isLoaded("biomesoplenty")) {
-//                BOPFlammabilityConfig.createFlammableBlocks();
+                BOPFlammabilityConfig.createFlammableBlocks();
             }
         }
     }

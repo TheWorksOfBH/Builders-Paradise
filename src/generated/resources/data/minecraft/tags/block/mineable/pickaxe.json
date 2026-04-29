@@ -1,23 +1,43 @@
 {
+  "remove": [
+    "buildersparadise:iron_torch",
+    "buildersparadise:iron_wall_torch",
+    "buildersparadise:zinc_torch",
+    "buildersparadise:zinc_wall_torch",
+    "buildersparadise:silver_torch",
+    "buildersparadise:silver_wall_torch",
+    "buildersparadise:tin_torch",
+    "buildersparadise:tin_wall_torch",
+    "buildersparadise:tungsten_torch",
+    "buildersparadise:tungsten_wall_torch",
+    "buildersparadise:platinum_torch",
+    "buildersparadise:platinum_wall_torch",
+    "buildersparadise:gold_torch",
+    "buildersparadise:gold_wall_torch",
+    "buildersparadise:lead_torch",
+    "buildersparadise:lead_wall_torch",
+    "buildersparadise:uranium_torch",
+    "buildersparadise:uranium_wall_torch"
+  ],
   "values": [
-    "minecraft:grindstone",
-    "minecraft:grindstone",
-    "minecraft:observer",
-    "minecraft:observer",
     "minecraft:brewing_stand",
     "minecraft:brewing_stand",
-    "minecraft:smoker",
-    "minecraft:smoker",
-    "minecraft:dropper",
-    "minecraft:dropper",
     "minecraft:furnace",
     "minecraft:furnace",
-    "minecraft:crafter",
-    "minecraft:crafter",
-    "minecraft:dispenser",
-    "minecraft:dispenser",
+    "minecraft:smoker",
+    "minecraft:smoker",
     "minecraft:blast_furnace",
     "minecraft:blast_furnace",
+    "minecraft:grindstone",
+    "minecraft:grindstone",
+    "minecraft:dropper",
+    "minecraft:dropper",
+    "minecraft:dispenser",
+    "minecraft:dispenser",
+    "minecraft:crafter",
+    "minecraft:crafter",
+    "minecraft:observer",
+    "minecraft:observer",
     "buildersparadise:polished_granite_wall",
     "buildersparadise:polished_diorite_wall",
     "buildersparadise:polished_andesite_wall",
@@ -718,8 +738,6 @@
     "buildersparadise:green_concrete_fence",
     "buildersparadise:red_concrete_fence",
     "buildersparadise:black_concrete_fence",
-    "buildersparadise:iron_torch",
-    "buildersparadise:iron_wall_torch",
     "buildersparadise:exposed_iron_lantern",
     "buildersparadise:weathered_iron_lantern",
     "buildersparadise:rusted_iron_lantern",
@@ -777,22 +795,6 @@
     "buildersparadise:bronze_chain",
     "buildersparadise:brass_chain",
     "buildersparadise:steel_chain",
-    "buildersparadise:zinc_torch",
-    "buildersparadise:zinc_wall_torch",
-    "buildersparadise:silver_torch",
-    "buildersparadise:silver_wall_torch",
-    "buildersparadise:tin_torch",
-    "buildersparadise:tin_wall_torch",
-    "buildersparadise:tungsten_torch",
-    "buildersparadise:tungsten_wall_torch",
-    "buildersparadise:platinum_torch",
-    "buildersparadise:platinum_wall_torch",
-    "buildersparadise:gold_torch",
-    "buildersparadise:gold_wall_torch",
-    "buildersparadise:lead_torch",
-    "buildersparadise:lead_wall_torch",
-    "buildersparadise:uranium_torch",
-    "buildersparadise:uranium_wall_torch",
     "buildersparadise:cut_amethyst",
     "buildersparadise:cut_amethyst_slab",
     "buildersparadise:cut_amethyst_stairs",
@@ -1126,6 +1128,426 @@
     "buildersparadise:netherite_bulb",
     "buildersparadise:bronze_bulb",
     "buildersparadise:brass_bulb",
-    "buildersparadise:steel_bulb"
+    "buildersparadise:steel_bulb",
+    {
+      "id": "buildersparadise:cut_white_sandstone_stairs",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:cut_white_sandstone_wall",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:smooth_white_sandstone_wall",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:cut_black_sandstone_stairs",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:cut_black_sandstone_wall",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:smooth_black_sandstone_wall",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:cut_orange_sandstone_stairs",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:cut_orange_sandstone_wall",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:smooth_orange_sandstone_wall",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:brimstone_slab",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:brimstone_stairs",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:brimstone_wall",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:thermal_calcite_slab",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:thermal_calcite_stairs",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:thermal_calcite_wall",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:polished_thermal_calcite",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:polished_thermal_calcite_slab",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:polished_thermal_calcite_stairs",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:polished_thermal_calcite_wall",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:thermal_calcite_bricks",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:thermal_calcite_brick_slab",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:thermal_calcite_brick_stairs",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:thermal_calcite_brick_wall",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:cut_rose_quartz",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:cut_rose_quartz_slab",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:cut_rose_quartz_stairs",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_grindstone",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_grindstone",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_grindstone",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_grindstone",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_grindstone",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_grindstone",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_grindstone",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_grindstone",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_grindstone",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_grindstone",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_grindstone",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_grindstone",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_grindstone",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_crafter",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:white_sandstone_fence",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:cut_white_sandstone_fence",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:smooth_white_sandstone_fence",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:black_sandstone_fence",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:cut_black_sandstone_fence",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:smooth_black_sandstone_fence",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:orange_sandstone_fence",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:cut_orange_sandstone_fence",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:smooth_orange_sandstone_fence",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:brimstone_fence",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:brimstone_brick_fence",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:thermal_calcite_fence",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:polished_thermal_calcite_fence",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:thermal_calcite_brick_fence",
+      "required": false
+    }
   ]
 }

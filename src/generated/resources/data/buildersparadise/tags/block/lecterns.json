@@ -10,6 +10,58 @@
     "buildersparadise:mangrove_lectern",
     "buildersparadise:cherry_lectern",
     "buildersparadise:bamboo_lectern",
-    "buildersparadise:pale_oak_lectern"
+    "buildersparadise:pale_oak_lectern",
+    {
+      "id": "buildersparadise:dead_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_lectern",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_lectern",
+      "required": false
+    }
   ]
 }

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/crafter",
+  "textures": {
+    "bottom": "minecraft:block/crafter_bottom",
+    "east": "buildersparadise:block/willow_crafter_east_triggered",
+    "north": "buildersparadise:block/willow_crafter_north",
+    "particle": "buildersparadise:block/willow_crafter_north",
+    "south": "buildersparadise:block/willow_crafter_south_triggered",
+    "top": "minecraft:block/crafter_top_triggered",
+    "west": "buildersparadise:block/willow_crafter_west_triggered"
+  }
+}

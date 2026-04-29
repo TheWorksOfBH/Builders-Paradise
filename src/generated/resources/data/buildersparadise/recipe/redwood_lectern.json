@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "B": "buildersparadise:redwood_bookshelf",
+    "S": "biomesoplenty:redwood_slab"
+  },
+  "pattern": [
+    "SSS",
+    " B ",
+    " S "
+  ],
+  "result": {
+    "id": "buildersparadise:redwood_lectern"
+  }
+}

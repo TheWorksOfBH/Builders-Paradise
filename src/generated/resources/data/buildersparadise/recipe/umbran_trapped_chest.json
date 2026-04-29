@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "buildersparadise:umbran_chest",
+    "minecraft:tripwire_hook"
+  ],
+  "result": {
+    "id": "buildersparadise:umbran_trapped_chest"
+  }
+}

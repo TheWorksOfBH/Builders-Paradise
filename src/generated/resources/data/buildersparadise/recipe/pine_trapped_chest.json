@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "buildersparadise:pine_chest",
+    "minecraft:tripwire_hook"
+  ],
+  "result": {
+    "id": "buildersparadise:pine_trapped_chest"
+  }
+}

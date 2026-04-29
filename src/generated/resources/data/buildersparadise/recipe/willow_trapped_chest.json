@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "buildersparadise:willow_chest",
+    "minecraft:tripwire_hook"
+  ],
+  "result": {
+    "id": "buildersparadise:willow_trapped_chest"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "buildersparadise:block/fir_loom",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "buildersparadise:block/fir_loom"
+    },
+    "facing=south": {
+      "model": "buildersparadise:block/fir_loom",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "buildersparadise:block/fir_loom",
+      "y": 270
+    }
+  }
+}

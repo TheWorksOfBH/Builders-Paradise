@@ -139,24 +139,24 @@ dependencies {
     // localRuntime "mezz.jei:jei-${mc_version}-neoforge:${jei_version}"
 
     // compile against the JEI API but do not include it at runtime
-    compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
+    compileOnly("mezz.jei:jei-${mc_version}-neoforge-api:${jei_version}")
     // at runtime, use the full JEI jar for NeoForge
-    localRuntime("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
+    localRuntime("mezz.jei:jei-${mc_version}-neoforge:${jei_version}")
 
-//    localRuntime("com.github.glitchfiend:TerraBlender-neoforge:${minecraft_version}-${terrablender_version}")
-//    localRuntime("com.github.glitchfiend:GlitchCore-neoforge:${minecraft_version}-${glitchcore_version}")
-//    localRuntime("com.github.glitchfiend:BiomesOPlenty-neoforge:${minecraft_version}-${bop_version}")
+    localRuntime("com.github.glitchfiend:TerraBlender-neoforge:${mc_version}-${terrablender_version}")
+    localRuntime("com.github.glitchfiend:GlitchCore-neoforge:${mc_version}-${glitchcore_version}")
+    localRuntime("com.github.glitchfiend:BiomesOPlenty-neoforge:${mc_version}-${bop_version}")
 
-//    compileOnly("com.github.glitchfiend:TerraBlender-neoforge:${minecraft_version}-${terrablender_version}")
-//    compileOnly("com.github.glitchfiend:GlitchCore-neoforge:${minecraft_version}-${glitchcore_version}")
-//    compileOnly("com.github.glitchfiend:BiomesOPlenty-neoforge:${minecraft_version}-${bop_version}")
+    compileOnly("com.github.glitchfiend:TerraBlender-neoforge:${mc_version}-${terrablender_version}")
+    compileOnly("com.github.glitchfiend:GlitchCore-neoforge:${mc_version}-${glitchcore_version}")
+    compileOnly("com.github.glitchfiend:BiomesOPlenty-neoforge:${mc_version}-${bop_version}")
 
-    localRuntime("net.caffeinemc:sodium-neoforge:${sodium_version}+mc${mc_version}")
-    compileOnly("net.caffeinemc:sodium-neoforge:${sodium_version}+mc${mc_version}")
-    localRuntime("net.caffeinemc:sodium-neoforge-api:${sodium_version}+mc${mc_version}")
-    compileOnly("net.caffeinemc:sodium-neoforge-api:${sodium_version}+mc${mc_version}")
-    localRuntime("net.caffeinemc:sodium-neoforge-mod:${sodium_version}+mc${mc_version}")
-    compileOnly("net.caffeinemc:sodium-neoforge-mod:${sodium_version}+mc${mc_version}")
+    localRuntime("net.caffeinemc:sodium-neoforge:${sodium_version}+mc${sodium_mc_version}")
+    compileOnly("net.caffeinemc:sodium-neoforge:${sodium_version}+mc${sodium_mc_version}")
+    localRuntime("net.caffeinemc:sodium-neoforge-api:${sodium_version}+mc${sodium_mc_version}")
+    compileOnly("net.caffeinemc:sodium-neoforge-api:${sodium_version}+mc${sodium_mc_version}")
+    localRuntime("net.caffeinemc:sodium-neoforge-mod:${sodium_version}+mc${sodium_mc_version}")
+    compileOnly("net.caffeinemc:sodium-neoforge-mod:${sodium_version}+mc${sodium_mc_version}")
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar

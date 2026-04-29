@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "buildersparadise:block/pine_mosaic",
+    "side": "buildersparadise:block/pine_mosaic",
+    "top": "buildersparadise:block/pine_mosaic"
+  }
+}

@@ -5,9 +5,8 @@
     "buildersparadise:raw_tungsten_block",
     "buildersparadise:tungsten_block",
     "buildersparadise:cut_tungsten",
-    "buildersparadise:tungsten_chain",
-    "buildersparadise:tungsten_torch",
-    "buildersparadise:tungsten_wall_torch",
+    "buildersparadise:cut_tungsten_slab",
+    "buildersparadise:cut_tungsten_stairs",
     "buildersparadise:tungsten_grate",
     "buildersparadise:tungsten_bulb"
   ]

@@ -35,6 +35,162 @@
     "buildersparadise:mangrove_deepslate_smoker",
     "buildersparadise:cherry_deepslate_smoker",
     "buildersparadise:bamboo_deepslate_smoker",
-    "buildersparadise:pale_oak_deepslate_smoker"
+    "buildersparadise:pale_oak_deepslate_smoker",
+    {
+      "id": "buildersparadise:dead_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:dead_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:empyreal_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:fir_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:hellbark_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:jacaranda_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:magic_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:mahogany_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:maple_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:palm_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:pine_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:redwood_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:umbran_deepslate_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_stone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_blackstone_smoker",
+      "required": false
+    },
+    {
+      "id": "buildersparadise:willow_deepslate_smoker",
+      "required": false
+    }
   ]
 }

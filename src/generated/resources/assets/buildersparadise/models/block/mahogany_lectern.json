@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/lectern",
+  "textures": {
+    "base": "buildersparadise:block/mahogany_lectern_base",
+    "bottom": "biomesoplenty:block/mahogany_planks",
+    "front": "buildersparadise:block/mahogany_lectern_front",
+    "particle": "buildersparadise:block/mahogany_lectern_sides",
+    "sides": "buildersparadise:block/mahogany_lectern_sides",
+    "top": "buildersparadise:block/mahogany_lectern_top"
+  }
+}

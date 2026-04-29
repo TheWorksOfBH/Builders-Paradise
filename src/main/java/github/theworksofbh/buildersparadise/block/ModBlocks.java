@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.FlowingFluid;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -151,14 +152,14 @@ public class ModBlocks {
     public static final DeferredBlock<WeightedPressurePlateBlock> WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE = registerWeightedPressurePlate(
             "waxed_oxidized_medium_weighted_pressure_plate", 88, BlockSetType.COPPER, () -> Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE);
 
-    public static final DeferredBlock<ModBlock> EXPOSED_IRON = registerRustingBlock("exposed_iron", () -> Blocks.IRON_BLOCK);
-    public static final DeferredBlock<ModBlock> WEATHERED_IRON = registerRustingBlock("weathered_iron", () -> Blocks.IRON_BLOCK);
-    public static final DeferredBlock<ModBlock> RUSTED_IRON = registerRustingBlock("rusted_iron", () -> Blocks.IRON_BLOCK);
+    public static final DeferredBlock<ModBlock> EXPOSED_IRON = registerRustingBlock("exposed_iron", () -> Blocks.IRON_BLOCK, MapColor.COLOR_LIGHT_GRAY);
+    public static final DeferredBlock<ModBlock> WEATHERED_IRON = registerRustingBlock("weathered_iron", () -> Blocks.IRON_BLOCK, MapColor.STONE);
+    public static final DeferredBlock<ModBlock> RUSTED_IRON = registerRustingBlock("rusted_iron", () -> Blocks.IRON_BLOCK, MapColor.COLOR_GRAY);
 
     public static final DeferredBlock<Block> WAXED_IRON_BLOCK = registerBlockVariant("waxed_iron_block", () -> Blocks.IRON_BLOCK);
-    public static final DeferredBlock<Block> WAXED_EXPOSED_IRON = registerBlockVariant("waxed_exposed_iron", () -> Blocks.IRON_BLOCK);
-    public static final DeferredBlock<Block> WAXED_WEATHERED_IRON = registerBlockVariant("waxed_weathered_iron", () -> Blocks.IRON_BLOCK);
-    public static final DeferredBlock<Block> WAXED_RUSTED_IRON = registerBlockVariant("waxed_rusted_iron", () -> Blocks.IRON_BLOCK);
+    public static final DeferredBlock<Block> WAXED_EXPOSED_IRON = registerBlockVariant("waxed_exposed_iron", () -> Blocks.IRON_BLOCK, MapColor.COLOR_LIGHT_GRAY);
+    public static final DeferredBlock<Block> WAXED_WEATHERED_IRON = registerBlockVariant("waxed_weathered_iron", () -> Blocks.IRON_BLOCK, MapColor.STONE);
+    public static final DeferredBlock<Block> WAXED_RUSTED_IRON = registerBlockVariant("waxed_rusted_iron", () -> Blocks.IRON_BLOCK, MapColor.COLOR_GRAY);
 
     public static final DeferredBlock<ModBlock> EXPOSED_CUT_IRON = registerRustingBlock("exposed_cut_iron", () -> EXPOSED_IRON.get());
     public static final DeferredBlock<ModSlabBlock> EXPOSED_CUT_IRON_SLAB = registerRustingSlabBlock("exposed_cut_iron_slab", () -> EXPOSED_CUT_IRON.get());
@@ -229,7 +230,7 @@ public class ModBlocks {
 
     public static final DeferredBlock<KeyOnlyDoorBlock> NETHERITE_DOOR = registerLockableDoorBlock("netherite_door", ModBlockSetTypes.NETHERITE, () -> Blocks.NETHERITE_BLOCK);
     public static final DeferredBlock<KeyOnlyTrapdoorBlock> NETHERITE_TRAPDOOR = registerLockableTrapdoorBlock("netherite_trapdoor", ModBlockSetTypes.NETHERITE, () -> Blocks.NETHERITE_BLOCK);
-    public static final DeferredBlock<PlayerOnlyPressurePlateBlock> PLAYER_ONLY_PRESSURE_PLATE = registerPlayerPressurePlate("player_only_pressure_plate", ModBlockSetTypes.NETHERITE, () -> Blocks.NETHERITE_BLOCK);
+    public static final DeferredBlock<PlayerOnlyPressurePlateBlock> PLAYER_ONLY_PRESSURE_PLATE = registerPlayerPressurePlate("player_only_pressure_plate", ModBlockSetTypes.NETHERITE, () -> Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE);
 
     public static final DeferredBlock<Block> POLISHED_CALCITE = registerBlockVariant("polished_calcite", () -> Blocks.CALCITE);
     public static final DeferredBlock<SlabBlock> POLISHED_CALCITE_SLAB = registerSlabBlock("polished_calcite_slab", () -> POLISHED_CALCITE.get());
@@ -271,9 +272,9 @@ public class ModBlocks {
     public static final DeferredBlock<StairBlock> BASALT_BRICK_STAIRS = registerStairBlock("basalt_brick_stairs", () -> BASALT_BRICKS.get());
     public static final DeferredBlock<WallBlock> BASALT_BRICK_WALL = registerWallBlock("basalt_brick_wall", () -> BASALT_BRICKS.get());
 
-    public static final DeferredBlock<Block> CHARCOAL_BLOCK = registerBlockVariant("charcoal_block", () -> Blocks.COAL_BLOCK);
+    public static final DeferredBlock<Block> CHARCOAL_BLOCK = registerBlockVariant("charcoal_block", () -> Blocks.COAL_BLOCK, MapColor.TERRACOTTA_GRAY);
 
-    public static final DeferredBlock<Block> SOUL_SANDSTONE = registerBlockVariant("soul_sandstone", () -> Blocks.SANDSTONE);
+    public static final DeferredBlock<Block> SOUL_SANDSTONE = registerBlockVariant("soul_sandstone", () -> Blocks.SANDSTONE, MapColor.TERRACOTTA_BROWN);
     public static final DeferredBlock<SlabBlock> SOUL_SANDSTONE_SLAB = registerSlabBlock("soul_sandstone_slab", () -> SOUL_SANDSTONE.get());
     public static final DeferredBlock<StairBlock> SOUL_SANDSTONE_STAIRS = registerStairBlock("soul_sandstone_stairs", () -> SOUL_SANDSTONE.get());
     public static final DeferredBlock<WallBlock> SOUL_SANDSTONE_WALL = registerWallBlock("soul_sandstone_wall", () -> SOUL_SANDSTONE.get());
@@ -290,17 +291,17 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> CHISELED_SOUL_SANDSTONE = registerBlockVariant("chiseled_soul_sandstone", () -> SOUL_SANDSTONE.get());
 
-    public static final DeferredBlock<Block> ELDER_PRISMARINE = registerBlockVariant("elder_prismarine", () -> Blocks.PRISMARINE);
+    public static final DeferredBlock<Block> ELDER_PRISMARINE = registerBlockVariant("elder_prismarine", () -> Blocks.PRISMARINE, MapColor.WOOD);
     public static final DeferredBlock<SlabBlock> ELDER_PRISMARINE_SLAB = registerSlabBlock("elder_prismarine_slab", () -> ELDER_PRISMARINE.get());
     public static final DeferredBlock<StairBlock> ELDER_PRISMARINE_STAIRS = registerStairBlock("elder_prismarine_stairs", () -> ELDER_PRISMARINE.get());
     public static final DeferredBlock<WallBlock> ELDER_PRISMARINE_WALL = registerWallBlock("elder_prismarine_wall", () -> ELDER_PRISMARINE.get());
 
-    public static final DeferredBlock<Block> ELDER_PRISMARINE_BRICKS = registerBlockVariant("elder_prismarine_bricks", () -> Blocks.PRISMARINE_BRICKS);
+    public static final DeferredBlock<Block> ELDER_PRISMARINE_BRICKS = registerBlockVariant("elder_prismarine_bricks", () -> Blocks.PRISMARINE_BRICKS, MapColor.WOOD);
     public static final DeferredBlock<SlabBlock> ELDER_PRISMARINE_BRICK_SLAB = registerSlabBlock("elder_prismarine_brick_slab", () -> ELDER_PRISMARINE_BRICKS.get());
     public static final DeferredBlock<StairBlock> ELDER_PRISMARINE_BRICK_STAIRS = registerStairBlock("elder_prismarine_brick_stairs", () -> ELDER_PRISMARINE_BRICKS.get());
     public static final DeferredBlock<WallBlock> ELDER_PRISMARINE_BRICK_WALL = registerWallBlock("elder_prismarine_brick_wall", () -> ELDER_PRISMARINE_BRICKS.get());
 
-    public static final DeferredBlock<Block> DARK_ELDER_PRISMARINE = registerBlockVariant("dark_elder_prismarine", () -> Blocks.DARK_PRISMARINE);
+    public static final DeferredBlock<Block> DARK_ELDER_PRISMARINE = registerBlockVariant("dark_elder_prismarine", () -> Blocks.DARK_PRISMARINE, MapColor.COLOR_BROWN);
     public static final DeferredBlock<SlabBlock> DARK_ELDER_PRISMARINE_SLAB = registerSlabBlock("dark_elder_prismarine_slab", () -> DARK_ELDER_PRISMARINE.get());
     public static final DeferredBlock<StairBlock> DARK_ELDER_PRISMARINE_STAIRS = registerStairBlock("dark_elder_prismarine_stairs", () -> DARK_ELDER_PRISMARINE.get());
     public static final DeferredBlock<WallBlock> DARK_ELDER_PRISMARINE_WALL = registerWallBlock("dark_elder_prismarine_wall", () -> DARK_ELDER_PRISMARINE.get());
@@ -309,9 +310,9 @@ public class ModBlocks {
 
     public static final DeferredBlock<DropExperienceBlock> ZINC_ORE = registerOreBlock("zinc_ore");
     public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_ZINC_ORE = registerDeepslateOreBlock("deepslate_zinc_ore");
-    public static final DeferredBlock<Block> RAW_ZINC_BLOCK = registerBlockVariant("raw_zinc_block", () -> Blocks.RAW_IRON_BLOCK);
+    public static final DeferredBlock<Block> RAW_ZINC_BLOCK = registerBlockVariant("raw_zinc_block", () -> Blocks.RAW_IRON_BLOCK, MapColor.SNOW);
 
-    public static final DeferredBlock<ModBlock> ZINC_BLOCK = registerRustingBlock("zinc_block", () -> Blocks.IRON_BLOCK);
+    public static final DeferredBlock<ModBlock> ZINC_BLOCK = registerRustingBlock("zinc_block", () -> Blocks.IRON_BLOCK, MapColor.COLOR_LIGHT_GRAY);
     public static final DeferredBlock<ModBlock> CUT_ZINC = registerRustingBlock("cut_zinc", () -> ZINC_BLOCK.get());
     public static final DeferredBlock<ModSlabBlock> CUT_ZINC_SLAB = registerRustingSlabBlock("cut_zinc_slab", () -> CUT_ZINC.get());
     public static final DeferredBlock<ModStairBlock> CUT_ZINC_STAIRS = registerRustingStairBlock("cut_zinc_stairs", () -> CUT_ZINC.get());
@@ -319,7 +320,7 @@ public class ModBlocks {
     public static final DeferredBlock<ModTrapdoorBlock> ZINC_TRAPDOOR = registerRustingTrapdoorBlock("zinc_trapdoor", ModBlockSetTypes.ZINC, () -> Blocks.IRON_TRAPDOOR);
     public static final DeferredBlock<ModPressurePlateBlock> BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerRustingWeightedPressurePlate("barely_heavy_weighted_pressure_plate", 100, ModBlockSetTypes.ZINC, () -> Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE);
 
-    public static final DeferredBlock<ModBlock> EXPOSED_ZINC = registerRustingBlock("exposed_zinc", () -> ZINC_BLOCK.get());
+    public static final DeferredBlock<ModBlock> EXPOSED_ZINC = registerRustingBlock("exposed_zinc", () -> ZINC_BLOCK.get(), MapColor.METAL);
     public static final DeferredBlock<ModBlock> EXPOSED_CUT_ZINC = registerRustingBlock("exposed_cut_zinc", () -> EXPOSED_ZINC.get());
     public static final DeferredBlock<ModSlabBlock> EXPOSED_CUT_ZINC_SLAB = registerRustingSlabBlock("exposed_cut_zinc_slab", () -> EXPOSED_CUT_ZINC.get());
     public static final DeferredBlock<ModStairBlock> EXPOSED_CUT_ZINC_STAIRS = registerRustingStairBlock("exposed_cut_zinc_stairs", () -> EXPOSED_CUT_ZINC.get());
@@ -327,7 +328,7 @@ public class ModBlocks {
     public static final DeferredBlock<ModTrapdoorBlock> EXPOSED_ZINC_TRAPDOOR = registerRustingTrapdoorBlock("exposed_zinc_trapdoor", ModBlockSetTypes.ZINC, () -> ZINC_TRAPDOOR.get());
     public static final DeferredBlock<ModPressurePlateBlock> EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerRustingWeightedPressurePlate("exposed_barely_heavy_weighted_pressure_plate", 100, ModBlockSetTypes.ZINC, () -> BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
 
-    public static final DeferredBlock<ModBlock> WEATHERED_ZINC = registerRustingBlock("weathered_zinc", () -> ZINC_BLOCK.get());
+    public static final DeferredBlock<ModBlock> WEATHERED_ZINC = registerRustingBlock("weathered_zinc", () -> ZINC_BLOCK.get(), MapColor.WOOL);
     public static final DeferredBlock<ModBlock> WEATHERED_CUT_ZINC = registerRustingBlock("weathered_cut_zinc", () -> WEATHERED_ZINC.get());
     public static final DeferredBlock<ModSlabBlock> WEATHERED_CUT_ZINC_SLAB = registerRustingSlabBlock("weathered_cut_zinc_slab", () -> WEATHERED_CUT_ZINC.get());
     public static final DeferredBlock<ModStairBlock> WEATHERED_CUT_ZINC_STAIRS = registerRustingStairBlock("weathered_cut_zinc_stairs", () -> WEATHERED_CUT_ZINC.get());
@@ -335,7 +336,7 @@ public class ModBlocks {
     public static final DeferredBlock<ModTrapdoorBlock> WEATHERED_ZINC_TRAPDOOR = registerRustingTrapdoorBlock("weathered_zinc_trapdoor", ModBlockSetTypes.ZINC, () -> ZINC_TRAPDOOR.get());
     public static final DeferredBlock<ModPressurePlateBlock> WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerRustingWeightedPressurePlate("weathered_barely_heavy_weighted_pressure_plate", 100, ModBlockSetTypes.ZINC, () -> BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
 
-    public static final DeferredBlock<ModBlock> CORRODED_ZINC = registerRustingBlock("corroded_zinc", () -> ZINC_BLOCK.get());
+    public static final DeferredBlock<ModBlock> CORRODED_ZINC = registerRustingBlock("corroded_zinc", () -> ZINC_BLOCK.get(), MapColor.SNOW);
     public static final DeferredBlock<ModBlock> CORRODED_CUT_ZINC = registerRustingBlock("corroded_cut_zinc", () -> CORRODED_ZINC.get());
     public static final DeferredBlock<ModSlabBlock> CORRODED_CUT_ZINC_SLAB = registerRustingSlabBlock("corroded_cut_zinc_slab", () -> CORRODED_CUT_ZINC.get());
     public static final DeferredBlock<ModStairBlock> CORRODED_CUT_ZINC_STAIRS = registerRustingStairBlock("corroded_cut_zinc_stairs", () -> CORRODED_CUT_ZINC.get());
@@ -343,7 +344,7 @@ public class ModBlocks {
     public static final DeferredBlock<ModTrapdoorBlock> CORRODED_ZINC_TRAPDOOR = registerRustingTrapdoorBlock("corroded_zinc_trapdoor", ModBlockSetTypes.ZINC, () -> ZINC_TRAPDOOR.get());
     public static final DeferredBlock<ModPressurePlateBlock> CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerRustingWeightedPressurePlate("corroded_barely_heavy_weighted_pressure_plate", 100, ModBlockSetTypes.ZINC, () -> BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
 
-    public static final DeferredBlock<Block> WAXED_ZINC_BLOCK = registerBlockVariant("waxed_zinc_block", () -> ZINC_BLOCK.get());
+    public static final DeferredBlock<Block> WAXED_ZINC_BLOCK = registerBlockVariant("waxed_zinc_block", () -> ZINC_BLOCK.get(), MapColor.COLOR_LIGHT_GRAY);
     public static final DeferredBlock<Block> WAXED_CUT_ZINC = registerBlockVariant("waxed_cut_zinc", () -> WAXED_ZINC_BLOCK.get());
     public static final DeferredBlock<SlabBlock> WAXED_CUT_ZINC_SLAB = registerSlabBlock("waxed_cut_zinc_slab", () -> WAXED_CUT_ZINC.get());
     public static final DeferredBlock<StairBlock> WAXED_CUT_ZINC_STAIRS = registerStairBlock("waxed_cut_zinc_stairs", () -> WAXED_CUT_ZINC.get());
@@ -351,7 +352,7 @@ public class ModBlocks {
     public static final DeferredBlock<TrapDoorBlock> WAXED_ZINC_TRAPDOOR = registerTrapdoorBlock("waxed_zinc_trapdoor", ModBlockSetTypes.ZINC, () -> ZINC_TRAPDOOR.get());
     public static final DeferredBlock<WeightedPressurePlateBlock> WAXED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerWeightedPressurePlate("waxed_barely_heavy_weighted_pressure_plate", 100, ModBlockSetTypes.ZINC, () -> BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
 
-    public static final DeferredBlock<Block> WAXED_EXPOSED_ZINC = registerBlockVariant("waxed_exposed_zinc", () -> WAXED_ZINC_BLOCK.get());
+    public static final DeferredBlock<Block> WAXED_EXPOSED_ZINC = registerBlockVariant("waxed_exposed_zinc", () -> WAXED_ZINC_BLOCK.get(), MapColor.METAL);
     public static final DeferredBlock<Block> WAXED_EXPOSED_CUT_ZINC = registerBlockVariant("waxed_exposed_cut_zinc", () -> WAXED_EXPOSED_ZINC.get());
     public static final DeferredBlock<SlabBlock> WAXED_EXPOSED_CUT_ZINC_SLAB = registerSlabBlock("waxed_exposed_cut_zinc_slab", () -> WAXED_EXPOSED_CUT_ZINC.get());
     public static final DeferredBlock<StairBlock> WAXED_EXPOSED_CUT_ZINC_STAIRS = registerStairBlock("waxed_exposed_cut_zinc_stairs", () -> WAXED_EXPOSED_CUT_ZINC.get());
@@ -359,7 +360,7 @@ public class ModBlocks {
     public static final DeferredBlock<TrapDoorBlock> WAXED_EXPOSED_ZINC_TRAPDOOR = registerTrapdoorBlock("waxed_exposed_zinc_trapdoor", ModBlockSetTypes.ZINC, () -> WAXED_ZINC_TRAPDOOR.get());
     public static final DeferredBlock<WeightedPressurePlateBlock> WAXED_EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerWeightedPressurePlate("waxed_exposed_barely_heavy_weighted_pressure_plate", 100, ModBlockSetTypes.ZINC, () -> WAXED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
 
-    public static final DeferredBlock<Block> WAXED_WEATHERED_ZINC = registerBlockVariant("waxed_weathered_zinc", () -> WAXED_ZINC_BLOCK.get());
+    public static final DeferredBlock<Block> WAXED_WEATHERED_ZINC = registerBlockVariant("waxed_weathered_zinc", () -> WAXED_ZINC_BLOCK.get(), MapColor.WOOL);
     public static final DeferredBlock<Block> WAXED_WEATHERED_CUT_ZINC = registerBlockVariant("waxed_weathered_cut_zinc", () -> WAXED_WEATHERED_ZINC.get());
     public static final DeferredBlock<SlabBlock> WAXED_WEATHERED_CUT_ZINC_SLAB = registerSlabBlock("waxed_weathered_cut_zinc_slab", () -> WAXED_WEATHERED_CUT_ZINC.get());
     public static final DeferredBlock<StairBlock> WAXED_WEATHERED_CUT_ZINC_STAIRS = registerStairBlock("waxed_weathered_cut_zinc_stairs", () -> WAXED_WEATHERED_CUT_ZINC.get());
@@ -367,7 +368,7 @@ public class ModBlocks {
     public static final DeferredBlock<TrapDoorBlock> WAXED_WEATHERED_ZINC_TRAPDOOR = registerTrapdoorBlock("waxed_weathered_zinc_trapdoor", ModBlockSetTypes.ZINC, () -> WAXED_ZINC_TRAPDOOR.get());
     public static final DeferredBlock<WeightedPressurePlateBlock> WAXED_WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerWeightedPressurePlate("waxed_weathered_barely_heavy_weighted_pressure_plate", 100, ModBlockSetTypes.ZINC, () -> WAXED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
 
-    public static final DeferredBlock<Block> WAXED_CORRODED_ZINC = registerBlockVariant("waxed_corroded_zinc", () -> WAXED_ZINC_BLOCK.get());
+    public static final DeferredBlock<Block> WAXED_CORRODED_ZINC = registerBlockVariant("waxed_corroded_zinc", () -> WAXED_ZINC_BLOCK.get(), MapColor.SNOW);
     public static final DeferredBlock<Block> WAXED_CORRODED_CUT_ZINC = registerBlockVariant("waxed_corroded_cut_zinc", () -> WAXED_CORRODED_ZINC.get());
     public static final DeferredBlock<SlabBlock> WAXED_CORRODED_CUT_ZINC_SLAB = registerSlabBlock("waxed_corroded_cut_zinc_slab", () -> WAXED_CORRODED_CUT_ZINC.get());
     public static final DeferredBlock<StairBlock> WAXED_CORRODED_CUT_ZINC_STAIRS = registerStairBlock("waxed_corroded_cut_zinc_stairs", () -> WAXED_WEATHERED_CUT_ZINC.get());
@@ -377,9 +378,9 @@ public class ModBlocks {
 
     public static final DeferredBlock<DropExperienceBlock> SILVER_ORE = registerOreBlock("silver_ore");
     public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_SILVER_ORE = registerDeepslateOreBlock("deepslate_silver_ore");
-    public static final DeferredBlock<Block> RAW_SILVER_BLOCK = registerBlockVariant("raw_silver_block", () -> Blocks.RAW_GOLD_BLOCK);
+    public static final DeferredBlock<Block> RAW_SILVER_BLOCK = registerBlockVariant("raw_silver_block", () -> Blocks.RAW_GOLD_BLOCK, MapColor.METAL);
 
-    public static final DeferredBlock<Block> SILVER_BLOCK = registerBlockVariant("silver_block", () -> Blocks.GOLD_BLOCK);
+    public static final DeferredBlock<Block> SILVER_BLOCK = registerBlockVariant("silver_block", () -> Blocks.GOLD_BLOCK, MapColor.METAL);
     public static final DeferredBlock<Block> CUT_SILVER = registerBlockVariant("cut_silver", () -> SILVER_BLOCK.get());
     public static final DeferredBlock<SlabBlock> CUT_SILVER_SLAB = registerSlabBlock("cut_silver_slab", () -> CUT_SILVER.get());
     public static final DeferredBlock<StairBlock> CUT_SILVER_STAIRS = registerStairBlock("cut_silver_stairs", () -> CUT_SILVER.get());
@@ -389,9 +390,9 @@ public class ModBlocks {
 
     public static final DeferredBlock<DropExperienceBlock> TIN_ORE = registerOreBlock("tin_ore");
     public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_TIN_ORE = registerDeepslateOreBlock("deepslate_tin_ore");
-    public static final DeferredBlock<Block> RAW_TIN_BLOCK = registerBlockVariant("raw_tin_block", () -> Blocks.RAW_COPPER_BLOCK);
+    public static final DeferredBlock<Block> RAW_TIN_BLOCK = registerBlockVariant("raw_tin_block", () -> Blocks.RAW_COPPER_BLOCK, MapColor.WOOD);
 
-    public static final DeferredBlock<Block> TIN_BLOCK = registerBlockVariant("tin_block", () -> Blocks.COPPER_BLOCK);
+    public static final DeferredBlock<Block> TIN_BLOCK = registerBlockVariant("tin_block", () -> Blocks.COPPER_BLOCK, MapColor.WOOD);
     public static final DeferredBlock<Block> CUT_TIN = registerBlockVariant("cut_tin", () -> TIN_BLOCK.get());
     public static final DeferredBlock<SlabBlock> CUT_TIN_SLAB = registerSlabBlock("cut_tin_slab", () -> CUT_TIN.get());
     public static final DeferredBlock<StairBlock> CUT_TIN_STAIRS = registerStairBlock("cut_tin_stairs", () -> CUT_TIN.get());
@@ -401,9 +402,9 @@ public class ModBlocks {
 
     public static final DeferredBlock<DropExperienceBlock> TUNGSTEN_ORE = registerOreBlock("tungsten_ore");
     public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_TUNGSTEN_ORE = registerDeepslateOreBlock("deepslate_tungsten_ore");
-    public static final DeferredBlock<Block> RAW_TUNGSTEN_BLOCK = registerBlockVariant("raw_tungsten_block", () -> Blocks.RAW_GOLD_BLOCK);
+    public static final DeferredBlock<Block> RAW_TUNGSTEN_BLOCK = registerBlockVariant("raw_tungsten_block", () -> Blocks.RAW_GOLD_BLOCK, MapColor.TERRACOTTA_LIGHT_BLUE);
 
-    public static final DeferredBlock<Block> TUNGSTEN_BLOCK = registerBlockVariant("tungsten_block", () -> Blocks.NETHERITE_BLOCK);
+    public static final DeferredBlock<Block> TUNGSTEN_BLOCK = registerBlockVariant("tungsten_block", () -> Blocks.NETHERITE_BLOCK, MapColor.TERRACOTTA_LIGHT_BLUE);
     public static final DeferredBlock<Block> CUT_TUNGSTEN = registerBlockVariant("cut_tungsten", () -> TUNGSTEN_BLOCK.get());
     public static final DeferredBlock<SlabBlock> CUT_TUNGSTEN_SLAB = registerSlabBlock("cut_tungsten_slab", () -> CUT_TUNGSTEN.get());
     public static final DeferredBlock<StairBlock> CUT_TUNGSTEN_STAIRS = registerStairBlock("cut_tungsten_stairs", () -> CUT_TUNGSTEN.get());
@@ -413,9 +414,9 @@ public class ModBlocks {
 
     public static final DeferredBlock<DropExperienceBlock> PLATINUM_ORE = registerOreBlock("platinum_ore");
     public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_PLATINUM_ORE = registerDeepslateOreBlock("deepslate_platinum_ore");
-    public static final DeferredBlock<Block> RAW_PLATINUM_BLOCK = registerBlockVariant("raw_platinum_block", () -> Blocks.RAW_GOLD_BLOCK);
+    public static final DeferredBlock<Block> RAW_PLATINUM_BLOCK = registerBlockVariant("raw_platinum_block", () -> Blocks.RAW_GOLD_BLOCK, MapColor.CLAY);
 
-    public static final DeferredBlock<Block> PLATINUM_BLOCK = registerBlockVariant("platinum_block", () -> Blocks.GOLD_BLOCK);
+    public static final DeferredBlock<Block> PLATINUM_BLOCK = registerBlockVariant("platinum_block", () -> Blocks.GOLD_BLOCK, MapColor.CLAY);
     public static final DeferredBlock<Block> CUT_PLATINUM = registerBlockVariant("cut_platinum", () -> PLATINUM_BLOCK.get());
     public static final DeferredBlock<SlabBlock> CUT_PLATINUM_SLAB = registerSlabBlock("cut_platinum_slab", () -> CUT_PLATINUM.get());
     public static final DeferredBlock<StairBlock> CUT_PLATINUM_STAIRS = registerStairBlock("cut_platinum_stairs", () -> CUT_PLATINUM.get());
@@ -425,9 +426,9 @@ public class ModBlocks {
 
     public static final DeferredBlock<DropExperienceBlock> LEAD_ORE = registerOreBlock("lead_ore");
     public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_LEAD_ORE = registerDeepslateOreBlock("deepslate_lead_ore");
-    public static final DeferredBlock<Block> RAW_LEAD_BLOCK = registerBlockVariant("raw_lead_block", () -> Blocks.RAW_COPPER_BLOCK);
+    public static final DeferredBlock<Block> RAW_LEAD_BLOCK = registerBlockVariant("raw_lead_block", () -> Blocks.RAW_COPPER_BLOCK, MapColor.COLOR_BLACK);
 
-    public static final DeferredBlock<Block> LEAD_BLOCK = registerBlockVariant("lead_block", () -> Blocks.COPPER_BLOCK);
+    public static final DeferredBlock<Block> LEAD_BLOCK = registerBlockVariant("lead_block", () -> Blocks.COPPER_BLOCK, MapColor.COLOR_BLACK);
     public static final DeferredBlock<Block> CUT_LEAD = registerBlockVariant("cut_lead", () -> LEAD_BLOCK.get());
     public static final DeferredBlock<SlabBlock> CUT_LEAD_SLAB = registerSlabBlock("cut_lead_slab", () -> CUT_LEAD.get());
     public static final DeferredBlock<StairBlock> CUT_LEAD_STAIRS = registerStairBlock("cut_lead_stairs", () -> CUT_LEAD.get());
@@ -437,9 +438,9 @@ public class ModBlocks {
 
     public static final DeferredBlock<DropExperienceBlock> URANIUM_ORE = registerOreBlock("uranium_ore");
     public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_URANIUM_ORE = registerDeepslateOreBlock("deepslate_uranium_ore");
-    public static final DeferredBlock<Block> RAW_URANIUM_BLOCK = registerBlockVariant("raw_uranium_block", () -> Blocks.RAW_GOLD_BLOCK);
+    public static final DeferredBlock<Block> RAW_URANIUM_BLOCK = registerBlockVariant("raw_uranium_block", () -> Blocks.RAW_GOLD_BLOCK, MapColor.COLOR_LIGHT_GREEN);
 
-    public static final DeferredBlock<Block> URANIUM_BLOCK = registerBlockVariant("uranium_block", () -> Blocks.GOLD_BLOCK);
+    public static final DeferredBlock<Block> URANIUM_BLOCK = registerBlockVariant("uranium_block", () -> Blocks.GOLD_BLOCK, MapColor.COLOR_LIGHT_GREEN);
     public static final DeferredBlock<Block> CUT_URANIUM = registerBlockVariant("cut_uranium", () -> URANIUM_BLOCK.get());
     public static final DeferredBlock<SlabBlock> CUT_URANIUM_SLAB = registerSlabBlock("cut_uranium_slab", () -> CUT_URANIUM.get());
     public static final DeferredBlock<StairBlock> CUT_URANIUM_STAIRS = registerStairBlock("cut_uranium_stairs", () -> CUT_URANIUM.get());
@@ -447,7 +448,7 @@ public class ModBlocks {
     public static final DeferredBlock<TrapDoorBlock> URANIUM_TRAPDOOR = registerTrapdoorBlock("uranium_trapdoor", ModBlockSetTypes.URANIUM, () -> GOLD_TRAPDOOR.get());
     public static final DeferredBlock<WeightedPressurePlateBlock> NEGLIGIBLE_WEIGHTED_PRESSURE_PLATE = registerWeightedPressurePlate("negligible_weighted_pressure_plate", 1, ModBlockSetTypes.URANIUM, () -> Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE);
 
-    public static final DeferredBlock<Block> BRONZE_BLOCK = registerBlockVariant("bronze_block", () -> Blocks.COPPER_BLOCK);
+    public static final DeferredBlock<Block> BRONZE_BLOCK = registerBlockVariant("bronze_block", () -> Blocks.COPPER_BLOCK, MapColor.PODZOL);
     public static final DeferredBlock<Block> CUT_BRONZE = registerBlockVariant("cut_bronze", () -> BRONZE_BLOCK.get());
     public static final DeferredBlock<SlabBlock> CUT_BRONZE_SLAB = registerSlabBlock("cut_bronze_slab", () -> CUT_BRONZE.get());
     public static final DeferredBlock<StairBlock> CUT_BRONZE_STAIRS = registerStairBlock("cut_bronze_stairs", () -> CUT_BRONZE.get());
@@ -455,7 +456,7 @@ public class ModBlocks {
     public static final DeferredBlock<TrapDoorBlock> BRONZE_TRAPDOOR = registerTrapdoorBlock("bronze_trapdoor", ModBlockSetTypes.BRONZE, () -> Blocks.COPPER_TRAPDOOR);
     public static final DeferredBlock<AnimalOnlyPressurePlateBlock> PASSIVE_MOB_ONLY_PRESSURE_PLATE = registerAnimalPressurePlate("passive_mob_only_pressure_plate",  ModBlockSetTypes.BRONZE, () -> BRONZE_BLOCK.get());
 
-    public static final DeferredBlock<Block> BRASS_BLOCK = registerBlockVariant("brass_block", () -> Blocks.COPPER_BLOCK);
+    public static final DeferredBlock<Block> BRASS_BLOCK = registerBlockVariant("brass_block", () -> Blocks.COPPER_BLOCK, MapColor.WOOD);
     public static final DeferredBlock<Block> CUT_BRASS = registerBlockVariant("cut_brass", () -> BRASS_BLOCK.get());
     public static final DeferredBlock<SlabBlock> CUT_BRASS_SLAB = registerSlabBlock("cut_brass_slab", () -> CUT_BRASS.get());
     public static final DeferredBlock<StairBlock> CUT_BRASS_STAIRS = registerStairBlock("cut_brass_stairs", () -> CUT_BRASS.get());
@@ -463,7 +464,7 @@ public class ModBlocks {
     public static final DeferredBlock<TrapDoorBlock> BRASS_TRAPDOOR = registerTrapdoorBlock("brass_trapdoor", ModBlockSetTypes.BRASS, () -> Blocks.COPPER_TRAPDOOR);
     public static final DeferredBlock<MonsterOnlyPressurePlateBlock> HOSTILE_MOB_ONLY_PRESSURE_PLATE = registerMonsterPressurePlate("hostile_mob_only_pressure_plate",  ModBlockSetTypes.BRASS, () -> BRASS_BLOCK.get());
 
-    public static final DeferredBlock<Block> STEEL_BLOCK = registerBlockVariant("steel_block", () -> Blocks.IRON_BLOCK);
+    public static final DeferredBlock<Block> STEEL_BLOCK = registerBlockVariant("steel_block", () -> Blocks.IRON_BLOCK, MapColor.COLOR_GRAY);
     public static final DeferredBlock<Block> CUT_STEEL = registerBlockVariant("cut_steel", () -> STEEL_BLOCK.get());
     public static final DeferredBlock<SlabBlock> CUT_STEEL_SLAB = registerSlabBlock("cut_steel_slab", () -> CUT_STEEL.get());
     public static final DeferredBlock<StairBlock> CUT_STEEL_STAIRS = registerStairBlock("cut_steel_stairs", () -> CUT_STEEL.get());
@@ -983,7 +984,7 @@ public class ModBlocks {
     public static final DeferredBlock<StairBlock> BLUE_ICE_BRICK_STAIRS = registerStairBlock("blue_ice_brick_stairs", () -> BLUE_ICE_BRICKS.get());
     public static final DeferredBlock<WallBlock> BLUE_ICE_BRICK_WALL = registerWallBlock("blue_ice_brick_wall", () -> BLUE_ICE_BRICKS.get());
 
-    public static final DeferredBlock<Block> SCULK_BRICKS = registerBlockVariant("sculk_bricks", () -> Blocks.RESIN_BRICKS);
+    public static final DeferredBlock<Block> SCULK_BRICKS = registerBlockVariant("sculk_bricks", () -> Blocks.RESIN_BRICKS, MapColor.COLOR_BLACK);
     public static final DeferredBlock<SlabBlock> SCULK_BRICK_SLAB = registerSlabBlock("sculk_brick_slab", () -> SCULK_BRICKS.get());
     public static final DeferredBlock<StairBlock> SCULK_BRICK_STAIRS = registerStairBlock("sculk_brick_stairs", () -> SCULK_BRICKS.get());
     public static final DeferredBlock<WallBlock> SCULK_BRICK_WALL = registerWallBlock("sculk_brick_wall", () -> SCULK_BRICKS.get());
@@ -1247,37 +1248,37 @@ public class ModBlocks {
     public static final DeferredBlock<AmethystSlabBlock> CUT_AMETHYST_SLAB = registerAmethystSlabBlock("cut_amethyst_slab", () -> CUT_AMETHYST.get());
     public static final DeferredBlock<AmethystStairBlock> CUT_AMETHYST_STAIRS = registerAmethystStairBlock("cut_amethyst_stairs", () -> CUT_AMETHYST.get());
 
-    public static final DeferredBlock<Block> GABBRO = registerBlockVariant("gabbro", () -> Blocks.TUFF);
+    public static final DeferredBlock<Block> GABBRO = registerBlockVariant("gabbro", () -> Blocks.TUFF, MapColor.TERRACOTTA_GREEN);
     public static final DeferredBlock<SlabBlock> GABBRO_SLAB = registerSlabBlock("gabbro_slab", () -> GABBRO.get());
     public static final DeferredBlock<StairBlock> GABBRO_STAIRS = registerStairBlock("gabbro_stairs", () -> GABBRO.get());
     public static final DeferredBlock<WallBlock> GABBRO_WALL = registerWallBlock("gabbro_wall", () -> GABBRO.get());
     public static final DeferredBlock<FenceBlock> GABBRO_FENCE = registerFenceBlock("gabbro_fence", () -> GABBRO.get());
 
-    public static final DeferredBlock<Block> POLISHED_GABBRO = registerBlockVariant("polished_gabbro", () -> Blocks.POLISHED_TUFF);
+    public static final DeferredBlock<Block> POLISHED_GABBRO = registerBlockVariant("polished_gabbro", () -> Blocks.POLISHED_TUFF, MapColor.TERRACOTTA_GREEN);
     public static final DeferredBlock<SlabBlock> POLISHED_GABBRO_SLAB = registerSlabBlock("polished_gabbro_slab", () -> POLISHED_GABBRO.get());
     public static final DeferredBlock<StairBlock> POLISHED_GABBRO_STAIRS = registerStairBlock("polished_gabbro_stairs", () -> POLISHED_GABBRO.get());
     public static final DeferredBlock<WallBlock> POLISHED_GABBRO_WALL = registerWallBlock("polished_gabbro_wall", () -> POLISHED_GABBRO.get());
     public static final DeferredBlock<FenceBlock> POLISHED_GABBRO_FENCE = registerFenceBlock("polished_gabbro_fence", () -> POLISHED_GABBRO.get());
 
-    public static final DeferredBlock<Block> GABBRO_BRICKS = registerBlockVariant("gabbro_bricks", () -> Blocks.TUFF_BRICKS);
+    public static final DeferredBlock<Block> GABBRO_BRICKS = registerBlockVariant("gabbro_bricks", () -> Blocks.TUFF_BRICKS, MapColor.TERRACOTTA_GREEN);
     public static final DeferredBlock<SlabBlock> GABBRO_BRICK_SLAB = registerSlabBlock("gabbro_brick_slab", () -> GABBRO_BRICKS.get());
     public static final DeferredBlock<StairBlock> GABBRO_BRICK_STAIRS = registerStairBlock("gabbro_brick_stairs", () -> GABBRO_BRICKS.get());
     public static final DeferredBlock<WallBlock> GABBRO_BRICK_WALL = registerWallBlock("gabbro_brick_wall", () -> GABBRO_BRICKS.get());
     public static final DeferredBlock<FenceBlock> GABBRO_BRICK_FENCE = registerFenceBlock("gabbro_brick_fence", () -> GABBRO_BRICKS.get());
 
-    public static final DeferredBlock<Block> RHYOLITE = registerBlockVariant("rhyolite", () -> Blocks.TUFF);
+    public static final DeferredBlock<Block> RHYOLITE = registerBlockVariant("rhyolite", () -> Blocks.TUFF, MapColor.DIRT);
     public static final DeferredBlock<SlabBlock> RHYOLITE_SLAB = registerSlabBlock("rhyolite_slab", () -> RHYOLITE.get());
     public static final DeferredBlock<StairBlock> RHYOLITE_STAIRS = registerStairBlock("rhyolite_stairs", () -> RHYOLITE.get());
     public static final DeferredBlock<WallBlock> RHYOLITE_WALL = registerWallBlock("rhyolite_wall", () -> RHYOLITE.get());
     public static final DeferredBlock<FenceBlock> RHYOLITE_FENCE = registerFenceBlock("rhyolite_fence", () -> RHYOLITE.get());
 
-    public static final DeferredBlock<Block> POLISHED_RHYOLITE = registerBlockVariant("polished_rhyolite", () -> Blocks.POLISHED_TUFF);
+    public static final DeferredBlock<Block> POLISHED_RHYOLITE = registerBlockVariant("polished_rhyolite", () -> Blocks.POLISHED_TUFF, MapColor.DIRT);
     public static final DeferredBlock<SlabBlock> POLISHED_RHYOLITE_SLAB = registerSlabBlock("polished_rhyolite_slab", () -> POLISHED_RHYOLITE.get());
     public static final DeferredBlock<StairBlock> POLISHED_RHYOLITE_STAIRS = registerStairBlock("polished_rhyolite_stairs", () -> POLISHED_RHYOLITE.get());
     public static final DeferredBlock<WallBlock> POLISHED_RHYOLITE_WALL = registerWallBlock("polished_rhyolite_wall", () -> POLISHED_RHYOLITE.get());
     public static final DeferredBlock<FenceBlock> POLISHED_RHYOLITE_FENCE = registerFenceBlock("polished_rhyolite_fence", () -> POLISHED_RHYOLITE.get());
 
-    public static final DeferredBlock<Block> RHYOLITE_BRICKS = registerBlockVariant("rhyolite_bricks", () -> Blocks.TUFF_BRICKS);
+    public static final DeferredBlock<Block> RHYOLITE_BRICKS = registerBlockVariant("rhyolite_bricks", () -> Blocks.TUFF_BRICKS, MapColor.DIRT);
     public static final DeferredBlock<SlabBlock> RHYOLITE_BRICK_SLAB = registerSlabBlock("rhyolite_brick_slab", () -> RHYOLITE_BRICKS.get());
     public static final DeferredBlock<StairBlock> RHYOLITE_BRICK_STAIRS = registerStairBlock("rhyolite_brick_stairs", () -> RHYOLITE_BRICKS.get());
     public static final DeferredBlock<WallBlock> RHYOLITE_BRICK_WALL = registerWallBlock("rhyolite_brick_wall", () -> RHYOLITE_BRICKS.get());
@@ -3304,6 +3305,24 @@ public class ModBlocks {
         );
     }
 
+    private static DeferredBlock<ModBlock> registerRustingBlock(String registryName, Supplier<Block> baseBlock, MapColor mapColor) {
+        return BLOCKS.register(
+                registryName, () -> new ModBlock(
+                        BlockBehaviour.Properties.ofFullCopy(
+                                baseBlock.get()
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        ).randomTicks().mapColor(mapColor)
+                )
+        );
+    }
+
     private static DeferredBlock<ModSlabBlock> registerRustingSlabBlock(String registryName, Supplier<Block> baseBlock) {
         return BLOCKS.register(
                 registryName, () -> new ModSlabBlock(
@@ -3399,7 +3418,7 @@ public class ModBlocks {
                                                     registryName
                                             )
                                     )
-                            )
+                            ).strength(50.0F, 1200.0F)
                 )
         );
     }
@@ -3498,6 +3517,45 @@ public class ModBlocks {
                                             )
                                     )
                             )
+                    )
+            );
+        }
+    }
+
+    private static DeferredBlock<Block> registerBlockVariant(String registryName, Supplier<Block> baseBlock, MapColor mapColor) {
+        if (registryName == "raw_tungsten_block" || registryName == "tungsten_block") {
+            return BLOCKS.register(
+                    registryName, () -> new Block(
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    baseBlock.get()
+                            ).strength(
+                                    45.0F,
+                                    2000.0F
+                            ).setId(
+                                    ResourceKey.create(
+                                            Registries.BLOCK,
+                                            Identifier.fromNamespaceAndPath(
+                                                    BuildersParadise.MODID,
+                                                    registryName
+                                            )
+                                    )
+                            ).mapColor(mapColor)
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new Block(
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    baseBlock.get()
+                            ).setId(
+                                    ResourceKey.create(
+                                            Registries.BLOCK,
+                                            Identifier.fromNamespaceAndPath(
+                                                    BuildersParadise.MODID,
+                                                    registryName
+                                            )
+                                    )
+                            ).mapColor(mapColor)
                     )
             );
         }

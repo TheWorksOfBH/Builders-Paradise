@@ -44,17 +44,17 @@ public class NukeBlock extends TntBlock {
 
     @Override
     public void wasExploded(ServerLevel p_364953_, BlockPos p_57442_, Explosion p_57443_) {
-        PrimedNuke primedNuke = new PrimedNuke(p_364953_, (double)p_57442_.getX() + (double)0.5F, (double)p_57442_.getY(), (double)p_57442_.getZ() + (double)0.5F, p_57443_.getIndirectSourceEntity());
+        PrimedNuke primedNuke = new PrimedNuke(p_364953_, (double)p_57442_.getX() + (double)0.5F, (double)p_57442_.getY(), (double)p_57442_.getZ() + (double)0.5F, p_57443_.getIndirectSourceEntity(), p_364953_.getBlockState(p_57442_));
         int i = primedNuke.getFuse();
         primedNuke.setFuse((short)(p_364953_.getRandom().nextInt(i / 4) + i / 8));
         p_364953_.addFreshEntity(primedNuke);
     }
 
     @Deprecated
-    private static boolean prime(Level level, BlockPos pos, @Nullable LivingEntity entity) {
+    private static boolean prime(Level level, BlockPos pos, @Nullable LivingEntity entity, BlockState blockState) {
         if (level instanceof ServerLevel serverlevel) {
             if (serverlevel.getGameRules().get(GameRules.TNT_EXPLODES)) {
-                PrimedNuke primedNuke = new PrimedNuke(level, (double)pos.getX() + (double)0.5F, (double)pos.getY(), (double)pos.getZ() + (double)0.5F, entity);
+                PrimedNuke primedNuke = new PrimedNuke(level, (double)pos.getX() + (double)0.5F, (double)pos.getY(), (double)pos.getZ() + (double)0.5F, entity, blockState);
                 level.addFreshEntity(primedNuke);
                 level.playSound((Entity)null, primedNuke.getX(), primedNuke.getY(), primedNuke.getZ(), SoundEvents.TNT_PRIMED, SoundSource.BLOCKS, 1.0F, 1.0F);
                 level.gameEvent(entity, GameEvent.PRIME_FUSE, pos);
@@ -65,8 +65,8 @@ public class NukeBlock extends TntBlock {
         return false;
     }
 
-    public static boolean prime(Level level, BlockPos pos) {
-        return prime(level, pos, (LivingEntity)null);
+    public static boolean prime(Level level, BlockPos pos, BlockState state) {
+        return prime(level, pos, (LivingEntity)null, state);
     }
 
     @Override
@@ -111,6 +111,6 @@ public class NukeBlock extends TntBlock {
     }
 
     public boolean onCaughtFire(BlockState state, Level world, BlockPos pos, @Nullable Direction face, @Nullable LivingEntity igniter) {
-        return prime(world, pos, igniter);
+        return prime(world, pos, igniter, state);
     }
 }

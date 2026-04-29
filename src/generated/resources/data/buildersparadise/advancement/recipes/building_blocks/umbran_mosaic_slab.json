@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "buildersparadise:umbran_mosaic_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_umbran_mosaic": {
+      "conditions": {
+        "items": [
+          {
+            "items": "buildersparadise:umbran_mosaic"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_umbran_mosaic"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "buildersparadise:umbran_mosaic_slab"
+    ]
+  }
+}
