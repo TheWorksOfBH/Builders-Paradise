@@ -8,7 +8,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "conditions": [
                 {
                   "block": "buildersparadise:polished_andesite_brick_slab",

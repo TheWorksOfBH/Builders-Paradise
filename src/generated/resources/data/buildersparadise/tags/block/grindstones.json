@@ -11,58 +11,6 @@
     "buildersparadise:mangrove_grindstone",
     "buildersparadise:cherry_grindstone",
     "buildersparadise:bamboo_grindstone",
-    "buildersparadise:pale_oak_grindstone",
-    {
-      "id": "buildersparadise:dead_grindstone",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:empyreal_grindstone",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:fir_grindstone",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:hellbark_grindstone",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:jacaranda_grindstone",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:magic_grindstone",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:mahogany_grindstone",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:maple_grindstone",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:palm_grindstone",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:pine_grindstone",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:redwood_grindstone",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:umbran_grindstone",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:willow_grindstone",
-      "required": false
-    }
+    "buildersparadise:pale_oak_grindstone"
   ]
 }

@@ -1,7 +1,7 @@
 {
   "values": [
-    "minecraft:trapped_chest",
     "minecraft:chest",
+    "minecraft:trapped_chest",
     "buildersparadise:spruce_chest",
     "buildersparadise:birch_chest",
     "buildersparadise:jungle_chest",
@@ -23,118 +23,6 @@
     "buildersparadise:mangrove_trapped_chest",
     "buildersparadise:cherry_trapped_chest",
     "buildersparadise:bamboo_trapped_chest",
-    "buildersparadise:pale_oak_trapped_chest",
-    {
-      "id": "buildersparadise:dead_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:dead_trapped_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:empyreal_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:empyreal_trapped_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:fir_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:fir_trapped_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:hellbark_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:hellbark_trapped_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:jacaranda_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:jacaranda_trapped_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:magic_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:magic_trapped_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:mahogany_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:mahogany_trapped_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:maple_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:maple_trapped_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:palm_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:palm_trapped_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:pine_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:pine_trapped_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:redwood_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:redwood_trapped_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:umbran_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:umbran_trapped_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:willow_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:willow_trapped_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:origin_oak_chest",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:origin_oak_trapped_chest",
-      "required": false
-    }
+    "buildersparadise:pale_oak_trapped_chest"
   ]
 }

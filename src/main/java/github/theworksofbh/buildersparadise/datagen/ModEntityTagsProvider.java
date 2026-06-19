@@ -2,6 +2,7 @@ package github.theworksofbh.buildersparadise.datagen;
 
 import github.theworksofbh.buildersparadise.entity.ModEntities;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.EntityTypeTagsProvider;
 import net.minecraft.tags.EntityTypeTags;
@@ -15,7 +16,7 @@ public class ModEntityTagsProvider extends EntityTypeTagsProvider {
 
 
     protected void addTags(HolderLookup.Provider provider) {
-        tag(EntityTypeTags.BOAT).add(ModEntities.CRIMSON_BOAT.get());
-        tag(EntityTypeTags.BOAT).add(ModEntities.WARPED_BOAT.get());
+        tag(EntityTypeTags.BOAT).add(BuiltInRegistries.ENTITY_TYPE.getResourceKey(ModEntities.CRIMSON_BOAT.get()).orElseThrow());
+        tag(EntityTypeTags.BOAT).add(BuiltInRegistries.ENTITY_TYPE.getResourceKey(ModEntities.WARPED_BOAT.get()).orElseThrow());
     }
 }

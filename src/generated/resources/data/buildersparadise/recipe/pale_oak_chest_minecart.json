@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "ingredients": [
     "buildersparadise:pale_oak_chest",
     "minecraft:minecart"

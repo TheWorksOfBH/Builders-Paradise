@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "group": "brass_ingot",
   "ingredients": [
     "minecraft:copper_ingot",

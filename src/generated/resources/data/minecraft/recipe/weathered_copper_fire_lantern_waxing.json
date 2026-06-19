@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "ingredients": [
     "buildersparadise:weathered_copper_fire_lantern",
     "minecraft:honeycomb"

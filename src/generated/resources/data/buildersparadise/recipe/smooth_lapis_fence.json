@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": "minecraft:lapis_lazuli",
     "W": "buildersparadise:smooth_lapis"

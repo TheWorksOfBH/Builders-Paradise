@@ -28,7 +28,6 @@
               ],
               "functions": [
                 {
-                  "add": false,
                   "conditions": [
                     {
                       "block": "buildersparadise:snow_brick_slab",
@@ -42,7 +41,6 @@
                   "function": "minecraft:set_count"
                 },
                 {
-                  "add": false,
                   "conditions": [
                     {
                       "block": "buildersparadise:snow_brick_slab",
@@ -56,7 +54,6 @@
                   "function": "minecraft:set_count"
                 },
                 {
-                  "add": false,
                   "conditions": [
                     {
                       "block": "buildersparadise:snow_brick_slab",
@@ -76,7 +73,6 @@
               "type": "minecraft:item",
               "functions": [
                 {
-                  "add": false,
                   "conditions": [
                     {
                       "block": "buildersparadise:snow_brick_slab",
@@ -90,7 +86,6 @@
                   "function": "minecraft:set_count"
                 },
                 {
-                  "add": false,
                   "conditions": [
                     {
                       "block": "buildersparadise:snow_brick_slab",
@@ -104,7 +99,6 @@
                   "function": "minecraft:set_count"
                 },
                 {
-                  "add": false,
                   "conditions": [
                     {
                       "block": "buildersparadise:snow_brick_slab",

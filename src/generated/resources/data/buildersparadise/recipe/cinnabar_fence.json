@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": "buildersparadise:cinnabar_baton",
+    "W": "minecraft:cinnabar"
+  },
+  "pattern": [
+    "W#W",
+    "W#W"
+  ],
+  "result": {
+    "count": 6,
+    "id": "buildersparadise:cinnabar_fence"
+  }
+}

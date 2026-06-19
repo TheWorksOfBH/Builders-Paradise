@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "buildersparadise:block/thermal_calcite_bricks_3",
-    "side": "buildersparadise:block/thermal_calcite_bricks_3",
-    "top": "buildersparadise:block/thermal_calcite_bricks_3"
-  }
-}

@@ -155,20 +155,6 @@
           "model": "minecraft:item/chainmail_helmet_sculk_trim"
         },
         "when": "buildersparadise:sculk"
-      },
-      {
-        "model": {
-          "type": "minecraft:model",
-          "model": "minecraft:item/chainmail_helmet_rose_quartz_trim"
-        },
-        "when": "biomesoplenty:rose_quartz"
-      },
-      {
-        "model": {
-          "type": "minecraft:model",
-          "model": "minecraft:item/chainmail_helmet_glowworm_silk_trim"
-        },
-        "when": "biomesoplenty:glowworm_silk"
       }
     ],
     "fallback": {

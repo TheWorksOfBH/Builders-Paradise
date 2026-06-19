@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": "minecraft:sulfur_spike",
+    "W": "minecraft:sulfur_bricks"
+  },
+  "pattern": [
+    "W#W",
+    "W#W"
+  ],
+  "result": {
+    "count": 6,
+    "id": "buildersparadise:sulfur_brick_fence"
+  }
+}

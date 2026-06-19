@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "I": "buildersparadise:zinc_ingot",
     "N": "buildersparadise:zinc_nugget"

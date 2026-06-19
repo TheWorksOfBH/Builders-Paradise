@@ -8,7 +8,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "conditions": [
                 {
                   "block": "buildersparadise:mossy_stone_tile_slab",

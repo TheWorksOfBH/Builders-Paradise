@@ -7,7 +7,7 @@ import github.theworksofbh.buildersparadise.fluids.ModFluids;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.block.FluidModel;
 import net.minecraft.client.renderer.fog.FogData;
 import net.minecraft.client.renderer.fog.environment.FogEnvironment;
@@ -30,8 +30,8 @@ public class FluidTypeConfig {
             }
 
             @Override
-            public void renderOverlay(Minecraft mc, PoseStack poseStack, MultiBufferSource buffers) {
-                IClientFluidTypeExtensions.super.renderOverlay(mc, poseStack, buffers);
+            public void renderOverlay(Minecraft mc, PoseStack poseStack, SubmitNodeCollector submitNodeCollector) {
+                IClientFluidTypeExtensions.super.renderOverlay(mc, poseStack, submitNodeCollector);
             }
 
             @Override

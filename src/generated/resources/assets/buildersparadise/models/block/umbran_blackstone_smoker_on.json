@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/orientable_with_bottom",
-  "textures": {
-    "bottom": "buildersparadise:block/umbran_blackstone_smoker_bottom",
-    "front": "buildersparadise:block/umbran_blackstone_smoker_front_on",
-    "side": "buildersparadise:block/umbran_blackstone_smoker_side",
-    "top": "buildersparadise:block/umbran_blackstone_smoker_top"
-  }
-}

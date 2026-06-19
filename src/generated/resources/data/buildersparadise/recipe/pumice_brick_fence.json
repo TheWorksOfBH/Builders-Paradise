@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": "buildersparadise:pumice_baton",
     "W": "buildersparadise:pumice_bricks"

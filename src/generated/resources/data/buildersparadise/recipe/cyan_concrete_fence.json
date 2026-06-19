@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": "buildersparadise:concrete_baton",
     "W": "minecraft:cyan_concrete"

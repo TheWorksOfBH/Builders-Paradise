@@ -8,6 +8,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
+import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.common.loot.LootTableIdCondition;
 
 import java.util.List;
@@ -27,7 +28,7 @@ public class ModChestLootModifierProvider extends GlobalLootModifierProvider {
                 "dungeon_loot_modifier", new ModLootModifier(
                         new LootItemCondition[]{
                                 LootTableIdCondition.builder(Identifier.withDefaultNamespace("chests/simple_dungeon")).build()
-                        }, List.of(
+                        }, IGlobalLootModifier.DEFAULT_PRIORITY, List.of(
                                 new ModLootModifier.Entry(ModItems.MUSIC_DISC_CIRCUITRIC_MAGNET.get(), 2, Optional.empty(), Optional.empty()),
                                 new ModLootModifier.Entry(ModItems.ZINC_INGOT.get(), 10, Optional.of(1), Optional.of(4)),
                                 new ModLootModifier.Entry(ModItems.SILVER_INGOT.get(), 5, Optional.of(1), Optional.of(4)),
@@ -41,7 +42,7 @@ public class ModChestLootModifierProvider extends GlobalLootModifierProvider {
                 "mineshaft_loot_modifier", new ModLootModifier(
                         new LootItemCondition[]{
                                 LootTableIdCondition.builder(Identifier.withDefaultNamespace("chests/abandoned_mineshaft")).build()
-                        }, List.of(
+                        }, IGlobalLootModifier.DEFAULT_PRIORITY, List.of(
                                 new ModLootModifier.Entry(ModItems.ZINC_INGOT.get(), 10, Optional.of(1), Optional.of(5)),
                                 new ModLootModifier.Entry(ModItems.SILVER_INGOT.get(), 5, Optional.of(1), Optional.of(3)),
                                 new ModLootModifier.Entry(ModItems.PLATINUM_INGOT.get(),  5, Optional.of(1), Optional.of(3)),
@@ -54,7 +55,7 @@ public class ModChestLootModifierProvider extends GlobalLootModifierProvider {
                 "stronghold_corridor_loot_modifier", new ModLootModifier(
                         new LootItemCondition[]{
                                 LootTableIdCondition.builder(Identifier.withDefaultNamespace("chests/stronghold_corridor")).build()
-                        }, List.of(
+                        }, IGlobalLootModifier.DEFAULT_PRIORITY, List.of(
                                 new ModLootModifier.Entry(ModItems.ZINC_INGOT.get(), 10, Optional.of(1), Optional.of(5)),
                                 new ModLootModifier.Entry(ModItems.SILVER_INGOT.get(), 5, Optional.of(1), Optional.of(3)),
                                 new ModLootModifier.Entry(ModItems.PLATINUM_INGOT.get(),  5, Optional.of(1), Optional.of(3)),
@@ -67,7 +68,7 @@ public class ModChestLootModifierProvider extends GlobalLootModifierProvider {
                 "stronghold_crossing_loot_modifier", new ModLootModifier(
                         new LootItemCondition[]{
                                 LootTableIdCondition.builder(Identifier.withDefaultNamespace("chests/stronghold_crossing")).build()
-                        }, List.of(
+                        }, IGlobalLootModifier.DEFAULT_PRIORITY, List.of(
                                 new ModLootModifier.Entry(ModItems.ZINC_INGOT.get(), 10, Optional.of(1), Optional.of(5)),
                                 new ModLootModifier.Entry(ModItems.SILVER_INGOT.get(), 5, Optional.of(1), Optional.of(3)),
                                 new ModLootModifier.Entry(ModItems.PLATINUM_INGOT.get(),  5, Optional.of(1), Optional.of(3)),
@@ -80,7 +81,7 @@ public class ModChestLootModifierProvider extends GlobalLootModifierProvider {
                 "stronghold_library_loot_modifier", new ModLootModifier(
                         new LootItemCondition[]{
                                 LootTableIdCondition.builder(Identifier.withDefaultNamespace("chests/stronghold_library")).build()
-                        }, List.of(
+                        }, IGlobalLootModifier.DEFAULT_PRIORITY, List.of(
                                 new ModLootModifier.Entry(ModItems.ZINC_INGOT.get(), 10, Optional.of(1), Optional.of(5)),
                                 new ModLootModifier.Entry(ModItems.SILVER_INGOT.get(), 5, Optional.of(1), Optional.of(3)),
                                 new ModLootModifier.Entry(ModItems.PLATINUM_INGOT.get(),  5, Optional.of(1), Optional.of(3)),
@@ -93,7 +94,7 @@ public class ModChestLootModifierProvider extends GlobalLootModifierProvider {
                 "buried_treasure_loot_modifier", new ModLootModifier(
                         new LootItemCondition[]{
                                 LootTableIdCondition.builder(Identifier.withDefaultNamespace("chests/buried_treasure")).build()
-                        }, List.of(
+                        }, IGlobalLootModifier.DEFAULT_PRIORITY, List.of(
                                 new ModLootModifier.Entry(ModItems.ZINC_INGOT.get(), 20, Optional.of(1), Optional.of(4)),
                                 new ModLootModifier.Entry(ModItems.SILVER_INGOT.get(), 10, Optional.of(1), Optional.of(4)),
                                 new ModLootModifier.Entry(ModItems.PLATINUM_INGOT.get(),  10, Optional.of(1), Optional.of(4)),
@@ -106,7 +107,7 @@ public class ModChestLootModifierProvider extends GlobalLootModifierProvider {
                 "shipwreck_treasure_loot_modifier", new ModLootModifier(
                         new LootItemCondition[]{
                                 LootTableIdCondition.builder(Identifier.withDefaultNamespace("chests/shipwreck_treasure")).build()
-                        }, List.of(
+                        }, IGlobalLootModifier.DEFAULT_PRIORITY, List.of(
                                 new ModLootModifier.Entry(ModItems.ZINC_INGOT.get(), 80, Optional.of(1), Optional.of(5)),
                                 new ModLootModifier.Entry(ModItems.SILVER_INGOT.get(), 10, Optional.of(1), Optional.of(5)),
                                 new ModLootModifier.Entry(ModItems.PLATINUM_INGOT.get(),  10, Optional.of(1), Optional.of(5)),
@@ -119,7 +120,7 @@ public class ModChestLootModifierProvider extends GlobalLootModifierProvider {
                 "nether_bridge_loot_modifier", new ModLootModifier(
                         new LootItemCondition[]{
                                 LootTableIdCondition.builder(Identifier.withDefaultNamespace("chests/nether_bridge")).build()
-                        }, List.of(
+                        }, IGlobalLootModifier.DEFAULT_PRIORITY, List.of(
                                 new ModLootModifier.Entry(ModItems.ZINC_INGOT.get(), 5, Optional.of(1), Optional.of(3)),
                                 new ModLootModifier.Entry(ModItems.SILVER_INGOT.get(), 5, Optional.of(1), Optional.of(3)),
                                 new ModLootModifier.Entry(ModItems.PLATINUM_INGOT.get(),  5, Optional.of(1), Optional.of(3)),
@@ -131,7 +132,7 @@ public class ModChestLootModifierProvider extends GlobalLootModifierProvider {
                 "end_city_treasure_loot_modifier", new ModLootModifier(
                         new LootItemCondition[]{
                                 LootTableIdCondition.builder(Identifier.withDefaultNamespace("chests/end_city_treasure")).build()
-                        }, List.of(
+                        }, IGlobalLootModifier.DEFAULT_PRIORITY, List.of(
                                 new ModLootModifier.Entry(ModItems.ZINC_INGOT.get(), 10, Optional.of(2), Optional.of(5)),
                                 new ModLootModifier.Entry(ModItems.SILVER_INGOT.get(), 5, Optional.of(2), Optional.of(3)),
                                 new ModLootModifier.Entry(ModItems.PLATINUM_INGOT.get(),  5, Optional.of(2), Optional.of(3)),
@@ -144,7 +145,7 @@ public class ModChestLootModifierProvider extends GlobalLootModifierProvider {
                 "desert_pyramid_loot_modifier", new ModLootModifier(
                         new LootItemCondition[]{
                                 LootTableIdCondition.builder(Identifier.withDefaultNamespace("chests/desert_pyramid")).build()
-                        }, List.of(
+                        }, IGlobalLootModifier.DEFAULT_PRIORITY, List.of(
                                 new ModLootModifier.Entry(ModItems.ZINC_INGOT.get(), 15, Optional.of(1), Optional.of(5)),
                                 new ModLootModifier.Entry(ModItems.SILVER_INGOT.get(), 15, Optional.of(2), Optional.of(3)),
                                 new ModLootModifier.Entry(ModItems.PLATINUM_INGOT.get(),  15, Optional.of(2), Optional.of(3)),
@@ -157,7 +158,7 @@ public class ModChestLootModifierProvider extends GlobalLootModifierProvider {
                 "jungle_temple_loot_modifier", new ModLootModifier(
                         new LootItemCondition[]{
                                 LootTableIdCondition.builder(Identifier.withDefaultNamespace("chests/jungle_temple")).build()
-                        }, List.of(
+                        }, IGlobalLootModifier.DEFAULT_PRIORITY, List.of(
                                 new ModLootModifier.Entry(ModItems.ZINC_INGOT.get(), 15, Optional.of(1), Optional.of(5)),
                                 new ModLootModifier.Entry(ModItems.SILVER_INGOT.get(), 15, Optional.of(2), Optional.of(3)),
                                 new ModLootModifier.Entry(ModItems.PLATINUM_INGOT.get(),  15, Optional.of(2), Optional.of(3)),
@@ -170,7 +171,7 @@ public class ModChestLootModifierProvider extends GlobalLootModifierProvider {
                 "woodland_mansion_loot_modifier", new ModLootModifier(
                         new LootItemCondition[]{
                                 LootTableIdCondition.builder(Identifier.withDefaultNamespace("chests/woodland_mansion")).build()
-                        }, List.of(
+                        }, IGlobalLootModifier.DEFAULT_PRIORITY, List.of(
                                 new ModLootModifier.Entry(ModItems.ZINC_INGOT.get(), 10, Optional.of(1), Optional.of(4)),
                                 new ModLootModifier.Entry(ModItems.SILVER_INGOT.get(), 5, Optional.of(1), Optional.of(4)),
                                 new ModLootModifier.Entry(ModItems.PLATINUM_INGOT.get(),  5, Optional.of(1), Optional.of(4)),
@@ -183,7 +184,7 @@ public class ModChestLootModifierProvider extends GlobalLootModifierProvider {
                 "bastion_bridge_loot_modifier", new ModLootModifier(
                         new LootItemCondition[]{
                                 LootTableIdCondition.builder(Identifier.withDefaultNamespace("chests/bastion_bridge")).build()
-                        }, List.of(
+                        }, IGlobalLootModifier.DEFAULT_PRIORITY, List.of(
                                 new ModLootModifier.Entry(ModItems.SILVER_INGOT.get(), 1, Optional.of(1), Optional.of(6)),
                                 new ModLootModifier.Entry(ModItems.PLATINUM_INGOT.get(), 1, Optional.of(1), Optional.of(6))
                         )
@@ -193,7 +194,7 @@ public class ModChestLootModifierProvider extends GlobalLootModifierProvider {
                 "bastion_other_loot_modifier", new ModLootModifier(
                         new LootItemCondition[]{
                                 LootTableIdCondition.builder(Identifier.withDefaultNamespace("chests/bastion_other")).build()
-                        }, List.of(
+                        }, IGlobalLootModifier.DEFAULT_PRIORITY, List.of(
                                 new ModLootModifier.Entry(ModItems.SILVER_INGOT.get(), 1, Optional.of(1), Optional.of(6)),
                                 new ModLootModifier.Entry(ModItems.PLATINUM_INGOT.get(), 1, Optional.of(1), Optional.of(6))
                         )
@@ -203,7 +204,7 @@ public class ModChestLootModifierProvider extends GlobalLootModifierProvider {
                 "ancient_city_loot_modifier", new ModLootModifier(
                         new LootItemCondition[]{
                                 LootTableIdCondition.builder(Identifier.withDefaultNamespace("chests/ancient_city")).build()
-                        }, List.of(
+                        }, IGlobalLootModifier.DEFAULT_PRIORITY, List.of(
                                 new ModLootModifier.Entry(ModItems.MUSIC_DISC_CIRCUITRIC_MAGNET.get(), 2, Optional.empty(), Optional.empty()),
                                 new ModLootModifier.Entry(ModItems.MUSIC_DISC_ANGRY_BOYFRIENDS.get(), 2, Optional.empty(), Optional.empty())
                         )
@@ -213,7 +214,7 @@ public class ModChestLootModifierProvider extends GlobalLootModifierProvider {
                 "village_weaponsmith_loot_modifier", new ModLootModifier(
                         new LootItemCondition[]{
                                 LootTableIdCondition.builder(Identifier.withDefaultNamespace("chests/village/village_weaponsmith")).build()
-                        }, List.of(
+                        }, IGlobalLootModifier.DEFAULT_PRIORITY, List.of(
                                 new ModLootModifier.Entry(ModItems.BRONZE_UPGRADE_SMITHING_TEMPLATE.get(), 1, Optional.empty(), Optional.empty())
                         )
                 )
@@ -222,7 +223,7 @@ public class ModChestLootModifierProvider extends GlobalLootModifierProvider {
                 "village_toolsmith_loot_modifier", new ModLootModifier(
                         new LootItemCondition[]{
                                 LootTableIdCondition.builder(Identifier.withDefaultNamespace("chests/village/village_toolsmith")).build()
-                        }, List.of(
+                        }, IGlobalLootModifier.DEFAULT_PRIORITY, List.of(
                                 new ModLootModifier.Entry(ModItems.BRONZE_UPGRADE_SMITHING_TEMPLATE.get(), 1, Optional.empty(), Optional.empty())
                         )
                 )
@@ -231,7 +232,7 @@ public class ModChestLootModifierProvider extends GlobalLootModifierProvider {
                 "village_fisher_loot_modifier", new ModLootModifier(
                         new LootItemCondition[]{
                                 LootTableIdCondition.builder(Identifier.withDefaultNamespace("chests/village/village_fisher")).build()
-                        }, List.of(
+                        }, IGlobalLootModifier.DEFAULT_PRIORITY, List.of(
                                 new ModLootModifier.Entry(ModItems.OAK_BARREL.get(), 0, Optional.of(1), Optional.of(3))
                         )
                 )

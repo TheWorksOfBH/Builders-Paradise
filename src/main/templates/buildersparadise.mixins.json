@@ -21,11 +21,7 @@
     "MineShaftPieceMixins",
     "SmithingMenuMixins",
     "SplashManagerMixins",
-    "StructurePieceMixins",
-    "compat.bop.BOPItemsMixins",
-    "compat.sodium.SodiumConfigLoaderForgeMixin",
-    "compat.sodium.SodiumDefaultShaderInterfaceMixin",
-    "compat.sodium.SodiumShaderChunkRendererMixin"
+    "StructurePieceMixins"
   ],
   "client": [
 

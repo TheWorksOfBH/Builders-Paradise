@@ -8,7 +8,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "conditions": [
                 {
                   "block": "buildersparadise:elder_prismarine_brick_slab",

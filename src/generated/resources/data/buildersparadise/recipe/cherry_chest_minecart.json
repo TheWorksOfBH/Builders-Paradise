@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "ingredients": [
     "buildersparadise:cherry_chest",
     "minecraft:minecart"

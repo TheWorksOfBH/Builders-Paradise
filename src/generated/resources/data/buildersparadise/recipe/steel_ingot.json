@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "group": "steel_ingot",
   "ingredients": [
     "minecraft:iron_ingot",

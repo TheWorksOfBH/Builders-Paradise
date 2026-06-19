@@ -5,6 +5,7 @@ import github.theworksofbh.buildersparadise.items.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.EntityLootSubProvider;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
@@ -66,8 +67,8 @@ public class ModEntityLootTableProvider extends EntityLootSubProvider {
     @Override
     protected Stream<EntityType<?>> getKnownEntityTypes() {
         Set<EntityType<?>> vanillaEntitiesThatNeedNewLootTables = Set.of(
-                EntityType.ELDER_GUARDIAN,
-                EntityType.HUSK
+                EntityTypes.ELDER_GUARDIAN,
+                EntityTypes.HUSK
         );
 
         return Stream.concat(
@@ -82,8 +83,8 @@ public class ModEntityLootTableProvider extends EntityLootSubProvider {
 
     @Override
     public void generate() {
-        this.add(EntityType.ELDER_GUARDIAN, this.modElderGuardianLootTable());
-        this.add(EntityType.HUSK, LootTable.lootTable().withPool(
+        this.add(EntityTypes.ELDER_GUARDIAN, this.modElderGuardianLootTable());
+        this.add(EntityTypes.HUSK, LootTable.lootTable().withPool(
                 LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(Items.ROTTEN_FLESH).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F)))
                                 .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.registries, UniformGenerator.between(0.0F, 1.0F))))

@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": "buildersparadise:terracotta_baton",
     "W": "buildersparadise:white_terracotta_bricks"

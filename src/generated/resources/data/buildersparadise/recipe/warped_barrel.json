@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "P": "minecraft:warped_planks",
     "S": "minecraft:warped_slab"

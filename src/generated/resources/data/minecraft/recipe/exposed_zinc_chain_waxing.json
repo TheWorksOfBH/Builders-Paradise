@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "ingredients": [
     "buildersparadise:exposed_zinc_chain",
     "minecraft:honeycomb"

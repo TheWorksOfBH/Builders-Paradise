@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "P": "minecraft:mangrove_planks",
     "S": "minecraft:mangrove_slab"

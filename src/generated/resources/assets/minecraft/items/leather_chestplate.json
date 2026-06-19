@@ -287,32 +287,6 @@
           ]
         },
         "when": "buildersparadise:sculk"
-      },
-      {
-        "model": {
-          "type": "minecraft:model",
-          "model": "minecraft:item/leather_chestplate_rose_quartz_trim",
-          "tints": [
-            {
-              "type": "minecraft:dye",
-              "default": -6265536
-            }
-          ]
-        },
-        "when": "biomesoplenty:rose_quartz"
-      },
-      {
-        "model": {
-          "type": "minecraft:model",
-          "model": "minecraft:item/leather_chestplate_glowworm_silk_trim",
-          "tints": [
-            {
-              "type": "minecraft:dye",
-              "default": -6265536
-            }
-          ]
-        },
-        "when": "biomesoplenty:glowworm_silk"
       }
     ],
     "fallback": {

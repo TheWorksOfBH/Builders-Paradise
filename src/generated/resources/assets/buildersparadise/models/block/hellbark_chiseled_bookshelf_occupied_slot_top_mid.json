@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/template_chiseled_bookshelf_slot_top_mid",
-  "textures": {
-    "texture": "buildersparadise:block/hellbark_chiseled_bookshelf_occupied"
-  }
-}

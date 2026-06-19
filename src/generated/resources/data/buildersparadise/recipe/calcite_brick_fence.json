@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": "buildersparadise:calcite_baton",
     "W": "buildersparadise:calcite_bricks"

@@ -8,7 +8,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "conditions": [
                 {
                   "block": "buildersparadise:magenta_concrete_brick_slab",

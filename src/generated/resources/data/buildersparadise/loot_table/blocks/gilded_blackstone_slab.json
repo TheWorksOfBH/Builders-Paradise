@@ -47,7 +47,6 @@
                   ],
                   "functions": [
                     {
-                      "add": false,
                       "count": {
                         "type": "minecraft:uniform",
                         "max": 5.0,
@@ -62,7 +61,6 @@
                   "type": "minecraft:item",
                   "functions": [
                     {
-                      "add": false,
                       "conditions": [
                         {
                           "block": "buildersparadise:gilded_blackstone_slab",
@@ -76,7 +74,6 @@
                       "function": "minecraft:set_count"
                     },
                     {
-                      "add": false,
                       "conditions": [
                         {
                           "block": "buildersparadise:gilded_blackstone_slab",
@@ -90,7 +87,6 @@
                       "function": "minecraft:set_count"
                     },
                     {
-                      "add": false,
                       "conditions": [
                         {
                           "block": "buildersparadise:gilded_blackstone_slab",

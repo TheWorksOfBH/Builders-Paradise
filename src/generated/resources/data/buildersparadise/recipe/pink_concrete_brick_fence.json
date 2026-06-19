@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": "buildersparadise:concrete_baton",
     "W": "buildersparadise:pink_concrete_bricks"

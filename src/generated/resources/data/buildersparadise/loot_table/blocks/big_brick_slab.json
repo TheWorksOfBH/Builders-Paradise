@@ -8,7 +8,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "conditions": [
                 {
                   "block": "buildersparadise:big_brick_slab",

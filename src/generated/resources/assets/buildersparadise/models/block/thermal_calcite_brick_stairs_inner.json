@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "buildersparadise:block/thermal_calcite_bricks",
-    "side": "buildersparadise:block/thermal_calcite_bricks",
-    "top": "buildersparadise:block/thermal_calcite_bricks"
-  }
-}

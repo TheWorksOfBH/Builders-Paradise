@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": "minecraft:popped_chorus_fruit",
     "W": "minecraft:purpur_block"

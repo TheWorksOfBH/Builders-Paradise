@@ -113,58 +113,6 @@
     "buildersparadise:platinum_bulb",
     "buildersparadise:lead_bulb",
     "buildersparadise:bronze_bulb",
-    "buildersparadise:steel_bulb",
-    {
-      "id": "buildersparadise:dead_crafter",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:empyreal_crafter",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:fir_crafter",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:hellbark_crafter",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:jacaranda_crafter",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:magic_crafter",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:mahogany_crafter",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:maple_crafter",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:palm_crafter",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:pine_crafter",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:redwood_crafter",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:umbran_crafter",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:willow_crafter",
-      "required": false
-    }
+    "buildersparadise:steel_bulb"
   ]
 }

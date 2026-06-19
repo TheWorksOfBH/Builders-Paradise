@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "biomesoplenty:cut_black_sandstone",
-  "result": {
-    "id": "buildersparadise:cut_black_sandstone_wall"
-  }
-}

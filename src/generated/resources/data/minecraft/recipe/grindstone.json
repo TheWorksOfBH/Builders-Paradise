@@ -5,7 +5,6 @@
     }
   ],
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": "#minecraft:planks",
     "-": "minecraft:stone_slab",

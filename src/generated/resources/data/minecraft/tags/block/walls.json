@@ -147,46 +147,6 @@
     "buildersparadise:green_concrete_brick_wall",
     "buildersparadise:red_concrete_brick_wall",
     "buildersparadise:black_concrete_brick_wall",
-    "buildersparadise:gilded_blackstone_wall",
-    {
-      "id": "buildersparadise:cut_white_sandstone_wall",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:smooth_white_sandstone_wall",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:cut_black_sandstone_wall",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:smooth_black_sandstone_wall",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:cut_orange_sandstone_wall",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:smooth_orange_sandstone_wall",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:brimstone_wall",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:thermal_calcite_wall",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:polished_thermal_calcite_wall",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:thermal_calcite_brick_wall",
-      "required": false
-    }
+    "buildersparadise:gilded_blackstone_wall"
   ]
 }

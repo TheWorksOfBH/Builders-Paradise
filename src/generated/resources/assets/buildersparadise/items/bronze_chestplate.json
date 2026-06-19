@@ -155,20 +155,6 @@
           "model": "buildersparadise:item/bronze_chestplate_sculk_trim"
         },
         "when": "buildersparadise:sculk"
-      },
-      {
-        "model": {
-          "type": "minecraft:model",
-          "model": "buildersparadise:item/bronze_chestplate_rose_quartz_trim"
-        },
-        "when": "biomesoplenty:rose_quartz"
-      },
-      {
-        "model": {
-          "type": "minecraft:model",
-          "model": "buildersparadise:item/bronze_chestplate_glowworm_silk_trim"
-        },
-        "when": "biomesoplenty:glowworm_silk"
       }
     ],
     "fallback": {

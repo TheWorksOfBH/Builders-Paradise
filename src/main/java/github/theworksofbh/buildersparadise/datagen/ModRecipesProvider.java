@@ -1,21 +1,16 @@
 package github.theworksofbh.buildersparadise.datagen;
 
-import biomesoplenty.api.item.BOPItems;
-import biomesoplenty.init.ModTags;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import github.theworksofbh.buildersparadise.BuildersParadise;
 import github.theworksofbh.buildersparadise.block.ModBlockFamilies;
 import github.theworksofbh.buildersparadise.block.ModBlocks;
-import github.theworksofbh.buildersparadise.compat.bop.CompatModBlockFamilies;
-import github.theworksofbh.buildersparadise.compat.bop.CompatModItems;
 import github.theworksofbh.buildersparadise.items.ModItems;
 import github.theworksofbh.buildersparadise.recipes.FletchingRecipeBuilder;
 import github.theworksofbh.buildersparadise.tags.ModItemTags;
-import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.advancements.criterion.InventoryChangeTrigger;
-import net.minecraft.advancements.criterion.MinMaxBounds;
-import net.minecraft.advancements.criterion.PlayerTrigger;
+import net.minecraft.advancements.predicates.MinMaxBounds;
+import net.minecraft.advancements.triggers.InventoryChangeTrigger;
+import net.minecraft.advancements.triggers.PlayerTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.BlockFamily;
@@ -43,7 +38,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
-import java.util.stream.Stream;
 
 public class ModRecipesProvider extends RecipeProvider {
     public static final ImmutableList<ItemLike> ZINC_SMELTABLES = ImmutableList.of(ModItems.ZINC_ORE.get(), ModItems.DEEPSLATE_ZINC_ORE.get(), ModItems.RAW_ZINC.get());
@@ -120,7 +114,7 @@ public class ModRecipesProvider extends RecipeProvider {
         threeByThreePacker(RecipeCategory.BUILDING_BLOCKS, ModItems.ELDER_PRISMARINE_BRICKS.get(), ModItems.ELDER_PRISMARINE_SHARD.get());
         shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.DARK_ELDER_PRISMARINE.get())
                 .define('S', ModItems.ELDER_PRISMARINE_SHARD.get())
-                .define('I', Items.BLACK_DYE)
+                .define('I', Items.DYE.black())
                 .pattern("SSS")
                 .pattern("SIS")
                 .pattern("SSS")
@@ -864,7 +858,7 @@ public class ModRecipesProvider extends RecipeProvider {
                 .pattern("###")
                 .pattern("# #")
                 .pattern("###")
-                .unlockedBy("has_lots_of_items", CriteriaTriggers.INVENTORY_CHANGED.createCriterion(new InventoryChangeTrigger.TriggerInstance(Optional.empty(), new InventoryChangeTrigger.TriggerInstance.Slots(MinMaxBounds.Ints.atLeast(10), MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY), List.of())))
+                .unlockedBy("has_lots_of_items", net.minecraft.advancements.triggers.CriteriaTriggers.INVENTORY_CHANGED.createCriterion(new InventoryChangeTrigger.TriggerInstance(Optional.empty(), new InventoryChangeTrigger.TriggerInstance.Slots(MinMaxBounds.Ints.atLeast(10), MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY), List.of())))
                 .save(this.output.withConditions(NeoForgeConditions.never()));
 
         this.shapeless(RecipeCategory.REDSTONE, Items.TRAPPED_CHEST)
@@ -891,13 +885,13 @@ public class ModRecipesProvider extends RecipeProvider {
                 .unlockedBy("has_iron_ingot", this.has(Items.IRON_INGOT))
                 .save(this.output.withConditions(NeoForgeConditions.never()));
 
-        this.shaped(RecipeCategory.DECORATIONS, Items.COPPER_CHEST)
+        this.shaped(RecipeCategory.DECORATIONS, Items.COPPER_CHEST.weathering().unaffected())
                 .define('#', Items.COPPER_INGOT)
                 .define('X', Items.CHEST)
                 .pattern("###")
                 .pattern("#X#")
                 .pattern("###")
-                .unlockedBy("has_copper_chest", this.has(Items.COPPER_CHEST))
+                .unlockedBy("has_copper_chest", this.has(Items.COPPER_CHEST.weathering().unaffected()))
                 .save(this.output.withConditions(NeoForgeConditions.never()));
 
         this.shaped(RecipeCategory.DECORATIONS, Items.SHULKER_BOX)
@@ -918,13 +912,13 @@ public class ModRecipesProvider extends RecipeProvider {
                 .unlockedBy("has_iron_ingot", this.has(Items.IRON_INGOT))
                 .save(this.output, "hopper_mod");
 
-        this.shaped(RecipeCategory.DECORATIONS, Items.COPPER_CHEST)
+        this.shaped(RecipeCategory.DECORATIONS, Items.COPPER_CHEST.weathering().unaffected())
                 .define('#', Items.COPPER_INGOT)
                 .define('X', ModItemTags.CHESTS)
                 .pattern("###")
                 .pattern("#X#")
                 .pattern("###")
-                .unlockedBy("has_copper_chest", this.has(Items.COPPER_CHEST))
+                .unlockedBy("has_copper_chest", this.has(Items.COPPER_CHEST.weathering().unaffected()))
                 .save(this.output, "copper_chest_mod");
 
         this.shapeless(RecipeCategory.TRANSPORTATION, Items.CHEST_MINECART)
@@ -979,6 +973,7 @@ public class ModRecipesProvider extends RecipeProvider {
         this.createBaton(ModItems.GABBRO_BATON.get(), ModItems.GABBRO.get(), "gabbro");
         this.createBaton(ModItems.RHYOLITE_BATON.get(), ModItems.RHYOLITE.get(), "rhyolite");
         this.createBaton(ModItems.PUMICE_BATON.get(), ModItems.PUMICE.get(), "pumice");
+        this.createBaton(ModItems.CINNABAR_BATON.get(), Items.CINNABAR, "cinnabar");
 
         this.twoByTwoPacker(RecipeCategory.BUILDING_BLOCKS, Items.ICE, ModItems.ICE_SHARD.get());
         this.createBatonWithCustomCount(Items.LAPIS_LAZULI, Items.LAPIS_BLOCK, "lapis_block", 18);
@@ -1002,73 +997,73 @@ public class ModRecipesProvider extends RecipeProvider {
                 .save(this.output, "snowball_mod");
 
 
-        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.BLACK_TERRACOTTA_SLAB.get(), Items.BLACK_DYE);
-        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.BLUE_TERRACOTTA_SLAB.get(), Items.BLUE_DYE);
-        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.BROWN_TERRACOTTA_SLAB.get(), Items.BROWN_DYE);
-        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.CYAN_TERRACOTTA_SLAB.get(), Items.CYAN_DYE);
-        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.GRAY_TERRACOTTA_SLAB.get(), Items.GRAY_DYE);
-        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.GREEN_TERRACOTTA_SLAB.get(), Items.GREEN_DYE);
-        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.LIGHT_BLUE_TERRACOTTA_SLAB.get(), Items.LIGHT_BLUE_DYE);
-        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.LIGHT_GRAY_TERRACOTTA_SLAB.get(), Items.LIGHT_GRAY_DYE);
-        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.LIME_TERRACOTTA_SLAB.get(), Items.LIME_DYE);
-        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.MAGENTA_TERRACOTTA_SLAB.get(), Items.MAGENTA_DYE);
-        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.ORANGE_TERRACOTTA_SLAB.get(), Items.ORANGE_DYE);
-        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.PINK_TERRACOTTA_SLAB.get(), Items.PINK_DYE);
-        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.PURPLE_TERRACOTTA_SLAB.get(), Items.PURPLE_DYE);
-        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.RED_TERRACOTTA_SLAB.get(), Items.RED_DYE);
-        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.WHITE_TERRACOTTA_SLAB.get(), Items.WHITE_DYE);
-        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.YELLOW_TERRACOTTA_SLAB.get(), Items.YELLOW_DYE);
+        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.BLACK_TERRACOTTA_SLAB.get(), Items.DYE.black());
+        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.BLUE_TERRACOTTA_SLAB.get(), Items.DYE.blue());
+        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.BROWN_TERRACOTTA_SLAB.get(), Items.DYE.brown());
+        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.CYAN_TERRACOTTA_SLAB.get(), Items.DYE.cyan());
+        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.GRAY_TERRACOTTA_SLAB.get(), Items.DYE.gray());
+        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.GREEN_TERRACOTTA_SLAB.get(), Items.DYE.green());
+        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.LIGHT_BLUE_TERRACOTTA_SLAB.get(), Items.DYE.lightBlue());
+        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.LIGHT_GRAY_TERRACOTTA_SLAB.get(), Items.DYE.lightGray());
+        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.LIME_TERRACOTTA_SLAB.get(), Items.DYE.lime());
+        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.MAGENTA_TERRACOTTA_SLAB.get(), Items.DYE.magenta());
+        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.ORANGE_TERRACOTTA_SLAB.get(), Items.DYE.orange());
+        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.PINK_TERRACOTTA_SLAB.get(), Items.DYE.pink());
+        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.PURPLE_TERRACOTTA_SLAB.get(), Items.DYE.purple());
+        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.RED_TERRACOTTA_SLAB.get(), Items.DYE.red());
+        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.WHITE_TERRACOTTA_SLAB.get(), Items.DYE.white());
+        this.coloredTerracottaSlabFromTerracottaSlabAndDye(ModItems.YELLOW_TERRACOTTA_SLAB.get(), Items.DYE.yellow());
 
-        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.BLACK_TERRACOTTA_STAIRS.get(), Items.BLACK_DYE);
-        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.BLUE_TERRACOTTA_STAIRS.get(), Items.BLUE_DYE);
-        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.BROWN_TERRACOTTA_STAIRS.get(), Items.BROWN_DYE);
-        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.CYAN_TERRACOTTA_STAIRS.get(), Items.CYAN_DYE);
-        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.GRAY_TERRACOTTA_STAIRS.get(), Items.GRAY_DYE);
-        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.GREEN_TERRACOTTA_STAIRS.get(), Items.GREEN_DYE);
-        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.LIGHT_BLUE_TERRACOTTA_STAIRS.get(), Items.LIGHT_BLUE_DYE);
-        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.LIGHT_GRAY_TERRACOTTA_STAIRS.get(), Items.LIGHT_GRAY_DYE);
-        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.LIME_TERRACOTTA_STAIRS.get(), Items.LIME_DYE);
-        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.MAGENTA_TERRACOTTA_STAIRS.get(), Items.MAGENTA_DYE);
-        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.ORANGE_TERRACOTTA_STAIRS.get(), Items.ORANGE_DYE);
-        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.PINK_TERRACOTTA_STAIRS.get(), Items.PINK_DYE);
-        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.PURPLE_TERRACOTTA_STAIRS.get(), Items.PURPLE_DYE);
-        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.RED_TERRACOTTA_STAIRS.get(), Items.RED_DYE);
-        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.WHITE_TERRACOTTA_STAIRS.get(), Items.WHITE_DYE);
-        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.YELLOW_TERRACOTTA_STAIRS.get(), Items.YELLOW_DYE);
+        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.BLACK_TERRACOTTA_STAIRS.get(), Items.DYE.black());
+        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.BLUE_TERRACOTTA_STAIRS.get(), Items.DYE.blue());
+        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.BROWN_TERRACOTTA_STAIRS.get(), Items.DYE.brown());
+        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.CYAN_TERRACOTTA_STAIRS.get(), Items.DYE.cyan());
+        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.GRAY_TERRACOTTA_STAIRS.get(), Items.DYE.gray());
+        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.GREEN_TERRACOTTA_STAIRS.get(), Items.DYE.green());
+        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.LIGHT_BLUE_TERRACOTTA_STAIRS.get(), Items.DYE.lightBlue());
+        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.LIGHT_GRAY_TERRACOTTA_STAIRS.get(), Items.DYE.lightGray());
+        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.LIME_TERRACOTTA_STAIRS.get(), Items.DYE.lime());
+        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.MAGENTA_TERRACOTTA_STAIRS.get(), Items.DYE.magenta());
+        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.ORANGE_TERRACOTTA_STAIRS.get(), Items.DYE.orange());
+        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.PINK_TERRACOTTA_STAIRS.get(), Items.DYE.pink());
+        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.PURPLE_TERRACOTTA_STAIRS.get(), Items.DYE.purple());
+        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.RED_TERRACOTTA_STAIRS.get(), Items.DYE.red());
+        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.WHITE_TERRACOTTA_STAIRS.get(), Items.DYE.white());
+        this.coloredTerracottaStairsFromTerracottaStairsAndDye(ModItems.YELLOW_TERRACOTTA_STAIRS.get(), Items.DYE.yellow());
 
-        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.BLACK_TERRACOTTA_WALL.get(), Items.BLACK_DYE);
-        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.BLUE_TERRACOTTA_WALL.get(), Items.BLUE_DYE);
-        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.BROWN_TERRACOTTA_WALL.get(), Items.BROWN_DYE);
-        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.CYAN_TERRACOTTA_WALL.get(), Items.CYAN_DYE);
-        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.GRAY_TERRACOTTA_WALL.get(), Items.GRAY_DYE);
-        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.GREEN_TERRACOTTA_WALL.get(), Items.GREEN_DYE);
-        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.LIGHT_BLUE_TERRACOTTA_WALL.get(), Items.LIGHT_BLUE_DYE);
-        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.LIGHT_GRAY_TERRACOTTA_WALL.get(), Items.LIGHT_GRAY_DYE);
-        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.LIME_TERRACOTTA_WALL.get(), Items.LIME_DYE);
-        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.MAGENTA_TERRACOTTA_WALL.get(), Items.MAGENTA_DYE);
-        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.ORANGE_TERRACOTTA_WALL.get(), Items.ORANGE_DYE);
-        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.PINK_TERRACOTTA_WALL.get(), Items.PINK_DYE);
-        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.PURPLE_TERRACOTTA_WALL.get(), Items.PURPLE_DYE);
-        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.RED_TERRACOTTA_WALL.get(), Items.RED_DYE);
-        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.WHITE_TERRACOTTA_WALL.get(), Items.WHITE_DYE);
-        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.YELLOW_TERRACOTTA_WALL.get(), Items.YELLOW_DYE);
+        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.BLACK_TERRACOTTA_WALL.get(), Items.DYE.black());
+        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.BLUE_TERRACOTTA_WALL.get(), Items.DYE.blue());
+        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.BROWN_TERRACOTTA_WALL.get(), Items.DYE.brown());
+        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.CYAN_TERRACOTTA_WALL.get(), Items.DYE.cyan());
+        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.GRAY_TERRACOTTA_WALL.get(), Items.DYE.gray());
+        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.GREEN_TERRACOTTA_WALL.get(), Items.DYE.green());
+        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.LIGHT_BLUE_TERRACOTTA_WALL.get(), Items.DYE.lightBlue());
+        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.LIGHT_GRAY_TERRACOTTA_WALL.get(), Items.DYE.lightGray());
+        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.LIME_TERRACOTTA_WALL.get(), Items.DYE.lime());
+        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.MAGENTA_TERRACOTTA_WALL.get(), Items.DYE.magenta());
+        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.ORANGE_TERRACOTTA_WALL.get(), Items.DYE.orange());
+        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.PINK_TERRACOTTA_WALL.get(), Items.DYE.pink());
+        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.PURPLE_TERRACOTTA_WALL.get(), Items.DYE.purple());
+        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.RED_TERRACOTTA_WALL.get(), Items.DYE.red());
+        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.WHITE_TERRACOTTA_WALL.get(), Items.DYE.white());
+        this.coloredTerracottaWallFromTerracottaWallAndDye(ModItems.YELLOW_TERRACOTTA_WALL.get(), Items.DYE.yellow());
 
-        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.BLACK_TERRACOTTA_FENCE.get(), Items.BLACK_DYE);
-        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.BLUE_TERRACOTTA_FENCE.get(), Items.BLUE_DYE);
-        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.BROWN_TERRACOTTA_FENCE.get(), Items.BROWN_DYE);
-        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.CYAN_TERRACOTTA_FENCE.get(), Items.CYAN_DYE);
-        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.GRAY_TERRACOTTA_FENCE.get(), Items.GRAY_DYE);
-        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.GREEN_TERRACOTTA_FENCE.get(), Items.GREEN_DYE);
-        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.LIGHT_BLUE_TERRACOTTA_FENCE.get(), Items.LIGHT_BLUE_DYE);
-        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.LIGHT_GRAY_TERRACOTTA_FENCE.get(), Items.LIGHT_GRAY_DYE);
-        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.LIME_TERRACOTTA_FENCE.get(), Items.LIME_DYE);
-        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.MAGENTA_TERRACOTTA_FENCE.get(), Items.MAGENTA_DYE);
-        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.ORANGE_TERRACOTTA_FENCE.get(), Items.ORANGE_DYE);
-        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.PINK_TERRACOTTA_FENCE.get(), Items.PINK_DYE);
-        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.PURPLE_TERRACOTTA_FENCE.get(), Items.PURPLE_DYE);
-        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.RED_TERRACOTTA_FENCE.get(), Items.RED_DYE);
-        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.WHITE_TERRACOTTA_FENCE.get(), Items.WHITE_DYE);
-        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.YELLOW_TERRACOTTA_FENCE.get(), Items.YELLOW_DYE);
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.BLACK_TERRACOTTA_FENCE.get(), Items.DYE.black());
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.BLUE_TERRACOTTA_FENCE.get(), Items.DYE.blue());
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.BROWN_TERRACOTTA_FENCE.get(), Items.DYE.brown());
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.CYAN_TERRACOTTA_FENCE.get(), Items.DYE.cyan());
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.GRAY_TERRACOTTA_FENCE.get(), Items.DYE.gray());
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.GREEN_TERRACOTTA_FENCE.get(), Items.DYE.green());
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.LIGHT_BLUE_TERRACOTTA_FENCE.get(), Items.DYE.lightBlue());
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.LIGHT_GRAY_TERRACOTTA_FENCE.get(), Items.DYE.lightGray());
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.LIME_TERRACOTTA_FENCE.get(), Items.DYE.lime());
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.MAGENTA_TERRACOTTA_FENCE.get(), Items.DYE.magenta());
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.ORANGE_TERRACOTTA_FENCE.get(), Items.DYE.orange());
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.PINK_TERRACOTTA_FENCE.get(), Items.DYE.pink());
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.PURPLE_TERRACOTTA_FENCE.get(), Items.DYE.purple());
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.RED_TERRACOTTA_FENCE.get(), Items.DYE.red());
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.WHITE_TERRACOTTA_FENCE.get(), Items.DYE.white());
+        this.coloredTerracottaFenceFromTerracottaFenceAndDye(ModItems.YELLOW_TERRACOTTA_FENCE.get(), Items.DYE.yellow());
 
         this.shapeless(RecipeCategory.BUILDING_BLOCKS, ModItems.MOSSY_STONE_TILES.get())
                 .requires(ModItems.STONE_TILES.get())
@@ -1108,7 +1103,7 @@ public class ModRecipesProvider extends RecipeProvider {
         this.flameTestTorch(ModItems.IRON_TORCH.get(), Items.IRON_NUGGET);
         this.createLanterns(ModItems.IRON_FIRE_LANTERN.get(), Items.SOUL_LANTERN, Items.LANTERN, Items.IRON_NUGGET, Items.IRON_INGOT, ModItems.IRON_TORCH.get());
 
-        this.createLanterns(ModItems.COPPER_FIRE_LANTERN.get(), ModItems.COPPER_SOUL_LANTERN.get(), Items.COPPER_LANTERN.unaffected(), Items.COPPER_NUGGET, Items.COPPER_INGOT, Items.COPPER_TORCH);
+        this.createLanterns(ModItems.COPPER_FIRE_LANTERN.get(), ModItems.COPPER_SOUL_LANTERN.get(), Items.COPPER_LANTERN.weathering().unaffected(), Items.COPPER_NUGGET, Items.COPPER_INGOT, Items.COPPER_TORCH);
 
         this.createChain(ModItems.ZINC_CHAIN.get(), ModItems.ZINC_INGOT.get(), ModItems.ZINC_NUGGET.get());
         this.createChain(ModItems.GOLD_CHAIN.get(), Items.GOLD_INGOT, Items.GOLD_NUGGET);
@@ -1317,276 +1312,7 @@ public class ModRecipesProvider extends RecipeProvider {
         this.copperBulb(ModBlocks.BRASS_BULB.get(), ModBlocks.BRASS_BLOCK.get());
         this.copperBulb(ModBlocks.STEEL_BULB.get(), ModBlocks.STEEL_BLOCK.get());
 
-        this.mosaicBuilder(RecipeCategory.DECORATIONS, CompatModItems.DEAD_MOSAIC.get(), BOPItems.DEAD_SLAB);
-        this.createCraftingTable(CompatModItems.DEAD_CRAFTING_TABLE.get(), BOPItems.DEAD_PLANKS);
-        this.createCartographyTable(CompatModItems.DEAD_CARTOGRAPHY_TABLE.get(), BOPItems.DEAD_PLANKS);
-        this.createFletchingTable(CompatModItems.DEAD_FLETCHING_TABLE.get(), BOPItems.DEAD_PLANKS);
-        this.createBeehive(CompatModItems.DEAD_BEEHIVE.get(), BOPItems.DEAD_PLANKS);
-        this.createBarrel(CompatModItems.DEAD_BARREL.get(), BOPItems.DEAD_PLANKS, BOPItems.DEAD_SLAB);
-        this.createLectern(CompatModItems.DEAD_LECTERN.get(), CompatModItems.DEAD_BOOKSHELF.get(), BOPItems.DEAD_SLAB);
-        this.createSmithingTable(CompatModItems.DEAD_SMITHING_TABLE.get(), BOPItems.DEAD_PLANKS);
-        this.createBookshelf(CompatModItems.DEAD_BOOKSHELF.get(), BOPItems.DEAD_PLANKS);
-        this.createCampfires(CompatModItems.DEAD_CAMPFIRE.get(), CompatModItems.DEAD_SOUL_CAMPFIRE.get(), ModTags.Items.DEAD_LOGS);
-        this.createGrindstone(CompatModItems.DEAD_GRINDSTONE.get(), BOPItems.DEAD_PLANKS);
-        this.createChiseledBookshelf(CompatModItems.DEAD_CHISELED_BOOKSHELF.get(), BOPItems.DEAD_PLANKS, BOPItems.DEAD_SLAB);
-        this.createCrafter(CompatModItems.DEAD_CRAFTER.get(), CompatModItems.DEAD_CRAFTING_TABLE.get());
-        this.createSmoker(CompatModItems.DEAD_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.DEAD_LOG, "stone_furnace");
-        this.createSmoker(CompatModItems.DEAD_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.DEAD_LOG, "blackstone_furnace");
-        this.createSmoker(CompatModItems.DEAD_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.DEAD_LOG, "deepslate_furnace");
-        this.createLoom(CompatModItems.DEAD_LOOM.get(), BOPItems.DEAD_PLANKS);
-        this.createChests(CompatModItems.DEAD_CHEST.get(), CompatModItems.DEAD_TRAPPED_CHEST.get(), BOPItems.DEAD_PLANKS);
-        this.createMinecart(CompatModItems.DEAD_CHEST_MINECART.get(), CompatModItems.DEAD_CHEST.get());
 
-        this.mosaicBuilder(RecipeCategory.DECORATIONS, CompatModItems.EMPYREAL_MOSAIC.get(), BOPItems.EMPYREAL_SLAB);
-        this.createCraftingTable(CompatModItems.EMPYREAL_CRAFTING_TABLE.get(), BOPItems.EMPYREAL_PLANKS);
-        this.createCartographyTable(CompatModItems.EMPYREAL_CARTOGRAPHY_TABLE.get(), BOPItems.EMPYREAL_PLANKS);
-        this.createFletchingTable(CompatModItems.EMPYREAL_FLETCHING_TABLE.get(), BOPItems.EMPYREAL_PLANKS);
-        this.createBeehive(CompatModItems.EMPYREAL_BEEHIVE.get(), BOPItems.EMPYREAL_PLANKS);
-        this.createBarrel(CompatModItems.EMPYREAL_BARREL.get(), BOPItems.EMPYREAL_PLANKS, BOPItems.EMPYREAL_SLAB);
-        this.createLectern(CompatModItems.EMPYREAL_LECTERN.get(), CompatModItems.EMPYREAL_BOOKSHELF.get(), BOPItems.EMPYREAL_SLAB);
-        this.createSmithingTable(CompatModItems.EMPYREAL_SMITHING_TABLE.get(), BOPItems.EMPYREAL_PLANKS);
-        this.createBookshelf(CompatModItems.EMPYREAL_BOOKSHELF.get(), BOPItems.EMPYREAL_PLANKS);
-        this.createCampfires(CompatModItems.EMPYREAL_CAMPFIRE.get(), CompatModItems.EMPYREAL_SOUL_CAMPFIRE.get(), ModTags.Items.EMPYREAL_LOGS);
-        this.createGrindstone(CompatModItems.EMPYREAL_GRINDSTONE.get(), BOPItems.EMPYREAL_PLANKS);
-        this.createChiseledBookshelf(CompatModItems.EMPYREAL_CHISELED_BOOKSHELF.get(), BOPItems.EMPYREAL_PLANKS, BOPItems.EMPYREAL_SLAB);
-        this.createCrafter(CompatModItems.EMPYREAL_CRAFTER.get(), CompatModItems.EMPYREAL_CRAFTING_TABLE.get());
-        this.createSmoker(CompatModItems.EMPYREAL_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.EMPYREAL_LOG, "stone_furnace");
-        this.createSmoker(CompatModItems.EMPYREAL_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.EMPYREAL_LOG, "blackstone_furnace");
-        this.createSmoker(CompatModItems.EMPYREAL_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.EMPYREAL_LOG, "deepslate_furnace");
-        this.createLoom(CompatModItems.EMPYREAL_LOOM.get(), BOPItems.EMPYREAL_PLANKS);
-        this.createChests(CompatModItems.EMPYREAL_CHEST.get(), CompatModItems.EMPYREAL_TRAPPED_CHEST.get(), BOPItems.EMPYREAL_PLANKS);
-        this.createMinecart(CompatModItems.EMPYREAL_CHEST_MINECART.get(), CompatModItems.EMPYREAL_CHEST.get());
-
-        this.mosaicBuilder(RecipeCategory.DECORATIONS, CompatModItems.FIR_MOSAIC.get(), BOPItems.FIR_SLAB);
-        this.createCraftingTable(CompatModItems.FIR_CRAFTING_TABLE.get(), BOPItems.FIR_PLANKS);
-        this.createCartographyTable(CompatModItems.FIR_CARTOGRAPHY_TABLE.get(), BOPItems.FIR_PLANKS);
-        this.createFletchingTable(CompatModItems.FIR_FLETCHING_TABLE.get(), BOPItems.FIR_PLANKS);
-        this.createBeehive(CompatModItems.FIR_BEEHIVE.get(), BOPItems.FIR_PLANKS);
-        this.createBarrel(CompatModItems.FIR_BARREL.get(), BOPItems.FIR_PLANKS, BOPItems.FIR_SLAB);
-        this.createLectern(CompatModItems.FIR_LECTERN.get(), CompatModItems.FIR_BOOKSHELF.get(), BOPItems.FIR_SLAB);
-        this.createSmithingTable(CompatModItems.FIR_SMITHING_TABLE.get(), BOPItems.FIR_PLANKS);
-        this.createBookshelf(CompatModItems.FIR_BOOKSHELF.get(), BOPItems.FIR_PLANKS);
-        this.createCampfires(CompatModItems.FIR_CAMPFIRE.get(), CompatModItems.FIR_SOUL_CAMPFIRE.get(), ModTags.Items.FIR_LOGS);
-        this.createGrindstone(CompatModItems.FIR_GRINDSTONE.get(), BOPItems.FIR_PLANKS);
-        this.createChiseledBookshelf(CompatModItems.FIR_CHISELED_BOOKSHELF.get(), BOPItems.FIR_PLANKS, BOPItems.FIR_SLAB);
-        this.createCrafter(CompatModItems.FIR_CRAFTER.get(), CompatModItems.FIR_CRAFTING_TABLE.get());
-        this.createSmoker(CompatModItems.FIR_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.FIR_LOG, "stone_furnace");
-        this.createSmoker(CompatModItems.FIR_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.FIR_LOG, "blackstone_furnace");
-        this.createSmoker(CompatModItems.FIR_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.FIR_LOG, "deepslate_furnace");
-        this.createLoom(CompatModItems.FIR_LOOM.get(), BOPItems.FIR_PLANKS);
-        this.createChests(CompatModItems.FIR_CHEST.get(), CompatModItems.FIR_TRAPPED_CHEST.get(), BOPItems.FIR_PLANKS);
-        this.createMinecart(CompatModItems.FIR_CHEST_MINECART.get(), CompatModItems.FIR_CHEST.get());
-
-        this.mosaicBuilder(RecipeCategory.DECORATIONS, CompatModItems.HELLBARK_MOSAIC.get(), BOPItems.HELLBARK_SLAB);
-        this.createCraftingTable(CompatModItems.HELLBARK_CRAFTING_TABLE.get(), BOPItems.HELLBARK_PLANKS);
-        this.createCartographyTable(CompatModItems.HELLBARK_CARTOGRAPHY_TABLE.get(), BOPItems.HELLBARK_PLANKS);
-        this.createFletchingTable(CompatModItems.HELLBARK_FLETCHING_TABLE.get(), BOPItems.HELLBARK_PLANKS);
-        this.createBeehive(CompatModItems.HELLBARK_BEEHIVE.get(), BOPItems.HELLBARK_PLANKS);
-        this.createBarrel(CompatModItems.HELLBARK_BARREL.get(), BOPItems.HELLBARK_PLANKS, BOPItems.HELLBARK_SLAB);
-        this.createLectern(CompatModItems.HELLBARK_LECTERN.get(), CompatModItems.HELLBARK_BOOKSHELF.get(), BOPItems.HELLBARK_SLAB);
-        this.createSmithingTable(CompatModItems.HELLBARK_SMITHING_TABLE.get(), BOPItems.HELLBARK_PLANKS);
-        this.createBookshelf(CompatModItems.HELLBARK_BOOKSHELF.get(), BOPItems.HELLBARK_PLANKS);
-        this.createCampfires(CompatModItems.HELLBARK_CAMPFIRE.get(), CompatModItems.HELLBARK_SOUL_CAMPFIRE.get(), ModTags.Items.HELLBARK_LOGS);
-        this.createGrindstone(CompatModItems.HELLBARK_GRINDSTONE.get(), BOPItems.HELLBARK_PLANKS);
-        this.createChiseledBookshelf(CompatModItems.HELLBARK_CHISELED_BOOKSHELF.get(), BOPItems.HELLBARK_PLANKS, BOPItems.HELLBARK_SLAB);
-        this.createCrafter(CompatModItems.HELLBARK_CRAFTER.get(), CompatModItems.HELLBARK_CRAFTING_TABLE.get());
-        this.createSmoker(CompatModItems.HELLBARK_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.HELLBARK_LOG, "stone_furnace");
-        this.createSmoker(CompatModItems.HELLBARK_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.HELLBARK_LOG, "blackstone_furnace");
-        this.createSmoker(CompatModItems.HELLBARK_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.HELLBARK_LOG, "deepslate_furnace");
-        this.createLoom(CompatModItems.HELLBARK_LOOM.get(), BOPItems.HELLBARK_PLANKS);
-        this.createChests(CompatModItems.HELLBARK_CHEST.get(), CompatModItems.HELLBARK_TRAPPED_CHEST.get(), BOPItems.HELLBARK_PLANKS);
-        this.createMinecart(CompatModItems.HELLBARK_CHEST_MINECART.get(), CompatModItems.HELLBARK_CHEST.get());
-
-        this.mosaicBuilder(RecipeCategory.DECORATIONS, CompatModItems.JACARANDA_MOSAIC.get(), BOPItems.JACARANDA_SLAB);
-        this.createCraftingTable(CompatModItems.JACARANDA_CRAFTING_TABLE.get(), BOPItems.JACARANDA_PLANKS);
-        this.createCartographyTable(CompatModItems.JACARANDA_CARTOGRAPHY_TABLE.get(), BOPItems.JACARANDA_PLANKS);
-        this.createFletchingTable(CompatModItems.JACARANDA_FLETCHING_TABLE.get(), BOPItems.JACARANDA_PLANKS);
-        this.createBeehive(CompatModItems.JACARANDA_BEEHIVE.get(), BOPItems.JACARANDA_PLANKS);
-        this.createBarrel(CompatModItems.JACARANDA_BARREL.get(), BOPItems.JACARANDA_PLANKS, BOPItems.JACARANDA_SLAB);
-        this.createLectern(CompatModItems.JACARANDA_LECTERN.get(), CompatModItems.JACARANDA_BOOKSHELF.get(), BOPItems.JACARANDA_SLAB);
-        this.createSmithingTable(CompatModItems.JACARANDA_SMITHING_TABLE.get(), BOPItems.JACARANDA_PLANKS);
-        this.createBookshelf(CompatModItems.JACARANDA_BOOKSHELF.get(), BOPItems.JACARANDA_PLANKS);
-        this.createCampfires(CompatModItems.JACARANDA_CAMPFIRE.get(), CompatModItems.JACARANDA_SOUL_CAMPFIRE.get(), ModTags.Items.JACARANDA_LOGS);
-        this.createGrindstone(CompatModItems.JACARANDA_GRINDSTONE.get(), BOPItems.JACARANDA_PLANKS);
-        this.createChiseledBookshelf(CompatModItems.JACARANDA_CHISELED_BOOKSHELF.get(), BOPItems.JACARANDA_PLANKS, BOPItems.JACARANDA_SLAB);
-        this.createCrafter(CompatModItems.JACARANDA_CRAFTER.get(), CompatModItems.JACARANDA_CRAFTING_TABLE.get());
-        this.createSmoker(CompatModItems.JACARANDA_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.JACARANDA_LOG, "stone_furnace");
-        this.createSmoker(CompatModItems.JACARANDA_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.JACARANDA_LOG, "blackstone_furnace");
-        this.createSmoker(CompatModItems.JACARANDA_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.JACARANDA_LOG, "deepslate_furnace");
-        this.createLoom(CompatModItems.JACARANDA_LOOM.get(), BOPItems.JACARANDA_PLANKS);
-        this.createChests(CompatModItems.JACARANDA_CHEST.get(), CompatModItems.JACARANDA_TRAPPED_CHEST.get(), BOPItems.JACARANDA_PLANKS);
-        this.createMinecart(CompatModItems.JACARANDA_CHEST_MINECART.get(), CompatModItems.JACARANDA_CHEST.get());
-
-        this.mosaicBuilder(RecipeCategory.DECORATIONS, CompatModItems.MAGIC_MOSAIC.get(), BOPItems.MAGIC_SLAB);
-        this.createCraftingTable(CompatModItems.MAGIC_CRAFTING_TABLE.get(), BOPItems.MAGIC_PLANKS);
-        this.createCartographyTable(CompatModItems.MAGIC_CARTOGRAPHY_TABLE.get(), BOPItems.MAGIC_PLANKS);
-        this.createFletchingTable(CompatModItems.MAGIC_FLETCHING_TABLE.get(), BOPItems.MAGIC_PLANKS);
-        this.createBeehive(CompatModItems.MAGIC_BEEHIVE.get(), BOPItems.MAGIC_PLANKS);
-        this.createBarrel(CompatModItems.MAGIC_BARREL.get(), BOPItems.MAGIC_PLANKS, BOPItems.MAGIC_SLAB);
-        this.createLectern(CompatModItems.MAGIC_LECTERN.get(), CompatModItems.MAGIC_BOOKSHELF.get(), BOPItems.MAGIC_SLAB);
-        this.createSmithingTable(CompatModItems.MAGIC_SMITHING_TABLE.get(), BOPItems.MAGIC_PLANKS);
-        this.createBookshelf(CompatModItems.MAGIC_BOOKSHELF.get(), BOPItems.MAGIC_PLANKS);
-        this.createCampfires(CompatModItems.MAGIC_CAMPFIRE.get(), CompatModItems.MAGIC_SOUL_CAMPFIRE.get(), ModTags.Items.MAGIC_LOGS);
-        this.createGrindstone(CompatModItems.MAGIC_GRINDSTONE.get(), BOPItems.MAGIC_PLANKS);
-        this.createChiseledBookshelf(CompatModItems.MAGIC_CHISELED_BOOKSHELF.get(), BOPItems.MAGIC_PLANKS, BOPItems.MAGIC_SLAB);
-        this.createCrafter(CompatModItems.MAGIC_CRAFTER.get(), CompatModItems.MAGIC_CRAFTING_TABLE.get());
-        this.createSmoker(CompatModItems.MAGIC_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.MAGIC_LOG, "stone_furnace");
-        this.createSmoker(CompatModItems.MAGIC_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.MAGIC_LOG, "blackstone_furnace");
-        this.createSmoker(CompatModItems.MAGIC_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.MAGIC_LOG, "deepslate_furnace");
-        this.createLoom(CompatModItems.MAGIC_LOOM.get(), BOPItems.MAGIC_PLANKS);
-        this.createChests(CompatModItems.MAGIC_CHEST.get(), CompatModItems.MAGIC_TRAPPED_CHEST.get(), BOPItems.MAGIC_PLANKS);
-        this.createMinecart(CompatModItems.MAGIC_CHEST_MINECART.get(), CompatModItems.MAGIC_CHEST.get());
-
-        this.mosaicBuilder(RecipeCategory.DECORATIONS, CompatModItems.MAHOGANY_MOSAIC.get(), BOPItems.MAHOGANY_SLAB);
-        this.createCraftingTable(CompatModItems.MAHOGANY_CRAFTING_TABLE.get(), BOPItems.MAHOGANY_PLANKS);
-        this.createCartographyTable(CompatModItems.MAHOGANY_CARTOGRAPHY_TABLE.get(), BOPItems.MAHOGANY_PLANKS);
-        this.createFletchingTable(CompatModItems.MAHOGANY_FLETCHING_TABLE.get(), BOPItems.MAHOGANY_PLANKS);
-        this.createBeehive(CompatModItems.MAHOGANY_BEEHIVE.get(), BOPItems.MAHOGANY_PLANKS);
-        this.createBarrel(CompatModItems.MAHOGANY_BARREL.get(), BOPItems.MAHOGANY_PLANKS, BOPItems.MAHOGANY_SLAB);
-        this.createLectern(CompatModItems.MAHOGANY_LECTERN.get(), CompatModItems.MAHOGANY_BOOKSHELF.get(), BOPItems.MAHOGANY_SLAB);
-        this.createSmithingTable(CompatModItems.MAHOGANY_SMITHING_TABLE.get(), BOPItems.MAHOGANY_PLANKS);
-        this.createBookshelf(CompatModItems.MAHOGANY_BOOKSHELF.get(), BOPItems.MAHOGANY_PLANKS);
-        this.createCampfires(CompatModItems.MAHOGANY_CAMPFIRE.get(), CompatModItems.MAHOGANY_SOUL_CAMPFIRE.get(), ModTags.Items.MAHOGANY_LOGS);
-        this.createGrindstone(CompatModItems.MAHOGANY_GRINDSTONE.get(), BOPItems.MAHOGANY_PLANKS);
-        this.createChiseledBookshelf(CompatModItems.MAHOGANY_CHISELED_BOOKSHELF.get(), BOPItems.MAHOGANY_PLANKS, BOPItems.MAHOGANY_SLAB);
-        this.createCrafter(CompatModItems.MAHOGANY_CRAFTER.get(), CompatModItems.MAHOGANY_CRAFTING_TABLE.get());
-        this.createSmoker(CompatModItems.MAHOGANY_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.MAHOGANY_LOG, "stone_furnace");
-        this.createSmoker(CompatModItems.MAHOGANY_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.MAHOGANY_LOG, "blackstone_furnace");
-        this.createSmoker(CompatModItems.MAHOGANY_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.MAHOGANY_LOG, "deepslate_furnace");
-        this.createLoom(CompatModItems.MAHOGANY_LOOM.get(), BOPItems.MAHOGANY_PLANKS);
-        this.createChests(CompatModItems.MAHOGANY_CHEST.get(), CompatModItems.MAHOGANY_TRAPPED_CHEST.get(), BOPItems.MAHOGANY_PLANKS);
-        this.createMinecart(CompatModItems.MAHOGANY_CHEST_MINECART.get(), CompatModItems.MAHOGANY_CHEST.get());
-
-        this.mosaicBuilder(RecipeCategory.DECORATIONS, CompatModItems.MAPLE_MOSAIC.get(), BOPItems.MAPLE_SLAB);
-        this.createCraftingTable(CompatModItems.MAPLE_CRAFTING_TABLE.get(), BOPItems.MAPLE_PLANKS);
-        this.createCartographyTable(CompatModItems.MAPLE_CARTOGRAPHY_TABLE.get(), BOPItems.MAPLE_PLANKS);
-        this.createFletchingTable(CompatModItems.MAPLE_FLETCHING_TABLE.get(), BOPItems.MAPLE_PLANKS);
-        this.createBeehive(CompatModItems.MAPLE_BEEHIVE.get(), BOPItems.MAPLE_PLANKS);
-        this.createBarrel(CompatModItems.MAPLE_BARREL.get(), BOPItems.MAPLE_PLANKS, BOPItems.MAPLE_SLAB);
-        this.createLectern(CompatModItems.MAPLE_LECTERN.get(), CompatModItems.MAPLE_BOOKSHELF.get(), BOPItems.MAPLE_SLAB);
-        this.createSmithingTable(CompatModItems.MAPLE_SMITHING_TABLE.get(), BOPItems.MAPLE_PLANKS);
-        this.createBookshelf(CompatModItems.MAPLE_BOOKSHELF.get(), BOPItems.MAPLE_PLANKS);
-        this.createCampfires(CompatModItems.MAPLE_CAMPFIRE.get(), CompatModItems.MAPLE_SOUL_CAMPFIRE.get(), ModTags.Items.MAPLE_LOGS);
-        this.createGrindstone(CompatModItems.MAPLE_GRINDSTONE.get(), BOPItems.MAPLE_PLANKS);
-        this.createChiseledBookshelf(CompatModItems.MAPLE_CHISELED_BOOKSHELF.get(), BOPItems.MAPLE_PLANKS, BOPItems.MAPLE_SLAB);
-        this.createCrafter(CompatModItems.MAPLE_CRAFTER.get(), CompatModItems.MAPLE_CRAFTING_TABLE.get());
-        this.createSmoker(CompatModItems.MAPLE_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.MAPLE_LOG, "stone_furnace");
-        this.createSmoker(CompatModItems.MAPLE_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.MAPLE_LOG, "blackstone_furnace");
-        this.createSmoker(CompatModItems.MAPLE_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.MAPLE_LOG, "deepslate_furnace");
-        this.createLoom(CompatModItems.MAPLE_LOOM.get(), BOPItems.MAPLE_PLANKS);
-        this.createChests(CompatModItems.MAPLE_CHEST.get(), CompatModItems.MAPLE_TRAPPED_CHEST.get(), BOPItems.MAPLE_PLANKS);
-        this.createMinecart(CompatModItems.MAPLE_CHEST_MINECART.get(), CompatModItems.MAPLE_CHEST.get());
-
-        this.mosaicBuilder(RecipeCategory.DECORATIONS, CompatModItems.PALM_MOSAIC.get(), BOPItems.PALM_SLAB);
-        this.createCraftingTable(CompatModItems.PALM_CRAFTING_TABLE.get(), BOPItems.PALM_PLANKS);
-        this.createCartographyTable(CompatModItems.PALM_CARTOGRAPHY_TABLE.get(), BOPItems.PALM_PLANKS);
-        this.createFletchingTable(CompatModItems.PALM_FLETCHING_TABLE.get(), BOPItems.PALM_PLANKS);
-        this.createBeehive(CompatModItems.PALM_BEEHIVE.get(), BOPItems.PALM_PLANKS);
-        this.createBarrel(CompatModItems.PALM_BARREL.get(), BOPItems.PALM_PLANKS, BOPItems.PALM_SLAB);
-        this.createLectern(CompatModItems.PALM_LECTERN.get(), CompatModItems.PALM_BOOKSHELF.get(), BOPItems.PALM_SLAB);
-        this.createSmithingTable(CompatModItems.PALM_SMITHING_TABLE.get(), BOPItems.PALM_PLANKS);
-        this.createBookshelf(CompatModItems.PALM_BOOKSHELF.get(), BOPItems.PALM_PLANKS);
-        this.createCampfires(CompatModItems.PALM_CAMPFIRE.get(), CompatModItems.PALM_SOUL_CAMPFIRE.get(), ModTags.Items.PALM_LOGS);
-        this.createGrindstone(CompatModItems.PALM_GRINDSTONE.get(), BOPItems.PALM_PLANKS);
-        this.createChiseledBookshelf(CompatModItems.PALM_CHISELED_BOOKSHELF.get(), BOPItems.PALM_PLANKS, BOPItems.PALM_SLAB);
-        this.createCrafter(CompatModItems.PALM_CRAFTER.get(), CompatModItems.PALM_CRAFTING_TABLE.get());
-        this.createSmoker(CompatModItems.PALM_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.PALM_LOG, "stone_furnace");
-        this.createSmoker(CompatModItems.PALM_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.PALM_LOG, "blackstone_furnace");
-        this.createSmoker(CompatModItems.PALM_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.PALM_LOG, "deepslate_furnace");
-        this.createLoom(CompatModItems.PALM_LOOM.get(), BOPItems.PALM_PLANKS);
-        this.createChests(CompatModItems.PALM_CHEST.get(), CompatModItems.PALM_TRAPPED_CHEST.get(), BOPItems.PALM_PLANKS);
-        this.createMinecart(CompatModItems.PALM_CHEST_MINECART.get(), CompatModItems.PALM_CHEST.get());
-
-        this.mosaicBuilder(RecipeCategory.DECORATIONS, CompatModItems.PINE_MOSAIC.get(), BOPItems.PINE_SLAB);
-        this.createCraftingTable(CompatModItems.PINE_CRAFTING_TABLE.get(), BOPItems.PINE_PLANKS);
-        this.createCartographyTable(CompatModItems.PINE_CARTOGRAPHY_TABLE.get(), BOPItems.PINE_PLANKS);
-        this.createFletchingTable(CompatModItems.PINE_FLETCHING_TABLE.get(), BOPItems.PINE_PLANKS);
-        this.createBeehive(CompatModItems.PINE_BEEHIVE.get(), BOPItems.PINE_PLANKS);
-        this.createBarrel(CompatModItems.PINE_BARREL.get(), BOPItems.PINE_PLANKS, BOPItems.PINE_SLAB);
-        this.createLectern(CompatModItems.PINE_LECTERN.get(), CompatModItems.PINE_BOOKSHELF.get(), BOPItems.PINE_SLAB);
-        this.createSmithingTable(CompatModItems.PINE_SMITHING_TABLE.get(), BOPItems.PINE_PLANKS);
-        this.createBookshelf(CompatModItems.PINE_BOOKSHELF.get(), BOPItems.PINE_PLANKS);
-        this.createCampfires(CompatModItems.PINE_CAMPFIRE.get(), CompatModItems.PINE_SOUL_CAMPFIRE.get(), ModTags.Items.PINE_LOGS);
-        this.createGrindstone(CompatModItems.PINE_GRINDSTONE.get(), BOPItems.PINE_PLANKS);
-        this.createChiseledBookshelf(CompatModItems.PINE_CHISELED_BOOKSHELF.get(), BOPItems.PINE_PLANKS, BOPItems.PINE_SLAB);
-        this.createCrafter(CompatModItems.PINE_CRAFTER.get(), CompatModItems.PINE_CRAFTING_TABLE.get());
-        this.createSmoker(CompatModItems.PINE_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.PINE_LOG, "stone_furnace");
-        this.createSmoker(CompatModItems.PINE_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.PINE_LOG, "blackstone_furnace");
-        this.createSmoker(CompatModItems.PINE_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.PINE_LOG, "deepslate_furnace");
-        this.createLoom(CompatModItems.PINE_LOOM.get(), BOPItems.PINE_PLANKS);
-        this.createChests(CompatModItems.PINE_CHEST.get(), CompatModItems.PINE_TRAPPED_CHEST.get(), BOPItems.PINE_PLANKS);
-        this.createMinecart(CompatModItems.PINE_CHEST_MINECART.get(), CompatModItems.PINE_CHEST.get());
-
-        this.mosaicBuilder(RecipeCategory.DECORATIONS, CompatModItems.REDWOOD_MOSAIC.get(), BOPItems.REDWOOD_SLAB);
-        this.createCraftingTable(CompatModItems.REDWOOD_CRAFTING_TABLE.get(), BOPItems.REDWOOD_PLANKS);
-        this.createCartographyTable(CompatModItems.REDWOOD_CARTOGRAPHY_TABLE.get(), BOPItems.REDWOOD_PLANKS);
-        this.createFletchingTable(CompatModItems.REDWOOD_FLETCHING_TABLE.get(), BOPItems.REDWOOD_PLANKS);
-        this.createBeehive(CompatModItems.REDWOOD_BEEHIVE.get(), BOPItems.REDWOOD_PLANKS);
-        this.createBarrel(CompatModItems.REDWOOD_BARREL.get(), BOPItems.REDWOOD_PLANKS, BOPItems.REDWOOD_SLAB);
-        this.createLectern(CompatModItems.REDWOOD_LECTERN.get(), CompatModItems.REDWOOD_BOOKSHELF.get(), BOPItems.REDWOOD_SLAB);
-        this.createSmithingTable(CompatModItems.REDWOOD_SMITHING_TABLE.get(), BOPItems.REDWOOD_PLANKS);
-        this.createBookshelf(CompatModItems.REDWOOD_BOOKSHELF.get(), BOPItems.REDWOOD_PLANKS);
-        this.createCampfires(CompatModItems.REDWOOD_CAMPFIRE.get(), CompatModItems.REDWOOD_SOUL_CAMPFIRE.get(), ModTags.Items.REDWOOD_LOGS);
-        this.createGrindstone(CompatModItems.REDWOOD_GRINDSTONE.get(), BOPItems.REDWOOD_PLANKS);
-        this.createChiseledBookshelf(CompatModItems.REDWOOD_CHISELED_BOOKSHELF.get(), BOPItems.REDWOOD_PLANKS, BOPItems.REDWOOD_SLAB);
-        this.createCrafter(CompatModItems.REDWOOD_CRAFTER.get(), CompatModItems.REDWOOD_CRAFTING_TABLE.get());
-        this.createSmoker(CompatModItems.REDWOOD_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.REDWOOD_LOG, "stone_furnace");
-        this.createSmoker(CompatModItems.REDWOOD_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.REDWOOD_LOG, "blackstone_furnace");
-        this.createSmoker(CompatModItems.REDWOOD_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.REDWOOD_LOG, "deepslate_furnace");
-        this.createLoom(CompatModItems.REDWOOD_LOOM.get(), BOPItems.REDWOOD_PLANKS);
-        this.createChests(CompatModItems.REDWOOD_CHEST.get(), CompatModItems.REDWOOD_TRAPPED_CHEST.get(), BOPItems.REDWOOD_PLANKS);
-        this.createMinecart(CompatModItems.REDWOOD_CHEST_MINECART.get(), CompatModItems.REDWOOD_CHEST.get());
-
-        this.mosaicBuilder(RecipeCategory.DECORATIONS, CompatModItems.UMBRAN_MOSAIC.get(), BOPItems.UMBRAN_SLAB);
-        this.createCraftingTable(CompatModItems.UMBRAN_CRAFTING_TABLE.get(), BOPItems.UMBRAN_PLANKS);
-        this.createCartographyTable(CompatModItems.UMBRAN_CARTOGRAPHY_TABLE.get(), BOPItems.UMBRAN_PLANKS);
-        this.createFletchingTable(CompatModItems.UMBRAN_FLETCHING_TABLE.get(), BOPItems.UMBRAN_PLANKS);
-        this.createBeehive(CompatModItems.UMBRAN_BEEHIVE.get(), BOPItems.UMBRAN_PLANKS);
-        this.createBarrel(CompatModItems.UMBRAN_BARREL.get(), BOPItems.UMBRAN_PLANKS, BOPItems.UMBRAN_SLAB);
-        this.createLectern(CompatModItems.UMBRAN_LECTERN.get(), CompatModItems.UMBRAN_BOOKSHELF.get(), BOPItems.UMBRAN_SLAB);
-        this.createSmithingTable(CompatModItems.UMBRAN_SMITHING_TABLE.get(), BOPItems.UMBRAN_PLANKS);
-        this.createBookshelf(CompatModItems.UMBRAN_BOOKSHELF.get(), BOPItems.UMBRAN_PLANKS);
-        this.createCampfires(CompatModItems.UMBRAN_CAMPFIRE.get(), CompatModItems.UMBRAN_SOUL_CAMPFIRE.get(), ModTags.Items.UMBRAN_LOGS);
-        this.createGrindstone(CompatModItems.UMBRAN_GRINDSTONE.get(), BOPItems.UMBRAN_PLANKS);
-        this.createChiseledBookshelf(CompatModItems.UMBRAN_CHISELED_BOOKSHELF.get(), BOPItems.UMBRAN_PLANKS, BOPItems.UMBRAN_SLAB);
-        this.createCrafter(CompatModItems.UMBRAN_CRAFTER.get(), CompatModItems.UMBRAN_CRAFTING_TABLE.get());
-        this.createSmoker(CompatModItems.UMBRAN_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.UMBRAN_LOG, "stone_furnace");
-        this.createSmoker(CompatModItems.UMBRAN_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.UMBRAN_LOG, "blackstone_furnace");
-        this.createSmoker(CompatModItems.UMBRAN_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.UMBRAN_LOG, "deepslate_furnace");
-        this.createLoom(CompatModItems.UMBRAN_LOOM.get(), BOPItems.UMBRAN_PLANKS);
-        this.createChests(CompatModItems.UMBRAN_CHEST.get(), CompatModItems.UMBRAN_TRAPPED_CHEST.get(), BOPItems.UMBRAN_PLANKS);
-        this.createMinecart(CompatModItems.UMBRAN_CHEST_MINECART.get(), CompatModItems.UMBRAN_CHEST.get());
-
-        this.mosaicBuilder(RecipeCategory.DECORATIONS, CompatModItems.WILLOW_MOSAIC.get(), BOPItems.WILLOW_SLAB);
-        this.createCraftingTable(CompatModItems.WILLOW_CRAFTING_TABLE.get(), BOPItems.WILLOW_PLANKS);
-        this.createCartographyTable(CompatModItems.WILLOW_CARTOGRAPHY_TABLE.get(), BOPItems.WILLOW_PLANKS);
-        this.createFletchingTable(CompatModItems.WILLOW_FLETCHING_TABLE.get(), BOPItems.WILLOW_PLANKS);
-        this.createBeehive(CompatModItems.WILLOW_BEEHIVE.get(), BOPItems.WILLOW_PLANKS);
-        this.createBarrel(CompatModItems.WILLOW_BARREL.get(), BOPItems.WILLOW_PLANKS, BOPItems.WILLOW_SLAB);
-        this.createLectern(CompatModItems.WILLOW_LECTERN.get(), CompatModItems.WILLOW_BOOKSHELF.get(), BOPItems.WILLOW_SLAB);
-        this.createSmithingTable(CompatModItems.WILLOW_SMITHING_TABLE.get(), BOPItems.WILLOW_PLANKS);
-        this.createBookshelf(CompatModItems.WILLOW_BOOKSHELF.get(), BOPItems.WILLOW_PLANKS);
-        this.createCampfires(CompatModItems.WILLOW_CAMPFIRE.get(), CompatModItems.WILLOW_SOUL_CAMPFIRE.get(), ModTags.Items.WILLOW_LOGS);
-        this.createGrindstone(CompatModItems.WILLOW_GRINDSTONE.get(), BOPItems.WILLOW_PLANKS);
-        this.createChiseledBookshelf(CompatModItems.WILLOW_CHISELED_BOOKSHELF.get(), BOPItems.WILLOW_PLANKS, BOPItems.WILLOW_SLAB);
-        this.createCrafter(CompatModItems.WILLOW_CRAFTER.get(), CompatModItems.WILLOW_CRAFTING_TABLE.get());
-        this.createSmoker(CompatModItems.WILLOW_STONE_SMOKER.get(), ModItems.STONE_FURNACE.get(), BOPItems.WILLOW_LOG, "stone_furnace");
-        this.createSmoker(CompatModItems.WILLOW_BLACKSTONE_SMOKER.get(), ModItems.BLACKSTONE_FURNACE.get(), BOPItems.WILLOW_LOG, "blackstone_furnace");
-        this.createSmoker(CompatModItems.WILLOW_DEEPSLATE_SMOKER.get(), ModItems.DEEPSLATE_FURNACE.get(), BOPItems.WILLOW_LOG, "deepslate_furnace");
-        this.createLoom(CompatModItems.WILLOW_LOOM.get(), BOPItems.WILLOW_PLANKS);
-        this.createChests(CompatModItems.WILLOW_CHEST.get(), CompatModItems.WILLOW_TRAPPED_CHEST.get(), BOPItems.WILLOW_PLANKS);
-        this.createMinecart(CompatModItems.WILLOW_CHEST_MINECART.get(), CompatModItems.WILLOW_CHEST.get());
-
-        this.mosaicBuilder(RecipeCategory.DECORATIONS, CompatModItems.ORIGIN_OAK_MOSAIC.get(), BOPItems.ORIGIN_OAK_SLAB);
-        this.createCraftingTable(CompatModItems.ORIGIN_OAK_CRAFTING_TABLE.get(), BOPItems.ORIGIN_OAK_PLANKS);
-        this.createBookshelf(CompatModItems.ORIGIN_OAK_BOOKSHELF.get(), BOPItems.ORIGIN_OAK_PLANKS);
-        this.createChests(CompatModItems.ORIGIN_OAK_CHEST.get(), CompatModItems.ORIGIN_OAK_TRAPPED_CHEST.get(), BOPItems.ORIGIN_OAK_PLANKS);
-        this.createMinecart(CompatModItems.ORIGIN_OAK_CHEST_MINECART.get(), CompatModItems.ORIGIN_OAK_CHEST.get());
-
-        this.createBaton(CompatModItems.WHITE_SANDSTONE_BATON.get(), BOPItems.WHITE_SANDSTONE, "white_sandstone");
-        this.createBaton(CompatModItems.BLACK_SANDSTONE_BATON.get(), BOPItems.BLACK_SANDSTONE, "black_sandstone");
-        this.createBaton(CompatModItems.ORANGE_SANDSTONE_BATON.get(), BOPItems.ORANGE_SANDSTONE, "orange_sandstone");
-        this.createBaton(CompatModItems.BRIMSTONE_BATON.get(), BOPItems.BRIMSTONE, "brimstone");
     }
 
     protected void createChain(ItemLike result, ItemLike ingot, ItemLike nugget) {
@@ -1609,12 +1335,6 @@ public class ModRecipesProvider extends RecipeProvider {
                     item = ModItems.RED_SANDSTONE_BATON.get();
                 } else if (fence.asItem().getDescriptionId().contains("soul")){
                     item = ModItems.SOUL_SANDSTONE_BATON.get();
-                } else if (fence.asItem().getDescriptionId().contains("white")){
-                    item = CompatModItems.WHITE_SANDSTONE_BATON.get();
-                } else if (fence.asItem().getDescriptionId().contains("black")){
-                    item = CompatModItems.BLACK_SANDSTONE_BATON.get();
-                } else if (fence.asItem().getDescriptionId().contains("orange")){
-                    item = CompatModItems.ORANGE_SANDSTONE_BATON.get();
                 } else {
                     item = ModItems.SANDSTONE_BATON.get();
                 }
@@ -1622,8 +1342,6 @@ public class ModRecipesProvider extends RecipeProvider {
                 item = ModItems.END_STONE_BATON.get();
             } else if (fence.asItem().getDescriptionId().contains("black")) {
                 item = ModItems.BLACKSTONE_BATON.get();
-            } else if (fence.asItem().getDescriptionId().contains("brim")) {
-                item = CompatModItems.BRIMSTONE_BATON.get();
             } else if (fence.asItem().getDescriptionId().contains("drip")) {
                 item = Items.POINTED_DRIPSTONE;
             } else {
@@ -1683,6 +1401,10 @@ public class ModRecipesProvider extends RecipeProvider {
             item = ModItems.RHYOLITE_BATON.get();
         } else if (fence.asItem().getDescriptionId().contains("pumice")) {
             item = ModItems.PUMICE_BATON.get();
+        } else if (fence.asItem().getDescriptionId().contains("sulfur")) {
+            item = Items.SULFUR_SPIKE;
+        } else if (fence.asItem().getDescriptionId().contains("cinnabar")) {
+            item = ModItems.CINNABAR_BATON.get();
         } else if (fence.asItem().getDescriptionId().contains("brick")) {
             if (fence.asItem().getDescriptionId().contains("stone")) {
                 if (fence.asItem().getDescriptionId().contains("sand")) {
@@ -1690,12 +1412,6 @@ public class ModRecipesProvider extends RecipeProvider {
                         item = ModItems.RED_SANDSTONE_BATON.get();
                     } else if (fence.asItem().getDescriptionId().contains("soul")){
                         item = ModItems.SOUL_SANDSTONE_BATON.get();
-                    } else if (fence.asItem().getDescriptionId().contains("white")){
-                        item = CompatModItems.WHITE_SANDSTONE_BATON.get();
-                    } else if (fence.asItem().getDescriptionId().contains("black")){
-                        item = CompatModItems.BLACK_SANDSTONE_BATON.get();
-                    } else if (fence.asItem().getDescriptionId().contains("orange")){
-                        item = CompatModItems.ORANGE_SANDSTONE_BATON.get();
                     } else {
                         item = ModItems.SANDSTONE_BATON.get();
                     }
@@ -1703,8 +1419,6 @@ public class ModRecipesProvider extends RecipeProvider {
                     item = ModItems.END_STONE_BATON.get();
                 } else if (fence.asItem().getDescriptionId().contains("black")) {
                     item = ModItems.BLACKSTONE_BATON.get();
-                } else if (fence.asItem().getDescriptionId().contains("brim")) {
-                    item = CompatModItems.BRIMSTONE_BATON.get();
                 } else if (fence.asItem().getDescriptionId().contains("drip")) {
                     item = Items.POINTED_DRIPSTONE;
                 } else {
@@ -1764,6 +1478,10 @@ public class ModRecipesProvider extends RecipeProvider {
                 item = ModItems.RHYOLITE_BATON.get();
             } else if (fence.asItem().getDescriptionId().contains("pumice")) {
                 item = ModItems.PUMICE_BATON.get();
+            } else if (fence.asItem().getDescriptionId().contains("sulfur")) {
+                item = Items.SULFUR_SPIKE;
+            } else if (fence.asItem().getDescriptionId().contains("cinnabar")) {
+                item = ModItems.CINNABAR_BATON.get();
             } else {
                 item = Items.BRICK;
             }
@@ -1804,7 +1522,7 @@ public class ModRecipesProvider extends RecipeProvider {
 
     @Override
     protected void generateForEnabledBlockFamilies(FeatureFlagSet enabledFeatures) {
-        Stream.concat(ModBlockFamilies.getAllFamilies(), CompatModBlockFamilies.getAllFamilies())
+        ModBlockFamilies.getAllFamilies()
                 .filter(
                         BlockFamily::shouldGenerateCraftingRecipe
                 ).forEach((p_359455_) -> this.generateRecipes(p_359455_, enabledFeatures));
@@ -1843,7 +1561,7 @@ public class ModRecipesProvider extends RecipeProvider {
                 .pattern("###")
                 .pattern("# #")
                 .pattern("###")
-                .unlockedBy("has_lots_of_items", CriteriaTriggers.INVENTORY_CHANGED.createCriterion(new InventoryChangeTrigger.TriggerInstance(Optional.empty(), new InventoryChangeTrigger.TriggerInstance.Slots(MinMaxBounds.Ints.atLeast(10), MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY), List.of())))
+                .unlockedBy("has_lots_of_items", net.minecraft.advancements.triggers.CriteriaTriggers.INVENTORY_CHANGED.createCriterion(new InventoryChangeTrigger.TriggerInstance(Optional.empty(), new InventoryChangeTrigger.TriggerInstance.Slots(MinMaxBounds.Ints.atLeast(10), MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY), List.of())))
                 .save(this.output);
 
         this.shapeless(RecipeCategory.REDSTONE, trappedChest)
@@ -2815,133 +2533,133 @@ public class ModRecipesProvider extends RecipeProvider {
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CHARCOAL_STAIRS.get(), ModItems.CHARCOAL_BLOCK.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.CHARCOAL_WALL.get(), ModItems.CHARCOAL_BLOCK.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_TERRACOTTA_SLAB.get(), Items.WHITE_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_TERRACOTTA_STAIRS.get(), Items.WHITE_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.WHITE_TERRACOTTA_WALL.get(), Items.WHITE_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_TERRACOTTA_SLAB.get(), Items.DYED_TERRACOTTA.white(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_TERRACOTTA_STAIRS.get(), Items.DYED_TERRACOTTA.white());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.WHITE_TERRACOTTA_WALL.get(), Items.DYED_TERRACOTTA.white());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_TERRACOTTA_SLAB.get(), Items.ORANGE_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_TERRACOTTA_STAIRS.get(), Items.ORANGE_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.ORANGE_TERRACOTTA_WALL.get(), Items.ORANGE_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_TERRACOTTA_SLAB.get(), Items.DYED_TERRACOTTA.orange(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_TERRACOTTA_STAIRS.get(), Items.DYED_TERRACOTTA.orange());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.ORANGE_TERRACOTTA_WALL.get(), Items.DYED_TERRACOTTA.orange());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_TERRACOTTA_SLAB.get(), Items.MAGENTA_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_TERRACOTTA_STAIRS.get(), Items.MAGENTA_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.MAGENTA_TERRACOTTA_WALL.get(), Items.MAGENTA_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_TERRACOTTA_SLAB.get(), Items.DYED_TERRACOTTA.magenta(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_TERRACOTTA_STAIRS.get(), Items.DYED_TERRACOTTA.magenta());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.MAGENTA_TERRACOTTA_WALL.get(), Items.DYED_TERRACOTTA.magenta());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_TERRACOTTA_SLAB.get(), Items.LIGHT_BLUE_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_TERRACOTTA_STAIRS.get(), Items.LIGHT_BLUE_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIGHT_BLUE_TERRACOTTA_WALL.get(), Items.LIGHT_BLUE_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_TERRACOTTA_SLAB.get(), Items.DYED_TERRACOTTA.lightBlue(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_TERRACOTTA_STAIRS.get(), Items.DYED_TERRACOTTA.lightBlue());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIGHT_BLUE_TERRACOTTA_WALL.get(), Items.DYED_TERRACOTTA.lightBlue());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_TERRACOTTA_SLAB.get(), Items.YELLOW_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_TERRACOTTA_STAIRS.get(), Items.YELLOW_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.YELLOW_TERRACOTTA_WALL.get(), Items.YELLOW_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_TERRACOTTA_SLAB.get(), Items.DYED_TERRACOTTA.yellow(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_TERRACOTTA_STAIRS.get(), Items.DYED_TERRACOTTA.yellow());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.YELLOW_TERRACOTTA_WALL.get(), Items.DYED_TERRACOTTA.yellow());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_TERRACOTTA_SLAB.get(), Items.LIME_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_TERRACOTTA_STAIRS.get(), Items.LIME_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIME_TERRACOTTA_WALL.get(), Items.LIME_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_TERRACOTTA_SLAB.get(), Items.DYED_TERRACOTTA.lime(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_TERRACOTTA_STAIRS.get(), Items.DYED_TERRACOTTA.lime());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIME_TERRACOTTA_WALL.get(), Items.DYED_TERRACOTTA.lime());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_TERRACOTTA_SLAB.get(), Items.PINK_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_TERRACOTTA_STAIRS.get(), Items.PINK_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.PINK_TERRACOTTA_WALL.get(), Items.PINK_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_TERRACOTTA_SLAB.get(), Items.DYED_TERRACOTTA.pink(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_TERRACOTTA_STAIRS.get(), Items.DYED_TERRACOTTA.pink());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.PINK_TERRACOTTA_WALL.get(), Items.DYED_TERRACOTTA.pink());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_TERRACOTTA_SLAB.get(), Items.GRAY_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_TERRACOTTA_STAIRS.get(), Items.GRAY_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GRAY_TERRACOTTA_WALL.get(), Items.GRAY_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_TERRACOTTA_SLAB.get(), Items.DYED_TERRACOTTA.gray(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_TERRACOTTA_STAIRS.get(), Items.DYED_TERRACOTTA.gray());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GRAY_TERRACOTTA_WALL.get(), Items.DYED_TERRACOTTA.gray());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_TERRACOTTA_SLAB.get(), Items.LIGHT_GRAY_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_TERRACOTTA_STAIRS.get(), Items.LIGHT_GRAY_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIGHT_GRAY_TERRACOTTA_WALL.get(), Items.LIGHT_GRAY_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_TERRACOTTA_SLAB.get(), Items.DYED_TERRACOTTA.lightGray(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_TERRACOTTA_STAIRS.get(), Items.DYED_TERRACOTTA.lightGray());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIGHT_GRAY_TERRACOTTA_WALL.get(), Items.DYED_TERRACOTTA.lightGray());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_TERRACOTTA_SLAB.get(), Items.CYAN_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_TERRACOTTA_STAIRS.get(), Items.CYAN_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.CYAN_TERRACOTTA_WALL.get(), Items.CYAN_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_TERRACOTTA_SLAB.get(), Items.DYED_TERRACOTTA.cyan(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_TERRACOTTA_STAIRS.get(), Items.DYED_TERRACOTTA.cyan());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.CYAN_TERRACOTTA_WALL.get(), Items.DYED_TERRACOTTA.cyan());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_TERRACOTTA_SLAB.get(), Items.PURPLE_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_TERRACOTTA_STAIRS.get(), Items.PURPLE_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.PURPLE_TERRACOTTA_WALL.get(), Items.PURPLE_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_TERRACOTTA_SLAB.get(), Items.DYED_TERRACOTTA.purple(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_TERRACOTTA_STAIRS.get(), Items.DYED_TERRACOTTA.purple());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.PURPLE_TERRACOTTA_WALL.get(), Items.DYED_TERRACOTTA.purple());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_TERRACOTTA_SLAB.get(), Items.BLUE_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_TERRACOTTA_STAIRS.get(), Items.BLUE_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BLUE_TERRACOTTA_WALL.get(), Items.BLUE_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_TERRACOTTA_SLAB.get(), Items.DYED_TERRACOTTA.blue(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_TERRACOTTA_STAIRS.get(), Items.DYED_TERRACOTTA.blue());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BLUE_TERRACOTTA_WALL.get(), Items.DYED_TERRACOTTA.blue());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_TERRACOTTA_SLAB.get(), Items.BROWN_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_TERRACOTTA_STAIRS.get(), Items.BROWN_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BROWN_TERRACOTTA_WALL.get(), Items.BROWN_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_TERRACOTTA_SLAB.get(), Items.DYED_TERRACOTTA.brown(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_TERRACOTTA_STAIRS.get(), Items.DYED_TERRACOTTA.brown());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BROWN_TERRACOTTA_WALL.get(), Items.DYED_TERRACOTTA.brown());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_TERRACOTTA_SLAB.get(), Items.GREEN_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_TERRACOTTA_STAIRS.get(), Items.GREEN_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GREEN_TERRACOTTA_WALL.get(), Items.GREEN_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_TERRACOTTA_SLAB.get(), Items.DYED_TERRACOTTA.green(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_TERRACOTTA_STAIRS.get(), Items.DYED_TERRACOTTA.green());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GREEN_TERRACOTTA_WALL.get(), Items.DYED_TERRACOTTA.green());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_TERRACOTTA_SLAB.get(), Items.RED_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_TERRACOTTA_STAIRS.get(), Items.RED_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.RED_TERRACOTTA_WALL.get(), Items.RED_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_TERRACOTTA_SLAB.get(), Items.DYED_TERRACOTTA.red(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_TERRACOTTA_STAIRS.get(), Items.DYED_TERRACOTTA.red());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.RED_TERRACOTTA_WALL.get(), Items.DYED_TERRACOTTA.red());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_TERRACOTTA_SLAB.get(), Items.BLACK_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_TERRACOTTA_STAIRS.get(), Items.BLACK_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BLACK_TERRACOTTA_WALL.get(), Items.BLACK_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_TERRACOTTA_SLAB.get(), Items.DYED_TERRACOTTA.black(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_TERRACOTTA_STAIRS.get(), Items.DYED_TERRACOTTA.black());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BLACK_TERRACOTTA_WALL.get(), Items.DYED_TERRACOTTA.black());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_CONCRETE_SLAB.get(), Items.WHITE_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_CONCRETE_STAIRS.get(), Items.WHITE_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.WHITE_CONCRETE_WALL.get(), Items.WHITE_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_CONCRETE_SLAB.get(), Items.CONCRETE.white(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_CONCRETE_STAIRS.get(), Items.CONCRETE.white());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.WHITE_CONCRETE_WALL.get(), Items.CONCRETE.white());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_CONCRETE_SLAB.get(), Items.ORANGE_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_CONCRETE_STAIRS.get(), Items.ORANGE_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.ORANGE_CONCRETE_WALL.get(), Items.ORANGE_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_CONCRETE_SLAB.get(), Items.CONCRETE.orange(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_CONCRETE_STAIRS.get(), Items.CONCRETE.orange());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.ORANGE_CONCRETE_WALL.get(), Items.CONCRETE.orange());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_CONCRETE_SLAB.get(), Items.MAGENTA_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_CONCRETE_STAIRS.get(), Items.MAGENTA_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.MAGENTA_CONCRETE_WALL.get(), Items.MAGENTA_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_CONCRETE_SLAB.get(), Items.CONCRETE.magenta(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_CONCRETE_STAIRS.get(), Items.CONCRETE.magenta());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.MAGENTA_CONCRETE_WALL.get(), Items.CONCRETE.magenta());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_CONCRETE_SLAB.get(), Items.LIGHT_BLUE_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_CONCRETE_STAIRS.get(), Items.LIGHT_BLUE_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIGHT_BLUE_CONCRETE_WALL.get(), Items.LIGHT_BLUE_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_CONCRETE_SLAB.get(), Items.CONCRETE.lightBlue(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_CONCRETE_STAIRS.get(), Items.CONCRETE.lightBlue());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIGHT_BLUE_CONCRETE_WALL.get(), Items.CONCRETE.lightBlue());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_CONCRETE_SLAB.get(), Items.YELLOW_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_CONCRETE_STAIRS.get(), Items.YELLOW_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.YELLOW_CONCRETE_WALL.get(), Items.YELLOW_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_CONCRETE_SLAB.get(), Items.CONCRETE.yellow(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_CONCRETE_STAIRS.get(), Items.CONCRETE.yellow());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.YELLOW_CONCRETE_WALL.get(), Items.CONCRETE.yellow());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_CONCRETE_SLAB.get(), Items.LIME_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_CONCRETE_STAIRS.get(), Items.LIME_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIME_CONCRETE_WALL.get(), Items.LIME_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_CONCRETE_SLAB.get(), Items.CONCRETE.lime(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_CONCRETE_STAIRS.get(), Items.CONCRETE.lime());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIME_CONCRETE_WALL.get(), Items.CONCRETE.lime());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_CONCRETE_SLAB.get(), Items.PINK_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_CONCRETE_STAIRS.get(), Items.PINK_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.PINK_CONCRETE_WALL.get(), Items.PINK_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_CONCRETE_SLAB.get(), Items.CONCRETE.pink(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_CONCRETE_STAIRS.get(), Items.CONCRETE.pink());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.PINK_CONCRETE_WALL.get(), Items.CONCRETE.pink());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_CONCRETE_SLAB.get(), Items.GRAY_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_CONCRETE_STAIRS.get(), Items.GRAY_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GRAY_CONCRETE_WALL.get(), Items.GRAY_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_CONCRETE_SLAB.get(), Items.CONCRETE.gray(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_CONCRETE_STAIRS.get(), Items.CONCRETE.gray());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GRAY_CONCRETE_WALL.get(), Items.CONCRETE.gray());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_CONCRETE_SLAB.get(), Items.LIGHT_GRAY_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_CONCRETE_STAIRS.get(), Items.LIGHT_GRAY_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIGHT_GRAY_CONCRETE_WALL.get(), Items.LIGHT_GRAY_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_CONCRETE_SLAB.get(), Items.CONCRETE.lightGray(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_CONCRETE_STAIRS.get(), Items.CONCRETE.lightGray());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIGHT_GRAY_CONCRETE_WALL.get(), Items.CONCRETE.lightGray());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_CONCRETE_SLAB.get(), Items.CYAN_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_CONCRETE_STAIRS.get(), Items.CYAN_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.CYAN_CONCRETE_WALL.get(), Items.CYAN_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_CONCRETE_SLAB.get(), Items.CONCRETE.cyan(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_CONCRETE_STAIRS.get(), Items.CONCRETE.cyan());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.CYAN_CONCRETE_WALL.get(), Items.CONCRETE.cyan());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_CONCRETE_SLAB.get(), Items.PURPLE_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_CONCRETE_STAIRS.get(), Items.PURPLE_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.PURPLE_CONCRETE_WALL.get(), Items.PURPLE_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_CONCRETE_SLAB.get(), Items.CONCRETE.purple(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_CONCRETE_STAIRS.get(), Items.CONCRETE.purple());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.PURPLE_CONCRETE_WALL.get(), Items.CONCRETE.purple());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_CONCRETE_SLAB.get(), Items.BLUE_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_CONCRETE_STAIRS.get(), Items.BLUE_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BLUE_CONCRETE_WALL.get(), Items.BLUE_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_CONCRETE_SLAB.get(), Items.CONCRETE.blue(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_CONCRETE_STAIRS.get(), Items.CONCRETE.blue());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BLUE_CONCRETE_WALL.get(), Items.CONCRETE.blue());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_CONCRETE_SLAB.get(), Items.BROWN_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_CONCRETE_STAIRS.get(), Items.BROWN_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BROWN_CONCRETE_WALL.get(), Items.BROWN_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_CONCRETE_SLAB.get(), Items.CONCRETE.brown(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_CONCRETE_STAIRS.get(), Items.CONCRETE.brown());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BROWN_CONCRETE_WALL.get(), Items.CONCRETE.brown());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_CONCRETE_SLAB.get(), Items.GREEN_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_CONCRETE_STAIRS.get(), Items.GREEN_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GREEN_CONCRETE_WALL.get(), Items.GREEN_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_CONCRETE_SLAB.get(), Items.CONCRETE.green(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_CONCRETE_STAIRS.get(), Items.CONCRETE.green());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GREEN_CONCRETE_WALL.get(), Items.CONCRETE.green());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_CONCRETE_SLAB.get(), Items.RED_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_CONCRETE_STAIRS.get(), Items.RED_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.RED_CONCRETE_WALL.get(), Items.RED_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_CONCRETE_SLAB.get(), Items.CONCRETE.red(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_CONCRETE_STAIRS.get(), Items.CONCRETE.red());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.RED_CONCRETE_WALL.get(), Items.CONCRETE.red());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_CONCRETE_SLAB.get(), Items.BLACK_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_CONCRETE_STAIRS.get(), Items.BLACK_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BLACK_CONCRETE_WALL.get(), Items.BLACK_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_CONCRETE_SLAB.get(), Items.CONCRETE.black(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_CONCRETE_STAIRS.get(), Items.CONCRETE.black());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BLACK_CONCRETE_WALL.get(), Items.CONCRETE.black());
 
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.STONE_TILES.get(), Items.STONE);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.STONE_TILE_SLAB.get(), Items.STONE, 2);
@@ -3191,258 +2909,258 @@ public class ModRecipesProvider extends RecipeProvider {
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BIG_BRICK_STAIRS.get(), ModItems.BIG_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BIG_BRICK_WALL.get(), ModItems.BIG_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_TERRACOTTA_BRICKS.get(), Items.WHITE_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_TERRACOTTA_BRICK_SLAB.get(), Items.WHITE_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_TERRACOTTA_BRICK_STAIRS.get(), Items.WHITE_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.WHITE_TERRACOTTA_BRICK_WALL.get(), Items.WHITE_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_TERRACOTTA_BRICKS.get(), Items.DYED_TERRACOTTA.white());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_TERRACOTTA_BRICK_SLAB.get(), Items.DYED_TERRACOTTA.white(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_TERRACOTTA_BRICK_STAIRS.get(), Items.DYED_TERRACOTTA.white());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.WHITE_TERRACOTTA_BRICK_WALL.get(), Items.DYED_TERRACOTTA.white());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_TERRACOTTA_BRICK_SLAB.get(), ModItems.WHITE_TERRACOTTA_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_TERRACOTTA_BRICK_STAIRS.get(), ModItems.WHITE_TERRACOTTA_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.WHITE_TERRACOTTA_BRICK_WALL.get(), ModItems.WHITE_TERRACOTTA_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_TERRACOTTA_BRICKS.get(), Items.ORANGE_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_TERRACOTTA_BRICK_SLAB.get(), Items.ORANGE_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_TERRACOTTA_BRICK_STAIRS.get(), Items.ORANGE_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.ORANGE_TERRACOTTA_BRICK_WALL.get(), Items.ORANGE_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_TERRACOTTA_BRICKS.get(), Items.DYED_TERRACOTTA.orange());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_TERRACOTTA_BRICK_SLAB.get(), Items.DYED_TERRACOTTA.orange(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_TERRACOTTA_BRICK_STAIRS.get(), Items.DYED_TERRACOTTA.orange());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.ORANGE_TERRACOTTA_BRICK_WALL.get(), Items.DYED_TERRACOTTA.orange());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_TERRACOTTA_BRICK_SLAB.get(), ModItems.ORANGE_TERRACOTTA_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_TERRACOTTA_BRICK_STAIRS.get(), ModItems.ORANGE_TERRACOTTA_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.ORANGE_TERRACOTTA_BRICK_WALL.get(), ModItems.ORANGE_TERRACOTTA_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_TERRACOTTA_BRICKS.get(), Items.MAGENTA_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_TERRACOTTA_BRICK_SLAB.get(), Items.MAGENTA_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_TERRACOTTA_BRICK_STAIRS.get(), Items.MAGENTA_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.MAGENTA_TERRACOTTA_BRICK_WALL.get(), Items.MAGENTA_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_TERRACOTTA_BRICKS.get(), Items.DYED_TERRACOTTA.magenta());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_TERRACOTTA_BRICK_SLAB.get(), Items.DYED_TERRACOTTA.magenta(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_TERRACOTTA_BRICK_STAIRS.get(), Items.DYED_TERRACOTTA.magenta());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.MAGENTA_TERRACOTTA_BRICK_WALL.get(), Items.DYED_TERRACOTTA.magenta());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_TERRACOTTA_BRICK_SLAB.get(), ModItems.MAGENTA_TERRACOTTA_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_TERRACOTTA_BRICK_STAIRS.get(), ModItems.MAGENTA_TERRACOTTA_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.MAGENTA_TERRACOTTA_BRICK_WALL.get(), ModItems.MAGENTA_TERRACOTTA_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_TERRACOTTA_BRICKS.get(), Items.LIGHT_BLUE_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_TERRACOTTA_BRICK_SLAB.get(), Items.LIGHT_BLUE_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_TERRACOTTA_BRICK_STAIRS.get(), Items.LIGHT_BLUE_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIGHT_BLUE_TERRACOTTA_BRICK_WALL.get(), Items.LIGHT_BLUE_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_TERRACOTTA_BRICKS.get(), Items.DYED_TERRACOTTA.lightBlue());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_TERRACOTTA_BRICK_SLAB.get(), Items.DYED_TERRACOTTA.lightBlue(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_TERRACOTTA_BRICK_STAIRS.get(), Items.DYED_TERRACOTTA.lightBlue());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIGHT_BLUE_TERRACOTTA_BRICK_WALL.get(), Items.DYED_TERRACOTTA.lightBlue());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_TERRACOTTA_BRICK_SLAB.get(), ModItems.LIGHT_BLUE_TERRACOTTA_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_TERRACOTTA_BRICK_STAIRS.get(), ModItems.LIGHT_BLUE_TERRACOTTA_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIGHT_BLUE_TERRACOTTA_BRICK_WALL.get(), ModItems.LIGHT_BLUE_TERRACOTTA_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_TERRACOTTA_BRICKS.get(), Items.YELLOW_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_TERRACOTTA_BRICK_SLAB.get(), Items.YELLOW_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_TERRACOTTA_BRICK_STAIRS.get(), Items.YELLOW_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.YELLOW_TERRACOTTA_BRICK_WALL.get(), Items.YELLOW_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_TERRACOTTA_BRICKS.get(), Items.DYED_TERRACOTTA.yellow());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_TERRACOTTA_BRICK_SLAB.get(), Items.DYED_TERRACOTTA.yellow(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_TERRACOTTA_BRICK_STAIRS.get(), Items.DYED_TERRACOTTA.yellow());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.YELLOW_TERRACOTTA_BRICK_WALL.get(), Items.DYED_TERRACOTTA.yellow());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_TERRACOTTA_BRICK_SLAB.get(), ModItems.YELLOW_TERRACOTTA_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_TERRACOTTA_BRICK_STAIRS.get(), ModItems.YELLOW_TERRACOTTA_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.YELLOW_TERRACOTTA_BRICK_WALL.get(), ModItems.YELLOW_TERRACOTTA_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_TERRACOTTA_BRICKS.get(), Items.LIME_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_TERRACOTTA_BRICK_SLAB.get(), Items.LIME_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_TERRACOTTA_BRICK_STAIRS.get(), Items.LIME_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIME_TERRACOTTA_BRICK_WALL.get(), Items.LIME_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_TERRACOTTA_BRICKS.get(), Items.DYED_TERRACOTTA.lime());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_TERRACOTTA_BRICK_SLAB.get(), Items.DYED_TERRACOTTA.lime(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_TERRACOTTA_BRICK_STAIRS.get(), Items.DYED_TERRACOTTA.lime());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIME_TERRACOTTA_BRICK_WALL.get(), Items.DYED_TERRACOTTA.lime());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_TERRACOTTA_BRICK_SLAB.get(), ModItems.LIME_TERRACOTTA_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_TERRACOTTA_BRICK_STAIRS.get(), ModItems.LIME_TERRACOTTA_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIME_TERRACOTTA_BRICK_WALL.get(), ModItems.LIME_TERRACOTTA_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_TERRACOTTA_BRICKS.get(), Items.PINK_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_TERRACOTTA_BRICK_SLAB.get(), Items.PINK_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_TERRACOTTA_BRICK_STAIRS.get(), Items.PINK_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.PINK_TERRACOTTA_BRICK_WALL.get(), Items.PINK_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_TERRACOTTA_BRICKS.get(), Items.DYED_TERRACOTTA.pink());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_TERRACOTTA_BRICK_SLAB.get(), Items.DYED_TERRACOTTA.pink(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_TERRACOTTA_BRICK_STAIRS.get(), Items.DYED_TERRACOTTA.pink());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.PINK_TERRACOTTA_BRICK_WALL.get(), Items.DYED_TERRACOTTA.pink());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_TERRACOTTA_BRICK_SLAB.get(), ModItems.PINK_TERRACOTTA_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_TERRACOTTA_BRICK_STAIRS.get(), ModItems.PINK_TERRACOTTA_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.PINK_TERRACOTTA_BRICK_WALL.get(), ModItems.PINK_TERRACOTTA_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_TERRACOTTA_BRICKS.get(), Items.GRAY_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_TERRACOTTA_BRICK_SLAB.get(), Items.GRAY_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_TERRACOTTA_BRICK_STAIRS.get(), Items.GRAY_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GRAY_TERRACOTTA_BRICK_WALL.get(), Items.GRAY_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_TERRACOTTA_BRICKS.get(), Items.DYED_TERRACOTTA.gray());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_TERRACOTTA_BRICK_SLAB.get(), Items.DYED_TERRACOTTA.gray(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_TERRACOTTA_BRICK_STAIRS.get(), Items.DYED_TERRACOTTA.gray());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GRAY_TERRACOTTA_BRICK_WALL.get(), Items.DYED_TERRACOTTA.gray());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_TERRACOTTA_BRICK_SLAB.get(), ModItems.GRAY_TERRACOTTA_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_TERRACOTTA_BRICK_STAIRS.get(), ModItems.GRAY_TERRACOTTA_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GRAY_TERRACOTTA_BRICK_WALL.get(), ModItems.GRAY_TERRACOTTA_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_TERRACOTTA_BRICKS.get(), Items.LIGHT_GRAY_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_TERRACOTTA_BRICK_SLAB.get(), Items.LIGHT_GRAY_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_TERRACOTTA_BRICK_STAIRS.get(), Items.LIGHT_GRAY_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIGHT_GRAY_TERRACOTTA_BRICK_WALL.get(), Items.LIGHT_GRAY_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_TERRACOTTA_BRICKS.get(), Items.DYED_TERRACOTTA.lightGray());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_TERRACOTTA_BRICK_SLAB.get(), Items.DYED_TERRACOTTA.lightGray(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_TERRACOTTA_BRICK_STAIRS.get(), Items.DYED_TERRACOTTA.lightGray());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIGHT_GRAY_TERRACOTTA_BRICK_WALL.get(), Items.DYED_TERRACOTTA.lightGray());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_TERRACOTTA_BRICK_SLAB.get(), ModItems.LIGHT_GRAY_TERRACOTTA_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_TERRACOTTA_BRICK_STAIRS.get(), ModItems.LIGHT_GRAY_TERRACOTTA_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIGHT_GRAY_TERRACOTTA_BRICK_WALL.get(), ModItems.LIGHT_GRAY_TERRACOTTA_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_TERRACOTTA_BRICKS.get(), Items.CYAN_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_TERRACOTTA_BRICK_SLAB.get(), Items.CYAN_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_TERRACOTTA_BRICK_STAIRS.get(), Items.CYAN_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.CYAN_TERRACOTTA_BRICK_WALL.get(), Items.CYAN_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_TERRACOTTA_BRICKS.get(), Items.DYED_TERRACOTTA.cyan());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_TERRACOTTA_BRICK_SLAB.get(), Items.DYED_TERRACOTTA.cyan(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_TERRACOTTA_BRICK_STAIRS.get(), Items.DYED_TERRACOTTA.cyan());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.CYAN_TERRACOTTA_BRICK_WALL.get(), Items.DYED_TERRACOTTA.cyan());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_TERRACOTTA_BRICK_SLAB.get(), ModItems.CYAN_TERRACOTTA_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_TERRACOTTA_BRICK_STAIRS.get(), ModItems.CYAN_TERRACOTTA_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.CYAN_TERRACOTTA_BRICK_WALL.get(), ModItems.CYAN_TERRACOTTA_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_TERRACOTTA_BRICKS.get(), Items.PURPLE_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_TERRACOTTA_BRICK_SLAB.get(), Items.PURPLE_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_TERRACOTTA_BRICK_STAIRS.get(), Items.PURPLE_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.PURPLE_TERRACOTTA_BRICK_WALL.get(), Items.PURPLE_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_TERRACOTTA_BRICKS.get(), Items.DYED_TERRACOTTA.purple());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_TERRACOTTA_BRICK_SLAB.get(), Items.DYED_TERRACOTTA.purple(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_TERRACOTTA_BRICK_STAIRS.get(), Items.DYED_TERRACOTTA.purple());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.PURPLE_TERRACOTTA_BRICK_WALL.get(), Items.DYED_TERRACOTTA.purple());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_TERRACOTTA_BRICK_SLAB.get(), ModItems.PURPLE_TERRACOTTA_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_TERRACOTTA_BRICK_STAIRS.get(), ModItems.PURPLE_TERRACOTTA_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.PURPLE_TERRACOTTA_BRICK_WALL.get(), ModItems.PURPLE_TERRACOTTA_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_TERRACOTTA_BRICKS.get(), Items.BLUE_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_TERRACOTTA_BRICK_SLAB.get(), Items.BLUE_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_TERRACOTTA_BRICK_STAIRS.get(), Items.BLUE_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BLUE_TERRACOTTA_BRICK_WALL.get(), Items.BLUE_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_TERRACOTTA_BRICKS.get(), Items.DYED_TERRACOTTA.blue());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_TERRACOTTA_BRICK_SLAB.get(), Items.DYED_TERRACOTTA.blue(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_TERRACOTTA_BRICK_STAIRS.get(), Items.DYED_TERRACOTTA.blue());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BLUE_TERRACOTTA_BRICK_WALL.get(), Items.DYED_TERRACOTTA.blue());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_TERRACOTTA_BRICK_SLAB.get(), ModItems.BLUE_TERRACOTTA_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_TERRACOTTA_BRICK_STAIRS.get(), ModItems.BLUE_TERRACOTTA_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BLUE_TERRACOTTA_BRICK_WALL.get(), ModItems.BLUE_TERRACOTTA_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_TERRACOTTA_BRICKS.get(), Items.BROWN_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_TERRACOTTA_BRICK_SLAB.get(), Items.BROWN_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_TERRACOTTA_BRICK_STAIRS.get(), Items.BROWN_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BROWN_TERRACOTTA_BRICK_WALL.get(), Items.BROWN_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_TERRACOTTA_BRICKS.get(), Items.DYED_TERRACOTTA.brown());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_TERRACOTTA_BRICK_SLAB.get(), Items.DYED_TERRACOTTA.brown(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_TERRACOTTA_BRICK_STAIRS.get(), Items.DYED_TERRACOTTA.brown());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BROWN_TERRACOTTA_BRICK_WALL.get(), Items.DYED_TERRACOTTA.brown());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_TERRACOTTA_BRICK_SLAB.get(), ModItems.BROWN_TERRACOTTA_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_TERRACOTTA_BRICK_STAIRS.get(), ModItems.BROWN_TERRACOTTA_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BROWN_TERRACOTTA_BRICK_WALL.get(), ModItems.BROWN_TERRACOTTA_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_TERRACOTTA_BRICKS.get(), Items.GREEN_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_TERRACOTTA_BRICK_SLAB.get(), Items.GREEN_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_TERRACOTTA_BRICK_STAIRS.get(), Items.GREEN_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GREEN_TERRACOTTA_BRICK_WALL.get(), Items.GREEN_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_TERRACOTTA_BRICKS.get(), Items.DYED_TERRACOTTA.green());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_TERRACOTTA_BRICK_SLAB.get(), Items.DYED_TERRACOTTA.green(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_TERRACOTTA_BRICK_STAIRS.get(), Items.DYED_TERRACOTTA.green());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GREEN_TERRACOTTA_BRICK_WALL.get(), Items.DYED_TERRACOTTA.green());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_TERRACOTTA_BRICK_SLAB.get(), ModItems.GREEN_TERRACOTTA_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_TERRACOTTA_BRICK_STAIRS.get(), ModItems.GREEN_TERRACOTTA_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GREEN_TERRACOTTA_BRICK_WALL.get(), ModItems.GREEN_TERRACOTTA_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_TERRACOTTA_BRICKS.get(), Items.RED_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_TERRACOTTA_BRICK_SLAB.get(), Items.RED_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_TERRACOTTA_BRICK_STAIRS.get(), Items.RED_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.RED_TERRACOTTA_BRICK_WALL.get(), Items.RED_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_TERRACOTTA_BRICKS.get(), Items.DYED_TERRACOTTA.red());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_TERRACOTTA_BRICK_SLAB.get(), Items.DYED_TERRACOTTA.red(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_TERRACOTTA_BRICK_STAIRS.get(), Items.DYED_TERRACOTTA.red());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.RED_TERRACOTTA_BRICK_WALL.get(), Items.DYED_TERRACOTTA.red());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_TERRACOTTA_BRICK_SLAB.get(), ModItems.RED_TERRACOTTA_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_TERRACOTTA_BRICK_STAIRS.get(), ModItems.RED_TERRACOTTA_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.RED_TERRACOTTA_BRICK_WALL.get(), ModItems.RED_TERRACOTTA_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_TERRACOTTA_BRICKS.get(), Items.BLACK_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_TERRACOTTA_BRICK_SLAB.get(), Items.BLACK_TERRACOTTA, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_TERRACOTTA_BRICK_STAIRS.get(), Items.BLACK_TERRACOTTA);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BLACK_TERRACOTTA_BRICK_WALL.get(), Items.BLACK_TERRACOTTA);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_TERRACOTTA_BRICKS.get(), Items.DYED_TERRACOTTA.black());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_TERRACOTTA_BRICK_SLAB.get(), Items.DYED_TERRACOTTA.black(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_TERRACOTTA_BRICK_STAIRS.get(), Items.DYED_TERRACOTTA.black());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BLACK_TERRACOTTA_BRICK_WALL.get(), Items.DYED_TERRACOTTA.black());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_TERRACOTTA_BRICK_SLAB.get(), ModItems.BLACK_TERRACOTTA_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_TERRACOTTA_BRICK_STAIRS.get(), ModItems.BLACK_TERRACOTTA_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BLACK_TERRACOTTA_BRICK_WALL.get(), ModItems.BLACK_TERRACOTTA_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_CONCRETE_BRICKS.get(), Items.WHITE_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_CONCRETE_BRICK_SLAB.get(), Items.WHITE_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_CONCRETE_BRICK_STAIRS.get(), Items.WHITE_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.WHITE_CONCRETE_BRICK_WALL.get(), Items.WHITE_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_CONCRETE_BRICKS.get(), Items.CONCRETE.white());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_CONCRETE_BRICK_SLAB.get(), Items.CONCRETE.white(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_CONCRETE_BRICK_STAIRS.get(), Items.CONCRETE.white());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.WHITE_CONCRETE_BRICK_WALL.get(), Items.CONCRETE.white());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_CONCRETE_BRICK_SLAB.get(), ModItems.WHITE_CONCRETE_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.WHITE_CONCRETE_BRICK_STAIRS.get(), ModItems.WHITE_CONCRETE_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.WHITE_CONCRETE_BRICK_WALL.get(), ModItems.WHITE_CONCRETE_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_CONCRETE_BRICKS.get(), Items.ORANGE_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_CONCRETE_BRICK_SLAB.get(), Items.ORANGE_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_CONCRETE_BRICK_STAIRS.get(), Items.ORANGE_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.ORANGE_CONCRETE_BRICK_WALL.get(), Items.ORANGE_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_CONCRETE_BRICKS.get(), Items.CONCRETE.orange());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_CONCRETE_BRICK_SLAB.get(), Items.CONCRETE.orange(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_CONCRETE_BRICK_STAIRS.get(), Items.CONCRETE.orange());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.ORANGE_CONCRETE_BRICK_WALL.get(), Items.CONCRETE.orange());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_CONCRETE_BRICK_SLAB.get(), ModItems.ORANGE_CONCRETE_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.ORANGE_CONCRETE_BRICK_STAIRS.get(), ModItems.ORANGE_CONCRETE_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.ORANGE_CONCRETE_BRICK_WALL.get(), ModItems.ORANGE_CONCRETE_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_CONCRETE_BRICKS.get(), Items.MAGENTA_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_CONCRETE_BRICK_SLAB.get(), Items.MAGENTA_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_CONCRETE_BRICK_STAIRS.get(), Items.MAGENTA_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.MAGENTA_CONCRETE_BRICK_WALL.get(), Items.MAGENTA_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_CONCRETE_BRICKS.get(), Items.CONCRETE.magenta());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_CONCRETE_BRICK_SLAB.get(), Items.CONCRETE.magenta(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_CONCRETE_BRICK_STAIRS.get(), Items.CONCRETE.magenta());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.MAGENTA_CONCRETE_BRICK_WALL.get(), Items.CONCRETE.magenta());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_CONCRETE_BRICK_SLAB.get(), ModItems.MAGENTA_CONCRETE_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.MAGENTA_CONCRETE_BRICK_STAIRS.get(), ModItems.MAGENTA_CONCRETE_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.MAGENTA_CONCRETE_BRICK_WALL.get(), ModItems.MAGENTA_CONCRETE_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_CONCRETE_BRICKS.get(), Items.LIGHT_BLUE_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_CONCRETE_BRICK_SLAB.get(), Items.LIGHT_BLUE_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_CONCRETE_BRICK_STAIRS.get(), Items.LIGHT_BLUE_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIGHT_BLUE_CONCRETE_BRICK_WALL.get(), Items.LIGHT_BLUE_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_CONCRETE_BRICKS.get(), Items.CONCRETE.lightBlue());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_CONCRETE_BRICK_SLAB.get(), Items.CONCRETE.lightBlue(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_CONCRETE_BRICK_STAIRS.get(), Items.CONCRETE.lightBlue());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIGHT_BLUE_CONCRETE_BRICK_WALL.get(), Items.CONCRETE.lightBlue());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_CONCRETE_BRICK_SLAB.get(), ModItems.LIGHT_BLUE_CONCRETE_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_BLUE_CONCRETE_BRICK_STAIRS.get(), ModItems.LIGHT_BLUE_CONCRETE_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIGHT_BLUE_CONCRETE_BRICK_WALL.get(), ModItems.LIGHT_BLUE_CONCRETE_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_CONCRETE_BRICKS.get(), Items.YELLOW_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_CONCRETE_BRICK_SLAB.get(), Items.YELLOW_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_CONCRETE_BRICK_STAIRS.get(), Items.YELLOW_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.YELLOW_CONCRETE_BRICK_WALL.get(), Items.YELLOW_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_CONCRETE_BRICKS.get(), Items.CONCRETE.yellow());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_CONCRETE_BRICK_SLAB.get(), Items.CONCRETE.yellow(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_CONCRETE_BRICK_STAIRS.get(), Items.CONCRETE.yellow());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.YELLOW_CONCRETE_BRICK_WALL.get(), Items.CONCRETE.yellow());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_CONCRETE_BRICK_SLAB.get(), ModItems.YELLOW_CONCRETE_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.YELLOW_CONCRETE_BRICK_STAIRS.get(), ModItems.YELLOW_CONCRETE_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.YELLOW_CONCRETE_BRICK_WALL.get(), ModItems.YELLOW_CONCRETE_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_CONCRETE_BRICKS.get(), Items.LIME_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_CONCRETE_BRICK_SLAB.get(), Items.LIME_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_CONCRETE_BRICK_STAIRS.get(), Items.LIME_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIME_CONCRETE_BRICK_WALL.get(), Items.LIME_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_CONCRETE_BRICKS.get(), Items.CONCRETE.lime());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_CONCRETE_BRICK_SLAB.get(), Items.CONCRETE.lime(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_CONCRETE_BRICK_STAIRS.get(), Items.CONCRETE.lime());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIME_CONCRETE_BRICK_WALL.get(), Items.CONCRETE.lime());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_CONCRETE_BRICK_SLAB.get(), ModItems.LIME_CONCRETE_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIME_CONCRETE_BRICK_STAIRS.get(), ModItems.LIME_CONCRETE_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIME_CONCRETE_BRICK_WALL.get(), ModItems.LIME_CONCRETE_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_CONCRETE_BRICKS.get(), Items.PINK_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_CONCRETE_BRICK_SLAB.get(), Items.PINK_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_CONCRETE_BRICK_STAIRS.get(), Items.PINK_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.PINK_CONCRETE_BRICK_WALL.get(), Items.PINK_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_CONCRETE_BRICKS.get(), Items.CONCRETE.pink());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_CONCRETE_BRICK_SLAB.get(), Items.CONCRETE.pink(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_CONCRETE_BRICK_STAIRS.get(), Items.CONCRETE.pink());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.PINK_CONCRETE_BRICK_WALL.get(), Items.CONCRETE.pink());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_CONCRETE_BRICK_SLAB.get(), ModItems.PINK_CONCRETE_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_CONCRETE_BRICK_STAIRS.get(), ModItems.PINK_CONCRETE_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.PINK_CONCRETE_BRICK_WALL.get(), ModItems.PINK_CONCRETE_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_CONCRETE_BRICKS.get(), Items.GRAY_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_CONCRETE_BRICK_SLAB.get(), Items.GRAY_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_CONCRETE_BRICK_STAIRS.get(), Items.GRAY_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GRAY_CONCRETE_BRICK_WALL.get(), Items.GRAY_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_CONCRETE_BRICKS.get(), Items.CONCRETE.gray());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_CONCRETE_BRICK_SLAB.get(), Items.CONCRETE.gray(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_CONCRETE_BRICK_STAIRS.get(), Items.CONCRETE.gray());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GRAY_CONCRETE_BRICK_WALL.get(), Items.CONCRETE.gray());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_CONCRETE_BRICK_SLAB.get(), ModItems.GRAY_CONCRETE_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAY_CONCRETE_BRICK_STAIRS.get(), ModItems.GRAY_CONCRETE_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GRAY_CONCRETE_BRICK_WALL.get(), ModItems.GRAY_CONCRETE_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_CONCRETE_BRICKS.get(), Items.LIGHT_GRAY_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_CONCRETE_BRICK_SLAB.get(), Items.LIGHT_GRAY_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_CONCRETE_BRICK_STAIRS.get(), Items.LIGHT_GRAY_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIGHT_GRAY_CONCRETE_BRICK_WALL.get(), Items.LIGHT_GRAY_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_CONCRETE_BRICKS.get(), Items.CONCRETE.lightGray());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_CONCRETE_BRICK_SLAB.get(), Items.CONCRETE.lightGray(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_CONCRETE_BRICK_STAIRS.get(), Items.CONCRETE.lightGray());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIGHT_GRAY_CONCRETE_BRICK_WALL.get(), Items.CONCRETE.lightGray());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_CONCRETE_BRICK_SLAB.get(), ModItems.LIGHT_GRAY_CONCRETE_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.LIGHT_GRAY_CONCRETE_BRICK_STAIRS.get(), ModItems.LIGHT_GRAY_CONCRETE_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.LIGHT_GRAY_CONCRETE_BRICK_WALL.get(), ModItems.LIGHT_GRAY_CONCRETE_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_CONCRETE_BRICKS.get(), Items.CYAN_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_CONCRETE_BRICK_SLAB.get(), Items.CYAN_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_CONCRETE_BRICK_STAIRS.get(), Items.CYAN_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.CYAN_CONCRETE_BRICK_WALL.get(), Items.CYAN_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_CONCRETE_BRICKS.get(), Items.CONCRETE.cyan());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_CONCRETE_BRICK_SLAB.get(), Items.CONCRETE.cyan(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_CONCRETE_BRICK_STAIRS.get(), Items.CONCRETE.cyan());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.CYAN_CONCRETE_BRICK_WALL.get(), Items.CONCRETE.cyan());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_CONCRETE_BRICK_SLAB.get(), ModItems.CYAN_CONCRETE_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CYAN_CONCRETE_BRICK_STAIRS.get(), ModItems.CYAN_CONCRETE_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.CYAN_CONCRETE_BRICK_WALL.get(), ModItems.CYAN_CONCRETE_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_CONCRETE_BRICKS.get(), Items.PURPLE_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_CONCRETE_BRICK_SLAB.get(), Items.PURPLE_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_CONCRETE_BRICK_STAIRS.get(), Items.PURPLE_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.PURPLE_CONCRETE_BRICK_WALL.get(), Items.PURPLE_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_CONCRETE_BRICKS.get(), Items.CONCRETE.purple());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_CONCRETE_BRICK_SLAB.get(), Items.CONCRETE.purple(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_CONCRETE_BRICK_STAIRS.get(), Items.CONCRETE.purple());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.PURPLE_CONCRETE_BRICK_WALL.get(), Items.CONCRETE.purple());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_CONCRETE_BRICK_SLAB.get(), ModItems.PURPLE_CONCRETE_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.PURPLE_CONCRETE_BRICK_STAIRS.get(), ModItems.PURPLE_CONCRETE_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.PURPLE_CONCRETE_BRICK_WALL.get(), ModItems.PURPLE_CONCRETE_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_CONCRETE_BRICKS.get(), Items.BLUE_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_CONCRETE_BRICK_SLAB.get(), Items.BLUE_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_CONCRETE_BRICK_STAIRS.get(), Items.BLUE_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BLUE_CONCRETE_BRICK_WALL.get(), Items.BLUE_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_CONCRETE_BRICKS.get(), Items.CONCRETE.blue());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_CONCRETE_BRICK_SLAB.get(), Items.CONCRETE.blue(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_CONCRETE_BRICK_STAIRS.get(), Items.CONCRETE.blue());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BLUE_CONCRETE_BRICK_WALL.get(), Items.CONCRETE.blue());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_CONCRETE_BRICK_SLAB.get(), ModItems.BLUE_CONCRETE_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLUE_CONCRETE_BRICK_STAIRS.get(), ModItems.BLUE_CONCRETE_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BLUE_CONCRETE_BRICK_WALL.get(), ModItems.BLUE_CONCRETE_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_CONCRETE_BRICKS.get(), Items.BROWN_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_CONCRETE_BRICK_SLAB.get(), Items.BROWN_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_CONCRETE_BRICK_STAIRS.get(), Items.BROWN_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BROWN_CONCRETE_BRICK_WALL.get(), Items.BROWN_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_CONCRETE_BRICKS.get(), Items.CONCRETE.brown());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_CONCRETE_BRICK_SLAB.get(), Items.CONCRETE.brown(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_CONCRETE_BRICK_STAIRS.get(), Items.CONCRETE.brown());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BROWN_CONCRETE_BRICK_WALL.get(), Items.CONCRETE.brown());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_CONCRETE_BRICK_SLAB.get(), ModItems.BROWN_CONCRETE_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BROWN_CONCRETE_BRICK_STAIRS.get(), ModItems.BROWN_CONCRETE_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BROWN_CONCRETE_BRICK_WALL.get(), ModItems.BROWN_CONCRETE_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_CONCRETE_BRICKS.get(), Items.GREEN_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_CONCRETE_BRICK_SLAB.get(), Items.GREEN_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_CONCRETE_BRICK_STAIRS.get(), Items.GREEN_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GREEN_CONCRETE_BRICK_WALL.get(), Items.GREEN_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_CONCRETE_BRICKS.get(), Items.CONCRETE.green());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_CONCRETE_BRICK_SLAB.get(), Items.CONCRETE.green(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_CONCRETE_BRICK_STAIRS.get(), Items.CONCRETE.green());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GREEN_CONCRETE_BRICK_WALL.get(), Items.CONCRETE.green());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_CONCRETE_BRICK_SLAB.get(), ModItems.GREEN_CONCRETE_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GREEN_CONCRETE_BRICK_STAIRS.get(), ModItems.GREEN_CONCRETE_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GREEN_CONCRETE_BRICK_WALL.get(), ModItems.GREEN_CONCRETE_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_CONCRETE_BRICKS.get(), Items.RED_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_CONCRETE_BRICK_SLAB.get(), Items.RED_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_CONCRETE_BRICK_STAIRS.get(), Items.RED_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.RED_CONCRETE_BRICK_WALL.get(), Items.RED_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_CONCRETE_BRICKS.get(), Items.CONCRETE.red());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_CONCRETE_BRICK_SLAB.get(), Items.CONCRETE.red(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_CONCRETE_BRICK_STAIRS.get(), Items.CONCRETE.red());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.RED_CONCRETE_BRICK_WALL.get(), Items.CONCRETE.red());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_CONCRETE_BRICK_SLAB.get(), ModItems.RED_CONCRETE_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.RED_CONCRETE_BRICK_STAIRS.get(), ModItems.RED_CONCRETE_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.RED_CONCRETE_BRICK_WALL.get(), ModItems.RED_CONCRETE_BRICKS.get());
 
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_CONCRETE_BRICKS.get(), Items.BLACK_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_CONCRETE_BRICK_SLAB.get(), Items.BLACK_CONCRETE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_CONCRETE_BRICK_STAIRS.get(), Items.BLACK_CONCRETE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BLACK_CONCRETE_BRICK_WALL.get(), Items.BLACK_CONCRETE);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_CONCRETE_BRICKS.get(), Items.CONCRETE.black());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_CONCRETE_BRICK_SLAB.get(), Items.CONCRETE.black(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_CONCRETE_BRICK_STAIRS.get(), Items.CONCRETE.black());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BLACK_CONCRETE_BRICK_WALL.get(), Items.CONCRETE.black());
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_CONCRETE_BRICK_SLAB.get(), ModItems.BLACK_CONCRETE_BRICKS.get(), 2);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BLACK_CONCRETE_BRICK_STAIRS.get(), ModItems.BLACK_CONCRETE_BRICKS.get());
         this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.BLACK_CONCRETE_BRICK_WALL.get(), ModItems.BLACK_CONCRETE_BRICKS.get());
@@ -3491,63 +3209,7 @@ public class ModRecipesProvider extends RecipeProvider {
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.NETHERITE_GRATE.get(), Items.NETHERITE_BLOCK, 4);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BRONZE_GRATE.get(), ModItems.BRONZE_BLOCK.get(), 4);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BRASS_GRATE.get(), ModItems.BRASS_BLOCK.get(), 4);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.STEEL_GRATE.get(), ModItems.STEEL_BLOCK.get(), 4);
-
-// BOP //
-
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.SMOOTH_WHITE_SANDSTONE_WALL.get(), BOPItems.SMOOTH_WHITE_SANDSTONE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.SMOOTH_BLACK_SANDSTONE_WALL.get(), BOPItems.SMOOTH_BLACK_SANDSTONE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.SMOOTH_ORANGE_SANDSTONE_WALL.get(), BOPItems.SMOOTH_ORANGE_SANDSTONE);
-
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_WHITE_SANDSTONE_STAIRS.get(), BOPItems.CUT_WHITE_SANDSTONE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.CUT_WHITE_SANDSTONE_WALL.get(), BOPItems.CUT_WHITE_SANDSTONE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_WHITE_SANDSTONE_STAIRS.get(), BOPItems.WHITE_SANDSTONE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.CUT_WHITE_SANDSTONE_WALL.get(), BOPItems.WHITE_SANDSTONE);
-
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_BLACK_SANDSTONE_STAIRS.get(), BOPItems.CUT_BLACK_SANDSTONE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.CUT_BLACK_SANDSTONE_WALL.get(), BOPItems.CUT_BLACK_SANDSTONE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_BLACK_SANDSTONE_STAIRS.get(), BOPItems.BLACK_SANDSTONE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.CUT_BLACK_SANDSTONE_WALL.get(), BOPItems.BLACK_SANDSTONE);
-
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_ORANGE_SANDSTONE_STAIRS.get(), BOPItems.CUT_ORANGE_SANDSTONE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.CUT_ORANGE_SANDSTONE_WALL.get(), BOPItems.CUT_ORANGE_SANDSTONE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_ORANGE_SANDSTONE_STAIRS.get(), BOPItems.ORANGE_SANDSTONE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.CUT_ORANGE_SANDSTONE_WALL.get(), BOPItems.ORANGE_SANDSTONE);
-
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.BRIMSTONE_SLAB.get(), BOPItems.BRIMSTONE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.BRIMSTONE_STAIRS.get(), BOPItems.BRIMSTONE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.BRIMSTONE_WALL.get(), BOPItems.BRIMSTONE);
-
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.THERMAL_CALCITE_SLAB.get(), BOPItems.THERMAL_CALCITE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.THERMAL_CALCITE_STAIRS.get(), BOPItems.THERMAL_CALCITE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.THERMAL_CALCITE_WALL.get(), BOPItems.THERMAL_CALCITE);
-
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.POLISHED_THERMAL_CALCITE_SLAB.get(), BOPItems.THERMAL_CALCITE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.POLISHED_THERMAL_CALCITE_STAIRS.get(), BOPItems.THERMAL_CALCITE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.POLISHED_THERMAL_CALCITE_WALL.get(), BOPItems.THERMAL_CALCITE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.POLISHED_THERMAL_CALCITE.get(), BOPItems.THERMAL_CALCITE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.POLISHED_THERMAL_CALCITE_SLAB.get(), CompatModItems.POLISHED_THERMAL_CALCITE.get(), 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.POLISHED_THERMAL_CALCITE_STAIRS.get(), CompatModItems.POLISHED_THERMAL_CALCITE.get());
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.POLISHED_THERMAL_CALCITE_WALL.get(), CompatModItems.POLISHED_THERMAL_CALCITE.get());
-
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.THERMAL_CALCITE_BRICK_SLAB.get(), BOPItems.THERMAL_CALCITE, 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.THERMAL_CALCITE_BRICK_STAIRS.get(), BOPItems.THERMAL_CALCITE);
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.THERMAL_CALCITE_BRICK_WALL.get(), BOPItems.THERMAL_CALCITE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.THERMAL_CALCITE_BRICKS.get(), BOPItems.THERMAL_CALCITE);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.THERMAL_CALCITE_BRICK_SLAB.get(), CompatModItems.POLISHED_THERMAL_CALCITE.get(), 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.THERMAL_CALCITE_BRICK_STAIRS.get(), CompatModItems.POLISHED_THERMAL_CALCITE.get());
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.THERMAL_CALCITE_BRICK_WALL.get(), CompatModItems.POLISHED_THERMAL_CALCITE.get());
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.THERMAL_CALCITE_BRICKS.get(), CompatModItems.POLISHED_THERMAL_CALCITE.get());
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.THERMAL_CALCITE_BRICK_SLAB.get(), CompatModItems.THERMAL_CALCITE_BRICKS.get(), 2);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.THERMAL_CALCITE_BRICK_STAIRS.get(), CompatModItems.THERMAL_CALCITE_BRICKS.get());
-        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, CompatModItems.THERMAL_CALCITE_BRICK_WALL.get(), CompatModItems.THERMAL_CALCITE_BRICKS.get());
-
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_ROSE_QUARTZ.get(), BOPItems.ROSE_QUARTZ_BLOCK, 4);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_ROSE_QUARTZ_STAIRS.get(), BOPItems.ROSE_QUARTZ_BLOCK, 4);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_ROSE_QUARTZ_SLAB.get(), BOPItems.ROSE_QUARTZ_BLOCK, 8);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_ROSE_QUARTZ_STAIRS.get(), CompatModItems.CUT_ROSE_QUARTZ.get());
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, CompatModItems.CUT_ROSE_QUARTZ_SLAB.get(), CompatModItems.CUT_ROSE_QUARTZ.get(), 2);
-    }
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.STEEL_GRATE.get(), ModItems.STEEL_BLOCK.get(), 4);}
 
     public static class Runner extends RecipeProvider.Runner {
         public Runner(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider){

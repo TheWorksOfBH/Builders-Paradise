@@ -13,7 +13,7 @@ public abstract class BlocksMixins {
 
 
     @Definition(id = "IRON_BLOCK", field = "Lnet/minecraft/world/level/block/Blocks;IRON_BLOCK:Lnet/minecraft/world/level/block/Block;")
-    @Definition(id = "register", method = "Lnet/minecraft/world/level/block/Blocks;register(Ljava/lang/String;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;")
+    @Definition(id = "register", method = "Lnet/minecraft/world/level/block/Blocks;register(Lnet/minecraft/references/BlockItemId;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;")
     @Expression("IRON_BLOCK = @(register(?, ?))")
     @ModifyArg(method = "<clinit>", at = @At("MIXINEXTRAS:EXPRESSION"))
     private static BlockBehaviour.Properties modifyIronProperties(BlockBehaviour.Properties properties) {
@@ -21,7 +21,7 @@ public abstract class BlocksMixins {
     }
 
     @Definition(id = "IRON_DOOR", field = "Lnet/minecraft/world/level/block/Blocks;IRON_DOOR:Lnet/minecraft/world/level/block/Block;")
-    @Definition(id = "register", method = "Lnet/minecraft/world/level/block/Blocks;register(Ljava/lang/String;Ljava/util/function/Function;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;")
+    @Definition(id = "register", method = "Lnet/minecraft/world/level/block/Blocks;register(Lnet/minecraft/references/BlockItemId;Ljava/util/function/Function;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;")
     @Expression("IRON_DOOR = @(register(?, ?, ?))")
     @ModifyArg(method = "<clinit>", at = @At("MIXINEXTRAS:EXPRESSION"))
     private static BlockBehaviour.Properties modifyIronDoorProperties(BlockBehaviour.Properties properties) {
@@ -29,7 +29,7 @@ public abstract class BlocksMixins {
     }
 
     @Definition(id = "IRON_TRAPDOOR", field = "Lnet/minecraft/world/level/block/Blocks;IRON_TRAPDOOR:Lnet/minecraft/world/level/block/Block;")
-    @Definition(id = "register", method = "Lnet/minecraft/world/level/block/Blocks;register(Ljava/lang/String;Ljava/util/function/Function;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;")
+    @Definition(id = "register", method = "Lnet/minecraft/world/level/block/Blocks;register(Lnet/minecraft/references/BlockItemId;Ljava/util/function/Function;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;")
     @Expression("IRON_TRAPDOOR = @(register(?, ?, ?))")
     @ModifyArg(method = "<clinit>", at = @At("MIXINEXTRAS:EXPRESSION"))
     private static BlockBehaviour.Properties modifyIronTrapdoorProperties(BlockBehaviour.Properties properties) {
@@ -37,15 +37,15 @@ public abstract class BlocksMixins {
     }
 
     @Definition(id = "HEAVY_WEIGHTED_PRESSURE_PLATE", field = "Lnet/minecraft/world/level/block/Blocks;HEAVY_WEIGHTED_PRESSURE_PLATE:Lnet/minecraft/world/level/block/Block;")
-    @Definition(id = "register", method = "Lnet/minecraft/world/level/block/Blocks;register(Ljava/lang/String;Ljava/util/function/Function;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;")
-    @Expression("HEAVY_WEIGHTED_PRESSURE_PLATE = @(register(?, ?, ?))")
+    @Definition(id = "register", method = "Lnet/minecraft/world/level/block/Blocks;register(Lnet/minecraft/references/BlockItemId;Ljava/util/function/Function;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;")
+    @Expression(("HEAVY_WEIGHTED_PRESSURE_PLATE = @(register(?, ?, ?))"))
     @ModifyArg(method = "<clinit>", at = @At("MIXINEXTRAS:EXPRESSION"))
     private static BlockBehaviour.Properties modifyIronPressurePlateProperties(BlockBehaviour.Properties properties) {
         return properties.randomTicks();
     }
 
     @Definition(id = "IRON_BARS", field = "Lnet/minecraft/world/level/block/Blocks;IRON_BARS:Lnet/minecraft/world/level/block/Block;")
-    @Definition(id = "register", method = "Lnet/minecraft/world/level/block/Blocks;register(Ljava/lang/String;Ljava/util/function/Function;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;")
+    @Definition(id = "register", method = "Lnet/minecraft/world/level/block/Blocks;register(Lnet/minecraft/references/BlockItemId;Ljava/util/function/Function;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;")
     @Expression("IRON_BARS = @(register(?, ?, ?))")
     @ModifyArg(method = "<clinit>", at = @At("MIXINEXTRAS:EXPRESSION"))
     private static BlockBehaviour.Properties modifyIronBarsProperties(BlockBehaviour.Properties properties) {
@@ -53,7 +53,7 @@ public abstract class BlocksMixins {
     }
 
     @Definition(id = "IRON_CHAIN", field = "Lnet/minecraft/world/level/block/Blocks;IRON_CHAIN:Lnet/minecraft/world/level/block/Block;")
-    @Definition(id = "register", method = "Lnet/minecraft/world/level/block/Blocks;register(Ljava/lang/String;Ljava/util/function/Function;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;")
+    @Definition(id = "register", method = "Lnet/minecraft/world/level/block/Blocks;register(Lnet/minecraft/references/BlockItemId;Ljava/util/function/Function;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;")
     @Expression("IRON_CHAIN = @(register(?, ?, ?))")
     @ModifyArg(method = "<clinit>", at = @At("MIXINEXTRAS:EXPRESSION"))
     private static BlockBehaviour.Properties modifyIronChainProperties(BlockBehaviour.Properties properties) {
@@ -61,7 +61,7 @@ public abstract class BlocksMixins {
     }
 
     @Definition(id = "LANTERN", field = "Lnet/minecraft/world/level/block/Blocks;LANTERN:Lnet/minecraft/world/level/block/Block;")
-    @Definition(id = "register", method = "Lnet/minecraft/world/level/block/Blocks;register(Ljava/lang/String;Ljava/util/function/Function;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;")
+    @Definition(id = "register", method = "Lnet/minecraft/world/level/block/Blocks;register(Lnet/minecraft/references/BlockItemId;Ljava/util/function/Function;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;")
     @Expression("LANTERN = @(register(?, ?, ?))")
     @ModifyArg(method = "<clinit>", at = @At("MIXINEXTRAS:EXPRESSION"))
     private static BlockBehaviour.Properties modifyIronLanternProperties(BlockBehaviour.Properties properties) {
@@ -69,7 +69,7 @@ public abstract class BlocksMixins {
     }
 
     @Definition(id = "SOUL_LANTERN", field = "Lnet/minecraft/world/level/block/Blocks;SOUL_LANTERN:Lnet/minecraft/world/level/block/Block;")
-    @Definition(id = "register", method = "Lnet/minecraft/world/level/block/Blocks;register(Ljava/lang/String;Ljava/util/function/Function;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;")
+    @Definition(id = "register", method = "Lnet/minecraft/world/level/block/Blocks;register(Lnet/minecraft/references/BlockItemId;Ljava/util/function/Function;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;")
     @Expression("SOUL_LANTERN = @(register(?, ?, ?))")
     @ModifyArg(method = "<clinit>", at = @At("MIXINEXTRAS:EXPRESSION"))
     private static BlockBehaviour.Properties modifyIronSoulLanternProperties(BlockBehaviour.Properties properties) {

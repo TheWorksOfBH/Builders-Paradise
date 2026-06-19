@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "I": "buildersparadise:lead_ingot",
     "N": "buildersparadise:lead_nugget"

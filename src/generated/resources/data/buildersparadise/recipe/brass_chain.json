@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "I": "buildersparadise:brass_ingot",
     "N": "buildersparadise:brass_nugget"

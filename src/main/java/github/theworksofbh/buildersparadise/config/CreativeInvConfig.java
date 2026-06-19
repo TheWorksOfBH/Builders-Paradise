@@ -153,94 +153,115 @@ public class CreativeInvConfig {
             tabData.insertAfter(ModItems.CUT_NETHERITE.get().getDefaultInstance(), ModItems.CUT_NETHERITE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.CUT_NETHERITE_STAIRS.get().getDefaultInstance(), ModItems.CUT_NETHERITE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.COPPER_TRAPDOOR.getDefaultInstance(), ModItems.MEDIUM_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.EXPOSED_COPPER_TRAPDOOR.getDefaultInstance(), ModItems.EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.WEATHERED_COPPER_TRAPDOOR.getDefaultInstance(), ModItems.WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.OXIDIZED_COPPER_TRAPDOOR.getDefaultInstance(), ModItems.OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.COPPER_TRAPDOOR.weathering().oxidized().getDefaultInstance(), ModItems.MEDIUM_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.MEDIUM_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.WAXED_COPPER_TRAPDOOR.getDefaultInstance(), ModItems.WAXED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.WAXED_EXPOSED_COPPER_TRAPDOOR.getDefaultInstance(), ModItems.WAXED_EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.WAXED_WEATHERED_COPPER_TRAPDOOR.getDefaultInstance(), ModItems.WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.WAXED_OXIDIZED_COPPER_TRAPDOOR.getDefaultInstance(), ModItems.WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.COPPER_TRAPDOOR.waxed().oxidized().getDefaultInstance(), ModItems.WAXED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.WAXED_OXIDIZED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.IRON_CHAIN.getDefaultInstance(), ModItems.EXPOSED_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.EXPOSED_IRON.get().getDefaultInstance(), ModItems.EXPOSED_IRON_BARS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.EXPOSED_IRON_BARS.get().getDefaultInstance(), ModItems.EXPOSED_CUT_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.EXPOSED_CUT_IRON.get().getDefaultInstance(), ModItems.EXPOSED_CUT_IRON_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.EXPOSED_CUT_IRON_STAIRS.get().getDefaultInstance(), ModItems.EXPOSED_CUT_IRON_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.EXPOSED_CUT_IRON_SLAB.get().getDefaultInstance(), ModItems.EXPOSED_IRON_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.EXPOSED_IRON_DOOR.get().getDefaultInstance(), ModItems.EXPOSED_IRON_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.EXPOSED_IRON_TRAPDOOR.get().getDefaultInstance(), ModItems.EXPOSED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.EXPOSED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.EXPOSED_IRON_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_BLOCK.getDefaultInstance(), ModItems.IRON_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.HEAVY_WEIGHTED_PRESSURE_PLATE.getDefaultInstance(), ModItems.IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(ModItems.EXPOSED_IRON_CHAIN.get().getDefaultInstance(), ModItems.WEATHERED_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WEATHERED_IRON.get().getDefaultInstance(), ModItems.WEATHERED_IRON_BARS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WEATHERED_IRON_BARS.get().getDefaultInstance(), ModItems.WEATHERED_CUT_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WEATHERED_CUT_IRON.get().getDefaultInstance(), ModItems.WEATHERED_CUT_IRON_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WEATHERED_CUT_IRON_STAIRS.get().getDefaultInstance(), ModItems.WEATHERED_CUT_IRON_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WEATHERED_CUT_IRON_SLAB.get().getDefaultInstance(), ModItems.WEATHERED_IRON_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WEATHERED_IRON_DOOR.get().getDefaultInstance(), ModItems.WEATHERED_IRON_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WEATHERED_IRON_TRAPDOOR.get().getDefaultInstance(), ModItems.WEATHERED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WEATHERED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.WEATHERED_IRON_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_CHAIN.getDefaultInstance(), ModItems.WAXED_IRON_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_CHAIN.getDefaultInstance(), ModItems.WAXED_IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_CHAIN.getDefaultInstance(), ModItems.WAXED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_CHAIN.getDefaultInstance(), ModItems.WAXED_IRON_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_CHAIN.getDefaultInstance(), ModItems.WAXED_IRON_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_CHAIN.getDefaultInstance(), ModItems.WAXED_IRON_BARS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_CHAIN.getDefaultInstance(), ModItems.WAXED_CUT_IRON_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_CHAIN.getDefaultInstance(), ModItems.WAXED_CUT_IRON_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_CHAIN.getDefaultInstance(), ModItems.WAXED_CUT_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_CHAIN.getDefaultInstance(), ModItems.WAXED_IRON_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_CHAIN.getDefaultInstance(), ModItems.WAXED_IRON_BLOCK.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(ModItems.WEATHERED_IRON_CHAIN.get().getDefaultInstance(), ModItems.RUSTED_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.RUSTED_IRON.get().getDefaultInstance(), ModItems.RUSTED_IRON_BARS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.RUSTED_IRON_BARS.get().getDefaultInstance(), ModItems.RUSTED_CUT_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.RUSTED_CUT_IRON.get().getDefaultInstance(), ModItems.RUSTED_CUT_IRON_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.RUSTED_CUT_IRON_STAIRS.get().getDefaultInstance(), ModItems.RUSTED_CUT_IRON_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.RUSTED_CUT_IRON_SLAB.get().getDefaultInstance(), ModItems.RUSTED_IRON_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.RUSTED_IRON_DOOR.get().getDefaultInstance(), ModItems.RUSTED_IRON_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.RUSTED_IRON_TRAPDOOR.get().getDefaultInstance(), ModItems.RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.RUSTED_IRON_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_CHAIN.getDefaultInstance(), ModItems.RUSTED_IRON_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.IRON_BULB.get().getDefaultInstance(), ModItems.RUSTED_IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.HEAVY_WEIGHTED_PRESSURE_PLATE.getDefaultInstance(), ModItems.RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_TRAPDOOR.getDefaultInstance(), ModItems.RUSTED_IRON_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_DOOR.getDefaultInstance(), ModItems.RUSTED_IRON_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_BARS.getDefaultInstance(), ModItems.RUSTED_IRON_BARS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CUT_IRON_SLAB.get().getDefaultInstance(), ModItems.RUSTED_CUT_IRON_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CUT_IRON_STAIRS.get().getDefaultInstance(), ModItems.RUSTED_CUT_IRON_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CUT_IRON.get().getDefaultInstance(), ModItems.RUSTED_CUT_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.IRON_GRATE.get().getDefaultInstance(), ModItems.RUSTED_IRON_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_BLOCK.getDefaultInstance(), ModItems.RUSTED_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(ModItems.RUSTED_IRON_CHAIN.get().getDefaultInstance(), ModItems.WAXED_IRON_BLOCK.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_IRON_BLOCK.get().getDefaultInstance(), ModItems.WAXED_IRON_BARS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_IRON_BARS.get().getDefaultInstance(), ModItems.WAXED_CUT_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_CUT_IRON.get().getDefaultInstance(), ModItems.WAXED_CUT_IRON_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_CUT_IRON_STAIRS.get().getDefaultInstance(), ModItems.WAXED_CUT_IRON_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_CUT_IRON_SLAB.get().getDefaultInstance(), ModItems.WAXED_IRON_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_IRON_DOOR.get().getDefaultInstance(), ModItems.WAXED_IRON_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_IRON_TRAPDOOR.get().getDefaultInstance(), ModItems.WAXED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.WAXED_IRON_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_CHAIN.getDefaultInstance(), ModItems.WEATHERED_IRON_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.IRON_BULB.get().getDefaultInstance(), ModItems.WEATHERED_IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.HEAVY_WEIGHTED_PRESSURE_PLATE.getDefaultInstance(), ModItems.WEATHERED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_TRAPDOOR.getDefaultInstance(), ModItems.WEATHERED_IRON_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_DOOR.getDefaultInstance(), ModItems.WEATHERED_IRON_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_BARS.getDefaultInstance(), ModItems.WEATHERED_IRON_BARS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CUT_IRON_SLAB.get().getDefaultInstance(), ModItems.WEATHERED_CUT_IRON_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CUT_IRON_STAIRS.get().getDefaultInstance(), ModItems.WEATHERED_CUT_IRON_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CUT_IRON.get().getDefaultInstance(), ModItems.WEATHERED_CUT_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.IRON_GRATE.get().getDefaultInstance(), ModItems.WEATHERED_IRON_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_BLOCK.getDefaultInstance(), ModItems.WEATHERED_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(ModItems.WAXED_IRON_CHAIN.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_EXPOSED_IRON.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_IRON_BARS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_EXPOSED_IRON_BARS.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_CUT_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_EXPOSED_CUT_IRON.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_CUT_IRON_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_EXPOSED_CUT_IRON_STAIRS.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_CUT_IRON_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_EXPOSED_CUT_IRON_SLAB.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_IRON_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_EXPOSED_IRON_DOOR.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_IRON_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_EXPOSED_IRON_TRAPDOOR.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_EXPOSED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_IRON_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_CHAIN.getDefaultInstance(), ModItems.EXPOSED_IRON_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.IRON_BULB.get().getDefaultInstance(), ModItems.EXPOSED_IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.HEAVY_WEIGHTED_PRESSURE_PLATE.getDefaultInstance(), ModItems.EXPOSED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_TRAPDOOR.getDefaultInstance(), ModItems.EXPOSED_IRON_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_DOOR.getDefaultInstance(), ModItems.EXPOSED_IRON_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_BARS.getDefaultInstance(), ModItems.EXPOSED_IRON_BARS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CUT_IRON_SLAB.get().getDefaultInstance(), ModItems.EXPOSED_CUT_IRON_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CUT_IRON_STAIRS.get().getDefaultInstance(), ModItems.EXPOSED_CUT_IRON_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CUT_IRON.get().getDefaultInstance(), ModItems.EXPOSED_CUT_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.IRON_GRATE.get().getDefaultInstance(), ModItems.EXPOSED_IRON_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.IRON_BLOCK.getDefaultInstance(), ModItems.EXPOSED_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(ModItems.WAXED_EXPOSED_IRON_CHAIN.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_WEATHERED_IRON.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_IRON_BARS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_WEATHERED_IRON_BARS.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_CUT_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_WEATHERED_CUT_IRON.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_CUT_IRON_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_WEATHERED_CUT_IRON_STAIRS.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_CUT_IRON_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_WEATHERED_CUT_IRON_SLAB.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_IRON_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_WEATHERED_IRON_DOOR.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_IRON_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_WEATHERED_IRON_TRAPDOOR.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_WEATHERED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_IRON_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_IRON_CHAIN.get().getDefaultInstance(), ModItems.WAXED_RUSTED_IRON_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_IRON_BULB.get().getDefaultInstance(), ModItems.WAXED_RUSTED_IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.WAXED_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_IRON_TRAPDOOR.get().getDefaultInstance(), ModItems.WAXED_RUSTED_IRON_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_IRON_DOOR.get().getDefaultInstance(), ModItems.WAXED_RUSTED_IRON_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_IRON_BARS.get().getDefaultInstance(), ModItems.WAXED_RUSTED_IRON_BARS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_CUT_IRON_SLAB.get().getDefaultInstance(), ModItems.WAXED_RUSTED_CUT_IRON_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_CUT_IRON_STAIRS.get().getDefaultInstance(), ModItems.WAXED_RUSTED_CUT_IRON_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_CUT_IRON.get().getDefaultInstance(), ModItems.WAXED_RUSTED_CUT_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_IRON_GRATE.get().getDefaultInstance(), ModItems.WAXED_RUSTED_IRON_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_IRON_BLOCK.get().getDefaultInstance(), ModItems.WAXED_RUSTED_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(ModItems.WAXED_WEATHERED_IRON_CHAIN.get().getDefaultInstance(), ModItems.WAXED_RUSTED_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_RUSTED_IRON.get().getDefaultInstance(), ModItems.WAXED_RUSTED_IRON_BARS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_RUSTED_IRON_BARS.get().getDefaultInstance(), ModItems.WAXED_RUSTED_CUT_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_RUSTED_CUT_IRON.get().getDefaultInstance(), ModItems.WAXED_RUSTED_CUT_IRON_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_RUSTED_CUT_IRON_STAIRS.get().getDefaultInstance(), ModItems.WAXED_RUSTED_CUT_IRON_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_RUSTED_CUT_IRON_SLAB.get().getDefaultInstance(), ModItems.WAXED_RUSTED_IRON_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_RUSTED_IRON_DOOR.get().getDefaultInstance(), ModItems.WAXED_RUSTED_IRON_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_RUSTED_IRON_TRAPDOOR.get().getDefaultInstance(), ModItems.WAXED_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.WAXED_RUSTED_IRON_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_IRON_CHAIN.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_IRON_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_IRON_BULB.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_IRON_TRAPDOOR.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_IRON_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_IRON_DOOR.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_IRON_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_IRON_BARS.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_IRON_BARS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_CUT_IRON_SLAB.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_CUT_IRON_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_CUT_IRON_STAIRS.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_CUT_IRON_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_CUT_IRON.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_CUT_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_IRON_GRATE.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_IRON_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_IRON_BLOCK.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(ModItems.WAXED_IRON_CHAIN.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_IRON_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_IRON_BULB.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_IRON_TRAPDOOR.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_IRON_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_IRON_DOOR.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_IRON_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_IRON_BARS.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_IRON_BARS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_CUT_IRON_SLAB.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_CUT_IRON_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_CUT_IRON_STAIRS.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_CUT_IRON_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_CUT_IRON.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_CUT_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_IRON_GRATE.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_IRON_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.WAXED_IRON_BLOCK.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_IRON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.insertAfter(ModItems.CUT_GOLD_SLAB.get().getDefaultInstance(), ModItems.GOLD_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.GOLD_DOOR.get().getDefaultInstance(), ModItems.GOLD_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(Items.LIGHT_WEIGHTED_PRESSURE_PLATE.getDefaultInstance(), ModItems.GOLD_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.GOLD_BLOCK.getDefaultInstance(), ModItems.GOLD_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.LIGHT_WEIGHTED_PRESSURE_PLATE.getDefaultInstance(), ModItems.GOLD_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.insertAfter(ModItems.CUT_NETHERITE_SLAB.get().getDefaultInstance(), ModItems.NETHERITE_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.NETHERITE_DOOR.get().getDefaultInstance(), ModItems.NETHERITE_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.NETHERITE_TRAPDOOR.get().getDefaultInstance(), ModItems.PLAYER_ONLY_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.PLAYER_ONLY_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.NETHERITE_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.NETHERITE_BLOCK.getDefaultInstance(), ModItems.NETHERITE_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.PLAYER_ONLY_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.NETHERITE_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.insertAfter(ModItems.POLISHED_GRANITE_WALL.get().getDefaultInstance(), ModItems.POLISHED_GRANITE_BRICKS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.POLISHED_GRANITE_BRICKS.get().getDefaultInstance(), ModItems.POLISHED_GRANITE_BRICK_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -297,156 +318,202 @@ public class CreativeInvConfig {
             tabData.insertAfter(ModItems.DARK_ELDER_PRISMARINE_SLAB.get().getDefaultInstance(), ModItems.DARK_ELDER_PRISMARINE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.accept(ModItems.ZINC_BLOCK.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.CUT_ZINC.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.CUT_ZINC_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.CUT_ZINC_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.ZINC_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.ZINC_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.ZINC_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-
             tabData.accept(ModItems.EXPOSED_ZINC.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.EXPOSED_CUT_ZINC.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.EXPOSED_CUT_ZINC_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.EXPOSED_CUT_ZINC_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.EXPOSED_ZINC_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.EXPOSED_ZINC_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.EXPOSED_ZINC_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-
             tabData.accept(ModItems.WEATHERED_ZINC.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WEATHERED_CUT_ZINC.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WEATHERED_CUT_ZINC_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WEATHERED_CUT_ZINC_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WEATHERED_ZINC_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WEATHERED_ZINC_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WEATHERED_ZINC_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-
             tabData.accept(ModItems.CORRODED_ZINC.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.accept(ModItems.ZINC_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.EXPOSED_ZINC_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WEATHERED_ZINC_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.CORRODED_ZINC_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.accept(ModItems.CUT_ZINC.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.EXPOSED_CUT_ZINC.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WEATHERED_CUT_ZINC.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CORRODED_CUT_ZINC.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.accept(ModItems.CUT_ZINC_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.EXPOSED_CUT_ZINC_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WEATHERED_CUT_ZINC_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CORRODED_CUT_ZINC_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.accept(ModItems.CUT_ZINC_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.EXPOSED_CUT_ZINC_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WEATHERED_CUT_ZINC_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CORRODED_CUT_ZINC_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.accept(ModItems.ZINC_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.EXPOSED_ZINC_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WEATHERED_ZINC_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CORRODED_ZINC_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.accept(ModItems.ZINC_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.EXPOSED_ZINC_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WEATHERED_ZINC_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CORRODED_ZINC_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.accept(ModItems.BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.accept(ModItems.ZINC_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.EXPOSED_ZINC_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WEATHERED_ZINC_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.CORRODED_ZINC_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.accept(ModItems.ZINC_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.EXPOSED_ZINC_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WEATHERED_ZINC_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CORRODED_ZINC_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.accept(ModItems.WAXED_ZINC_BLOCK.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WAXED_CUT_ZINC.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WAXED_CUT_ZINC_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WAXED_CUT_ZINC_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WAXED_ZINC_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WAXED_ZINC_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WAXED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WAXED_ZINC_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-
             tabData.accept(ModItems.WAXED_EXPOSED_ZINC.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WAXED_EXPOSED_CUT_ZINC.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WAXED_EXPOSED_CUT_ZINC_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WAXED_EXPOSED_CUT_ZINC_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WAXED_EXPOSED_ZINC_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WAXED_EXPOSED_ZINC_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WAXED_EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WAXED_EXPOSED_ZINC_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-
             tabData.accept(ModItems.WAXED_WEATHERED_ZINC.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WAXED_WEATHERED_CUT_ZINC.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WAXED_WEATHERED_CUT_ZINC_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WAXED_WEATHERED_CUT_ZINC_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WAXED_WEATHERED_ZINC_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WAXED_WEATHERED_ZINC_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WAXED_WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.accept(ModItems.WAXED_WEATHERED_ZINC_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-
             tabData.accept(ModItems.WAXED_CORRODED_ZINC.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.accept(ModItems.WAXED_ZINC_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WAXED_EXPOSED_ZINC_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WAXED_WEATHERED_ZINC_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WAXED_CORRODED_ZINC_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.accept(ModItems.WAXED_CUT_ZINC.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WAXED_EXPOSED_CUT_ZINC.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WAXED_WEATHERED_CUT_ZINC.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.WAXED_CORRODED_CUT_ZINC.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.accept(ModItems.WAXED_CUT_ZINC_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WAXED_EXPOSED_CUT_ZINC_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WAXED_WEATHERED_CUT_ZINC_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.WAXED_CORRODED_CUT_ZINC_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.accept(ModItems.WAXED_CUT_ZINC_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WAXED_EXPOSED_CUT_ZINC_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WAXED_WEATHERED_CUT_ZINC_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.WAXED_CORRODED_CUT_ZINC_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.accept(ModItems.WAXED_ZINC_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WAXED_EXPOSED_ZINC_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WAXED_WEATHERED_ZINC_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.WAXED_CORRODED_ZINC_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.accept(ModItems.WAXED_ZINC_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WAXED_EXPOSED_ZINC_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WAXED_WEATHERED_ZINC_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.WAXED_CORRODED_ZINC_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.accept(ModItems.WAXED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WAXED_EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WAXED_WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.WAXED_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.accept(ModItems.WAXED_ZINC_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WAXED_EXPOSED_ZINC_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WAXED_WEATHERED_ZINC_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WAXED_CORRODED_ZINC_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.accept(ModItems.WAXED_ZINC_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WAXED_EXPOSED_ZINC_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.WAXED_WEATHERED_ZINC_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.WAXED_CORRODED_ZINC_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.accept(ModItems.SILVER_BLOCK.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.SILVER_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_SILVER.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_SILVER_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_SILVER_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.SILVER_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.SILVER_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.NOTICEABLY_LIGHT_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.SILVER_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.SILVER_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.accept(ModItems.TIN_BLOCK.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.TIN_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_TIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_TIN_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_TIN_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.TIN_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.TIN_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.BARELY_LIGHT_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.TIN_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.TIN_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.accept(ModItems.TUNGSTEN_BLOCK.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.TUNGSTEN_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_TUNGSTEN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_TUNGSTEN_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_TUNGSTEN_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.TUNGSTEN_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.TUNGSTEN_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.EXTRAORDINARILY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.TUNGSTEN_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.TUNGSTEN_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.accept(ModItems.PLATINUM_BLOCK.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.PLATINUM_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_PLATINUM.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_PLATINUM_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_PLATINUM_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.PLATINUM_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.PLATINUM_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.EXTRAORDINARILY_LIGHT_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.PLATINUM_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.PLATINUM_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.accept(ModItems.LEAD_BLOCK.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.LEAD_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_LEAD.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_LEAD_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_LEAD_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.LEAD_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.LEAD_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.NOTICEABLY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.LEAD_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.LEAD_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.accept(ModItems.URANIUM_BLOCK.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.URANIUM_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_URANIUM.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_URANIUM_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_URANIUM_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.URANIUM_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.URANIUM_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.NEGLIGIBLE_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.URANIUM_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.URANIUM_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.accept(ModItems.BRONZE_BLOCK.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.BRONZE_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_BRONZE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_BRONZE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_BRONZE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.BRONZE_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.BRONZE_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.PASSIVE_MOB_ONLY_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.BRONZE_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.BRONZE_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.accept(ModItems.BRASS_BLOCK.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.BRASS_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_BRASS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_BRASS_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_BRASS_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.BRASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.BRASS_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.HOSTILE_MOB_ONLY_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.BRASS_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.BRASS_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.accept(ModItems.STEEL_BLOCK.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.STEEL_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_STEEL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_STEEL_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.CUT_STEEL_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.STEEL_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.STEEL_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.VILLAGER_ONLY_PRESSURE_PLATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.accept(ModItems.STEEL_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.accept(ModItems.STEEL_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.insertAfter(Items.OAK_PLANKS.getDefaultInstance(), ModItems.OAK_MOSAIC.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -674,6 +741,14 @@ public class CreativeInvConfig {
             tabData.insertAfter(ModItems.CUT_SOUL_SANDSTONE_WALL.get().getDefaultInstance(), ModItems.CUT_SOUL_SANDSTONE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.SMOOTH_SOUL_SANDSTONE_WALL.get().getDefaultInstance(), ModItems.SMOOTH_SOUL_SANDSTONE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
+            tabData.insertAfter(Items.SULFUR_WALL.getDefaultInstance(), ModItems.SULFUR_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.POLISHED_SULFUR_WALL.getDefaultInstance(), ModItems.POLISHED_SULFUR_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.SULFUR_BRICK_WALL.getDefaultInstance(), ModItems.SULFUR_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            tabData.insertAfter(Items.CINNABAR_WALL.getDefaultInstance(), ModItems.CINNABAR_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.POLISHED_CINNABAR_WALL.getDefaultInstance(), ModItems.POLISHED_CINNABAR_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.CINNABAR_BRICK_WALL.getDefaultInstance(), ModItems.CINNABAR_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
             tabData.insertAfter(ModItems.END_STONE_WALL.get().getDefaultInstance(), ModItems.END_STONE_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(Items.END_STONE_BRICK_WALL.getDefaultInstance(), ModItems.END_STONE_BRICK_FENCE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
@@ -833,205 +908,136 @@ public class CreativeInvConfig {
 
             tabData.insertAfter(ModItems.LAPIS_FENCE.get().getDefaultInstance(), ModItems.CHISELED_LAPIS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.LAPIS_BRICK_FENCE.get().getDefaultInstance(), ModItems.LAPIS_PILLAR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-
-            tabData.insertAfter(Items.IRON_BLOCK.getDefaultInstance(), ModItems.IRON_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.HEAVY_WEIGHTED_PRESSURE_PLATE.getDefaultInstance(), ModItems.IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.EXPOSED_IRON.get().getDefaultInstance(), ModItems.EXPOSED_IRON_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.EXPOSED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.EXPOSED_IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WEATHERED_IRON.get().getDefaultInstance(), ModItems.WEATHERED_IRON_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WEATHERED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.WEATHERED_IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.RUSTED_IRON.get().getDefaultInstance(), ModItems.RUSTED_IRON_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.RUSTED_IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-
-            tabData.insertAfter(ModItems.WAXED_IRON_BLOCK.get().getDefaultInstance(), ModItems.WAXED_IRON_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.WAXED_IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_EXPOSED_IRON.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_IRON_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_EXPOSED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_WEATHERED_IRON.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_IRON_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_WEATHERED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_RUSTED_IRON.get().getDefaultInstance(), ModItems.WAXED_RUSTED_IRON_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_RUSTED_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.WAXED_RUSTED_IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-
-            tabData.insertAfter(ModItems.ZINC_BLOCK.get().getDefaultInstance(), ModItems.ZINC_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.ZINC_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.EXPOSED_ZINC.get().getDefaultInstance(), ModItems.EXPOSED_ZINC_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.EXPOSED_ZINC_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WEATHERED_ZINC.get().getDefaultInstance(), ModItems.WEATHERED_ZINC_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.WEATHERED_ZINC_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.CORRODED_ZINC.get().getDefaultInstance(), ModItems.CORRODED_ZINC_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.CORRODED_ZINC_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-
-            tabData.insertAfter(ModItems.WAXED_ZINC_BLOCK.get().getDefaultInstance(), ModItems.WAXED_ZINC_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.WAXED_ZINC_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_EXPOSED_ZINC.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_ZINC_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_EXPOSED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.WAXED_EXPOSED_ZINC_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_WEATHERED_ZINC.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_ZINC_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_WEATHERED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_ZINC_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_CORRODED_ZINC.get().getDefaultInstance(), ModItems.WAXED_CORRODED_ZINC_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.WAXED_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.WAXED_CORRODED_ZINC_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-
-            tabData.insertAfter(ModItems.SILVER_BLOCK.get().getDefaultInstance(), ModItems.SILVER_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.NOTICEABLY_LIGHT_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.SILVER_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-
-            tabData.insertAfter(ModItems.TIN_BLOCK.get().getDefaultInstance(), ModItems.TIN_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.BARELY_LIGHT_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.TIN_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-
-            tabData.insertAfter(ModItems.TUNGSTEN_BLOCK.get().getDefaultInstance(), ModItems.TUNGSTEN_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.EXTRAORDINARILY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.TUNGSTEN_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-
-            tabData.insertAfter(ModItems.PLATINUM_BLOCK.get().getDefaultInstance(), ModItems.PLATINUM_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.EXTRAORDINARILY_LIGHT_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.PLATINUM_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-
-            tabData.insertAfter(Items.GOLD_BLOCK.getDefaultInstance(), ModItems.GOLD_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.LIGHT_WEIGHTED_PRESSURE_PLATE.getDefaultInstance(), ModItems.GOLD_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-
-            tabData.insertAfter(ModItems.LEAD_BLOCK.get().getDefaultInstance(), ModItems.LEAD_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.NOTICEABLY_HEAVY_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.LEAD_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-
-            tabData.insertAfter(ModItems.URANIUM_BLOCK.get().getDefaultInstance(), ModItems.URANIUM_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.NEGLIGIBLE_WEIGHTED_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.URANIUM_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-
-            tabData.insertAfter(Items.NETHERITE_BLOCK.getDefaultInstance(), ModItems.NETHERITE_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.PLAYER_ONLY_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.NETHERITE_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-
-            tabData.insertAfter(ModItems.BRONZE_BLOCK.get().getDefaultInstance(), ModItems.BRONZE_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.PASSIVE_MOB_ONLY_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.BRONZE_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-
-            tabData.insertAfter(ModItems.BRASS_BLOCK.get().getDefaultInstance(), ModItems.BRASS_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.HOSTILE_MOB_ONLY_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.BRASS_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-
-            tabData.insertAfter(ModItems.STEEL_BLOCK.get().getDefaultInstance(), ModItems.STEEL_GRATE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.VILLAGER_ONLY_PRESSURE_PLATE.get().getDefaultInstance(), ModItems.STEEL_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         } else if (tabData.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
             tabData.insertAfter(Items.TERRACOTTA.getDefaultInstance(), ModItems.TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.TERRACOTTA_STAIRS.get().getDefaultInstance(), ModItems.TERRACOTTA_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.TERRACOTTA_SLAB.get().getDefaultInstance(), ModItems.TERRACOTTA_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.WHITE_TERRACOTTA.getDefaultInstance(), ModItems.WHITE_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.DYED_TERRACOTTA.white().getDefaultInstance(), ModItems.WHITE_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.WHITE_TERRACOTTA_STAIRS.get().getDefaultInstance(), ModItems.WHITE_TERRACOTTA_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.WHITE_TERRACOTTA_SLAB.get().getDefaultInstance(), ModItems.WHITE_TERRACOTTA_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.ORANGE_TERRACOTTA.getDefaultInstance(), ModItems.ORANGE_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.DYED_TERRACOTTA.orange().getDefaultInstance(), ModItems.ORANGE_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.ORANGE_TERRACOTTA_STAIRS.get().getDefaultInstance(), ModItems.ORANGE_TERRACOTTA_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.ORANGE_TERRACOTTA_SLAB.get().getDefaultInstance(), ModItems.ORANGE_TERRACOTTA_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.MAGENTA_TERRACOTTA.getDefaultInstance(), ModItems.MAGENTA_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.DYED_TERRACOTTA.magenta().getDefaultInstance(), ModItems.MAGENTA_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.MAGENTA_TERRACOTTA_STAIRS.get().getDefaultInstance(), ModItems.MAGENTA_TERRACOTTA_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.MAGENTA_TERRACOTTA_SLAB.get().getDefaultInstance(), ModItems.MAGENTA_TERRACOTTA_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.LIGHT_BLUE_TERRACOTTA.getDefaultInstance(), ModItems.LIGHT_BLUE_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.DYED_TERRACOTTA.lightBlue().getDefaultInstance(), ModItems.LIGHT_BLUE_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.LIGHT_BLUE_TERRACOTTA_STAIRS.get().getDefaultInstance(), ModItems.LIGHT_BLUE_TERRACOTTA_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.LIGHT_BLUE_TERRACOTTA_SLAB.get().getDefaultInstance(), ModItems.LIGHT_BLUE_TERRACOTTA_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.YELLOW_TERRACOTTA.getDefaultInstance(), ModItems.YELLOW_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.DYED_TERRACOTTA.yellow().getDefaultInstance(), ModItems.YELLOW_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.YELLOW_TERRACOTTA_STAIRS.get().getDefaultInstance(), ModItems.YELLOW_TERRACOTTA_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.YELLOW_TERRACOTTA_SLAB.get().getDefaultInstance(), ModItems.YELLOW_TERRACOTTA_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.LIME_TERRACOTTA.getDefaultInstance(), ModItems.LIME_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.DYED_TERRACOTTA.lime().getDefaultInstance(), ModItems.LIME_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.LIME_TERRACOTTA_STAIRS.get().getDefaultInstance(), ModItems.LIME_TERRACOTTA_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.LIME_TERRACOTTA_SLAB.get().getDefaultInstance(), ModItems.LIME_TERRACOTTA_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.PINK_TERRACOTTA.getDefaultInstance(), ModItems.PINK_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.DYED_TERRACOTTA.pink().getDefaultInstance(), ModItems.PINK_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.PINK_TERRACOTTA_STAIRS.get().getDefaultInstance(), ModItems.PINK_TERRACOTTA_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.PINK_TERRACOTTA_SLAB.get().getDefaultInstance(), ModItems.PINK_TERRACOTTA_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.GRAY_TERRACOTTA.getDefaultInstance(), ModItems.GRAY_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.DYED_TERRACOTTA.gray().getDefaultInstance(), ModItems.GRAY_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.GRAY_TERRACOTTA_STAIRS.get().getDefaultInstance(), ModItems.GRAY_TERRACOTTA_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.GRAY_TERRACOTTA_SLAB.get().getDefaultInstance(), ModItems.GRAY_TERRACOTTA_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.LIGHT_GRAY_TERRACOTTA.getDefaultInstance(), ModItems.LIGHT_GRAY_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.DYED_TERRACOTTA.lightGray().getDefaultInstance(), ModItems.LIGHT_GRAY_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.LIGHT_GRAY_TERRACOTTA_STAIRS.get().getDefaultInstance(), ModItems.LIGHT_GRAY_TERRACOTTA_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.LIGHT_GRAY_TERRACOTTA_SLAB.get().getDefaultInstance(), ModItems.LIGHT_GRAY_TERRACOTTA_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.CYAN_TERRACOTTA.getDefaultInstance(), ModItems.CYAN_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.DYED_TERRACOTTA.cyan().getDefaultInstance(), ModItems.CYAN_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.CYAN_TERRACOTTA_STAIRS.get().getDefaultInstance(), ModItems.CYAN_TERRACOTTA_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.CYAN_TERRACOTTA_SLAB.get().getDefaultInstance(), ModItems.CYAN_TERRACOTTA_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.PURPLE_TERRACOTTA.getDefaultInstance(), ModItems.PURPLE_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.DYED_TERRACOTTA.purple().getDefaultInstance(), ModItems.PURPLE_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.PURPLE_TERRACOTTA_STAIRS.get().getDefaultInstance(), ModItems.PURPLE_TERRACOTTA_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.PURPLE_TERRACOTTA_SLAB.get().getDefaultInstance(), ModItems.PURPLE_TERRACOTTA_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.BLUE_TERRACOTTA.getDefaultInstance(), ModItems.BLUE_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.DYED_TERRACOTTA.blue().getDefaultInstance(), ModItems.BLUE_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.BLUE_TERRACOTTA_STAIRS.get().getDefaultInstance(), ModItems.BLUE_TERRACOTTA_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.BLUE_TERRACOTTA_SLAB.get().getDefaultInstance(), ModItems.BLUE_TERRACOTTA_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.BROWN_TERRACOTTA.getDefaultInstance(), ModItems.BROWN_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.DYED_TERRACOTTA.brown().getDefaultInstance(), ModItems.BROWN_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.BROWN_TERRACOTTA_STAIRS.get().getDefaultInstance(), ModItems.BROWN_TERRACOTTA_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.BROWN_TERRACOTTA_SLAB.get().getDefaultInstance(), ModItems.BROWN_TERRACOTTA_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.GREEN_TERRACOTTA.getDefaultInstance(), ModItems.GREEN_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.DYED_TERRACOTTA.green().getDefaultInstance(), ModItems.GREEN_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.GREEN_TERRACOTTA_STAIRS.get().getDefaultInstance(), ModItems.GREEN_TERRACOTTA_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.GREEN_TERRACOTTA_SLAB.get().getDefaultInstance(), ModItems.GREEN_TERRACOTTA_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.RED_TERRACOTTA.getDefaultInstance(), ModItems.RED_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.DYED_TERRACOTTA.red().getDefaultInstance(), ModItems.RED_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.RED_TERRACOTTA_STAIRS.get().getDefaultInstance(), ModItems.RED_TERRACOTTA_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.RED_TERRACOTTA_SLAB.get().getDefaultInstance(), ModItems.RED_TERRACOTTA_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.BLACK_TERRACOTTA.getDefaultInstance(), ModItems.BLACK_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.DYED_TERRACOTTA.black().getDefaultInstance(), ModItems.BLACK_TERRACOTTA_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.BLACK_TERRACOTTA_STAIRS.get().getDefaultInstance(), ModItems.BLACK_TERRACOTTA_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.BLACK_TERRACOTTA_SLAB.get().getDefaultInstance(), ModItems.BLACK_TERRACOTTA_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.WHITE_CONCRETE.getDefaultInstance(), ModItems.WHITE_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.CONCRETE.white().getDefaultInstance(), ModItems.WHITE_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.WHITE_CONCRETE_STAIRS.get().getDefaultInstance(), ModItems.WHITE_CONCRETE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.WHITE_CONCRETE_SLAB.get().getDefaultInstance(), ModItems.WHITE_CONCRETE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.ORANGE_CONCRETE.getDefaultInstance(), ModItems.ORANGE_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.CONCRETE.orange().getDefaultInstance(), ModItems.ORANGE_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.ORANGE_CONCRETE_STAIRS.get().getDefaultInstance(), ModItems.ORANGE_CONCRETE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.ORANGE_CONCRETE_SLAB.get().getDefaultInstance(), ModItems.ORANGE_CONCRETE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.MAGENTA_CONCRETE.getDefaultInstance(), ModItems.MAGENTA_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.CONCRETE.magenta().getDefaultInstance(), ModItems.MAGENTA_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.MAGENTA_CONCRETE_STAIRS.get().getDefaultInstance(), ModItems.MAGENTA_CONCRETE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.MAGENTA_CONCRETE_SLAB.get().getDefaultInstance(), ModItems.MAGENTA_CONCRETE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.LIGHT_BLUE_CONCRETE.getDefaultInstance(), ModItems.LIGHT_BLUE_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.CONCRETE.lightBlue().getDefaultInstance(), ModItems.LIGHT_BLUE_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.LIGHT_BLUE_CONCRETE_STAIRS.get().getDefaultInstance(), ModItems.LIGHT_BLUE_CONCRETE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.LIGHT_BLUE_CONCRETE_SLAB.get().getDefaultInstance(), ModItems.LIGHT_BLUE_CONCRETE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.YELLOW_CONCRETE.getDefaultInstance(), ModItems.YELLOW_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.CONCRETE.yellow().getDefaultInstance(), ModItems.YELLOW_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.YELLOW_CONCRETE_STAIRS.get().getDefaultInstance(), ModItems.YELLOW_CONCRETE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.YELLOW_CONCRETE_SLAB.get().getDefaultInstance(), ModItems.YELLOW_CONCRETE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.LIME_CONCRETE.getDefaultInstance(), ModItems.LIME_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.CONCRETE.lime().getDefaultInstance(), ModItems.LIME_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.LIME_CONCRETE_STAIRS.get().getDefaultInstance(), ModItems.LIME_CONCRETE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.LIME_CONCRETE_SLAB.get().getDefaultInstance(), ModItems.LIME_CONCRETE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.PINK_CONCRETE.getDefaultInstance(), ModItems.PINK_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.CONCRETE.pink().getDefaultInstance(), ModItems.PINK_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.PINK_CONCRETE_STAIRS.get().getDefaultInstance(), ModItems.PINK_CONCRETE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.PINK_CONCRETE_SLAB.get().getDefaultInstance(), ModItems.PINK_CONCRETE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.GRAY_CONCRETE.getDefaultInstance(), ModItems.GRAY_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.CONCRETE.gray().getDefaultInstance(), ModItems.GRAY_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.GRAY_CONCRETE_STAIRS.get().getDefaultInstance(), ModItems.GRAY_CONCRETE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.GRAY_CONCRETE_SLAB.get().getDefaultInstance(), ModItems.GRAY_CONCRETE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.LIGHT_GRAY_CONCRETE.getDefaultInstance(), ModItems.LIGHT_GRAY_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.CONCRETE.lightGray().getDefaultInstance(), ModItems.LIGHT_GRAY_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.LIGHT_GRAY_CONCRETE_STAIRS.get().getDefaultInstance(), ModItems.LIGHT_GRAY_CONCRETE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.LIGHT_GRAY_CONCRETE_SLAB.get().getDefaultInstance(), ModItems.LIGHT_GRAY_CONCRETE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.CYAN_CONCRETE.getDefaultInstance(), ModItems.CYAN_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.CONCRETE.cyan().getDefaultInstance(), ModItems.CYAN_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.CYAN_CONCRETE_STAIRS.get().getDefaultInstance(), ModItems.CYAN_CONCRETE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.CYAN_CONCRETE_SLAB.get().getDefaultInstance(), ModItems.CYAN_CONCRETE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.PURPLE_CONCRETE.getDefaultInstance(), ModItems.PURPLE_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.CONCRETE.purple().getDefaultInstance(), ModItems.PURPLE_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.PURPLE_CONCRETE_STAIRS.get().getDefaultInstance(), ModItems.PURPLE_CONCRETE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.PURPLE_CONCRETE_SLAB.get().getDefaultInstance(), ModItems.PURPLE_CONCRETE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.BLUE_CONCRETE.getDefaultInstance(), ModItems.BLUE_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.CONCRETE.blue().getDefaultInstance(), ModItems.BLUE_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.BLUE_CONCRETE_STAIRS.get().getDefaultInstance(), ModItems.BLUE_CONCRETE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.BLUE_CONCRETE_SLAB.get().getDefaultInstance(), ModItems.BLUE_CONCRETE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.BROWN_CONCRETE.getDefaultInstance(), ModItems.BROWN_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.CONCRETE.brown().getDefaultInstance(), ModItems.BROWN_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.BROWN_CONCRETE_STAIRS.get().getDefaultInstance(), ModItems.BROWN_CONCRETE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.BROWN_CONCRETE_SLAB.get().getDefaultInstance(), ModItems.BROWN_CONCRETE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.GREEN_CONCRETE.getDefaultInstance(), ModItems.GREEN_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.CONCRETE.green().getDefaultInstance(), ModItems.GREEN_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.GREEN_CONCRETE_STAIRS.get().getDefaultInstance(), ModItems.GREEN_CONCRETE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.GREEN_CONCRETE_SLAB.get().getDefaultInstance(), ModItems.GREEN_CONCRETE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.RED_CONCRETE.getDefaultInstance(), ModItems.RED_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.CONCRETE.red().getDefaultInstance(), ModItems.RED_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.RED_CONCRETE_STAIRS.get().getDefaultInstance(), ModItems.RED_CONCRETE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.RED_CONCRETE_SLAB.get().getDefaultInstance(), ModItems.RED_CONCRETE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.BLACK_CONCRETE.getDefaultInstance(), ModItems.BLACK_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.CONCRETE.black().getDefaultInstance(), ModItems.BLACK_CONCRETE_STAIRS.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.BLACK_CONCRETE_STAIRS.get().getDefaultInstance(), ModItems.BLACK_CONCRETE_SLAB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.BLACK_CONCRETE_SLAB.get().getDefaultInstance(), ModItems.BLACK_CONCRETE_WALL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
@@ -1271,62 +1277,62 @@ public class CreativeInvConfig {
 
             tabData.remove(Items.GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.remove(Items.WHITE_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.remove(Items.ORANGE_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.remove(Items.MAGENTA_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.remove(Items.LIGHT_BLUE_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.remove(Items.YELLOW_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.remove(Items.LIME_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.remove(Items.PINK_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.remove(Items.GRAY_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.remove(Items.LIGHT_GRAY_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.remove(Items.CYAN_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.remove(Items.PURPLE_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.remove(Items.BLUE_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.remove(Items.BROWN_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.remove(Items.GREEN_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.remove(Items.RED_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.remove(Items.BLACK_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(Items.STAINED_GLASS_PANE.white().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(Items.STAINED_GLASS_PANE.orange().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(Items.STAINED_GLASS_PANE.lightBlue().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(Items.STAINED_GLASS_PANE.magenta().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(Items.STAINED_GLASS_PANE.yellow().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(Items.STAINED_GLASS_PANE.lime().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(Items.STAINED_GLASS_PANE.pink().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(Items.STAINED_GLASS_PANE.gray().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(Items.STAINED_GLASS_PANE.lightGray().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(Items.STAINED_GLASS_PANE.cyan().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(Items.STAINED_GLASS_PANE.purple().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(Items.STAINED_GLASS_PANE.blue().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(Items.STAINED_GLASS_PANE.brown().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(Items.STAINED_GLASS_PANE.green().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(Items.STAINED_GLASS_PANE.red().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.remove(Items.STAINED_GLASS_PANE.black().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.insertAfter(Items.GLASS.getDefaultInstance(), Items.GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(Items.TINTED_GLASS.getDefaultInstance(), ModItems.TINTED_GLASS_PANE.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.WHITE_STAINED_GLASS.getDefaultInstance(), Items.WHITE_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.ORANGE_STAINED_GLASS.getDefaultInstance(), Items.ORANGE_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.MAGENTA_STAINED_GLASS.getDefaultInstance(), Items.MAGENTA_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.LIGHT_BLUE_STAINED_GLASS.getDefaultInstance(), Items.LIGHT_BLUE_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.YELLOW_STAINED_GLASS.getDefaultInstance(), Items.YELLOW_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.LIME_STAINED_GLASS.getDefaultInstance(), Items.LIME_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.PINK_STAINED_GLASS.getDefaultInstance(), Items.PINK_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.GRAY_STAINED_GLASS.getDefaultInstance(), Items.GRAY_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.LIGHT_GRAY_STAINED_GLASS.getDefaultInstance(), Items.LIGHT_GRAY_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.CYAN_STAINED_GLASS.getDefaultInstance(), Items.CYAN_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.PURPLE_STAINED_GLASS.getDefaultInstance(), Items.PURPLE_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.BLUE_STAINED_GLASS.getDefaultInstance(), Items.BLUE_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.BROWN_STAINED_GLASS.getDefaultInstance(), Items.BROWN_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.GREEN_STAINED_GLASS.getDefaultInstance(), Items.GREEN_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.RED_STAINED_GLASS.getDefaultInstance(), Items.RED_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.BLACK_STAINED_GLASS.getDefaultInstance(), Items.BLACK_STAINED_GLASS_PANE.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS.white().getDefaultInstance(), Items.STAINED_GLASS_PANE.white().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS.orange().getDefaultInstance(), Items.STAINED_GLASS_PANE.orange().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS.magenta().getDefaultInstance(), Items.STAINED_GLASS_PANE.magenta().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS.lightBlue().getDefaultInstance(), Items.STAINED_GLASS_PANE.lightBlue().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS.yellow().getDefaultInstance(), Items.STAINED_GLASS_PANE.yellow().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS.lime().getDefaultInstance(), Items.STAINED_GLASS_PANE.lime().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS.pink().getDefaultInstance(), Items.STAINED_GLASS_PANE.pink().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS.gray().getDefaultInstance(), Items.STAINED_GLASS_PANE.gray().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS.lightGray().getDefaultInstance(), Items.STAINED_GLASS_PANE.lightGray().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS.cyan().getDefaultInstance(), Items.STAINED_GLASS_PANE.cyan().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS.purple().getDefaultInstance(), Items.STAINED_GLASS_PANE.purple().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS.blue().getDefaultInstance(), Items.STAINED_GLASS_PANE.blue().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS.brown().getDefaultInstance(), Items.STAINED_GLASS_PANE.brown().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS.green().getDefaultInstance(), Items.STAINED_GLASS_PANE.green().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS.red().getDefaultInstance(), Items.STAINED_GLASS_PANE.red().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS.black().getDefaultInstance(), Items.STAINED_GLASS_PANE.black().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.insertAfter(Items.GLASS_PANE.getDefaultInstance(), ModItems.GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.TINTED_GLASS_PANE.get().getDefaultInstance(), ModItems.TINTED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.WHITE_STAINED_GLASS_PANE.getDefaultInstance(), ModItems.WHITE_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.ORANGE_STAINED_GLASS_PANE.getDefaultInstance(), ModItems.ORANGE_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.MAGENTA_STAINED_GLASS_PANE.getDefaultInstance(), ModItems.MAGENTA_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.LIGHT_BLUE_STAINED_GLASS_PANE.getDefaultInstance(), ModItems.LIGHT_BLUE_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.YELLOW_STAINED_GLASS_PANE.getDefaultInstance(), ModItems.YELLOW_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.LIME_STAINED_GLASS_PANE.getDefaultInstance(), ModItems.LIME_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.PINK_STAINED_GLASS_PANE.getDefaultInstance(), ModItems.PINK_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.GRAY_STAINED_GLASS_PANE.getDefaultInstance(), ModItems.GRAY_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.LIGHT_GRAY_STAINED_GLASS_PANE.getDefaultInstance(), ModItems.LIGHT_GRAY_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.CYAN_STAINED_GLASS_PANE.getDefaultInstance(), ModItems.CYAN_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.PURPLE_STAINED_GLASS_PANE.getDefaultInstance(), ModItems.PURPLE_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.BLUE_STAINED_GLASS_PANE.getDefaultInstance(), ModItems.BLUE_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.BROWN_STAINED_GLASS_PANE.getDefaultInstance(), ModItems.BROWN_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.GREEN_STAINED_GLASS_PANE.getDefaultInstance(), ModItems.GREEN_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.RED_STAINED_GLASS_PANE.getDefaultInstance(), ModItems.RED_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.BLACK_STAINED_GLASS_PANE.getDefaultInstance(), ModItems.BLACK_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS_PANE.white().getDefaultInstance(), ModItems.WHITE_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS_PANE.orange().getDefaultInstance(), ModItems.ORANGE_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS_PANE.magenta().getDefaultInstance(), ModItems.MAGENTA_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS_PANE.lightBlue().getDefaultInstance(), ModItems.LIGHT_BLUE_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS_PANE.yellow().getDefaultInstance(), ModItems.YELLOW_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS_PANE.lime().getDefaultInstance(), ModItems.LIME_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS_PANE.pink().getDefaultInstance(), ModItems.PINK_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS_PANE.gray().getDefaultInstance(), ModItems.GRAY_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS_PANE.lightGray().getDefaultInstance(), ModItems.LIGHT_GRAY_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS_PANE.cyan().getDefaultInstance(), ModItems.CYAN_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS_PANE.purple().getDefaultInstance(), ModItems.PURPLE_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS_PANE.blue().getDefaultInstance(), ModItems.BLUE_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS_PANE.brown().getDefaultInstance(), ModItems.BROWN_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS_PANE.green().getDefaultInstance(), ModItems.GREEN_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS_PANE.red().getDefaultInstance(), ModItems.RED_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.STAINED_GLASS_PANE.black().getDefaultInstance(), ModItems.BLACK_STAINED_GLASS_DOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.insertAfter(ModItems.GLASS_DOOR.get().getDefaultInstance(), ModItems.GLASS_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.TINTED_GLASS_DOOR.get().getDefaultInstance(), ModItems.TINTED_GLASS_TRAPDOOR.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -1659,7 +1665,7 @@ public class CreativeInvConfig {
             tabData.insertAfter(ModItems.BLACKSTONE_BREWING_STAND.get().getDefaultInstance(), ModItems.DEEPSLATE_BREWING_STAND.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             tabData.remove(Items.BARREL.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.WAXED_OXIDIZED_COPPER_CHEST.getDefaultInstance(), ModItems.OAK_BARREL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.COPPER_CHEST.waxed().oxidized().getDefaultInstance(), ModItems.OAK_BARREL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.OAK_BARREL.get().getDefaultInstance(), ModItems.SPRUCE_BARREL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.SPRUCE_BARREL.get().getDefaultInstance(), ModItems.BIRCH_BARREL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.BIRCH_BARREL.get().getDefaultInstance(), ModItems.JUNGLE_BARREL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -1685,7 +1691,7 @@ public class CreativeInvConfig {
             tabData.insertAfter(ModItems.PALE_OAK_CHEST.get().getDefaultInstance(), ModItems.BAMBOO_CHEST.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.BAMBOO_CHEST.get().getDefaultInstance(), ModItems.CRIMSON_CHEST.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.CRIMSON_CHEST.get().getDefaultInstance(), ModItems.WARPED_CHEST.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(Items.WAXED_OXIDIZED_COPPER_CHEST.getDefaultInstance(), ModItems.OAK_TRAPPED_CHEST.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.COPPER_CHEST.waxed().oxidized().getDefaultInstance(), ModItems.OAK_TRAPPED_CHEST.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.OAK_TRAPPED_CHEST.get().getDefaultInstance(), ModItems.SPRUCE_TRAPPED_CHEST.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.SPRUCE_TRAPPED_CHEST.get().getDefaultInstance(), ModItems.BIRCH_TRAPPED_CHEST.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.BIRCH_TRAPPED_CHEST.get().getDefaultInstance(), ModItems.JUNGLE_TRAPPED_CHEST.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -1706,7 +1712,7 @@ public class CreativeInvConfig {
             tabData.insertAfter(ModItems.WAXED_EXPOSED_IRON_CHAIN.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_IRON_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.WAXED_WEATHERED_IRON_CHAIN.get().getDefaultInstance(), ModItems.WAXED_RUSTED_IRON_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.COPPER_CHAIN.waxedOxidized().getDefaultInstance(), ModItems.ZINC_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.COPPER_CHAIN.waxed().oxidized().getDefaultInstance(), ModItems.ZINC_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.ZINC_CHAIN.get().getDefaultInstance(), ModItems.EXPOSED_ZINC_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.EXPOSED_ZINC_CHAIN.get().getDefaultInstance(), ModItems.WEATHERED_ZINC_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.WEATHERED_ZINC_CHAIN.get().getDefaultInstance(), ModItems.CORRODED_ZINC_CHAIN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -1763,7 +1769,7 @@ public class CreativeInvConfig {
             tabData.insertAfter(ModItems.WAXED_EXPOSED_IRON_FIRE_LANTERN.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_IRON_FIRE_LANTERN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.WAXED_WEATHERED_IRON_FIRE_LANTERN.get().getDefaultInstance(), ModItems.WAXED_RUSTED_IRON_FIRE_LANTERN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.COPPER_LANTERN.waxedOxidized().getDefaultInstance(), ModItems.COPPER_SOUL_LANTERN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.COPPER_LANTERN.waxed().oxidized().getDefaultInstance(), ModItems.COPPER_SOUL_LANTERN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.COPPER_SOUL_LANTERN.get().getDefaultInstance(), ModItems.EXPOSED_COPPER_SOUL_LANTERN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.EXPOSED_COPPER_SOUL_LANTERN.get().getDefaultInstance(), ModItems.WEATHERED_COPPER_SOUL_LANTERN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.WEATHERED_COPPER_SOUL_LANTERN.get().getDefaultInstance(), ModItems.OXIDIZED_COPPER_SOUL_LANTERN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -1781,7 +1787,7 @@ public class CreativeInvConfig {
             tabData.insertAfter(ModItems.WAXED_EXPOSED_COPPER_FIRE_LANTERN.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_COPPER_FIRE_LANTERN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.WAXED_WEATHERED_COPPER_FIRE_LANTERN.get().getDefaultInstance(), ModItems.WAXED_OXIDIZED_COPPER_FIRE_LANTERN.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertBefore(Items.COPPER_BULB.getDefaultInstance(), ModItems.IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertBefore(Items.COPPER_BULB.weathering().unaffected().getDefaultInstance(), ModItems.IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.IRON_BULB.get().getDefaultInstance(), ModItems.EXPOSED_IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.EXPOSED_IRON_BULB.get().getDefaultInstance(), ModItems.WEATHERED_IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.WEATHERED_IRON_BULB.get().getDefaultInstance(), ModItems.RUSTED_IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -1790,7 +1796,7 @@ public class CreativeInvConfig {
             tabData.insertAfter(ModItems.WAXED_EXPOSED_IRON_BULB.get().getDefaultInstance(), ModItems.WAXED_WEATHERED_IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.WAXED_WEATHERED_IRON_BULB.get().getDefaultInstance(), ModItems.WAXED_RUSTED_IRON_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            tabData.insertAfter(Items.WAXED_OXIDIZED_COPPER_BULB.getDefaultInstance(), ModItems.ZINC_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(Items.COPPER_BULB.waxed().oxidized().getDefaultInstance(), ModItems.ZINC_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.ZINC_BULB.get().getDefaultInstance(), ModItems.EXPOSED_ZINC_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.EXPOSED_ZINC_BULB.get().getDefaultInstance(), ModItems.WEATHERED_ZINC_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.WEATHERED_ZINC_BULB.get().getDefaultInstance(), ModItems.CORRODED_ZINC_BULB.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -1837,7 +1843,8 @@ public class CreativeInvConfig {
             tabData.insertAfter(ModItems.PACKED_MUD_BATON.get().getDefaultInstance(), ModItems.SANDSTONE_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.SANDSTONE_BATON.get().getDefaultInstance(), ModItems.RED_SANDSTONE_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.RED_SANDSTONE_BATON.get().getDefaultInstance(), ModItems.SOUL_SANDSTONE_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            tabData.insertAfter(ModItems.SOUL_SANDSTONE_BATON.get().getDefaultInstance(), ModItems.NETHERRACK_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.SOUL_SANDSTONE_BATON.get().getDefaultInstance(), ModItems.CINNABAR_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            tabData.insertAfter(ModItems.CINNABAR_BATON.get().getDefaultInstance(), ModItems.NETHERRACK_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.NETHERRACK_BATON.get().getDefaultInstance(), ModItems.BASALT_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.BASALT_BATON.get().getDefaultInstance(), ModItems.PUMICE_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             tabData.insertAfter(ModItems.PUMICE_BATON.get().getDefaultInstance(), ModItems.BLACKSTONE_BATON.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);

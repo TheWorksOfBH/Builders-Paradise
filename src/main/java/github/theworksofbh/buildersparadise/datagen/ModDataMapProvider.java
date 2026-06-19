@@ -1,7 +1,6 @@
 package github.theworksofbh.buildersparadise.datagen;
 
 import github.theworksofbh.buildersparadise.block.ModBlocks;
-import github.theworksofbh.buildersparadise.compat.bop.CompatModItems;
 import github.theworksofbh.buildersparadise.items.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -90,19 +89,6 @@ public class ModDataMapProvider extends DataMapProvider {
         addToFurnaceFuels(ModItems.MANGROVE_MOSAIC.get(), 300);
         addToFurnaceFuels(ModItems.CHERRY_MOSAIC.get(), 300);
         addToFurnaceFuels(ModItems.PALE_OAK_MOSAIC.get(), 300);
-        addToFurnaceFuels(CompatModItems.DEAD_MOSAIC.get(), 300);
-        addToFurnaceFuels(CompatModItems.EMPYREAL_MOSAIC.get(), 300);
-        addToFurnaceFuels(CompatModItems.FIR_MOSAIC.get(), 300);
-        addToFurnaceFuels(CompatModItems.JACARANDA_MOSAIC.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAGIC_MOSAIC.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAHOGANY_MOSAIC.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAPLE_MOSAIC.get(), 300);
-        addToFurnaceFuels(CompatModItems.PALM_MOSAIC.get(), 300);
-        addToFurnaceFuels(CompatModItems.PINE_MOSAIC.get(), 300);
-        addToFurnaceFuels(CompatModItems.REDWOOD_MOSAIC.get(), 300);
-        addToFurnaceFuels(CompatModItems.UMBRAN_MOSAIC.get(), 300);
-        addToFurnaceFuels(CompatModItems.WILLOW_MOSAIC.get(), 300);
-        addToFurnaceFuels(CompatModItems.ORIGIN_OAK_MOSAIC.get(), 300);
 
         addToFurnaceFuels(ModItems.OAK_MOSAIC_SLAB.get(), 150);
         addToFurnaceFuels(ModItems.SPRUCE_MOSAIC_SLAB.get(), 150);
@@ -113,19 +99,6 @@ public class ModDataMapProvider extends DataMapProvider {
         addToFurnaceFuels(ModItems.MANGROVE_MOSAIC_SLAB.get(), 150);
         addToFurnaceFuels(ModItems.CHERRY_MOSAIC_SLAB.get(), 150);
         addToFurnaceFuels(ModItems.PALE_OAK_MOSAIC_SLAB.get(), 150);
-        addToFurnaceFuels(CompatModItems.DEAD_MOSAIC_SLAB.get(), 150);
-        addToFurnaceFuels(CompatModItems.EMPYREAL_MOSAIC_SLAB.get(), 150);
-        addToFurnaceFuels(CompatModItems.FIR_MOSAIC_SLAB.get(), 150);
-        addToFurnaceFuels(CompatModItems.JACARANDA_MOSAIC_SLAB.get(), 150);
-        addToFurnaceFuels(CompatModItems.MAGIC_MOSAIC_SLAB.get(), 150);
-        addToFurnaceFuels(CompatModItems.MAHOGANY_MOSAIC_SLAB.get(), 150);
-        addToFurnaceFuels(CompatModItems.MAPLE_MOSAIC_SLAB.get(), 150);
-        addToFurnaceFuels(CompatModItems.PALM_MOSAIC_SLAB.get(), 150);
-        addToFurnaceFuels(CompatModItems.PINE_MOSAIC_SLAB.get(), 150);
-        addToFurnaceFuels(CompatModItems.REDWOOD_MOSAIC_SLAB.get(), 150);
-        addToFurnaceFuels(CompatModItems.UMBRAN_MOSAIC_SLAB.get(), 150);
-        addToFurnaceFuels(CompatModItems.WILLOW_MOSAIC_SLAB.get(), 150);
-        addToFurnaceFuels(CompatModItems.ORIGIN_OAK_MOSAIC_SLAB.get(), 150);
 
         addToFurnaceFuels(ModItems.OAK_MOSAIC_STAIRS.get(), 300);
         addToFurnaceFuels(ModItems.SPRUCE_MOSAIC_STAIRS.get(), 300);
@@ -136,19 +109,6 @@ public class ModDataMapProvider extends DataMapProvider {
         addToFurnaceFuels(ModItems.MANGROVE_MOSAIC_STAIRS.get(), 300);
         addToFurnaceFuels(ModItems.CHERRY_MOSAIC_STAIRS.get(), 300);
         addToFurnaceFuels(ModItems.PALE_OAK_MOSAIC_STAIRS.get(), 300);
-        addToFurnaceFuels(CompatModItems.DEAD_MOSAIC_STAIRS.get(), 300);
-        addToFurnaceFuels(CompatModItems.EMPYREAL_MOSAIC_STAIRS.get(), 300);
-        addToFurnaceFuels(CompatModItems.FIR_MOSAIC_STAIRS.get(), 300);
-        addToFurnaceFuels(CompatModItems.JACARANDA_MOSAIC_STAIRS.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAGIC_MOSAIC_STAIRS.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAHOGANY_MOSAIC_STAIRS.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAPLE_MOSAIC_STAIRS.get(), 300);
-        addToFurnaceFuels(CompatModItems.PALM_MOSAIC_STAIRS.get(), 300);
-        addToFurnaceFuels(CompatModItems.PINE_MOSAIC_STAIRS.get(), 300);
-        addToFurnaceFuels(CompatModItems.REDWOOD_MOSAIC_STAIRS.get(), 300);
-        addToFurnaceFuels(CompatModItems.UMBRAN_MOSAIC_STAIRS.get(), 300);
-        addToFurnaceFuels(CompatModItems.WILLOW_MOSAIC_STAIRS.get(), 300);
-        addToFurnaceFuels(CompatModItems.ORIGIN_OAK_MOSAIC_STAIRS.get(), 300);
 
         addToFurnaceFuels(ModItems.OAK_CRAFTING_TABLE.get(), 300);
         addToFurnaceFuels(ModItems.SPRUCE_CRAFTING_TABLE.get(), 300);
@@ -160,19 +120,6 @@ public class ModDataMapProvider extends DataMapProvider {
         addToFurnaceFuels(ModItems.CHERRY_CRAFTING_TABLE.get(), 300);
         addToFurnaceFuels(ModItems.BAMBOO_CRAFTING_TABLE.get(), 300);
         addToFurnaceFuels(ModItems.PALE_OAK_CRAFTING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.DEAD_CRAFTING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.EMPYREAL_CRAFTING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.FIR_CRAFTING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.JACARANDA_CRAFTING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAGIC_CRAFTING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAHOGANY_CRAFTING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAPLE_CRAFTING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.PALM_CRAFTING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.PINE_CRAFTING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.REDWOOD_CRAFTING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.UMBRAN_CRAFTING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.WILLOW_CRAFTING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.ORIGIN_OAK_CRAFTING_TABLE.get(), 300);
 
         addToFurnaceFuels(ModItems.OAK_CARTOGRAPHY_TABLE.get(), 300);
         addToFurnaceFuels(ModItems.SPRUCE_CARTOGRAPHY_TABLE.get(), 300);
@@ -184,18 +131,6 @@ public class ModDataMapProvider extends DataMapProvider {
         addToFurnaceFuels(ModItems.CHERRY_CARTOGRAPHY_TABLE.get(), 300);
         addToFurnaceFuels(ModItems.BAMBOO_CARTOGRAPHY_TABLE.get(), 300);
         addToFurnaceFuels(ModItems.PALE_OAK_CARTOGRAPHY_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.DEAD_CARTOGRAPHY_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.EMPYREAL_CARTOGRAPHY_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.FIR_CARTOGRAPHY_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.JACARANDA_CARTOGRAPHY_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAGIC_CARTOGRAPHY_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAHOGANY_CARTOGRAPHY_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAPLE_CARTOGRAPHY_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.PALM_CARTOGRAPHY_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.PINE_CARTOGRAPHY_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.REDWOOD_CARTOGRAPHY_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.UMBRAN_CARTOGRAPHY_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.WILLOW_CARTOGRAPHY_TABLE.get(), 300);
 
         addToFurnaceFuels(ModItems.OAK_SMITHING_TABLE.get(), 300);
         addToFurnaceFuels(ModItems.SPRUCE_SMITHING_TABLE.get(), 300);
@@ -207,18 +142,6 @@ public class ModDataMapProvider extends DataMapProvider {
         addToFurnaceFuels(ModItems.CHERRY_SMITHING_TABLE.get(), 300);
         addToFurnaceFuels(ModItems.BAMBOO_SMITHING_TABLE.get(), 300);
         addToFurnaceFuels(ModItems.PALE_OAK_SMITHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.DEAD_SMITHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.EMPYREAL_SMITHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.FIR_SMITHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.JACARANDA_SMITHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAGIC_SMITHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAHOGANY_SMITHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAPLE_SMITHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.PALM_SMITHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.PINE_SMITHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.REDWOOD_SMITHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.UMBRAN_SMITHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.WILLOW_SMITHING_TABLE.get(), 300);
 
         addToFurnaceFuels(ModItems.OAK_FLETCHING_TABLE.get(), 300);
         addToFurnaceFuels(ModItems.SPRUCE_FLETCHING_TABLE.get(), 300);
@@ -230,18 +153,6 @@ public class ModDataMapProvider extends DataMapProvider {
         addToFurnaceFuels(ModItems.CHERRY_FLETCHING_TABLE.get(), 300);
         addToFurnaceFuels(ModItems.BAMBOO_FLETCHING_TABLE.get(), 300);
         addToFurnaceFuels(ModItems.PALE_OAK_FLETCHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.DEAD_FLETCHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.EMPYREAL_FLETCHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.FIR_FLETCHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.JACARANDA_FLETCHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAGIC_FLETCHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAHOGANY_FLETCHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAPLE_FLETCHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.PALM_FLETCHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.PINE_FLETCHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.REDWOOD_FLETCHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.UMBRAN_FLETCHING_TABLE.get(), 300);
-        addToFurnaceFuels(CompatModItems.WILLOW_FLETCHING_TABLE.get(), 300);
 
         addToFurnaceFuels(ModItems.OAK_LOOM.get(), 300);
         addToFurnaceFuels(ModItems.SPRUCE_LOOM.get(), 300);
@@ -253,18 +164,6 @@ public class ModDataMapProvider extends DataMapProvider {
         addToFurnaceFuels(ModItems.CHERRY_LOOM.get(), 300);
         addToFurnaceFuels(ModItems.BAMBOO_LOOM.get(), 300);
         addToFurnaceFuels(ModItems.PALE_OAK_LOOM.get(), 300);
-        addToFurnaceFuels(CompatModItems.DEAD_LOOM.get(), 300);
-        addToFurnaceFuels(CompatModItems.EMPYREAL_LOOM.get(), 300);
-        addToFurnaceFuels(CompatModItems.FIR_LOOM.get(), 300);
-        addToFurnaceFuels(CompatModItems.JACARANDA_LOOM.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAGIC_LOOM.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAHOGANY_LOOM.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAPLE_LOOM.get(), 300);
-        addToFurnaceFuels(CompatModItems.PALM_LOOM.get(), 300);
-        addToFurnaceFuels(CompatModItems.PINE_LOOM.get(), 300);
-        addToFurnaceFuels(CompatModItems.REDWOOD_LOOM.get(), 300);
-        addToFurnaceFuels(CompatModItems.UMBRAN_LOOM.get(), 300);
-        addToFurnaceFuels(CompatModItems.WILLOW_LOOM.get(), 300);
 
         addToFurnaceFuels(ModItems.OAK_LECTERN.get(), 300);
         addToFurnaceFuels(ModItems.SPRUCE_LECTERN.get(), 300);
@@ -276,18 +175,6 @@ public class ModDataMapProvider extends DataMapProvider {
         addToFurnaceFuels(ModItems.CHERRY_LECTERN.get(), 300);
         addToFurnaceFuels(ModItems.BAMBOO_LECTERN.get(), 300);
         addToFurnaceFuels(ModItems.PALE_OAK_LECTERN.get(), 300);
-        addToFurnaceFuels(CompatModItems.DEAD_LECTERN.get(), 300);
-        addToFurnaceFuels(CompatModItems.EMPYREAL_LECTERN.get(), 300);
-        addToFurnaceFuels(CompatModItems.FIR_LECTERN.get(), 300);
-        addToFurnaceFuels(CompatModItems.JACARANDA_LECTERN.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAGIC_LECTERN.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAHOGANY_LECTERN.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAPLE_LECTERN.get(), 300);
-        addToFurnaceFuels(CompatModItems.PALM_LECTERN.get(), 300);
-        addToFurnaceFuels(CompatModItems.PINE_LECTERN.get(), 300);
-        addToFurnaceFuels(CompatModItems.REDWOOD_LECTERN.get(), 300);
-        addToFurnaceFuels(CompatModItems.UMBRAN_LECTERN.get(), 300);
-        addToFurnaceFuels(CompatModItems.WILLOW_LECTERN.get(), 300);
 
         addToFurnaceFuels(ModItems.OAK_BOOKSHELF.get(), 300);
         addToFurnaceFuels(ModItems.SPRUCE_BOOKSHELF.get(), 300);
@@ -299,19 +186,6 @@ public class ModDataMapProvider extends DataMapProvider {
         addToFurnaceFuels(ModItems.CHERRY_BOOKSHELF.get(), 300);
         addToFurnaceFuels(ModItems.BAMBOO_BOOKSHELF.get(), 300);
         addToFurnaceFuels(ModItems.PALE_OAK_BOOKSHELF.get(), 300);
-        addToFurnaceFuels(CompatModItems.DEAD_BOOKSHELF.get(), 300);
-        addToFurnaceFuels(CompatModItems.EMPYREAL_BOOKSHELF.get(), 300);
-        addToFurnaceFuels(CompatModItems.FIR_BOOKSHELF.get(), 300);
-        addToFurnaceFuels(CompatModItems.JACARANDA_BOOKSHELF.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAGIC_BOOKSHELF.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAHOGANY_BOOKSHELF.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAPLE_BOOKSHELF.get(), 300);
-        addToFurnaceFuels(CompatModItems.PALM_BOOKSHELF.get(), 300);
-        addToFurnaceFuels(CompatModItems.PINE_BOOKSHELF.get(), 300);
-        addToFurnaceFuels(CompatModItems.REDWOOD_BOOKSHELF.get(), 300);
-        addToFurnaceFuels(CompatModItems.UMBRAN_BOOKSHELF.get(), 300);
-        addToFurnaceFuels(CompatModItems.WILLOW_BOOKSHELF.get(), 300);
-        addToFurnaceFuels(CompatModItems.ORIGIN_OAK_BOOKSHELF.get(), 300);
 
         addToFurnaceFuels(ModItems.OAK_CHEST.get(), 300);
         addToFurnaceFuels(ModItems.SPRUCE_CHEST.get(), 300);
@@ -323,19 +197,6 @@ public class ModDataMapProvider extends DataMapProvider {
         addToFurnaceFuels(ModItems.CHERRY_CHEST.get(), 300);
         addToFurnaceFuels(ModItems.BAMBOO_CHEST.get(), 300);
         addToFurnaceFuels(ModItems.PALE_OAK_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.DEAD_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.EMPYREAL_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.FIR_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.JACARANDA_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAGIC_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAHOGANY_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAPLE_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.PALM_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.PINE_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.REDWOOD_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.UMBRAN_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.WILLOW_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.ORIGIN_OAK_CHEST.get(), 300);
 
         addToFurnaceFuels(ModItems.OAK_BARREL.get(), 300);
         addToFurnaceFuels(ModItems.SPRUCE_BARREL.get(), 300);
@@ -347,18 +208,6 @@ public class ModDataMapProvider extends DataMapProvider {
         addToFurnaceFuels(ModItems.CHERRY_BARREL.get(), 300);
         addToFurnaceFuels(ModItems.BAMBOO_BARREL.get(), 300);
         addToFurnaceFuels(ModItems.PALE_OAK_BARREL.get(), 300);
-        addToFurnaceFuels(CompatModItems.DEAD_BARREL.get(), 300);
-        addToFurnaceFuels(CompatModItems.EMPYREAL_BARREL.get(), 300);
-        addToFurnaceFuels(CompatModItems.FIR_BARREL.get(), 300);
-        addToFurnaceFuels(CompatModItems.JACARANDA_BARREL.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAGIC_BARREL.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAHOGANY_BARREL.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAPLE_BARREL.get(), 300);
-        addToFurnaceFuels(CompatModItems.PALM_BARREL.get(), 300);
-        addToFurnaceFuels(CompatModItems.PINE_BARREL.get(), 300);
-        addToFurnaceFuels(CompatModItems.REDWOOD_BARREL.get(), 300);
-        addToFurnaceFuels(CompatModItems.UMBRAN_BARREL.get(), 300);
-        addToFurnaceFuels(CompatModItems.WILLOW_BARREL.get(), 300);
 
         addToFurnaceFuels(ModItems.OAK_TRAPPED_CHEST.get(), 300);
         addToFurnaceFuels(ModItems.SPRUCE_TRAPPED_CHEST.get(), 300);
@@ -370,19 +219,6 @@ public class ModDataMapProvider extends DataMapProvider {
         addToFurnaceFuels(ModItems.CHERRY_TRAPPED_CHEST.get(), 300);
         addToFurnaceFuels(ModItems.BAMBOO_TRAPPED_CHEST.get(), 300);
         addToFurnaceFuels(ModItems.PALE_OAK_TRAPPED_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.DEAD_TRAPPED_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.EMPYREAL_TRAPPED_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.FIR_TRAPPED_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.JACARANDA_TRAPPED_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAGIC_TRAPPED_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAHOGANY_TRAPPED_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.MAPLE_TRAPPED_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.PALM_TRAPPED_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.PINE_TRAPPED_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.REDWOOD_TRAPPED_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.UMBRAN_TRAPPED_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.WILLOW_TRAPPED_CHEST.get(), 300);
-        addToFurnaceFuels(CompatModItems.ORIGIN_OAK_TRAPPED_CHEST.get(), 300);
 
         addToOxidizables(ModBlocks.MEDIUM_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get());
         addToOxidizables(ModBlocks.EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get());

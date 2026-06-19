@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "buildersparadise:item/fir_chest_minecart"
-  }
-}

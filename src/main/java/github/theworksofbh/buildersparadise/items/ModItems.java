@@ -13,6 +13,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.vehicle.boat.AbstractBoat;
 import net.minecraft.world.entity.vehicle.minecart.AbstractMinecart;
 import net.minecraft.world.item.*;
@@ -759,7 +760,7 @@ public class ModItems {
     public static final DeferredItem<BlockItem> BAMBOO_CRAFTER = registerBlockItem("bamboo_crafter", () -> ModBlocks.BAMBOO_CRAFTER.get());
     public static final DeferredItem<BlockItem> PALE_OAK_CRAFTER = registerBlockItem("pale_oak_crafter", () -> ModBlocks.PALE_OAK_CRAFTER.get());
 
-    public static final DeferredItem<MinecartItem> STONE_FURNACE_MINECART = registerMinecartItem("stone_furnace_minecart", () -> EntityType.FURNACE_MINECART);
+    public static final DeferredItem<MinecartItem> STONE_FURNACE_MINECART = registerMinecartItem("stone_furnace_minecart", () -> EntityTypes.FURNACE_MINECART);
     public static final DeferredItem<MinecartItem> BLACKSTONE_FURNACE_MINECART = registerMinecartItem("blackstone_furnace_minecart", () -> ModEntities.BLACKSTONE_FURNACE_MINECART.get());
     public static final DeferredItem<MinecartItem> DEEPSLATE_FURNACE_MINECART = registerMinecartItem("deepslate_furnace_minecart", () -> ModEntities.DEEPSLATE_FURNACE_MINECART.get());
 
@@ -789,7 +790,7 @@ public class ModItems {
     public static final DeferredItem<BlockItem> BAMBOO_TRAPPED_CHEST = registerBlockItem("bamboo_trapped_chest", () -> ModBlocks.BAMBOO_TRAPPED_CHEST.get());
     public static final DeferredItem<BlockItem> PALE_OAK_TRAPPED_CHEST = registerBlockItem("pale_oak_trapped_chest", () -> ModBlocks.PALE_OAK_TRAPPED_CHEST.get());
 
-    public static final DeferredItem<MinecartItem> OAK_CHEST_MINECART = registerMinecartItem("oak_chest_minecart", () -> EntityType.CHEST_MINECART);
+    public static final DeferredItem<MinecartItem> OAK_CHEST_MINECART = registerMinecartItem("oak_chest_minecart", () -> EntityTypes.CHEST_MINECART);
     public static final DeferredItem<MinecartItem> SPRUCE_CHEST_MINECART = registerMinecartItem("spruce_chest_minecart", () -> ModEntities.SPRUCE_CHEST_MINECART.get());
     public static final DeferredItem<MinecartItem> BIRCH_CHEST_MINECART = registerMinecartItem("birch_chest_minecart", () -> ModEntities.BIRCH_CHEST_MINECART.get());
     public static final DeferredItem<MinecartItem> JUNGLE_CHEST_MINECART = registerMinecartItem("jungle_chest_minecart", () -> ModEntities.JUNGLE_CHEST_MINECART.get());
@@ -1747,6 +1748,16 @@ public class ModItems {
     public static final DeferredItem<BlockItem> BRONZE_BULB = registerBlockItem("bronze_bulb", () -> ModBlocks.BRONZE_BULB.get());
     public static final DeferredItem<BlockItem> BRASS_BULB = registerBlockItem("brass_bulb", () -> ModBlocks.BRASS_BULB.get());
     public static final DeferredItem<BlockItem> STEEL_BULB = registerBlockItem("steel_bulb", () -> ModBlocks.STEEL_BULB.get());
+
+    public static final DeferredItem<BlockItem> SULFUR_FENCE = registerBlockItem("sulfur_fence", () -> ModBlocks.SULFUR_FENCE.get());
+    public static final DeferredItem<BlockItem> POLISHED_SULFUR_FENCE = registerBlockItem("polished_sulfur_fence", () -> ModBlocks.POLISHED_SULFUR_FENCE.get());
+    public static final DeferredItem<BlockItem> SULFUR_BRICK_FENCE = registerBlockItem("sulfur_brick_fence", () -> ModBlocks.SULFUR_BRICK_FENCE.get());
+
+    public static final DeferredItem<BlockItem> CINNABAR_FENCE = registerBlockItem("cinnabar_fence", () -> ModBlocks.CINNABAR_FENCE.get());
+    public static final DeferredItem<BlockItem> POLISHED_CINNABAR_FENCE = registerBlockItem("polished_cinnabar_fence", () -> ModBlocks.POLISHED_CINNABAR_FENCE.get());
+    public static final DeferredItem<BlockItem> CINNABAR_BRICK_FENCE = registerBlockItem("cinnabar_brick_fence", () -> ModBlocks.CINNABAR_BRICK_FENCE.get());
+
+    public static final DeferredItem<Item> CINNABAR_BATON = registerCustomItem("cinnabar_baton");
 
     private static DeferredItem<Item> registerCustomItem(String registryName) {
         if (registryName.contains("netherite")) {

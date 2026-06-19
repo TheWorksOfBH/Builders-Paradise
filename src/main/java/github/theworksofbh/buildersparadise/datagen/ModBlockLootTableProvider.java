@@ -2,7 +2,7 @@ package github.theworksofbh.buildersparadise.datagen;
 
 import github.theworksofbh.buildersparadise.block.*;
 import github.theworksofbh.buildersparadise.items.ModItems;
-import net.minecraft.advancements.criterion.StatePropertiesPredicate;
+import net.minecraft.advancements.predicates.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
@@ -174,7 +174,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                                         LootItem.lootTableItem(block)
                                                 .when(this.hasSilkTouch())
                                                 .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                                        .setProperties(net.minecraft.advancements.criterion.StatePropertiesPredicate.Builder.properties()
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties()
                                                                 .hasProperty(DoorBlock.HALF, DoubleBlockHalf.LOWER))))));
 
     }

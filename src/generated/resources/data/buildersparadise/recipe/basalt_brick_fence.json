@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": "buildersparadise:basalt_baton",
     "W": "buildersparadise:basalt_bricks"

@@ -1,8 +1,5 @@
 package github.theworksofbh.buildersparadise.datagen;
 
-import github.theworksofbh.buildersparadise.compat.bop.CompatModItems;
-import github.theworksofbh.buildersparadise.compat.bop.CompatModMaterialAssetGroups;
-import github.theworksofbh.buildersparadise.compat.bop.CompatModTrimMaterials;
 import github.theworksofbh.buildersparadise.items.ModArmorMaterials;
 import github.theworksofbh.buildersparadise.items.ModItems;
 import github.theworksofbh.buildersparadise.items.ModMaterialAssetGroups;
@@ -57,9 +54,7 @@ public class ModItemModelGenerator extends ItemModelGenerators {
             new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.BRONZE, ModTrimMaterials.BRONZE),
             new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.BRASS, ModTrimMaterials.BRASS),
             new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.STEEL, ModTrimMaterials.STEEL),
-            new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.SCULK, ModTrimMaterials.SCULK),
-            new ItemModelGenerators.TrimMaterialData(CompatModMaterialAssetGroups.ROSE_QUARTZ, CompatModTrimMaterials.ROSE_QUARTZ),
-            new ItemModelGenerators.TrimMaterialData(CompatModMaterialAssetGroups.GLOWWORM_SILK, CompatModTrimMaterials.GLOWWORM_SILK)
+            new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.SCULK, ModTrimMaterials.SCULK)
     );
 
     @Override
@@ -226,23 +221,7 @@ public class ModItemModelGenerator extends ItemModelGenerators {
         this.generateFlatItem(ModItems.DIAMOND_BANNER_PATTERN.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(ModItems.SPADE_BANNER_PATTERN.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(ModItems.CLUB_BANNER_PATTERN.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.DEAD_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.EMPYREAL_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.FIR_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.HELLBARK_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.JACARANDA_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.MAGIC_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.MAHOGANY_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.MAPLE_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.PALM_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.PINE_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.REDWOOD_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.UMBRAN_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.WILLOW_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.ORIGIN_OAK_CHEST_MINECART.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(CompatModItems.WHITE_SANDSTONE_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        this.generateFlatItem(CompatModItems.BLACK_SANDSTONE_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        this.generateFlatItem(CompatModItems.ORANGE_SANDSTONE_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        this.generateFlatItem(CompatModItems.BRIMSTONE_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.generateFlatItem(ModItems.CINNABAR_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+
     }
 }

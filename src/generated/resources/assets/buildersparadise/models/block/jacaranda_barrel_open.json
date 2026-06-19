@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "bottom": "buildersparadise:block/jacaranda_barrel_bottom",
-    "side": "buildersparadise:block/jacaranda_barrel_side",
-    "top": "buildersparadise:block/jacaranda_barrel_top_open"
-  }
-}

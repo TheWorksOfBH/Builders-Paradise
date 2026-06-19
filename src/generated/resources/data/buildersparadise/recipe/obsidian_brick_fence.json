@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": "buildersparadise:obsidian_baton",
     "W": "buildersparadise:obsidian_bricks"

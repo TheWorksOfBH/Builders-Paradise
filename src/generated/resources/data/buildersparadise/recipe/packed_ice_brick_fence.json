@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": "buildersparadise:ice_shard",
     "W": "buildersparadise:packed_ice_bricks"

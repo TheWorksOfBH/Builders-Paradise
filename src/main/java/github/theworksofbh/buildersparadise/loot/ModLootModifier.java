@@ -28,8 +28,8 @@ public class ModLootModifier extends LootModifier {
 
     private final List<Entry> entries;
 
-    public ModLootModifier(LootItemCondition[] conditions, List<Entry> entries) {
-        super(conditions);
+    public ModLootModifier(LootItemCondition[] conditions, int priority, List<Entry> entries) {
+        super(conditions, priority);
         this.entries = entries;
     }
 
@@ -98,4 +98,3 @@ public class ModLootModifier extends LootModifier {
     }
 
 }
-

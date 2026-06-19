@@ -173,61 +173,11 @@
     "buildersparadise:red_concrete_brick_fence",
     "buildersparadise:black_concrete_brick_fence",
     "buildersparadise:gilded_blackstone_fence",
-    {
-      "id": "buildersparadise:white_sandstone_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:cut_white_sandstone_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:smooth_white_sandstone_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:black_sandstone_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:cut_black_sandstone_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:smooth_black_sandstone_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:orange_sandstone_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:cut_orange_sandstone_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:smooth_orange_sandstone_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:brimstone_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:brimstone_brick_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:thermal_calcite_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:polished_thermal_calcite_fence",
-      "required": false
-    },
-    {
-      "id": "buildersparadise:thermal_calcite_brick_fence",
-      "required": false
-    }
+    "buildersparadise:sulfur_fence",
+    "buildersparadise:polished_sulfur_fence",
+    "buildersparadise:sulfur_brick_fence",
+    "buildersparadise:cinnabar_fence",
+    "buildersparadise:polished_cinnabar_fence",
+    "buildersparadise:cinnabar_brick_fence"
   ]
 }
