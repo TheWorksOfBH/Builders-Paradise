@@ -177,6 +177,10 @@
     "buildersparadise:green_concrete_brick_stairs",
     "buildersparadise:red_concrete_brick_stairs",
     "buildersparadise:black_concrete_brick_stairs",
-    "buildersparadise:gilded_blackstone_stairs"
+    "buildersparadise:gilded_blackstone_stairs",
+    "buildersparadise:graphite_stairs",
+    "buildersparadise:polished_graphite_stairs",
+    "buildersparadise:graphite_brick_stairs",
+    "buildersparadise:cut_bismuth_stairs"
   ]
 }

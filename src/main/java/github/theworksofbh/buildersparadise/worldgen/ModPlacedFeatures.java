@@ -35,13 +35,15 @@ public class ModPlacedFeatures {
         register(context, TIN_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TIN_ORE_KEY),
                 ModOrePlacements.commonOrePlacement(16, HeightRangePlacement.triangle(VerticalAnchor.absolute(-29), VerticalAnchor.absolute(127))));
         register(context, TUNGSTEN_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TUNGSTEN_ORE_KEY),
-                ModOrePlacements.commonOrePlacement(8, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(0))));
+                ModOrePlacements.rareOrePlacement(8, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(0))));
         register(context, DEEP_TUNGSTEN_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DEEP_TUNGSTEN_ORE_KEY),
-                ModOrePlacements.commonOrePlacement(4, HeightRangePlacement.triangle(VerticalAnchor.absolute(120), VerticalAnchor.top())));
+                ModOrePlacements.rareOrePlacement(4, HeightRangePlacement.triangle(VerticalAnchor.absolute(120), VerticalAnchor.top())));
         register(context, PLATINUM_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.PLATINUM_ORE_KEY),
                 ModOrePlacements.commonOrePlacement(4, HeightRangePlacement.triangle(VerticalAnchor.absolute(-47), VerticalAnchor.absolute(12))));
         register(context, LEAD_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LEAD_ORE_KEY),
                 ModOrePlacements.commonOrePlacement(13, HeightRangePlacement.uniform(VerticalAnchor.absolute(-13), VerticalAnchor.absolute(123))));
+        register(context, BISMUTH_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BISMUTH_ORE_KEY),
+                ModOrePlacements.commonOrePlacement(13, HeightRangePlacement.uniform(VerticalAnchor.absolute(-20), VerticalAnchor.absolute(43))));
         register(context, URANIUM_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.URANIUM_ORE_KEY),
                 ModOrePlacements.commonOrePlacement(7, HeightRangePlacement.uniform(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(128))));
         register(context, GABBRO_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.GABBRO_KEY),
@@ -52,6 +54,12 @@ public class ModPlacedFeatures {
                 ModOrePlacements.commonOrePlacement(2, HeightRangePlacement.uniform(VerticalAnchor.absolute(5), VerticalAnchor.absolute(71))));
         register(context, SOUL_SANDSTONE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SOUL_SANDSTONE_KEY),
                 ModOrePlacements.commonOrePlacement(2, HeightRangePlacement.uniform(VerticalAnchor.absolute(5), VerticalAnchor.absolute(124))));
+        register(context, GRAPHITE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.GRAPHITE_KEY),
+                ModOrePlacements.commonOrePlacement(2, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.top())));
+        register(context, END_GRAPHITE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.END_GRAPHITE_KEY),
+                ModOrePlacements.commonOrePlacement(2, HeightRangePlacement.uniform(VerticalAnchor.absolute(5), VerticalAnchor.absolute(124))));
+        register(context, CARBON_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CARBON_KEY),
+                ModOrePlacements.commonOrePlacement(2, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.top())));
     }
 
     public static final ResourceKey<PlacedFeature> ZINC_ORE_PLACED_KEY = registerKey("zinc_ore_placed");
@@ -61,11 +69,15 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> DEEP_TUNGSTEN_ORE_PLACED_KEY = registerKey("deep_tungsten_ore_placed");
     public static final ResourceKey<PlacedFeature> PLATINUM_ORE_PLACED_KEY = registerKey("platinum_ore_placed");
     public static final ResourceKey<PlacedFeature> LEAD_ORE_PLACED_KEY = registerKey("lead_ore_placed");
+    public static final ResourceKey<PlacedFeature> BISMUTH_ORE_PLACED_KEY = registerKey("bismuth_ore_placed");
     public static final ResourceKey<PlacedFeature> URANIUM_ORE_PLACED_KEY = registerKey("uranium_ore_placed");
     public static final ResourceKey<PlacedFeature> GABBRO_PLACED_KEY = registerKey("gabbro_placed");
     public static final ResourceKey<PlacedFeature> RHYOLITE_PLACED_KEY = registerKey("rhyolite_placed");
     public static final ResourceKey<PlacedFeature> PUMICE_PLACED_KEY = registerKey("pumice_placed");
     public static final ResourceKey<PlacedFeature> SOUL_SANDSTONE_PLACED_KEY = registerKey("soul_sandstone_placed");
+    public static final ResourceKey<PlacedFeature> GRAPHITE_PLACED_KEY = registerKey("graphite_placed");
+    public static final ResourceKey<PlacedFeature> END_GRAPHITE_PLACED_KEY = registerKey("end_graphite_placed");
+    public static final ResourceKey<PlacedFeature> CARBON_PLACED_KEY = registerKey("carbon_placed");
 
 
 }

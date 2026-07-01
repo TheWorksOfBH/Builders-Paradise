@@ -921,6 +921,68 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.blockStateOutput.accept(createOrientableTrapdoor(acceptor, top, bottom, open));
     }
 
+    public void createGraphene() {
+        Identifier height2 = ModelLocationUtils.getModelLocation(Blocks.SNOW, "_height2");
+        Identifier height4 = ModelLocationUtils.getModelLocation(Blocks.SNOW, "_height4");
+        Identifier height6 = ModelLocationUtils.getModelLocation(Blocks.SNOW, "_height6");
+        Identifier height8 = ModelLocationUtils.getModelLocation(Blocks.SNOW, "_height8");
+        Identifier height10 = ModelLocationUtils.getModelLocation(Blocks.SNOW, "_height10");
+        Identifier height12 = ModelLocationUtils.getModelLocation(Blocks.SNOW, "_height12");
+        Identifier height14 = ModelLocationUtils.getModelLocation(Blocks.SNOW, "_height14");
+        Identifier height16 = ModelLocationUtils.getModelLocation(ModBlocks.GRAPHITE.get());
+
+        ModelTemplate modelTemplate2 = new ModelTemplate(Optional.of(height2), Optional.empty(), TextureSlot.TEXTURE, TextureSlot.PARTICLE);
+        ModelTemplate modelTemplate4 = new ModelTemplate(Optional.of(height4), Optional.empty(), TextureSlot.TEXTURE, TextureSlot.PARTICLE);
+        ModelTemplate modelTemplate6 = new ModelTemplate(Optional.of(height6), Optional.empty(), TextureSlot.TEXTURE, TextureSlot.PARTICLE);
+        ModelTemplate modelTemplate8 = new ModelTemplate(Optional.of(height8), Optional.empty(), TextureSlot.TEXTURE, TextureSlot.PARTICLE);
+        ModelTemplate modelTemplate10 = new ModelTemplate(Optional.of(height10), Optional.empty(), TextureSlot.TEXTURE, TextureSlot.PARTICLE);
+        ModelTemplate modelTemplate12 = new ModelTemplate(Optional.of(height12), Optional.empty(), TextureSlot.TEXTURE, TextureSlot.PARTICLE);
+        ModelTemplate modelTemplate14 = new ModelTemplate(Optional.of(height14), Optional.empty(), TextureSlot.TEXTURE, TextureSlot.PARTICLE);
+
+        plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
+                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get()))
+                        .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get())), modelTemplate2)
+                .createWithSuffix(ModBlocks.GRAPHENE.get(), "_height2", modelOutput));
+        plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
+                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get()))
+                        .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get())), modelTemplate4)
+                .createWithSuffix(ModBlocks.GRAPHENE.get(), "_height4", modelOutput));
+        plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
+                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get()))
+                        .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get())), modelTemplate6)
+                .createWithSuffix(ModBlocks.GRAPHENE.get(), "_height6", modelOutput));
+        plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
+                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get()))
+                        .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get())), modelTemplate8)
+                .createWithSuffix(ModBlocks.GRAPHENE.get(), "_height8", modelOutput));
+        plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
+                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get()))
+                        .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get())), modelTemplate10)
+                .createWithSuffix(ModBlocks.GRAPHENE.get(), "_height10", modelOutput));
+        plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
+                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get()))
+                        .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get())), modelTemplate12)
+                .createWithSuffix(ModBlocks.GRAPHENE.get(), "_height12", modelOutput));
+        plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
+                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get()))
+                        .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get())), modelTemplate14)
+                .createWithSuffix(ModBlocks.GRAPHENE.get(), "_height14", modelOutput));
+
+        this.blockStateOutput.accept(MultiVariantGenerator.dispatch(ModBlocks.GRAPHENE.get()).with(PropertyDispatch.initial(BlockStateProperties.LAYERS).generate((level) -> {
+            MultiVariant var2;
+            if (level < 8) {
+                Block var10000 = ModBlocks.GRAPHENE.get();
+                int var10001 = level;
+                var2 = plainVariant(ModelLocationUtils.getModelLocation(var10000, "_height" + var10001 * 2));
+            } else {
+                var2 = plainVariant(height16);
+            }
+
+            return var2;
+        })));
+        this.registerSimpleItemModel(ModBlocks.GRAPHENE.get(), ModelLocationUtils.getModelLocation(ModBlocks.GRAPHENE.get(), "_height2"));
+    }
+
     @Override
     public void run() {
         this.createTrivialCube(ModBlocks.POLISHED_CALCITE.get());
@@ -1642,7 +1704,86 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createCopperBulb(ModBlocks.BRASS_BULB.get());
         this.createCopperBulb(ModBlocks.STEEL_BULB.get());
 
+        this.createTrivialCube(ModBlocks.GRAPHITE.get());
+        this.createTrivialCube(ModBlocks.POLISHED_GRAPHITE.get());
+        this.createTrivialCube(ModBlocks.GRAPHITE_BRICKS.get());
+        this.createGraphene();
+        this.createTrivialCube(ModBlocks.CARBON_BLOCK.get());
 
+        this.createTrivialCube(ModBlocks.BISMUTH_ORE.get());
+        this.createTrivialCube(ModBlocks.DEEPSLATE_BISMUTH_ORE.get());
+        this.createTrivialCube(ModBlocks.RAW_BISMUTH_BLOCK.get());
+
+        this.createTrivialCube(ModBlocks.BISMUTH_BLOCK.get());
+        this.createTrivialCube(ModBlocks.CUT_BISMUTH.get());
+        this.createDoor(ModBlocks.BISMUTH_DOOR.get());
+        this.createOrientableTrapdoor(ModBlocks.BISMUTH_TRAPDOOR.get());
+        this.createWeightedPressurePlate(ModBlocks.VEHEMENT_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.BISMUTH_BLOCK.get());
+
+        this.createNormalTorch(ModBlocks.BISMUTH_TORCH.get(), ModBlocks.BISMUTH_WALL_TORCH.get());
+        this.createCustomChain(ModBlocks.BISMUTH_CHAIN.get());
+        this.createTrivialCube(ModBlocks.BISMUTH_GRATE.get());
+        this.createCopperBulb(ModBlocks.BISMUTH_BULB.get());
+
+        this.createCopperLantern(ModBlocks.ZINC_FIRE_LANTERN.get(), ModBlocks.WAXED_ZINC_FIRE_LANTERN.get());
+        this.createCopperLantern(ModBlocks.ZINC_SOUL_LANTERN.get(), ModBlocks.WAXED_ZINC_SOUL_LANTERN.get());
+        this.createCopperLantern(ModBlocks.ZINC_LANTERN.get(), ModBlocks.WAXED_ZINC_LANTERN.get());
+
+        this.createCopperLantern(ModBlocks.EXPOSED_ZINC_FIRE_LANTERN.get(), ModBlocks.WAXED_EXPOSED_ZINC_FIRE_LANTERN.get());
+        this.createCopperLantern(ModBlocks.EXPOSED_ZINC_SOUL_LANTERN.get(), ModBlocks.WAXED_EXPOSED_ZINC_SOUL_LANTERN.get());
+        this.createCopperLantern(ModBlocks.EXPOSED_ZINC_LANTERN.get(), ModBlocks.WAXED_EXPOSED_ZINC_LANTERN.get());
+
+        this.createCopperLantern(ModBlocks.WEATHERED_ZINC_FIRE_LANTERN.get(), ModBlocks.WAXED_WEATHERED_ZINC_FIRE_LANTERN.get());
+        this.createCopperLantern(ModBlocks.WEATHERED_ZINC_SOUL_LANTERN.get(), ModBlocks.WAXED_WEATHERED_ZINC_SOUL_LANTERN.get());
+        this.createCopperLantern(ModBlocks.WEATHERED_ZINC_LANTERN.get(), ModBlocks.WAXED_WEATHERED_ZINC_LANTERN.get());
+
+        this.createCopperLantern(ModBlocks.CORRODED_ZINC_FIRE_LANTERN.get(), ModBlocks.WAXED_CORRODED_ZINC_FIRE_LANTERN.get());
+        this.createCopperLantern(ModBlocks.CORRODED_ZINC_SOUL_LANTERN.get(), ModBlocks.WAXED_CORRODED_ZINC_SOUL_LANTERN.get());
+        this.createCopperLantern(ModBlocks.CORRODED_ZINC_LANTERN.get(), ModBlocks.WAXED_CORRODED_ZINC_LANTERN.get());
+
+        this.createLantern(ModBlocks.SILVER_FIRE_LANTERN.get());
+        this.createLantern(ModBlocks.SILVER_SOUL_LANTERN.get());
+        this.createLantern(ModBlocks.SILVER_LANTERN.get());
+
+        this.createLantern(ModBlocks.TIN_FIRE_LANTERN.get());
+        this.createLantern(ModBlocks.TIN_SOUL_LANTERN.get());
+        this.createLantern(ModBlocks.TIN_LANTERN.get());
+
+        this.createLantern(ModBlocks.TUNGSTEN_FIRE_LANTERN.get());
+        this.createLantern(ModBlocks.TUNGSTEN_SOUL_LANTERN.get());
+        this.createLantern(ModBlocks.TUNGSTEN_LANTERN.get());
+
+        this.createLantern(ModBlocks.PLATINUM_FIRE_LANTERN.get());
+        this.createLantern(ModBlocks.PLATINUM_SOUL_LANTERN.get());
+        this.createLantern(ModBlocks.PLATINUM_LANTERN.get());
+
+        this.createLantern(ModBlocks.GOLD_FIRE_LANTERN.get());
+        this.createLantern(ModBlocks.GOLD_SOUL_LANTERN.get());
+        this.createLantern(ModBlocks.GOLD_LANTERN.get());
+
+        this.createLantern(ModBlocks.LEAD_FIRE_LANTERN.get());
+        this.createLantern(ModBlocks.LEAD_SOUL_LANTERN.get());
+        this.createLantern(ModBlocks.LEAD_LANTERN.get());
+
+        this.createLantern(ModBlocks.BISMUTH_FIRE_LANTERN.get());
+        this.createLantern(ModBlocks.BISMUTH_SOUL_LANTERN.get());
+        this.createLantern(ModBlocks.BISMUTH_LANTERN.get());
+
+        this.createLantern(ModBlocks.URANIUM_FIRE_LANTERN.get());
+        this.createLantern(ModBlocks.URANIUM_SOUL_LANTERN.get());
+        this.createLantern(ModBlocks.URANIUM_LANTERN.get());
+
+        this.createLantern(ModBlocks.NETHERITE_FIRE_LANTERN.get());
+        this.createLantern(ModBlocks.NETHERITE_SOUL_LANTERN.get());
+
+        this.createLantern(ModBlocks.BRONZE_FIRE_LANTERN.get());
+        this.createLantern(ModBlocks.BRONZE_SOUL_LANTERN.get());
+
+        this.createLantern(ModBlocks.BRASS_FIRE_LANTERN.get());
+        this.createLantern(ModBlocks.BRASS_SOUL_LANTERN.get());
+
+        this.createLantern(ModBlocks.STEEL_FIRE_LANTERN.get());
+        this.createLantern(ModBlocks.STEEL_SOUL_LANTERN.get());
 
         ModBlockFamilies.getAllFamilies()
                 .filter(BlockFamily::shouldGenerateModel)

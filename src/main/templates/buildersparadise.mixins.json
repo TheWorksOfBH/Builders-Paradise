@@ -11,6 +11,7 @@
     "CarvedPumpkinBlockMixins",
     "ChestRendererMixins",
     "CraftingMenuMixins",
+    "FallingBlockEntityMixins",
     "FluidRendererMixins",
     "GrindstoneMenuMixins",
     "LoomMenuMixins",

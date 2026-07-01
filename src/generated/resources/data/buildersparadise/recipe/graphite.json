@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "buildersparadise:carbon_dust",
+    "buildersparadise:carbon_dust",
+    "buildersparadise:carbon_dust",
+    "buildersparadise:carbon_dust",
+    "buildersparadise:carbon_dust",
+    "buildersparadise:carbon_dust",
+    "buildersparadise:carbon_dust",
+    "buildersparadise:carbon_dust",
+    "buildersparadise:carbon_dust"
+  ],
+  "result": {
+    "id": "buildersparadise:graphite"
+  }
+}

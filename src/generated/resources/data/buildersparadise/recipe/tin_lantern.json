@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": "buildersparadise:tin_torch",
+    "X": "buildersparadise:tin_nugget"
+  },
+  "pattern": [
+    "XXX",
+    "X#X",
+    "XXX"
+  ],
+  "result": {
+    "id": "buildersparadise:tin_lantern"
+  }
+}

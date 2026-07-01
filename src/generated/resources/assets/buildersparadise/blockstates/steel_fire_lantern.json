@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "buildersparadise:block/steel_fire_lantern"
+    },
+    "hanging=true": {
+      "model": "buildersparadise:block/steel_fire_lantern_hanging"
+    }
+  }
+}

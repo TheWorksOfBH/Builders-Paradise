@@ -346,4 +346,12 @@ public class ModBlockFamilies {
     public static final BlockFamily GREEN_STAINED_GLASS = familyBuilder(Blocks.STAINED_GLASS.green()).door(ModBlocks.GREEN_STAINED_GLASS_DOOR.get()).trapdoor(ModBlocks.GREEN_STAINED_GLASS_TRAPDOOR.get()).getFamily();
     public static final BlockFamily RED_STAINED_GLASS = familyBuilder(Blocks.STAINED_GLASS.red()).door(ModBlocks.RED_STAINED_GLASS_DOOR.get()).trapdoor(ModBlocks.RED_STAINED_GLASS_TRAPDOOR.get()).getFamily();
     public static final BlockFamily BLACK_STAINED_GLASS = familyBuilder(Blocks.STAINED_GLASS.black()).door(ModBlocks.BLACK_STAINED_GLASS_DOOR.get()).trapdoor(ModBlocks.BLACK_STAINED_GLASS_TRAPDOOR.get()).getFamily();
+
+    public static final BlockFamily GRAPHITE = familyBuilder(ModBlocks.GRAPHITE.get()).polished(ModBlocks.POLISHED_GRAPHITE.get()).stairs(ModBlocks.GRAPHITE_STAIRS.get()).slab(ModBlocks.GRAPHITE_SLAB.get()).wall(ModBlocks.GRAPHITE_WALL.get()).fence(ModBlocks.GRAPHITE_FENCE.get()).getFamily();
+    public static final BlockFamily POLISHED_GRAPHITE = familyBuilder(ModBlocks.POLISHED_GRAPHITE.get()).stairs(ModBlocks.POLISHED_GRAPHITE_STAIRS.get()).slab(ModBlocks.POLISHED_GRAPHITE_SLAB.get()).wall(ModBlocks.POLISHED_GRAPHITE_WALL.get()).polished(ModBlocks.GRAPHITE_BRICKS.get()).fence(ModBlocks.POLISHED_GRAPHITE_FENCE.get()).getFamily();
+    public static final BlockFamily GRAPHITE_BRICKS = familyBuilder(ModBlocks.GRAPHITE_BRICKS.get()).stairs(ModBlocks.GRAPHITE_BRICK_STAIRS.get()).slab(ModBlocks.GRAPHITE_BRICK_SLAB.get()).wall(ModBlocks.GRAPHITE_BRICK_WALL.get()).fence(ModBlocks.GRAPHITE_BRICK_FENCE.get()).getFamily();
+
+    public static final BlockFamily BISMUTH_BLOCK = familyBuilder(ModBlocks.BISMUTH_BLOCK.get()).cut(ModBlocks.CUT_BISMUTH.get()).getFamily();
+    public static final BlockFamily CUT_BISMUTH = familyBuilder(ModBlocks.CUT_BISMUTH.get()).slab(ModBlocks.CUT_BISMUTH_SLAB.get()).stairs(ModBlocks.CUT_BISMUTH_STAIRS.get()).getFamily();
+
 }

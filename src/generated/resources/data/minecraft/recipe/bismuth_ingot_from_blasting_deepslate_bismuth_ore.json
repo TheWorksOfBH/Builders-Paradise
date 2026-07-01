@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "experience": 1.0,
+  "group": "bismuth_ingot",
+  "ingredient": "buildersparadise:deepslate_bismuth_ore",
+  "result": {
+    "id": "buildersparadise:bismuth_ingot"
+  }
+}

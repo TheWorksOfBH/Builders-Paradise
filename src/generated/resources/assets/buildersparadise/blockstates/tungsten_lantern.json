@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "buildersparadise:block/tungsten_lantern"
+    },
+    "hanging=true": {
+      "model": "buildersparadise:block/tungsten_lantern_hanging"
+    }
+  }
+}

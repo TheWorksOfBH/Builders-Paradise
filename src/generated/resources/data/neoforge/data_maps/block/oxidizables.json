@@ -102,8 +102,17 @@
     "buildersparadise:exposed_zinc_door": {
       "next_oxidation_stage": "buildersparadise:weathered_zinc_door"
     },
+    "buildersparadise:exposed_zinc_fire_lantern": {
+      "next_oxidation_stage": "buildersparadise:weathered_zinc_fire_lantern"
+    },
     "buildersparadise:exposed_zinc_grate": {
       "next_oxidation_stage": "buildersparadise:weathered_zinc_grate"
+    },
+    "buildersparadise:exposed_zinc_lantern": {
+      "next_oxidation_stage": "buildersparadise:weathered_zinc_lantern"
+    },
+    "buildersparadise:exposed_zinc_soul_lantern": {
+      "next_oxidation_stage": "buildersparadise:weathered_zinc_soul_lantern"
     },
     "buildersparadise:exposed_zinc_trapdoor": {
       "next_oxidation_stage": "buildersparadise:weathered_zinc_trapdoor"
@@ -195,8 +204,17 @@
     "buildersparadise:weathered_zinc_door": {
       "next_oxidation_stage": "buildersparadise:corroded_zinc_door"
     },
+    "buildersparadise:weathered_zinc_fire_lantern": {
+      "next_oxidation_stage": "buildersparadise:corroded_zinc_fire_lantern"
+    },
     "buildersparadise:weathered_zinc_grate": {
       "next_oxidation_stage": "buildersparadise:corroded_zinc_grate"
+    },
+    "buildersparadise:weathered_zinc_lantern": {
+      "next_oxidation_stage": "buildersparadise:corroded_zinc_lantern"
+    },
+    "buildersparadise:weathered_zinc_soul_lantern": {
+      "next_oxidation_stage": "buildersparadise:corroded_zinc_soul_lantern"
     },
     "buildersparadise:weathered_zinc_trapdoor": {
       "next_oxidation_stage": "buildersparadise:corroded_zinc_trapdoor"
@@ -213,8 +231,17 @@
     "buildersparadise:zinc_door": {
       "next_oxidation_stage": "buildersparadise:exposed_zinc_door"
     },
+    "buildersparadise:zinc_fire_lantern": {
+      "next_oxidation_stage": "buildersparadise:exposed_zinc_fire_lantern"
+    },
     "buildersparadise:zinc_grate": {
       "next_oxidation_stage": "buildersparadise:exposed_zinc_grate"
+    },
+    "buildersparadise:zinc_lantern": {
+      "next_oxidation_stage": "buildersparadise:exposed_zinc_lantern"
+    },
+    "buildersparadise:zinc_soul_lantern": {
+      "next_oxidation_stage": "buildersparadise:exposed_zinc_soul_lantern"
     },
     "buildersparadise:zinc_trapdoor": {
       "next_oxidation_stage": "buildersparadise:exposed_zinc_trapdoor"

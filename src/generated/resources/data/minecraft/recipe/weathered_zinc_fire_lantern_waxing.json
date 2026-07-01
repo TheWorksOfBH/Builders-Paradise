@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "buildersparadise:weathered_zinc_fire_lantern",
+    "minecraft:honeycomb"
+  ],
+  "result": {
+    "id": "buildersparadise:waxed_weathered_zinc_fire_lantern"
+  }
+}

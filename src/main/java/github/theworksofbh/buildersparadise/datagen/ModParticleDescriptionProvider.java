@@ -21,6 +21,7 @@ public class ModParticleDescriptionProvider extends ParticleDescriptionProvider 
         this.spriteSet(ModParticles.PLATINUM_FIRE_FLAME.get(), Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "platinum_fire_flame"));
         this.spriteSet(ModParticles.GOLD_FIRE_FLAME.get(), Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "gold_fire_flame"));
         this.spriteSet(ModParticles.LEAD_FIRE_FLAME.get(), Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "lead_fire_flame"));
+        this.spriteSet(ModParticles.BISMUTH_FIRE_FLAME.get(), Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "bismuth_fire_flame"));
         this.spriteSet(ModParticles.URANIUM_FIRE_FLAME.get(), Identifier.fromNamespaceAndPath(BuildersParadise.MODID, "uranium_fire_flame"));
     }
 }

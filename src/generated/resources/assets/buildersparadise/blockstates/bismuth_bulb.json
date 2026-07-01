@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "lit=false,powered=false": {
+      "model": "buildersparadise:block/bismuth_bulb"
+    },
+    "lit=false,powered=true": {
+      "model": "buildersparadise:block/bismuth_bulb_powered"
+    },
+    "lit=true,powered=false": {
+      "model": "buildersparadise:block/bismuth_bulb_lit"
+    },
+    "lit=true,powered=true": {
+      "model": "buildersparadise:block/bismuth_bulb_lit_powered"
+    }
+  }
+}

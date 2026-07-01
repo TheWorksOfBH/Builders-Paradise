@@ -27,6 +27,7 @@ public record ModMaterialAssetGroups(MaterialAssetGroup.AssetInfo base, Map<Reso
     public static final MaterialAssetGroup TUNGSTEN = create("tungsten");
     public static final MaterialAssetGroup PLATINUM = create("platinum");
     public static final MaterialAssetGroup LEAD = create("lead");
+    public static final MaterialAssetGroup BISMUTH = create("bismuth");
     public static final MaterialAssetGroup URANIUM = create("uranium");
     public static final MaterialAssetGroup BRONZE = create("bronze", Map.of(ModArmorMaterials.BRONZE_ASSETS, "bronze_darker"));
     public static final MaterialAssetGroup BRASS = create("brass");

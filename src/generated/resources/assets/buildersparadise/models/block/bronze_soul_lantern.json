@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_lantern",
+  "textures": {
+    "lantern": "buildersparadise:block/bronze_soul_lantern"
+  }
+}

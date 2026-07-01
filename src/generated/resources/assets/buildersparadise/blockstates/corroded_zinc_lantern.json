@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "buildersparadise:block/corroded_zinc_lantern"
+    },
+    "hanging=true": {
+      "model": "buildersparadise:block/corroded_zinc_lantern_hanging"
+    }
+  }
+}

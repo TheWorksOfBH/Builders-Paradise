@@ -15,16 +15,20 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.SlabType;
+import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.AlternativesEntry;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
+import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.CopyComponentsFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
@@ -285,6 +289,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                         this.add(block, createOreDrop(block, ModItems.RAW_PLATINUM.get()));
                     } else if (block == ModBlocks.LEAD_ORE.get() || block == ModBlocks.DEEPSLATE_LEAD_ORE.get()) {
                         this.add(block, createMultipleOreDrops(block, ModItems.RAW_LEAD.get(), 3.0F, 5.0F));
+                    } else if (block == ModBlocks.BISMUTH_ORE.get() || block == ModBlocks.DEEPSLATE_BISMUTH_ORE.get()) {
+                        this.add(block, createMultipleOreDrops(block, ModItems.RAW_BISMUTH.get(), 3.0F, 5.0F));
                     } else if (block == ModBlocks.URANIUM_ORE.get() || block == ModBlocks.DEEPSLATE_URANIUM_ORE.get()) {
                         this.add(block, createMultipleOreDrops(block, ModItems.RAW_URANIUM.get(), 2.0F, 4.0F));
                     }
@@ -491,6 +497,39 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                     this.add(block, createSingleItemTableWithSilkTouch(block, ModItems.ICE_SHARD.get(), ConstantValue.exactly(4.0F)));
                 } else if (block.getDescriptionId().contains("snow") && block.getDescriptionId().contains("bricks")) {
                     this.add(block, this.createSingleItemTableWithSilkTouch(block, Items.SNOWBALL, ConstantValue.exactly(4.0F)));
+                } else if (block instanceof GrapheneBlock) {
+                    this.add(block,
+                            (grapheneBlock) -> LootTable.lootTable().withPool(
+                                    LootPool.lootPool().when(
+                                            LootItemEntityPropertyCondition.entityPresent(LootContext.EntityTarget.THIS)
+                                    ).add(AlternativesEntry.alternatives(
+                                            new LootPoolEntryContainer.Builder[]{
+                                                    AlternativesEntry.alternatives(
+                                                            GrapheneBlock.LAYERS.getPossibleValues(),
+                                                            (layers) -> (
+                                                                    (LootPoolSingletonContainer.Builder)LootItem.lootTableItem(ModItems.CARBON_DUST.get())
+                                                                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(grapheneBlock)
+                                                                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GrapheneBlock.LAYERS, layers))))
+                                                                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly((float)layers)))).when(this.doesNotHaveSilkTouch()),
+                                                    AlternativesEntry.alternatives(GrapheneBlock.LAYERS.getPossibleValues(),
+                                                            (layers) -> (LootPoolEntryContainer.Builder)(layers == 8 ? LootItem.lootTableItem(ModItems.GRAPHITE.get()) : LootItem.lootTableItem(ModItems.GRAPHENE.get())
+                                                                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly((float)layers)))
+                                                                    .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(grapheneBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GrapheneBlock.LAYERS, layers)))))}))));
+                } else if (block instanceof CarbonBlock) {
+                    this.add(block, LootTable.lootTable()
+                            .withPool(
+                                    LootPool.lootPool()
+                                            .setRolls(ConstantValue.exactly(1))
+                                            .add(
+                                                    LootItem.lootTableItem(ModItems.CARBON_BLOCK.get())
+                                                            .when(this.hasSilkTouch())
+                                                            .otherwise(
+                                                                    LootItem.lootTableItem(ModItems.CARBON_DUST)
+                                                                            .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0F)))
+                                                            )
+                                            )
+                            )
+                    );
                 } else {
                     this.dropSelf(block);
                 }

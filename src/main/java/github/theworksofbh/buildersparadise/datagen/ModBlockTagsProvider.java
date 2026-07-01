@@ -67,7 +67,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         getKnownBlocks().forEach(
                 block -> {
                     ResourceKey<Block> blockResourceKey = BuiltInRegistries.BLOCK.getResourceKey(block).orElseThrow();
-                    if ((block instanceof BasePressurePlateBlock) || block.getDescriptionId().contains("mosaic") || block.getDescriptionId().contains("oak") || block.getDescriptionId().contains("spruce") || block.getDescriptionId().contains("birch") || block.getDescriptionId().contains("jungle") || block.getDescriptionId().contains("acacia") || block.getDescriptionId().contains("crimson") || block.getDescriptionId().contains("warped") || block.getDescriptionId().contains("mangrove") || block.getDescriptionId().contains("cherry") || block.getDescriptionId().contains("bamboo") || (block instanceof CraftingTableBlock) || (block instanceof ChestBlock) || (block instanceof BarrelBlock) || (block instanceof CampfireBlock) || (block instanceof CartographyTableBlock) || (block instanceof BeehiveBlock) || (block instanceof ChiseledBookShelfBlock) || (block instanceof SmithingTableBlock) || (block instanceof LoomBlock) || block.getDescriptionId().contains("bookshelf") || block.getDescriptionId().contains("snow") || block.getDescriptionId().contains("resin") || block.getDescriptionId().contains("sculk")) {
+                    if ((block instanceof BasePressurePlateBlock) || block.getDescriptionId().contains("mosaic") || block.getDescriptionId().contains("oak") || block.getDescriptionId().contains("spruce") || block.getDescriptionId().contains("birch") || block.getDescriptionId().contains("jungle") || block.getDescriptionId().contains("acacia") || block.getDescriptionId().contains("crimson") || block.getDescriptionId().contains("warped") || block.getDescriptionId().contains("mangrove") || block.getDescriptionId().contains("cherry") || block.getDescriptionId().contains("bamboo") || (block instanceof CraftingTableBlock) || (block instanceof ChestBlock) || (block instanceof BarrelBlock) || (block instanceof CampfireBlock) || (block instanceof CartographyTableBlock) || (block instanceof BeehiveBlock) || (block instanceof ChiseledBookShelfBlock) || (block instanceof SmithingTableBlock) || (block instanceof LoomBlock) || block.getDescriptionId().contains("bookshelf") || block.getDescriptionId().contains("snow") || block.getDescriptionId().contains("resin") || block.getDescriptionId().contains("sculk") || block.getDescriptionId().contains("carbon")) {
                         if (block instanceof BasePressurePlateBlock) {
                             tag(BlockTags.PRESSURE_PLATES).add(blockResourceKey);
                         } else if (block instanceof CraftingTableBlock) {
@@ -115,6 +115,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                             tag(BlockTags.MINEABLE_WITH_AXE).add(blockResourceKey);
                         } else if (block.getDescriptionId().contains("snow")) {
                             tag(BlockTags.MINEABLE_WITH_SHOVEL).add(blockResourceKey);
+                        } else if (block.getDescriptionId().contains("carbon")) {
+                            tag(BlockTags.MINEABLE_WITH_SHOVEL).add(blockResourceKey);
                         } else if (block.getDescriptionId().contains("sculk")) {
                             if (block.getDescriptionId().contains("brick")) {
                                 tag(BlockTags.MINEABLE_WITH_PICKAXE).add(blockResourceKey);
@@ -139,7 +141,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                         tag(BlockTags.SLABS).add(blockResourceKey);
                         if (block.getDescriptionId().contains("iron") || block.getDescriptionId().contains("copper") || block.getDescriptionId().contains("lapis")|| block.getDescriptionId().contains("tin") && !block.getDescriptionId().contains("crafting") || block.getDescriptionId().contains("lead") || block.getDescriptionId().contains("bronze") || block.getDescriptionId().contains("steel")) {
                             tag(BlockTags.NEEDS_STONE_TOOL).add(blockResourceKey);
-                        } else if (block.getDescriptionId().contains("gold") || block.getDescriptionId().contains("diamond") || block.getDescriptionId().contains("emerald") || block.getDescriptionId().contains("zinc") || block.getDescriptionId().contains("silver") || block.getDescriptionId().contains("platinum") || block.getDescriptionId().contains("brass") || block.getDescriptionId().contains("uranium")) {
+                        } else if (block.getDescriptionId().contains("gold") || block.getDescriptionId().contains("diamond") || block.getDescriptionId().contains("emerald") || block.getDescriptionId().contains("zinc") || block.getDescriptionId().contains("silver") || block.getDescriptionId().contains("platinum") || block.getDescriptionId().contains("brass") || block.getDescriptionId().contains("uranium") || block.getDescriptionId().contains("bismuth")) {
                             tag(BlockTags.NEEDS_IRON_TOOL).add(blockResourceKey);
                         } else if (block.getDescriptionId().contains("obsidian") || block.getDescriptionId().contains("netherite")) {
                             tag(BlockTags.NEEDS_DIAMOND_TOOL).add(blockResourceKey);
@@ -151,7 +153,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                         tag(BlockTags.STAIRS).add(blockResourceKey);
                         if (block.getDescriptionId().contains("iron") || block.getDescriptionId().contains("copper") || block.getDescriptionId().contains("lapis")|| block.getDescriptionId().contains("tin") && !block.getDescriptionId().contains("crafting") || block.getDescriptionId().contains("lead") || block.getDescriptionId().contains("bronze") || block.getDescriptionId().contains("steel")) {
                             tag(BlockTags.NEEDS_STONE_TOOL).add(blockResourceKey);
-                        } else if (block.getDescriptionId().contains("gold") || block.getDescriptionId().contains("diamond") || block.getDescriptionId().contains("emerald") || block.getDescriptionId().contains("zinc") || block.getDescriptionId().contains("silver") || block.getDescriptionId().contains("platinum") || block.getDescriptionId().contains("brass") || block.getDescriptionId().contains("uranium")) {
+                        } else if (block.getDescriptionId().contains("gold") || block.getDescriptionId().contains("diamond") || block.getDescriptionId().contains("emerald") || block.getDescriptionId().contains("zinc") || block.getDescriptionId().contains("silver") || block.getDescriptionId().contains("platinum") || block.getDescriptionId().contains("brass") || block.getDescriptionId().contains("uranium") || block.getDescriptionId().contains("bismuth")) {
                             tag(BlockTags.NEEDS_IRON_TOOL).add(blockResourceKey);
                         } else if (block.getDescriptionId().contains("obsidian") || block.getDescriptionId().contains("netherite")) {
                             tag(BlockTags.NEEDS_DIAMOND_TOOL).add(blockResourceKey);
@@ -169,7 +171,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                         tag(BlockTags.WALLS).add(blockResourceKey);
                         if (block.getDescriptionId().contains("iron") || block.getDescriptionId().contains("copper") || block.getDescriptionId().contains("lapis")|| block.getDescriptionId().contains("tin") && !block.getDescriptionId().contains("crafting") || block.getDescriptionId().contains("lead") || block.getDescriptionId().contains("bronze") || block.getDescriptionId().contains("steel")) {
                             tag(BlockTags.NEEDS_STONE_TOOL).add(blockResourceKey);
-                        } else if (block.getDescriptionId().contains("gold") || block.getDescriptionId().contains("diamond") || block.getDescriptionId().contains("emerald") || block.getDescriptionId().contains("zinc") || block.getDescriptionId().contains("silver") || block.getDescriptionId().contains("platinum") || block.getDescriptionId().contains("brass") || block.getDescriptionId().contains("uranium")) {
+                        } else if (block.getDescriptionId().contains("gold") || block.getDescriptionId().contains("diamond") || block.getDescriptionId().contains("emerald") || block.getDescriptionId().contains("zinc") || block.getDescriptionId().contains("silver") || block.getDescriptionId().contains("platinum") || block.getDescriptionId().contains("brass") || block.getDescriptionId().contains("uranium") || block.getDescriptionId().contains("bismuth")) {
                             tag(BlockTags.NEEDS_IRON_TOOL).add(blockResourceKey);
                         } else if (block.getDescriptionId().contains("obsidian") || block.getDescriptionId().contains("netherite")) {
                             tag(BlockTags.NEEDS_DIAMOND_TOOL).add(blockResourceKey);
@@ -181,7 +183,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                         tag(BlockTags.FENCES).add(blockResourceKey);
                         if (block.getDescriptionId().contains("iron") || block.getDescriptionId().contains("copper") || block.getDescriptionId().contains("lapis")|| block.getDescriptionId().contains("tin") && !block.getDescriptionId().contains("crafting") || block.getDescriptionId().contains("lead") || block.getDescriptionId().contains("bronze") || block.getDescriptionId().contains("steel")) {
                             tag(BlockTags.NEEDS_STONE_TOOL).add(blockResourceKey);
-                        } else if (block.getDescriptionId().contains("gold") || block.getDescriptionId().contains("diamond") || block.getDescriptionId().contains("emerald") || block.getDescriptionId().contains("zinc") || block.getDescriptionId().contains("silver") || block.getDescriptionId().contains("platinum") || block.getDescriptionId().contains("brass") || block.getDescriptionId().contains("uranium")) {
+                        } else if (block.getDescriptionId().contains("gold") || block.getDescriptionId().contains("diamond") || block.getDescriptionId().contains("emerald") || block.getDescriptionId().contains("zinc") || block.getDescriptionId().contains("silver") || block.getDescriptionId().contains("platinum") || block.getDescriptionId().contains("brass") || block.getDescriptionId().contains("uranium") || block.getDescriptionId().contains("bismuth")) {
                             tag(BlockTags.NEEDS_IRON_TOOL).add(blockResourceKey);
                         } else if (block.getDescriptionId().contains("obsidian") || block.getDescriptionId().contains("netherite")) {
                             tag(BlockTags.NEEDS_DIAMOND_TOOL).add(blockResourceKey);
@@ -229,7 +231,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                     } else if (!(block instanceof TorchBlock)) {
                         if (block.getDescriptionId().contains("iron") || block.getDescriptionId().contains("copper") || block.getDescriptionId().contains("lapis") || (block.getDescriptionId().contains("tin") && !block.getDescriptionId().contains("crafting")) || block.getDescriptionId().contains("lead") || block.getDescriptionId().contains("bronze") || block.getDescriptionId().contains("steel")) {
                             tag(BlockTags.NEEDS_STONE_TOOL).add(blockResourceKey);
-                        } else if (block.getDescriptionId().contains("gold") || block.getDescriptionId().contains("diamond") || block.getDescriptionId().contains("emerald") || block.getDescriptionId().contains("zinc") || block.getDescriptionId().contains("silver") || block.getDescriptionId().contains("platinum") || block.getDescriptionId().contains("brass") || block.getDescriptionId().contains("uranium")) {
+                        } else if (block.getDescriptionId().contains("gold") || block.getDescriptionId().contains("diamond") || block.getDescriptionId().contains("emerald") || block.getDescriptionId().contains("zinc") || block.getDescriptionId().contains("silver") || block.getDescriptionId().contains("platinum") || block.getDescriptionId().contains("brass") || block.getDescriptionId().contains("uranium") || block.getDescriptionId().contains("bismuth")) {
                             tag(BlockTags.NEEDS_IRON_TOOL).add(blockResourceKey);
                         } else if (block.getDescriptionId().contains("obsidian") || block.getDescriptionId().contains("netherite")) {
                             tag(BlockTags.NEEDS_DIAMOND_TOOL).add(blockResourceKey);
@@ -246,6 +248,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(ModBlockTags.TUNGSTEN_ORES).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.TUNGSTEN_ORE.get()).orElseThrow()).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.DEEPSLATE_TUNGSTEN_ORE.get()).orElseThrow());
         tag(ModBlockTags.PLATINUM_ORES).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.PLATINUM_ORE.get()).orElseThrow()).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.DEEPSLATE_PLATINUM_ORE.get()).orElseThrow());
         tag(ModBlockTags.LEAD_ORES).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.LEAD_ORE.get()).orElseThrow()).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.DEEPSLATE_LEAD_ORE.get()).orElseThrow());
+        tag(ModBlockTags.BISMUTH_ORES).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.BISMUTH_ORE.get()).orElseThrow()).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.DEEPSLATE_BISMUTH_ORE.get()).orElseThrow());
         tag(ModBlockTags.URANIUM_ORES).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.URANIUM_ORE.get()).orElseThrow()).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.DEEPSLATE_URANIUM_ORE.get()).orElseThrow());
         tag(ModBlockTags.IRON).add(BuiltInRegistries.BLOCK.getResourceKey(Blocks.IRON_BLOCK).orElseThrow()).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.EXPOSED_IRON.get()).orElseThrow()).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WEATHERED_IRON.get()).orElseThrow()).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.RUSTED_IRON.get()).orElseThrow()).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_IRON_BLOCK.get()).orElseThrow()).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_EXPOSED_IRON.get()).orElseThrow()).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_WEATHERED_IRON.get()).orElseThrow()).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_RUSTED_IRON.get()).orElseThrow());
         tag(ModBlockTags.ZINC).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.ZINC_BLOCK.get()).orElseThrow()).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.EXPOSED_ZINC.get()).orElseThrow()).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WEATHERED_ZINC.get()).orElseThrow()).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.CORRODED_ZINC.get()).orElseThrow()).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_ZINC_BLOCK.get()).orElseThrow()).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_EXPOSED_ZINC.get()).orElseThrow()).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_WEATHERED_ZINC.get()).orElseThrow()).add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_CORRODED_ZINC.get()).orElseThrow());
@@ -333,7 +336,31 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_ZINC_BULB.get()).orElseThrow())
                 .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_EXPOSED_ZINC_BULB.get()).orElseThrow())
                 .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_WEATHERED_ZINC_BULB.get()).orElseThrow())
-                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_CORRODED_ZINC_BULB.get()).orElseThrow());
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_CORRODED_ZINC_BULB.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.ZINC_FIRE_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.EXPOSED_ZINC_FIRE_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WEATHERED_ZINC_FIRE_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.CORRODED_ZINC_FIRE_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_ZINC_FIRE_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_EXPOSED_ZINC_FIRE_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_WEATHERED_ZINC_FIRE_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_CORRODED_ZINC_FIRE_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.ZINC_SOUL_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.EXPOSED_ZINC_SOUL_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WEATHERED_ZINC_SOUL_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.CORRODED_ZINC_SOUL_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_ZINC_SOUL_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_EXPOSED_ZINC_SOUL_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_WEATHERED_ZINC_SOUL_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_CORRODED_ZINC_SOUL_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.ZINC_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.EXPOSED_ZINC_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WEATHERED_ZINC_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.CORRODED_ZINC_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_ZINC_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_EXPOSED_ZINC_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_WEATHERED_ZINC_LANTERN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_CORRODED_ZINC_LANTERN.get()).orElseThrow());
 
         tag(ModBlockTags.GLASS_DOORS)
                 .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.GLASS_DOOR.get()).orElseThrow())
@@ -428,11 +455,11 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(BuiltInRegistries.BLOCK.getResourceKey(Blocks.WEEPING_VINES_PLANT).orElseThrow())
                 .add(BuiltInRegistries.BLOCK.getResourceKey(Blocks.TWISTING_VINES).orElseThrow())
                 .add(BuiltInRegistries.BLOCK.getResourceKey(Blocks.TWISTING_VINES_PLANT).orElseThrow())
-                .addTags(BlockTags.FLOWERS)
-                .addTags(BlockTags.FLOWER_POTS)
-                .addTags(BlockTags.LEAVES)
-                .addTags(ModBlockTags.GLASS_DOORS)
-                .addTags(ModBlockTags.GLASS_TRAPDOORS);
+                .addTag(BlockTags.FLOWERS)
+                .addTag(BlockTags.FLOWER_POTS)
+                .addTag(BlockTags.LEAVES)
+                .addTag(ModBlockTags.GLASS_DOORS)
+                .addTag(ModBlockTags.GLASS_TRAPDOORS);
 
         tag(ModBlockTags.TROMBONE_NOTE_BLOCK_SOUNDS)
                 .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.TIN_BLOCK.get()).orElseThrow())
@@ -451,5 +478,102 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.CUT_BRASS.get()).orElseThrow())
                 .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.CUT_BRASS_SLAB.get()).orElseThrow())
                 .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.CUT_BRASS_STAIRS.get()).orElseThrow());
+
+        tag(BlockTags.DRAGON_IMMUNE)
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.END_STONE_SLAB.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.END_STONE_STAIRS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.END_STONE_WALL.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.END_STONE_FENCE.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(Blocks.END_STONE_BRICKS).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(Blocks.END_STONE_BRICK_SLAB).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(Blocks.END_STONE_BRICK_STAIRS).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(Blocks.END_STONE_BRICK_WALL).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.END_STONE_BRICK_FENCE.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.EXPOSED_IRON_BARS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WEATHERED_IRON_BARS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.RUSTED_IRON_BARS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_IRON_BARS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_EXPOSED_IRON_BARS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_WEATHERED_IRON_BARS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.WAXED_RUSTED_IRON_BARS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.GRAPHITE.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.GRAPHITE_SLAB.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.GRAPHITE_STAIRS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.GRAPHITE_WALL.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.GRAPHITE_FENCE.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.POLISHED_GRAPHITE.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.POLISHED_GRAPHITE_SLAB.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.POLISHED_GRAPHITE_STAIRS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.POLISHED_GRAPHITE_WALL.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.POLISHED_GRAPHITE_FENCE.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.GRAPHITE_BRICKS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.GRAPHITE_BRICK_SLAB.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.GRAPHITE_BRICK_STAIRS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.GRAPHITE_BRICK_WALL.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.GRAPHITE_BRICK_FENCE.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.OBSIDIAN_SLAB.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.OBSIDIAN_STAIRS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.OBSIDIAN_WALL.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.OBSIDIAN_FENCE.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.OBSIDIAN_BRICKS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.OBSIDIAN_BRICK_SLAB.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.OBSIDIAN_BRICK_STAIRS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.OBSIDIAN_BRICK_WALL.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.OBSIDIAN_BRICK_FENCE.get()).orElseThrow());
+
+        tag(ModBlockTags.COMPRESSES_CARBON)
+                .addTag(ModBlockTags.HIGH_PRESSURE_COMPRESSORS)
+                .addTag(ModBlockTags.LOW_PRESSURE_COMPRESSORS);
+
+        tag(ModBlockTags.LOW_PRESSURE_COMPRESSORS)
+                .addTag(BlockTags.ANVIL)
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.OBSIDIAN_SLAB.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.OBSIDIAN_STAIRS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.OBSIDIAN_WALL.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.OBSIDIAN_FENCE.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.OBSIDIAN_BRICK_SLAB.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.OBSIDIAN_BRICK_STAIRS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.OBSIDIAN_BRICK_WALL.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.OBSIDIAN_BRICK_FENCE.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.CRYING_OBSIDIAN_SLAB.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.CRYING_OBSIDIAN_STAIRS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.CRYING_OBSIDIAN_WALL.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.CRYING_OBSIDIAN_FENCE.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.CRYING_OBSIDIAN_BRICK_SLAB.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.CRYING_OBSIDIAN_BRICK_STAIRS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.CRYING_OBSIDIAN_BRICK_WALL.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.CRYING_OBSIDIAN_BRICK_FENCE.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.CUT_NETHERITE_SLAB.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.CUT_NETHERITE_STAIRS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.NETHERITE_DOOR.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.NETHERITE_TRAPDOOR.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.PLAYER_ONLY_PRESSURE_PLATE.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.NETHERITE_CHAIN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.NETHERITE_BULB.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.NETHERITE_GRATE.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.CUT_TUNGSTEN_SLAB.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.CUT_TUNGSTEN_STAIRS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.TUNGSTEN_DOOR.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.TUNGSTEN_TRAPDOOR.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.EXTRAORDINARILY_HEAVY_WEIGHTED_PRESSURE_PLATE.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.TUNGSTEN_CHAIN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.TUNGSTEN_BULB.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.TUNGSTEN_GRATE.get()).orElseThrow());
+
+        tag(ModBlockTags.HIGH_PRESSURE_COMPRESSORS)
+                .add(BuiltInRegistries.BLOCK.getResourceKey(Blocks.OBSIDIAN).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.OBSIDIAN_BRICKS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(Blocks.CRYING_OBSIDIAN).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.CRYING_OBSIDIAN_BRICKS.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(Blocks.ANCIENT_DEBRIS).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(Blocks.NETHERITE_BLOCK).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.CUT_NETHERITE.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.TUNGSTEN_ORE.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.DEEPSLATE_TUNGSTEN_ORE.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.RAW_TUNGSTEN_BLOCK.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.TUNGSTEN_BLOCK.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(ModBlocks.CUT_TUNGSTEN.get()).orElseThrow())
+                .add(BuiltInRegistries.BLOCK.getResourceKey(Blocks.HEAVY_CORE).orElseThrow());
+
     }
 }

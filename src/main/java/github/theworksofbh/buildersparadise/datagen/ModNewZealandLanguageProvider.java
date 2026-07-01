@@ -38,6 +38,7 @@ public class ModNewZealandLanguageProvider extends LanguageProvider {
                 ModBlocks.PLATINUM_WALL_TORCH.get(),
                 ModBlocks.GOLD_WALL_TORCH.get(),
                 ModBlocks.LEAD_WALL_TORCH.get(),
+                ModBlocks.BISMUTH_WALL_TORCH.get(),
                 ModBlocks.URANIUM_WALL_TORCH.get()
         );
 
@@ -159,6 +160,12 @@ public class ModNewZealandLanguageProvider extends LanguageProvider {
             } else {
                 readjusted = reformatted.replace("lead block", "block of lead");
             }
+        } else if (reformatted.contains("bismuth block")) {
+            if (reformatted.contains("raw")){
+                readjusted = reformatted.replace("raw bismuth block", "block of raw bismuth");
+            } else {
+                readjusted = reformatted.replace("bismuth block", "block of bismuth");
+            }
         } else if (reformatted.contains("uranium block")) {
             if (reformatted.contains("raw")){
                 readjusted = reformatted.replace("raw uranium block", "block of raw uranium");
@@ -181,6 +188,8 @@ public class ModNewZealandLanguageProvider extends LanguageProvider {
             readjusted = "minecart with " + reformatted.replace(" minecart", "");
         } else if (reformatted.contains("smithing template")) {
             readjusted = reformatted.replace("smithing template", "");
+        } else if (reformatted.contains("carbon block")) {
+            readjusted = reformatted.replace("carbon block", "block of carbon");
         } else {
             readjusted = reformatted;
         }
@@ -191,6 +200,10 @@ public class ModNewZealandLanguageProvider extends LanguageProvider {
             sorryIcouldNotThinkOfAgoodPunRelatingToKiwis = readjusted.replace("gray", "grey");
         } else if (readjusted.contains("armor")) {
             sorryIcouldNotThinkOfAgoodPunRelatingToKiwis = readjusted.replace("armor", "armour");
+        } else if (readjusted.contains("chiseled")) {
+            sorryIcouldNotThinkOfAgoodPunRelatingToKiwis = readjusted.replace("chiseled", "chiselled");
+        } else if (readjusted.contains("sulfur")) {
+            sorryIcouldNotThinkOfAgoodPunRelatingToKiwis = readjusted.replace("sulfur", "sulphur");
         } else {
             sorryIcouldNotThinkOfAgoodPunRelatingToKiwis = readjusted;
         }
@@ -354,6 +367,7 @@ public class ModNewZealandLanguageProvider extends LanguageProvider {
         this.add("trim_material.buildersparadise.tungsten", "Tungsten Material");
         this.add("trim_material.buildersparadise.platinum", "Platinum Material");
         this.add("trim_material.buildersparadise.lead", "Lead Material");
+        this.add("trim_material.buildersparadise.bismuth", "Bismuth Material");
         this.add("trim_material.buildersparadise.uranium", "Uranium Material");
         this.add("trim_material.buildersparadise.bronze", "Bronze Material");
         this.add("trim_material.buildersparadise.brass", "Brass Material");

@@ -147,6 +147,9 @@
     "buildersparadise:green_concrete_brick_wall",
     "buildersparadise:red_concrete_brick_wall",
     "buildersparadise:black_concrete_brick_wall",
-    "buildersparadise:gilded_blackstone_wall"
+    "buildersparadise:gilded_blackstone_wall",
+    "buildersparadise:graphite_wall",
+    "buildersparadise:polished_graphite_wall",
+    "buildersparadise:graphite_brick_wall"
   ]
 }

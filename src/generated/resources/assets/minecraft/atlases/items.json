@@ -10,6 +10,7 @@
       "palette_key": "minecraft:trims/color_palettes/trim_palette",
       "permutations": {
         "amethyst": "minecraft:trims/color_palettes/amethyst",
+        "bismuth": "buildersparadise:trims/color_palettes/bismuth",
         "brass": "buildersparadise:trims/color_palettes/brass",
         "bronze": "buildersparadise:trims/color_palettes/bronze",
         "bronze_darker": "buildersparadise:trims/color_palettes/bronze_darker",

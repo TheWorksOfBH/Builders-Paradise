@@ -8,6 +8,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.ColorRGBA;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.*;
@@ -1653,6 +1654,123 @@ public class ModBlocks {
     public static final DeferredBlock<FenceBlock> CINNABAR_FENCE = registerFenceBlock("cinnabar_fence", () -> Blocks.CINNABAR);
     public static final DeferredBlock<FenceBlock> POLISHED_CINNABAR_FENCE = registerFenceBlock("polished_cinnabar_fence", () -> Blocks.POLISHED_CINNABAR);
     public static final DeferredBlock<FenceBlock> CINNABAR_BRICK_FENCE = registerFenceBlock("cinnabar_brick_fence", () -> Blocks.CINNABAR_BRICKS);
+
+    public static final DeferredBlock<Block> GRAPHITE = registerBlockVariant("graphite", () -> Blocks.CALCITE, MapColor.COLOR_BLACK);
+    public static final DeferredBlock<SlabBlock> GRAPHITE_SLAB = registerSlabBlock("graphite_slab", () -> GRAPHITE.get());
+    public static final DeferredBlock<StairBlock> GRAPHITE_STAIRS = registerStairBlock("graphite_stairs", () -> GRAPHITE.get());
+    public static final DeferredBlock<WallBlock> GRAPHITE_WALL = registerWallBlock("graphite_wall", () -> GRAPHITE.get());
+    public static final DeferredBlock<FenceBlock> GRAPHITE_FENCE = registerFenceBlock("graphite_fence", () -> GRAPHITE.get());
+
+    public static final DeferredBlock<Block> POLISHED_GRAPHITE = registerBlockVariant("polished_graphite", () -> GRAPHITE.get());
+    public static final DeferredBlock<SlabBlock> POLISHED_GRAPHITE_SLAB = registerSlabBlock("polished_graphite_slab", () -> POLISHED_GRAPHITE.get());
+    public static final DeferredBlock<StairBlock> POLISHED_GRAPHITE_STAIRS = registerStairBlock("polished_graphite_stairs", () -> POLISHED_GRAPHITE.get());
+    public static final DeferredBlock<WallBlock> POLISHED_GRAPHITE_WALL = registerWallBlock("polished_graphite_wall", () -> POLISHED_GRAPHITE.get());
+    public static final DeferredBlock<FenceBlock> POLISHED_GRAPHITE_FENCE = registerFenceBlock("polished_graphite_fence", () -> POLISHED_GRAPHITE.get());
+
+    public static final DeferredBlock<Block> GRAPHITE_BRICKS = registerBlockVariant("graphite_bricks", () -> POLISHED_GRAPHITE.get());
+    public static final DeferredBlock<SlabBlock> GRAPHITE_BRICK_SLAB = registerSlabBlock("graphite_brick_slab", () -> GRAPHITE_BRICKS.get());
+    public static final DeferredBlock<StairBlock> GRAPHITE_BRICK_STAIRS = registerStairBlock("graphite_brick_stairs", () -> GRAPHITE_BRICKS.get());
+    public static final DeferredBlock<WallBlock> GRAPHITE_BRICK_WALL = registerWallBlock("graphite_brick_wall", () -> GRAPHITE_BRICKS.get());
+    public static final DeferredBlock<FenceBlock> GRAPHITE_BRICK_FENCE = registerFenceBlock("graphite_brick_fence", () -> GRAPHITE_BRICKS.get());
+
+    public static final DeferredBlock<GrapheneBlock> GRAPHENE = registerGraphene("graphene", () -> GRAPHITE.get());
+
+    public static final DeferredBlock<CarbonBlock> CARBON_BLOCK = registerCarbonBlock("carbon_block", () -> Blocks.GRAVEL, new ColorRGBA(2434341));
+
+    public static final DeferredBlock<DropExperienceBlock> BISMUTH_ORE = registerOreBlock("bismuth_ore");
+    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_BISMUTH_ORE = registerDeepslateOreBlock("deepslate_bismuth_ore");
+    public static final DeferredBlock<Block> RAW_BISMUTH_BLOCK = registerBlockVariant("raw_bismuth_block", () -> Blocks.RAW_COPPER_BLOCK, MapColor.COLOR_BLACK);
+
+    public static final DeferredBlock<Block> BISMUTH_BLOCK = registerBlockVariant("bismuth_block", () -> Blocks.COPPER_BLOCK.weathering().unaffected(), MapColor.COLOR_CYAN);
+    public static final DeferredBlock<Block> CUT_BISMUTH = registerBlockVariant("cut_bismuth", () -> BISMUTH_BLOCK.get());
+    public static final DeferredBlock<SlabBlock> CUT_BISMUTH_SLAB = registerSlabBlock("cut_bismuth_slab", () -> CUT_BISMUTH.get());
+    public static final DeferredBlock<StairBlock> CUT_BISMUTH_STAIRS = registerStairBlock("cut_bismuth_stairs", () -> CUT_BISMUTH.get());
+    public static final DeferredBlock<DoorBlock> BISMUTH_DOOR = registerDoorBlock("bismuth_door", ModBlockSetTypes.BISMUTH, () -> GOLD_DOOR.get());
+    public static final DeferredBlock<TrapDoorBlock> BISMUTH_TRAPDOOR = registerTrapdoorBlock("bismuth_trapdoor", ModBlockSetTypes.BISMUTH, () -> GOLD_TRAPDOOR.get());
+    public static final DeferredBlock<WeightedPressurePlateBlock> VEHEMENT_WEIGHTED_PRESSURE_PLATE = registerWeightedPressurePlate("vehement_heavy_weighted_pressure_plate", 2000, ModBlockSetTypes.BISMUTH, () -> Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE);
+
+    public static final DeferredBlock<TorchBlock> BISMUTH_TORCH = registerTorchBlock("bismuth_torch", () -> ModParticles.BISMUTH_FIRE_FLAME.get());
+    public static final DeferredBlock<WallTorchBlock> BISMUTH_WALL_TORCH = registerWallTorchBlock("bismuth_wall_torch", () -> ModParticles.BISMUTH_FIRE_FLAME.get(), () -> BISMUTH_TORCH.get());
+
+    public static final DeferredBlock<ChainBlock> BISMUTH_CHAIN = registerChainBlock("bismuth_chain", () -> Blocks.IRON_CHAIN);
+    public static final DeferredBlock<WaterloggedTransparentBlock> BISMUTH_GRATE = registerGrateBlock("bismuth_grate", () -> BISMUTH_BLOCK.get());
+    public static final DeferredBlock<CopperBulbBlock> BISMUTH_BULB = registerBulbBlock("bismuth_bulb", () -> BISMUTH_BLOCK.get());
+
+    public static final DeferredBlock<ModLanternBlock> ZINC_FIRE_LANTERN = registerRustingLanternBlock("zinc_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<ModLanternBlock> ZINC_SOUL_LANTERN = registerRustingLanternBlock("zinc_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<ModLanternBlock> ZINC_LANTERN = registerRustingLanternBlock("zinc_lantern", () -> Blocks.LANTERN);
+
+    public static final DeferredBlock<ModLanternBlock> EXPOSED_ZINC_FIRE_LANTERN = registerRustingLanternBlock("exposed_zinc_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<ModLanternBlock> EXPOSED_ZINC_SOUL_LANTERN = registerRustingLanternBlock("exposed_zinc_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<ModLanternBlock> EXPOSED_ZINC_LANTERN = registerRustingLanternBlock("exposed_zinc_lantern", () -> Blocks.LANTERN);
+
+    public static final DeferredBlock<ModLanternBlock> WEATHERED_ZINC_FIRE_LANTERN = registerRustingLanternBlock("weathered_zinc_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<ModLanternBlock> WEATHERED_ZINC_SOUL_LANTERN = registerRustingLanternBlock("weathered_zinc_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<ModLanternBlock> WEATHERED_ZINC_LANTERN = registerRustingLanternBlock("weathered_zinc_lantern", () -> Blocks.LANTERN);
+
+    public static final DeferredBlock<ModLanternBlock> CORRODED_ZINC_FIRE_LANTERN = registerRustingLanternBlock("corroded_zinc_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<ModLanternBlock> CORRODED_ZINC_SOUL_LANTERN = registerRustingLanternBlock("corroded_zinc_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<ModLanternBlock> CORRODED_ZINC_LANTERN = registerRustingLanternBlock("corroded_zinc_lantern", () -> Blocks.LANTERN);
+
+    public static final DeferredBlock<LanternBlock> WAXED_ZINC_FIRE_LANTERN = registerLanternBlock("waxed_zinc_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_ZINC_SOUL_LANTERN = registerLanternBlock("waxed_zinc_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_ZINC_LANTERN = registerLanternBlock("waxed_zinc_lantern", () -> Blocks.LANTERN);
+
+    public static final DeferredBlock<LanternBlock> WAXED_EXPOSED_ZINC_FIRE_LANTERN = registerLanternBlock("waxed_exposed_zinc_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_EXPOSED_ZINC_SOUL_LANTERN = registerLanternBlock("waxed_exposed_zinc_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_EXPOSED_ZINC_LANTERN = registerLanternBlock("waxed_exposed_zinc_lantern", () -> Blocks.LANTERN);
+
+    public static final DeferredBlock<LanternBlock> WAXED_WEATHERED_ZINC_FIRE_LANTERN = registerLanternBlock("waxed_weathered_zinc_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_WEATHERED_ZINC_SOUL_LANTERN = registerLanternBlock("waxed_weathered_zinc_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_WEATHERED_ZINC_LANTERN = registerLanternBlock("waxed_weathered_zinc_lantern", () -> Blocks.LANTERN);
+
+    public static final DeferredBlock<LanternBlock> WAXED_CORRODED_ZINC_FIRE_LANTERN = registerLanternBlock("waxed_corroded_zinc_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_CORRODED_ZINC_SOUL_LANTERN = registerLanternBlock("waxed_corroded_zinc_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<LanternBlock> WAXED_CORRODED_ZINC_LANTERN = registerLanternBlock("waxed_corroded_zinc_lantern", () -> Blocks.LANTERN);
+
+    public static final DeferredBlock<LanternBlock> SILVER_FIRE_LANTERN = registerLanternBlock("silver_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> SILVER_SOUL_LANTERN = registerLanternBlock("silver_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<LanternBlock> SILVER_LANTERN = registerLanternBlock("silver_lantern", () -> Blocks.LANTERN);
+
+    public static final DeferredBlock<LanternBlock> TIN_FIRE_LANTERN = registerLanternBlock("tin_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> TIN_SOUL_LANTERN = registerLanternBlock("tin_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<LanternBlock> TIN_LANTERN = registerLanternBlock("tin_lantern", () -> Blocks.LANTERN);
+
+    public static final DeferredBlock<LanternBlock> TUNGSTEN_FIRE_LANTERN = registerLanternBlock("tungsten_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> TUNGSTEN_SOUL_LANTERN = registerLanternBlock("tungsten_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<LanternBlock> TUNGSTEN_LANTERN = registerLanternBlock("tungsten_lantern", () -> Blocks.LANTERN);
+
+    public static final DeferredBlock<LanternBlock> PLATINUM_FIRE_LANTERN = registerLanternBlock("platinum_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> PLATINUM_SOUL_LANTERN = registerLanternBlock("platinum_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<LanternBlock> PLATINUM_LANTERN = registerLanternBlock("platinum_lantern", () -> Blocks.LANTERN);
+
+    public static final DeferredBlock<LanternBlock> GOLD_FIRE_LANTERN = registerLanternBlock("gold_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> GOLD_SOUL_LANTERN = registerLanternBlock("gold_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<LanternBlock> GOLD_LANTERN = registerLanternBlock("gold_lantern", () -> Blocks.LANTERN);
+
+    public static final DeferredBlock<LanternBlock> LEAD_FIRE_LANTERN = registerLanternBlock("lead_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> LEAD_SOUL_LANTERN = registerLanternBlock("lead_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<LanternBlock> LEAD_LANTERN = registerLanternBlock("lead_lantern", () -> Blocks.LANTERN);
+
+    public static final DeferredBlock<LanternBlock> BISMUTH_FIRE_LANTERN = registerLanternBlock("bismuth_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> BISMUTH_SOUL_LANTERN = registerLanternBlock("bismuth_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<LanternBlock> BISMUTH_LANTERN = registerLanternBlock("bismuth_lantern", () -> Blocks.LANTERN);
+
+    public static final DeferredBlock<LanternBlock> URANIUM_FIRE_LANTERN = registerLanternBlock("uranium_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> URANIUM_SOUL_LANTERN = registerLanternBlock("uranium_soul_lantern", () -> Blocks.SOUL_LANTERN);
+    public static final DeferredBlock<LanternBlock> URANIUM_LANTERN = registerLanternBlock("uranium_lantern", () -> Blocks.LANTERN);
+
+    public static final DeferredBlock<LanternBlock> NETHERITE_FIRE_LANTERN = registerLanternBlock("netherite_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> NETHERITE_SOUL_LANTERN = registerLanternBlock("netherite_soul_lantern", () -> Blocks.SOUL_LANTERN);
+
+    public static final DeferredBlock<LanternBlock> BRONZE_FIRE_LANTERN = registerLanternBlock("bronze_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> BRONZE_SOUL_LANTERN = registerLanternBlock("bronze_soul_lantern", () -> Blocks.SOUL_LANTERN);
+
+    public static final DeferredBlock<LanternBlock> BRASS_FIRE_LANTERN = registerLanternBlock("brass_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> BRASS_SOUL_LANTERN = registerLanternBlock("brass_soul_lantern", () -> Blocks.SOUL_LANTERN);
+
+    public static final DeferredBlock<LanternBlock> STEEL_FIRE_LANTERN = registerLanternBlock("steel_fire_lantern", () -> Blocks.LANTERN);
+    public static final DeferredBlock<LanternBlock> STEEL_SOUL_LANTERN = registerLanternBlock("steel_soul_lantern", () -> Blocks.SOUL_LANTERN);
 
     private static DeferredBlock<CraftingTableBlock> registerCraftingTable(String registryName) {
         if (registryName == "crimson_crafting_table" || registryName == "warped_crafting_table") {
@@ -4070,6 +4188,43 @@ public class ModBlocks {
         );
     }
 
+    private static DeferredBlock<GrapheneBlock> registerGraphene(String registryName, Supplier<Block> baseBlock) {
+        return BLOCKS.register(
+                registryName, () -> new GrapheneBlock(
+                        BlockBehaviour.Properties.ofFullCopy(
+                                baseBlock.get()
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        ).strength(0.375F).requiresCorrectToolForDrops().isViewBlocking((statex, level, pos) -> (Integer)statex.getValue(GrapheneBlock.LAYERS) >= 8).pushReaction(PushReaction.NORMAL)
+                )
+        );
+    }
+
+    private static DeferredBlock<CarbonBlock> registerCarbonBlock(String registryName, Supplier<Block> baseBlock, ColorRGBA dustColor) {
+        return BLOCKS.register(
+                registryName, () -> new CarbonBlock(
+                        dustColor,
+                        BlockBehaviour.Properties.ofFullCopy(
+                                baseBlock.get()
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        ).randomTicks()
+                )
+        );
+    }
+
     private static DeferredBlock<ModGrateBlock> registerRustingGrateBlock(String registryName, Supplier<Block> baseBlock) {
         return BLOCKS.register(
                 registryName, () -> new ModGrateBlock(
@@ -4279,21 +4434,55 @@ public class ModBlocks {
     }
 
     private static DeferredBlock<LanternBlock> registerLanternBlock(String registryName, Supplier<Block> baseBlock) {
-        return BLOCKS.register(
-                registryName, () -> new LanternBlock(
-                        BlockBehaviour.Properties.ofFullCopy(
-                                baseBlock.get()
-                        ).setId(
-                                ResourceKey.create(
-                                        Registries.BLOCK,
-                                        Identifier.fromNamespaceAndPath(
-                                                BuildersParadise.MODID,
-                                                registryName
-                                        )
-                                )
-                        )
-                )
-        );
+        if (registryName.contains("netherite")) {
+            return BLOCKS.register(
+                    registryName, () -> new LanternBlock(
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    baseBlock.get()
+                            ).setId(
+                                    ResourceKey.create(
+                                            Registries.BLOCK,
+                                            Identifier.fromNamespaceAndPath(
+                                                    BuildersParadise.MODID,
+                                                    registryName
+                                            )
+                                    )
+                            ).strength(50.0F, 1200.0F)
+                    )
+            );
+        } else if (registryName.contains("tungsten")) {
+            return BLOCKS.register(
+                    registryName, () -> new LanternBlock(
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    baseBlock.get()
+                            ).setId(
+                                    ResourceKey.create(
+                                            Registries.BLOCK,
+                                            Identifier.fromNamespaceAndPath(
+                                                    BuildersParadise.MODID,
+                                                    registryName
+                                            )
+                                    )
+                            ).strength(45.0F, 2000.0F)
+                    )
+            );
+        } else {
+            return BLOCKS.register(
+                    registryName, () -> new LanternBlock(
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    baseBlock.get()
+                            ).setId(
+                                    ResourceKey.create(
+                                            Registries.BLOCK,
+                                            Identifier.fromNamespaceAndPath(
+                                                    BuildersParadise.MODID,
+                                                    registryName
+                                            )
+                                    )
+                            )
+                    )
+            );
+        }
     }
 
     private static DeferredBlock<ModLanternBlock> registerRustingLanternBlock(String registryName, Supplier<Block> baseBlock) {

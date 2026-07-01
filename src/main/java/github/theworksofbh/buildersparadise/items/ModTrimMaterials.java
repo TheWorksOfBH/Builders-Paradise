@@ -27,6 +27,7 @@ public class ModTrimMaterials {
     public static final ResourceKey<TrimMaterial> TUNGSTEN = registerMaterial("tungsten");
     public static final ResourceKey<TrimMaterial> PLATINUM = registerMaterial("platinum");
     public static final ResourceKey<TrimMaterial> LEAD = registerMaterial("lead");
+    public static final ResourceKey<TrimMaterial> BISMUTH = registerMaterial("bismuth");
     public static final ResourceKey<TrimMaterial> URANIUM = registerMaterial("uranium");
     public static final ResourceKey<TrimMaterial> BRONZE = registerMaterial("bronze");
     public static final ResourceKey<TrimMaterial> BRASS = registerMaterial("brass");
@@ -40,6 +41,7 @@ public class ModTrimMaterials {
         register(context, TUNGSTEN, Style.EMPTY.withColor(5528675), ModMaterialAssetGroups.TUNGSTEN);
         register(context, PLATINUM, Style.EMPTY.withColor(13292510), ModMaterialAssetGroups.PLATINUM);
         register(context, LEAD, Style.EMPTY.withColor(2039583), ModMaterialAssetGroups.LEAD);
+        register(context, BISMUTH, Style.EMPTY.withColor(2513239), ModMaterialAssetGroups.BISMUTH);
         register(context, URANIUM, Style.EMPTY.withColor(12446638), ModMaterialAssetGroups.URANIUM);
         register(context, BRONZE, Style.EMPTY.withColor(4337440), ModMaterialAssetGroups.BRONZE);
         register(context, BRASS, Style.EMPTY.withColor(14930086), ModMaterialAssetGroups.BRASS);

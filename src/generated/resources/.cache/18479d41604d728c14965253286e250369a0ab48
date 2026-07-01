@@ -1,4 +1,4 @@
-// 26.2	2026-06-17T08:20:39.5207282	Tags for minecraft:item mod id buildersparadise
+// 26.2	2026-06-30T21:03:39.1552552	Tags for minecraft:item mod id buildersparadise
 48e9aade463ef2e664ff6fd1b73a70e2cd87b7d8 data/buildersparadise/tags/item/barrels.json
 c29e5ac914e914c7ff1ecfe43d740dc2d416071d data/buildersparadise/tags/item/bronze_tool_materials.json
 856b23050e5dcac13b005737768f98f74bf6884c data/buildersparadise/tags/item/chests.json
@@ -10,6 +10,6 @@ d303637672c3d2c48b4e5ee72788a511b40805cd data/minecraft/tags/item/arrows.json
 1a38feabcaf1be26c9ce818e34c5b05dd62f150b data/minecraft/tags/item/beacon_payment_items.json
 5a144b5d36d14d0af23f65dbec9f46b693aca99d data/minecraft/tags/item/loom_patterns.json
 ba813c029719dc2b89d5c9c08ed201592f4db9e9 data/minecraft/tags/item/metal_nuggets.json
-a4a7fffe476533ed5b8c55be0fe68562057e2e39 data/minecraft/tags/item/piglin_loved.json
+5d2a6d3832a2a56cdfa164cdba4c802b13785039 data/minecraft/tags/item/piglin_loved.json
 aab0fbb99aaea8c3f26b3c0c8c26e6c80c5cc9f9 data/minecraft/tags/item/trimmable_armor.json
-4d5d3237da9674cdca4c44653c91d415eca80c1b data/minecraft/tags/item/trim_materials.json
+7660dfacffe1dd4cf0978431cb83b1268f580aa0 data/minecraft/tags/item/trim_materials.json

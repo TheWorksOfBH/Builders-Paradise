@@ -138,6 +138,25 @@ public record ModBlockSetTypes() {
             )
     );
 
+    public static final BlockSetType BISMUTH = BlockSetType.register(
+            new BlockSetType(
+                    "bismuth",
+                    true,
+                    true,
+                    false,
+                    BlockSetType.PressurePlateSensitivity.EVERYTHING,
+                    SoundType.COPPER,
+                    SoundEvents.COPPER_DOOR_CLOSE,
+                    SoundEvents.COPPER_DOOR_OPEN,
+                    SoundEvents.COPPER_TRAPDOOR_CLOSE,
+                    SoundEvents.COPPER_TRAPDOOR_OPEN,
+                    SoundEvents.METAL_PRESSURE_PLATE_CLICK_OFF,
+                    SoundEvents.METAL_PRESSURE_PLATE_CLICK_ON,
+                    SoundEvents.STONE_BUTTON_CLICK_OFF,
+                    SoundEvents.STONE_BUTTON_CLICK_ON
+            )
+    );
+
     public static final BlockSetType URANIUM = BlockSetType.register(
             new BlockSetType(
                     "uranium",

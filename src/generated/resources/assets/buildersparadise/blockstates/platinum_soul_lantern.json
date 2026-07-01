@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "buildersparadise:block/platinum_soul_lantern"
+    },
+    "hanging=true": {
+      "model": "buildersparadise:block/platinum_soul_lantern_hanging"
+    }
+  }
+}

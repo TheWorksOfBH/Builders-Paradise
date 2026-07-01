@@ -14,6 +14,7 @@ public final class ModBlockTags {
     public static final TagKey<Block> TUNGSTEN_ORES = create("tungsten_ores");
     public static final TagKey<Block> PLATINUM_ORES = create("platinum_ores");
     public static final TagKey<Block> LEAD_ORES = create("lead_ores");
+    public static final TagKey<Block> BISMUTH_ORES = create("bismuth_ores");
     public static final TagKey<Block> URANIUM_ORES = create("uranium_ores");
     public static final TagKey<Block> CRAFTING_TABLES = create("crafting_tables");
     public static final TagKey<Block> CARTOGRAPHY_TABLES = create("cartography_tables");
@@ -44,6 +45,9 @@ public final class ModBlockTags {
     public static final TagKey<Block> GLASS_DOORS = create("glass_doors");
     public static final TagKey<Block> GLASS_TRAPDOORS = create("glass_trapdoors");
     public static final TagKey<Block> TROMBONE_NOTE_BLOCK_SOUNDS = create("trombone_note_block_sounds");
+    public static final TagKey<Block> COMPRESSES_CARBON = create("compresses_carbon");
+    public static final TagKey<Block> HIGH_PRESSURE_COMPRESSORS = create("high_pressure_compressors");
+    public static final TagKey<Block> LOW_PRESSURE_COMPRESSORS = create("low_pressure_compressors");
 
     private ModBlockTags() {
     }

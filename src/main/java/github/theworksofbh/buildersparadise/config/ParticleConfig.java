@@ -22,6 +22,8 @@ public class ParticleConfig {
         event.registerSpriteSet(ModParticles.GOLD_FIRE_FLAME.get(), FlameParticle.Provider::new);
         event.registerSpriteSet(ModParticles.LEAD_FIRE_FLAME.get(), FlameParticle.SmallFlameProvider::new);
         event.registerSpriteSet(ModParticles.LEAD_FIRE_FLAME.get(), FlameParticle.Provider::new);
+        event.registerSpriteSet(ModParticles.BISMUTH_FIRE_FLAME.get(), FlameParticle.SmallFlameProvider::new);
+        event.registerSpriteSet(ModParticles.BISMUTH_FIRE_FLAME.get(), FlameParticle.Provider::new);
         event.registerSpriteSet(ModParticles.URANIUM_FIRE_FLAME.get(), FlameParticle.SmallFlameProvider::new);
         event.registerSpriteSet(ModParticles.URANIUM_FIRE_FLAME.get(), FlameParticle.Provider::new);
 

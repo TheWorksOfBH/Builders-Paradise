@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "buildersparadise:block/uranium_lantern"
+    },
+    "hanging=true": {
+      "model": "buildersparadise:block/uranium_lantern_hanging"
+    }
+  }
+}

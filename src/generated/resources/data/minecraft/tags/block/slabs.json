@@ -174,6 +174,10 @@
     "buildersparadise:green_concrete_brick_slab",
     "buildersparadise:red_concrete_brick_slab",
     "buildersparadise:black_concrete_brick_slab",
-    "buildersparadise:gilded_blackstone_slab"
+    "buildersparadise:gilded_blackstone_slab",
+    "buildersparadise:graphite_slab",
+    "buildersparadise:polished_graphite_slab",
+    "buildersparadise:graphite_brick_slab",
+    "buildersparadise:cut_bismuth_slab"
   ]
 }

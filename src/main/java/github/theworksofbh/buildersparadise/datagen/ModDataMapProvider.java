@@ -328,6 +328,18 @@ public class ModDataMapProvider extends DataMapProvider {
         addToOxidizables(ModBlocks.EXPOSED_ZINC_BULB.get(), ModBlocks.WEATHERED_ZINC_BULB.get());
         addToOxidizables(ModBlocks.WEATHERED_ZINC_BULB.get(), ModBlocks.CORRODED_ZINC_BULB.get());
 
+        addToOxidizables(ModBlocks.ZINC_LANTERN.get(), ModBlocks.EXPOSED_ZINC_LANTERN.get());
+        addToOxidizables(ModBlocks.EXPOSED_ZINC_LANTERN.get(), ModBlocks.WEATHERED_ZINC_LANTERN.get());
+        addToOxidizables(ModBlocks.WEATHERED_ZINC_LANTERN.get(), ModBlocks.CORRODED_ZINC_LANTERN.get());
+
+        addToOxidizables(ModBlocks.ZINC_SOUL_LANTERN.get(), ModBlocks.EXPOSED_ZINC_SOUL_LANTERN.get());
+        addToOxidizables(ModBlocks.EXPOSED_ZINC_SOUL_LANTERN.get(), ModBlocks.WEATHERED_ZINC_SOUL_LANTERN.get());
+        addToOxidizables(ModBlocks.WEATHERED_ZINC_SOUL_LANTERN.get(), ModBlocks.CORRODED_ZINC_SOUL_LANTERN.get());
+
+        addToOxidizables(ModBlocks.ZINC_FIRE_LANTERN.get(), ModBlocks.EXPOSED_ZINC_FIRE_LANTERN.get());
+        addToOxidizables(ModBlocks.EXPOSED_ZINC_FIRE_LANTERN.get(), ModBlocks.WEATHERED_ZINC_FIRE_LANTERN.get());
+        addToOxidizables(ModBlocks.WEATHERED_ZINC_FIRE_LANTERN.get(), ModBlocks.CORRODED_ZINC_FIRE_LANTERN.get());
+
         addToWaxables(ModBlocks.MEDIUM_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get());
         addToWaxables(ModBlocks.EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get());
         addToWaxables(ModBlocks.WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get(), ModBlocks.WAXED_WEATHERED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get());
@@ -462,5 +474,20 @@ public class ModDataMapProvider extends DataMapProvider {
         addToWaxables(ModBlocks.EXPOSED_ZINC_BULB.get(), ModBlocks.WAXED_EXPOSED_ZINC_BULB.get());
         addToWaxables(ModBlocks.WEATHERED_ZINC_BULB.get(), ModBlocks.WAXED_WEATHERED_ZINC_BULB.get());
         addToWaxables(ModBlocks.CORRODED_ZINC_BULB.get(), ModBlocks.WAXED_CORRODED_ZINC_BULB.get());
+
+        addToWaxables(ModBlocks.ZINC_LANTERN.get(), ModBlocks.WAXED_ZINC_LANTERN.get());
+        addToWaxables(ModBlocks.EXPOSED_ZINC_LANTERN.get(), ModBlocks.WAXED_EXPOSED_ZINC_LANTERN.get());
+        addToWaxables(ModBlocks.WEATHERED_ZINC_LANTERN.get(), ModBlocks.WAXED_WEATHERED_ZINC_LANTERN.get());
+        addToWaxables(ModBlocks.CORRODED_ZINC_LANTERN.get(), ModBlocks.WAXED_CORRODED_ZINC_LANTERN.get());
+
+        addToWaxables(ModBlocks.ZINC_SOUL_LANTERN.get(), ModBlocks.WAXED_ZINC_SOUL_LANTERN.get());
+        addToWaxables(ModBlocks.EXPOSED_ZINC_SOUL_LANTERN.get(), ModBlocks.WAXED_EXPOSED_ZINC_SOUL_LANTERN.get());
+        addToWaxables(ModBlocks.WEATHERED_ZINC_SOUL_LANTERN.get(), ModBlocks.WAXED_WEATHERED_ZINC_SOUL_LANTERN.get());
+        addToWaxables(ModBlocks.CORRODED_ZINC_SOUL_LANTERN.get(), ModBlocks.WAXED_CORRODED_ZINC_SOUL_LANTERN.get());
+
+        addToWaxables(ModBlocks.ZINC_FIRE_LANTERN.get(), ModBlocks.WAXED_ZINC_FIRE_LANTERN.get());
+        addToWaxables(ModBlocks.EXPOSED_ZINC_FIRE_LANTERN.get(), ModBlocks.WAXED_EXPOSED_ZINC_FIRE_LANTERN.get());
+        addToWaxables(ModBlocks.WEATHERED_ZINC_FIRE_LANTERN.get(), ModBlocks.WAXED_WEATHERED_ZINC_FIRE_LANTERN.get());
+        addToWaxables(ModBlocks.CORRODED_ZINC_FIRE_LANTERN.get(), ModBlocks.WAXED_CORRODED_ZINC_FIRE_LANTERN.get());
     }
 }

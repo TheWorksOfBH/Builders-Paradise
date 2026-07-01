@@ -85,6 +85,15 @@
     "buildersparadise:silver_bulb",
     "buildersparadise:gold_bulb",
     "buildersparadise:uranium_bulb",
-    "buildersparadise:brass_bulb"
+    "buildersparadise:brass_bulb",
+    "buildersparadise:bismuth_ore",
+    "buildersparadise:deepslate_bismuth_ore",
+    "buildersparadise:raw_bismuth_block",
+    "buildersparadise:bismuth_block",
+    "buildersparadise:cut_bismuth",
+    "buildersparadise:cut_bismuth_slab",
+    "buildersparadise:cut_bismuth_stairs",
+    "buildersparadise:bismuth_grate",
+    "buildersparadise:bismuth_bulb"
   ]
 }

@@ -46,6 +46,7 @@ public class ModRecipesProvider extends RecipeProvider {
     public static final ImmutableList<ItemLike> TUNGSTEN_SMELTABLES = ImmutableList.of(ModItems.TUNGSTEN_ORE.get(), ModItems.DEEPSLATE_TUNGSTEN_ORE.get(), ModItems.RAW_TUNGSTEN.get());
     public static final ImmutableList<ItemLike> PLATINUM_SMELTABLES = ImmutableList.of(ModItems.PLATINUM_ORE.get(), ModItems.DEEPSLATE_PLATINUM_ORE.get(), ModItems.RAW_PLATINUM.get());
     public static final ImmutableList<ItemLike> LEAD_SMELTABLES = ImmutableList.of(ModItems.LEAD_ORE.get(), ModItems.DEEPSLATE_LEAD_ORE.get(), ModItems.RAW_LEAD.get());
+    public static final ImmutableList<ItemLike> BISMUTH_SMELTABLES = ImmutableList.of(ModItems.BISMUTH_ORE.get(), ModItems.DEEPSLATE_BISMUTH_ORE.get(), ModItems.RAW_BISMUTH.get());
     public static final ImmutableList<ItemLike> URANIUM_SMELTABLES = ImmutableList.of(ModItems.URANIUM_ORE.get(), ModItems.DEEPSLATE_URANIUM_ORE.get(), ModItems.RAW_URANIUM.get());
 
     @FunctionalInterface
@@ -314,7 +315,7 @@ public class ModRecipesProvider extends RecipeProvider {
 
         shapeless(RecipeCategory.MISC, ModItems.STEEL_INGOT.get())
                 .requires(Items.IRON_INGOT, 4)
-                .requires(Ingredient.of(new Item[]{Items.COAL, Items.CHARCOAL}), 4)
+                .requires(Ingredient.of(new Item[]{Items.COAL, Items.CHARCOAL, ModItems.CARBON_DUST.get()}), 4)
                 .group("steel_ingot")
                 .unlockedBy("has_iron_ingot", this.has(Items.IRON_INGOT))
                 .save(this.output);
@@ -433,6 +434,7 @@ public class ModRecipesProvider extends RecipeProvider {
         this.nineBlockStorageRecipes(RecipeCategory.MISC, ModItems.RAW_TUNGSTEN.get(), RecipeCategory.MISC, ModItems.RAW_TUNGSTEN_BLOCK.get());
         this.nineBlockStorageRecipes(RecipeCategory.MISC, ModItems.RAW_PLATINUM.get(), RecipeCategory.MISC, ModItems.RAW_PLATINUM_BLOCK.get());
         this.nineBlockStorageRecipes(RecipeCategory.MISC, ModItems.RAW_LEAD.get(), RecipeCategory.MISC, ModItems.RAW_LEAD_BLOCK.get());
+        this.nineBlockStorageRecipes(RecipeCategory.MISC, ModItems.RAW_BISMUTH.get(), RecipeCategory.MISC, ModItems.RAW_BISMUTH_BLOCK.get());
         this.nineBlockStorageRecipes(RecipeCategory.MISC, ModItems.RAW_URANIUM.get(), RecipeCategory.MISC, ModItems.RAW_URANIUM_BLOCK.get());
 
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(Items.COBBLESTONE_SLAB), RecipeCategory.BUILDING_BLOCKS, CookingBookCategory.BLOCKS, Items.STONE_SLAB, 0.1F, 200).unlockedBy("has_cobblestone_slab", this.has(Items.COBBLESTONE_SLAB)).save(this.output, "stone_slab_smelting");
@@ -1312,7 +1314,62 @@ public class ModRecipesProvider extends RecipeProvider {
         this.copperBulb(ModBlocks.BRASS_BULB.get(), ModBlocks.BRASS_BLOCK.get());
         this.copperBulb(ModBlocks.STEEL_BULB.get(), ModBlocks.STEEL_BLOCK.get());
 
+        this.threeByThreePacker(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAPHITE.get(), ModItems.CARBON_DUST.get());
+        this.shapeless(RecipeCategory.MISC, ModItems.CARBON_DUST, 2)
+                .requires(Ingredient.of(new Item[]{Items.COAL, Items.CHARCOAL}))
+                .unlockedBy("has_coal", this.has(Items.COAL))
+                .unlockedBy("has_charcoal", this.has(Items.CHARCOAL))
+                .save(this.output, "carbon_dust_alt");
 
+        this.shaped(RecipeCategory.DECORATIONS, ModItems.GRAPHENE.get(), 2)
+                .define('#', ModItems.CARBON_DUST.get())
+                .pattern("##")
+                .unlockedBy("has_carbon_dust", this.has(ModItems.CARBON_DUST.get()))
+                .save(this.output);
+        this.twoByTwoPacker(RecipeCategory.BUILDING_BLOCKS, ModItems.CARBON_BLOCK.get(), ModItems.CARBON_DUST.get());
+        this.shapeless(RecipeCategory.MISC, ModItems.CARBON_DUST, 4)
+                .requires(Ingredient.of(ModItems.CARBON_BLOCK.asItem()))
+                .unlockedBy("has_carbon_block", this.has(ModItems.CARBON_BLOCK.asItem()))
+                .save(this.output);
+
+        oreSmelting(BISMUTH_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.BISMUTH_INGOT.get(), 1.0F, 200, "bismuth_ingot");
+        oreBlasting(BISMUTH_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.BISMUTH_INGOT.get(), 1.0F, 100, "bismuth_ingot");
+        eightyOneBlockStorageRecipes(
+                RecipeCategory.MISC,
+                ModItems.BISMUTH_NUGGET.get(),
+                RecipeCategory.MISC,
+                ModItems.BISMUTH_INGOT.get(),
+                "bismuth_ingot",
+                null,
+                "bismuth_nugget",
+                null,
+                RecipeCategory.BUILDING_BLOCKS,
+                ModItems.BISMUTH_BLOCK.get(),
+                "bismuth_block",
+                null);
+        doorBuilder(ModItems.BISMUTH_DOOR.get(), Ingredient.of(ModItems.BISMUTH_INGOT.get())).unlockedBy(getHasName(ModItems.BISMUTH_INGOT), this.has(ModItems.BISMUTH_INGOT.get())).save(this.output);
+        twoByTwoPacker(RecipeCategory.REDSTONE, ModItems.BISMUTH_TRAPDOOR.get(), ModItems.BISMUTH_INGOT.get());
+        pressurePlate(ModItems.VEHEMENT_WEIGHTED_PRESSURE_PLATE.get(), ModItems.BISMUTH_INGOT.get());
+
+        this.createChain(ModItems.BISMUTH_CHAIN.get(), ModItems.BISMUTH_INGOT.get(), ModItems.BISMUTH_NUGGET.get());
+        this.flameTestTorch(ModItems.BISMUTH_TORCH.get(), ModItems.BISMUTH_NUGGET.get());
+        this.grate(ModBlocks.BISMUTH_GRATE.get(), ModBlocks.BISMUTH_BLOCK.get());
+        this.copperBulb(ModBlocks.BISMUTH_BULB.get(), ModBlocks.BISMUTH_BLOCK.get());
+
+        this.createLanterns(ModItems.ZINC_FIRE_LANTERN.get(), ModItems.ZINC_SOUL_LANTERN.get(), ModItems.ZINC_LANTERN.asItem(), ModItems.ZINC_NUGGET.get(), ModItems.ZINC_INGOT.get(), ModItems.ZINC_TORCH.get());
+        this.createLanterns(ModItems.SILVER_FIRE_LANTERN.get(), ModItems.SILVER_SOUL_LANTERN.get(), ModItems.SILVER_LANTERN.asItem(), ModItems.SILVER_NUGGET.get(), ModItems.SILVER_INGOT.get(), ModItems.SILVER_TORCH.get());
+        this.createLanterns(ModItems.TIN_FIRE_LANTERN.get(), ModItems.TIN_SOUL_LANTERN.get(), ModItems.TIN_LANTERN.asItem(), ModItems.TIN_NUGGET.get(), ModItems.TIN_INGOT.get(), ModItems.TIN_TORCH.get());
+        this.createLanterns(ModItems.TUNGSTEN_FIRE_LANTERN.get(), ModItems.TUNGSTEN_SOUL_LANTERN.get(), ModItems.TUNGSTEN_LANTERN.asItem(), ModItems.TUNGSTEN_NUGGET.get(), ModItems.TUNGSTEN_INGOT.get(), ModItems.TUNGSTEN_TORCH.get());
+        this.createLanterns(ModItems.PLATINUM_FIRE_LANTERN.get(), ModItems.PLATINUM_SOUL_LANTERN.get(), ModItems.PLATINUM_LANTERN.asItem(), ModItems.PLATINUM_NUGGET.get(), ModItems.PLATINUM_INGOT.get(), ModItems.PLATINUM_TORCH.get());
+        this.createLanterns(ModItems.GOLD_FIRE_LANTERN.get(), ModItems.GOLD_SOUL_LANTERN.get(), ModItems.GOLD_LANTERN.asItem(), Items.GOLD_NUGGET, Items.GOLD_INGOT, ModItems.GOLD_TORCH.get());
+        this.createLanterns(ModItems.LEAD_FIRE_LANTERN.get(), ModItems.LEAD_SOUL_LANTERN.get(), ModItems.LEAD_LANTERN.asItem(), ModItems.LEAD_NUGGET.get(), ModItems.LEAD_INGOT.get(), ModItems.LEAD_TORCH.get());
+        this.createLanterns(ModItems.BISMUTH_FIRE_LANTERN.get(), ModItems.BISMUTH_SOUL_LANTERN.get(), ModItems.BISMUTH_LANTERN.asItem(), ModItems.BISMUTH_NUGGET.get(), ModItems.BISMUTH_INGOT.get(), ModItems.BISMUTH_TORCH.get());
+        this.createLanterns(ModItems.URANIUM_FIRE_LANTERN.get(), ModItems.URANIUM_SOUL_LANTERN.get(), ModItems.URANIUM_LANTERN.asItem(), ModItems.URANIUM_NUGGET.get(), ModItems.URANIUM_INGOT.get(), ModItems.URANIUM_TORCH.get());
+
+        this.createLanterns(ModItems.NETHERITE_FIRE_LANTERN.get(), ModItems.NETHERITE_SOUL_LANTERN.get(), Items.NETHERITE_INGOT, ModItems.NETHERITE_NUGGET.get());
+        this.createLanterns(ModItems.BRONZE_FIRE_LANTERN.get(), ModItems.BRONZE_SOUL_LANTERN.get(), ModItems.BRONZE_INGOT.get(), ModItems.BRONZE_NUGGET.get());
+        this.createLanterns(ModItems.BRASS_FIRE_LANTERN.get(), ModItems.BRASS_SOUL_LANTERN.get(), ModItems.BRASS_INGOT.get(), ModItems.BRASS_NUGGET.get());
+        this.createLanterns(ModItems.STEEL_FIRE_LANTERN.get(), ModItems.STEEL_SOUL_LANTERN.get(), ModItems.STEEL_INGOT.get(), ModItems.STEEL_NUGGET.get());
     }
 
     protected void createChain(ItemLike result, ItemLike ingot, ItemLike nugget) {
@@ -1405,6 +1462,8 @@ public class ModRecipesProvider extends RecipeProvider {
             item = Items.SULFUR_SPIKE;
         } else if (fence.asItem().getDescriptionId().contains("cinnabar")) {
             item = ModItems.CINNABAR_BATON.get();
+        } else if (fence.asItem().getDescriptionId().contains("graphite")) {
+            item = ModItems.CARBON_DUST.get();
         } else if (fence.asItem().getDescriptionId().contains("brick")) {
             if (fence.asItem().getDescriptionId().contains("stone")) {
                 if (fence.asItem().getDescriptionId().contains("sand")) {
@@ -1482,6 +1541,8 @@ public class ModRecipesProvider extends RecipeProvider {
                 item = Items.SULFUR_SPIKE;
             } else if (fence.asItem().getDescriptionId().contains("cinnabar")) {
                 item = ModItems.CINNABAR_BATON.get();
+            } else if (fence.asItem().getDescriptionId().contains("graphite")) {
+                item = ModItems.CARBON_DUST.get();
             } else {
                 item = Items.BRICK;
             }
@@ -1958,6 +2019,26 @@ public class ModRecipesProvider extends RecipeProvider {
                 .unlockedBy("has_" + getItemName(ingot), this.has(ingot)).save(this.output);
     }
 
+    protected void createLanterns(ItemLike normal, ItemLike soul, ItemLike nugget, ItemLike ingot) {
+        this.shaped(RecipeCategory.DECORATIONS, normal)
+                .define('#', Items.TORCH)
+                .define('X', nugget)
+                .pattern("XXX")
+                .pattern("X#X")
+                .pattern("XXX")
+                .unlockedBy("has_" + getItemName(nugget), this.has(nugget))
+                .unlockedBy("has_" + getItemName(ingot), this.has(ingot)).save(this.output);
+
+        this.shaped(RecipeCategory.DECORATIONS, soul)
+                .define('#', Items.SOUL_TORCH)
+                .define('X', nugget)
+                .pattern("XXX")
+                .pattern("X#X")
+                .pattern("XXX")
+                .unlockedBy("has_" + getItemName(nugget), this.has(nugget))
+                .unlockedBy("has_" + getItemName(ingot), this.has(ingot)).save(this.output);
+    }
+
     private void waxedBlocks() {
         createWaxedPressurePlateRecipe(ModItems.WAXED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get(), ModItems.MEDIUM_WEIGHTED_PRESSURE_PLATE.get(), "medium_weighted_pressure_plate");
         createWaxedPressurePlateRecipe(ModItems.WAXED_EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get(), ModItems.EXPOSED_MEDIUM_WEIGHTED_PRESSURE_PLATE.get(), "exposed_medium_weighted_pressure_plate");
@@ -2094,6 +2175,20 @@ public class ModRecipesProvider extends RecipeProvider {
         createWaxedPressurePlateRecipe(ModItems.WAXED_WEATHERED_ZINC_BULB.get(), ModItems.WEATHERED_ZINC_BULB.get(), "weathered_zinc_bulb");
         createWaxedPressurePlateRecipe(ModItems.WAXED_CORRODED_ZINC_BULB.get(), ModItems.CORRODED_ZINC_BULB.get(), "corroded_zinc_bulb");
 
+        createWaxedBarsRecipe(ModItems.WAXED_ZINC_LANTERN.get(), ModItems.ZINC_LANTERN.get(), "zinc_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_EXPOSED_ZINC_LANTERN.get(), ModItems.EXPOSED_ZINC_LANTERN.get(), "exposed_zinc_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_WEATHERED_ZINC_LANTERN.get(), ModItems.WEATHERED_ZINC_LANTERN.get(), "weathered_zinc_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_CORRODED_ZINC_LANTERN.get(), ModItems.CORRODED_ZINC_LANTERN.get(), "corroded_zinc_lantern");
+
+        createWaxedBarsRecipe(ModItems.WAXED_ZINC_SOUL_LANTERN.get(), ModItems.ZINC_SOUL_LANTERN.get(), "zinc_soul_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_EXPOSED_ZINC_SOUL_LANTERN.get(), ModItems.EXPOSED_ZINC_SOUL_LANTERN.get(), "exposed_zinc_soul_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_WEATHERED_ZINC_SOUL_LANTERN.get(), ModItems.WEATHERED_ZINC_SOUL_LANTERN.get(), "weathered_zinc_soul_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_CORRODED_ZINC_SOUL_LANTERN.get(), ModItems.CORRODED_ZINC_SOUL_LANTERN.get(), "corroded_zinc_soul_lantern");
+
+        createWaxedBarsRecipe(ModItems.WAXED_ZINC_FIRE_LANTERN.get(), ModItems.ZINC_FIRE_LANTERN.get(), "zinc_fire_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_EXPOSED_ZINC_FIRE_LANTERN.get(), ModItems.EXPOSED_ZINC_FIRE_LANTERN.get(), "exposed_zinc_fire_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_WEATHERED_ZINC_FIRE_LANTERN.get(), ModItems.WEATHERED_ZINC_FIRE_LANTERN.get(), "weathered_zinc_fire_lantern");
+        createWaxedBarsRecipe(ModItems.WAXED_CORRODED_ZINC_FIRE_LANTERN.get(), ModItems.CORRODED_ZINC_FIRE_LANTERN.get(), "corroded_zinc_fire_lantern");
 
     }
 
@@ -3209,7 +3304,41 @@ public class ModRecipesProvider extends RecipeProvider {
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.NETHERITE_GRATE.get(), Items.NETHERITE_BLOCK, 4);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BRONZE_GRATE.get(), ModItems.BRONZE_BLOCK.get(), 4);
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BRASS_GRATE.get(), ModItems.BRASS_BLOCK.get(), 4);
-        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.STEEL_GRATE.get(), ModItems.STEEL_BLOCK.get(), 4);}
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.STEEL_GRATE.get(), ModItems.STEEL_BLOCK.get(), 4);
+
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAPHITE_SLAB.get(), ModItems.GRAPHITE.get(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAPHITE_STAIRS.get(), ModItems.GRAPHITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GRAPHITE_WALL.get(), ModItems.GRAPHITE.get());
+
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.POLISHED_GRAPHITE_SLAB.get(), ModItems.GRAPHITE.get(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.POLISHED_GRAPHITE_STAIRS.get(), ModItems.GRAPHITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.POLISHED_GRAPHITE_WALL.get(), ModItems.GRAPHITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.POLISHED_GRAPHITE.get(), ModItems.GRAPHITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.POLISHED_GRAPHITE_SLAB.get(), ModItems.POLISHED_GRAPHITE.get(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.POLISHED_GRAPHITE_STAIRS.get(), ModItems.POLISHED_GRAPHITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.POLISHED_GRAPHITE_WALL.get(), ModItems.POLISHED_GRAPHITE.get());
+
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAPHITE_BRICK_SLAB.get(), ModItems.GRAPHITE.get(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAPHITE_BRICK_STAIRS.get(), ModItems.GRAPHITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GRAPHITE_BRICK_WALL.get(), ModItems.GRAPHITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAPHITE_BRICKS.get(), ModItems.GRAPHITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAPHITE_BRICK_SLAB.get(), ModItems.POLISHED_GRAPHITE.get(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAPHITE_BRICK_STAIRS.get(), ModItems.POLISHED_GRAPHITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GRAPHITE_BRICK_WALL.get(), ModItems.POLISHED_GRAPHITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAPHITE_BRICKS.get(), ModItems.POLISHED_GRAPHITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAPHITE_BRICK_SLAB.get(), ModItems.GRAPHITE_BRICKS.get(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.GRAPHITE_BRICK_STAIRS.get(), ModItems.GRAPHITE_BRICKS.get());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.GRAPHITE_BRICK_WALL.get(), ModItems.GRAPHITE_BRICKS.get());
+
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_BISMUTH.get(), ModItems.BISMUTH_BLOCK.get(), 4);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_BISMUTH_STAIRS.get(), ModItems.BISMUTH_BLOCK.get(), 4);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_BISMUTH_SLAB.get(), ModItems.BISMUTH_BLOCK.get(), 8);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_BISMUTH_STAIRS.get(), ModItems.CUT_BISMUTH.get());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_BISMUTH_SLAB.get(), ModItems.CUT_BISMUTH.get(), 2);
+
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BISMUTH_GRATE.get(), ModItems.BISMUTH_BLOCK.get(), 4);
+
+    }
 
     public static class Runner extends RecipeProvider.Runner {
         public Runner(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider){

@@ -19,6 +19,7 @@ public class ModParticles {
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> PLATINUM_FIRE_FLAME = register("platinum_fire_flame", false);
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> GOLD_FIRE_FLAME = register("gold_fire_flame", false);
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> LEAD_FIRE_FLAME = register("lead_fire_flame", false);
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> BISMUTH_FIRE_FLAME = register("bismuth_fire_flame", false);
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> URANIUM_FIRE_FLAME = register("uranium_fire_flame", false);
 
     private static DeferredHolder<ParticleType<?>, SimpleParticleType> register(String key, boolean overrideLimiter) {

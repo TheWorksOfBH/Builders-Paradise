@@ -222,6 +222,11 @@ public class ModItemModelGenerator extends ItemModelGenerators {
         this.generateFlatItem(ModItems.SPADE_BANNER_PATTERN.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(ModItems.CLUB_BANNER_PATTERN.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(ModItems.CINNABAR_BATON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.generateFlatItem(ModItems.CARBON_DUST.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.RAW_BISMUTH.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.BISMUTH_INGOT.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.BISMUTH_NUGGET.get(), ModelTemplates.FLAT_ITEM);
+
 
     }
 }

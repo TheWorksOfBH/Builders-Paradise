@@ -12,6 +12,9 @@
     "buildersparadise:gilded_blackstone_stairs",
     "buildersparadise:gilded_blackstone_slab",
     "buildersparadise:gilded_blackstone_wall",
-    "buildersparadise:gilded_blackstone_fence"
+    "buildersparadise:gilded_blackstone_fence",
+    "buildersparadise:gold_lantern",
+    "buildersparadise:gold_soul_lantern",
+    "buildersparadise:gold_fire_lantern"
   ]
 }

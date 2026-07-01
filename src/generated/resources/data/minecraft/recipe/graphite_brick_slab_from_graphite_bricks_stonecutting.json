@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:graphite_bricks",
+  "result": {
+    "count": 2,
+    "id": "buildersparadise:graphite_brick_slab"
+  }
+}

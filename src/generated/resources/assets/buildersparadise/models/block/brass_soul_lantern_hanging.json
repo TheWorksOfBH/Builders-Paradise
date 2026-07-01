@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_hanging_lantern",
+  "textures": {
+    "lantern": "buildersparadise:block/brass_soul_lantern"
+  }
+}

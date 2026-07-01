@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/cut_bismuth_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/cut_bismuth"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/cut_bismuth_slab_top"
+    }
+  }
+}

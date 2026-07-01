@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cut_bismuth": {
+      "conditions": {
+        "items": [
+          {
+            "items": "buildersparadise:cut_bismuth"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "buildersparadise:cut_bismuth_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cut_bismuth"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "buildersparadise:cut_bismuth_stairs"
+    ]
+  }
+}

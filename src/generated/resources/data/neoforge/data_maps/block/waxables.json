@@ -33,8 +33,17 @@
     "buildersparadise:corroded_zinc_door": {
       "waxed": "buildersparadise:waxed_corroded_zinc_door"
     },
+    "buildersparadise:corroded_zinc_fire_lantern": {
+      "waxed": "buildersparadise:waxed_corroded_zinc_fire_lantern"
+    },
     "buildersparadise:corroded_zinc_grate": {
       "waxed": "buildersparadise:waxed_corroded_zinc_grate"
+    },
+    "buildersparadise:corroded_zinc_lantern": {
+      "waxed": "buildersparadise:waxed_corroded_zinc_lantern"
+    },
+    "buildersparadise:corroded_zinc_soul_lantern": {
+      "waxed": "buildersparadise:waxed_corroded_zinc_soul_lantern"
     },
     "buildersparadise:corroded_zinc_trapdoor": {
       "waxed": "buildersparadise:waxed_corroded_zinc_trapdoor"
@@ -132,8 +141,17 @@
     "buildersparadise:exposed_zinc_door": {
       "waxed": "buildersparadise:waxed_exposed_zinc_door"
     },
+    "buildersparadise:exposed_zinc_fire_lantern": {
+      "waxed": "buildersparadise:waxed_exposed_zinc_fire_lantern"
+    },
     "buildersparadise:exposed_zinc_grate": {
       "waxed": "buildersparadise:waxed_exposed_zinc_grate"
+    },
+    "buildersparadise:exposed_zinc_lantern": {
+      "waxed": "buildersparadise:waxed_exposed_zinc_lantern"
+    },
+    "buildersparadise:exposed_zinc_soul_lantern": {
+      "waxed": "buildersparadise:waxed_exposed_zinc_soul_lantern"
     },
     "buildersparadise:exposed_zinc_trapdoor": {
       "waxed": "buildersparadise:waxed_exposed_zinc_trapdoor"
@@ -276,8 +294,17 @@
     "buildersparadise:weathered_zinc_door": {
       "waxed": "buildersparadise:waxed_weathered_zinc_door"
     },
+    "buildersparadise:weathered_zinc_fire_lantern": {
+      "waxed": "buildersparadise:waxed_weathered_zinc_fire_lantern"
+    },
     "buildersparadise:weathered_zinc_grate": {
       "waxed": "buildersparadise:waxed_weathered_zinc_grate"
+    },
+    "buildersparadise:weathered_zinc_lantern": {
+      "waxed": "buildersparadise:waxed_weathered_zinc_lantern"
+    },
+    "buildersparadise:weathered_zinc_soul_lantern": {
+      "waxed": "buildersparadise:waxed_weathered_zinc_soul_lantern"
     },
     "buildersparadise:weathered_zinc_trapdoor": {
       "waxed": "buildersparadise:waxed_weathered_zinc_trapdoor"
@@ -294,8 +321,17 @@
     "buildersparadise:zinc_door": {
       "waxed": "buildersparadise:waxed_zinc_door"
     },
+    "buildersparadise:zinc_fire_lantern": {
+      "waxed": "buildersparadise:waxed_zinc_fire_lantern"
+    },
     "buildersparadise:zinc_grate": {
       "waxed": "buildersparadise:waxed_zinc_grate"
+    },
+    "buildersparadise:zinc_lantern": {
+      "waxed": "buildersparadise:waxed_zinc_lantern"
+    },
+    "buildersparadise:zinc_soul_lantern": {
+      "waxed": "buildersparadise:waxed_zinc_soul_lantern"
     },
     "buildersparadise:zinc_trapdoor": {
       "waxed": "buildersparadise:waxed_zinc_trapdoor"

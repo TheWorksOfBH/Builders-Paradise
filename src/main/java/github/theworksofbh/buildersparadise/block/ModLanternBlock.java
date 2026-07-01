@@ -51,6 +51,30 @@ public class ModLanternBlock extends LanternBlock {
                     level.setBlock(pos, ModBlocks.RUSTED_IRON_FIRE_LANTERN.get().withPropertiesOf(state), Block.UPDATE_ALL);
                 }
             }
+        } else if (level.getRandom().nextFloat() < BlockOxidationValues.ZINC) {
+            if (state.is(ModBlocks.ZINC_LANTERN.get())) {
+                level.setBlock(pos, ModBlocks.EXPOSED_ZINC_LANTERN.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            } else if (state.is(ModBlocks.EXPOSED_ZINC_LANTERN.get())) {
+                level.setBlock(pos, ModBlocks.WEATHERED_ZINC_LANTERN.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            } else if (state.is(ModBlocks.WEATHERED_ZINC_LANTERN.get())) {
+                level.setBlock(pos, ModBlocks.CORRODED_ZINC_LANTERN.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            }
+
+            if (state.is(ModBlocks.ZINC_SOUL_LANTERN.get())) {
+                level.setBlock(pos, ModBlocks.EXPOSED_ZINC_SOUL_LANTERN.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            } else if (state.is(ModBlocks.EXPOSED_ZINC_SOUL_LANTERN.get())) {
+                level.setBlock(pos, ModBlocks.WEATHERED_ZINC_SOUL_LANTERN.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            } else if (state.is(ModBlocks.WEATHERED_ZINC_SOUL_LANTERN.get())) {
+                level.setBlock(pos, ModBlocks.CORRODED_ZINC_SOUL_LANTERN.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            }
+
+            if (state.is(ModBlocks.ZINC_FIRE_LANTERN.get())) {
+                level.setBlock(pos, ModBlocks.EXPOSED_ZINC_FIRE_LANTERN.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            } else if (state.is(ModBlocks.EXPOSED_ZINC_FIRE_LANTERN.get())) {
+                level.setBlock(pos, ModBlocks.WEATHERED_ZINC_FIRE_LANTERN.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            } else if (state.is(ModBlocks.WEATHERED_ZINC_FIRE_LANTERN.get())) {
+                level.setBlock(pos, ModBlocks.CORRODED_ZINC_FIRE_LANTERN.get().withPropertiesOf(state), Block.UPDATE_ALL);
+            }
         }
     }
 

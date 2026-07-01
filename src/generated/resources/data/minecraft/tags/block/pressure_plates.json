@@ -32,6 +32,7 @@
     "buildersparadise:negligible_weighted_pressure_plate",
     "buildersparadise:passive_mob_only_pressure_plate",
     "buildersparadise:hostile_mob_only_pressure_plate",
-    "buildersparadise:villager_only_pressure_plate"
+    "buildersparadise:villager_only_pressure_plate",
+    "buildersparadise:vehement_heavy_weighted_pressure_plate"
   ]
 }

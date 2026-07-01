@@ -40,6 +40,7 @@ public class ModAtlasProvider extends AtlasProvider {
             new ModTrimMaterialData(ModMaterialAssetGroups.TUNGSTEN, ModTrimMaterials.TUNGSTEN),
             new ModTrimMaterialData(ModMaterialAssetGroups.PLATINUM, ModTrimMaterials.PLATINUM),
             new ModTrimMaterialData(ModMaterialAssetGroups.LEAD, ModTrimMaterials.LEAD),
+            new ModTrimMaterialData(ModMaterialAssetGroups.BISMUTH, ModTrimMaterials.BISMUTH),
             new ModTrimMaterialData(ModMaterialAssetGroups.URANIUM, ModTrimMaterials.URANIUM),
             new ModTrimMaterialData(ModMaterialAssetGroups.BRONZE, ModTrimMaterials.BRONZE),
             new ModTrimMaterialData(ModMaterialAssetGroups.BRASS, ModTrimMaterials.BRASS),

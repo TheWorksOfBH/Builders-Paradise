@@ -8,19 +8,23 @@
     "minecraft:iron_ingot",
     [
       "minecraft:coal",
-      "minecraft:charcoal"
+      "minecraft:charcoal",
+      "buildersparadise:carbon_dust"
     ],
     [
       "minecraft:coal",
-      "minecraft:charcoal"
+      "minecraft:charcoal",
+      "buildersparadise:carbon_dust"
     ],
     [
       "minecraft:coal",
-      "minecraft:charcoal"
+      "minecraft:charcoal",
+      "buildersparadise:carbon_dust"
     ],
     [
       "minecraft:coal",
-      "minecraft:charcoal"
+      "minecraft:charcoal",
+      "buildersparadise:carbon_dust"
     ]
   ],
   "result": {

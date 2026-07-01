@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:cut_bismuth",
+  "result": {
+    "id": "buildersparadise:cut_bismuth_stairs"
+  }
+}

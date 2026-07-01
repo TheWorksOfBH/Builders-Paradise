@@ -2,8 +2,8 @@
   "feature": "buildersparadise:deep_tungsten_ore",
   "placement": [
     {
-      "type": "minecraft:count",
-      "count": 4
+      "type": "minecraft:rarity_filter",
+      "chance": 4
     },
     {
       "type": "minecraft:in_square"
