@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "buildersparadise:block/polished_silicite_slab"
+    },
+    "type=double": {
+      "model": "buildersparadise:block/polished_silicite"
+    },
+    "type=top": {
+      "model": "buildersparadise:block/polished_silicite_slab_top"
+    }
+  }
+}

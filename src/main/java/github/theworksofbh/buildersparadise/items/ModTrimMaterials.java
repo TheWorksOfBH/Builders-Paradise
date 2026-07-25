@@ -33,6 +33,9 @@ public class ModTrimMaterials {
     public static final ResourceKey<TrimMaterial> BRASS = registerMaterial("brass");
     public static final ResourceKey<TrimMaterial> STEEL = registerMaterial("steel");
     public static final ResourceKey<TrimMaterial> SCULK = registerMaterial("sculk");
+    public static final ResourceKey<TrimMaterial> MONOCRYSTAL = registerMaterial("monocrystal");
+    public static final ResourceKey<TrimMaterial> RUBY = registerMaterial("ruby");
+    public static final ResourceKey<TrimMaterial> SAPPHIRE = registerMaterial("sapphire");
 
     public static void bootstrap(BootstrapContext<TrimMaterial> context) {
         register(context, ZINC, Style.EMPTY.withColor(9079434), ModMaterialAssetGroups.ZINC);
@@ -47,5 +50,8 @@ public class ModTrimMaterials {
         register(context, BRASS, Style.EMPTY.withColor(14930086), ModMaterialAssetGroups.BRASS);
         register(context, STEEL, Style.EMPTY.withColor(4671303), ModMaterialAssetGroups.STEEL);
         register(context, SCULK, Style.EMPTY.withColor(11813), ModMaterialAssetGroups.SCULK);
+        register(context, MONOCRYSTAL, Style.EMPTY.withColor(10988928), ModMaterialAssetGroups.MONOCRYSTAL);
+        register(context, RUBY, Style.EMPTY.withColor(14891810), ModMaterialAssetGroups.RUBY);
+        register(context, SAPPHIRE, Style.EMPTY.withColor(1715645), ModMaterialAssetGroups.SAPPHIRE);
     }
 }

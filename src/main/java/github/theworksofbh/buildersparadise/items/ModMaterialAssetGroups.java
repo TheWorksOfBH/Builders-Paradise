@@ -33,6 +33,9 @@ public record ModMaterialAssetGroups(MaterialAssetGroup.AssetInfo base, Map<Reso
     public static final MaterialAssetGroup BRASS = create("brass");
     public static final MaterialAssetGroup STEEL = create("steel");
     public static final MaterialAssetGroup SCULK = create("sculk");
+    public static final MaterialAssetGroup MONOCRYSTAL = create("monocrystal");
+    public static final MaterialAssetGroup RUBY = create("ruby");
+    public static final MaterialAssetGroup SAPPHIRE = create("sapphire");
 
     public static MaterialAssetGroup create(String name) {
         return new MaterialAssetGroup(new MaterialAssetGroup.AssetInfo(name), Map.of());

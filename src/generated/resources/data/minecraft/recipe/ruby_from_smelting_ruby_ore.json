@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "experience": 1.0,
+  "group": "ruby",
+  "ingredient": "buildersparadise:ruby_ore",
+  "result": {
+    "id": "buildersparadise:ruby"
+  }
+}

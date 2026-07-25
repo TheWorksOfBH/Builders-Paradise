@@ -155,6 +155,27 @@
           "model": "minecraft:item/turtle_helmet_sculk_trim"
         },
         "when": "buildersparadise:sculk"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/turtle_helmet_monocrystal_trim"
+        },
+        "when": "buildersparadise:monocrystal"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/turtle_helmet_ruby_trim"
+        },
+        "when": "buildersparadise:ruby"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/turtle_helmet_sapphire_trim"
+        },
+        "when": "buildersparadise:sapphire"
       }
     ],
     "fallback": {

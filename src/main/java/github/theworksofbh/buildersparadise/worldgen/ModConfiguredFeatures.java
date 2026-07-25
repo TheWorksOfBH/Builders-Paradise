@@ -99,6 +99,28 @@ public class ModConfiguredFeatures {
                 OreConfiguration.target(stoneReplaceables, ModBlocks.CARBON_BLOCK.get().defaultBlockState())
         );
 
+        List<OreConfiguration.TargetBlockState> silicite = List.of(
+                OreConfiguration.target(netherrackReplaceables, ModBlocks.SILICITE.get().defaultBlockState())
+        );
+
+        List<OreConfiguration.TargetBlockState> silicon = List.of(
+                OreConfiguration.target(netherrackReplaceables, ModBlocks.SILICON_BLOCK.get().defaultBlockState())
+        );
+
+        List<OreConfiguration.TargetBlockState> monocrystal = List.of(
+                OreConfiguration.target(netherrackReplaceables, ModBlocks.NETHER_MONOCRYSTAL_ORE.get().defaultBlockState())
+        );
+
+        List<OreConfiguration.TargetBlockState> rubyOres = List.of(
+                OreConfiguration.target(stoneReplaceables, ModBlocks.RUBY_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_RUBY_ORE.get().defaultBlockState())
+        );
+
+        List<OreConfiguration.TargetBlockState> sapphireOres = List.of(
+                OreConfiguration.target(stoneReplaceables, ModBlocks.SAPPHIRE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get().defaultBlockState())
+        );
+
         register(context, ZINC_ORE_KEY, Feature.ORE, new OreConfiguration(zincOres, 8));
         register(context, SILVER_ORE_KEY, Feature.ORE, new OreConfiguration(silverOres, 8));
         register(context, TIN_ORE_KEY, Feature.ORE, new OreConfiguration(tinOres, 9));
@@ -115,6 +137,12 @@ public class ModConfiguredFeatures {
         register(context, GRAPHITE_KEY, Feature.ORE, new OreConfiguration(graphite, 33));
         register(context, END_GRAPHITE_KEY, Feature.ORE, new OreConfiguration(graphite, 33));
         register(context, CARBON_KEY, Feature.ORE, new OreConfiguration(carbon, 33));
+        register(context, SILICITE_KEY, Feature.ORE, new OreConfiguration(silicite, 33));
+        register(context, SILICON_KEY, Feature.ORE, new OreConfiguration(silicon, 33));
+        register(context, NETHER_MONOCRYSTAL_ORE_KEY, Feature.ORE, new OreConfiguration(monocrystal, 8));
+        register(context, RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(rubyOres, 3));
+        register(context, SAPPHIRE_ORE_KEY, Feature.ORE, new OreConfiguration(sapphireOres, 5));
+
 
     }
 
@@ -135,6 +163,14 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> GRAPHITE_KEY = registerKey("graphite");
     public static final ResourceKey<ConfiguredFeature<?, ?>> END_GRAPHITE_KEY = registerKey("end_graphite");
     public static final ResourceKey<ConfiguredFeature<?, ?>> CARBON_KEY = registerKey("carbon");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SILICITE_KEY = registerKey("silicite");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SILICON_KEY = registerKey("silicon");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_MONOCRYSTAL_ORE_KEY = registerKey("nether_monocrystal_ore");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> RUBY_ORE_KEY = registerKey("ruby_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SAPPHIRE_ORE_KEY = registerKey("sapphire_ore");
+
 
 
 }

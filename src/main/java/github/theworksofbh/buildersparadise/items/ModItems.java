@@ -1879,6 +1879,56 @@ public class ModItems {
     public static final DeferredItem<BlockItem> STEEL_FIRE_LANTERN = registerBlockItem("steel_fire_lantern", () -> ModBlocks.STEEL_FIRE_LANTERN.get());
     public static final DeferredItem<BlockItem> STEEL_SOUL_LANTERN = registerBlockItem("steel_soul_lantern", () -> ModBlocks.STEEL_SOUL_LANTERN.get());
 
+    public static final DeferredItem<BlockItem> SILICITE = registerBlockItem("silicite", () -> ModBlocks.SILICITE.get());
+    public static final DeferredItem<BlockItem> SILICITE_SLAB = registerBlockItem("silicite_slab", () -> ModBlocks.SILICITE_SLAB.get());
+    public static final DeferredItem<BlockItem> SILICITE_STAIRS = registerBlockItem("silicite_stairs", () -> ModBlocks.SILICITE_STAIRS.get());
+    public static final DeferredItem<BlockItem> SILICITE_WALL = registerBlockItem("silicite_wall", () -> ModBlocks.SILICITE_WALL.get());
+    public static final DeferredItem<BlockItem> SILICITE_FENCE = registerBlockItem("silicite_fence", () -> ModBlocks.SILICITE_FENCE.get());
+
+    public static final DeferredItem<BlockItem> POLISHED_SILICITE = registerBlockItem("polished_silicite", () -> ModBlocks.POLISHED_SILICITE.get());
+    public static final DeferredItem<BlockItem> POLISHED_SILICITE_SLAB = registerBlockItem("polished_silicite_slab", () -> ModBlocks.POLISHED_SILICITE_SLAB.get());
+    public static final DeferredItem<BlockItem> POLISHED_SILICITE_STAIRS = registerBlockItem("polished_silicite_stairs", () -> ModBlocks.POLISHED_SILICITE_STAIRS.get());
+    public static final DeferredItem<BlockItem> POLISHED_SILICITE_WALL = registerBlockItem("polished_silicite_wall", () -> ModBlocks.POLISHED_SILICITE_WALL.get());
+    public static final DeferredItem<BlockItem> POLISHED_SILICITE_FENCE = registerBlockItem("polished_silicite_fence", () -> ModBlocks.POLISHED_SILICITE_FENCE.get());
+
+    public static final DeferredItem<BlockItem> SILICITE_BRICKS = registerBlockItem("silicite_bricks", () -> ModBlocks.SILICITE_BRICKS.get());
+    public static final DeferredItem<BlockItem> SILICITE_BRICK_SLAB = registerBlockItem("silicite_brick_slab", () -> ModBlocks.SILICITE_BRICK_SLAB.get());
+    public static final DeferredItem<BlockItem> SILICITE_BRICK_STAIRS = registerBlockItem("silicite_brick_stairs", () -> ModBlocks.SILICITE_BRICK_STAIRS.get());
+    public static final DeferredItem<BlockItem> SILICITE_BRICK_WALL = registerBlockItem("silicite_brick_wall", () -> ModBlocks.SILICITE_BRICK_WALL.get());
+    public static final DeferredItem<BlockItem> SILICITE_BRICK_FENCE = registerBlockItem("silicite_brick_fence", () -> ModBlocks.SILICITE_BRICK_FENCE.get());
+
+    public static final DeferredItem<Item> SILICON_DUST = registerCustomItem("silicon_dust");
+
+    public static final DeferredItem<BlockItem> SILICENE = registerBlockItem("silicene", () -> ModBlocks.SILICENE.get());
+
+    public static final DeferredItem<BlockItem> SILICON_BLOCK = registerBlockItem("silicon_block", () -> ModBlocks.SILICON_BLOCK.get());
+
+    public static final DeferredItem<BlockItem> NETHER_MONOCRYSTAL_ORE = registerBlockItem("nether_monocrystal_ore", () -> ModBlocks.NETHER_MONOCRYSTAL_ORE.get());
+    public static final DeferredItem<Item> MONOCRYSTAL = registerTrimmableItem("monocrystal", ModTrimMaterials.MONOCRYSTAL);
+
+    public static final DeferredItem<BlockItem> MONOCRYSTAL_BLOCK = registerBlockItem("monocrystal_block", () -> ModBlocks.MONOCRYSTAL_BLOCK.get());
+    public static final DeferredItem<BlockItem> CUT_MONOCRYSTAL = registerBlockItem("cut_monocrystal", () -> ModBlocks.CUT_MONOCRYSTAL.get());
+    public static final DeferredItem<BlockItem> CUT_MONOCRYSTAL_SLAB = registerBlockItem("cut_monocrystal_slab", () -> ModBlocks.CUT_MONOCRYSTAL_SLAB.get());
+    public static final DeferredItem<BlockItem> CUT_MONOCRYSTAL_STAIRS = registerBlockItem("cut_monocrystal_stairs", () -> ModBlocks.CUT_MONOCRYSTAL_STAIRS.get());
+
+    public static final DeferredItem<BlockItem> RUBY_ORE = registerBlockItem("ruby_ore", () -> ModBlocks.RUBY_ORE.get());
+    public static final DeferredItem<BlockItem> DEEPSLATE_RUBY_ORE = registerBlockItem("deepslate_ruby_ore", () -> ModBlocks.DEEPSLATE_RUBY_ORE.get());
+    public static final DeferredItem<Item> RUBY = registerTrimmableItem("ruby", ModTrimMaterials.RUBY);
+
+    public static final DeferredItem<BlockItem> RUBY_BLOCK = registerBlockItem("ruby_block", () -> ModBlocks.RUBY_BLOCK.get());
+    public static final DeferredItem<BlockItem> CUT_RUBY = registerBlockItem("cut_ruby", () -> ModBlocks.CUT_RUBY.get());
+    public static final DeferredItem<BlockItem> CUT_RUBY_SLAB = registerBlockItem("cut_ruby_slab", () -> ModBlocks.CUT_RUBY_SLAB.get());
+    public static final DeferredItem<BlockItem> CUT_RUBY_STAIRS = registerBlockItem("cut_ruby_stairs", () -> ModBlocks.CUT_RUBY_STAIRS.get());
+
+    public static final DeferredItem<BlockItem> SAPPHIRE_ORE = registerBlockItem("sapphire_ore", () -> ModBlocks.SAPPHIRE_ORE.get());
+    public static final DeferredItem<BlockItem> DEEPSLATE_SAPPHIRE_ORE = registerBlockItem("deepslate_sapphire_ore", () -> ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get());
+    public static final DeferredItem<Item> SAPPHIRE = registerTrimmableItem("sapphire", ModTrimMaterials.SAPPHIRE);
+
+    public static final DeferredItem<BlockItem> SAPPHIRE_BLOCK = registerBlockItem("sapphire_block", () -> ModBlocks.SAPPHIRE_BLOCK.get());
+    public static final DeferredItem<BlockItem> CUT_SAPPHIRE = registerBlockItem("cut_sapphire", () -> ModBlocks.CUT_SAPPHIRE.get());
+    public static final DeferredItem<BlockItem> CUT_SAPPHIRE_SLAB = registerBlockItem("cut_sapphire_slab", () -> ModBlocks.CUT_SAPPHIRE_SLAB.get());
+    public static final DeferredItem<BlockItem> CUT_SAPPHIRE_STAIRS = registerBlockItem("cut_sapphire_stairs", () -> ModBlocks.CUT_SAPPHIRE_STAIRS.get());
+
     private static DeferredItem<Item> registerCustomItem(String registryName) {
         if (registryName.contains("netherite")) {
             return ITEMS.register(

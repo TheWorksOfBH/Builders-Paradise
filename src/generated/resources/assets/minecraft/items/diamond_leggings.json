@@ -155,6 +155,27 @@
           "model": "minecraft:item/diamond_leggings_sculk_trim"
         },
         "when": "buildersparadise:sculk"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_leggings_monocrystal_trim"
+        },
+        "when": "buildersparadise:monocrystal"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_leggings_ruby_trim"
+        },
+        "when": "buildersparadise:ruby"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_leggings_sapphire_trim"
+        },
+        "when": "buildersparadise:sapphire"
       }
     ],
     "fallback": {

@@ -48,6 +48,9 @@ public class ModRecipesProvider extends RecipeProvider {
     public static final ImmutableList<ItemLike> LEAD_SMELTABLES = ImmutableList.of(ModItems.LEAD_ORE.get(), ModItems.DEEPSLATE_LEAD_ORE.get(), ModItems.RAW_LEAD.get());
     public static final ImmutableList<ItemLike> BISMUTH_SMELTABLES = ImmutableList.of(ModItems.BISMUTH_ORE.get(), ModItems.DEEPSLATE_BISMUTH_ORE.get(), ModItems.RAW_BISMUTH.get());
     public static final ImmutableList<ItemLike> URANIUM_SMELTABLES = ImmutableList.of(ModItems.URANIUM_ORE.get(), ModItems.DEEPSLATE_URANIUM_ORE.get(), ModItems.RAW_URANIUM.get());
+    public static final ImmutableList<ItemLike> MONOCRYSTAL_SMELTABLES = ImmutableList.of(ModItems.NETHER_MONOCRYSTAL_ORE.get());
+    public static final ImmutableList<ItemLike> RUBY_SMELTABLES = ImmutableList.of(ModItems.RUBY_ORE.get(), ModItems.DEEPSLATE_RUBY_ORE.get());
+    public static final ImmutableList<ItemLike> SAPPHIRE_SMELTABLES = ImmutableList.of(ModItems.SAPPHIRE_ORE.get(), ModItems.DEEPSLATE_SAPPHIRE_ORE.get());
 
     @FunctionalInterface
     interface ModFamilyRecipeProvider {
@@ -1329,7 +1332,7 @@ public class ModRecipesProvider extends RecipeProvider {
         this.twoByTwoPacker(RecipeCategory.BUILDING_BLOCKS, ModItems.CARBON_BLOCK.get(), ModItems.CARBON_DUST.get());
         this.shapeless(RecipeCategory.MISC, ModItems.CARBON_DUST, 4)
                 .requires(Ingredient.of(ModItems.CARBON_BLOCK.asItem()))
-                .unlockedBy("has_carbon_block", this.has(ModItems.CARBON_BLOCK.asItem()))
+                .unlockedBy("has_carbon_block", this.has(ModItems.CARBON_BLOCK.get()))
                 .save(this.output);
 
         oreSmelting(BISMUTH_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.BISMUTH_INGOT.get(), 1.0F, 200, "bismuth_ingot");
@@ -1370,6 +1373,57 @@ public class ModRecipesProvider extends RecipeProvider {
         this.createLanterns(ModItems.BRONZE_FIRE_LANTERN.get(), ModItems.BRONZE_SOUL_LANTERN.get(), ModItems.BRONZE_INGOT.get(), ModItems.BRONZE_NUGGET.get());
         this.createLanterns(ModItems.BRASS_FIRE_LANTERN.get(), ModItems.BRASS_SOUL_LANTERN.get(), ModItems.BRASS_INGOT.get(), ModItems.BRASS_NUGGET.get());
         this.createLanterns(ModItems.STEEL_FIRE_LANTERN.get(), ModItems.STEEL_SOUL_LANTERN.get(), ModItems.STEEL_INGOT.get(), ModItems.STEEL_NUGGET.get());
+
+        this.nineBlockStorageRecipes(RecipeCategory.MISC, ModItems.MONOCRYSTAL.get(), RecipeCategory.BUILDING_BLOCKS, ModItems.MONOCRYSTAL_BLOCK.get());
+        oreSmelting(MONOCRYSTAL_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.MONOCRYSTAL.get(), 1.0F, 200, "monocrystal");
+        oreBlasting(MONOCRYSTAL_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.MONOCRYSTAL.get(), 1.0F, 100, "monocrystal");
+
+        this.threeByThreePacker(RecipeCategory.BUILDING_BLOCKS, ModItems.SILICITE.get(), ModItems.SILICON_DUST.get());
+        this.shapeless(RecipeCategory.MISC, ModItems.SILICON_DUST, 2)
+                .requires(Ingredient.of(Items.QUARTZ))
+                .unlockedBy("has_quartz", this.has(Items.QUARTZ))
+                .save(this.output, "silicon_dust_alt");
+
+        this.shaped(RecipeCategory.DECORATIONS, ModItems.SILICENE.get(), 2)
+                .define('#', ModItems.SILICON_DUST.get())
+                .pattern("##")
+                .unlockedBy("has_silicon_dust", this.has(ModItems.SILICON_DUST.get()))
+                .save(this.output);
+
+        this.twoByTwoPacker(RecipeCategory.BUILDING_BLOCKS, ModItems.SILICON_BLOCK.get(), ModItems.SILICON_DUST.get());
+        this.shapeless(RecipeCategory.MISC, ModItems.SILICON_DUST, 4)
+                .requires(Ingredient.of(ModItems.SILICON_BLOCK.asItem()))
+                .unlockedBy("has_silicon_block", this.has(ModItems.SILICON_BLOCK.get()))
+                .save(this.output);
+
+        this.shapeless(RecipeCategory.BUILDING_BLOCKS, ModItems.GABBRO.get())
+                .requires(Items.TUFF)
+                .requires(Items.QUARTZ)
+                .unlockedBy("has_quartz", this.has(Items.QUARTZ))
+                .save(this.output);
+
+        this.shaped(RecipeCategory.BUILDING_BLOCKS, Items.TUFF, 2)
+                .define('Q', Items.QUARTZ)
+                .define('C', Items.COBBLED_DEEPSLATE)
+                .pattern("CQ")
+                .pattern("QC")
+                .unlockedBy("has_quartz", this.has(Items.QUARTZ))
+                .save(this.output);
+
+
+        this.shapeless(RecipeCategory.BUILDING_BLOCKS, ModItems.RHYOLITE.get(), 2)
+                .requires(Items.TUFF)
+                .requires(Items.COBBLED_DEEPSLATE)
+                .unlockedBy("has_tuff", this.has(Items.TUFF))
+                .save(this.output);
+
+        this.nineBlockStorageRecipes(RecipeCategory.MISC, ModItems.RUBY.get(), RecipeCategory.BUILDING_BLOCKS, ModItems.RUBY_BLOCK.get());
+        oreSmelting(RUBY_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.RUBY.get(), 1.0F, 200, "ruby");
+        oreBlasting(RUBY_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.RUBY.get(), 1.0F, 100, "ruby");
+
+        this.nineBlockStorageRecipes(RecipeCategory.MISC, ModItems.SAPPHIRE.get(), RecipeCategory.BUILDING_BLOCKS, ModItems.SAPPHIRE_BLOCK.get());
+        oreSmelting(SAPPHIRE_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.SAPPHIRE.get(), 1.0F, 200, "sapphire");
+        oreBlasting(SAPPHIRE_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.SAPPHIRE.get(), 1.0F, 100, "sapphire");
     }
 
     protected void createChain(ItemLike result, ItemLike ingot, ItemLike nugget) {
@@ -1464,6 +1518,8 @@ public class ModRecipesProvider extends RecipeProvider {
             item = ModItems.CINNABAR_BATON.get();
         } else if (fence.asItem().getDescriptionId().contains("graphite")) {
             item = ModItems.CARBON_DUST.get();
+        } else if (fence.asItem().getDescriptionId().contains("silicite")) {
+            item = ModItems.SILICON_DUST.get();
         } else if (fence.asItem().getDescriptionId().contains("brick")) {
             if (fence.asItem().getDescriptionId().contains("stone")) {
                 if (fence.asItem().getDescriptionId().contains("sand")) {
@@ -1543,6 +1599,8 @@ public class ModRecipesProvider extends RecipeProvider {
                 item = ModItems.CINNABAR_BATON.get();
             } else if (fence.asItem().getDescriptionId().contains("graphite")) {
                 item = ModItems.CARBON_DUST.get();
+            } else if (fence.asItem().getDescriptionId().contains("silicite")) {
+                item = ModItems.SILICON_DUST.get();
             } else {
                 item = Items.BRICK;
             }
@@ -3337,6 +3395,48 @@ public class ModRecipesProvider extends RecipeProvider {
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_BISMUTH_SLAB.get(), ModItems.CUT_BISMUTH.get(), 2);
 
         this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.BISMUTH_GRATE.get(), ModItems.BISMUTH_BLOCK.get(), 4);
+
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.SILICITE_SLAB.get(), ModItems.SILICITE.get(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.SILICITE_STAIRS.get(), ModItems.SILICITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.SILICITE_WALL.get(), ModItems.SILICITE.get());
+
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.POLISHED_SILICITE_SLAB.get(), ModItems.SILICITE.get(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.POLISHED_SILICITE_STAIRS.get(), ModItems.SILICITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.POLISHED_SILICITE_WALL.get(), ModItems.SILICITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.POLISHED_SILICITE.get(), ModItems.SILICITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.POLISHED_SILICITE_SLAB.get(), ModItems.POLISHED_SILICITE.get(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.POLISHED_SILICITE_STAIRS.get(), ModItems.POLISHED_SILICITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.POLISHED_SILICITE_WALL.get(), ModItems.POLISHED_SILICITE.get());
+
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.SILICITE_BRICK_SLAB.get(), ModItems.SILICITE.get(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.SILICITE_BRICK_STAIRS.get(), ModItems.SILICITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.SILICITE_BRICK_WALL.get(), ModItems.SILICITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.SILICITE_BRICKS.get(), ModItems.SILICITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.SILICITE_BRICK_SLAB.get(), ModItems.POLISHED_SILICITE.get(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.SILICITE_BRICK_STAIRS.get(), ModItems.POLISHED_SILICITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.SILICITE_BRICK_WALL.get(), ModItems.POLISHED_SILICITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.SILICITE_BRICKS.get(), ModItems.POLISHED_SILICITE.get());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.SILICITE_BRICK_SLAB.get(), ModItems.SILICITE_BRICKS.get(), 2);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.SILICITE_BRICK_STAIRS.get(), ModItems.SILICITE_BRICKS.get());
+        this.stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModItems.SILICITE_BRICK_WALL.get(), ModItems.SILICITE_BRICKS.get());
+
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_MONOCRYSTAL.get(), ModItems.MONOCRYSTAL_BLOCK.get(), 4);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_MONOCRYSTAL_STAIRS.get(), ModItems.MONOCRYSTAL_BLOCK.get(), 4);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_MONOCRYSTAL_SLAB.get(), ModItems.MONOCRYSTAL_BLOCK.get(), 8);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_MONOCRYSTAL_STAIRS.get(), ModItems.CUT_MONOCRYSTAL.get());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_MONOCRYSTAL_SLAB.get(), ModItems.CUT_MONOCRYSTAL.get(), 2);
+
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_RUBY.get(), ModItems.RUBY_BLOCK.get(), 4);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_RUBY_STAIRS.get(), ModItems.RUBY_BLOCK.get(), 4);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_RUBY_SLAB.get(), ModItems.RUBY_BLOCK.get(), 8);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_RUBY_STAIRS.get(), ModItems.CUT_RUBY.get());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_RUBY_SLAB.get(), ModItems.CUT_RUBY.get(), 2);
+
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_SAPPHIRE.get(), ModItems.SAPPHIRE_BLOCK.get(), 4);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_SAPPHIRE_STAIRS.get(), ModItems.SAPPHIRE_BLOCK.get(), 4);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_SAPPHIRE_SLAB.get(), ModItems.SAPPHIRE_BLOCK.get(), 8);
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_SAPPHIRE_STAIRS.get(), ModItems.CUT_SAPPHIRE.get());
+        this.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModItems.CUT_SAPPHIRE_SLAB.get(), ModItems.CUT_SAPPHIRE.get(), 2);
 
     }
 

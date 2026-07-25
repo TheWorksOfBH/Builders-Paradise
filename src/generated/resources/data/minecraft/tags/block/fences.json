@@ -181,6 +181,9 @@
     "buildersparadise:cinnabar_brick_fence",
     "buildersparadise:graphite_fence",
     "buildersparadise:polished_graphite_fence",
-    "buildersparadise:graphite_brick_fence"
+    "buildersparadise:graphite_brick_fence",
+    "buildersparadise:silicite_fence",
+    "buildersparadise:polished_silicite_fence",
+    "buildersparadise:silicite_brick_fence"
   ]
 }

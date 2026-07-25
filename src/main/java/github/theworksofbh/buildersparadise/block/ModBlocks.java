@@ -10,6 +10,8 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.ColorRGBA;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.IntProvider;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntityTypes;
@@ -309,8 +311,8 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> ELDER_SEA_LANTERN = registerBlockVariant("elder_sea_lantern", () -> Blocks.SEA_LANTERN);
 
-    public static final DeferredBlock<DropExperienceBlock> ZINC_ORE = registerOreBlock("zinc_ore");
-    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_ZINC_ORE = registerDeepslateOreBlock("deepslate_zinc_ore");
+    public static final DeferredBlock<DropExperienceBlock> ZINC_ORE = registerOreBlock("zinc_ore", ConstantInt.of(0));
+    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_ZINC_ORE = registerDeepslateOreBlock("deepslate_zinc_ore", ConstantInt.of(0));
     public static final DeferredBlock<Block> RAW_ZINC_BLOCK = registerBlockVariant("raw_zinc_block", () -> Blocks.RAW_IRON_BLOCK, MapColor.SNOW);
 
     public static final DeferredBlock<ModBlock> ZINC_BLOCK = registerRustingBlock("zinc_block", () -> Blocks.IRON_BLOCK, MapColor.COLOR_LIGHT_GRAY);
@@ -377,8 +379,8 @@ public class ModBlocks {
     public static final DeferredBlock<TrapDoorBlock> WAXED_CORRODED_ZINC_TRAPDOOR = registerTrapdoorBlock("waxed_corroded_zinc_trapdoor", ModBlockSetTypes.ZINC, () -> WAXED_ZINC_TRAPDOOR.get());
     public static final DeferredBlock<WeightedPressurePlateBlock> WAXED_CORRODED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerWeightedPressurePlate("waxed_corroded_barely_heavy_weighted_pressure_plate", 100, ModBlockSetTypes.ZINC, () -> WAXED_BARELY_HEAVY_WEIGHTED_PRESSURE_PLATE.get());
 
-    public static final DeferredBlock<DropExperienceBlock> SILVER_ORE = registerOreBlock("silver_ore");
-    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_SILVER_ORE = registerDeepslateOreBlock("deepslate_silver_ore");
+    public static final DeferredBlock<DropExperienceBlock> SILVER_ORE = registerOreBlock("silver_ore", ConstantInt.of(0));
+    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_SILVER_ORE = registerDeepslateOreBlock("deepslate_silver_ore", ConstantInt.of(0));
     public static final DeferredBlock<Block> RAW_SILVER_BLOCK = registerBlockVariant("raw_silver_block", () -> Blocks.RAW_GOLD_BLOCK, MapColor.METAL);
 
     public static final DeferredBlock<Block> SILVER_BLOCK = registerBlockVariant("silver_block", () -> Blocks.GOLD_BLOCK, MapColor.METAL);
@@ -389,8 +391,8 @@ public class ModBlocks {
     public static final DeferredBlock<TrapDoorBlock> SILVER_TRAPDOOR = registerTrapdoorBlock("silver_trapdoor", ModBlockSetTypes.SILVER, () -> GOLD_TRAPDOOR.get());
     public static final DeferredBlock<WeightedPressurePlateBlock> NOTICEABLY_LIGHT_WEIGHTED_PRESSURE_PLATE = registerWeightedPressurePlate("noticeably_light_weighted_pressure_plate", 40, ModBlockSetTypes.SILVER, () -> Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE);
 
-    public static final DeferredBlock<DropExperienceBlock> TIN_ORE = registerOreBlock("tin_ore");
-    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_TIN_ORE = registerDeepslateOreBlock("deepslate_tin_ore");
+    public static final DeferredBlock<DropExperienceBlock> TIN_ORE = registerOreBlock("tin_ore", ConstantInt.of(0));
+    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_TIN_ORE = registerDeepslateOreBlock("deepslate_tin_ore", ConstantInt.of(0));
     public static final DeferredBlock<Block> RAW_TIN_BLOCK = registerBlockVariant("raw_tin_block", () -> Blocks.RAW_COPPER_BLOCK, MapColor.WOOD);
 
     public static final DeferredBlock<Block> TIN_BLOCK = registerBlockVariant("tin_block", () -> Blocks.COPPER_BLOCK.weathering().unaffected(), MapColor.WOOD);
@@ -401,8 +403,8 @@ public class ModBlocks {
     public static final DeferredBlock<TrapDoorBlock> TIN_TRAPDOOR = registerTrapdoorBlock("tin_trapdoor", ModBlockSetTypes.TIN, () -> Blocks.COPPER_TRAPDOOR.weathering().unaffected());
     public static final DeferredBlock<WeightedPressurePlateBlock> BARELY_LIGHT_WEIGHTED_PRESSURE_PLATE = registerWeightedPressurePlate("barely_light_weighted_pressure_plate", 75, ModBlockSetTypes.TIN, () -> Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE);
 
-    public static final DeferredBlock<DropExperienceBlock> TUNGSTEN_ORE = registerOreBlock("tungsten_ore");
-    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_TUNGSTEN_ORE = registerDeepslateOreBlock("deepslate_tungsten_ore");
+    public static final DeferredBlock<DropExperienceBlock> TUNGSTEN_ORE = registerOreBlock("tungsten_ore", ConstantInt.of(0));
+    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_TUNGSTEN_ORE = registerDeepslateOreBlock("deepslate_tungsten_ore", ConstantInt.of(0));
     public static final DeferredBlock<Block> RAW_TUNGSTEN_BLOCK = registerBlockVariant("raw_tungsten_block", () -> Blocks.RAW_GOLD_BLOCK, MapColor.TERRACOTTA_LIGHT_BLUE);
 
     public static final DeferredBlock<Block> TUNGSTEN_BLOCK = registerBlockVariant("tungsten_block", () -> Blocks.NETHERITE_BLOCK, MapColor.TERRACOTTA_LIGHT_BLUE);
@@ -413,8 +415,8 @@ public class ModBlocks {
     public static final DeferredBlock<TrapDoorBlock> TUNGSTEN_TRAPDOOR = registerTrapdoorBlock("tungsten_trapdoor", ModBlockSetTypes.TUNGSTEN, () -> NETHERITE_TRAPDOOR.get());
     public static final DeferredBlock<WeightedPressurePlateBlock> EXTRAORDINARILY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerWeightedPressurePlate("extraordinarily_heavy_weighted_pressure_plate", 1500, ModBlockSetTypes.TUNGSTEN, () -> PLAYER_ONLY_PRESSURE_PLATE.get());
 
-    public static final DeferredBlock<DropExperienceBlock> PLATINUM_ORE = registerOreBlock("platinum_ore");
-    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_PLATINUM_ORE = registerDeepslateOreBlock("deepslate_platinum_ore");
+    public static final DeferredBlock<DropExperienceBlock> PLATINUM_ORE = registerOreBlock("platinum_ore", ConstantInt.of(0));
+    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_PLATINUM_ORE = registerDeepslateOreBlock("deepslate_platinum_ore", ConstantInt.of(0));
     public static final DeferredBlock<Block> RAW_PLATINUM_BLOCK = registerBlockVariant("raw_platinum_block", () -> Blocks.RAW_GOLD_BLOCK, MapColor.CLAY);
 
     public static final DeferredBlock<Block> PLATINUM_BLOCK = registerBlockVariant("platinum_block", () -> Blocks.GOLD_BLOCK, MapColor.CLAY);
@@ -425,8 +427,8 @@ public class ModBlocks {
     public static final DeferredBlock<TrapDoorBlock> PLATINUM_TRAPDOOR = registerTrapdoorBlock("platinum_trapdoor", ModBlockSetTypes.PLATINUM, () -> GOLD_TRAPDOOR.get());
     public static final DeferredBlock<WeightedPressurePlateBlock> EXTRAORDINARILY_LIGHT_WEIGHTED_PRESSURE_PLATE = registerWeightedPressurePlate("extraordinarily_light_weighted_pressure_plate", 2, ModBlockSetTypes.PLATINUM, () -> Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE);
 
-    public static final DeferredBlock<DropExperienceBlock> LEAD_ORE = registerOreBlock("lead_ore");
-    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_LEAD_ORE = registerDeepslateOreBlock("deepslate_lead_ore");
+    public static final DeferredBlock<DropExperienceBlock> LEAD_ORE = registerOreBlock("lead_ore", ConstantInt.of(0));
+    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_LEAD_ORE = registerDeepslateOreBlock("deepslate_lead_ore", ConstantInt.of(0));
     public static final DeferredBlock<Block> RAW_LEAD_BLOCK = registerBlockVariant("raw_lead_block", () -> Blocks.RAW_COPPER_BLOCK, MapColor.COLOR_BLACK);
 
     public static final DeferredBlock<Block> LEAD_BLOCK = registerBlockVariant("lead_block", () -> Blocks.COPPER_BLOCK.weathering().unaffected(), MapColor.COLOR_BLACK);
@@ -437,8 +439,8 @@ public class ModBlocks {
     public static final DeferredBlock<TrapDoorBlock> LEAD_TRAPDOOR = registerTrapdoorBlock("lead_trapdoor", ModBlockSetTypes.LEAD, () -> GOLD_TRAPDOOR.get());
     public static final DeferredBlock<WeightedPressurePlateBlock> NOTICEABLY_HEAVY_WEIGHTED_PRESSURE_PLATE = registerWeightedPressurePlate("noticeably_heavy_weighted_pressure_plate", 125, ModBlockSetTypes.LEAD, () -> Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE);
 
-    public static final DeferredBlock<DropExperienceBlock> URANIUM_ORE = registerOreBlock("uranium_ore");
-    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_URANIUM_ORE = registerDeepslateOreBlock("deepslate_uranium_ore");
+    public static final DeferredBlock<DropExperienceBlock> URANIUM_ORE = registerOreBlock("uranium_ore", ConstantInt.of(0));
+    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_URANIUM_ORE = registerDeepslateOreBlock("deepslate_uranium_ore", ConstantInt.of(0));
     public static final DeferredBlock<Block> RAW_URANIUM_BLOCK = registerBlockVariant("raw_uranium_block", () -> Blocks.RAW_GOLD_BLOCK, MapColor.COLOR_LIGHT_GREEN);
 
     public static final DeferredBlock<Block> URANIUM_BLOCK = registerBlockVariant("uranium_block", () -> Blocks.GOLD_BLOCK, MapColor.COLOR_LIGHT_GREEN);
@@ -1677,8 +1679,8 @@ public class ModBlocks {
 
     public static final DeferredBlock<CarbonBlock> CARBON_BLOCK = registerCarbonBlock("carbon_block", () -> Blocks.GRAVEL, new ColorRGBA(2434341));
 
-    public static final DeferredBlock<DropExperienceBlock> BISMUTH_ORE = registerOreBlock("bismuth_ore");
-    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_BISMUTH_ORE = registerDeepslateOreBlock("deepslate_bismuth_ore");
+    public static final DeferredBlock<DropExperienceBlock> BISMUTH_ORE = registerOreBlock("bismuth_ore", ConstantInt.of(0));
+    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_BISMUTH_ORE = registerDeepslateOreBlock("deepslate_bismuth_ore", ConstantInt.of(0));
     public static final DeferredBlock<Block> RAW_BISMUTH_BLOCK = registerBlockVariant("raw_bismuth_block", () -> Blocks.RAW_COPPER_BLOCK, MapColor.COLOR_BLACK);
 
     public static final DeferredBlock<Block> BISMUTH_BLOCK = registerBlockVariant("bismuth_block", () -> Blocks.COPPER_BLOCK.weathering().unaffected(), MapColor.COLOR_CYAN);
@@ -1771,6 +1773,52 @@ public class ModBlocks {
 
     public static final DeferredBlock<LanternBlock> STEEL_FIRE_LANTERN = registerLanternBlock("steel_fire_lantern", () -> Blocks.LANTERN);
     public static final DeferredBlock<LanternBlock> STEEL_SOUL_LANTERN = registerLanternBlock("steel_soul_lantern", () -> Blocks.SOUL_LANTERN);
+
+    public static final DeferredBlock<Block> SILICITE = registerBlockVariant("silicite", () -> Blocks.CALCITE, MapColor.SAND);
+    public static final DeferredBlock<SlabBlock> SILICITE_SLAB = registerSlabBlock("silicite_slab", () -> SILICITE.get());
+    public static final DeferredBlock<StairBlock> SILICITE_STAIRS = registerStairBlock("silicite_stairs", () -> SILICITE.get());
+    public static final DeferredBlock<WallBlock> SILICITE_WALL = registerWallBlock("silicite_wall", () -> SILICITE.get());
+    public static final DeferredBlock<FenceBlock> SILICITE_FENCE = registerFenceBlock("silicite_fence", () -> SILICITE.get());
+
+    public static final DeferredBlock<Block> POLISHED_SILICITE = registerBlockVariant("polished_silicite", () -> SILICITE.get());
+    public static final DeferredBlock<SlabBlock> POLISHED_SILICITE_SLAB = registerSlabBlock("polished_silicite_slab", () -> POLISHED_SILICITE.get());
+    public static final DeferredBlock<StairBlock> POLISHED_SILICITE_STAIRS = registerStairBlock("polished_silicite_stairs", () -> POLISHED_SILICITE.get());
+    public static final DeferredBlock<WallBlock> POLISHED_SILICITE_WALL = registerWallBlock("polished_silicite_wall", () -> POLISHED_SILICITE.get());
+    public static final DeferredBlock<FenceBlock> POLISHED_SILICITE_FENCE = registerFenceBlock("polished_silicite_fence", () -> POLISHED_SILICITE.get());
+
+    public static final DeferredBlock<Block> SILICITE_BRICKS = registerBlockVariant("silicite_bricks", () -> POLISHED_SILICITE.get());
+    public static final DeferredBlock<SlabBlock> SILICITE_BRICK_SLAB = registerSlabBlock("silicite_brick_slab", () -> SILICITE_BRICKS.get());
+    public static final DeferredBlock<StairBlock> SILICITE_BRICK_STAIRS = registerStairBlock("silicite_brick_stairs", () -> SILICITE_BRICKS.get());
+    public static final DeferredBlock<WallBlock> SILICITE_BRICK_WALL = registerWallBlock("silicite_brick_wall", () -> SILICITE_BRICKS.get());
+    public static final DeferredBlock<FenceBlock> SILICITE_BRICK_FENCE = registerFenceBlock("silicite_brick_fence", () -> SILICITE_BRICKS.get());
+
+    public static final DeferredBlock<SiliceneBlock> SILICENE = registerSilicene("silicene", () -> SILICITE.get());
+
+    public static final DeferredBlock<SiliconBlock> SILICON_BLOCK = registerSiliconBlock("silicon_block", () -> Blocks.GRAVEL, new ColorRGBA(13550524));
+
+    public static final DeferredBlock<DropExperienceBlock> NETHER_MONOCRYSTAL_ORE = registerNetherOreBlock("nether_monocrystal_ore");
+
+    public static final DeferredBlock<Block> MONOCRYSTAL_BLOCK = registerBlockVariant("monocrystal_block", () -> Blocks.DIAMOND_BLOCK, MapColor.WOOD);
+    public static final DeferredBlock<Block> CUT_MONOCRYSTAL = registerBlockVariant("cut_monocrystal", () -> MONOCRYSTAL_BLOCK.get());
+    public static final DeferredBlock<SlabBlock> CUT_MONOCRYSTAL_SLAB = registerSlabBlock("cut_monocrystal_slab", () -> CUT_MONOCRYSTAL.get());
+    public static final DeferredBlock<StairBlock> CUT_MONOCRYSTAL_STAIRS = registerStairBlock("cut_monocrystal_stairs", () -> CUT_MONOCRYSTAL.get());
+
+    public static final DeferredBlock<DropExperienceBlock> RUBY_ORE = registerOreBlock("ruby_ore", UniformInt.of(3, 7));
+    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_RUBY_ORE = registerDeepslateOreBlock("deepslate_ruby_ore", UniformInt.of(3, 7));
+
+    public static final DeferredBlock<Block> RUBY_BLOCK = registerBlockVariant("ruby_block", () -> Blocks.EMERALD_BLOCK, MapColor.NETHER);
+    public static final DeferredBlock<Block> CUT_RUBY = registerBlockVariant("cut_ruby", () -> RUBY_BLOCK.get());
+    public static final DeferredBlock<SlabBlock> CUT_RUBY_SLAB = registerSlabBlock("cut_ruby_slab", () -> CUT_RUBY.get());
+    public static final DeferredBlock<StairBlock> CUT_RUBY_STAIRS = registerStairBlock("cut_ruby_stairs", () -> CUT_RUBY.get());
+
+    public static final DeferredBlock<DropExperienceBlock> SAPPHIRE_ORE = registerOreBlock("sapphire_ore", UniformInt.of(3, 7));
+    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_SAPPHIRE_ORE = registerDeepslateOreBlock("deepslate_sapphire_ore", UniformInt.of(3, 7));
+
+    public static final DeferredBlock<Block> SAPPHIRE_BLOCK = registerBlockVariant("sapphire_block", () -> Blocks.EMERALD_BLOCK, MapColor.COLOR_BLUE);
+    public static final DeferredBlock<Block> CUT_SAPPHIRE = registerBlockVariant("cut_sapphire", () -> SAPPHIRE_BLOCK.get());
+    public static final DeferredBlock<SlabBlock> CUT_SAPPHIRE_SLAB = registerSlabBlock("cut_sapphire_slab", () -> CUT_SAPPHIRE.get());
+    public static final DeferredBlock<StairBlock> CUT_SAPPHIRE_STAIRS = registerStairBlock("cut_sapphire_stairs", () -> CUT_SAPPHIRE.get());
+
 
     private static DeferredBlock<CraftingTableBlock> registerCraftingTable(String registryName) {
         if (registryName == "crimson_crafting_table" || registryName == "warped_crafting_table") {
@@ -3687,11 +3735,11 @@ public class ModBlocks {
         }
     }
 
-    private static DeferredBlock<DropExperienceBlock> registerOreBlock(String registryName) {
+    private static DeferredBlock<DropExperienceBlock> registerOreBlock(String registryName, IntProvider xp) {
         if (registryName == "tungsten_ore") {
             return BLOCKS.register(
                     registryName, () -> new DropExperienceBlock(
-                            ConstantInt.of(0),
+                            xp,
                             BlockBehaviour.Properties.ofFullCopy(
                                     Blocks.IRON_ORE
                             ).strength(
@@ -3711,7 +3759,7 @@ public class ModBlocks {
         } else {
             return BLOCKS.register(
                     registryName, () -> new DropExperienceBlock(
-                            ConstantInt.of(0),
+                            xp,
                             BlockBehaviour.Properties.ofFullCopy(
                                     Blocks.IRON_ORE
                             ).setId(
@@ -3728,11 +3776,11 @@ public class ModBlocks {
         }
     }
 
-    private static DeferredBlock<DropExperienceBlock> registerDeepslateOreBlock(String registryName) {
+    private static DeferredBlock<DropExperienceBlock> registerDeepslateOreBlock(String registryName, IntProvider xp) {
         if (registryName == "deepslate_tungsten_ore") {
             return BLOCKS.register(
                     registryName, () -> new DropExperienceBlock(
-                            ConstantInt.of(0),
+                            xp,
                             BlockBehaviour.Properties.ofFullCopy(
                                     Blocks.DEEPSLATE_IRON_ORE
                             ).strength(
@@ -3752,7 +3800,7 @@ public class ModBlocks {
         } else {
             return BLOCKS.register(
                     registryName, () -> new DropExperienceBlock(
-                            ConstantInt.of(0),
+                            xp,
                             BlockBehaviour.Properties.ofFullCopy(
                                     Blocks.DEEPSLATE_IRON_ORE
                             ).setId(
@@ -3767,6 +3815,25 @@ public class ModBlocks {
                     )
             );
         }
+    }
+
+    private static DeferredBlock<DropExperienceBlock> registerNetherOreBlock(String registryName) {
+        return BLOCKS.register(
+                    registryName, () -> new DropExperienceBlock(
+                            UniformInt.of(3, 7),
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.NETHER_GOLD_ORE
+                            ).setId(
+                                    ResourceKey.create(
+                                            Registries.BLOCK,
+                                            Identifier.fromNamespaceAndPath(
+                                                    BuildersParadise.MODID,
+                                                    registryName
+                                            )
+                                    )
+                            )
+                    )
+            );
     }
 
     private static DeferredBlock<IceBlock> registerIceBlock(String registryName, Supplier<Block> baseBlock) {
@@ -4209,6 +4276,43 @@ public class ModBlocks {
     private static DeferredBlock<CarbonBlock> registerCarbonBlock(String registryName, Supplier<Block> baseBlock, ColorRGBA dustColor) {
         return BLOCKS.register(
                 registryName, () -> new CarbonBlock(
+                        dustColor,
+                        BlockBehaviour.Properties.ofFullCopy(
+                                baseBlock.get()
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        ).randomTicks()
+                )
+        );
+    }
+
+    private static DeferredBlock<SiliceneBlock> registerSilicene(String registryName, Supplier<Block> baseBlock) {
+        return BLOCKS.register(
+                registryName, () -> new SiliceneBlock(
+                        BlockBehaviour.Properties.ofFullCopy(
+                                baseBlock.get()
+                        ).setId(
+                                ResourceKey.create(
+                                        Registries.BLOCK,
+                                        Identifier.fromNamespaceAndPath(
+                                                BuildersParadise.MODID,
+                                                registryName
+                                        )
+                                )
+                        ).strength(0.375F).requiresCorrectToolForDrops().isViewBlocking((statex, level, pos) -> (Integer)statex.getValue(GrapheneBlock.LAYERS) >= 8).pushReaction(PushReaction.NORMAL)
+                )
+        );
+    }
+
+    private static DeferredBlock<SiliconBlock> registerSiliconBlock(String registryName, Supplier<Block> baseBlock, ColorRGBA dustColor) {
+        return BLOCKS.register(
+                registryName, () -> new SiliconBlock(
                         dustColor,
                         BlockBehaviour.Properties.ofFullCopy(
                                 baseBlock.get()

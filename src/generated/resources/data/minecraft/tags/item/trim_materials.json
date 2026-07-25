@@ -11,6 +11,9 @@
     "buildersparadise:brass_ingot",
     "buildersparadise:steel_ingot",
     "buildersparadise:sculk_brick",
-    "buildersparadise:bismuth_ingot"
+    "buildersparadise:bismuth_ingot",
+    "buildersparadise:monocrystal",
+    "buildersparadise:ruby",
+    "buildersparadise:sapphire"
   ]
 }

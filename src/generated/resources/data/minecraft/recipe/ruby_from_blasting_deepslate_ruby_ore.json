@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "experience": 1.0,
+  "group": "ruby",
+  "ingredient": "buildersparadise:deepslate_ruby_ore",
+  "result": {
+    "id": "buildersparadise:ruby"
+  }
+}

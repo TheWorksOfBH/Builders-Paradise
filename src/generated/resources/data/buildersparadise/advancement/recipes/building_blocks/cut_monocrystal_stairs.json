@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cut_monocrystal": {
+      "conditions": {
+        "items": [
+          {
+            "items": "buildersparadise:cut_monocrystal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "buildersparadise:cut_monocrystal_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cut_monocrystal"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "buildersparadise:cut_monocrystal_stairs"
+    ]
+  }
+}

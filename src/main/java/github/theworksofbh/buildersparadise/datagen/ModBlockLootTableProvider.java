@@ -293,6 +293,12 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                         this.add(block, createMultipleOreDrops(block, ModItems.RAW_BISMUTH.get(), 3.0F, 5.0F));
                     } else if (block == ModBlocks.URANIUM_ORE.get() || block == ModBlocks.DEEPSLATE_URANIUM_ORE.get()) {
                         this.add(block, createMultipleOreDrops(block, ModItems.RAW_URANIUM.get(), 2.0F, 4.0F));
+                    } else if (block == ModBlocks.NETHER_MONOCRYSTAL_ORE.get()) {
+                        this.add(block, createOreDrop(block, ModItems.MONOCRYSTAL.get()));
+                    } else if (block == ModBlocks.RUBY_ORE.get() || block == ModBlocks.DEEPSLATE_RUBY_ORE.get()) {
+                        this.add(block, createOreDrop(block, ModItems.RUBY.get()));
+                    } else if (block == ModBlocks.SAPPHIRE_ORE.get() || block == ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get()) {
+                        this.add(block, createOreDrop(block, ModItems.SAPPHIRE.get()));
                     }
                 } else if (block == Blocks.CRAFTING_TABLE) {
                     this.dropOther(block, ModItems.OAK_CRAFTING_TABLE.get());
@@ -515,6 +521,24 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                                                             (layers) -> (LootPoolEntryContainer.Builder)(layers == 8 ? LootItem.lootTableItem(ModItems.GRAPHITE.get()) : LootItem.lootTableItem(ModItems.GRAPHENE.get())
                                                                     .apply(SetItemCountFunction.setCount(ConstantValue.exactly((float)layers)))
                                                                     .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(grapheneBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GrapheneBlock.LAYERS, layers)))))}))));
+                } else if (block instanceof SiliceneBlock) {
+                    this.add(block,
+                            (siliceneBlock) -> LootTable.lootTable().withPool(
+                                    LootPool.lootPool().when(
+                                            LootItemEntityPropertyCondition.entityPresent(LootContext.EntityTarget.THIS)
+                                    ).add(AlternativesEntry.alternatives(
+                                            new LootPoolEntryContainer.Builder[]{
+                                                    AlternativesEntry.alternatives(
+                                                            GrapheneBlock.LAYERS.getPossibleValues(),
+                                                            (layers) -> (
+                                                                    (LootPoolSingletonContainer.Builder)LootItem.lootTableItem(ModItems.SILICON_DUST.get())
+                                                                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(siliceneBlock)
+                                                                                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SiliceneBlock.LAYERS, layers))))
+                                                                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly((float)layers)))).when(this.doesNotHaveSilkTouch()),
+                                                    AlternativesEntry.alternatives(SiliceneBlock.LAYERS.getPossibleValues(),
+                                                            (layers) -> (LootPoolEntryContainer.Builder)(layers == 8 ? LootItem.lootTableItem(ModItems.SILICITE.get()) : LootItem.lootTableItem(ModItems.SILICENE.get())
+                                                                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly((float)layers)))
+                                                                    .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(siliceneBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SiliceneBlock.LAYERS, layers)))))}))));
                 } else if (block instanceof CarbonBlock) {
                     this.add(block, LootTable.lootTable()
                             .withPool(
@@ -524,7 +548,22 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                                                     LootItem.lootTableItem(ModItems.CARBON_BLOCK.get())
                                                             .when(this.hasSilkTouch())
                                                             .otherwise(
-                                                                    LootItem.lootTableItem(ModItems.CARBON_DUST)
+                                                                    LootItem.lootTableItem(ModItems.CARBON_DUST.get())
+                                                                            .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0F)))
+                                                            )
+                                            )
+                            )
+                    );
+                } else if (block instanceof SiliconBlock) {
+                    this.add(block, LootTable.lootTable()
+                            .withPool(
+                                    LootPool.lootPool()
+                                            .setRolls(ConstantValue.exactly(1))
+                                            .add(
+                                                    LootItem.lootTableItem(ModItems.SILICON_BLOCK.get())
+                                                            .when(this.hasSilkTouch())
+                                                            .otherwise(
+                                                                    LootItem.lootTableItem(ModItems.SILICON_DUST.get())
                                                                             .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0F)))
                                                             )
                                             )

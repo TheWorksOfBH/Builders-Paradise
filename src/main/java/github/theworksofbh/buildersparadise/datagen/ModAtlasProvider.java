@@ -45,7 +45,10 @@ public class ModAtlasProvider extends AtlasProvider {
             new ModTrimMaterialData(ModMaterialAssetGroups.BRONZE, ModTrimMaterials.BRONZE),
             new ModTrimMaterialData(ModMaterialAssetGroups.BRASS, ModTrimMaterials.BRASS),
             new ModTrimMaterialData(ModMaterialAssetGroups.STEEL, ModTrimMaterials.STEEL),
-            new ModTrimMaterialData(ModMaterialAssetGroups.SCULK, ModTrimMaterials.SCULK)
+            new ModTrimMaterialData(ModMaterialAssetGroups.SCULK, ModTrimMaterials.SCULK),
+            new ModTrimMaterialData(ModMaterialAssetGroups.MONOCRYSTAL, ModTrimMaterials.MONOCRYSTAL),
+            new ModTrimMaterialData(ModMaterialAssetGroups.RUBY, ModTrimMaterials.RUBY),
+            new ModTrimMaterialData(ModMaterialAssetGroups.SAPPHIRE, ModTrimMaterials.SAPPHIRE)
     );
 
     public ModAtlasProvider(PackOutput output) {

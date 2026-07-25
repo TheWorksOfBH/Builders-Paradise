@@ -354,4 +354,17 @@ public class ModBlockFamilies {
     public static final BlockFamily BISMUTH_BLOCK = familyBuilder(ModBlocks.BISMUTH_BLOCK.get()).cut(ModBlocks.CUT_BISMUTH.get()).getFamily();
     public static final BlockFamily CUT_BISMUTH = familyBuilder(ModBlocks.CUT_BISMUTH.get()).slab(ModBlocks.CUT_BISMUTH_SLAB.get()).stairs(ModBlocks.CUT_BISMUTH_STAIRS.get()).getFamily();
 
+    public static final BlockFamily SILICITE = familyBuilder(ModBlocks.SILICITE.get()).polished(ModBlocks.POLISHED_SILICITE.get()).stairs(ModBlocks.SILICITE_STAIRS.get()).slab(ModBlocks.SILICITE_SLAB.get()).wall(ModBlocks.SILICITE_WALL.get()).fence(ModBlocks.SILICITE_FENCE.get()).getFamily();
+    public static final BlockFamily POLISHED_SILICITE = familyBuilder(ModBlocks.POLISHED_SILICITE.get()).stairs(ModBlocks.POLISHED_SILICITE_STAIRS.get()).slab(ModBlocks.POLISHED_SILICITE_SLAB.get()).wall(ModBlocks.POLISHED_SILICITE_WALL.get()).polished(ModBlocks.SILICITE_BRICKS.get()).fence(ModBlocks.POLISHED_SILICITE_FENCE.get()).getFamily();
+    public static final BlockFamily SILICITE_BRICKS = familyBuilder(ModBlocks.SILICITE_BRICKS.get()).stairs(ModBlocks.SILICITE_BRICK_STAIRS.get()).slab(ModBlocks.SILICITE_BRICK_SLAB.get()).wall(ModBlocks.SILICITE_BRICK_WALL.get()).fence(ModBlocks.SILICITE_BRICK_FENCE.get()).getFamily();
+
+    public static final BlockFamily MONOCRYSTAL_BLOCK = familyBuilder(ModBlocks.MONOCRYSTAL_BLOCK.get()).cut(ModBlocks.CUT_MONOCRYSTAL.get()).getFamily();
+    public static final BlockFamily CUT_MONOCRYSTAL = familyBuilder(ModBlocks.CUT_MONOCRYSTAL.get()).slab(ModBlocks.CUT_MONOCRYSTAL_SLAB.get()).stairs(ModBlocks.CUT_MONOCRYSTAL_STAIRS.get()).getFamily();
+
+    public static final BlockFamily RUBY_BLOCK = familyBuilder(ModBlocks.RUBY_BLOCK.get()).cut(ModBlocks.CUT_RUBY.get()).getFamily();
+    public static final BlockFamily CUT_RUBY = familyBuilder(ModBlocks.CUT_RUBY.get()).slab(ModBlocks.CUT_RUBY_SLAB.get()).stairs(ModBlocks.CUT_RUBY_STAIRS.get()).getFamily();
+
+    public static final BlockFamily SAPPHIRE_BLOCK = familyBuilder(ModBlocks.SAPPHIRE_BLOCK.get()).cut(ModBlocks.CUT_SAPPHIRE.get()).getFamily();
+    public static final BlockFamily CUT_SAPPHIRE = familyBuilder(ModBlocks.CUT_SAPPHIRE.get()).slab(ModBlocks.CUT_SAPPHIRE_SLAB.get()).stairs(ModBlocks.CUT_SAPPHIRE_STAIRS.get()).getFamily();
+
 }

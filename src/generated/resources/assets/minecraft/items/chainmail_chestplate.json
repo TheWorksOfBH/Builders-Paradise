@@ -155,6 +155,27 @@
           "model": "minecraft:item/chainmail_chestplate_sculk_trim"
         },
         "when": "buildersparadise:sculk"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_chestplate_monocrystal_trim"
+        },
+        "when": "buildersparadise:monocrystal"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_chestplate_ruby_trim"
+        },
+        "when": "buildersparadise:ruby"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/chainmail_chestplate_sapphire_trim"
+        },
+        "when": "buildersparadise:sapphire"
       }
     ],
     "fallback": {

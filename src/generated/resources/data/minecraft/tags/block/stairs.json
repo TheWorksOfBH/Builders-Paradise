@@ -181,6 +181,12 @@
     "buildersparadise:graphite_stairs",
     "buildersparadise:polished_graphite_stairs",
     "buildersparadise:graphite_brick_stairs",
-    "buildersparadise:cut_bismuth_stairs"
+    "buildersparadise:cut_bismuth_stairs",
+    "buildersparadise:silicite_stairs",
+    "buildersparadise:polished_silicite_stairs",
+    "buildersparadise:silicite_brick_stairs",
+    "buildersparadise:cut_monocrystal_stairs",
+    "buildersparadise:cut_ruby_stairs",
+    "buildersparadise:cut_sapphire_stairs"
   ]
 }

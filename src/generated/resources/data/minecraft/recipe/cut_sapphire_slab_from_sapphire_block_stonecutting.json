@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:sapphire_block",
+  "result": {
+    "count": 8,
+    "id": "buildersparadise:cut_sapphire_slab"
+  }
+}

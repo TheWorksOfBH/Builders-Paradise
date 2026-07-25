@@ -150,6 +150,9 @@
     "buildersparadise:gilded_blackstone_wall",
     "buildersparadise:graphite_wall",
     "buildersparadise:polished_graphite_wall",
-    "buildersparadise:graphite_brick_wall"
+    "buildersparadise:graphite_brick_wall",
+    "buildersparadise:silicite_wall",
+    "buildersparadise:polished_silicite_wall",
+    "buildersparadise:silicite_brick_wall"
   ]
 }

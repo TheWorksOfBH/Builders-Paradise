@@ -54,7 +54,10 @@ public class ModItemModelGenerator extends ItemModelGenerators {
             new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.BRONZE, ModTrimMaterials.BRONZE),
             new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.BRASS, ModTrimMaterials.BRASS),
             new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.STEEL, ModTrimMaterials.STEEL),
-            new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.SCULK, ModTrimMaterials.SCULK)
+            new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.SCULK, ModTrimMaterials.SCULK),
+            new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.MONOCRYSTAL, ModTrimMaterials.MONOCRYSTAL),
+            new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.RUBY, ModTrimMaterials.RUBY),
+            new ItemModelGenerators.TrimMaterialData(ModMaterialAssetGroups.SAPPHIRE, ModTrimMaterials.SAPPHIRE)
     );
 
     @Override
@@ -226,7 +229,9 @@ public class ModItemModelGenerator extends ItemModelGenerators {
         this.generateFlatItem(ModItems.RAW_BISMUTH.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(ModItems.BISMUTH_INGOT.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(ModItems.BISMUTH_NUGGET.get(), ModelTemplates.FLAT_ITEM);
-
-
+        this.generateFlatItem(ModItems.SILICON_DUST.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.MONOCRYSTAL.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.RUBY.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.SAPPHIRE.get(), ModelTemplates.FLAT_ITEM);
     }
 }

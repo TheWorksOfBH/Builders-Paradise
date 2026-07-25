@@ -1,7 +1,7 @@
 {
   "values": [
-    "minecraft:campfire",
     "minecraft:soul_campfire",
+    "minecraft:campfire",
     "buildersparadise:spruce_campfire",
     "buildersparadise:birch_campfire",
     "buildersparadise:jungle_campfire",

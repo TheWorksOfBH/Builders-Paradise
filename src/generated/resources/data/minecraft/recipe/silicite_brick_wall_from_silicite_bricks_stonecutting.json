@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "buildersparadise:silicite_bricks",
+  "result": {
+    "id": "buildersparadise:silicite_brick_wall"
+  }
+}

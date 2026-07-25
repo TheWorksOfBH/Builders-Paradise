@@ -178,6 +178,12 @@
     "buildersparadise:graphite_slab",
     "buildersparadise:polished_graphite_slab",
     "buildersparadise:graphite_brick_slab",
-    "buildersparadise:cut_bismuth_slab"
+    "buildersparadise:cut_bismuth_slab",
+    "buildersparadise:silicite_slab",
+    "buildersparadise:polished_silicite_slab",
+    "buildersparadise:silicite_brick_slab",
+    "buildersparadise:cut_monocrystal_slab",
+    "buildersparadise:cut_ruby_slab",
+    "buildersparadise:cut_sapphire_slab"
   ]
 }

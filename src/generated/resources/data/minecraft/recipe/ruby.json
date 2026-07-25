@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "buildersparadise:ruby_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "buildersparadise:ruby"
+  }
+}

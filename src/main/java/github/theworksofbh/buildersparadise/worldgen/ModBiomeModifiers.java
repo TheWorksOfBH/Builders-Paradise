@@ -116,6 +116,36 @@ public class ModBiomeModifiers {
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.CARBON_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));
+
+        context.register(ADD_SILICITE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_NETHER),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.SILICITE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+
+        context.register(ADD_SILICON, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_NETHER),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.SILICON_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+
+        context.register(ADD_NETHER_MONOCRYSTAL_ORES, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_NETHER),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.NETHER_MONOCRYSTAL_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+
+        context.register(ADD_RUBY_ORES, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_MOUNTAIN),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.RUBY_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+
+        context.register(ADD_SAPPHIRE_ORES, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.SAPPHIRE_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
     }
 
     public static final ResourceKey<BiomeModifier> ADD_ZINC_ORES = registerKey("add_zinc_ores");
@@ -134,5 +164,12 @@ public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_GRAPHITE = registerKey("add_graphite");
     public static final ResourceKey<BiomeModifier> ADD_END_GRAPHITE = registerKey("add_end_graphite");
     public static final ResourceKey<BiomeModifier> ADD_CARBON = registerKey("add_carbon");
+    public static final ResourceKey<BiomeModifier> ADD_SILICITE = registerKey("add_silicite");
+    public static final ResourceKey<BiomeModifier> ADD_SILICON = registerKey("add_silicon");
+    public static final ResourceKey<BiomeModifier> ADD_NETHER_MONOCRYSTAL_ORES = registerKey("add_nether_monocrystal_ores");
+    public static final ResourceKey<BiomeModifier> ADD_RUBY_ORES = registerKey("add_ruby_ores");
+    public static final ResourceKey<BiomeModifier> ADD_SAPPHIRE_ORES = registerKey("add_sapphire_ores");
+
+
 
 }

@@ -237,5 +237,15 @@ public class ModChestLootModifierProvider extends GlobalLootModifierProvider {
                         )
                 )
         );
+        this.add(
+                "piglin_bartering_modifier", new ModLootModifier(
+                        new LootItemCondition[]{
+                                LootTableIdCondition.builder(Identifier.withDefaultNamespace("gameplay/piglin_bartering")).build()
+                        }, IGlobalLootModifier.DEFAULT_PRIORITY, List.of(
+                            new ModLootModifier.Entry(ModItems.PUMICE.get(), 40, Optional.of(8), Optional.of(16)),
+                            new ModLootModifier.Entry(ModItems.SILICON_DUST.get(), 20, Optional.of(10), Optional.of(24))
+                        )
+                )
+        );
     }
 }

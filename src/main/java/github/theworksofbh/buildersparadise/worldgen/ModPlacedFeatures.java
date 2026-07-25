@@ -60,6 +60,16 @@ public class ModPlacedFeatures {
                 ModOrePlacements.commonOrePlacement(2, HeightRangePlacement.uniform(VerticalAnchor.absolute(5), VerticalAnchor.absolute(124))));
         register(context, CARBON_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CARBON_KEY),
                 ModOrePlacements.commonOrePlacement(2, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.top())));
+        register(context, SILICITE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SILICITE_KEY),
+                ModOrePlacements.commonOrePlacement(2, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.top())));
+        register(context, SILICON_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SILICON_KEY),
+                ModOrePlacements.commonOrePlacement(2, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.top())));
+        register(context, NETHER_MONOCRYSTAL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.NETHER_MONOCRYSTAL_ORE_KEY),
+                ModOrePlacements.commonOrePlacement(2, HeightRangePlacement.uniform(VerticalAnchor.absolute(5), VerticalAnchor.absolute(54))));
+        register(context, RUBY_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.RUBY_ORE_KEY),
+                ModOrePlacements.commonOrePlacement(100, HeightRangePlacement.triangle(VerticalAnchor.absolute(-16), VerticalAnchor.absolute(480))));
+        register(context, SAPPHIRE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SAPPHIRE_ORE_KEY),
+                ModOrePlacements.commonOrePlacement(100, HeightRangePlacement.triangle(VerticalAnchor.absolute(-43), VerticalAnchor.absolute(34))));
     }
 
     public static final ResourceKey<PlacedFeature> ZINC_ORE_PLACED_KEY = registerKey("zinc_ore_placed");
@@ -78,6 +88,11 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> GRAPHITE_PLACED_KEY = registerKey("graphite_placed");
     public static final ResourceKey<PlacedFeature> END_GRAPHITE_PLACED_KEY = registerKey("end_graphite_placed");
     public static final ResourceKey<PlacedFeature> CARBON_PLACED_KEY = registerKey("carbon_placed");
+    public static final ResourceKey<PlacedFeature> SILICITE_PLACED_KEY = registerKey("silicite_placed");
+    public static final ResourceKey<PlacedFeature> SILICON_PLACED_KEY = registerKey("silicon_placed");
+    public static final ResourceKey<PlacedFeature> NETHER_MONOCRYSTAL_ORE_PLACED_KEY = registerKey("nether_monocrystal_ore_placed");
+    public static final ResourceKey<PlacedFeature> RUBY_ORE_PLACED_KEY = registerKey("ruby_ore_placed");
+    public static final ResourceKey<PlacedFeature> SAPPHIRE_ORE_PLACED_KEY = registerKey("sapphire_ore_placed");
 
 
 }

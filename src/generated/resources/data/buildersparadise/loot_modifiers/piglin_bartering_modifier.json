@@ -1,0 +1,23 @@
+{
+  "type": "buildersparadise:add_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:gameplay/piglin_bartering"
+    }
+  ],
+  "entries": [
+    {
+      "item": "buildersparadise:pumice",
+      "maximum": 16,
+      "minimum": 8,
+      "weight": 40
+    },
+    {
+      "item": "buildersparadise:silicon_dust",
+      "maximum": 24,
+      "minimum": 10,
+      "weight": 20
+    }
+  ]
+}

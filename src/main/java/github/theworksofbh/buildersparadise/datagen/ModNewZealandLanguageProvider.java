@@ -190,6 +190,14 @@ public class ModNewZealandLanguageProvider extends LanguageProvider {
             readjusted = reformatted.replace("smithing template", "");
         } else if (reformatted.contains("carbon block")) {
             readjusted = reformatted.replace("carbon block", "block of carbon");
+        } else if (reformatted.contains("silicon block")) {
+            readjusted = reformatted.replace("silicon block", "block of silicon");
+        } else if (reformatted.contains("monocrystal block")) {
+            readjusted = reformatted.replace("monocrystal block", "block of monocrystal");
+        } else if (reformatted.contains("ruby block")) {
+            readjusted = reformatted.replace("ruby block", "block of ruby");
+        } else if (reformatted.contains("sapphire block")) {
+            readjusted = reformatted.replace("sapphire block", "block of sapphire");
         } else {
             readjusted = reformatted;
         }
@@ -373,6 +381,9 @@ public class ModNewZealandLanguageProvider extends LanguageProvider {
         this.add("trim_material.buildersparadise.brass", "Brass Material");
         this.add("trim_material.buildersparadise.steel", "Steel Material");
         this.add("trim_material.buildersparadise.sculk", "Sculk Material");
+        this.add("trim_material.buildersparadise.monocrystal", "Monocrystal Material");
+        this.add("trim_material.buildersparadise.ruby", "Ruby Material");
+        this.add("trim_material.buildersparadise.sapphire", "Sapphire Material");
         this.add("jukebox_song.minecraft.creator", "Leif Chappelle - Creator");
         this.add("jukebox_song.minecraft.creator_music_box", "Leif Chappelle - Creator (Music Box)");
         this.add("jukebox_song.minecraft.otherside", "Leif Chappelle - otherside");

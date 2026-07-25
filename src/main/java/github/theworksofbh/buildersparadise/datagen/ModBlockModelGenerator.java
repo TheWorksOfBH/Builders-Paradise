@@ -921,7 +921,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.blockStateOutput.accept(createOrientableTrapdoor(acceptor, top, bottom, open));
     }
 
-    public void createGraphene() {
+    public void createBlockEndingWithEne(Block ite, Block ene) {
         Identifier height2 = ModelLocationUtils.getModelLocation(Blocks.SNOW, "_height2");
         Identifier height4 = ModelLocationUtils.getModelLocation(Blocks.SNOW, "_height4");
         Identifier height6 = ModelLocationUtils.getModelLocation(Blocks.SNOW, "_height6");
@@ -929,7 +929,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         Identifier height10 = ModelLocationUtils.getModelLocation(Blocks.SNOW, "_height10");
         Identifier height12 = ModelLocationUtils.getModelLocation(Blocks.SNOW, "_height12");
         Identifier height14 = ModelLocationUtils.getModelLocation(Blocks.SNOW, "_height14");
-        Identifier height16 = ModelLocationUtils.getModelLocation(ModBlocks.GRAPHITE.get());
+        Identifier height16 = ModelLocationUtils.getModelLocation(ite);
 
         ModelTemplate modelTemplate2 = new ModelTemplate(Optional.of(height2), Optional.empty(), TextureSlot.TEXTURE, TextureSlot.PARTICLE);
         ModelTemplate modelTemplate4 = new ModelTemplate(Optional.of(height4), Optional.empty(), TextureSlot.TEXTURE, TextureSlot.PARTICLE);
@@ -940,38 +940,38 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         ModelTemplate modelTemplate14 = new ModelTemplate(Optional.of(height14), Optional.empty(), TextureSlot.TEXTURE, TextureSlot.PARTICLE);
 
         plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
-                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get()))
-                        .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get())), modelTemplate2)
-                .createWithSuffix(ModBlocks.GRAPHENE.get(), "_height2", modelOutput));
+                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ite))
+                        .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ite)), modelTemplate2)
+                .createWithSuffix(ene, "_height2", modelOutput));
         plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
-                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get()))
-                        .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get())), modelTemplate4)
-                .createWithSuffix(ModBlocks.GRAPHENE.get(), "_height4", modelOutput));
+                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ite))
+                        .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ite)), modelTemplate4)
+                .createWithSuffix(ene, "_height4", modelOutput));
         plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
-                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get()))
-                        .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get())), modelTemplate6)
-                .createWithSuffix(ModBlocks.GRAPHENE.get(), "_height6", modelOutput));
+                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ite))
+                        .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ite)), modelTemplate6)
+                .createWithSuffix(ene, "_height6", modelOutput));
         plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
-                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get()))
-                        .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get())), modelTemplate8)
-                .createWithSuffix(ModBlocks.GRAPHENE.get(), "_height8", modelOutput));
+                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ite))
+                        .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ite)), modelTemplate8)
+                .createWithSuffix(ene, "_height8", modelOutput));
         plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
-                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get()))
-                        .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get())), modelTemplate10)
-                .createWithSuffix(ModBlocks.GRAPHENE.get(), "_height10", modelOutput));
+                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ite))
+                        .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ite)), modelTemplate10)
+                .createWithSuffix(ene, "_height10", modelOutput));
         plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
-                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get()))
-                        .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get())), modelTemplate12)
-                .createWithSuffix(ModBlocks.GRAPHENE.get(), "_height12", modelOutput));
+                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ite))
+                        .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ite)), modelTemplate12)
+                .createWithSuffix(ene, "_height12", modelOutput));
         plainVariant(TexturedModel.createDefault(block -> new TextureMapping()
-                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get()))
-                        .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ModBlocks.GRAPHITE.get())), modelTemplate14)
-                .createWithSuffix(ModBlocks.GRAPHENE.get(), "_height14", modelOutput));
+                        .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ite))
+                        .put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(ite)), modelTemplate14)
+                .createWithSuffix(ene, "_height14", modelOutput));
 
-        this.blockStateOutput.accept(MultiVariantGenerator.dispatch(ModBlocks.GRAPHENE.get()).with(PropertyDispatch.initial(BlockStateProperties.LAYERS).generate((level) -> {
+        this.blockStateOutput.accept(MultiVariantGenerator.dispatch(ene).with(PropertyDispatch.initial(BlockStateProperties.LAYERS).generate((level) -> {
             MultiVariant var2;
             if (level < 8) {
-                Block var10000 = ModBlocks.GRAPHENE.get();
+                Block var10000 = ene;
                 int var10001 = level;
                 var2 = plainVariant(ModelLocationUtils.getModelLocation(var10000, "_height" + var10001 * 2));
             } else {
@@ -980,7 +980,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
 
             return var2;
         })));
-        this.registerSimpleItemModel(ModBlocks.GRAPHENE.get(), ModelLocationUtils.getModelLocation(ModBlocks.GRAPHENE.get(), "_height2"));
+        this.registerSimpleItemModel(ene, ModelLocationUtils.getModelLocation(ene, "_height2"));
     }
 
     @Override
@@ -1707,7 +1707,7 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
         this.createTrivialCube(ModBlocks.GRAPHITE.get());
         this.createTrivialCube(ModBlocks.POLISHED_GRAPHITE.get());
         this.createTrivialCube(ModBlocks.GRAPHITE_BRICKS.get());
-        this.createGraphene();
+        this.createBlockEndingWithEne(ModBlocks.GRAPHITE.get(), ModBlocks.GRAPHENE.get());
         this.createTrivialCube(ModBlocks.CARBON_BLOCK.get());
 
         this.createTrivialCube(ModBlocks.BISMUTH_ORE.get());
@@ -1784,6 +1784,26 @@ public class ModBlockModelGenerator extends BlockModelGenerators {
 
         this.createLantern(ModBlocks.STEEL_FIRE_LANTERN.get());
         this.createLantern(ModBlocks.STEEL_SOUL_LANTERN.get());
+
+        this.createTrivialCube(ModBlocks.SILICITE.get());
+        this.createTrivialCube(ModBlocks.POLISHED_SILICITE.get());
+        this.createTrivialCube(ModBlocks.SILICITE_BRICKS.get());
+        this.createBlockEndingWithEne(ModBlocks.SILICITE.get(), ModBlocks.SILICENE.get());
+        this.createTrivialCube(ModBlocks.SILICON_BLOCK.get());
+
+        this.createTrivialCube(ModBlocks.NETHER_MONOCRYSTAL_ORE.get());
+        this.createTrivialCube(ModBlocks.MONOCRYSTAL_BLOCK.get());
+        this.createTrivialCube(ModBlocks.CUT_MONOCRYSTAL.get());
+
+        this.createTrivialCube(ModBlocks.RUBY_ORE.get());
+        this.createTrivialCube(ModBlocks.DEEPSLATE_RUBY_ORE.get());
+        this.createTrivialCube(ModBlocks.RUBY_BLOCK.get());
+        this.createTrivialCube(ModBlocks.CUT_RUBY.get());
+
+        this.createTrivialCube(ModBlocks.SAPPHIRE_ORE.get());
+        this.createTrivialCube(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get());
+        this.createTrivialCube(ModBlocks.SAPPHIRE_BLOCK.get());
+        this.createTrivialCube(ModBlocks.CUT_SAPPHIRE.get());
 
         ModBlockFamilies.getAllFamilies()
                 .filter(BlockFamily::shouldGenerateModel)
