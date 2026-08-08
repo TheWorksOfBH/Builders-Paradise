@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:polished_dripstone",
-  "result": {
-    "id": "buildersparadise:dripstone_brick_wall"
-  }
-}

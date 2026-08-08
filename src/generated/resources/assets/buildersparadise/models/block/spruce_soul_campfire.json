@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/campfire",
-  "textures": {
-    "fire": "minecraft:block/soul_campfire_fire",
-    "lit_log": "buildersparadise:block/spruce_soul_campfire_log_lit",
-    "log": "buildersparadise:block/spruce_campfire_log",
-    "particle": "buildersparadise:block/spruce_campfire_log"
-  }
-}

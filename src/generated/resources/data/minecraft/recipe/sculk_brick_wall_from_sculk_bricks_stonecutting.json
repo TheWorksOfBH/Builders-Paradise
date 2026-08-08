@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:sculk_bricks",
-  "result": {
-    "id": "buildersparadise:sculk_brick_wall"
-  }
-}

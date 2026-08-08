@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "category": "blocks",
-  "experience": 0.1,
-  "ingredient": "minecraft:lapis_block",
-  "result": {
-    "id": "buildersparadise:smooth_lapis"
-  }
-}

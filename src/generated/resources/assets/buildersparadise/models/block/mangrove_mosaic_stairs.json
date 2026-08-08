@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "buildersparadise:block/mangrove_mosaic",
-    "side": "buildersparadise:block/mangrove_mosaic",
-    "top": "buildersparadise:block/mangrove_mosaic"
-  }
-}

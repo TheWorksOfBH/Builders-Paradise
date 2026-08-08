@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "minecraft:cracked_deepslate_tiles",
-  "result": {
-    "id": "buildersparadise:cracked_deepslate_tile_wall"
-  }
-}

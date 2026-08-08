@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "buildersparadise:block/light_blue_terracotta_bricks",
-    "side": "buildersparadise:block/light_blue_terracotta_bricks",
-    "top": "buildersparadise:block/light_blue_terracotta_bricks"
-  }
-}

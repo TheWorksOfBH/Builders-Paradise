@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:cut_monocrystal",
-  "result": {
-    "id": "buildersparadise:cut_monocrystal_stairs"
-  }
-}

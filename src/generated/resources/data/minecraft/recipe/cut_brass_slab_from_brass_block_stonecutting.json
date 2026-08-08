@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:brass_block",
-  "result": {
-    "count": 8,
-    "id": "buildersparadise:cut_brass_slab"
-  }
-}

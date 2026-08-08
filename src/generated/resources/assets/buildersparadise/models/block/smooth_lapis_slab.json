@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "buildersparadise:block/smooth_lapis",
-    "side": "buildersparadise:block/smooth_lapis",
-    "top": "buildersparadise:block/smooth_lapis"
-  }
-}

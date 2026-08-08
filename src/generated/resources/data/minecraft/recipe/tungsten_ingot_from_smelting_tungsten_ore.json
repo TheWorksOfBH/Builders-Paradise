@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "experience": 1.0,
-  "group": "tungsten_ingot",
-  "ingredient": "buildersparadise:tungsten_ore",
-  "result": {
-    "id": "buildersparadise:tungsten_ingot"
-  }
-}

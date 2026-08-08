@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:cut_steel",
-  "result": {
-    "id": "buildersparadise:cut_steel_stairs"
-  }
-}

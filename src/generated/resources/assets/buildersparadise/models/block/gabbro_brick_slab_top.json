@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "buildersparadise:block/gabbro_bricks",
-    "side": "buildersparadise:block/gabbro_bricks",
-    "top": "buildersparadise:block/gabbro_bricks"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "category": "blocks",
-  "experience": 0.1,
-  "ingredient": "buildersparadise:stone_tiles",
-  "result": {
-    "id": "buildersparadise:cracked_stone_tiles"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "type": "buildersparadise:base_fletching",
-  "arrow": "minecraft:arrow",
-  "ingredient": "minecraft:glowstone_dust",
-  "output": {
-    "id": "minecraft:spectral_arrow"
-  }
-}

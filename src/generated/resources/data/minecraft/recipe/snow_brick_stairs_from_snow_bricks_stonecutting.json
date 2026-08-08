@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:snow_bricks",
-  "result": {
-    "id": "buildersparadise:snow_brick_stairs"
-  }
-}

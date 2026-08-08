@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "bottom": "buildersparadise:block/acacia_barrel_bottom",
-    "side": "buildersparadise:block/acacia_barrel_side",
-    "top": "buildersparadise:block/acacia_barrel_top"
-  }
-}

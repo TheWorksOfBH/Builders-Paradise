@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "experience": 1.0,
-  "group": "zinc_ingot",
-  "ingredient": "buildersparadise:zinc_ore",
-  "result": {
-    "id": "buildersparadise:zinc_ingot"
-  }
-}

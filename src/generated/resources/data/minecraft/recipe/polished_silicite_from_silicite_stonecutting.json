@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:silicite",
-  "result": {
-    "id": "buildersparadise:polished_silicite"
-  }
-}

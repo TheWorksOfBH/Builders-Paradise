@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "experience": 1.0,
-  "group": "silver_ingot",
-  "ingredient": "buildersparadise:deepslate_silver_ore",
-  "result": {
-    "id": "buildersparadise:silver_ingot"
-  }
-}

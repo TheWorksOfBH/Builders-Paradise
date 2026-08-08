@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:netherrack_bricks",
-  "result": {
-    "id": "buildersparadise:netherrack_brick_wall"
-  }
-}

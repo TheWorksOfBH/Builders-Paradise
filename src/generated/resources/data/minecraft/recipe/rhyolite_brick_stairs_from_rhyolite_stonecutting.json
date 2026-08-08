@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:rhyolite",
-  "result": {
-    "id": "buildersparadise:rhyolite_brick_stairs"
-  }
-}

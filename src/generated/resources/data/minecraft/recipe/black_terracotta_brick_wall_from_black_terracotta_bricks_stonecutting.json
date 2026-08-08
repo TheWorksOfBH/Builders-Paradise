@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:black_terracotta_bricks",
-  "result": {
-    "id": "buildersparadise:black_terracotta_brick_wall"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "category": "blocks",
-  "experience": 0.1,
-  "ingredient": "minecraft:cobblestone_wall",
-  "result": {
-    "id": "buildersparadise:stone_wall"
-  }
-}

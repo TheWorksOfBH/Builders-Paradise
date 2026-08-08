@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "buildersparadise:block/pumice_bricks",
-    "side": "buildersparadise:block/pumice_bricks",
-    "top": "buildersparadise:block/pumice_bricks"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "buildersparadise:block/dripstone_bricks",
-    "side": "buildersparadise:block/dripstone_bricks",
-    "top": "buildersparadise:block/dripstone_bricks"
-  }
-}

@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/brewing_stand",
-  "textures": {
-    "base": "buildersparadise:block/blackstone_brewing_stand_base",
-    "stand": "minecraft:block/brewing_stand"
-  }
-}

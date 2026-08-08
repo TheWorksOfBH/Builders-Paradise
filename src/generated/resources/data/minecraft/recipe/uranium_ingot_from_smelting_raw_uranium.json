@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "experience": 1.0,
-  "group": "uranium_ingot",
-  "ingredient": "buildersparadise:raw_uranium",
-  "result": {
-    "id": "buildersparadise:uranium_ingot"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "buildersparadise:block/crimson_mosaic",
-    "side": "buildersparadise:block/crimson_mosaic",
-    "top": "buildersparadise:block/crimson_mosaic"
-  }
-}

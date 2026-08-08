@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:blasting",
-  "experience": 1.0,
-  "group": "tin_ingot",
-  "ingredient": "buildersparadise:deepslate_tin_ore",
-  "result": {
-    "id": "buildersparadise:tin_ingot"
-  }
-}

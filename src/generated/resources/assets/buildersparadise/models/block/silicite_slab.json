@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "buildersparadise:block/silicite",
-    "side": "buildersparadise:block/silicite",
-    "top": "buildersparadise:block/silicite"
-  }
-}

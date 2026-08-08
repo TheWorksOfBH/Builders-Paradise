@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:smooth_deepslate",
-  "result": {
-    "id": "buildersparadise:smooth_deepslate_wall"
-  }
-}

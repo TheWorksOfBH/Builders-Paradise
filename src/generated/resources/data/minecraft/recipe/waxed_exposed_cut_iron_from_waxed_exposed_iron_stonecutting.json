@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:waxed_exposed_iron",
-  "result": {
-    "count": 4,
-    "id": "buildersparadise:waxed_exposed_cut_iron"
-  }
-}

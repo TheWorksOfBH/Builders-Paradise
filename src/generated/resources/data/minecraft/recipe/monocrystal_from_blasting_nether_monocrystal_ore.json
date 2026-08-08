@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:blasting",
-  "experience": 1.0,
-  "group": "monocrystal",
-  "ingredient": "buildersparadise:nether_monocrystal_ore",
-  "result": {
-    "id": "buildersparadise:monocrystal"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "type": "buildersparadise:base_fletching",
-  "arrow": "minecraft:arrow",
-  "ingredient": "minecraft:gunpowder",
-  "output": {
-    "id": "buildersparadise:explosive_arrow"
-  }
-}

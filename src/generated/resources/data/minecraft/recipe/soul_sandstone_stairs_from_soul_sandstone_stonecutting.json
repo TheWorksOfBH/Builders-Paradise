@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:soul_sandstone",
-  "result": {
-    "id": "buildersparadise:soul_sandstone_stairs"
-  }
-}

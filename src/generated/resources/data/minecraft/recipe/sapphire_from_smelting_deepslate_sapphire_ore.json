@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "experience": 1.0,
-  "group": "sapphire",
-  "ingredient": "buildersparadise:deepslate_sapphire_ore",
-  "result": {
-    "id": "buildersparadise:sapphire"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "buildersparadise:block/graphite",
-    "side": "buildersparadise:block/graphite",
-    "top": "buildersparadise:block/graphite"
-  }
-}

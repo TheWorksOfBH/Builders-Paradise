@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:mossy_stone_tiles",
-  "result": {
-    "id": "buildersparadise:mossy_stone_tile_stairs"
-  }
-}

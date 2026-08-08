@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "experience": 1.0,
-  "group": "uranium_ingot",
-  "ingredient": "buildersparadise:deepslate_uranium_ore",
-  "result": {
-    "id": "buildersparadise:uranium_ingot"
-  }
-}

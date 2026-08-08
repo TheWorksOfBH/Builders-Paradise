@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:cut_amethyst",
-  "result": {
-    "count": 2,
-    "id": "buildersparadise:cut_amethyst_slab"
-  }
-}

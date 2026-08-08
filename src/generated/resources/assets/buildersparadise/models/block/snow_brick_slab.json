@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "buildersparadise:block/snow_bricks",
-    "side": "buildersparadise:block/snow_bricks",
-    "top": "buildersparadise:block/snow_bricks"
-  }
-}

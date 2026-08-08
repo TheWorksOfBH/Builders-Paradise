@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "experience": 1.0,
-  "group": "lead_ingot",
-  "ingredient": "buildersparadise:deepslate_lead_ore",
-  "result": {
-    "id": "buildersparadise:lead_ingot"
-  }
-}

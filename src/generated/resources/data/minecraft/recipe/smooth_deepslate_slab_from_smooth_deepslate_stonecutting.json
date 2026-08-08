@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:smooth_deepslate",
-  "result": {
-    "count": 2,
-    "id": "buildersparadise:smooth_deepslate_slab"
-  }
-}

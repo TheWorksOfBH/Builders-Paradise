@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:elder_prismarine_bricks",
-  "result": {
-    "id": "buildersparadise:elder_prismarine_brick_stairs"
-  }
-}

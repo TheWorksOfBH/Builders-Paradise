@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "buildersparadise:block/cut_diamond",
-    "side": "buildersparadise:block/cut_diamond",
-    "top": "buildersparadise:block/cut_diamond"
-  }
-}

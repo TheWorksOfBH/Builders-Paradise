@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/iron_bars_post_ends",
-  "textures": {
-    "bars": "buildersparadise:block/exposed_iron_bars",
-    "edge": "buildersparadise:block/exposed_iron_bars",
-    "particle": "buildersparadise:block/exposed_iron_bars"
-  }
-}

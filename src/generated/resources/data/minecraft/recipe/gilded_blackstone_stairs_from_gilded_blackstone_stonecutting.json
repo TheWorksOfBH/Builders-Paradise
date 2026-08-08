@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "minecraft:gilded_blackstone",
-  "result": {
-    "id": "buildersparadise:gilded_blackstone_stairs"
-  }
-}

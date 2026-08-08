@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "minecraft:green_concrete",
-  "result": {
-    "id": "buildersparadise:green_concrete_stairs"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "buildersparadise:block/cyan_terracotta_bricks",
-    "side": "buildersparadise:block/cyan_terracotta_bricks",
-    "top": "buildersparadise:block/cyan_terracotta_bricks"
-  }
-}

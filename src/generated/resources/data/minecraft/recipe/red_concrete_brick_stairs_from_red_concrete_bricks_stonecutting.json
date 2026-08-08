@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:red_concrete_bricks",
-  "result": {
-    "id": "buildersparadise:red_concrete_brick_stairs"
-  }
-}

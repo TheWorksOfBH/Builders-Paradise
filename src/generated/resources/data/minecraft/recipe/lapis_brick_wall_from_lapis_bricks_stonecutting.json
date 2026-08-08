@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:lapis_bricks",
-  "result": {
-    "id": "buildersparadise:lapis_brick_wall"
-  }
-}

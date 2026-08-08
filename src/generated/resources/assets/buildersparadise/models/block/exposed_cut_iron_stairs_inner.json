@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "buildersparadise:block/exposed_cut_iron",
-    "side": "buildersparadise:block/exposed_cut_iron",
-    "top": "buildersparadise:block/exposed_cut_iron"
-  }
-}

@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:polished_gabbro",
-  "result": {
-    "id": "buildersparadise:gabbro_brick_wall"
-  }
-}

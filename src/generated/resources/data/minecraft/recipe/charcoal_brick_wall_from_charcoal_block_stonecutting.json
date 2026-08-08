@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:charcoal_block",
-  "result": {
-    "id": "buildersparadise:charcoal_brick_wall"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:pumice",
-  "result": {
-    "count": 2,
-    "id": "buildersparadise:pumice_brick_slab"
-  }
-}

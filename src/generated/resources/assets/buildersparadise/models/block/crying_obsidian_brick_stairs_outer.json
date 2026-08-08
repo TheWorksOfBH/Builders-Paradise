@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "buildersparadise:block/crying_obsidian_bricks",
-    "side": "buildersparadise:block/crying_obsidian_bricks",
-    "top": "buildersparadise:block/crying_obsidian_bricks"
-  }
-}

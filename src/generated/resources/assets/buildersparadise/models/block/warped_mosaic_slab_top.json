@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "buildersparadise:block/warped_mosaic",
-    "side": "buildersparadise:block/warped_mosaic",
-    "top": "buildersparadise:block/warped_mosaic"
-  }
-}

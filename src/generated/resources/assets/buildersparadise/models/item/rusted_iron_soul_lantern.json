@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "buildersparadise:item/rusted_iron_soul_lantern"
-  }
-}

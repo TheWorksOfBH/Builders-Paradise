@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:smooth_lapis",
-  "result": {
-    "id": "buildersparadise:smooth_lapis_wall"
-  }
-}

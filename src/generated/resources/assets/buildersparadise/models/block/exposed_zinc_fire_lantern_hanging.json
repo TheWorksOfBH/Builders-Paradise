@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/template_hanging_lantern",
-  "textures": {
-    "lantern": "buildersparadise:block/exposed_zinc_fire_lantern"
-  }
-}

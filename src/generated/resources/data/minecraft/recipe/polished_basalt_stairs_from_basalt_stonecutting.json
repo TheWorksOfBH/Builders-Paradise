@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "minecraft:basalt",
-  "result": {
-    "id": "buildersparadise:polished_basalt_stairs"
-  }
-}

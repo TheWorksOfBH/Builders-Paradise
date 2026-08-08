@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:weathered_cut_iron",
-  "result": {
-    "id": "buildersparadise:weathered_cut_iron_stairs"
-  }
-}

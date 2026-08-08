@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "addition": "#buildersparadise:bronze_tool_materials",
-  "base": "minecraft:copper_pickaxe",
-  "result": {
-    "id": "buildersparadise:bronze_pickaxe"
-  },
-  "template": "buildersparadise:bronze_upgrade_smithing_template"
-}

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:pink_concrete_bricks",
-  "result": {
-    "count": 2,
-    "id": "buildersparadise:pink_concrete_brick_slab"
-  }
-}

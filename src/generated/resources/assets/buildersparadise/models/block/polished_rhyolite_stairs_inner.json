@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "buildersparadise:block/polished_rhyolite",
-    "side": "buildersparadise:block/polished_rhyolite",
-    "top": "buildersparadise:block/polished_rhyolite"
-  }
-}

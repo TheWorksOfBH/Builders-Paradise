@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "minecraft:diorite",
-  "result": {
-    "id": "buildersparadise:polished_diorite_brick_stairs"
-  }
-}

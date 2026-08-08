@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:yellow_terracotta_bricks",
-  "result": {
-    "count": 2,
-    "id": "buildersparadise:yellow_terracotta_brick_slab"
-  }
-}

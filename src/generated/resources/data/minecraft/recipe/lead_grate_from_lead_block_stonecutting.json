@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:lead_block",
-  "result": {
-    "count": 4,
-    "id": "buildersparadise:lead_grate"
-  }
-}

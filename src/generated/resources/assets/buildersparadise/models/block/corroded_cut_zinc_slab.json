@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "buildersparadise:block/corroded_cut_zinc",
-    "side": "buildersparadise:block/corroded_cut_zinc",
-    "top": "buildersparadise:block/corroded_cut_zinc"
-  }
-}

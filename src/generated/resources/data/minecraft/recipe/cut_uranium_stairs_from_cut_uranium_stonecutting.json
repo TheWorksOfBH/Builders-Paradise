@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:cut_uranium",
-  "result": {
-    "id": "buildersparadise:cut_uranium_stairs"
-  }
-}

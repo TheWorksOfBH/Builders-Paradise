@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:magenta_concrete_bricks",
-  "result": {
-    "id": "buildersparadise:magenta_concrete_brick_wall"
-  }
-}

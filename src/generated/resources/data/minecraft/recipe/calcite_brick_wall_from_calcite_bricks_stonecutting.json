@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:calcite_bricks",
-  "result": {
-    "id": "buildersparadise:calcite_brick_wall"
-  }
-}

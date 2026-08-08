@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:gray_terracotta_bricks",
-  "result": {
-    "id": "buildersparadise:gray_terracotta_brick_stairs"
-  }
-}

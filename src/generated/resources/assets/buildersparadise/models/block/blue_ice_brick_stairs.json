@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "buildersparadise:block/blue_ice_bricks",
-    "side": "buildersparadise:block/blue_ice_bricks",
-    "top": "buildersparadise:block/blue_ice_bricks"
-  }
-}

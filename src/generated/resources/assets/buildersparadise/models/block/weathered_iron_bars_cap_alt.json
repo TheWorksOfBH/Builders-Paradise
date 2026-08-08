@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/iron_bars_cap_alt",
-  "textures": {
-    "bars": "buildersparadise:block/weathered_iron_bars",
-    "edge": "buildersparadise:block/weathered_iron_bars",
-    "particle": "buildersparadise:block/weathered_iron_bars"
-  }
-}

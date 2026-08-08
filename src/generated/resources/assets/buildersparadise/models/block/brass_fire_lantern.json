@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/template_lantern",
-  "textures": {
-    "lantern": "buildersparadise:block/brass_fire_lantern"
-  }
-}

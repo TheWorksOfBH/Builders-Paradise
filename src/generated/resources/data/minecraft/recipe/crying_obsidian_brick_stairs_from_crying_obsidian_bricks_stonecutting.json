@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:crying_obsidian_bricks",
-  "result": {
-    "id": "buildersparadise:crying_obsidian_brick_stairs"
-  }
-}

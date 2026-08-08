@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:weathered_zinc",
-  "result": {
-    "count": 8,
-    "id": "buildersparadise:weathered_cut_zinc_slab"
-  }
-}

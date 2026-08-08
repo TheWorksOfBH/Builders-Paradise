@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:light_gray_concrete_bricks",
-  "result": {
-    "id": "buildersparadise:light_gray_concrete_brick_wall"
-  }
-}

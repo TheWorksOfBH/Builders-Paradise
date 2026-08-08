@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "buildersparadise:block/terracotta_bricks",
-    "side": "buildersparadise:block/terracotta_bricks",
-    "top": "buildersparadise:block/terracotta_bricks"
-  }
-}

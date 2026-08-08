@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:weathered_iron",
-  "result": {
-    "count": 8,
-    "id": "buildersparadise:weathered_cut_iron_slab"
-  }
-}

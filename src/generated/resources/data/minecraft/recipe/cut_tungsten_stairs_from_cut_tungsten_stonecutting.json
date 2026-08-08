@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "buildersparadise:cut_tungsten",
-  "result": {
-    "id": "buildersparadise:cut_tungsten_stairs"
-  }
-}

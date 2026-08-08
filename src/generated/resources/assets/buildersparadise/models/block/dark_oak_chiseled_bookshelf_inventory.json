@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/orientable",
-  "textures": {
-    "front": "buildersparadise:block/dark_oak_chiseled_bookshelf_empty",
-    "side": "buildersparadise:block/dark_oak_chiseled_bookshelf_side",
-    "top": "buildersparadise:block/dark_oak_chiseled_bookshelf_top"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "experience": 1.0,
-  "group": "bismuth_ingot",
-  "ingredient": "buildersparadise:raw_bismuth",
-  "result": {
-    "id": "buildersparadise:bismuth_ingot"
-  }
-}

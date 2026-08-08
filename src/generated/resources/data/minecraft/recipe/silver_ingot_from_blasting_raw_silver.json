@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:blasting",
-  "experience": 1.0,
-  "group": "silver_ingot",
-  "ingredient": "buildersparadise:raw_silver",
-  "result": {
-    "id": "buildersparadise:silver_ingot"
-  }
-}

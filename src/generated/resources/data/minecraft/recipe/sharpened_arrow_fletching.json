@@ -1,8 +1,0 @@
-{
-  "type": "buildersparadise:base_fletching",
-  "arrow": "minecraft:arrow",
-  "ingredient": "minecraft:flint",
-  "output": {
-    "id": "buildersparadise:sharpened_arrow"
-  }
-}
