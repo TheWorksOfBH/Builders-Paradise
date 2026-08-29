@@ -1,20 +1,28 @@
 package github.theworksofbh.buildersparadise;
 
+import github.theworksofbh.buildersparadise.events.NeoForgeCreativeEvent;
+import github.theworksofbh.buildersparadise.events.NeoForgeInitEvent;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.registries.RegisterEvent;
 
-@Mod(Constants.MOD_ID)
+@Mod(BuildersParadiseConstants.MOD_ID)
 public class BuildersParadiseNeoForge {
 
     public BuildersParadiseNeoForge(IEventBus eventBus) {
 
-        // This method is invoked by the NeoForge mod loader when it is ready
-        // to load your mod. You can access NeoForge and Common code in this
-        // project.
+        BuildersParadiseCommon.init();
+        eventBus.addListener(this::addClasses);
+        eventBus.addListener(this::addCreative);
 
-        // Use NeoForge to bootstrap the Common mod.
-        Constants.LOG.info("Hello NeoForge world!");
-        CommonClass.init();
+    }
 
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        NeoForgeCreativeEvent.addItemsToCreative(event);
+    }
+
+    private void addClasses(RegisterEvent event) {
+        NeoForgeInitEvent.registerClasses(event);
     }
 }

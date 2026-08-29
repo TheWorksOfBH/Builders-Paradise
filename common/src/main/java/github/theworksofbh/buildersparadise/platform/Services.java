@@ -1,6 +1,6 @@
 package github.theworksofbh.buildersparadise.platform;
 
-import github.theworksofbh.buildersparadise.Constants;
+import github.theworksofbh.buildersparadise.BuildersParadiseConstants;
 import github.theworksofbh.buildersparadise.platform.services.IPlatformHelper;
 
 import java.util.ServiceLoader;
@@ -24,7 +24,7 @@ public class Services {
         final T loadedService = ServiceLoader.load(clazz, Services.class.getClassLoader())
                 .findFirst()
                 .orElseThrow(() -> new NullPointerException("Failed to load service for " + clazz.getName()));
-        Constants.LOG.debug("Loaded {} for service {}", loadedService, clazz);
+        BuildersParadiseConstants.LOG.debug("Loaded {} for service {}", loadedService, clazz);
         return loadedService;
     }
 }

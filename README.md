@@ -1,4 +1,4 @@
-<p align="center"><img src="BPlogo.png"></p>
+<p align="center"><img src="common/src/main/resources/BPlogo.png"></p>
 <p align="center">A Minecraft mod by The Works of BH</p>
 
 **Builder's Paradise** is a Minecraft mod by **The Works of BH** which implements **several new building blocks**, as well as **completing pre-existing block families**.

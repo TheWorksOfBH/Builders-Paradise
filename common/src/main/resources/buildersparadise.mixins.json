@@ -3,10 +3,11 @@
   "minVersion": "0.8",
   "package": "github.theworksofbh.buildersparadise.mixin",
   "compatibilityLevel": "JAVA_25",
-  "mixins": [],
-  "client": [
-    "MixinMinecraft"
+  "mixins": [
+    "BlocksMixin",
+    "WeatheringCopperMixin"
   ],
+  "client": [],
   "server": [],
   "injectors": {
     "defaultRequire": 1
