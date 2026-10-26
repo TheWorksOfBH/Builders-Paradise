@@ -5,11 +5,15 @@ import com.google.common.collect.BiMap;
 import com.google.common.collect.ImmutableBiMap;
 import com.mojang.serialization.Codec;
 import github.theworksofbh.buildersparadise.blocks.ModBlocks;
+import github.theworksofbh.buildersparadise.tags.ModBlockTags;
 import io.netty.buffer.ByteBuf;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.util.ByIdMap;
 import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ChangeOverTimeBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -80,6 +84,18 @@ public interface RustingIron extends ChangeOverTimeBlock<RustingIron.WeatherStat
     @Override
     default float getChanceModifier() {
         return this.getAge() == WeatherState.UNAFFECTED ? 0.65F : 1.0F;
+    }
+
+    default boolean isGalvanized(LevelReader levelReader, BlockPos blockPos) {
+        for (Direction direction : Direction.values()) {
+            BlockPos neighbourPos = blockPos.relative(direction);
+            BlockState neighbourState = levelReader.getBlockState(neighbourPos);
+
+            if (neighbourState.is(ModBlockTags.GALVANIZES_IRON)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static enum WeatherState implements StringRepresentable {

@@ -30,7 +30,11 @@ public class RustingIronSlabBlock extends SlabBlock implements RustingIron {
 
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        this.changeOverTime(state, level, pos, random);
+        if (isGalvanized(level, pos)) {
+
+        } else {
+            this.changeOverTime(state, level, pos, random);
+        }
     }
 
     @Override

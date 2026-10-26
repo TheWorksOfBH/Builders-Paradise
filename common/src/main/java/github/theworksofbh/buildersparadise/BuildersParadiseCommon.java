@@ -1,11 +1,12 @@
 package github.theworksofbh.buildersparadise;
 
-import github.theworksofbh.buildersparadise.blocks.ModBlocks;
-import github.theworksofbh.buildersparadise.items.ModItems;
+import github.theworksofbh.buildersparadise.events.AddItemsToDispenserEvent;
+import github.theworksofbh.buildersparadise.events.FlammabilityEvent;
 
 public class BuildersParadiseCommon {
 
     public static void init() {
-
+        AddItemsToDispenserEvent.addItemsToDispenser();
+        FlammabilityEvent.createFlammableBlocks();
     }
 }

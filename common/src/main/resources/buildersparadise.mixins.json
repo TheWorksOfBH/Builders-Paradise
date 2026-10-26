@@ -4,10 +4,27 @@
   "package": "github.theworksofbh.buildersparadise.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
+    "BannerDuplicateRecipeMixin",
+    "BannerPatternLayersMixin",
     "BlocksMixin",
-    "WeatheringCopperMixin"
+    "CartographyTableMenuMixin",
+    "CarvedPumpkinBlockMixin",
+    "CraftingMenuMixin",
+    "GrindstoneMenuMixin",
+    "LoomMenuMixin",
+    "MineshaftCorridorMixin",
+    "MineShaftPieceMixin",
+    "RedStoneWireBlockMixin",
+    "SmithingMenuMixin",
+    "StructurePieceMixin"
   ],
-  "client": [],
+  "client": [
+    "BlockEntityRenderStateAccessor",
+    "ChestRendererMixin",
+    "FluidRendererMixin",
+    "LoomScreenMixin",
+    "SplashManagerMixin"
+  ],
   "server": [],
   "injectors": {
     "defaultRequire": 1

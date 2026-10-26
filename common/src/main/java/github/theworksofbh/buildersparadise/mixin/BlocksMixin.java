@@ -27,6 +27,8 @@ public class BlocksMixin {
     private static Block changeBlockTypes(ResourceKey<Block> id, BlockBehaviour.Properties properties, Operation<Block> original) {
         if (id == BlockItemIds.IRON_BLOCK.block()) {
             return register(id, (props) -> new RustingIronFullBlock(RustingIron.WeatherState.UNAFFECTED, props), properties);
+        } else if (id == BlockItemIds.FLETCHING_TABLE.block()) {
+            return register(id, FletchingTableBlock::new, properties);
         } else {
             return original.call(id, properties);
         }

@@ -26,7 +26,11 @@ public class RustingIronDoorBlock extends DoorBlock implements RustingIron {
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         if (state.getValue(DoorBlock.HALF) == DoubleBlockHalf.LOWER) {
-            this.changeOverTime(state, level, pos, random);
+            if (isGalvanized(level, pos)) {
+
+            } else {
+                this.changeOverTime(state, level, pos, random);
+            }
         }
     }
 

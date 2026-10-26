@@ -32,6 +32,6 @@
     "suggests": {
         "another-mod": "*"
     },
-    "accessWidener": "buildersparadise.classtweaker"
+    "accessWidener": "buildersparadise.accesswidener"
 }
   
