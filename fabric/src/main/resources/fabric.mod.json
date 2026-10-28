@@ -32,6 +32,9 @@
     "suggests": {
         "another-mod": "*"
     },
-    "accessWidener": "buildersparadise.accesswidener"
+    "accessWidener": "buildersparadise.accesswidener",
+    "fabric-datagen": [
+        "github.theworksofbh.buildersparadise.events.FabricGatherDataEvent"
+    ]
 }
   

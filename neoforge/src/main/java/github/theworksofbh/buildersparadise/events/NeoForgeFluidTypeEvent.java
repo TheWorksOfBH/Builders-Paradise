@@ -12,13 +12,9 @@ import net.minecraft.client.renderer.fog.FogData;
 import net.minecraft.client.renderer.fog.environment.FogEnvironment;
 import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.resources.Identifier;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.level.pathfinder.PathType;
 import net.neoforged.neoforge.client.event.RegisterFluidModelsEvent;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
-import net.neoforged.neoforge.common.SoundActions;
-import net.neoforged.neoforge.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector4f;
 
@@ -47,20 +43,7 @@ public class NeoForgeFluidTypeEvent {
                 fogData.renderDistanceStart = 0.0F;
                 fogData.renderDistanceEnd = renderDistance;
             }
-        }, new FluidType(
-                FluidType.Properties.create()
-                        .viscosity(1000)
-                        .lightLevel(15)
-                        .canConvertToSource(true)
-                        .motionScale(0.1)
-                        .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL_LAVA)
-                        .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY_LAVA)
-                        .pathType(PathType.LAVA)
-                        .temperature(700)
-                        .motionScale(0.00001F)
-                        .isWaterLike(false)
-                        .density(1000)
-        ));
+        }, ModFluids.NUCLEAR_WASTE.getFluidType(), ModFluids.FLOWING_NUCLEAR_WASTE.getFluidType());
     }
 
     public static void addFluidModels(RegisterFluidModelsEvent event) {

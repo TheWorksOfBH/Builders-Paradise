@@ -193,16 +193,6 @@ public class ModDataMapProvider extends DataMapProvider {
         addToFurnaceFuels(ModBlocks.BAMBOO_SMITHING_TABLE.asItem(), 300);
         addToFurnaceFuels(ModBlocks.PALE_OAK_SMITHING_TABLE.asItem(), 300);
 
-        addToFurnaceFuels(ModBlocks.OAK_FLETCHING_TABLE.asItem(), 300);
-        addToFurnaceFuels(ModBlocks.SPRUCE_FLETCHING_TABLE.asItem(), 300);
-        addToFurnaceFuels(ModBlocks.JUNGLE_FLETCHING_TABLE.asItem(), 300);
-        addToFurnaceFuels(ModBlocks.ACACIA_FLETCHING_TABLE.asItem(), 300);
-        addToFurnaceFuels(ModBlocks.DARK_OAK_FLETCHING_TABLE.asItem(), 300);
-        addToFurnaceFuels(ModBlocks.MANGROVE_FLETCHING_TABLE.asItem(), 300);
-        addToFurnaceFuels(ModBlocks.CHERRY_FLETCHING_TABLE.asItem(), 300);
-        addToFurnaceFuels(ModBlocks.BAMBOO_FLETCHING_TABLE.asItem(), 300);
-        addToFurnaceFuels(ModBlocks.PALE_OAK_FLETCHING_TABLE.asItem(), 300);
-
         addToFurnaceFuels(ModBlocks.SPRUCE_LOOM.asItem(), 300);
         addToFurnaceFuels(ModBlocks.BIRCH_LOOM.asItem(), 300);
         addToFurnaceFuels(ModBlocks.JUNGLE_LOOM.asItem(), 300);

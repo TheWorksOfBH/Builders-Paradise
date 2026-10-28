@@ -249,8 +249,6 @@ public class ModAustraliaLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-
-
         Map<String, String> bannerColorNames = new HashMap<>();
 
         bannerColorNames.put("white", "White");
@@ -260,8 +258,8 @@ public class ModAustraliaLanguageProvider extends LanguageProvider {
         bannerColorNames.put("yellow", "Yellow");
         bannerColorNames.put("lime", "Lime");
         bannerColorNames.put("pink", "Pink");
-        bannerColorNames.put("gray", "Gray");
-        bannerColorNames.put("light_gray", "Light Gray");
+        bannerColorNames.put("gray", "Grey");
+        bannerColorNames.put("light_gray", "Light Grey");
         bannerColorNames.put("cyan", "Cyan");
         bannerColorNames.put("purple", "Purple");
         bannerColorNames.put("blue", "Blue");
@@ -270,86 +268,73 @@ public class ModAustraliaLanguageProvider extends LanguageProvider {
         bannerColorNames.put("red", "Red");
         bannerColorNames.put("black", "Black");
 
-        Map<Integer, String> patternNames = new HashMap<>();
+        String[] patternNames = {
+                "Quarter Chief",
+                "Quarter Base",
+                "Sixth Chief",
+                "Sixth Base",
+                "Quarter Pale Dexter",
+                "Quarter Pale Sinister",
+                "Sixth Pale Dexter",
+                "Sixth Pale Sinister",
+                "Chief Sinister Quadrant",
+                "Chief Dexter Quadrant",
+                "Base Sinister Quadrant",
+                "Base Dexter Quadrant",
+                "Offset Cross",
+                "Inverted Offset Cross",
+                "Per Saltire",
+                "Inverted Per Saltire",
+                "Long Chevron",
+                "Inverted Long Chevron",
+                "Barry",
+                "Bendy Dexter",
+                "Bendy Sinister",
+                "Checkerboard",
+                "Inverted Checkerboard",
+                "Rhombus",
+                "Majuscule Outlined Pentagram",
+                "Majuscule Full Pentagram",
+                "Majuscule Outlined Hexagram",
+                "Majuscule Full Hexagram",
+                "Miniscule Outlined Pentagram",
+                "Miniscule Full Pentagram",
+                "Miniscule Outlined Hexagram",
+                "Miniscule Full Hexagram",
+                "Chief Canton Pentagram",
+                "Chief Sinister Canton Pentagram",
+                "Chief Dexter Canton Pentagram",
+                "Base Canton Pentagram",
+                "Base Sinister Canton Pentagram",
+                "Base Dexter Canton Pentagram",
+                "Heart",
+                "Diamond",
+                "Chief Canton Hexagram",
+                "Chief Sinister Canton Hexagram",
+                "Chief Dexter Canton Hexagram",
+                "Base Canton Hexagram",
+                "Base Sinister Canton Hexagram",
+                "Base Dexter Canton Hexagram",
+                "Spade",
+                "Club",
+                "Chief Sinister Per Bend",
+                "Chief Dexter Per Bend",
+                "Base Sinister Per Bend",
+                "Base Dexter Per Bend",
+                "Chief Per Pale",
+                "Base Per Pale",
+                "Sinister Per Fess",
+                "Dexter Per Fess"
+        };
 
-        patternNames.put(0, "Quarter Chief");
-        patternNames.put(1, "Quarter Base");
-        patternNames.put(2, "Sixth Chief");
-        patternNames.put(3, "Sixth Base");
-        patternNames.put(4, "Quarter Pale Dexter");
-        patternNames.put(5, "Quarter Pale Sinister");
-        patternNames.put(6, "Sixth Pale Dexter");
-        patternNames.put(7, "Sixth Pale Sinister");
-        patternNames.put(8, "Chief Sinister Quadrant");
-        patternNames.put(9, "Chief Dexter Quadrant");
-        patternNames.put(10, "Base Sinister Quadrant");
-        patternNames.put(11, "Base Dexter Quadrant");
-        patternNames.put(12, "Offset Cross");
-        patternNames.put(13, "Inverted Offset Cross");
-        patternNames.put(14, "Per Saltire");
-        patternNames.put(15, "Inverted Per Saltire");
-        patternNames.put(16, "Long Chevron");
-        patternNames.put(17, "Inverted Long Chevron");
-        patternNames.put(18, "Barry");
-        patternNames.put(19, "Bendy Dexter");
-        patternNames.put(20, "Bendy Sinister");
-        patternNames.put(21, "Checkerboard");
-        patternNames.put(22, "Inverted Checkerboard");
-        patternNames.put(23, "Rhombus");
-        patternNames.put(24, "Majuscule Outlined Pentagram");
-        patternNames.put(25, "Majuscule Full Pentagram");
-        patternNames.put(26, "Majuscule Outlined Hexagram");
-        patternNames.put(27, "Majuscule Full Hexagram");
-        patternNames.put(28, "Miniscule Outlined Pentagram");
-        patternNames.put(29, "Miniscule Full Pentagram");
-        patternNames.put(30, "Miniscule Outlined Hexagram");
-        patternNames.put(31, "Miniscule Full Hexagram");
-        patternNames.put(32, "Chief Canton Pentagram");
-        patternNames.put(33, "Chief Sinister Canton Pentagram");
-        patternNames.put(34, "Chief Dexter Canton Pentagram");
-        patternNames.put(35, "Base Canton Pentagram");
-        patternNames.put(36, "Base Sinister Canton Pentagram");
-        patternNames.put(37, "Base Dexter Canton Pentagram");
-        patternNames.put(38, "Heart");
-        patternNames.put(39, "Diamond");
-        patternNames.put(40, "Chief Canton Hexagram");
-        patternNames.put(41, "Chief Sinister Canton Hexagram");
-        patternNames.put(42, "Chief Dexter Canton Hexagram");
-        patternNames.put(43, "Base Canton Hexagram");
-        patternNames.put(44, "Base Sinister Canton Hexagram");
-        patternNames.put(45, "Base Dexter Canton Hexagram");
-        patternNames.put(46, "Spade");
-        patternNames.put(47, "Club");
-        patternNames.put(48, "Chief Sinister Per Bend");
-        patternNames.put(49, "Chief Dexter Per Bend");
-        patternNames.put(50, "Base Sinister Per Bend");
-        patternNames.put(51, "Base Dexter Per Bend");
-        patternNames.put(52, "Chief Per Pale");
-        patternNames.put(53, "Base Per Pale");
-        patternNames.put(54, "Sinister Per Fess");
-        patternNames.put(55, "Dexter Per Fess");
+        for (int i = 0; i < patternNames.length; i++) {
+            String patternId = "pattern_" + i;
+            String patternName = patternNames[i];
 
-        for (Map.Entry<Integer, String> patternEntry : patternNames.entrySet()) {
-            int patternIndex = patternEntry.getKey();
-            String patternDisplayName = patternEntry.getValue();
+            this.add("block.minecraft.banner." + patternId, patternName);
 
-            String patternId = "pattern_" + patternIndex;
-
-            String patternTranslationKey = "block.minecraft.banner." + patternId;
-
-            String patternTranslationValue = patternDisplayName;
-
-            this.add(patternTranslationKey, patternTranslationValue);
-
-            for (Map.Entry<String, String> colorEntry : bannerColorNames.entrySet()) {
-                String colorId = colorEntry.getKey();
-                String colorDisplayName = colorEntry.getValue();
-
-                String translationKey = "block.minecraft.banner." + patternId + "." + colorId;
-
-                String translationValue = colorDisplayName + " " + patternDisplayName;
-
-                this.add(translationKey, translationValue);
+            for (Map.Entry<String, String> color : bannerColorNames.entrySet()) {
+                this.add("block.minecraft.banner." + patternId + "." + color.getKey(), color.getValue() + " " + patternName);
             }
         }
 
@@ -381,23 +366,19 @@ public class ModAustraliaLanguageProvider extends LanguageProvider {
         this.add("jukebox_song.buildersparadise.angry_boyfriends", "The Works of BH - Angry Boyfriends");
         this.add("item.buildersparadise.smithing_template.bronze_upgrade.applies_to", "Copper Equipment");
         this.add("item.buildersparadise.smithing_template.bronze_upgrade.ingredients", "Bronze Ingot");
-        this.add("item.buildersparadise.smithing_template.bronze_upgrade.base_slot_description", "Add copper armor, weapon, or tool");
+        this.add("item.buildersparadise.smithing_template.bronze_upgrade.base_slot_description", "Add copper armour, weapon, or tool");
         this.add("item.buildersparadise.smithing_template.bronze_upgrade.additions_slot_description", "Add Bronze Ingot");
-        this.add("trim_material.buildersparadise.zinc", "Zinc Material");
-        this.add("trim_material.buildersparadise.silver", "Silver Material");
-        this.add("trim_material.buildersparadise.tin", "Tin Material");
-        this.add("trim_material.buildersparadise.tungsten", "Tungsten Material");
-        this.add("trim_material.buildersparadise.platinum", "Platinum Material");
-        this.add("trim_material.buildersparadise.lead", "Lead Material");
-        this.add("trim_material.buildersparadise.bismuth", "Bismuth Material");
-        this.add("trim_material.buildersparadise.uranium", "Uranium Material");
-        this.add("trim_material.buildersparadise.bronze", "Bronze Material");
-        this.add("trim_material.buildersparadise.brass", "Brass Material");
-        this.add("trim_material.buildersparadise.steel", "Steel Material");
-        this.add("trim_material.buildersparadise.sculk", "Sculk Material");
-        this.add("trim_material.buildersparadise.monocrystal", "Monocrystal Material");
-        this.add("trim_material.buildersparadise.ruby", "Ruby Material");
-        this.add("trim_material.buildersparadise.sapphire", "Sapphire Material");
+
+        String[] trimMaterials = {
+                "zinc", "silver", "tin", "tungsten", "platinum", "lead",
+                "bismuth", "uranium", "bronze", "brass", "steel",
+                "sculk", "monocrystal", "ruby", "sapphire"
+        };
+
+        for (String material : trimMaterials) {
+            this.add("trim_material.buildersparadise." + material, Character.toUpperCase(material.charAt(0)) + material.substring(1) + " Material");
+        }
+
         this.add("jukebox_song.minecraft.creator", "Leif Chappelle - Creator");
         this.add("jukebox_song.minecraft.creator_music_box", "Leif Chappelle - Creator (Music Box)");
         this.add("jukebox_song.minecraft.otherside", "Leif Chappelle - otherside");
